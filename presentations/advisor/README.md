@@ -1,10 +1,15 @@
 # Презентация для научного руководителя
 
+- [Последняя версия, 16 слайдов](advisor-presentation-v3-team.pptx):
+  добавлены слайды 13–14 о трёх исследованиях и личном вкладе. Резервные слайды — 15–16.
+  Разделение — предложение для обсуждения, назначения авторам пока нет.
+- [Заметки к последней версии](speaker-notes-v3.txt).
+
 Материалы подготовлены 02.10.2026; добавлены в Git 07.10.2026 по поручению инициатора.
 
-- [Последняя версия, 14 слайдов](advisor-presentation-v2-final.pptx):
+- [Предыдущая версия, 14 слайдов](advisor-presentation-v2-final.pptx):
   основной доклад — 18 минут, слайды 1–12; вопросы и источники — слайды 13–14.
-- [Заметки докладчика к последней версии](speaker-notes-v2.txt).
+- [Заметки докладчика к версии v2](speaker-notes-v2.txt).
 - [Первая версия, 19 слайдов](advisor-research-proposal.pptx) и
   [её заметки докладчика](speaker-notes.txt) сохранены для истории.
 
@@ -19,3 +24,25 @@
 Обложка создана ImageGen 02.10.2026; это оформление, а не научная схема.
 Канонические постановка и состояние — в [исследовании](../../docs/research.md)
 и [wiki](../../docs/README.md).
+
+## Добавленные слайды
+
+Новые слайды сохраняют оформление v2. Существующие части PPTX сохранены,
+кроме третьей темы и заметок на резервном слайде: адаптация модели вместо GraphRAG.
+Исходники дополнения: `source/deck-team-slides.mjs`, `source/merge-team-slides.py`
+и `source/content-team.json`. Генератор использует `@oai/artifact-tool`.
+
+В среде с доступным пакетом:
+
+```sh
+TEAM_BUILD_DIR=artifacts/team-slides node presentations/advisor/source/deck-team-slides.mjs
+python presentations/advisor/source/merge-team-slides.py \
+  presentations/advisor/advisor-presentation-v2-final.pptx \
+  artifacts/team-slides/new-slides.pptx \
+  artifacts/team-slides/candidate.pptx
+```
+
+После сборки нужны проверка структуры PPTX и просмотр слайдов.
+Исходный хронометраж 18 минут относится к слайдам 1–12.
+Два новых слайда увеличивают продолжительность доклада, хронометраж нужно уточнить.
+Канонические темы в wiki пока сохраняют прежний статус кандидатов.
