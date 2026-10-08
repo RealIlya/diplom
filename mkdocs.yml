@@ -20,12 +20,17 @@ nav:
       - Научные источники: sources.md
   - Подробные материалы:
       - Постановка и протокол: research.md
+      - Архитектура v0.2: architecture.md
+      - Протокол HotpotQA: hotpotqa-protocol.md
       - Модели: model-research.md
       - Стенд τ-bench: tau-bench-review.md
   - Работа над ВКР:
       - Совместная работа: team.md
       - Требования ВКР: vkr.md
       - Процесс для агентов: agents/workflow.md
+      - Доменный контекст: agents/domain.md
+      - Задачи проекта: agents/issue-tracker.md
+      - Статусы триажа: agents/triage-labels.md
 
 plugins:
   - search:
