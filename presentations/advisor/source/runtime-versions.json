@@ -1,0 +1,11 @@
+{
+  "artifact_tool": "2.8.85",
+  "font": "DejaVu Sans",
+  "slide_size_px": [
+    1280,
+    720
+  ],
+  "python_minimum": "3.12",
+  "authoring_environment": "Codex primary runtime; requires bundled presentation validators"
+}
+
