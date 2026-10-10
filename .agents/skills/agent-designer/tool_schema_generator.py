@@ -15,6 +15,8 @@ import json
 import argparse
 import sys
 import re
+from datetime import datetime, timezone
+from jsonschema import Draft202012Validator, FormatChecker
 from typing import Dict, List, Any, Optional, Union, Tuple
 from dataclasses import dataclass, asdict
 from enum import Enum
@@ -286,19 +288,14 @@ class ToolSchemaGenerator:
         elif param_type == ParameterType.OBJECT:
             rules.update(self._generate_object_validation(param_spec))
         
-        # Common validation rules
-        if param_spec.get("required", False):
-            rules["required"] = True
-        
+        # Required belongs to the containing object's required array.
         if "enum" in param_spec:
             rules["enum"] = param_spec["enum"]
         
         if "pattern" in param_spec:
             rules["pattern"] = param_spec["pattern"]
-        elif self._detect_format(param_spec.get("name", ""), param_spec.get("description", "")):
-            format_name = self._detect_format(param_spec.get("name", ""), param_spec.get("description", ""))
-            if format_name in self.format_validators:
-                rules.update(self.format_validators[format_name])
+        if "format" in param_spec and param_type == ParameterType.STRING:
+            rules["format"] = param_spec["format"]
         
         return rules
     
@@ -405,7 +402,9 @@ class ToolSchemaGenerator:
         if param_spec.get("unique_items", False):
             rules["uniqueItems"] = True
         
-        if "item_type" in param_spec:
+        if "items" in param_spec:
+            rules["items"] = param_spec["items"]
+        elif "item_type" in param_spec:
             rules["items"] = {"type": param_spec["item_type"]}
         
         return rules
@@ -509,11 +508,7 @@ class ToolSchemaGenerator:
             
             # Add validation rules (Anthropic uses subset of JSON Schema)
             if param.validation_rules:
-                # Filter to supported validation rules
-                supported_rules = ["minLength", "maxLength", "minimum", "maximum", "pattern", "enum", "items"]
-                for rule, value in param.validation_rules.items():
-                    if rule in supported_rules:
-                        prop_def[rule] = value
+                prop_def.update(param.validation_rules)
             
             input_schema["properties"][param.name] = prop_def
             
@@ -648,7 +643,9 @@ class ToolSchemaGenerator:
         if len(examples) == 1 and len(input_params) > 1:
             # Generate minimal example
             minimal_example = self._generate_minimal_example(description, input_params)
-            if minimal_example and minimal_example != examples[0]:
+            schema = self.generate_openai_schema(description, input_params)["parameters"]
+            if (minimal_example and minimal_example != examples[0]
+                    and Draft202012Validator(schema, format_checker=FormatChecker()).is_valid(minimal_example["input"])):
                 examples.append(minimal_example)
         
         return examples
@@ -828,7 +825,7 @@ class ToolSchemaGenerator:
             "side_effects": description.side_effects,
             "dependencies": description.dependencies,
             "security_requirements": description.security_requirements,
-            "generated_at": "2024-01-15T10:30:00Z",
+            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
             "schema_version": "1.0",
             "input_parameters": len(input_params),
             "output_parameters": len(output_params),
@@ -887,7 +884,7 @@ def main():
                 "generated_by": "tool_schema_generator.py",
                 "input_file": args.input_file,
                 "tool_count": len(schemas),
-                "generation_timestamp": "2024-01-15T10:30:00Z",
+                "generation_timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
                 "schema_version": "1.0"
             },
             "validation_summary": {
@@ -951,23 +948,33 @@ def main():
         # Validation if requested
         if args.validate:
             print("\nValidation Results:")
+            has_errors = False
             for schema in schemas:
                 validation_errors = []
-                
-                # Basic validation checks
-                if not schema.openai_schema.get("parameters", {}).get("properties"):
-                    validation_errors.append("Missing input parameters")
-                
-                if not schema.examples:
-                    validation_errors.append("No usage examples")
-                
-                if not schema.validation_rules:
-                    validation_errors.append("No validation rules defined")
+                for dialect, input_schema in (
+                    ("OpenAI", schema.openai_schema["parameters"]),
+                    ("Anthropic", schema.anthropic_schema["input_schema"]),
+                ):
+                    try:
+                        Draft202012Validator.check_schema(input_schema)
+                    except Exception as error:
+                        validation_errors.append(f"{dialect} schema: {error}")
+                        continue
+                    validator = Draft202012Validator(input_schema, format_checker=FormatChecker())
+                    for index, example in enumerate(schema.examples):
+                        if "input" not in example:
+                            validation_errors.append(f"{dialect} example {index}: missing input")
+                            continue
+                        for error in validator.iter_errors(example["input"]):
+                            validation_errors.append(f"{dialect} example {index}: {error.message}")
                 
                 if validation_errors:
+                    has_errors = True
                     print(f"  {schema.name}: {', '.join(validation_errors)}")
                 else:
                     print(f"  {schema.name}: ✓ Valid")
+            if has_errors:
+                sys.exit(1)
         
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)

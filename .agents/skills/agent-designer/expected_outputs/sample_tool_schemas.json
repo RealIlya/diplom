@@ -30,6 +30,7 @@
             "language": {
               "type": "string",
               "description": "Language code for search results",
+              "maxLength": 1000,
               "enum": [
                 "en",
                 "es",
@@ -45,6 +46,7 @@
             "time_range": {
               "type": "string",
               "description": "Time range filter for search results",
+              "maxLength": 1000,
               "enum": [
                 "any",
                 "day",
@@ -81,6 +83,7 @@
             "language": {
               "type": "string",
               "description": "Language code for search results",
+              "maxLength": 1000,
               "enum": [
                 "en",
                 "es",
@@ -95,6 +98,7 @@
             "time_range": {
               "type": "string",
               "description": "Time range filter for search results",
+              "maxLength": 1000,
               "enum": [
                 "any",
                 "day",
@@ -123,6 +127,35 @@
             "minimum": 1,
             "maximum": 100
           }
+        },
+        {
+          "parameter": "language",
+          "rules": {
+            "maxLength": 1000,
+            "enum": [
+              "en",
+              "es",
+              "fr",
+              "de",
+              "it",
+              "pt",
+              "zh",
+              "ja"
+            ]
+          }
+        },
+        {
+          "parameter": "time_range",
+          "rules": {
+            "maxLength": 1000,
+            "enum": [
+              "any",
+              "day",
+              "week",
+              "month",
+              "year"
+            ]
+          }
         }
       ],
       "error_responses": [
@@ -143,10 +176,45 @@
           "details": null
         },
         {
+          "error_code": "insufficient_permissions",
+          "error_message": "Insufficient permissions to perform this operation",
+          "http_status": 403,
+          "retry_after": null,
+          "details": null
+        },
+        {
           "error_code": "rate_limit_exceeded",
           "error_message": "Rate limit exceeded. Please try again later",
           "http_status": 429,
           "retry_after": 60,
+          "details": null
+        },
+        {
+          "error_code": "internal_error",
+          "error_message": "Internal server error occurred",
+          "http_status": 500,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "service_unavailable",
+          "error_message": "Service temporarily unavailable",
+          "http_status": 503,
+          "retry_after": 300,
+          "details": null
+        },
+        {
+          "error_code": "operation_timeout",
+          "error_message": "Operation timed out: Network timeout",
+          "http_status": 408,
+          "retry_after": 30,
+          "details": null
+        },
+        {
+          "error_code": "quota_exceeded",
+          "error_message": "Quota or limit exceeded: API rate limit exceeded",
+          "http_status": 429,
+          "retry_after": 3600,
           "details": null
         }
       ],
@@ -176,6 +244,27 @@
             ],
             "total_found": 1250
           }
+        },
+        {
+          "description": "Minimal example of web_search with required parameters only",
+          "input": {
+            "query": "artificial intelligence trends"
+          },
+          "expected_output": {
+            "results": [
+              {
+                "title": "Example Result 1",
+                "url": "https://example.com/1",
+                "snippet": "Example snippet..."
+              },
+              {
+                "title": "Example Result 2",
+                "url": "https://example.com/2",
+                "snippet": "Another snippet..."
+              }
+            ],
+            "total_count": 2
+          }
         }
       ],
       "metadata": {
@@ -194,7 +283,7 @@
           "Rate limiting by user",
           "Content filtering"
         ],
-        "generated_at": "2024-01-15T10:30:00Z",
+        "generated_at": "2026-10-09T17:11:23Z",
         "schema_version": "1.0",
         "input_parameters": 4,
         "output_parameters": 2,
@@ -227,6 +316,7 @@
             "analysis_type": {
               "type": "string",
               "description": "Type of analysis to perform",
+              "maxLength": 1000,
               "enum": [
                 "descriptive",
                 "correlation",
@@ -261,11 +351,21 @@
           "properties": {
             "data": {
               "type": "object",
-              "description": "Structured data to analyze in JSON format"
+              "description": "Structured data to analyze in JSON format",
+              "properties": {
+                "columns": {
+                  "type": "array"
+                },
+                "rows": {
+                  "type": "array"
+                }
+              },
+              "additionalProperties": false
             },
             "analysis_type": {
               "type": "string",
               "description": "Type of analysis to perform",
+              "maxLength": 1000,
               "enum": [
                 "descriptive",
                 "correlation",
@@ -292,6 +392,33 @@
       },
       "validation_rules": [
         {
+          "parameter": "data",
+          "rules": {
+            "properties": {
+              "columns": {
+                "type": "array"
+              },
+              "rows": {
+                "type": "array"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        {
+          "parameter": "analysis_type",
+          "rules": {
+            "maxLength": 1000,
+            "enum": [
+              "descriptive",
+              "correlation",
+              "trend",
+              "distribution",
+              "outlier_detection"
+            ]
+          }
+        },
+        {
           "parameter": "target_column",
           "rules": {
             "maxLength": 1000
@@ -316,10 +443,38 @@
           "details": null
         },
         {
+          "error_code": "insufficient_permissions",
+          "error_message": "Insufficient permissions to perform this operation",
+          "http_status": 403,
+          "retry_after": null,
+          "details": null
+        },
+        {
           "error_code": "rate_limit_exceeded",
           "error_message": "Rate limit exceeded. Please try again later",
           "http_status": 429,
           "retry_after": 60,
+          "details": null
+        },
+        {
+          "error_code": "internal_error",
+          "error_message": "Internal server error occurred",
+          "http_status": 500,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "service_unavailable",
+          "error_message": "Service temporarily unavailable",
+          "http_status": 503,
+          "retry_after": 300,
+          "details": null
+        },
+        {
+          "error_code": "operation_timeout",
+          "error_message": "Operation timed out: Analysis timeout",
+          "http_status": 408,
+          "retry_after": 30,
           "details": null
         }
       ],
@@ -391,26 +546,801 @@
           "Data anonymization",
           "Access control validation"
         ],
-        "generated_at": "2024-01-15T10:30:00Z",
+        "generated_at": "2026-10-09T17:11:23Z",
         "schema_version": "1.0",
         "input_parameters": 4,
         "output_parameters": 3,
         "required_parameters": 2,
         "optional_parameters": 2
       }
+    },
+    {
+      "name": "document_processor",
+      "description": "Process and extract information from various document formats including PDFs, Word docs, and plain text",
+      "openai_schema": {
+        "name": "document_processor",
+        "description": "Process and extract information from various document formats including PDFs, Word docs, and plain text",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "document_url": {
+              "type": "string",
+              "description": "URL or path to the document to process",
+              "maxLength": 1000,
+              "pattern": "^(https?://|file://|/)"
+            },
+            "processing_mode": {
+              "type": "string",
+              "description": "How to process the document",
+              "maxLength": 1000,
+              "enum": [
+                "full_text",
+                "summary",
+                "key_points",
+                "metadata_only"
+              ],
+              "default": "full_text"
+            },
+            "output_format": {
+              "type": "string",
+              "description": "Desired output format",
+              "maxLength": 1000,
+              "enum": [
+                "json",
+                "markdown",
+                "plain_text"
+              ],
+              "default": "json"
+            },
+            "language_detection": {
+              "type": "boolean",
+              "description": "Whether to detect document language",
+              "default": true
+            }
+          },
+          "required": [
+            "document_url"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "anthropic_schema": {
+        "name": "document_processor",
+        "description": "Process and extract information from various document formats including PDFs, Word docs, and plain text",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "document_url": {
+              "type": "string",
+              "description": "URL or path to the document to process",
+              "maxLength": 1000,
+              "pattern": "^(https?://|file://|/)"
+            },
+            "processing_mode": {
+              "type": "string",
+              "description": "How to process the document",
+              "maxLength": 1000,
+              "enum": [
+                "full_text",
+                "summary",
+                "key_points",
+                "metadata_only"
+              ]
+            },
+            "output_format": {
+              "type": "string",
+              "description": "Desired output format",
+              "maxLength": 1000,
+              "enum": [
+                "json",
+                "markdown",
+                "plain_text"
+              ]
+            },
+            "language_detection": {
+              "type": "boolean",
+              "description": "Whether to detect document language"
+            }
+          },
+          "required": [
+            "document_url"
+          ]
+        }
+      },
+      "validation_rules": [
+        {
+          "parameter": "document_url",
+          "rules": {
+            "maxLength": 1000,
+            "pattern": "^(https?://|file://|/)"
+          }
+        },
+        {
+          "parameter": "processing_mode",
+          "rules": {
+            "maxLength": 1000,
+            "enum": [
+              "full_text",
+              "summary",
+              "key_points",
+              "metadata_only"
+            ]
+          }
+        },
+        {
+          "parameter": "output_format",
+          "rules": {
+            "maxLength": 1000,
+            "enum": [
+              "json",
+              "markdown",
+              "plain_text"
+            ]
+          }
+        }
+      ],
+      "error_responses": [
+        {
+          "error_code": "invalid_input",
+          "error_message": "Invalid input parameters provided",
+          "http_status": 400,
+          "retry_after": null,
+          "details": {
+            "validation_errors": []
+          }
+        },
+        {
+          "error_code": "authentication_required",
+          "error_message": "Authentication required to access this tool",
+          "http_status": 401,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "insufficient_permissions",
+          "error_message": "Insufficient permissions to perform this operation",
+          "http_status": 403,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "rate_limit_exceeded",
+          "error_message": "Rate limit exceeded. Please try again later",
+          "http_status": 429,
+          "retry_after": 60,
+          "details": null
+        },
+        {
+          "error_code": "internal_error",
+          "error_message": "Internal server error occurred",
+          "http_status": 500,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "service_unavailable",
+          "error_message": "Service temporarily unavailable",
+          "http_status": 503,
+          "retry_after": 300,
+          "details": null
+        },
+        {
+          "error_code": "resource_not_found",
+          "error_message": "Requested resource not found: Document not found",
+          "http_status": 404,
+          "retry_after": null,
+          "details": null
+        }
+      ],
+      "rate_limits": {
+        "requests_per_minute": 20,
+        "requests_per_hour": 300,
+        "requests_per_day": 30000,
+        "burst_limit": 3,
+        "cooldown_period": 60,
+        "rate_limit_key": "user_id"
+      },
+      "examples": [
+        {
+          "description": "Process PDF document for full text extraction",
+          "input": {
+            "document_url": "https://example.com/research-paper.pdf",
+            "processing_mode": "full_text",
+            "output_format": "markdown"
+          },
+          "expected_output": {
+            "content": "# Research Paper Title\n\nAbstract: This paper discusses...",
+            "metadata": {
+              "author": "Dr. Smith",
+              "creation_date": "2024-01-15",
+              "pages": 15
+            },
+            "language": "en",
+            "word_count": 3500
+          }
+        }
+      ],
+      "metadata": {
+        "category": "file",
+        "idempotent": true,
+        "side_effects": [
+          "May download and cache documents temporarily",
+          "Creates processing logs for debugging"
+        ],
+        "dependencies": [
+          "document_parser_service",
+          "language_detection_service",
+          "file_storage_service"
+        ],
+        "security_requirements": [
+          "URL validation",
+          "File type verification",
+          "Malware scanning",
+          "Access control enforcement"
+        ],
+        "generated_at": "2026-10-09T17:11:23Z",
+        "schema_version": "1.0",
+        "input_parameters": 4,
+        "output_parameters": 4,
+        "required_parameters": 1,
+        "optional_parameters": 3
+      }
+    },
+    {
+      "name": "notification_sender",
+      "description": "Send notifications via multiple channels including email, SMS, and webhooks",
+      "openai_schema": {
+        "name": "notification_sender",
+        "description": "Send notifications via multiple channels including email, SMS, and webhooks",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "recipients": {
+              "type": "array",
+              "description": "List of recipient identifiers",
+              "minItems": 1,
+              "maxItems": 100,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$|^\\+?[1-9]\\d{1,14}$"
+              }
+            },
+            "message": {
+              "type": "string",
+              "description": "Message content to send",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "channel": {
+              "type": "string",
+              "description": "Communication channel to use",
+              "maxLength": 1000,
+              "enum": [
+                "email",
+                "sms",
+                "webhook",
+                "push"
+              ],
+              "default": "email"
+            },
+            "priority": {
+              "type": "string",
+              "description": "Message priority level",
+              "maxLength": 1000,
+              "enum": [
+                "low",
+                "normal",
+                "high",
+                "urgent"
+              ],
+              "default": "normal"
+            },
+            "template_id": {
+              "type": "string",
+              "description": "Optional template ID for formatting",
+              "maxLength": 1000
+            }
+          },
+          "required": [
+            "recipients",
+            "message"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "anthropic_schema": {
+        "name": "notification_sender",
+        "description": "Send notifications via multiple channels including email, SMS, and webhooks",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "recipients": {
+              "type": "array",
+              "description": "List of recipient identifiers",
+              "minItems": 1,
+              "maxItems": 100,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$|^\\+?[1-9]\\d{1,14}$"
+              }
+            },
+            "message": {
+              "type": "string",
+              "description": "Message content to send",
+              "minLength": 1,
+              "maxLength": 10000
+            },
+            "channel": {
+              "type": "string",
+              "description": "Communication channel to use",
+              "maxLength": 1000,
+              "enum": [
+                "email",
+                "sms",
+                "webhook",
+                "push"
+              ]
+            },
+            "priority": {
+              "type": "string",
+              "description": "Message priority level",
+              "maxLength": 1000,
+              "enum": [
+                "low",
+                "normal",
+                "high",
+                "urgent"
+              ]
+            },
+            "template_id": {
+              "type": "string",
+              "description": "Optional template ID for formatting",
+              "maxLength": 1000
+            }
+          },
+          "required": [
+            "recipients",
+            "message"
+          ]
+        }
+      },
+      "validation_rules": [
+        {
+          "parameter": "recipients",
+          "rules": {
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$|^\\+?[1-9]\\d{1,14}$"
+            }
+          }
+        },
+        {
+          "parameter": "message",
+          "rules": {
+            "minLength": 1,
+            "maxLength": 10000
+          }
+        },
+        {
+          "parameter": "channel",
+          "rules": {
+            "maxLength": 1000,
+            "enum": [
+              "email",
+              "sms",
+              "webhook",
+              "push"
+            ]
+          }
+        },
+        {
+          "parameter": "priority",
+          "rules": {
+            "maxLength": 1000,
+            "enum": [
+              "low",
+              "normal",
+              "high",
+              "urgent"
+            ]
+          }
+        },
+        {
+          "parameter": "template_id",
+          "rules": {
+            "maxLength": 1000
+          }
+        }
+      ],
+      "error_responses": [
+        {
+          "error_code": "invalid_input",
+          "error_message": "Invalid input parameters provided",
+          "http_status": 400,
+          "retry_after": null,
+          "details": {
+            "validation_errors": []
+          }
+        },
+        {
+          "error_code": "authentication_required",
+          "error_message": "Authentication required to access this tool",
+          "http_status": 401,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "insufficient_permissions",
+          "error_message": "Insufficient permissions to perform this operation",
+          "http_status": 403,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "rate_limit_exceeded",
+          "error_message": "Rate limit exceeded. Please try again later",
+          "http_status": 429,
+          "retry_after": 60,
+          "details": null
+        },
+        {
+          "error_code": "internal_error",
+          "error_message": "Internal server error occurred",
+          "http_status": 500,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "service_unavailable",
+          "error_message": "Service temporarily unavailable",
+          "http_status": 503,
+          "retry_after": 300,
+          "details": null
+        },
+        {
+          "error_code": "quota_exceeded",
+          "error_message": "Quota or limit exceeded: Rate limit exceeded for channel",
+          "http_status": 429,
+          "retry_after": 3600,
+          "details": null
+        }
+      ],
+      "rate_limits": {
+        "requests_per_minute": 100,
+        "requests_per_hour": 2000,
+        "requests_per_day": 3000,
+        "burst_limit": 20,
+        "cooldown_period": 60,
+        "rate_limit_key": "user_id"
+      },
+      "examples": [
+        {
+          "description": "Send email notification",
+          "input": {
+            "recipients": [
+              "user@example.com"
+            ],
+            "message": "Your report has been completed and is ready for review.",
+            "channel": "email",
+            "priority": "normal"
+          },
+          "expected_output": {
+            "delivery_status": {
+              "user@example.com": "delivered"
+            },
+            "message_id": "msg_12345",
+            "delivery_timestamp": "2024-01-15T10:30:00Z"
+          }
+        }
+      ],
+      "metadata": {
+        "category": "communication",
+        "idempotent": false,
+        "side_effects": [
+          "Sends actual notifications to recipients",
+          "Logs delivery attempts and results",
+          "Updates delivery statistics"
+        ],
+        "dependencies": [
+          "email_service",
+          "sms_service",
+          "webhook_service"
+        ],
+        "security_requirements": [
+          "Recipient validation",
+          "Message content filtering",
+          "Rate limiting per user",
+          "Delivery confirmation"
+        ],
+        "generated_at": "2026-10-09T17:11:23Z",
+        "schema_version": "1.0",
+        "input_parameters": 5,
+        "output_parameters": 3,
+        "required_parameters": 2,
+        "optional_parameters": 3
+      }
+    },
+    {
+      "name": "task_scheduler",
+      "description": "Schedule and manage delayed or recurring tasks within the agent system",
+      "openai_schema": {
+        "name": "task_scheduler",
+        "description": "Schedule and manage delayed or recurring tasks within the agent system",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "task_definition": {
+              "type": "object",
+              "description": "Definition of the task to be scheduled",
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object"
+                },
+                "retry_policy": {
+                  "type": "object"
+                }
+              },
+              "additionalProperties": false
+            },
+            "schedule": {
+              "type": "object",
+              "description": "Scheduling parameters for the task",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "once",
+                    "recurring"
+                  ]
+                },
+                "execute_at": {
+                  "type": "string"
+                },
+                "recurrence_pattern": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "priority": {
+              "type": "integer",
+              "description": "Task priority (1-10, higher is more urgent)",
+              "minimum": 1,
+              "maximum": 10,
+              "default": 5
+            }
+          },
+          "required": [
+            "task_definition",
+            "schedule"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "anthropic_schema": {
+        "name": "task_scheduler",
+        "description": "Schedule and manage delayed or recurring tasks within the agent system",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "task_definition": {
+              "type": "object",
+              "description": "Definition of the task to be scheduled",
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object"
+                },
+                "retry_policy": {
+                  "type": "object"
+                }
+              },
+              "additionalProperties": false
+            },
+            "schedule": {
+              "type": "object",
+              "description": "Scheduling parameters for the task",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "once",
+                    "recurring"
+                  ]
+                },
+                "execute_at": {
+                  "type": "string"
+                },
+                "recurrence_pattern": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "priority": {
+              "type": "integer",
+              "description": "Task priority (1-10, higher is more urgent)",
+              "minimum": 1,
+              "maximum": 10
+            }
+          },
+          "required": [
+            "task_definition",
+            "schedule"
+          ]
+        }
+      },
+      "validation_rules": [
+        {
+          "parameter": "task_definition",
+          "rules": {
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "parameters": {
+                "type": "object"
+              },
+              "retry_policy": {
+                "type": "object"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        {
+          "parameter": "schedule",
+          "rules": {
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "once",
+                  "recurring"
+                ]
+              },
+              "execute_at": {
+                "type": "string"
+              },
+              "recurrence_pattern": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        {
+          "parameter": "priority",
+          "rules": {
+            "minimum": 1,
+            "maximum": 10
+          }
+        }
+      ],
+      "error_responses": [
+        {
+          "error_code": "invalid_input",
+          "error_message": "Invalid input parameters provided",
+          "http_status": 400,
+          "retry_after": null,
+          "details": {
+            "validation_errors": []
+          }
+        },
+        {
+          "error_code": "authentication_required",
+          "error_message": "Authentication required to access this tool",
+          "http_status": 401,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "insufficient_permissions",
+          "error_message": "Insufficient permissions to perform this operation",
+          "http_status": 403,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "rate_limit_exceeded",
+          "error_message": "Rate limit exceeded. Please try again later",
+          "http_status": 429,
+          "retry_after": 60,
+          "details": null
+        },
+        {
+          "error_code": "internal_error",
+          "error_message": "Internal server error occurred",
+          "http_status": 500,
+          "retry_after": null,
+          "details": null
+        },
+        {
+          "error_code": "service_unavailable",
+          "error_message": "Service temporarily unavailable",
+          "http_status": 503,
+          "retry_after": 300,
+          "details": null
+        }
+      ],
+      "rate_limits": {
+        "requests_per_minute": 50,
+        "requests_per_hour": 1000,
+        "requests_per_day": 1000,
+        "burst_limit": 10,
+        "cooldown_period": 60,
+        "rate_limit_key": "user_id"
+      },
+      "examples": [
+        {
+          "description": "Schedule a one-time report generation",
+          "input": {
+            "task_definition": {
+              "action": "generate_report",
+              "parameters": {
+                "report_type": "monthly_summary",
+                "recipients": [
+                  "manager@example.com"
+                ]
+              }
+            },
+            "schedule": {
+              "type": "once",
+              "execute_at": "2024-02-01T09:00:00Z"
+            },
+            "priority": 7
+          },
+          "expected_output": {
+            "task_id": "task_67890",
+            "next_execution": "2024-02-01T09:00:00Z",
+            "status": "scheduled"
+          }
+        }
+      ],
+      "metadata": {
+        "category": "compute",
+        "idempotent": false,
+        "side_effects": [
+          "Creates scheduled tasks in the system",
+          "May consume system resources for task storage",
+          "Updates scheduling metrics"
+        ],
+        "dependencies": [
+          "task_scheduler_service",
+          "task_executor_service"
+        ],
+        "security_requirements": [
+          "Task definition validation",
+          "User authorization for scheduling",
+          "Resource limit enforcement"
+        ],
+        "generated_at": "2026-10-09T17:11:23Z",
+        "schema_version": "1.0",
+        "input_parameters": 3,
+        "output_parameters": 3,
+        "required_parameters": 2,
+        "optional_parameters": 1
+      }
     }
   ],
   "metadata": {
     "generated_by": "tool_schema_generator.py",
-    "input_file": "sample_tool_descriptions.json",
-    "tool_count": 2,
-    "generation_timestamp": "2024-01-15T10:30:00Z",
+    "input_file": "assets/sample_tool_descriptions.json",
+    "tool_count": 5,
+    "generation_timestamp": "2026-10-09T17:11:23Z",
     "schema_version": "1.0"
   },
   "validation_summary": {
-    "total_tools": 2,
-    "total_parameters": 8,
-    "total_validation_rules": 3,
-    "total_examples": 2
+    "total_tools": 5,
+    "total_parameters": 20,
+    "total_validation_rules": 18,
+    "total_examples": 6
   }
 }

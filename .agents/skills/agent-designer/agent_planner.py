@@ -14,8 +14,9 @@ import json
 import argparse
 import sys
 from typing import Dict, List, Any, Optional, Tuple
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from enum import Enum
+import yaml
 
 
 class AgentArchitecturePattern(Enum):
@@ -105,6 +106,19 @@ class ArchitectureDesign:
     guardrails: List[Dict[str, Any]]
     scaling_strategy: Dict[str, Any]
     failure_handling: Dict[str, Any]
+
+
+def serializable(value: Any) -> Any:
+    """Convert nested dataclasses and enums to portable JSON/YAML values."""
+    if isinstance(value, Enum):
+        return value.value
+    if hasattr(value, "__dataclass_fields__"):
+        return {key: serializable(getattr(value, key)) for key in value.__dataclass_fields__}
+    if isinstance(value, dict):
+        return {key: serializable(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [serializable(item) for item in value]
+    return value
 
 
 class AgentPlanner:
@@ -207,6 +221,8 @@ class AgentPlanner:
     def select_architecture_pattern(self, requirements: SystemRequirements) -> AgentArchitecturePattern:
         """Select the most appropriate architecture pattern based on requirements"""
         team_size = requirements.team_size
+        if type(team_size) is not int or not 1 <= team_size <= 20:
+            raise ValueError("team_size must be an integer from 1 to 20")
         task_count = len(requirements.tasks)
         performance_reqs = requirements.performance_requirements
         
@@ -218,10 +234,9 @@ class AgentPlanner:
             
             # Team size fit
             min_size, max_size = heuristics["team_size_range"]
-            if min_size <= team_size <= max_size:
-                score += 3
-            elif abs(team_size - min_size) <= 2 or abs(team_size - max_size) <= 2:
-                score += 1
+            if not min_size <= team_size <= max_size:
+                continue
+            score += 3
             
             # Task complexity assessment
             complexity_indicators = [
@@ -262,6 +277,13 @@ class AgentPlanner:
     
     def design_agents(self, requirements: SystemRequirements, pattern: AgentArchitecturePattern) -> List[AgentDefinition]:
         """Design individual agents based on requirements and architecture pattern"""
+        if type(requirements.team_size) is not int or not 1 <= requirements.team_size <= 20:
+            raise ValueError("team_size must be an integer from 1 to 20")
+        if pattern not in self.pattern_heuristics:
+            raise ValueError(f"Unsupported architecture pattern: {pattern}")
+        minimum, maximum = self.pattern_heuristics[pattern]["team_size_range"]
+        if not minimum <= requirements.team_size <= maximum:
+            raise ValueError(f"Pattern {pattern.value} does not support team_size {requirements.team_size} ({minimum}–{maximum})")
         agents = []
         
         if pattern == AgentArchitecturePattern.SINGLE_AGENT:
@@ -330,12 +352,13 @@ class AgentPlanner:
         
         # Create specialist agents based on task domains
         task_domains = self._identify_task_domains(requirements.tasks)
-        for i, domain in enumerate(task_domains[:requirements.team_size - 1]):
+        for i in range(requirements.team_size - 1):
+            domain = task_domains[i] if i < len(task_domains) else f"general_{i + 1}"
             specialist = AgentDefinition(
                 name=f"{domain}_specialist",
                 role=f"{domain.title()} Specialist",
                 archetype=AgentRole.SPECIALIST,
-                responsibilities=[task for task in requirements.tasks if domain in task.lower()],
+                responsibilities=[task for task in requirements.tasks if domain in task.lower()] or requirements.tasks,
                 capabilities=[f"{domain}_expertise", "specialized_tools", "domain_knowledge"],
                 tools=self._select_tools_for_domain(domain),
                 communication_interfaces=["supervisor_messaging"],
@@ -355,7 +378,7 @@ class AgentPlanner:
         agents = []
         
         # Create peer agents with overlapping capabilities
-        agent_count = min(requirements.team_size, 10)  # Reasonable swarm size
+        agent_count = requirements.team_size
         base_capabilities = ["collaboration", "consensus", "adaptation", "peer_communication"]
         
         for i in range(agent_count):
@@ -383,9 +406,8 @@ class AgentPlanner:
         """Design hierarchical pattern agents"""
         agents = []
         
-        # Create management hierarchy
-        levels = min(3, requirements.team_size // 3)  # Reasonable hierarchy depth
-        agents_per_level = requirements.team_size // levels
+        # One executive, bounded teams of workers under real middle managers.
+        manager_count = max(1, (requirements.team_size - 1 + 3) // 4)
         
         # Top level manager
         manager = AgentDefinition(
@@ -403,7 +425,7 @@ class AgentPlanner:
         agents.append(manager)
         
         # Middle managers
-        for i in range(agents_per_level - 1):
+        for i in range(manager_count):
             middle_manager = AgentDefinition(
                 name=f"team_manager_{i+1}",
                 role=f"Team Manager #{i+1}",
@@ -431,7 +453,7 @@ class AgentPlanner:
                 communication_interfaces=["team_messaging"],
                 constraints={"task_focus": "single", "reporting_interval": "30min"},
                 success_criteria=["complete assigned tasks", "maintain quality", "meet deadlines"],
-                dependencies=[f"team_manager_{(i // 3) + 1}"]
+                dependencies=[f"team_manager_{(i % manager_count) + 1}"]
             )
             agents.append(worker)
         
@@ -443,6 +465,9 @@ class AgentPlanner:
         
         # Create sequential processing stages
         pipeline_stages = self._identify_pipeline_stages(requirements.tasks)
+        pipeline_stages = pipeline_stages[:requirements.team_size]
+        while len(pipeline_stages) < requirements.team_size:
+            pipeline_stages.append(f"processing_{len(pipeline_stages) + 1}")
         
         for i, stage in enumerate(pipeline_stages):
             agent = AgentDefinition(
@@ -866,7 +891,7 @@ def main():
         
         # Prepare output
         output_data = {
-            "architecture_design": asdict(design),
+            "architecture_design": serializable(design),
             "mermaid_diagram": mermaid_diagram,
             "implementation_roadmap": roadmap,
             "metadata": {
@@ -882,8 +907,13 @@ def main():
         
         if args.format in ["json", "both"]:
             with open(f"{output_prefix}.json", 'w') as f:
-                json.dump(output_data, f, indent=2, default=str)
+                json.dump(output_data, f, indent=2)
             print(f"JSON output written to {output_prefix}.json")
+
+        if args.format in ["yaml", "both"]:
+            with open(f"{output_prefix}.yaml", 'w') as f:
+                yaml.safe_dump(output_data, f, sort_keys=False, allow_unicode=True)
+            print(f"YAML output written to {output_prefix}.yaml")
         
         if args.format in ["both"]:
             # Also create separate files for key components

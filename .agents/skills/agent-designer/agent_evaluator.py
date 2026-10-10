@@ -63,7 +63,7 @@ class PerformanceMetrics:
     total_cost_usd: float
     average_cost_per_task: float
     cost_per_token: float
-    throughput_tasks_per_hour: float
+    throughput_tasks_per_hour: Optional[float]
     error_rate: float
     retry_rate: float
 
@@ -305,22 +305,17 @@ class AgentEvaluator:
         average_cost_per_task = total_cost / total_tasks if total_tasks > 0 else 0.0
         cost_per_token = total_cost / total_tokens if total_tokens > 0 else 0.0
         
-        # Calculate throughput (tasks per hour)
-        if logs and len(logs) > 1:
-            start_time = min(log.start_time for log in logs if log.start_time)
-            end_time = max(log.end_time for log in logs if log.end_time)
-            if start_time and end_time:
-                try:
-                    start_dt = datetime.fromisoformat(start_time.replace("Z", "+00:00"))
-                    end_dt = datetime.fromisoformat(end_time.replace("Z", "+00:00"))
-                    time_diff_hours = (end_dt - start_dt).total_seconds() / 3600
-                    throughput_tasks_per_hour = total_tasks / time_diff_hours if time_diff_hours > 0 else 0.0
-                except:
-                    throughput_tasks_per_hour = 0.0
-            else:
-                throughput_tasks_per_hour = 0.0
-        else:
-            throughput_tasks_per_hour = 0.0
+        # Incomplete or invalid timestamps cannot establish an observation window.
+        throughput_tasks_per_hour = None
+        if all(log.start_time and log.end_time for log in logs):
+            try:
+                starts = [datetime.fromisoformat(log.start_time.replace("Z", "+00:00")) for log in logs]
+                ends = [datetime.fromisoformat(log.end_time.replace("Z", "+00:00")) for log in logs]
+                time_diff_hours = (max(ends) - min(starts)).total_seconds() / 3600
+                if time_diff_hours > 0:
+                    throughput_tasks_per_hour = total_tasks / time_diff_hours
+            except (ValueError, TypeError):
+                pass
         
         error_rate = sum(1 for log in logs if log.error_details) / total_tasks if total_tasks > 0 else 0.0
         retry_rate = sum(1 for log in logs if log.retry_count > 0) / total_tasks if total_tasks > 0 else 0.0
@@ -538,7 +533,10 @@ class AgentEvaluator:
         # Tool usage bottlenecks
         tool_usage = self._analyze_tool_usage(logs)
         for tool, usage_stats in tool_usage.items():
-            if usage_stats.get("error_rate", 0) > 0.2:
+            if (usage_stats["error_rate"] is not None
+                    and usage_stats["outcome_observations"] == usage_stats["usage_count"]
+                    and usage_stats["unobserved_task_count"] == 0
+                    and usage_stats["error_rate"] > 0.2):
                 bottlenecks.append(BottleneckAnalysis(
                     bottleneck_type="tool",
                     location=tool,
@@ -546,7 +544,8 @@ class AgentEvaluator:
                     description=f"Tool {tool} has high error rate ({usage_stats['error_rate']:.1%})",
                     impact_on_performance={
                         "reliability_impact": usage_stats["error_rate"] * usage_stats["usage_count"],
-                        "retry_overhead": usage_stats.get("retry_count", 0) * 1000  # ms
+                        **({"retry_overhead": usage_stats["retry_count"] * 1000}
+                           if usage_stats["retry_count"] is not None else {})
                     },
                     affected_workflows=usage_stats.get("affected_workflows", []),
                     optimization_suggestions=[
@@ -627,36 +626,60 @@ class AgentEvaluator:
         return list(workflows)
     
     def _analyze_tool_usage(self, logs: List[ExecutionLog]) -> Dict[str, Dict[str, Any]]:
-        """Analyze tool usage patterns"""
+        """Analyze observed tool calls, keeping missing telemetry unknown."""
         tool_stats = defaultdict(lambda: {
             "usage_count": 0,
             "error_count": 0,
             "total_duration": 0,
+            "duration_observations": 0,
+            "outcome_observations": 0,
+            "retry_observations": 0,
+            "unobserved_task_count": 0,
             "affected_workflows": set(),
             "retry_count": 0
         })
         
         for log in logs:
-            for tool in log.tools_used:
+            observed_tools = set()
+            for action in log.actions:
+                if action.get("type") != "tool_call" or not action.get("tool_name"):
+                    continue
+                tool = action["tool_name"]
+                observed_tools.add(tool)
                 stats = tool_stats[tool]
                 stats["usage_count"] += 1
-                stats["total_duration"] += log.duration_ms
                 stats["affected_workflows"].add(log.task_type)
-                
-                if log.error_details:
+                duration = action.get("duration_ms")
+                if isinstance(duration, (int, float)) and not isinstance(duration, bool) and duration >= 0:
+                    stats["total_duration"] += duration
+                    stats["duration_observations"] += 1
+                if isinstance(action.get("success"), bool):
+                    stats["outcome_observations"] += 1
+                if action.get("success") is False:
                     stats["error_count"] += 1
-                if log.retry_count > 0:
-                    stats["retry_count"] += log.retry_count
+                retries = action.get("retry_count")
+                if isinstance(retries, int) and not isinstance(retries, bool) and retries >= 0:
+                    stats["retry_count"] += retries
+                    stats["retry_observations"] += 1
+
+            for tool in set(log.tools_used) - observed_tools:
+                stats = tool_stats[tool]
+                stats["unobserved_task_count"] += 1
+                stats["affected_workflows"].add(log.task_type)
         
         # Calculate derived metrics
         result = {}
         for tool, stats in tool_stats.items():
             result[tool] = {
                 "usage_count": stats["usage_count"],
-                "error_rate": stats["error_count"] / stats["usage_count"] if stats["usage_count"] > 0 else 0,
-                "avg_duration": stats["total_duration"] / stats["usage_count"] if stats["usage_count"] > 0 else 0,
+                "error_rate": stats["error_count"] / stats["outcome_observations"] if stats["outcome_observations"] else None,
+                "avg_duration": stats["total_duration"] / stats["duration_observations"] if stats["duration_observations"] else None,
+                "duration_observations": stats["duration_observations"],
+                "outcome_observations": stats["outcome_observations"],
+                "unobserved_task_count": stats["unobserved_task_count"],
                 "affected_workflows": list(stats["affected_workflows"]),
-                "retry_count": stats["retry_count"]
+                "retry_count": stats["retry_count"] if stats["retry_observations"] else None,
+                "retry_observations": stats["retry_observations"]
             }
         
         return result
@@ -778,6 +801,7 @@ class AgentEvaluator:
                     "latency_reduction": min(0.5, (system_metrics.average_duration_ms - 5000) / system_metrics.average_duration_ms),
                     "throughput_improvement": 1.5
                 },
+                estimated_cost_savings=None,
                 estimated_performance_gain=1.4,
                 implementation_steps=[
                     "Profile and optimize slow operations",
@@ -804,6 +828,7 @@ class AgentEvaluator:
                         "reliability_improvement": 1.1
                     },
                     estimated_cost_savings=system_metrics.total_cost_usd * (error_analysis.percentage / 100) * 0.5,
+                    estimated_performance_gain=None,
                     implementation_steps=error_analysis.suggested_fixes,
                     risks=["May require significant code changes"],
                     prerequisites=["Root cause analysis", "Testing framework"]
@@ -819,14 +844,15 @@ class AgentEvaluator:
                 description=bottleneck.description,
                 implementation_effort="medium",
                 expected_impact=bottleneck.estimated_improvement,
-                estimated_performance_gain=list(bottleneck.estimated_improvement.values())[0] if bottleneck.estimated_improvement else 1.1,
+                estimated_cost_savings=None,
+                estimated_performance_gain=None,
                 implementation_steps=bottleneck.optimization_suggestions,
                 risks=["System downtime during implementation", "Potential cascade effects"],
                 prerequisites=["Impact assessment", "Rollback plan"]
             ))
         
         # Scalability recommendations
-        if system_metrics.throughput_tasks_per_hour < 20:
+        if system_metrics.throughput_tasks_per_hour is not None and system_metrics.throughput_tasks_per_hour < 20:
             recommendations.append(OptimizationRecommendation(
                 category="scalability",
                 priority="medium",
@@ -837,6 +863,7 @@ class AgentEvaluator:
                     "throughput_improvement": 2.0,
                     "scalability_headroom": 5.0
                 },
+                estimated_cost_savings=None,
                 estimated_performance_gain=2.0,
                 implementation_steps=[
                     "Implement horizontal scaling for agents",
@@ -903,9 +930,10 @@ class AgentEvaluator:
         # Create summary
         summary = {
             "evaluation_period": {
-                "start_time": min(log.start_time for log in logs if log.start_time) if logs else None,
-                "end_time": max(log.end_time for log in logs if log.end_time) if logs else None,
-                "total_duration_hours": system_metrics.total_tasks / system_metrics.throughput_tasks_per_hour if system_metrics.throughput_tasks_per_hour > 0 else 0
+                "start_time": min((log.start_time for log in logs if log.start_time), default=None),
+                "end_time": max((log.end_time for log in logs if log.end_time), default=None),
+                "total_duration_hours": (system_metrics.total_tasks / system_metrics.throughput_tasks_per_hour
+                                         if system_metrics.throughput_tasks_per_hour else None)
             },
             "overall_health": self._assess_overall_health(system_metrics),
             "key_findings": self._extract_key_findings(system_metrics, error_analysis, bottleneck_analysis),
