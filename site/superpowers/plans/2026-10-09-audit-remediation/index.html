@@ -1016,6 +1016,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#результат-исполнения--09102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результат исполнения — 09.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1157,6 +1168,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#результат-исполнения--09102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результат исполнения — 09.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1206,72 +1228,92 @@
 source/{content-v4.json,deck-current.mjs,runtime-versions.json}; scripts/check_presentations.py; tests/test_presentations.py.
 <strong>Interfaces:</strong> Единый content-v4.json — вход генератора; checker проверяет ZIP/XML, count, notes и SHA256SUMS.</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Воспроизвести SHA/ZIP отказ v3; тест должен фиксировать integrity и восстановление.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Восстановить v3 из оригинала с ожидаемым hash, создать v4 с portable notes и 18-минутным порядком.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Документировать среду и полный путь текущей сборки; старые исходники оставить архивными.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Запустить checker и визуально проверить конечные слайды; checksum всех файлов — PASS.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Коммит законченного изменения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Воспроизвести SHA/ZIP отказ v3; тест должен фиксировать integrity и восстановление.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Восстановить v3 из оригинала с ожидаемым hash, создать v4 с portable notes и 18-минутным порядком.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Документировать среду и полный путь текущей сборки; старые исходники оставить архивными.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Запустить checker и визуально проверить конечные слайды; checksum всех файлов — PASS.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Коммит законченного изменения.</li>
 </ul>
 <h2 id="task-2-канонические-темы-и-экспериментальная-спецификация">Task 2: Канонические темы и экспериментальная спецификация</h2>
 <p><strong>Files:</strong> docs/{research.md,architecture.md,hotpotqa-protocol.md,research-overview.md,model-research.md,team.md,README.md,tau-bench-review.md};
 docs/{agent-architecture-detail,agent-pipeline}.{excalidraw,png}.
 <strong>Interfaces:</strong> Каноническая таблица тем в research; contracts и preflight gates в architecture; Hotpot-specific правила в hotpotqa-protocol.</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Заменить текущую тройку предложений и определить независимые primary contrasts.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Закрепить tagged outcomes, видимость tools, hook/provenance, метки и evaluator/statistics gates.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Согласовать модельные приоритеты, домен, стоимость и схематические обозначения.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Проверить Markdown, ссылки, MkDocs --strict и изображения.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Коммит законченного изменения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Заменить текущую тройку предложений и определить независимые primary contrasts.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Закрепить tagged outcomes, видимость tools, hook/provenance, метки и evaluator/statistics gates.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Согласовать модельные приоритеты, домен, стоимость и схематические обозначения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Проверить Markdown, ссылки, MkDocs --strict и изображения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Коммит законченного изменения.</li>
 </ul>
 <h2 id="task-3-tool-schema-generator">Task 3: Tool schema generator</h2>
 <p><strong>Files:</strong> .agents/skills/agent-designer/tool_schema_generator.py; tests/test_tool_schema_generator.py; requirements-tools.txt.
 <strong>Interfaces:</strong> Existing ToolDescription/generate_tool_schema; --validate проверяет metaschema и входные examples, сообщает отказ кодом 1.</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Написать tests для required object, UUID array, items, explicit formats и invalid examples.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Запустить их на baseline: ожидаются ошибки схем/сохранения типов и ложный успех --validate.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Исправить type/required/items handling и независимую JSON Schema validation.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Выполнить полный suite; sample schemas должны быть валидны, invalid input — отказ.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Коммит законченного изменения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Написать tests для required object, UUID array, items, explicit formats и invalid examples.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Запустить их на baseline: ожидаются ошибки схем/сохранения типов и ложный успех --validate.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Исправить type/required/items handling и независимую JSON Schema validation.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить полный suite; sample schemas должны быть валидны, invalid input — отказ.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Коммит законченного изменения.</li>
 </ul>
 <h2 id="task-4-planner">Task 4: Planner</h2>
 <p><strong>Files:</strong> .agents/skills/agent-designer/agent_planner.py; tests/test_agent_planner.py.
 <strong>Interfaces:</strong> Existing SystemRequirements/plan_system CLI; JSON enum.value; --format yaml создаёт prefix.yaml.</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Написать tests для hierarchical10, swarm20, team 1/2, enums и YAML roundtrip.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Запустить baseline: dangling dependency, 10 вместо 20 и отсутствие YAML должны быть обнаружены.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Исправить распределение/валидацию размера, сериализацию и YAML export.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Выполнить полный suite и CLI-примеры.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Коммит законченного изменения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Написать tests для hierarchical10, swarm20, team 1/2, enums и YAML roundtrip.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Запустить baseline: dangling dependency, 10 вместо 20 и отсутствие YAML должны быть обнаружены.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Исправить распределение/валидацию размера, сериализацию и YAML export.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить полный suite и CLI-примеры.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Коммит законченного изменения.</li>
 </ul>
 <h2 id="task-5-evaluator-samples-и-происхождение">Task 5: Evaluator, samples и происхождение</h2>
 <p><strong>Files:</strong> .agents/skills/agent-designer/{agent_evaluator.py,README.md,SOURCE.md,LICENSE,SKILL.md};
 expected_outputs/<em>.json; tests/test_agent_evaluator.py.
 </em><em>Interfaces:</em>* Existing generate_report; tool usage metrics берутся из actions, unknown telemetry маркируется явно.</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Написать tests штатного report и action-level counts/latency/error; запустить RED.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Исправить поля рекомендаций и расчёт tool metrics; сверить агрегаты sample.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Исправить README inputs и пересоздать expected_outputs текущими CLI.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Сверить исходную лицензию закреплённой ревизии, записать локальные изменения.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Выполнить полный suite и коммит законченного изменения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Написать tests штатного report и action-level counts/latency/error; запустить RED.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Исправить поля рекомендаций и расчёт tool metrics; сверить агрегаты sample.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Исправить README inputs и пересоздать expected_outputs текущими CLI.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Сверить исходную лицензию закреплённой ревизии, записать локальные изменения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить полный suite и коммит законченного изменения.</li>
 </ul>
 <h2 id="task-6-сайт-и-ci">Task 6: Сайт и CI</h2>
 <p><strong>Files:</strong> scripts/check_site.py; tests/test_site.py; .github/workflows/ci.yml; requirements-tools.txt; mkdocs.yml; site/<strong>.
 </strong>Interfaces:** Site checker сравнивает current build с tracked site; CI запускает tools tests, PPTX checker и site check.</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Регрессионная проверка missing architecture/hotpot pages должна отказать на baseline.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Добавить содержательную синхронизацию и проверки CI; пересобрать tracked site.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Выполнить unittest suite, Markdown/YAML, strict build, SHA/ZIP и git diff --check.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Проверить конечные Git blobs и коммит законченного изменения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Регрессионная проверка missing architecture/hotpot pages должна отказать на baseline.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Добавить содержательную синхронизацию и проверки CI; пересобрать tracked site.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить unittest suite, Markdown/YAML, strict build, SHA/ZIP и git diff --check.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Проверить конечные Git blobs и коммит законченного изменения.</li>
 </ul>
 <h2 id="task-7-итоговый-review-и-интеграция">Task 7: Итоговый review и интеграция</h2>
 <p><strong>Files:</strong> Итоговая ветка и описание PR; прогресс исполнения — в отдельном ledger.
 <strong>Interfaces:</strong> Reviewer получает spec/plan, diff от baseline и фактические проверки.</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" disabled/> Выполнить независимый whole-branch review; воспроизвести и исправить существенные замечания.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Повторить затронутые проверки после исправлений.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Проверить автора коммитов, чистоту дерева и актуальный родительский main.</li>
-<li class="task-list-item"><input type="checkbox" disabled/> Подготовить ветку/PR для review команды, без автоматического слияния.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить независимый whole-branch review; воспроизвести и исправить существенные замечания.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Повторить затронутые проверки после исправлений.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Проверить автора коммитов, чистоту дерева и актуальный родительский main.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Подготовить ветку/PR для review команды, без автоматического слияния.</li>
 </ul>
+<h2 id="результат-исполнения--09102026">Результат исполнения — 09.10.2026</h2>
+<p>Исправления охватывают F01–F23 из полного аудита: восстановлен v3, создана v4,
+согласованы темы и протоколы, обновлены диаграммы, исправлены три импортированных
+инструмента, их примеры и лицензия; добавлены проверки CI и пересобран site/.
+Для F11 документирована точная поддерживаемая среда сборки презентации;
+универсальная сборка вне Codex по-прежнему не заявлена.</p>
+<p>Q01–Q10 конкретизированы как проект спецификации. Домен, модели всех ролей,
+совместимый открытый evaluator, разбиение, допуски качества, повторы и бюджет
+остаются preflight gates до экспериментов. Рабочий исследовательский harness
+и научные результаты этим изменением не созданы.</p>
+<p>Проверки: 26 регрессионных тестов; ZIP/XML/relationships и полный SHA-256 manifest;
+строгая сборка MkDocs и побайтовое соответствие tracked site; YAML/Markdown lint;
+<code>git diff --check</code>. Финальный PPTX импортирован и отрендерен Artifact Tool;
+слайды просмотрены, геометрический валидатор не выдал findings/warnings.
+PowerPoint не использовался.</p>
+<p>Подготовка и технический review выполнены с участием AI. Независимый review
+выявил и перепроверил исправление фиктивной retry latency и несогласованных
+лимитов planner; оставшихся Critical/Important замечаний не найдено.
+Это не заменяет научный review команды и руководителя. Ветка подготовлена
+для PR в родительский main; автоматическое слияние не выполняется.</p>
 
 
 

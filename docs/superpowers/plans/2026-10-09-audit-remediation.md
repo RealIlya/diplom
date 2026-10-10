@@ -32,11 +32,11 @@
 source/{content-v4.json,deck-current.mjs,runtime-versions.json}; scripts/check_presentations.py; tests/test_presentations.py.
 **Interfaces:** Единый content-v4.json — вход генератора; checker проверяет ZIP/XML, count, notes и SHA256SUMS.
 
-- [ ] Воспроизвести SHA/ZIP отказ v3; тест должен фиксировать integrity и восстановление.
-- [ ] Восстановить v3 из оригинала с ожидаемым hash, создать v4 с portable notes и 18-минутным порядком.
-- [ ] Документировать среду и полный путь текущей сборки; старые исходники оставить архивными.
-- [ ] Запустить checker и визуально проверить конечные слайды; checksum всех файлов — PASS.
-- [ ] Коммит законченного изменения.
+- [x] Воспроизвести SHA/ZIP отказ v3; тест должен фиксировать integrity и восстановление.
+- [x] Восстановить v3 из оригинала с ожидаемым hash, создать v4 с portable notes и 18-минутным порядком.
+- [x] Документировать среду и полный путь текущей сборки; старые исходники оставить архивными.
+- [x] Запустить checker и визуально проверить конечные слайды; checksum всех файлов — PASS.
+- [x] Коммит законченного изменения.
 
 ## Task 2: Канонические темы и экспериментальная спецификация
 
@@ -44,33 +44,33 @@ source/{content-v4.json,deck-current.mjs,runtime-versions.json}; scripts/check_p
 docs/{agent-architecture-detail,agent-pipeline}.{excalidraw,png}.
 **Interfaces:** Каноническая таблица тем в research; contracts и preflight gates в architecture; Hotpot-specific правила в hotpotqa-protocol.
 
-- [ ] Заменить текущую тройку предложений и определить независимые primary contrasts.
-- [ ] Закрепить tagged outcomes, видимость tools, hook/provenance, метки и evaluator/statistics gates.
-- [ ] Согласовать модельные приоритеты, домен, стоимость и схематические обозначения.
-- [ ] Проверить Markdown, ссылки, MkDocs --strict и изображения.
-- [ ] Коммит законченного изменения.
+- [x] Заменить текущую тройку предложений и определить независимые primary contrasts.
+- [x] Закрепить tagged outcomes, видимость tools, hook/provenance, метки и evaluator/statistics gates.
+- [x] Согласовать модельные приоритеты, домен, стоимость и схематические обозначения.
+- [x] Проверить Markdown, ссылки, MkDocs --strict и изображения.
+- [x] Коммит законченного изменения.
 
 ## Task 3: Tool schema generator
 
 **Files:** .agents/skills/agent-designer/tool_schema_generator.py; tests/test_tool_schema_generator.py; requirements-tools.txt.
 **Interfaces:** Existing ToolDescription/generate_tool_schema; --validate проверяет metaschema и входные examples, сообщает отказ кодом 1.
 
-- [ ] Написать tests для required object, UUID array, items, explicit formats и invalid examples.
-- [ ] Запустить их на baseline: ожидаются ошибки схем/сохранения типов и ложный успех --validate.
-- [ ] Исправить type/required/items handling и независимую JSON Schema validation.
-- [ ] Выполнить полный suite; sample schemas должны быть валидны, invalid input — отказ.
-- [ ] Коммит законченного изменения.
+- [x] Написать tests для required object, UUID array, items, explicit formats и invalid examples.
+- [x] Запустить их на baseline: ожидаются ошибки схем/сохранения типов и ложный успех --validate.
+- [x] Исправить type/required/items handling и независимую JSON Schema validation.
+- [x] Выполнить полный suite; sample schemas должны быть валидны, invalid input — отказ.
+- [x] Коммит законченного изменения.
 
 ## Task 4: Planner
 
 **Files:** .agents/skills/agent-designer/agent_planner.py; tests/test_agent_planner.py.
 **Interfaces:** Existing SystemRequirements/plan_system CLI; JSON enum.value; --format yaml создаёт prefix.yaml.
 
-- [ ] Написать tests для hierarchical10, swarm20, team 1/2, enums и YAML roundtrip.
-- [ ] Запустить baseline: dangling dependency, 10 вместо 20 и отсутствие YAML должны быть обнаружены.
-- [ ] Исправить распределение/валидацию размера, сериализацию и YAML export.
-- [ ] Выполнить полный suite и CLI-примеры.
-- [ ] Коммит законченного изменения.
+- [x] Написать tests для hierarchical10, swarm20, team 1/2, enums и YAML roundtrip.
+- [x] Запустить baseline: dangling dependency, 10 вместо 20 и отсутствие YAML должны быть обнаружены.
+- [x] Исправить распределение/валидацию размера, сериализацию и YAML export.
+- [x] Выполнить полный suite и CLI-примеры.
+- [x] Коммит законченного изменения.
 
 ## Task 5: Evaluator, samples и происхождение
 
@@ -78,28 +78,53 @@ docs/{agent-architecture-detail,agent-pipeline}.{excalidraw,png}.
 expected_outputs/*.json; tests/test_agent_evaluator.py.
 **Interfaces:** Existing generate_report; tool usage metrics берутся из actions, unknown telemetry маркируется явно.
 
-- [ ] Написать tests штатного report и action-level counts/latency/error; запустить RED.
-- [ ] Исправить поля рекомендаций и расчёт tool metrics; сверить агрегаты sample.
-- [ ] Исправить README inputs и пересоздать expected_outputs текущими CLI.
-- [ ] Сверить исходную лицензию закреплённой ревизии, записать локальные изменения.
-- [ ] Выполнить полный suite и коммит законченного изменения.
+- [x] Написать tests штатного report и action-level counts/latency/error; запустить RED.
+- [x] Исправить поля рекомендаций и расчёт tool metrics; сверить агрегаты sample.
+- [x] Исправить README inputs и пересоздать expected_outputs текущими CLI.
+- [x] Сверить исходную лицензию закреплённой ревизии, записать локальные изменения.
+- [x] Выполнить полный suite и коммит законченного изменения.
 
 ## Task 6: Сайт и CI
 
 **Files:** scripts/check_site.py; tests/test_site.py; .github/workflows/ci.yml; requirements-tools.txt; mkdocs.yml; site/**.
 **Interfaces:** Site checker сравнивает current build с tracked site; CI запускает tools tests, PPTX checker и site check.
 
-- [ ] Регрессионная проверка missing architecture/hotpot pages должна отказать на baseline.
-- [ ] Добавить содержательную синхронизацию и проверки CI; пересобрать tracked site.
-- [ ] Выполнить unittest suite, Markdown/YAML, strict build, SHA/ZIP и git diff --check.
-- [ ] Проверить конечные Git blobs и коммит законченного изменения.
+- [x] Регрессионная проверка missing architecture/hotpot pages должна отказать на baseline.
+- [x] Добавить содержательную синхронизацию и проверки CI; пересобрать tracked site.
+- [x] Выполнить unittest suite, Markdown/YAML, strict build, SHA/ZIP и git diff --check.
+- [x] Проверить конечные Git blobs и коммит законченного изменения.
 
 ## Task 7: Итоговый review и интеграция
 
 **Files:** Итоговая ветка и описание PR; прогресс исполнения — в отдельном ledger.
 **Interfaces:** Reviewer получает spec/plan, diff от baseline и фактические проверки.
 
-- [ ] Выполнить независимый whole-branch review; воспроизвести и исправить существенные замечания.
-- [ ] Повторить затронутые проверки после исправлений.
-- [ ] Проверить автора коммитов, чистоту дерева и актуальный родительский main.
-- [ ] Подготовить ветку/PR для review команды, без автоматического слияния.
+- [x] Выполнить независимый whole-branch review; воспроизвести и исправить существенные замечания.
+- [x] Повторить затронутые проверки после исправлений.
+- [x] Проверить автора коммитов, чистоту дерева и актуальный родительский main.
+- [x] Подготовить ветку/PR для review команды, без автоматического слияния.
+
+## Результат исполнения — 09.10.2026
+
+Исправления охватывают F01–F23 из полного аудита: восстановлен v3, создана v4,
+согласованы темы и протоколы, обновлены диаграммы, исправлены три импортированных
+инструмента, их примеры и лицензия; добавлены проверки CI и пересобран site/.
+Для F11 документирована точная поддерживаемая среда сборки презентации;
+универсальная сборка вне Codex по-прежнему не заявлена.
+
+Q01–Q10 конкретизированы как проект спецификации. Домен, модели всех ролей,
+совместимый открытый evaluator, разбиение, допуски качества, повторы и бюджет
+остаются preflight gates до экспериментов. Рабочий исследовательский harness
+и научные результаты этим изменением не созданы.
+
+Проверки: 26 регрессионных тестов; ZIP/XML/relationships и полный SHA-256 manifest;
+строгая сборка MkDocs и побайтовое соответствие tracked site; YAML/Markdown lint;
+`git diff --check`. Финальный PPTX импортирован и отрендерен Artifact Tool;
+слайды просмотрены, геометрический валидатор не выдал findings/warnings.
+PowerPoint не использовался.
+
+Подготовка и технический review выполнены с участием AI. Независимый review
+выявил и перепроверил исправление фиктивной retry latency и несогласованных
+лимитов planner; оставшихся Critical/Important замечаний не найдено.
+Это не заменяет научный review команды и руководителя. Ветка подготовлена
+для PR в родительский main; автоматическое слияние не выполняется.
