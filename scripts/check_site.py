@@ -2,10 +2,23 @@
 
 import argparse
 import filecmp
+import gzip
 import subprocess
 import sys
 import tempfile
+import zlib
 from pathlib import Path
+
+
+def files_match(name: str, fresh: Path, tracked: Path) -> bool:
+    if name == "sitemap.xml.gz":
+        # MkDocs writes the build timestamp into the gzip header.
+        # Compare the XML payload while still rejecting corrupt archives.
+        try:
+            return gzip.decompress(fresh.read_bytes()) == gzip.decompress(tracked.read_bytes())
+        except (OSError, EOFError, zlib.error):
+            return False
+    return filecmp.cmp(fresh, tracked, shallow=False)
 
 
 def compare_directories(fresh: Path, tracked: Path) -> list[str]:
@@ -16,7 +29,7 @@ def compare_directories(fresh: Path, tracked: Path) -> list[str]:
     differences += [
         f"different: {name}"
         for name in sorted(fresh_files.keys() & tracked_files.keys())
-        if not filecmp.cmp(fresh_files[name], tracked_files[name], shallow=False)
+        if not files_match(name, fresh_files[name], tracked_files[name])
     ]
     return differences
 

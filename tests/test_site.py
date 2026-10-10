@@ -1,3 +1,5 @@
+import gzip
+import io
 import tempfile
 import unittest
 from pathlib import Path
@@ -21,6 +23,37 @@ class SiteSyncTests(unittest.TestCase):
 
             self.assertIn("missing: architecture/index.html", differences)
             self.assertIn("different: search/search_index.json", differences)
+
+    def test_sitemap_gzip_metadata_does_not_make_site_stale(self):
+        with tempfile.TemporaryDirectory() as temp:
+            fresh, tracked = Path(temp) / "fresh", Path(temp) / "tracked"
+            payload = b"<urlset><url>https://example.org/</url></urlset>"
+            for root, mtime, filename in ((fresh, 0, "sitemap.xml"), (tracked, 123, "old.xml")):
+                root.mkdir()
+                data = io.BytesIO()
+                with gzip.GzipFile(filename=filename, mode="wb", fileobj=data, mtime=mtime) as archive:
+                    archive.write(payload)
+                (root / "sitemap.xml.gz").write_bytes(data.getvalue())
+            self.assertNotEqual(
+                (fresh / "sitemap.xml.gz").read_bytes(), (tracked / "sitemap.xml.gz").read_bytes()
+            )
+            self.assertEqual(compare_directories(fresh, tracked), [])
+
+    def test_changed_sitemap_payload_is_stale(self):
+        with tempfile.TemporaryDirectory() as temp:
+            fresh, tracked = Path(temp) / "fresh", Path(temp) / "tracked"
+            for root, payload in ((fresh, b"<urlset/>"), (tracked, b"<urlset><url/></urlset>")):
+                root.mkdir()
+                (root / "sitemap.xml.gz").write_bytes(gzip.compress(payload, mtime=0))
+            self.assertEqual(compare_directories(fresh, tracked), ["different: sitemap.xml.gz"])
+
+    def test_identical_corrupt_sitemap_archives_are_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            fresh, tracked = Path(temp) / "fresh", Path(temp) / "tracked"
+            for root in (fresh, tracked):
+                root.mkdir()
+                (root / "sitemap.xml.gz").write_bytes(gzip.compress(b"<urlset/>", mtime=0)[:-4])
+            self.assertEqual(compare_directories(fresh, tracked), ["different: sitemap.xml.gz"])
 
     def test_identical_tree_is_current(self):
         with tempfile.TemporaryDirectory() as temp:
