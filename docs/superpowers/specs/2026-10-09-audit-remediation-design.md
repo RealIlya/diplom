@@ -46,4 +46,3 @@ Baseline: родительский main b20c917fd800b16f757ae5af7a557f10bd71c535
 Невалидные nested object schemas; массивы с identifier в описании; размеры team 1/2/10/20;
 отсутствующие action telemetry; повреждённый PPTX, локальные notes paths и устаревшие site routes.
 Ни один исправленный imported tool не выдаётся за экспериментальный harness.
-
