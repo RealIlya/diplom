@@ -430,6 +430,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../model-research/" class="md-nav__link">
         
   
@@ -760,6 +816,207 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проект исправлений
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Проект исправлений
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дизайн аудита
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1075,8 +1332,9 @@ blob SHA из публичного дерева GitHub. Код бенчмарк�
 См. <a href="https://github.com/sierra-research/tau2-bench/blob/5bfa7e37b36656b37dc6d022156be6563c1007f3/src/tau2/domains/banking_knowledge/retrieval.py">retrieval.py</a>.</p>
 <p>Предложение минимальной интеграции: сохранить штатные среду, симулятор и
 оценивание, обернуть наш контроллер в HalfDuplexAgent, отдельно подключить
-заменяемый обработчик поиска при необходимости. Jev/Laya применяются
-в выбранном узле; одного изменения имени <code>agent-llm</code> недостаточно для
+заменяемый обработчик поиска при необходимости. Исполняемый кандидат KEV
+применяется в выбранном узле; Jev остаётся только в обзоре, а Laya
+первой проверяется в HotpotQA. Одного изменения имени <code>agent-llm</code> недостаточно для
 превращения типизированной модели в полноценного диалогового агента.</p>
 <h3 id="практические-ограничения">Практические ограничения</h3>
 <ol>
@@ -1116,7 +1374,10 @@ retrieval — умеренная; корректный сравнительны�
 пилота <code>banking_knowledge</code> с одним фиксированным retrieval. Выделять основной
 узел после проверки его доли в ошибках и затратах. Для сравнения методов
 reranking сохранять исходного кандидатообразователя и одинаковый бюджет.</p>
-<p>Основной стенд предлагается <code>banking_knowledge</code>; retail — возможный контроль
+<p>Основной стенд <strong>условно</strong> предлагается <code>banking_knowledge</code> после проверки
+открытого симулятора, полной оценки включая обязательный <code>NL_ASSERTION</code>,
+информативности baseline и бюджета по <a href="../architecture/#7-протокол-сравнения-и-статистика">preflight</a>;
+retail — возможный контроль
 переноса. Сначала baseline и один узел, затем расширения по результатам.
 Полная серия из четырёх вариантов на 97 задачах с четырьмя повторами —
 1 552 диалога, не 1 552 модельных вызова. Денежную оценку можно получить

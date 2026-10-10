@@ -20,7 +20,7 @@ nav:
       - Научные источники: sources.md
   - Подробные материалы:
       - Постановка и протокол: research.md
-      - Архитектура v0.2: architecture.md
+      - Архитектура v0.3: architecture.md
       - Протокол HotpotQA: hotpotqa-protocol.md
       - Модели: model-research.md
       - Стенд τ-bench: tau-bench-review.md
@@ -31,6 +31,9 @@ nav:
       - Доменный контекст: agents/domain.md
       - Задачи проекта: agents/issue-tracker.md
       - Статусы триажа: agents/triage-labels.md
+  - Проект исправлений:
+      - Дизайн аудита: superpowers/specs/2026-10-09-audit-remediation-design.md
+      - План реализации: superpowers/plans/2026-10-09-audit-remediation.md
 
 plugins:
   - search:
