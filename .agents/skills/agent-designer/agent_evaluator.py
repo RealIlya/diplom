@@ -543,9 +543,7 @@ class AgentEvaluator:
                     severity="high" if usage_stats["error_rate"] > 0.4 else "medium",
                     description=f"Tool {tool} has high error rate ({usage_stats['error_rate']:.1%})",
                     impact_on_performance={
-                        "reliability_impact": usage_stats["error_rate"] * usage_stats["usage_count"],
-                        **({"retry_overhead": usage_stats["retry_count"] * 1000}
-                           if usage_stats["retry_count"] is not None else {})
+                        "reliability_impact": usage_stats["error_rate"] * usage_stats["usage_count"]
                     },
                     affected_workflows=usage_stats.get("affected_workflows", []),
                     optimization_suggestions=[

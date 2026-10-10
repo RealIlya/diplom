@@ -33,6 +33,20 @@ def log(task_id, *, actions=None, tools_used=None, start="2024-01-01T00:00:00Z",
 
 
 class AgentEvaluatorTests(unittest.TestCase):
+    def test_retry_count_does_not_invent_retry_latency(self):
+        evaluator = MODULE.AgentEvaluator()
+        raw = log('retry_without_duration', actions=[
+            {'type': 'tool_call', 'tool_name': 'search', 'duration_ms': 7,
+             'success': False, 'retry_count': 2},
+        ], tools_used=['search'])
+        logs = evaluator.parse_execution_logs([raw])
+        report = evaluator.generate_report(logs)
+        usage = report.tool_usage_analysis['search']
+        self.assertEqual(usage['retry_count'], 2)
+        self.assertEqual(usage['avg_duration'], 7)
+        bottleneck = next(b for b in report.bottleneck_analysis if b.bottleneck_type == 'tool')
+        self.assertNotIn('retry_overhead', bottleneck.impact_on_performance)
+
     def test_sample_cli_generates_complete_report(self):
         """The distributed sample must be consumable without a constructor error."""
         with tempfile.TemporaryDirectory() as directory:

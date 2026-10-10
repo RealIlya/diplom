@@ -117,7 +117,7 @@ The planner automatically selects from these patterns based on requirements:
 - **Single Agent**: Simple, focused tasks (1 agent)
 - **Supervisor**: Hierarchical delegation (2-8 agents)
 - **Swarm**: Peer-to-peer collaboration (3-20 agents)
-- **Hierarchical**: Multi-level management (5-50 agents)
+- **Hierarchical**: Multi-level management (5-20 agents)
 - **Pipeline**: Sequential processing (3-15 agents)
 
 ### Tool Schema Generator
@@ -305,7 +305,7 @@ Options:
 
 #### Hierarchical  
 - **Best for**: Large-scale operations with organizational structure
-- **Team size**: 5-50 agents
+- **Team size**: 5-20 agents
 - **Complexity**: Very High
 - **Examples**: Enterprise workflows, complex business processes
 
@@ -404,7 +404,7 @@ response = client.messages.create(
 ### Common Issues
 
 **"No valid architecture pattern found"**
-- Check that team_size is reasonable (1-50)
+- Check that team_size is an integer in the supported range (1-20)
 - Ensure tasks list is not empty
 - Verify performance_requirements are valid
 

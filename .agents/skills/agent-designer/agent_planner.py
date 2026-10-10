@@ -203,7 +203,7 @@ class AgentPlanner:
                 "scaling_limit": "high"
             },
             AgentArchitecturePattern.HIERARCHICAL: {
-                "team_size_range": (5, 50),
+                "team_size_range": (5, 20),
                 "task_complexity": "very high",
                 "coordination_overhead": "medium",
                 "suitable_for": ["large organizations", "complex workflows", "enterprise systems"],
