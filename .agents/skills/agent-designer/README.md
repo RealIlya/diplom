@@ -16,6 +16,10 @@ The Agent Designer skill includes three core components:
 
 ## Quick Start
 
+From the repository root, install the tools' dependencies with
+`python -m pip install -r requirements-tools.txt`, then run the commands below
+from `.agents/skills/agent-designer`.
+
 ### 1. Design a Multi-Agent Architecture
 
 ```bash
@@ -84,7 +88,9 @@ Create a JSON file with system requirements:
   "safety_requirements": [
     "Input validation and sanitization",
     "Output content filtering"
-  ]
+  ],
+  "integration_requirements": ["REST API"],
+  "scale_requirements": {"initial_users": 10}
 }
 ```
 
@@ -95,7 +101,7 @@ python agent_planner.py <input_file> [OPTIONS]
 
 Options:
   -o, --output PREFIX    Output file prefix (default: agent_architecture)
-  --format FORMAT        Output format: json, both (default: both)
+  --format FORMAT        Output format: json, yaml, both (default: both)
 ```
 
 #### Output Files
@@ -111,7 +117,7 @@ The planner automatically selects from these patterns based on requirements:
 - **Single Agent**: Simple, focused tasks (1 agent)
 - **Supervisor**: Hierarchical delegation (2-8 agents)
 - **Swarm**: Peer-to-peer collaboration (3-20 agents)
-- **Hierarchical**: Multi-level management (5-50 agents)
+- **Hierarchical**: Multi-level management (5-20 agents)
 - **Pipeline**: Sequential processing (3-15 agents)
 
 ### Tool Schema Generator
@@ -150,7 +156,16 @@ Create a JSON file with tool descriptions:
       "idempotent": true,
       "rate_limits": {
         "requests_per_minute": 60
-      }
+      },
+      "dependencies": [],
+      "examples": [
+        {
+          "description": "Basic tool call",
+          "input": {"parameter_name": "example1"},
+          "expected_output": {"result_field": {}}
+        }
+      ],
+      "security_requirements": []
     }
   ]
 }
@@ -290,7 +305,7 @@ Options:
 
 #### Hierarchical  
 - **Best for**: Large-scale operations with organizational structure
-- **Team size**: 5-50 agents
+- **Team size**: 5-20 agents
 - **Complexity**: Very High
 - **Examples**: Enterprise workflows, complex business processes
 
@@ -389,7 +404,7 @@ response = client.messages.create(
 ### Common Issues
 
 **"No valid architecture pattern found"**
-- Check that team_size is reasonable (1-50)
+- Check that team_size is an integer in the supported range (1-20)
 - Ensure tasks list is not empty
 - Verify performance_requirements are valid
 
@@ -421,7 +436,9 @@ This skill is part of the claude-skills repository. To contribute:
 
 ## License
 
-This project is licensed under the MIT License - see the main repository for details.
+The imported toolkit is distributed under MIT with the Commons Clause License
+Condition v1.0; see [LICENSE](LICENSE) and [SOURCE.md](SOURCE.md) for the
+upstream notice, pinned revision, and local change record.
 
 ## Support
 

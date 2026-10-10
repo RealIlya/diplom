@@ -1,118 +1,29 @@
 {
   "architecture_design": {
-    "pattern": "supervisor",
+    "pattern": "swarm",
     "agents": [
       {
-        "name": "supervisor_agent",
-        "role": "Task Coordinator and Quality Controller",
-        "archetype": "coordinator",
-        "responsibilities": [
-          "task_decomposition",
-          "delegation",
-          "progress_monitoring",
-          "quality_assurance",
-          "result_aggregation"
-        ],
-        "capabilities": [
-          "planning",
-          "coordination",
-          "evaluation",
-          "decision_making"
-        ],
-        "tools": [
-          {
-            "name": "file_manager",
-            "description": "Manage files and directories",
-            "input_schema": {
-              "type": "object",
-              "properties": {
-                "action": {
-                  "type": "string"
-                },
-                "path": {
-                  "type": "string"
-                }
-              }
-            },
-            "output_schema": {
-              "type": "object",
-              "properties": {
-                "success": {
-                  "type": "boolean"
-                },
-                "content": {
-                  "type": "string"
-                }
-              }
-            },
-            "capabilities": [
-              "file_operations",
-              "data_management"
-            ],
-            "reliability": "high",
-            "latency": "low"
-          },
-          {
-            "name": "data_analyzer",
-            "description": "Analyze and process data",
-            "input_schema": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "type": "object"
-                },
-                "analysis_type": {
-                  "type": "string"
-                }
-              }
-            },
-            "output_schema": {
-              "type": "object",
-              "properties": {
-                "insights": {
-                  "type": "array"
-                },
-                "metrics": {
-                  "type": "object"
-                }
-              }
-            },
-            "capabilities": [
-              "data_analysis",
-              "statistics",
-              "visualization"
-            ],
-            "reliability": "high",
-            "latency": "medium"
-          }
-        ],
-        "communication_interfaces": [
-          "user_interface",
-          "agent_messaging"
-        ],
-        "constraints": {
-          "max_concurrent_supervisions": 5,
-          "decision_timeout": "30s"
-        },
-        "success_criteria": [
-          "successful task completion",
-          "optimal resource utilization",
-          "quality standards met"
-        ],
-        "dependencies": []
-      },
-      {
-        "name": "research_specialist",
-        "role": "Research Specialist",
+        "name": "swarm_agent_1",
+        "role": "Collaborative Worker #1",
         "archetype": "specialist",
         "responsibilities": [
           "Conduct multi-source web research on specified topics",
-          "Handle real-time information updates"
+          "Analyze and synthesize information from various sources",
+          "Perform data processing and statistical analysis",
+          "Generate visualizations and charts from data",
+          "Create comprehensive written reports",
+          "Fact-check and validate information accuracy",
+          "Coordinate parallel research streams",
+          "Handle real-time information updates",
+          "Manage research project timelines",
+          "Provide interactive research assistance"
         ],
         "capabilities": [
-          "research_expertise",
-          "specialized_tools",
-          "domain_knowledge"
+          "collaboration",
+          "consensus",
+          "adaptation",
+          "peer_communication",
+          "specialization_0"
         ],
         "tools": [
           {
@@ -142,15 +53,15 @@
             "latency": "medium"
           },
           {
-            "name": "data_analyzer",
-            "description": "Analyze and process data",
+            "name": "code_executor",
+            "description": "Execute code in various languages",
             "input_schema": {
               "type": "object",
               "properties": {
-                "data": {
-                  "type": "object"
+                "language": {
+                  "type": "string"
                 },
-                "analysis_type": {
+                "code": {
                   "type": "string"
                 }
               }
@@ -158,54 +69,54 @@
             "output_schema": {
               "type": "object",
               "properties": {
-                "insights": {
-                  "type": "array"
+                "result": {
+                  "type": "string"
                 },
-                "metrics": {
-                  "type": "object"
+                "error": {
+                  "type": "string"
                 }
               }
             },
             "capabilities": [
-              "data_analysis",
-              "statistics",
-              "visualization"
+              "code_execution",
+              "testing",
+              "automation"
             ],
             "reliability": "high",
-            "latency": "medium"
-          }
-        ],
-        "communication_interfaces": [
-          "supervisor_messaging"
-        ],
-        "constraints": {
-          "domain_scope": "research",
-          "task_queue_size": 10
-        },
-        "success_criteria": [
-          "excel in research tasks",
-          "maintain domain expertise",
-          "provide quality output"
-        ],
-        "dependencies": [
-          "supervisor_agent"
-        ]
-      },
-      {
-        "name": "data_specialist",
-        "role": "Data Specialist",
-        "archetype": "specialist",
-        "responsibilities": [
-          "Analyze and synthesize information from various sources",
-          "Perform data processing and statistical analysis",
-          "Generate visualizations and charts from data"
-        ],
-        "capabilities": [
-          "data_expertise",
-          "specialized_tools",
-          "domain_knowledge"
-        ],
-        "tools": [
+            "latency": "low"
+          },
+          {
+            "name": "file_manager",
+            "description": "Manage files and directories",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "file_operations",
+              "data_management"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
           {
             "name": "data_analyzer",
             "description": "Analyze and process data",
@@ -240,6 +151,148 @@
             "latency": "medium"
           },
           {
+            "name": "api_client",
+            "description": "Make API calls to external services",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "response": {
+                  "type": "object"
+                },
+                "status": {
+                  "type": "integer"
+                }
+              }
+            },
+            "capabilities": [
+              "integration",
+              "external_services"
+            ],
+            "reliability": "medium",
+            "latency": "medium"
+          }
+        ],
+        "communication_interfaces": [
+          "peer_messaging",
+          "broadcast",
+          "consensus_protocol"
+        ],
+        "constraints": {
+          "peer_discovery_timeout": "10s",
+          "consensus_threshold": 0.6,
+          "max_retries": 3
+        },
+        "success_criteria": [
+          "contribute to group goals",
+          "maintain peer relationships",
+          "adapt to failures"
+        ],
+        "dependencies": [
+          "swarm_agent_2",
+          "swarm_agent_3",
+          "swarm_agent_4",
+          "swarm_agent_5",
+          "swarm_agent_6"
+        ]
+      },
+      {
+        "name": "swarm_agent_2",
+        "role": "Collaborative Worker #2",
+        "archetype": "specialist",
+        "responsibilities": [
+          "Conduct multi-source web research on specified topics",
+          "Analyze and synthesize information from various sources",
+          "Perform data processing and statistical analysis",
+          "Generate visualizations and charts from data",
+          "Create comprehensive written reports",
+          "Fact-check and validate information accuracy",
+          "Coordinate parallel research streams",
+          "Handle real-time information updates",
+          "Manage research project timelines",
+          "Provide interactive research assistance"
+        ],
+        "capabilities": [
+          "collaboration",
+          "consensus",
+          "adaptation",
+          "peer_communication",
+          "specialization_1"
+        ],
+        "tools": [
+          {
+            "name": "web_search",
+            "description": "Search the web for information",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "results": {
+                  "type": "array"
+                }
+              }
+            },
+            "capabilities": [
+              "research",
+              "information_gathering"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "code_executor",
+            "description": "Execute code in various languages",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "language": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "code_execution",
+              "testing",
+              "automation"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
+          {
             "name": "file_manager",
             "description": "Manage files and directories",
             "input_schema": {
@@ -270,57 +323,1168 @@
             ],
             "reliability": "high",
             "latency": "low"
+          },
+          {
+            "name": "data_analyzer",
+            "description": "Analyze and process data",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object"
+                },
+                "analysis_type": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "insights": {
+                  "type": "array"
+                },
+                "metrics": {
+                  "type": "object"
+                }
+              }
+            },
+            "capabilities": [
+              "data_analysis",
+              "statistics",
+              "visualization"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "api_client",
+            "description": "Make API calls to external services",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "response": {
+                  "type": "object"
+                },
+                "status": {
+                  "type": "integer"
+                }
+              }
+            },
+            "capabilities": [
+              "integration",
+              "external_services"
+            ],
+            "reliability": "medium",
+            "latency": "medium"
           }
         ],
         "communication_interfaces": [
-          "supervisor_messaging"
+          "peer_messaging",
+          "broadcast",
+          "consensus_protocol"
         ],
         "constraints": {
-          "domain_scope": "data",
-          "task_queue_size": 10
+          "peer_discovery_timeout": "10s",
+          "consensus_threshold": 0.6,
+          "max_retries": 3
         },
         "success_criteria": [
-          "excel in data tasks",
-          "maintain domain expertise",
-          "provide quality output"
+          "contribute to group goals",
+          "maintain peer relationships",
+          "adapt to failures"
         ],
         "dependencies": [
-          "supervisor_agent"
+          "swarm_agent_1",
+          "swarm_agent_3",
+          "swarm_agent_4",
+          "swarm_agent_5",
+          "swarm_agent_6"
+        ]
+      },
+      {
+        "name": "swarm_agent_3",
+        "role": "Collaborative Worker #3",
+        "archetype": "specialist",
+        "responsibilities": [
+          "Conduct multi-source web research on specified topics",
+          "Analyze and synthesize information from various sources",
+          "Perform data processing and statistical analysis",
+          "Generate visualizations and charts from data",
+          "Create comprehensive written reports",
+          "Fact-check and validate information accuracy",
+          "Coordinate parallel research streams",
+          "Handle real-time information updates",
+          "Manage research project timelines",
+          "Provide interactive research assistance"
+        ],
+        "capabilities": [
+          "collaboration",
+          "consensus",
+          "adaptation",
+          "peer_communication",
+          "specialization_2"
+        ],
+        "tools": [
+          {
+            "name": "web_search",
+            "description": "Search the web for information",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "results": {
+                  "type": "array"
+                }
+              }
+            },
+            "capabilities": [
+              "research",
+              "information_gathering"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "code_executor",
+            "description": "Execute code in various languages",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "language": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "code_execution",
+              "testing",
+              "automation"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
+          {
+            "name": "file_manager",
+            "description": "Manage files and directories",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "file_operations",
+              "data_management"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
+          {
+            "name": "data_analyzer",
+            "description": "Analyze and process data",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object"
+                },
+                "analysis_type": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "insights": {
+                  "type": "array"
+                },
+                "metrics": {
+                  "type": "object"
+                }
+              }
+            },
+            "capabilities": [
+              "data_analysis",
+              "statistics",
+              "visualization"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "api_client",
+            "description": "Make API calls to external services",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "response": {
+                  "type": "object"
+                },
+                "status": {
+                  "type": "integer"
+                }
+              }
+            },
+            "capabilities": [
+              "integration",
+              "external_services"
+            ],
+            "reliability": "medium",
+            "latency": "medium"
+          }
+        ],
+        "communication_interfaces": [
+          "peer_messaging",
+          "broadcast",
+          "consensus_protocol"
+        ],
+        "constraints": {
+          "peer_discovery_timeout": "10s",
+          "consensus_threshold": 0.6,
+          "max_retries": 3
+        },
+        "success_criteria": [
+          "contribute to group goals",
+          "maintain peer relationships",
+          "adapt to failures"
+        ],
+        "dependencies": [
+          "swarm_agent_1",
+          "swarm_agent_2",
+          "swarm_agent_4",
+          "swarm_agent_5",
+          "swarm_agent_6"
+        ]
+      },
+      {
+        "name": "swarm_agent_4",
+        "role": "Collaborative Worker #4",
+        "archetype": "specialist",
+        "responsibilities": [
+          "Conduct multi-source web research on specified topics",
+          "Analyze and synthesize information from various sources",
+          "Perform data processing and statistical analysis",
+          "Generate visualizations and charts from data",
+          "Create comprehensive written reports",
+          "Fact-check and validate information accuracy",
+          "Coordinate parallel research streams",
+          "Handle real-time information updates",
+          "Manage research project timelines",
+          "Provide interactive research assistance"
+        ],
+        "capabilities": [
+          "collaboration",
+          "consensus",
+          "adaptation",
+          "peer_communication",
+          "specialization_0"
+        ],
+        "tools": [
+          {
+            "name": "web_search",
+            "description": "Search the web for information",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "results": {
+                  "type": "array"
+                }
+              }
+            },
+            "capabilities": [
+              "research",
+              "information_gathering"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "code_executor",
+            "description": "Execute code in various languages",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "language": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "code_execution",
+              "testing",
+              "automation"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
+          {
+            "name": "file_manager",
+            "description": "Manage files and directories",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "file_operations",
+              "data_management"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
+          {
+            "name": "data_analyzer",
+            "description": "Analyze and process data",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object"
+                },
+                "analysis_type": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "insights": {
+                  "type": "array"
+                },
+                "metrics": {
+                  "type": "object"
+                }
+              }
+            },
+            "capabilities": [
+              "data_analysis",
+              "statistics",
+              "visualization"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "api_client",
+            "description": "Make API calls to external services",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "response": {
+                  "type": "object"
+                },
+                "status": {
+                  "type": "integer"
+                }
+              }
+            },
+            "capabilities": [
+              "integration",
+              "external_services"
+            ],
+            "reliability": "medium",
+            "latency": "medium"
+          }
+        ],
+        "communication_interfaces": [
+          "peer_messaging",
+          "broadcast",
+          "consensus_protocol"
+        ],
+        "constraints": {
+          "peer_discovery_timeout": "10s",
+          "consensus_threshold": 0.6,
+          "max_retries": 3
+        },
+        "success_criteria": [
+          "contribute to group goals",
+          "maintain peer relationships",
+          "adapt to failures"
+        ],
+        "dependencies": [
+          "swarm_agent_1",
+          "swarm_agent_2",
+          "swarm_agent_3",
+          "swarm_agent_5",
+          "swarm_agent_6"
+        ]
+      },
+      {
+        "name": "swarm_agent_5",
+        "role": "Collaborative Worker #5",
+        "archetype": "specialist",
+        "responsibilities": [
+          "Conduct multi-source web research on specified topics",
+          "Analyze and synthesize information from various sources",
+          "Perform data processing and statistical analysis",
+          "Generate visualizations and charts from data",
+          "Create comprehensive written reports",
+          "Fact-check and validate information accuracy",
+          "Coordinate parallel research streams",
+          "Handle real-time information updates",
+          "Manage research project timelines",
+          "Provide interactive research assistance"
+        ],
+        "capabilities": [
+          "collaboration",
+          "consensus",
+          "adaptation",
+          "peer_communication",
+          "specialization_1"
+        ],
+        "tools": [
+          {
+            "name": "web_search",
+            "description": "Search the web for information",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "results": {
+                  "type": "array"
+                }
+              }
+            },
+            "capabilities": [
+              "research",
+              "information_gathering"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "code_executor",
+            "description": "Execute code in various languages",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "language": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "code_execution",
+              "testing",
+              "automation"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
+          {
+            "name": "file_manager",
+            "description": "Manage files and directories",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "file_operations",
+              "data_management"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
+          {
+            "name": "data_analyzer",
+            "description": "Analyze and process data",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object"
+                },
+                "analysis_type": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "insights": {
+                  "type": "array"
+                },
+                "metrics": {
+                  "type": "object"
+                }
+              }
+            },
+            "capabilities": [
+              "data_analysis",
+              "statistics",
+              "visualization"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "api_client",
+            "description": "Make API calls to external services",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "response": {
+                  "type": "object"
+                },
+                "status": {
+                  "type": "integer"
+                }
+              }
+            },
+            "capabilities": [
+              "integration",
+              "external_services"
+            ],
+            "reliability": "medium",
+            "latency": "medium"
+          }
+        ],
+        "communication_interfaces": [
+          "peer_messaging",
+          "broadcast",
+          "consensus_protocol"
+        ],
+        "constraints": {
+          "peer_discovery_timeout": "10s",
+          "consensus_threshold": 0.6,
+          "max_retries": 3
+        },
+        "success_criteria": [
+          "contribute to group goals",
+          "maintain peer relationships",
+          "adapt to failures"
+        ],
+        "dependencies": [
+          "swarm_agent_1",
+          "swarm_agent_2",
+          "swarm_agent_3",
+          "swarm_agent_4",
+          "swarm_agent_6"
+        ]
+      },
+      {
+        "name": "swarm_agent_6",
+        "role": "Collaborative Worker #6",
+        "archetype": "specialist",
+        "responsibilities": [
+          "Conduct multi-source web research on specified topics",
+          "Analyze and synthesize information from various sources",
+          "Perform data processing and statistical analysis",
+          "Generate visualizations and charts from data",
+          "Create comprehensive written reports",
+          "Fact-check and validate information accuracy",
+          "Coordinate parallel research streams",
+          "Handle real-time information updates",
+          "Manage research project timelines",
+          "Provide interactive research assistance"
+        ],
+        "capabilities": [
+          "collaboration",
+          "consensus",
+          "adaptation",
+          "peer_communication",
+          "specialization_2"
+        ],
+        "tools": [
+          {
+            "name": "web_search",
+            "description": "Search the web for information",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "query": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "results": {
+                  "type": "array"
+                }
+              }
+            },
+            "capabilities": [
+              "research",
+              "information_gathering"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "code_executor",
+            "description": "Execute code in various languages",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "language": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "code_execution",
+              "testing",
+              "automation"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
+          {
+            "name": "file_manager",
+            "description": "Manage files and directories",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            },
+            "capabilities": [
+              "file_operations",
+              "data_management"
+            ],
+            "reliability": "high",
+            "latency": "low"
+          },
+          {
+            "name": "data_analyzer",
+            "description": "Analyze and process data",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object"
+                },
+                "analysis_type": {
+                  "type": "string"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "insights": {
+                  "type": "array"
+                },
+                "metrics": {
+                  "type": "object"
+                }
+              }
+            },
+            "capabilities": [
+              "data_analysis",
+              "statistics",
+              "visualization"
+            ],
+            "reliability": "high",
+            "latency": "medium"
+          },
+          {
+            "name": "api_client",
+            "description": "Make API calls to external services",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object"
+                }
+              }
+            },
+            "output_schema": {
+              "type": "object",
+              "properties": {
+                "response": {
+                  "type": "object"
+                },
+                "status": {
+                  "type": "integer"
+                }
+              }
+            },
+            "capabilities": [
+              "integration",
+              "external_services"
+            ],
+            "reliability": "medium",
+            "latency": "medium"
+          }
+        ],
+        "communication_interfaces": [
+          "peer_messaging",
+          "broadcast",
+          "consensus_protocol"
+        ],
+        "constraints": {
+          "peer_discovery_timeout": "10s",
+          "consensus_threshold": 0.6,
+          "max_retries": 3
+        },
+        "success_criteria": [
+          "contribute to group goals",
+          "maintain peer relationships",
+          "adapt to failures"
+        ],
+        "dependencies": [
+          "swarm_agent_1",
+          "swarm_agent_2",
+          "swarm_agent_3",
+          "swarm_agent_4",
+          "swarm_agent_5"
         ]
       }
     ],
     "communication_topology": [
       {
-        "from_agent": "supervisor_agent",
-        "to_agent": "research_specialist",
-        "pattern": "direct_message",
+        "from_agent": "swarm_agent_1",
+        "to_agent": "swarm_agent_2",
+        "pattern": "event_driven",
         "data_format": "json",
-        "frequency": "on_demand",
-        "criticality": "high"
+        "frequency": "periodic",
+        "criticality": "medium"
       },
       {
-        "from_agent": "research_specialist",
-        "to_agent": "supervisor_agent",
-        "pattern": "direct_message",
+        "from_agent": "swarm_agent_1",
+        "to_agent": "swarm_agent_3",
+        "pattern": "event_driven",
         "data_format": "json",
-        "frequency": "on_completion",
-        "criticality": "high"
+        "frequency": "periodic",
+        "criticality": "medium"
       },
       {
-        "from_agent": "supervisor_agent",
-        "to_agent": "data_specialist",
-        "pattern": "direct_message",
+        "from_agent": "swarm_agent_1",
+        "to_agent": "swarm_agent_4",
+        "pattern": "event_driven",
         "data_format": "json",
-        "frequency": "on_demand",
-        "criticality": "high"
+        "frequency": "periodic",
+        "criticality": "medium"
       },
       {
-        "from_agent": "data_specialist",
-        "to_agent": "supervisor_agent",
-        "pattern": "direct_message",
+        "from_agent": "swarm_agent_1",
+        "to_agent": "swarm_agent_5",
+        "pattern": "event_driven",
         "data_format": "json",
-        "frequency": "on_completion",
-        "criticality": "high"
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_1",
+        "to_agent": "swarm_agent_6",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_2",
+        "to_agent": "swarm_agent_1",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_2",
+        "to_agent": "swarm_agent_3",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_2",
+        "to_agent": "swarm_agent_4",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_2",
+        "to_agent": "swarm_agent_5",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_2",
+        "to_agent": "swarm_agent_6",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_3",
+        "to_agent": "swarm_agent_1",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_3",
+        "to_agent": "swarm_agent_2",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_3",
+        "to_agent": "swarm_agent_4",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_3",
+        "to_agent": "swarm_agent_5",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_3",
+        "to_agent": "swarm_agent_6",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_4",
+        "to_agent": "swarm_agent_1",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_4",
+        "to_agent": "swarm_agent_2",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_4",
+        "to_agent": "swarm_agent_3",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_4",
+        "to_agent": "swarm_agent_5",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_4",
+        "to_agent": "swarm_agent_6",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_5",
+        "to_agent": "swarm_agent_1",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_5",
+        "to_agent": "swarm_agent_2",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_5",
+        "to_agent": "swarm_agent_3",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_5",
+        "to_agent": "swarm_agent_4",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_5",
+        "to_agent": "swarm_agent_6",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_6",
+        "to_agent": "swarm_agent_1",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_6",
+        "to_agent": "swarm_agent_2",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_6",
+        "to_agent": "swarm_agent_3",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_6",
+        "to_agent": "swarm_agent_4",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
+      },
+      {
+        "from_agent": "swarm_agent_6",
+        "to_agent": "swarm_agent_5",
+        "pattern": "event_driven",
+        "data_format": "json",
+        "frequency": "periodic",
+        "criticality": "medium"
       }
     ],
     "shared_resources": [
@@ -368,7 +1532,7 @@
       ]
     }
   },
-  "mermaid_diagram": "graph TD\n    supervisor_agent[Task Coordinator and Quality Controller]:::coordinator\n    research_specialist[Research Specialist]:::specialist\n    data_specialist[Data Specialist]:::specialist\n    supervisor_agent --> research_specialist\n    research_specialist --> supervisor_agent\n    supervisor_agent --> data_specialist\n    data_specialist --> supervisor_agent\n\n    classDef coordinator fill:#e1f5fe,stroke:#01579b,stroke-width:2px\n    classDef specialist fill:#f3e5f5,stroke:#4a148c,stroke-width:2px\n    classDef interface fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px\n    classDef monitor fill:#fff3e0,stroke:#e65100,stroke-width:2px\n    class supervisor_agent coordinator\n    class research_specialist specialist\n    class data_specialist specialist",
+  "mermaid_diagram": "graph TD\n    swarm_agent_1[Collaborative Worker #1]:::specialist\n    swarm_agent_2[Collaborative Worker #2]:::specialist\n    swarm_agent_3[Collaborative Worker #3]:::specialist\n    swarm_agent_4[Collaborative Worker #4]:::specialist\n    swarm_agent_5[Collaborative Worker #5]:::specialist\n    swarm_agent_6[Collaborative Worker #6]:::specialist\n    swarm_agent_1 ===> swarm_agent_2\n    swarm_agent_1 ===> swarm_agent_3\n    swarm_agent_1 ===> swarm_agent_4\n    swarm_agent_1 ===> swarm_agent_5\n    swarm_agent_1 ===> swarm_agent_6\n    swarm_agent_2 ===> swarm_agent_1\n    swarm_agent_2 ===> swarm_agent_3\n    swarm_agent_2 ===> swarm_agent_4\n    swarm_agent_2 ===> swarm_agent_5\n    swarm_agent_2 ===> swarm_agent_6\n    swarm_agent_3 ===> swarm_agent_1\n    swarm_agent_3 ===> swarm_agent_2\n    swarm_agent_3 ===> swarm_agent_4\n    swarm_agent_3 ===> swarm_agent_5\n    swarm_agent_3 ===> swarm_agent_6\n    swarm_agent_4 ===> swarm_agent_1\n    swarm_agent_4 ===> swarm_agent_2\n    swarm_agent_4 ===> swarm_agent_3\n    swarm_agent_4 ===> swarm_agent_5\n    swarm_agent_4 ===> swarm_agent_6\n    swarm_agent_5 ===> swarm_agent_1\n    swarm_agent_5 ===> swarm_agent_2\n    swarm_agent_5 ===> swarm_agent_3\n    swarm_agent_5 ===> swarm_agent_4\n    swarm_agent_5 ===> swarm_agent_6\n    swarm_agent_6 ===> swarm_agent_1\n    swarm_agent_6 ===> swarm_agent_2\n    swarm_agent_6 ===> swarm_agent_3\n    swarm_agent_6 ===> swarm_agent_4\n    swarm_agent_6 ===> swarm_agent_5\n\n    classDef coordinator fill:#e1f5fe,stroke:#01579b,stroke-width:2px\n    classDef specialist fill:#f3e5f5,stroke:#4a148c,stroke-width:2px\n    classDef interface fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px\n    classDef monitor fill:#fff3e0,stroke:#e65100,stroke-width:2px\n    class swarm_agent_1 specialist\n    class swarm_agent_2 specialist\n    class swarm_agent_3 specialist\n    class swarm_agent_4 specialist\n    class swarm_agent_5 specialist\n    class swarm_agent_6 specialist",
   "implementation_roadmap": {
     "total_duration": "8-12 weeks",
     "phases": [
@@ -482,7 +1646,7 @@
   "metadata": {
     "generated_by": "agent_planner.py",
     "requirements_file": "sample_system_requirements.json",
-    "architecture_pattern": "supervisor",
-    "agent_count": 3
+    "architecture_pattern": "swarm",
+    "agent_count": 6
   }
 }

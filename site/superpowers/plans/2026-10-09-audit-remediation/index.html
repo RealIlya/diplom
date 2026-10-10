@@ -1,0 +1,1373 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../specs/2026-10-09-audit-remediation-design/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>План реализации - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#full-audit-remediation-implementation-plan" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../.." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              План реализации
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проект исправлений
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Проект исправлений
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дизайн аудита
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План реализации
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#global-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Constraints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Focus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-презентационные-артефакты" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Презентационные артефакты
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2-канонические-темы-и-экспериментальная-спецификация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Канонические темы и экспериментальная спецификация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-3-tool-schema-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Tool schema generator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-4-planner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: Planner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-5-evaluator-samples-и-происхождение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5: Evaluator, samples и происхождение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-6-сайт-и-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6: Сайт и CI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-7-итоговый-review-и-интеграция" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 7: Итоговый review и интеграция
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#результат-исполнения--09102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результат исполнения — 09.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#global-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Constraints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Focus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-1-презентационные-артефакты" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Презентационные артефакты
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-2-канонические-темы-и-экспериментальная-спецификация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Канонические темы и экспериментальная спецификация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-3-tool-schema-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Tool schema generator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-4-planner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: Planner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-5-evaluator-samples-и-происхождение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5: Evaluator, samples и происхождение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-6-сайт-и-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6: Сайт и CI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-7-итоговый-review-и-интеграция" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 7: Итоговый review и интеграция
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#результат-исполнения--09102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результат исполнения — 09.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="full-audit-remediation-implementation-plan">Full Audit Remediation Implementation Plan</h1>
+<blockquote>
+<p><strong>For agentic workers:</strong> REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.</p>
+</blockquote>
+<p><strong>Goal:</strong> Устранить подтверждённые дефекты материалов и встроенных инструментов, конкретизировать проект протокола.
+<strong>Architecture:</strong> Общие исследовательские требования остаются в существующих канонических docs.
+Исправления генераторов ограничены их действующими интерфейсами; проверки запускаются из одного unittest suite.
+<strong>Tech Stack:</strong> Python 3.12/3.13, unittest, jsonschema 4.26.0, PyYAML 6.0.3, MkDocs Material 9.7.7, Artifact Tool 2.8.85.
+<strong>Spec:</strong> ../specs/2026-10-09-audit-remediation-design.md</p>
+<h2 id="global-constraints">Global Constraints</h2>
+<ul>
+<li>Автор Git-коммитов: RealIlya <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#54;&#49;&#54;&#52;&#51;&#48;&#49;&#50;&#43;&#82;&#101;&#97;&#108;&#73;&#108;&#121;&#97;&#64;&#117;&#115;&#101;&#114;&#115;&#46;&#110;&#111;&#114;&#101;&#112;&#108;&#121;&#46;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;">&#54;&#49;&#54;&#52;&#51;&#48;&#49;&#50;&#43;&#82;&#101;&#97;&#108;&#73;&#108;&#121;&#97;&#64;&#117;&#115;&#101;&#114;&#115;&#46;&#110;&#111;&#114;&#101;&#112;&#108;&#121;&#46;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;</a>.</li>
+<li>Рабочая ветка codex/full-audit-fixes от b20c917; main не изменяется напрямую.</li>
+<li>Документы и описание результатов на русском; файлы и идентификаторы кода на английском.</li>
+<li>Исследовательские решения сохраняют статус предложения, результаты не выдумываются.</li>
+<li>Ни платных API, ни аренды GPU, ни научной серии в этом изменении.</li>
+<li>Реальные дефекты кода исправляются после воспроизведения регрессионным тестом.</li>
+<li>Контрольные суммы сверяются с конечным Git blob, а не только файлом до передачи.</li>
+</ul>
+<h2 id="review-focus">Review Focus</h2>
+<ul>
+<li>Обязательные nested object properties сохраняются массивом required; arrays сохраняют items/type.</li>
+<li>Planner для 1/2/10/20 не делит на ноль, сохраняет requested size и все IDs существуют.</li>
+<li>Отсутствующая per-action телеметрия не превращается в вымышленную tool latency.</li>
+<li>При invalid schema --validate возвращает ненулевой код, а валидные zero-parameter tools допустимы.</li>
+<li>Итоговый PPTX и tracked site проверяются после сохранения; исторические материалы не трактуются как current.</li>
+</ul>
+<h2 id="task-1-презентационные-артефакты">Task 1: Презентационные артефакты</h2>
+<p><strong>Files:</strong> presentations/advisor/{README.md,SHA256SUMS,speaker-notes-v4.txt,advisor-presentation-v3-team.pptx,advisor-presentation-v4-reviewed.pptx};
+source/{content-v4.json,deck-current.mjs,runtime-versions.json}; scripts/check_presentations.py; tests/test_presentations.py.
+<strong>Interfaces:</strong> Единый content-v4.json — вход генератора; checker проверяет ZIP/XML, count, notes и SHA256SUMS.</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Воспроизвести SHA/ZIP отказ v3; тест должен фиксировать integrity и восстановление.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Восстановить v3 из оригинала с ожидаемым hash, создать v4 с portable notes и 18-минутным порядком.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Документировать среду и полный путь текущей сборки; старые исходники оставить архивными.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Запустить checker и визуально проверить конечные слайды; checksum всех файлов — PASS.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Коммит законченного изменения.</li>
+</ul>
+<h2 id="task-2-канонические-темы-и-экспериментальная-спецификация">Task 2: Канонические темы и экспериментальная спецификация</h2>
+<p><strong>Files:</strong> docs/{research.md,architecture.md,hotpotqa-protocol.md,research-overview.md,model-research.md,team.md,README.md,tau-bench-review.md};
+docs/{agent-architecture-detail,agent-pipeline}.{excalidraw,png}.
+<strong>Interfaces:</strong> Каноническая таблица тем в research; contracts и preflight gates в architecture; Hotpot-specific правила в hotpotqa-protocol.</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Заменить текущую тройку предложений и определить независимые primary contrasts.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Закрепить tagged outcomes, видимость tools, hook/provenance, метки и evaluator/statistics gates.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Согласовать модельные приоритеты, домен, стоимость и схематические обозначения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Проверить Markdown, ссылки, MkDocs --strict и изображения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Коммит законченного изменения.</li>
+</ul>
+<h2 id="task-3-tool-schema-generator">Task 3: Tool schema generator</h2>
+<p><strong>Files:</strong> .agents/skills/agent-designer/tool_schema_generator.py; tests/test_tool_schema_generator.py; requirements-tools.txt.
+<strong>Interfaces:</strong> Existing ToolDescription/generate_tool_schema; --validate проверяет metaschema и входные examples, сообщает отказ кодом 1.</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Написать tests для required object, UUID array, items, explicit formats и invalid examples.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Запустить их на baseline: ожидаются ошибки схем/сохранения типов и ложный успех --validate.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Исправить type/required/items handling и независимую JSON Schema validation.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить полный suite; sample schemas должны быть валидны, invalid input — отказ.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Коммит законченного изменения.</li>
+</ul>
+<h2 id="task-4-planner">Task 4: Planner</h2>
+<p><strong>Files:</strong> .agents/skills/agent-designer/agent_planner.py; tests/test_agent_planner.py.
+<strong>Interfaces:</strong> Existing SystemRequirements/plan_system CLI; JSON enum.value; --format yaml создаёт prefix.yaml.</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Написать tests для hierarchical10, swarm20, team 1/2, enums и YAML roundtrip.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Запустить baseline: dangling dependency, 10 вместо 20 и отсутствие YAML должны быть обнаружены.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Исправить распределение/валидацию размера, сериализацию и YAML export.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить полный suite и CLI-примеры.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Коммит законченного изменения.</li>
+</ul>
+<h2 id="task-5-evaluator-samples-и-происхождение">Task 5: Evaluator, samples и происхождение</h2>
+<p><strong>Files:</strong> .agents/skills/agent-designer/{agent_evaluator.py,README.md,SOURCE.md,LICENSE,SKILL.md};
+expected_outputs/<em>.json; tests/test_agent_evaluator.py.
+</em><em>Interfaces:</em>* Existing generate_report; tool usage metrics берутся из actions, unknown telemetry маркируется явно.</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Написать tests штатного report и action-level counts/latency/error; запустить RED.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Исправить поля рекомендаций и расчёт tool metrics; сверить агрегаты sample.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Исправить README inputs и пересоздать expected_outputs текущими CLI.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Сверить исходную лицензию закреплённой ревизии, записать локальные изменения.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить полный suite и коммит законченного изменения.</li>
+</ul>
+<h2 id="task-6-сайт-и-ci">Task 6: Сайт и CI</h2>
+<p><strong>Files:</strong> scripts/check_site.py; tests/test_site.py; .github/workflows/ci.yml; requirements-tools.txt; mkdocs.yml; site/<strong>.
+</strong>Interfaces:** Site checker сравнивает current build с tracked site; CI запускает tools tests, PPTX checker и site check.</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Регрессионная проверка missing architecture/hotpot pages должна отказать на baseline.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Добавить содержательную синхронизацию и проверки CI; пересобрать tracked site.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить unittest suite, Markdown/YAML, strict build, SHA/ZIP и git diff --check.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Проверить конечные Git blobs и коммит законченного изменения.</li>
+</ul>
+<h2 id="task-7-итоговый-review-и-интеграция">Task 7: Итоговый review и интеграция</h2>
+<p><strong>Files:</strong> Итоговая ветка и описание PR; прогресс исполнения — в отдельном ledger.
+<strong>Interfaces:</strong> Reviewer получает spec/plan, diff от baseline и фактические проверки.</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Выполнить независимый whole-branch review; воспроизвести и исправить существенные замечания.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Повторить затронутые проверки после исправлений.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Проверить автора коммитов, чистоту дерева и актуальный родительский main.</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Подготовить ветку/PR для review команды, без автоматического слияния.</li>
+</ul>
+<h2 id="результат-исполнения--09102026">Результат исполнения — 09.10.2026</h2>
+<p>Исправления охватывают F01–F23 из полного аудита: восстановлен v3, создана v4,
+согласованы темы и протоколы, обновлены диаграммы, исправлены три импортированных
+инструмента, их примеры и лицензия; добавлены проверки CI и пересобран site/.
+Для F11 документирована точная поддерживаемая среда сборки презентации;
+универсальная сборка вне Codex по-прежнему не заявлена.</p>
+<p>Q01–Q10 конкретизированы как проект спецификации. Домен, модели всех ролей,
+совместимый открытый evaluator, разбиение, допуски качества, повторы и бюджет
+остаются preflight gates до экспериментов. Рабочий исследовательский harness
+и научные результаты этим изменением не созданы.</p>
+<p>Проверки: 26 регрессионных тестов; ZIP/XML/relationships и полный SHA-256 manifest;
+строгая сборка MkDocs и побайтовое соответствие tracked site; YAML/Markdown lint;
+<code>git diff --check</code>. Финальный PPTX импортирован и отрендерен Artifact Tool;
+слайды просмотрены, геометрический валидатор не выдал findings/warnings.
+PowerPoint не использовался.</p>
+<p>Подготовка и технический review выполнены с участием AI. Независимый review
+выявил и перепроверил исправление фиктивной retry latency и несогласованных
+лимитов planner; оставшихся Critical/Important замечаний не найдено.
+Это не заменяет научный review команды и руководителя. Ветка подготовлена
+для PR в родительский main; автоматическое слияние не выполняется.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

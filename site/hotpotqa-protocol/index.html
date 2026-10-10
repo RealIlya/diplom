@@ -1,0 +1,1979 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../model-research/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Протокол HotpotQA - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#вспомогательный-протокол-hotpotqa" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Протокол HotpotQA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-назначение-вспомогательного-стенда" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Назначение вспомогательного стенда
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-задача-и-данные" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Задача и данные
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-компоненты-и-поток-выполнения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Компоненты и поток выполнения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-контракты-и-реализация-стенда" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Контракты и реализация стенда
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-сбои-неопределённость-и-завершение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Сбои, неопределённость и завершение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-формальная-постановка-и-метрики" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Формальная постановка и метрики
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-сравниваемые-условия" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Сравниваемые условия
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-протокол-сравнения-и-статистика" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Протокол сравнения и статистика
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-журнал-и-воспроизводимость" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Журнал и воспроизводимость
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-бюджет-и-условия-остановки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Бюджет и условия остановки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#проверка-стенда" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка стенда
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#источники" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Источники
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проект исправлений
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Проект исправлений
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дизайн аудита
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    План реализации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-назначение-вспомогательного-стенда" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Назначение вспомогательного стенда
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-задача-и-данные" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Задача и данные
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-компоненты-и-поток-выполнения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Компоненты и поток выполнения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-контракты-и-реализация-стенда" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Контракты и реализация стенда
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-сбои-неопределённость-и-завершение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Сбои, неопределённость и завершение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-формальная-постановка-и-метрики" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Формальная постановка и метрики
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-сравниваемые-условия" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Сравниваемые условия
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-протокол-сравнения-и-статистика" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Протокол сравнения и статистика
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-журнал-и-воспроизводимость" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Журнал и воспроизводимость
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-бюджет-и-условия-остановки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Бюджет и условия остановки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#проверка-стенда" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка стенда
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#источники" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Источники
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="вспомогательный-протокол-hotpotqa">Вспомогательный протокол HotpotQA</h1>
+<p>Версия 0.1, область применения уточнена <strong>01.10.2026</strong>.
+Это сохранённая спецификация контролируемого стенда для отбора RAG-контекста,
+а не архитектура всей исследовательской платформы. Основная архитектура,
+эксперименты с tools и τ-knowledge находятся в <a href="../architecture/">общей спецификации</a>.</p>
+<p>HotpotQA, приведённые модели и параметры остаются предложением для пилота.
+Ограничение в два поиска, sentence-level метрики и допуск по joint F1 применяются
+только здесь; переносить их на τ-knowledge нельзя. Реализация и результаты отсутствуют.
+Общие ограничения и подтверждённые решения — в <a href="../">wiki</a>.</p>
+<h2 id="1-назначение-вспомогательного-стенда">1. Назначение вспомогательного стенда</h2>
+<p>Агент получает вопрос и доступ к фиксированному набору документов, находит
+доказательства, при необходимости выполняет ещё один поиск и выдаёт краткий ответ
+со ссылками на предложения источников. Если доказательств не хватает, допускается
+явный отказ от ответа. В основной оценке на ответимых вопросах отказ считается неуспехом.</p>
+<table>
+<thead>
+<tr>
+<th>Подход</th>
+<th>Что позволяет измерить</th>
+<th>Решение для первой версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Однопроходный поиск → контекст → ответ</td>
+<td>Влияние отбора контекста; самый простой контроль</td>
+<td>Оставить как обязательную дешёвую альтернативу</td>
+</tr>
+<tr>
+<td>Один агент с ограниченным повторным поиском</td>
+<td>Отбор контекста и решение о продолжении; последствия ошибки на всей траектории</td>
+<td>Архитектура этого стенда</td>
+</tr>
+<tr>
+<td>Координатор и несколько автономных специалистов</td>
+<td>Делегирование и координацию, но добавляет изменяемые факторы и расходы</td>
+<td>Отложить до отдельной гипотезы о делегировании</td>
+</tr>
+</tbody>
+</table>
+<p>Управление выполняет обычная программа. Поиск, проверка формата и сбор метрик —
+функции программы, а не дополнительные языковые агенты. Экспериментальная единица —
+одно полное выполнение вопроса. Первый заменяемый узел в этом стенде — <strong>оценка полезности фрагмента
+для ответа</strong>. Второй самостоятельный эксперимент — решение о дополнительном поиске.</p>
+<p>Математическое содержание: ранжирование при ограниченном контексте, калибровка
+вероятностей, селективное принятие решений и сравнение политик при ограничении
+на потерю качества. Новизна проверяется по постановке и результатам, не выводится
+из самого использования Laya или другого System One кандидата.</p>
+<h2 id="2-задача-и-данные">2. Задача и данные</h2>
+<p>Первый предлагаемый режим — <strong>HotpotQA distractor</strong>: английские вопросы, заданный
+для каждого вопроса набор из десяти абзацев, эталон ответа и supporting facts.
+Источники: <a href="https://arxiv.org/abs/1809.09600">статья Yang et al., EMNLP 2018</a>, <a href="https://hotpotqa.github.io/">страница датасета</a>.
+Это задача поиска доказательств внутри предоставленного набора. Результаты первой
+серии не переносятся автоматически на поиск по всей Wikipedia, русский язык
+или пользовательские документы.</p>
+<p>Единица поиска и цитирования — предложение с исходным идентификатором
+<code>(title, sentence_id)</code>. Внутренний <code>source_id</code> однозначно отображается в эту пару
+и в хеш версии текста. Исходное разбиение на предложения сохраняется.
+В приложении источник показывается как название документа и предложение,
+с привязкой к сохранённому снимку; текущая веб-страница не заменяет снимок.</p>
+<p>Агент видит только вопрос, тексты и идентификаторы разрешённых источников.
+<code>answer</code>, <code>supporting_facts</code>, тип сложности и результаты проверки доступны
+только оценщику вне процесса принятия решений. Набор документов не формируется
+по эталону во время запуска. Все методы получают одинаковый разрешённый набор.</p>
+<p>Подготовка данных:</p>
+<ol>
+<li>Зафиксировать исходные файлы, URL, дату, контрольные суммы и лицензию.
+   Данные HotpotQA опубликованы под CC BY-SA 4.0; код официального проекта —
+   под Apache-2.0. Сохранять атрибуцию отдельно для данных и кода. <a href="https://github.com/hotpotqa/hotpot">Источник</a></li>
+<li>Из официального train сформировать <code>fit</code>, <code>calibration</code>, <code>selection</code>
+   в пропорции 60/20/20 по группам вопросов с фиксированным seed <code>20261001</code>.
+   <code>fit</code> нужен для обучаемых дешёвых методов; <code>calibration</code> — для вероятностей;
+   <code>selection</code> — для выбора порогов и конфигурации. Zero-shot условия не обучаются на <code>fit</code>.</li>
+<li>Дубликаты и производные одного вопроса держать в одной группе; сохранять
+   явный manifest ID и проверку пересечений. Совпадающие вопросы между train
+   и будущей тестовой частью исключать из настройки, не из оценки после получения результата.
+   Общие документы допустимы в режиме общего корпуса; их пересечение публиковать,
+   не называя эксперимент проверкой на совершенно новых документах.</li>
+<li>Официальный dev использовать как закрытую до фиксации протокола <strong>тестовую часть
+   нашего исследования</strong>. Если бюджет требует подвыборку, определить её ID заранее
+   без просмотра ответов моделей. Это не официальный скрытый test и не результат leaderboard.</li>
+<li>Пилот: 100 вопросов из <code>fit</code> с сохранёнными ID и представительством типов
+   bridge/comparison, без отбора по успеху метода. При нехватке ресурсов уменьшить
+   число до запуска и записать причину. Размер итоговой выборки определить после пилота.</li>
+</ol>
+<p>Для первого узла метка <code>y(q,d)=1</code>, если предложение <code>d</code> включено в supporting facts
+вопроса <code>q</code>. Это воспроизводимая разметка участия в эталонном доказательстве,
+а не исчерпывающая разметка всех допустимых объяснений. Ошибки и альтернативные
+доказательства исследуются отдельно на вручную проверенной подвыборке.</p>
+<p>Для отдельного опыта D размечается <strong>состояние после первого поиска</strong> с
+реально выбранным видимым контекстом, а не вопрос в целом. Предлагаемая
+бинарная метка: все необходимые эталонные supporting facts доступны
+в передаваемом контексте; <code>0</code> — отсутствует хотя бы один. Это метка
+достаточности эталонных доказательств, а не гарантия правильного ответа A.
+Альтернативные корректные доказательства и неполные/спорные gold случаи
+получают <code>ambiguous/unlabeled</code> после независимой ручной проверки; не
+превращать их автоматически в отрицательные метки. Сохранять исходные
+оценки разметчиков и решение разногласия. Нельзя использовать gold при
+исполнении D или обучать на состоянии тестового вопроса; без надёжной
+метки сообщать только сквозное качество решения искать ещё.</p>
+<p>HotpotQA — публичный benchmark; его присутствие в предобучении выбранных моделей
+не исключено. Разбиение нашего эксперимента защищает от утечки при нашей настройке,
+но не доказывает отсутствие предобучающего запоминания. Этот предел вывода указывать
+в ВКР; при необходимости отдельно проверить ответы без контекста и перенос
+на другой корпус, не смешивая эти проверки с основной серией.</p>
+<h2 id="3-компоненты-и-поток-выполнения">3. Компоненты и поток выполнения</h2>
+<pre><code class="language-mermaid">flowchart TD
+    Q[&quot;Вопрос и разрешённый корпус&quot;] --&gt; H[&quot;Контроллер: состояние и лимиты&quot;]
+    H --&gt; R[&quot;Поиск кандидатов: BM25&quot;]
+    R --&gt; S[&quot;Заменяемый узел S: оценка фрагментов&quot;]
+    S --&gt; P[&quot;Детерминированная упаковка контекста&quot;]
+    P --&gt; D{&quot;Узел D: достаточно доказательств?&quot;}
+    D -- &quot;Да или поиск исчерпан&quot; --&gt; A[&quot;Фиксированная LLM: ответ и ссылки&quot;]
+    D -- &quot;Нет, есть бюджет&quot; --&gt; W[&quot;Фиксированная LLM: уточнение запроса&quot;]
+    W --&gt; R
+    A --&gt; V[&quot;Проверка формата и существования ссылок&quot;]
+    V --&gt; O[&quot;Ответ, отказ или техническая ошибка&quot;]
+    S -. &quot;попытки и расходы&quot; .-&gt; T[&quot;Журнал исполнения&quot;]
+    H -. &quot;границы задачи&quot; .-&gt; T
+    D -. &quot;решения&quot; .-&gt; T
+    A -. &quot;вызовы&quot; .-&gt; T
+    O --&gt; E[&quot;Внешний оценщик с эталоном&quot;]
+    T --&gt; E
+</code></pre>
+<p>В журнал также попадают поиск, упаковка, уточнение запроса и проверки.
+Оценщик запускается после исполнения; его результаты не возвращаются агенту.</p>
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Ответственность</th>
+<th>Что остаётся фиксированным в эксперименте S</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Загрузчик</td>
+<td>Разделяет данные агента и эталоны; проверяет manifest</td>
+<td>Корпус, вопросы, разбиение, ID</td>
+</tr>
+<tr>
+<td>Контроллер</td>
+<td>Выполняет переходы, проверяет бюджет, завершает задачу</td>
+<td>Правила переходов и лимиты</td>
+</tr>
+<tr>
+<td>Поиск R</td>
+<td>Возвращает кандидатов и исходные тексты</td>
+<td>Индекс, токенизация, запрос, top-k</td>
+</tr>
+<tr>
+<td>Оценщик S</td>
+<td>Оценивает участие каждого кандидата в доказательстве</td>
+<td>Меняется только метод оценки</td>
+</tr>
+<tr>
+<td>Упаковка P</td>
+<td>Выбирает контекст в пределах токенного бюджета</td>
+<td>Порядок, tie-break, правила вместимости</td>
+</tr>
+<tr>
+<td>Решение D</td>
+<td>Выбирает <code>answer</code> или <code>search_more</code></td>
+<td>Одна LLM, версия и промпт</td>
+</tr>
+<tr>
+<td>Уточнение W</td>
+<td>Формирует один новый поисковый запрос</td>
+<td>Одна LLM, версия и промпт</td>
+</tr>
+<tr>
+<td>Генератор A</td>
+<td>Возвращает краткий ответ и ID доказательств</td>
+<td>Одна LLM, версия, промпт и параметры</td>
+</tr>
+<tr>
+<td>Проверка V</td>
+<td>Проверяет контракт и принадлежность ссылок контексту</td>
+<td>Детерминированные правила</td>
+</tr>
+<tr>
+<td>Оценщик эксперимента</td>
+<td>Сопоставляет ответ/ссылки с эталоном и считает затраты</td>
+<td>Одна версия метрик для всех методов</td>
+</tr>
+</tbody>
+</table>
+<p>«Фиксированный компонент» означает одинаковый алгоритм и настройки.
+Его вход и поведение могут измениться вследствие замены S: именно это влияние
+проверяется в сквозном эксперименте. Не подменять такой прогон воспроизведением
+траектории исходного агента.</p>
+<p>Алгоритм одного выполнения:</p>
+<ol>
+<li>Проверить вход, назначить <code>task_id</code>, <code>run_id</code>, deadline и бюджет. Состояние:
+   вопрос, ссылка на корпус, увиденные кандидаты, оценки, выбранный контекст,
+   номер поиска и накопленные расходы. Память между вопросами отсутствует.</li>
+<li>Первый запрос — исходный вопрос. Поиск возвращает до 20 предложений.
+   Повторный поиск возвращает до 20 ещё не рассмотренных предложений.</li>
+<li>S оценивает пары <code>(исходный вопрос, название, предложение)</code> независимо.
+   Семантически одинаковый текст передаётся всем методам; пакетирование не должно
+   давать одному методу дополнительные соседние предложения. Оценки уже виденных
+   пар внутри задачи переиспользуются всеми вариантами по одному правилу.</li>
+<li>Объединить кандидатов двух поисков, отсортировать по убыванию оценки,
+   при равенстве — по <code>source_id</code>. Последовательно добавлять целые предложения
+   в контекст до лимита 2048 токенов токенизатора генератора, включая названия и ID.
+   Не помещающееся предложение пропустить и продолжить; не обрезать его незаметно.
+   Это жадная эвристика, не решение оптимальной задачи выбора подмножества.</li>
+<li>После первого поиска D решает, достаточно ли доказательств. При <code>search_more</code>
+   W создаёт новый запрос по вопросу и выбранному контексту; R выполняет второй поиск.
+   Повторный идентичный запрос без новых кандидатов не запускает бесконечный цикл.</li>
+<li>После второго поиска либо решения <code>answer</code> вызвать A один раз. Генератор
+   может ответить или явно отказаться. Исчерпание поиска не является доказательством
+   достаточности контекста. При пустом контексте завершить явным отказом без вызова A.</li>
+<li>Проверить контракт результата. Сохранить терминальный статус, все попытки,
+   длительности и расходы. Отдельный оценщик вычисляет качество по эталону.</li>
+</ol>
+<p><strong>Стартовые параметры пилота, не достигнутые показатели:</strong> два поиска,
+20 новых кандидатов на поиск, 2048 токенов доказательств; лимиты выходов
+S/D — 64 токена, W — 256, A — 512;
+одна задача одновременно, batch size 1 для сравнения задержки решающих узлов.
+Максимум 180 секунд на задачу, 30 секунд на API-попытку с учётом остатка deadline.
+Если технический пилот требует изменить параметры, зафиксировать новую конфигурацию
+до сравнительной серии и применить её ко всем вариантам.</p>
+<h2 id="4-контракты-и-реализация-стенда">4. Контракты и реализация стенда</h2>
+<p>Предлагается Python, локальные JSON/JSONL и SQLite FTS5 для полнотекстового поиска.
+FTS5 предоставляет <code>bm25()</code>; его знак и порядок сортировки учитывать явно
+при приведении к правилу «больше — лучше». <a href="https://www.sqlite.org/fts5.html">Документация SQLite</a>
+Доступность FTS5 и выполнение локальных моделей на M4 Pro проверяются пилотом.
+Векторная БД, отдельные сервисы, очереди, долговременная память и фреймворк
+мультиагентной оркестрации для этой версии не требуются.</p>
+<p>Контракты ниже — спецификация будущих функций, не существующий API проекта.
+Для всех объектов запрещены неожиданные поля; числовые значения должны быть конечными.</p>
+<table>
+<thead>
+<tr>
+<th>Функция</th>
+<th>Вход</th>
+<th>Выход и проверка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>search</code></td>
+<td>Разрешённый <code>corpus_id</code>, строка <code>query</code>, <code>exclude_ids</code>, <code>limit</code> от 1 до 20</td>
+<td>Список уникальных <code>{source_id, title, sentence_id, text, retrieval_score}</code>; ID только из корпуса</td>
+</tr>
+<tr>
+<td><code>score_fragment</code></td>
+<td><code>question</code>, <code>source_id</code>, <code>title</code>, <code>text</code></td>
+<td><code>{source_id, score, p_relevant}</code>; <code>score</code> — число для ранжирования, <code>p_relevant</code> — число в [0,1] или <code>null</code></td>
+</tr>
+<tr>
+<td><code>decide_next</code></td>
+<td><code>question</code>, выбранные источники, оставшийся бюджет поиска</td>
+<td><code>{action, p_sufficient}</code>; <code>action</code> из <code>answer/search_more</code>, вероятность в [0,1] или <code>null</code></td>
+</tr>
+<tr>
+<td><code>rewrite_query</code></td>
+<td><code>question</code>, выбранные источники, предыдущий запрос</td>
+<td><code>{query}</code>; непустая строка до 1000 символов</td>
+</tr>
+<tr>
+<td><code>answer</code></td>
+<td><code>question</code>, выбранные источники</td>
+<td><code>{status, answer, citations}</code>; статус <code>answered/abstained</code>, ссылки — уникальные <code>source_id</code> из переданного контекста</td>
+</tr>
+</tbody>
+</table>
+<p>Для <code>answered</code> обязательны непустой ответ и хотя бы одна ссылка; для <code>abstained</code>
+ответ и список ссылок пусты. <code>sentence_id</code> — целое неотрицательное число.
+Входной вопрос и поисковый запрос ограничить 1000 символами; превышение не обрезать,
+а регистрировать как <code>invalid_input</code>. Проверить охват данных этим лимитом до серии.
+Сохранить исходные provider response и результат нормализации для аудита.</p>
+<p>Терминальные состояния исполнения: <code>answered</code>, <code>abstained</code>, <code>invalid_output</code>,
+<code>invalid_input</code>, <code>timeout</code>, <code>provider_error</code>, <code>budget_exceeded</code>.
+<code>answered</code> означает корректный формат ответа, а не доказанную правильность.</p>
+<p>LLM вызывается через OpenAI-совместимый интерфейс со структурированным JSON-выходом.
+Контроллер сам вызывает разрешённые функции; свободного выполнения кода моделью нет.
+В OpenRouter поддержка JSON Schema зависит от модели/провайдера; это проверка
+совместимости перед выбором конкретной LLM. <a href="https://openrouter.ai/docs/guides/features/structured-outputs">Документация OpenRouter</a>
+Фиксировать модель и обслуживающего провайдера; автоматическую смену провайдера
+отключить, если возможно, иначе явно учитывать как отдельное условие.</p>
+<p>Кандидат общей LLM — <code>Qwen/Qwen3-8B</code>: открытые веса под Apache-2.0 и доступный
+код семейства. <a href="https://huggingface.co/Qwen/Qwen3-8B">Карточка</a>, <a href="https://github.com/QwenLM/Qwen3">репозиторий</a>
+В пилоте использовать один закреплённый режим без thinking для S/D/W/A;
+зафиксировать chat template, параметры декодирования и ограничение выхода каждого узла.
+Это стартовый baseline, его достаточность для задачи проверяется пилотом.
+Если качество требует другой открытой LLM, заменить её во всех условиях до теста.
+Размещение через API не гарантирует знания точной ревизии или квантизации:
+эти неизвестные отмечать; локальное исполнение с закреплёнными весами — способ
+устранить их. Локальный квантизованный и API-вариант не считать одной конфигурацией.</p>
+<p>Jev остаётся только источником для обзора типизированных решений и интерфейсов.
+Его вызовы, адаптер, ключ и закрытый baseline не нужны. Наличие открытых весов
+у выбранных моделей не означает доступности всего исходного обучающего корпуса;
+в ВКР точно указывать, какие части доступны для воспроизведения.</p>
+<p>Для Laya явно выбрать checkpoint и ревизию весов; не включать скрытую автоматическую
+смену checkpoint по языку. У английского варианта в карточке указан контекст 512
+токенов; у multilingual — другие ограничения. Поэтому первым узлом выбрана короткая
+пара вопрос–предложение. Возможности длинного контекста и MPS — предмет проверки,
+а не предположение о совместимости. Веса и код Laya опубликованы под Apache-2.0;
+лицензии закрепить вместе с выбранной ревизией. <a href="https://huggingface.co/convaiinnovations/laya">Карточка модели</a>, <a href="https://github.com/NandhaKishorM/laya">код</a></p>
+<p>Считать длину полного сериализованного входа, включая вопрос и критерии, каждым
+нужным токенизатором. При превышении окна не применять скрытое truncation:
+записать <code>input_overflow</code> и задействовать предусмотренный технический fallback.
+Отдельно показать результаты на общей подвыборке, помещающейся во все модели,
+и на всей выборке с учётом fallback; основной сквозной показатель — на всей выборке.</p>
+<p>Поиск только читает фиксированный индекс. Строки запросов параметризуются,
+операторы FTS из пользовательского текста экранируются. Тексты документов считаются
+данными, а не инструкциями управления. Агент не получает произвольный shell,
+сетевые адреса или операции записи; ключи не попадают в промпты и журналы.</p>
+<h2 id="5-сбои-неопределённость-и-завершение">5. Сбои, неопределённость и завершение</h2>
+<p>Разделять два вида перехода к запасному методу:</p>
+<ul>
+<li><strong>Технический fallback:</strong> невалидный ответ решающего узла, переполнение контекста
+  или исчерпанные попытки обращения. При сбое S перейти на BM25 для всего текущего
+  набора и оставшихся этапов этой задачи, сохранив расходы уже выполненных оценок;
+  не смешивать несопоставимые BM25-score и модельные вероятности в одном ранжировании.
+  Для D — дополнительный поиск, если он доступен, иначе A. Ошибка W завершает
+  уточнение и переводит к A с уже найденными источниками. Ошибка A завершает
+  задачу техническим неуспехом. Все замены имеют отдельный reason в журнале.</li>
+<li><strong>Fallback по неопределённости:</strong> отдельное экспериментальное условие S или D.
+  После дешёвой модели решение передаётся фиксированной LLM только при попадании
+  в заранее выбранную область неопределённости. Записываются оба вызова и их расходы.
+  Ошибка запасной LLM приводит к тому же техническому fallback, без рекурсии.</li>
+</ul>
+<p>Для временной транспортной ошибки/429/5xx разрешить одну повторную API-попытку,
+если хватает deadline и бюджета. Задержка берётся из <code>Retry-After</code>, а при отсутствии
+заголовка — 1 секунда. Если ожидание не помещается в deadline, повтор отменяется.
+Ошибки авторизации и неверной конфигурации останавливают серию. Невалидный JSON
+не исправлять повторными генерациями без отражения этого как нового условия.
+Встроенные повторы SDK отключить либо включить каждую попытку в журнал.</p>
+<p>У адаптера Laya извлекать бинарную вероятность участия фрагмента в доказательстве
+из документированного выхода выбранной версии; не подменять её произвольным
+полем <code>confidence</code>. Проверять калибровку относительно конкретной метки.
+Самооценка вероятности LLM также является прогнозом для проверки, а не эталоном.
+Ранговый score BM25 или cross-encoder не объявлять вероятностью без калибровки.</p>
+<p>Порог передачи выбирать на <code>selection</code>, калибратор обучать на <code>calibration</code>.
+Первый предлагаемый калибратор — temperature scaling бинарного logit:
+<code>p_cal = sigmoid(logit(p_raw) / T)</code>, <code>T &gt; 0</code> минимизирует NLL на <code>calibration</code>.
+Вероятности 0/1 перед logit ограничить интервалом <code>[10⁻⁶, 1−10⁻⁶]</code>.
+Для смешанного ранжирования в <code>selective</code> отдельно откалибровать Laya и запасную
+LLM на одинаковой метке <code>y(q,d)</code>; сохранять происхождение, raw и calibrated
+значения каждого итогового score. Запасная LLM получает лишь направленную
+по неуверенности Laya подгруппу, поэтому общая калибровка LLM не доказывает
+её условную калибровку или калибровку смешанной политики. На независимом тесте
+показывать Brier/NLL и reliability для исходной/откалиброванной Laya,
+LLM на маршрутизированной подгруппе и итогового score с долями веток.
+Порог и любой условный калибратор выбирать только на development.
+Уверенность бинарного решения — <code>max(p_cal, 1−p_cal)</code>, fallback срабатывает при
+значении ниже <code>τ</code>; в остальных случаях score равен <code>p_cal</code>. Калибровка не является
+гарантией улучшения; сравнить также исходные вероятности. <a href="https://arxiv.org/abs/1706.04599">Guo et al., 2017</a></p>
+<h2 id="6-формальная-постановка-и-метрики">6. Формальная постановка и метрики</h2>
+<p>Пусть <code>x</code> — вопрос с разрешённым корпусом, <code>π</code> — полная политика исполнения,
+<code>π₀</code> — исходный агент с LLM в узле S. Пусть <code>Qπ(x)</code> — joint F1 ответа и доказательств
+на шкале [0,1], <code>Cπ(x)</code> — стоимость полного выполнения, <code>Tπ(x)</code> — его длительность.
+Тогда основной вопрос:</p>
+<p>$$
+\min_{\pi\in\Pi}\mathbb{E}[C_\pi(x)]\quad\text{при}\quad
+\mathbb{E}[Q_\pi(x)-Q_{\pi_0}(x)]\geq-\varepsilon.
+$$</p>
+<p>Задержка — отдельная измеряемая величина, без скрытого веса в суммарном рейтинге.
+<strong>Предложение для согласования до итогового теста:</strong> <code>ε = 0.02</code>, то есть два пункта
+joint F1 на шкале 0–100. Допуск не увеличивать из-за неудачного тестового результата.
+Применимость этого допуска должна иметь содержательное обоснование для задачи.</p>
+<p><code>C</code> рассчитывается в явно названном сценарии учёта: API и арендные расходы плюс
+время локального оборудования по объявленной ставке. Одновременно публикуются
+фактические денежные списания и физические ресурсы без условной монетизации.
+Если ставка локального оборудования не согласована, показать зависимость вывода
+от неё; нулевой API-счёт сам по себе не доказывает снижение полной стоимости.</p>
+<table>
+<thead>
+<tr>
+<th>Уровень</th>
+<th>Метрика</th>
+<th>Правило расчёта и назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Агент, основная</td>
+<td>Средний joint F1</td>
+<td>Совместно оценивает ответ и supporting facts</td>
+</tr>
+<tr>
+<td>Агент</td>
+<td>Answer EM/F1; supporting facts EM/F1</td>
+<td>Показывают, где теряется качество</td>
+</tr>
+<tr>
+<td>Строгий успех</td>
+<td>Joint EM</td>
+<td>1 только при точном нормализованном ответе и точном наборе доказательств</td>
+</tr>
+<tr>
+<td>Поиск</td>
+<td>Recall кандидатов</td>
+<td>Доля эталонных предложений, попавших в кандидаты, до S</td>
+</tr>
+<tr>
+<td>Отбор</td>
+<td>Recall доказательств в упакованном контексте; доля полного покрытия</td>
+<td>Относительно всех эталонных предложений, а не только найденных</td>
+</tr>
+<tr>
+<td>Ранжирование S</td>
+<td>nDCG@10, PR-AUC</td>
+<td>На фиксированных наборах кандидатов с бинарной меткой supporting fact</td>
+</tr>
+<tr>
+<td>Решение D</td>
+<td>Macro-F1, частота преждевременного завершения</td>
+<td>По явно определённой метке достаточности, отдельно от качества ответа</td>
+</tr>
+<tr>
+<td>Вероятности</td>
+<td>Brier, log loss, диаграмма калибровки</td>
+<td>До и после калибровки; не применять к неинтерпретируемому score</td>
+</tr>
+<tr>
+<td>Передача решения</td>
+<td>Риск–охват и доля fallback</td>
+<td>Частота ошибок среди принятых дешёвых решений и доля таких решений</td>
+</tr>
+<tr>
+<td>Ссылки</td>
+<td>Доля валидных ID и точность/полнота supporting facts</td>
+<td>Существование ID не доказывает смысловую поддержку ответа</td>
+</tr>
+<tr>
+<td>Задержка</td>
+<td>Сквозные p50/p95; время узлов</td>
+<td>Включает сериализацию, сеть, ожидание, проверки, повторы и fallback</td>
+</tr>
+<tr>
+<td>Стоимость</td>
+<td>Вся серия; на попытку задачи; на строгий успех</td>
+<td>Все расходы, включая неуспешные и повторные вызовы</td>
+</tr>
+<tr>
+<td>Надёжность</td>
+<td>Частоты терминальных статусов и причин fallback</td>
+<td>Знаменатель — все начатые выполнения; запланированные и незапущенные считать отдельно</td>
+</tr>
+<tr>
+<td>Ресурсы</td>
+<td>Время CPU/MPS/GPU и максимальная память процесса</td>
+<td>Отдельно от денег; условия измерения фиксируются</td>
+</tr>
+</tbody>
+</table>
+<p>Answer и supporting-fact метрики вычислять по закреплённой версии официального
+оценщика HotpotQA. Joint F1 образуется из произведений answer/support precision
+и recall с последующим гармоническим средним; это не произведение двух F1.
+Joint EM — произведение двух EM. <a href="https://github.com/hotpotqa/hotpot/blob/master/hotpot_evaluate_v1.py">Код оценщика</a>
+Отказ, timeout, invalid output и другие терминальные неуспехи получают ноль
+в сквозных метриках. Их нельзя выкидывать из знаменателя.
+Сквозное время означает время до любого терминального статуса; дополнительно
+показать задержку ответов и долю timeout, чтобы быстрый отказ не выглядел ускорением ответа.</p>
+<p>Для бинарных меток и вероятностей:</p>
+<p>$$
+\mathrm{Brier}=\frac1m\sum_j(p_j-y_j)^2,\qquad
+\mathrm{NLL}=-\frac1m\sum_j[y_j\log p_j+(1-y_j)\log(1-p_j)].
+$$</p>
+<p>Для численного NLL заранее установить clipping в <code>[10⁻⁶, 1−10⁻⁶]</code>, сохранить
+сырые вероятности и число ошибочных прогнозов с вероятностью 0/1.
+Показывать также точность бинарного решения и распространённость положительного
+класса: низкий Brier на несбалансированных данных сам по себе не означает полезность.
+Для nDCG без положительных кандидатов значение неопределено; такие вопросы
+учитывать в доле retrieval miss и сквозном качестве, отдельно указывая знаменатель nDCG.
+PR-AUC задавать одним фиксированным вариантом, например average precision.</p>
+<p>Для порога уверенности <code>τ</code> определить охват как долю решений, оставленных дешёвому
+методу, а риск — долю неверных бинарных решений среди них. При нулевом охвате риск
+не определён. При анализе S считать ошибки включения и исключения отдельно:
+высокая точность отрицательных решений может скрывать потерю нужных доказательств.</p>
+<p>Стоимость строгого успеха:</p>
+<p>$$
+C_{\mathrm{success}}=\frac{\sum_{i=1}^{n} C_i}{\sum_{i=1}^{n} I(\mathrm{JointEM}_i=1)}.
+$$</p>
+<p>При нуле успехов сообщать «не определено», ноль успехов и все расходы.
+Разовые затраты на подготовку, обучение, калибровку и выбор модели учитывать отдельно:
+<code>C_total(N) = C_setup + N · mean(C_inference)</code>.
+Окупаемость по сравнению с baseline существует только при положительной экономии
+на inference и выполненном ограничении качества; сравнивать разницу setup-затрат,
+не относить всю общую подготовку корпуса только к одному методу.</p>
+<h2 id="7-сравниваемые-условия">7. Сравниваемые условия</h2>
+<p>Первый эксперимент меняет только S. Во всех строках D, W и A одинаковы,
+как и бюджеты контекста, поиска и обработки ошибок.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Метод S</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>llm</code></td>
+<td>Фиксированная LLM оценивает каждую пару в заданном формате</td>
+<td>Исходный агент <code>π₀</code></td>
+</tr>
+<tr>
+<td><code>bm25</code></td>
+<td>Ранжирование по исходному вопросу без модельного оценщика</td>
+<td>Минимальная дешёвая альтернатива</td>
+</tr>
+<tr>
+<td><code>reranker</code></td>
+<td>Специализированный cross-encoder</td>
+<td>Содержательный дешёвый конкурент</td>
+</tr>
+<tr>
+<td><code>laya</code></td>
+<td>Один явно выбранный checkpoint Laya</td>
+<td>Проверяемая локальная замена</td>
+</tr>
+<tr>
+<td><code>selective</code></td>
+<td>Laya с калибровкой и передачей неуверенных решений той же открытой LLM</td>
+<td>Проверка компромисса риск–охват</td>
+</tr>
+</tbody>
+</table>
+<p>Кандидат специализированного baseline — <code>cross-encoder/ms-marco-MiniLM-L6-v2</code>;
+карточка описывает модель ранжирования query–passage, обученную на MS MARCO,
+с лицензией Apache-2.0. Ревизию и работу на нашем оборудовании предстоит закрепить.
+Её опубликованные показатели не являются показателями на HotpotQA. <a href="https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2">Карточка</a></p>
+<p>Во всех условиях S оценивает одинаковые пары. BM25-score пересчитывается относительно
+исходного вопроса; оценки разных уточняющих запросов не смешиваются как сопоставимые.
+Ненайденные по исходному запросу кандидаты получают минимальную BM25-оценку,
+равные значения разрешаются по <code>source_id</code>. Это диагностический baseline:
+после второго уточняющего поиска он по определению не может корректно оценить
+уникальные находки по исходному запросу. Отдельно показывать долю и качество
+<code>second-search-only</code> кандидатов и сквозной исход; не объявлять победу Laya
+над таким BM25 доказательством преимущества над специализированным reranker.
+При изменении правила общего переранжирования заранее определить новую
+системную серию, не подменять текущий <code>bm25</code> задним числом.</p>
+<p>Дополнительный системный контроль — один поиск, BM25 или специализированный
+reranker и тот же A. Он проверяет, окупается ли адаптивный цикл вообще;
+его результат не приписывать замене только S. На небольшой диагностической
+подвыборке можно подать эталонные доказательства генератору: это оценка его потолка
+при заданном контексте, не реализуемый конкурент и не строгая верхняя граница качества.</p>
+<p>Основные zero-shot условия идут без дообучения на задаче. Обученный дешёвый
+классификатор или дообученная Laya — последующая серия с одинаковыми доступными
+метками, опубликованным бюджетом настройки и отдельным учётом обучения.
+Сначала сравнить простые условия; не запускать декартово произведение всех
+моделей, промптов, порогов и режимов.</p>
+<h2 id="8-протокол-сравнения-и-статистика">8. Протокол сравнения и статистика</h2>
+<ol>
+<li>Проверить техническую выполнимость на пилоте: формат, лимиты длины,
+   память, полноту логов, затраты на один вопрос, работу с ответом и supporting facts.
+   Если общий потолок поиска/генерации слишком низок для сравнения узла,
+   исправить общий baseline и выпустить новую конфигурацию до основного теста.</li>
+<li>На <code>fit/calibration/selection</code> настроить методы и отобрать один основной
+   System One вариант. Равный заранее заданный бюджет настройки — по числу
+   конфигураций и доступным данным; фактические расходы публикуются.</li>
+<li>До открытия теста закрепить manifest данных, primary metric, <code>ε</code>, основную пару
+   сравнения, версии моделей, промпты, пороги, стоимость оборудования и число повторов.
+   На <code>selection</code> также выбрать дешёвого конкурента по тому же ограничению качества.</li>
+<li>Исполнить одинаковые вопросы всеми сравниваемыми методами. Порядок методов
+   внутри блоков вопросов рандомизировать. Между методами не запускать конкурирующие
+   нагрузки на Mac. Основной режим — прогретый, concurrency 1, без межзадачного
+   кэша модельных ответов. Загрузку и построение индекса измерять отдельно.</li>
+<li>Начать пилот с одного выполнения; итоговое число повторов определить по его
+   вариативности и бюджету до теста. Seed сохранять, но не считать его гарантией
+   детерминизма внешнего API. Повторные выполнения одного вопроса не считать
+   независимыми новыми вопросами.</li>
+<li>Для разницы качества и стоимости использовать парный bootstrap по вопросам
+   (10 000 перевыборок, фиксированный seed); все повторы и узловые решения вопроса
+   сохранять внутри одного кластера. Публиковать оценку и 95% интервал.
+   При анализе смешанных типов сохранять выбранную стратификацию и веса.</li>
+<li>Условие качества считать подтверждённым, если нижняя граница интервала
+   <code>ΔQ = Q_candidate − Q_baseline</code> выше <code>−ε</code>. Снижение стоимости — если верхняя
+   граница интервала <code>ΔC = C_candidate − C_baseline</code> ниже нуля в объявленном сценарии.
+   «Статистически значимой разницы не найдено» не означает эквивалентность.</li>
+<li>Один primary вариант и одна primary пара выбираются до теста. Остальные
+   сравнения — диагностические; для набора подтверждающих выводов заранее
+   выбрать коррекцию множественных сравнений. Не выбирать победителя по test.</li>
+<li>Утверждение о преимуществе над дешёвыми альтернативами требует отдельного
+   сравнения с выбранным дешёвым конкурентом. Выигрыш только у <code>llm</code> — более узкий вывод.</li>
+</ol>
+<p>Размер итоговой выборки рассчитывается по парной вариативности пилота и требуемой
+точности вывода вокруг <code>−ε</code>; 100 пилотных вопросов не объявляются достаточными
+для подтверждения преимущества. Если при доступном бюджете интервал пересекает
+границу, вывод — «данных недостаточно». Отсутствие экономии или снижение качества
+сохраняется как результат.</p>
+<p>Узловой offline-прогон использует одинаковые сохранённые состояния для диагностики.
+Сквозной прогон получает собственные состояния каждой политики. Его реальные
+задержки и стоимость нельзя заменять суммой cached offline-предсказаний.
+Для D позже понадобится проверка сдвига распределения состояний: обученные
+на траекториях baseline решения могут ошибаться на собственных траекториях.</p>
+<h2 id="9-журнал-и-воспроизводимость">9. Журнал и воспроизводимость</h2>
+<p>Одна запись на каждую попытку функции или провайдера, включая неудачную:</p>
+<table>
+<thead>
+<tr>
+<th>Группа</th>
+<th>Обязательные поля</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Идентичность</td>
+<td><code>run_id</code>, <code>task_id</code>, <code>repeat_id</code>, <code>event_id</code>, <code>parent_event_id</code>, <code>method</code>, <code>stage</code>, <code>attempt</code></td>
+</tr>
+<tr>
+<td>Время</td>
+<td>UTC начала, monotonic duration, ожидание/backoff, warm/cold</td>
+</tr>
+<tr>
+<td>Вход</td>
+<td>ID источников, хеш сериализованного входа, ссылка на сохранённый текст, длина и признак overflow</td>
+</tr>
+<tr>
+<td>Модель</td>
+<td>Запрошенный и возвращённый model ID, провайдер, ревизия весов/SDK, device/dtype</td>
+</tr>
+<tr>
+<td>Решение</td>
+<td>Сырой score/вероятности, откалиброванные значения, выбранное действие, <code>fallback_reason</code></td>
+</tr>
+<tr>
+<td>Расход</td>
+<td>Входные/выходные/кэшированные токены, API-стоимость, валюта, тариф/дата, фактическое списание или статус неизвестности</td>
+</tr>
+<tr>
+<td>Исход</td>
+<td>Статус, error code, ссылка на сырой response; для задачи — итоговый ответ и цитаты</td>
+</tr>
+</tbody>
+</table>
+<p>Run manifest содержит параметры из <a href="../research/#запись-эксперимента">записи эксперимента</a>,
+а также хеши dataset split, индекса, evaluator и калибратора. Сохранять commit и diff
+при незакоммиченных изменениях; для весов — точную ревизию и checksum.
+API воспроизводим на уровне запроса и сохранённого ответа; побитовую повторяемость
+закрытого сервиса не обещать.</p>
+<p>Сводные данные строятся из неизменяемого журнала. Незавершённые задачи после сбоя
+сохраняются; новый прогон получает новый ID. Не дописывать только удачные ответы
+поверх старых. При неизвестном списании отмечать стоимость как неполную,
+не подставлять ноль. Повторный API-запрос может быть оплачен даже после timeout клиента.</p>
+<p>Большие исходные данные, веса и ответы — вне Git; в репозитории сохранять
+разрешённые manifests, версии, небольшие сводки и способы воспроизведения.
+Будущие команды запуска появятся с работающим кодом, а не как заглушки в спецификации.</p>
+<h2 id="10-бюджет-и-условия-остановки">10. Бюджет и условия остановки</h2>
+<p>До платного пилота определить денежный лимит серии. Оценка inference:
+<code>число вопросов × число методов × число повторов × средняя полная стоимость вопроса</code>,
+с отдельным резервом на повторы/fallback и отдельными setup-затратами.
+Для первого пилота до появления среднего использовать верхние границы числа
+вызовов и токенов. Ставки брать из выбранных версий API на дату серии.</p>
+<p>Серия не стартует без заполненного лимита. Перед каждым платным вызовом проверять
+уже потраченное плюс верхнюю оценку следующего запроса; при превышении прекращать
+новые вызовы. Остановить серию при ошибке авторизации, несовпадении версии модели,
+невозможности записывать журнал или систематически неполном учёте расходов.
+Исчерпание общего бюджета делает сравнительную серию неполной: сообщить покрытие
+каждого метода, не сравнивать разные оставшиеся подвыборки как полный парный тест.</p>
+<p>Текущие 30 000 ₽ относятся к возможной аренде GPU, а не к утверждённому API-бюджету.
+Для v0.1 аренда и дообучение не нужны до проверки локального baseline.</p>
+<h2 id="проверка-стенда">Проверка стенда</h2>
+<p>Перед сравнительной серией проверить разделение эталонов и входов агента,
+переход к дополнительному поиску, валидность ID цитат, терминальные ошибки,
+учёт повторов/fallback и совпадение метрик с официальным оценщиком на ручных примерах.
+API-лимит и допуск качества согласуются до платной серии и итогового теста.</p>
+<h2 id="источники">Источники</h2>
+<p>Проверены <strong>01.10.2026</strong>. Живые карточки и API-документация описывают интерфейсы
+и ограничения поставщиков; их показатели не перенесены в наши результаты.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1809.09600">Yang et al., HotpotQA, EMNLP 2018</a> — задача и разметка.</li>
+<li><a href="https://hotpotqa.github.io/">HotpotQA: данные и режимы</a>, <a href="https://github.com/hotpotqa/hotpot">репозиторий и лицензии</a>,
+  <a href="https://github.com/hotpotqa/hotpot/blob/master/hotpot_evaluate_v1.py">оценщик v1</a> — формат и воспроизводимая проверка ответа/доказательств.</li>
+<li><a href="https://huggingface.co/Qwen/Qwen3-8B">Qwen3-8B</a> и <a href="https://github.com/QwenLM/Qwen3">код семейства Qwen3</a> — открытая LLM для baseline.</li>
+<li><a href="https://docs.typesafe.ai/concepts/system-one">TypeSafe System One</a> — справочный обзор подхода; Jev не используется.</li>
+<li><a href="https://huggingface.co/convaiinnovations/laya">Laya: model card</a> и <a href="https://github.com/NandhaKishorM/laya">код</a> — checkpoints, лицензии и ограничения входов.</li>
+<li><a href="https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2">MS MARCO MiniLM cross-encoder</a> — специализированный baseline.</li>
+<li><a href="https://www.sqlite.org/fts5.html">SQLite FTS5</a> — локальный полнотекстовый поиск.</li>
+<li><a href="https://openrouter.ai/docs/guides/features/structured-outputs">OpenRouter structured outputs</a> — ограничения JSON Schema у API.</li>
+<li><a href="https://arxiv.org/abs/1706.04599">Guo et al., On Calibration of Modern Neural Networks, 2017</a> —
+  методический источник по калибровке; результаты статьи не доказывают калибровку наших моделей.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
