@@ -1,0 +1,35 @@
+{
+  "targeted": {
+    "tests": 68,
+    "failures": 0,
+    "log": "artifacts/system-one-pilot/adaptation-v1/engineering/adaptation-final-targeted-tests.log"
+  },
+  "full": {
+    "tests": 99,
+    "failures": 1,
+    "known_preexisting_failure": "test_presentations.PresentationTests.test_all_stored_presentations_are_complete_packages",
+    "log": "artifacts/system-one-pilot/adaptation-v1/engineering/adaptation-full-tests.log"
+  },
+  "review_ui": {
+    "exit_code": 0,
+    "command": "node tests/test_system_one_review.cjs"
+  },
+  "gitmark_lint": {
+    "exit_code": 0,
+    "documents": 31
+  },
+  "mkdocs_full": {
+    "exit_code": 1,
+    "reason": "three existing jira-autonomy plans omitted from nav"
+  },
+  "mkdocs_isolated": {
+    "exit_code": 0,
+    "config": "/tmp/adaptation-mkdocs-check.yml",
+    "exclusions": [
+      "superpowers/plans/2026-10-25-jira-autonomy-codex.md",
+      "superpowers/plans/2026-10-25-jira-autonomy-sources.md",
+      "superpowers/plans/2026-10-25-jira-autonomy.md"
+    ]
+  },
+  "scope": "engineering checks before data completion; not experiment completion"
+}

@@ -1,0 +1,10 @@
+{
+  "call_id": "online-adaptation-v1/native/task_041/039/agent",
+  "finish_reason": "tool_calls",
+  "completion_tokens": 2048,
+  "max_tokens": 2048,
+  "tool_calls": 4,
+  "actual_usd": 0.000719093,
+  "technical_error": "JSONDecodeError",
+  "rerun": false
+}

@@ -1,0 +1,209 @@
+{
+  "record_id": "paper-translations-20261025-v1",
+  "retrieved_date": "2026-10-25",
+  "timezone": "Asia/Novosibirsk",
+  "papers": [
+    {
+      "name": "openjev",
+      "arxiv_version": "2609.38850v1",
+      "license": "CC BY 4.0",
+      "sources": [
+        {
+          "kind": "html",
+          "url": "https://arxiv.org/html/2609.38850v1",
+          "bytes": 245918,
+          "sha256": "79d64786ee3bcbd47b94ffa1c15340c4db427fe5b3cb0a7ba968b949acea43b1"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2609.38850v1",
+          "bytes": 475887,
+          "sha256": "9e159be125d030e3298d2f583bb533f4258cce428dd45c229349b2fe1f0ac8bb"
+        }
+      ],
+      "section_headings": [
+        "1 Introduction",
+        "2 Setting",
+        "3 Method",
+        "4 Experimental setup",
+        "5 Results",
+        "6 Related work",
+        "7 Limitations",
+        "8 Conclusion",
+        "References",
+        "Appendix A Estimators and their exact checks",
+        "Appendix B Hyperparameters",
+        "Appendix C Mixture readout"
+      ],
+      "numbered_tables": [
+        "S5.T1",
+        "S5.T2",
+        "S5.T3",
+        "S5.T4"
+      ],
+      "figures": [
+        "S3.F1",
+        "S5.F2",
+        "S5.F3"
+      ],
+      "reference_count": 20
+    },
+    {
+      "name": "sbert2s1",
+      "arxiv_version": "2610.02486v1",
+      "license": "CC BY 4.0",
+      "sources": [
+        {
+          "kind": "html",
+          "url": "https://arxiv.org/html/2610.02486v1",
+          "bytes": 649494,
+          "sha256": "88048e7990392ad56f7e6a11c1eae1a07ed2bfc1c3619daf9140806ed86827fb"
+        },
+        {
+          "kind": "pdf",
+          "url": "https://arxiv.org/pdf/2610.02486v1",
+          "bytes": 507726,
+          "sha256": "e194a8ad03c9dac8dbdefeddb88c95fa50d8a6b1c9c496b2a0da9a4227926df0"
+        }
+      ],
+      "section_headings": [
+        "1 Introduction",
+        "2 Related Work",
+        "3 Method",
+        "4 Data",
+        "5 Experimental Setup",
+        "6 Results",
+        "7 Discussion",
+        "8 Conclusion",
+        "Limitations",
+        "Ethics Statement",
+        "Acknowledgements",
+        "References",
+        "Appendix",
+        "Appendix A Extended Related Work",
+        "Appendix B Task Conversions",
+        "Appendix C RLCD: Formal Statement and Proof",
+        "Appendix D Gradient-Estimator Probe and Optimisation Traces",
+        "Appendix E Complete Head ×\\times Objective Results",
+        "Appendix F Metrics and Statistics",
+        "Appendix G Full Results by Encoder and Task",
+        "Appendix H Robustness and Long Notes",
+        "Appendix I Data Integrity and Sensitivity",
+        "Appendix J LLM Prompt",
+        "Appendix K Hyperparameters and Compute",
+        "Appendix L Released Software and Model"
+      ],
+      "numbered_tables": [
+        "S4.T1",
+        "S6.T2",
+        "S6.T3",
+        "S6.T4",
+        "A2.T5",
+        "A4.T6",
+        "A5.T7",
+        "A6.T8",
+        "A6.T9",
+        "A7.T10",
+        "A7.T11",
+        "A8.T12",
+        "A9.T13",
+        "A10.T14"
+      ],
+      "figures": [
+        "S1.F1",
+        "S6.F2",
+        "S6.F3",
+        "A2.F4",
+        "A4.F5",
+        "A4.F6",
+        "A5.F7"
+      ],
+      "reference_count": 57
+    }
+  ],
+  "assets": [
+    {
+      "paper": "openjev",
+      "id": "S3.F1",
+      "path": "docs/translations/assets/openjev-1.svg",
+      "url": "https://arxiv.org/html/2609.38850v1/collapse.svg",
+      "bytes": 50991,
+      "sha256": "f823338a4a0766d0a97e762a44808847daf73b6b1e8272832a951c65e533b7ff",
+      "transformation": "unmodified copy"
+    },
+    {
+      "paper": "openjev",
+      "id": "S5.F2",
+      "path": "docs/translations/assets/openjev-2.svg",
+      "url": "https://arxiv.org/html/2609.38850v1/risk_coverage.svg",
+      "bytes": 81598,
+      "sha256": "b543965478dc15a22e5d61d05fb590a36ab6f504df4bb30938d9fd8a4bddef24",
+      "transformation": "unmodified copy"
+    },
+    {
+      "paper": "openjev",
+      "id": "S5.F3",
+      "path": "docs/translations/assets/openjev-3.svg",
+      "url": "https://arxiv.org/html/2609.38850v1/stage2.svg",
+      "bytes": 50649,
+      "sha256": "4211f1c78ff06c11cf59c996886723cbb724b1a516316f2a68cf3d90e2f8774c",
+      "transformation": "unmodified copy"
+    },
+    {
+      "paper": "sbert2s1",
+      "id": "S1.F1",
+      "path": "docs/translations/assets/sbert2s1-1.svg",
+      "url": null,
+      "bytes": 12800,
+      "sha256": "8faaff2019d073b67f138bb92ab7671c90c531e5b8dc8971e7de588cab66618e",
+      "transformation": "extracted embedded SVG; namespace and local style added"
+    },
+    {
+      "paper": "sbert2s1",
+      "id": "S6.F2",
+      "path": "docs/translations/assets/sbert2s1-2.svg",
+      "url": "https://arxiv.org/html/2610.02486v1/learning_curves.svg",
+      "bytes": 250632,
+      "sha256": "838d5a0573f5130943aee31648b8a0e6f47c01082218fb27318d72a6ecf848d8",
+      "transformation": "unmodified copy"
+    },
+    {
+      "paper": "sbert2s1",
+      "id": "S6.F3",
+      "path": "docs/translations/assets/sbert2s1-3.svg",
+      "url": "https://arxiv.org/html/2610.02486v1/cascade.svg",
+      "bytes": 59886,
+      "sha256": "16fd7d0842266400f685108398a425dc47277629069db056299054c5af592cef",
+      "transformation": "unmodified copy"
+    },
+    {
+      "paper": "sbert2s1",
+      "id": "A4.F5",
+      "path": "docs/translations/assets/sbert2s1-5.svg",
+      "url": "https://arxiv.org/html/2610.02486v1/probe.svg",
+      "bytes": 79384,
+      "sha256": "5761078788296e162591c35d4f823c685aa81a072ac0c391cc47db3931d503ab",
+      "transformation": "unmodified copy"
+    },
+    {
+      "paper": "sbert2s1",
+      "id": "A4.F6",
+      "path": "docs/translations/assets/sbert2s1-6.svg",
+      "url": "https://arxiv.org/html/2610.02486v1/gradnorm.svg",
+      "bytes": 126895,
+      "sha256": "e4551d71e05a10bd461de64d01f9bf3b2487fa50ca9073280bcffb05e68b2860",
+      "transformation": "unmodified copy"
+    },
+    {
+      "paper": "sbert2s1",
+      "id": "A5.F7",
+      "path": "docs/translations/assets/sbert2s1-7.svg",
+      "url": "https://arxiv.org/html/2610.02486v1/reliability.svg",
+      "bytes": 128042,
+      "sha256": "854b83b7b237b3b972ba989f34eaf15218ed227122ba026891472b23a5d2f095",
+      "transformation": "unmodified copy"
+    }
+  ],
+  "openrouter_requests": 0,
+  "openrouter_cost_usd": 0
+}

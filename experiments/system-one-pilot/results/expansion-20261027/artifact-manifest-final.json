@@ -1,0 +1,2117 @@
+{
+  "at": "2026-10-27T06:40:09.081935+00:00",
+  "scope": "sealed first packet sources, raw observations/annotations/adjudications, exports, backups, completed logs and fixed metadata; no weights or credentials",
+  "files": {
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-001-decisions.json": {
+      "bytes": 1813,
+      "sha256": "4f08591d476a657ca80f7eaaea6340081f3f58bf4a02626428eb8ac0ee2c15a2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-001-input.json": {
+      "bytes": 272,
+      "sha256": "3e59fab0e7c4c9883e1cb5d7f3257f7b27eddbf6b137cf30b9e6768b52335b4a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-002-decisions.json": {
+      "bytes": 1741,
+      "sha256": "e6d261f375be204a6b003e1b064dedf578db5f58833a5a00ccec63f2f699e4c0"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-002-input.json": {
+      "bytes": 247,
+      "sha256": "d27354a270aa6f99bcd72730d84ca2b44d23069b521ea76b28dd23b8b662aa15"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-003-decisions.json": {
+      "bytes": 2419,
+      "sha256": "02921ae8a9289d4f180fbf1af65e099a78c4e7fd7ca921f1464b3721c37df8ed"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-003-input.json": {
+      "bytes": 13718,
+      "sha256": "4584a8dcfeafc858eea169bdff360f7f59dc4513395b4418bdda81a4629d9838"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-003-review.json": {
+      "bytes": 442,
+      "sha256": "40fef528d4def4a33872fc2c52d1997e9604103c83f37481588e403e771a72c4"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-004-decisions.json": {
+      "bytes": 2285,
+      "sha256": "2463e789c1f4ef5e0a0d65c6c50f44117dbf17159b9ebeaf8154b2d4eed9c022"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-004-input.json": {
+      "bytes": 6100,
+      "sha256": "f99b39dead6ef398796a8c4df1aa6c201e7149bb63eb4263d64b7f325c5dfa2c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-004-review.json": {
+      "bytes": 442,
+      "sha256": "82a88681c9d955793c4817d7eba71138d58b723d62ef16620e2dbc57b372f9cf"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-005-decisions.json": {
+      "bytes": 1764,
+      "sha256": "79b9107a11291979b7f2daef295840871161fe7512acc2a99b04ad415d9e1d69"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-005-input.json": {
+      "bytes": 256,
+      "sha256": "174cb68f02477d1e541a0c5f6d9e8dc61bbfa5e79e6542e1328d852e4b99b098"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-006-decisions.json": {
+      "bytes": 3556,
+      "sha256": "1c84121d3d47f5bce1370a6e41cf2ac6cb1f152e4e2b2470c366d3083ba17bdc"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-006-input.json": {
+      "bytes": 18375,
+      "sha256": "32998d7fd822a1ca6ed8efd02fd54321731c21e5cd3b2023abdd9aedb0cf739a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-006-review.json": {
+      "bytes": 474,
+      "sha256": "6bb1b5d8508e2967c33196681355a56252dccf3b90fa95e0caf48cd347c9965e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-007-decisions.json": {
+      "bytes": 2449,
+      "sha256": "0fd309d767f3cc86b163d6199bc174e77ad67a145db57a1db872c236949eb932"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-007-input.json": {
+      "bytes": 14005,
+      "sha256": "9b212e8b54fcb5fdc5cce51b325e33a83d7ba16e28b5fa755c45a1a6ac835d0a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-007-review.json": {
+      "bytes": 442,
+      "sha256": "f9e16e5ff0c4a5fefa9c07cc654c26f437b3f8f7184b0f185175e53990070647"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-008-decisions.json": {
+      "bytes": 2386,
+      "sha256": "bae65e735a6323b13db7175f08e10040e72051e9896c46e1cfee7871598c4250"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-008-input.json": {
+      "bytes": 10356,
+      "sha256": "8de28b1188d76b051fd830ebaa342afa36b0a88a77ce75ab1c8d3d364392ca09"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-008-review.json": {
+      "bytes": 442,
+      "sha256": "9480b572a7c092666453e3e625c64af16489f9fd0300e56a8c066d88598320d5"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-009-decisions.json": {
+      "bytes": 2565,
+      "sha256": "ae3dc165bd67d7f5571e1127de0e1eded6e3b37847ad10d6d893f151bf3b47c3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-009-input.json": {
+      "bytes": 13899,
+      "sha256": "9d4b568cfb02f3f60e61f72773ddc77b3628a52dcf237e2de4ea1b9698e53d35"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-009-review.json": {
+      "bytes": 442,
+      "sha256": "484bb87787bb0b4ca9b0932287d827d87bc42be2c29b9470df95836ae885a1d3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-010-decisions.json": {
+      "bytes": 1911,
+      "sha256": "cac09149d1a65bca39cac00d84e975f2253058e2bed9315aaef478e5580647ee"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-010-input.json": {
+      "bytes": 251,
+      "sha256": "b8429225f6ee146ce2467992afc0ec48dbc1675d52c4d97af45cd5cd9c4cbb2e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-011-decisions.json": {
+      "bytes": 1776,
+      "sha256": "fe7d49c3d1fb388b95fd8635025461e2fd3c15415e27a0b2c503036e2a0b946e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-011-input.json": {
+      "bytes": 249,
+      "sha256": "930cbf310d6ed2f004a091f800bedb16ffa53f4c7ef6f2c06e6949e25ae984b7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-012-decisions.json": {
+      "bytes": 1685,
+      "sha256": "eb5b5dc9db0b4ac2ed3453065ea3c08b0e80bc52af9ba9e9d5fc682de5c5f4f7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-012-input.json": {
+      "bytes": 251,
+      "sha256": "51bab75be674607c6107d3ad112f320b40911d4a8344d7017708a4bd097eec5f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-013-decisions.json": {
+      "bytes": 1836,
+      "sha256": "4b6dbb883d5e1589d700cc8ca5e5c088b00f0662790376e7be3b05b72a55e8b2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-013-input.json": {
+      "bytes": 264,
+      "sha256": "a7a0ba12dc693462bcdc791cc4919e93bf6a66287d07113769ebfbb696530aca"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-014-decisions.json": {
+      "bytes": 5002,
+      "sha256": "0253eeedf27cb5463f70fbba348627eb25f8e64b3d73153d457aeed158a1f5e1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-014-input.json": {
+      "bytes": 18571,
+      "sha256": "5598b99f8e9cc9b732ff17fb422248bc6172832bb47e721055a46b01575e8e9e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-014-review.json": {
+      "bytes": 528,
+      "sha256": "b77abc9475271e1decd02b39bc1c51dd61d5dd223bb3bbb46dfda7f9f886a710"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-015-decisions.json": {
+      "bytes": 2272,
+      "sha256": "18e2f8d677e0d793d87d84901523cf070c69992c71a76f54c9f928231e646f2c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-015-input.json": {
+      "bytes": 10367,
+      "sha256": "5c74539a94486703792ed9c58fdb9c222f71fccd304d5e1b32698e1fbd4901e2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-015-review.json": {
+      "bytes": 496,
+      "sha256": "3ff628ee9006dd7d0b2f4190980dc6464f7a69038c6256ac33756503c76b1e9e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-016-decisions.json": {
+      "bytes": 1608,
+      "sha256": "e6cdb50c507e263949f039309278b8e2ec25cd6bc25fbc7441fd82ef4ea22050"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-016-input.json": {
+      "bytes": 282,
+      "sha256": "0962f42b53d38bca5b10db53a985776e668d248d4274d9bfb536be3cd934bfee"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-017-decisions.json": {
+      "bytes": 1896,
+      "sha256": "1b0bc48a3f8ab3c24c6f5e6e5a1c0fe3ac4d51d11e468040857fb26f84d165a3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-017-input.json": {
+      "bytes": 282,
+      "sha256": "a437359d529dd195f0e74153711ec59e4373564684721b13fb467e132d2b283e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-018-decisions.json": {
+      "bytes": 1899,
+      "sha256": "547f660d54e1b1c6e5b837fed2018f1b71f83b4cf44c478694b40e283c745b9d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-018-input.json": {
+      "bytes": 284,
+      "sha256": "1752e51924d3d91b4e6380908652d38a73f85b467898e2df39b874ff77ce3649"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-019-decisions.json": {
+      "bytes": 1729,
+      "sha256": "7c1281d991802794e8ec2e607921f9608278dc1b30e1362a8b2b503016d68c43"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-019-input.json": {
+      "bytes": 284,
+      "sha256": "738b8c39ca090657961a5b6ba5cb8a576b8253bc04acf0fc7a1bbbd08dcf5c61"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-020-decisions.json": {
+      "bytes": 1606,
+      "sha256": "0b557b5bbe6a0a9e374da0f0d5349f800c5a9f94ca470bddc3430b3b9d562d47"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-020-input.json": {
+      "bytes": 282,
+      "sha256": "a0a41f0be5a3bd224969d2980ee914baf1fbbaff64803e082f5c83820484cad0"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-021-decisions.json": {
+      "bytes": 1887,
+      "sha256": "b0278ced40ae02a98e82b732a9b57eb1030f8a09022c439bb89e80f98bd2e990"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-021-input.json": {
+      "bytes": 278,
+      "sha256": "2ff2e019de77612653b9eddd772ed1d610d6ee827a4749f3c9a93fc3754e4156"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-022-decisions.json": {
+      "bytes": 1707,
+      "sha256": "b7880f7944f78a884b0149704ff38f3b7120e17964bdffb8d699cb9d98cf21b3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-022-input.json": {
+      "bytes": 291,
+      "sha256": "ef20b50ec897125a4bebde80fe37b77c4e7a506264e236fe5d051bba0a98ec21"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-023-decisions.json": {
+      "bytes": 1777,
+      "sha256": "1fe7a5c7fba9cd4cec9fa0219b07935491211bb942b5dd3e06affcb875bbd00a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-023-input.json": {
+      "bytes": 297,
+      "sha256": "29c70d52d5330848343bd82341f5568f1ded5064bb4029fc23997f61e1d02a2a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-024-decisions.json": {
+      "bytes": 1970,
+      "sha256": "964fed3e4a929b69c46601176fa67e4f8689cb805a1672eb83e1914ee2ce0785"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-024-input.json": {
+      "bytes": 282,
+      "sha256": "0e52ab34e8abca8090a97ceb256f502335e95f6f643ac6ef4653218bd173b0be"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-025-decisions.json": {
+      "bytes": 2063,
+      "sha256": "32557711a970af1f2240d6dd01bbed5113121bdd37d824083783cc176013982f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-025-input.json": {
+      "bytes": 320,
+      "sha256": "73841a061817b57e609bfca2eaaffc138c6aea1156d71596b9429c1e7cc9994a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-026-decisions.json": {
+      "bytes": 2031,
+      "sha256": "e5eab51ead42f89aa907259f091027ab113bd06e687951e5b2aeea96b64a0fc6"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-026-input.json": {
+      "bytes": 296,
+      "sha256": "bb50f836aa0255c26adf223e7ef443fc698b4fd791e5a62b3428bbbec9a52f19"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-027-decisions.json": {
+      "bytes": 1550,
+      "sha256": "b52a09dab45ab6bd2faed912d440749f5e20916b779a3a57f47ea5d92a123679"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-027-input.json": {
+      "bytes": 284,
+      "sha256": "ec76ee572ddeda266360c1ca72ec65f4a7db96986d9fcfc1ea8dc2199a465ca2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-028-decisions.json": {
+      "bytes": 1607,
+      "sha256": "a5b237b0b959d8ce9c31a9b662ab295323bcedcfbe5467839d226dc4d6895a52"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-028-input.json": {
+      "bytes": 329,
+      "sha256": "e5dfc4abc9c4ac0899a6f20204a908ff23c0df93709f0960529d38a2dbdd9ab1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-029-decisions.json": {
+      "bytes": 1637,
+      "sha256": "45c87f497250fb6d13541f2a367ef23f68df8a6a01b136709ef1b20b6868ff97"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-029-input.json": {
+      "bytes": 284,
+      "sha256": "9ffa785be2835b72a7133faa0b34149f69751f7ce5a2276fe610481c160c4831"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-030-decisions.json": {
+      "bytes": 1927,
+      "sha256": "838166c1323bf1441cbc48e544de8c34f4656b729a382d5c144abd0ad279a1ac"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/adjudication/batch-030-input.json": {
+      "bytes": 298,
+      "sha256": "72d8cf450da04c5d0049307114d7bbf3d34ca6de9ffd159b996578acddb99223"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/admission.json": {
+      "bytes": 534663,
+      "sha256": "c34416c96c18e6f68c2f50f205a684d0623f6194fc62d3ba320a7ad4e6d4accf"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotation-plan-v2.json": {
+      "bytes": 8365,
+      "sha256": "42138b8ee87ae2a359c116e7c399c45f33052894114bec55a7abaee445ebafd6"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/00418bc07cca9a604a0c3545-deepseek.json": {
+      "bytes": 20418,
+      "sha256": "ac0e8822becebb2211993f80ddec44643602c1df4e3b523ece88d6c976a81c49"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/00418bc07cca9a604a0c3545-qwen.json": {
+      "bytes": 13007,
+      "sha256": "3d1efd137beb5a60f20e5446a1d7bd90912565cda0b7eae53a0e81a4838a4d66"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/031300b27356381071dfe4db-deepseek.json": {
+      "bytes": 14312,
+      "sha256": "9118eedcf2f9c0f33b1e52556044d3dd7e7af3291b4f4218a389b8772c1cc0e6"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/031300b27356381071dfe4db-qwen.json": {
+      "bytes": 11582,
+      "sha256": "6d57a8e92a2df5ef5579826b806b7c1e6d288404f074c85d1690c32d329d26ba"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/037444b085a82d2193605702-deepseek.json": {
+      "bytes": 20574,
+      "sha256": "e56f8e524abef3460ce9c295ee05eb592b8021f0cc1860909085832fc37bbb66"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/037444b085a82d2193605702-qwen.json": {
+      "bytes": 19021,
+      "sha256": "912d059ac0d7157e88fbc85525e7cb96bd17131a1ff8a6d7b38ac3947ef6208a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/03d48018e3ba7215e991563d-deepseek.json": {
+      "bytes": 12562,
+      "sha256": "7ffac3a60b4b11e5a9bef1b85ee8752787cc718452494ddc742ecf82a2419dda"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/03d48018e3ba7215e991563d-qwen.json": {
+      "bytes": 13605,
+      "sha256": "1b832188814edce87d78e16b8e598eb1b39431dfba7f579cb61130c3c83c69df"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/041bad8e7640802916c7dc03-deepseek.json": {
+      "bytes": 10103,
+      "sha256": "b0f74e9f40abd12a0bcd2be5c3a7530d07a57a7b9b835425382d44dcca977848"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/041bad8e7640802916c7dc03-qwen.json": {
+      "bytes": 9885,
+      "sha256": "4c423c0f2143859601c47694b9423f48dd1f825a42cb1a6c87856e2b32602a65"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/06edc178334a5cb2a5ae5de6-deepseek.json": {
+      "bytes": 10108,
+      "sha256": "ee44c65720a7dc9a9422db8929f0e9c6739df9514fa3f931d68199d33ee9ce4d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/06edc178334a5cb2a5ae5de6-qwen.json": {
+      "bytes": 11264,
+      "sha256": "027844772f5aec567321767a69cf069d56217b3f9873f5ffb53ade69e3e84a86"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/08d150a6ba69d2c3e81370af-deepseek.json": {
+      "bytes": 17954,
+      "sha256": "c9f94e626c0287f335cdf29230556a79f460a4937f439723b0035832d1d94c57"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/08d150a6ba69d2c3e81370af-qwen.json": {
+      "bytes": 16079,
+      "sha256": "83354f23a3e62e8321e0acd2ea4be8c9858b0d85bebd42185fd65e84c350dedf"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/09da5e78ea6e6b5dff47066b-deepseek.json": {
+      "bytes": 14816,
+      "sha256": "416ef1aba8569a84c2f5e43c9455215bf9167848c6cd6d94c0268308d9558d13"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/09da5e78ea6e6b5dff47066b-qwen.json": {
+      "bytes": 15502,
+      "sha256": "1fef9e62eb74f00da6f1e84df0672c0c3c4235b32b67991e9019bf57a3807325"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0bee074668457edf60b98900-deepseek.json": {
+      "bytes": 20079,
+      "sha256": "299e5c1f4f724d53a097c96c2450638a8cb3dcf80a6643af5e0272a39e342d35"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0bee074668457edf60b98900-qwen.json": {
+      "bytes": 13947,
+      "sha256": "8e544aa6e0a2d787187af9ca832048b1f27fcecd8f1123c991b6477bde32d1a1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0cce50773ba8d5deb8c36f0c-deepseek.json": {
+      "bytes": 8711,
+      "sha256": "6ef5b84127e5327b3d636650c966cd978f58673336d59de2f49d5880922051d4"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0cce50773ba8d5deb8c36f0c-qwen.json": {
+      "bytes": 9351,
+      "sha256": "e751c52c0efc05d511f896bd3c48c64eabaf73939745864a734478ff95dd00d6"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0cf3b9b359b2c8b87ce3cac7-deepseek.json": {
+      "bytes": 18429,
+      "sha256": "2e9e13d15224b688f30e00a467a2cdd91c4fe13f4a9da15115ed811c6c9154a2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0cf3b9b359b2c8b87ce3cac7-qwen.json": {
+      "bytes": 15256,
+      "sha256": "1e15823a77e509d487dd9f3a26d84a18de34c87a9398c23672a252b653ec5b03"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0d79ca5e269d69f227f059ec-deepseek.json": {
+      "bytes": 14403,
+      "sha256": "36045891010e1a0bebe8e23a6c0e45296eba2b32e8b92a4dbe4dada9227bd12d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0d79ca5e269d69f227f059ec-qwen.json": {
+      "bytes": 14796,
+      "sha256": "fccbf3585e91e188a3694220d8592f0c6dd4d77cfbbbf5cf96a902cdc1adbe53"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0e0c680e3be4f82339a77f5d-deepseek.json": {
+      "bytes": 10030,
+      "sha256": "4134335ec5c6ac8af4f90be231ad04320f107e1805d8b4c179f2b7f39fda899d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0e0c680e3be4f82339a77f5d-qwen.json": {
+      "bytes": 10960,
+      "sha256": "7cc9a1ef0b076bce14099e03b7a1e529cca3d17f48a59da3a0736ff548138d55"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0f168ac41fe04f08987fc8db-deepseek.json": {
+      "bytes": 11639,
+      "sha256": "565e1d5fd8fd9f00b16a21c93a7a3126c7a87462008153b096c0a585df78437d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/0f168ac41fe04f08987fc8db-qwen.json": {
+      "bytes": 12162,
+      "sha256": "7c78e796cf10f4a18a5c8d06efd9a00c0a516b26bced5f4d41bb8a56ccbadf3c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/107d6060033f1724f33e6028-deepseek.json": {
+      "bytes": 19516,
+      "sha256": "d713475103e7c67d4ee33f557de7be7e66a5116e3ba889172f8232f1e963c7e5"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/107d6060033f1724f33e6028-qwen.json": {
+      "bytes": 12249,
+      "sha256": "3bac5c36e7aad2be00fdb2921fbb68b1c87a989ac2d9c746c897008e7d893075"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/125ed4f562ea208d08c83a3a-deepseek.json": {
+      "bytes": 9411,
+      "sha256": "d4884b7960c20e0ce8429a5777d055af4fe3621c1c304ad080fde00ab365b0eb"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/125ed4f562ea208d08c83a3a-qwen.json": {
+      "bytes": 9831,
+      "sha256": "6025713ca15823b7bbffb715a85fd66b5f1d74688366bc7f91cfdb05295a2feb"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/131a8181cf685817b97d332e-deepseek.json": {
+      "bytes": 9688,
+      "sha256": "2b50282ee3029217c53e798ec77317065fdfd7b5c6d01f6bc6cf461fd277be5c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/131a8181cf685817b97d332e-qwen.json": {
+      "bytes": 10097,
+      "sha256": "5201059bd43b93ddd0a8d9ef3ef80be656266fe5df4d2f9260a2dfc9e01dd330"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1325c2ede148f3b8c7670da4-deepseek.json": {
+      "bytes": 12342,
+      "sha256": "4003c786053ca0e9e415243f46b286f92f926aa6637daf5f2b0555284e6a9d1f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1325c2ede148f3b8c7670da4-qwen.json": {
+      "bytes": 12794,
+      "sha256": "c9438943438940d5164149d16612169e368b0efe4ece1b3d4b7d75a26128a006"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1365ff3c9d9650ca0fda9223-deepseek.json": {
+      "bytes": 9998,
+      "sha256": "d059ee90f1aacb182e9fb06f8bb3f5d20bd2feed9628b623a345f08653d8c45f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1365ff3c9d9650ca0fda9223-qwen.json": {
+      "bytes": 10425,
+      "sha256": "2d089b5ec2a9f6c633be2a94d7c2de96f374c713feec3b3fadd4caabf67f2ba6"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/140643ab757b6b40bd2ba818-deepseek.json": {
+      "bytes": 9168,
+      "sha256": "bff52d2a71e87c31ad0498e2fc874508c15f6b41144e7b60f281fdd30835f51a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/140643ab757b6b40bd2ba818-qwen.json": {
+      "bytes": 10023,
+      "sha256": "ef8af6c2c7c0694d7c1839668c686a206f1cfcf4eb6df5e99caad303fa0b70b5"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/15f13b20459a692680b2eb21-deepseek.json": {
+      "bytes": 11722,
+      "sha256": "f81b55bad2eecaca63f67ca9839ad6c5538c74388d26dca3e308967223f1218a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/15f13b20459a692680b2eb21-qwen.json": {
+      "bytes": 11829,
+      "sha256": "465f14afa5e6b08d662f27d5189076c071d8120ce4061698ce92334cf8febf24"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/15fa0dd8bd51e5391405ee9a-deepseek.json": {
+      "bytes": 11079,
+      "sha256": "e8fbe83f27068c76b4d446b20bf997f71ec313b4baedb03d53aefcc79fb6b52a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/15fa0dd8bd51e5391405ee9a-qwen.json": {
+      "bytes": 10036,
+      "sha256": "3da3c1f75e4dc3fcf59aac56e8fa53d6a08d0276bcc05b7839739ea93253823f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/192908b7e7d5ea29ca97ea5c-deepseek.json": {
+      "bytes": 8987,
+      "sha256": "2ea113e6e2161b29d969f5d2dbedd5ea52f838dda060879989a2da2102a6f5f7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/192908b7e7d5ea29ca97ea5c-qwen.json": {
+      "bytes": 10888,
+      "sha256": "437ea93feedc1c3e942c036708ea901264bbe4f65db68405af4bff0061d2ae2a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1c2ffd6871f52176503737da-deepseek.json": {
+      "bytes": 10094,
+      "sha256": "e7854cc93b9071b22dcae2378282c5611fb09a4fa984e89e22a071498f13b605"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1c2ffd6871f52176503737da-qwen.json": {
+      "bytes": 12545,
+      "sha256": "0aff8eaea3d1901b273d883f0006f79920fcec6bef6bb2d22d8ad5a292e72919"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1e2213fe34630a2f3b7fa2c9-deepseek.json": {
+      "bytes": 18913,
+      "sha256": "420723aaa2a7bc66cdf6e9e9f2f3e97e6aef70948ea13d437490ec97ce984786"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1e2213fe34630a2f3b7fa2c9-qwen.json": {
+      "bytes": 11810,
+      "sha256": "6ee2a4d668638ccab65be953e5d445fb1319520699e07a7c31bc552f49045a29"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1e7cee11a413b5474b37cc6e-deepseek.json": {
+      "bytes": 10523,
+      "sha256": "b2897c53c946eb0b69ef4368690dfa49667520c0de1c010fda19a19f6ccff23d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/1e7cee11a413b5474b37cc6e-qwen.json": {
+      "bytes": 10796,
+      "sha256": "3b5db399688e62b6b2c3beba94cec3f47075acf4f83da3fcfea3af3528124bbb"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/207f655c83e322bae133b5d1-deepseek.json": {
+      "bytes": 12569,
+      "sha256": "34ec101aad208b44526c5e1f1c9ce1f4180709ff416c47479047b67305622a27"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/207f655c83e322bae133b5d1-qwen.json": {
+      "bytes": 11112,
+      "sha256": "8661a361d1339b9ccef42b3dc2564dbdbe7d887ef30ce93ca47bf846a900dbac"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/20819013c21d770d9a397ced-deepseek.json": {
+      "bytes": 10144,
+      "sha256": "c8d9999982fae16b24c130a43f68109629efb8e99fc7e59e0757f2ea6716a64b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/20819013c21d770d9a397ced-qwen.json": {
+      "bytes": 11762,
+      "sha256": "5a93a7111af4e2c21a114c1b1e14646faa20fd5c0180975f2517a934e4121e44"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/21dce61f180ecff897924f51-deepseek.json": {
+      "bytes": 16817,
+      "sha256": "f60fa6fb93f6a0691ce8e62485f4cc0b7add3eb8ce84ec168befe5da0f6f592a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/21dce61f180ecff897924f51-qwen.json": {
+      "bytes": 11046,
+      "sha256": "e49b948da98ae84cd774b9564b4352f7f045bb006313a2c0a94c22174dfe2420"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/21f652cff971ca6dce45eaad-deepseek.json": {
+      "bytes": 12498,
+      "sha256": "2677e7d07328befb872f871522d300f500e017c7abc7f6c80ce58237a4767a22"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/21f652cff971ca6dce45eaad-qwen.json": {
+      "bytes": 11980,
+      "sha256": "38932a0bb002361a99f323c851372cf094f57265d4dd25ace61334c2c0db0d8e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/22d4f94b88f3c8734d6c3e9b-deepseek.json": {
+      "bytes": 13531,
+      "sha256": "de3e7376c06895f2e5ba79ff0e57db3d0157977fd428cc6045d685c461080384"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/22d4f94b88f3c8734d6c3e9b-qwen.json": {
+      "bytes": 13662,
+      "sha256": "83efd16c9acd07eddf8b9127e7ba61d163ea688f8e140f0bd001cd14197265b7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/22f6207de26fef4838934429-deepseek.json": {
+      "bytes": 8467,
+      "sha256": "d4d4b862898fe5cd6f5030fed82be025b3efdcc5091fbea687e1c71d83f85d9c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/22f6207de26fef4838934429-qwen.json": {
+      "bytes": 9908,
+      "sha256": "9cfae389a9be221e35de48ee5d89b197f81b91084663dbab46a0fcb6d15edd0a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/263f2dfef52cf7445aaf7906-deepseek.json": {
+      "bytes": 9143,
+      "sha256": "576ee524b08325496b0213bbe40041d74457b50897750861f7e7557ca8e6731e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/263f2dfef52cf7445aaf7906-qwen.json": {
+      "bytes": 9747,
+      "sha256": "3bd87c581e5fbb36de8898242e08c4b8724597f665821bba9527ed2a900ff284"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/2dab1e4918f4e333b71b6036-deepseek.json": {
+      "bytes": 10180,
+      "sha256": "5e35cf72d8638c2a087fa691fd72aa84724457803f5a753f06f875660caed571"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/2dab1e4918f4e333b71b6036-qwen.json": {
+      "bytes": 12221,
+      "sha256": "7925b0ce68089817b50a397fc1569c75ab71bc8e5795d6e28e3d6cd617e12914"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/2dd2e5f2808233d4fd4e1448-deepseek.json": {
+      "bytes": 9585,
+      "sha256": "5409a99f02a7ca805a87bb8dae7a6965ccd154a83c93e2bfb5f12fac6f5843fe"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/2dd2e5f2808233d4fd4e1448-qwen.json": {
+      "bytes": 11147,
+      "sha256": "dc875c9d471e8d2544d9dbe2c3f9d5b18c7245c2bd19f4b8e6cd429a70f5e9b4"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/2e396a0cc3ad5f9c56c5d54b-deepseek.json": {
+      "bytes": 8987,
+      "sha256": "1a266888bcf3ac20c98368fcf59b5b9756f01586f5a8ce374da1d44047296a29"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/2e396a0cc3ad5f9c56c5d54b-qwen.json": {
+      "bytes": 9675,
+      "sha256": "3ee77ab923585b0cf37d577db6998fe9ed0edb63c03ca4f9a5f360d11c9db078"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/30850ad5e66c48f1e7fd6271-deepseek.json": {
+      "bytes": 18719,
+      "sha256": "cfe475d8a0427e6a254c92e3813787a11b6e6f73b3eb5827a3c5c5e1bbdd5bbb"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/30850ad5e66c48f1e7fd6271-qwen.json": {
+      "bytes": 12081,
+      "sha256": "1075fc9458f4662e232d29c35c9e89be4149f1ae2427b6b56ea45e2b13ffa632"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/31adf7adb4e925a94a14269b-deepseek.json": {
+      "bytes": 9938,
+      "sha256": "04ce6d0e2fe9256b742117030595eed45656b0f184f4ee0b4c60eccbdc0d4c86"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/31adf7adb4e925a94a14269b-qwen.json": {
+      "bytes": 11147,
+      "sha256": "fa0f9a53900c807ae9487e69ce43e04a682a0955bcc732f5bed44e5821ce1873"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/334c3b2ec757a8b5b735c6fb-deepseek.json": {
+      "bytes": 8198,
+      "sha256": "ed471ea3e67aade129cca16ee7ef62b729b491b1c85d52b61db6a0d72b816bc4"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/334c3b2ec757a8b5b735c6fb-qwen.json": {
+      "bytes": 9203,
+      "sha256": "5cfa86481afa6289972ae4598764841abb3de7622323cf06d6a4008d738e7f3d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/35bd2ff516c67c3706f3bb5f-deepseek.json": {
+      "bytes": 10508,
+      "sha256": "40ddc2553232f95f9ccb8f25864a8f09ff49f1b8f92b8ad8aabe9046221daa82"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/35bd2ff516c67c3706f3bb5f-qwen.json": {
+      "bytes": 10765,
+      "sha256": "c0092ecdd6ce21fc479a8ba3910530d69f5b0b580d33fc0e6af7d756f9962367"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/367cbc39f09d78e59b35e6b5-deepseek.json": {
+      "bytes": 9429,
+      "sha256": "502dd557379abd5d631ab36117e0fa4bd49ca13ca3576b870d8fb4b285d18069"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/367cbc39f09d78e59b35e6b5-qwen.json": {
+      "bytes": 11358,
+      "sha256": "28929985527af0f263ec06fad28ba702ebe3812ff6f6fd95582497d6b17b42d2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/371465431456fc0c994a92e9-deepseek.json": {
+      "bytes": 9411,
+      "sha256": "99f32ab1e0785ae1bd7d7c53d7b955dd23706430c69fd212fe0527d94914194d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/371465431456fc0c994a92e9-qwen.json": {
+      "bytes": 10850,
+      "sha256": "3caf6a036ed634a23795985b6ca010d5951ea66b33eba918f11a3089eeef7ec9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/376b6f5e44bde84785967905-deepseek.json": {
+      "bytes": 14692,
+      "sha256": "8508831e47a9c575b0a529f8efa0cab47e56e75a0e1ab70f264357e6d648c9c1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/376b6f5e44bde84785967905-qwen.json": {
+      "bytes": 14550,
+      "sha256": "7d3e4da50553efb0fcebd45ba4d3b38fa0bf9533a26acffd4763a28c3a0edaed"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/376fbcf3e254323bb33f7f58-deepseek.json": {
+      "bytes": 12222,
+      "sha256": "9ff2d6d761307b0da7d66caa1cd6862c9c0d252e41486b85317fd58906edbf4b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/376fbcf3e254323bb33f7f58-qwen.json": {
+      "bytes": 10132,
+      "sha256": "460e280c149572e9bb0ba374a6a6e542ac1a010c29739ecab62c4090f432d064"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3819d3d5632f7ea7a2879cf0-deepseek.json": {
+      "bytes": 10433,
+      "sha256": "02617b8fae066f644f5d14b81bfc5139874c0d9c2f6abd57e39e2d0374b1454e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3819d3d5632f7ea7a2879cf0-qwen.json": {
+      "bytes": 10385,
+      "sha256": "d11672b0171d9669eee3fee7e6e0fa0ba97841535a0c1e9acd61362d391a5a7b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/38f0e13b1276d54a8e8c5bc2-deepseek.json": {
+      "bytes": 12549,
+      "sha256": "48fac118a92e922a04eb4f382b638ece50ff5deb45ca91b2ab5bc9f6e2b71e75"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/38f0e13b1276d54a8e8c5bc2-qwen.json": {
+      "bytes": 9970,
+      "sha256": "b3df5f491dee6da086d4b74169d9019647966dca36f0f973f9d15538c20fdf4c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3a76c22a51865949b2094df4-deepseek.json": {
+      "bytes": 20039,
+      "sha256": "562259dbbbf751c077fe2ef2d3a5b962309bcec3654b6c920fb77dbfe3fa182c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3a76c22a51865949b2094df4-qwen.json": {
+      "bytes": 13609,
+      "sha256": "7ab2c5816aa16e97738a96a619254760a8557cdb158f2fcef8d929f635fbf4af"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3cdd5b466d4cd988bd03d36e-deepseek.json": {
+      "bytes": 10799,
+      "sha256": "6da1e06fb0a2a63e100d352fcab368073947b774dcd588ba5642085cd1ab2583"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3cdd5b466d4cd988bd03d36e-qwen.json": {
+      "bytes": 11840,
+      "sha256": "59ac7032b07a3ea364dc6b00bc03119c3d7e3938be7ed5ec47438bc42c83455e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3d362c15b6237a4bc1a6b895-deepseek.json": {
+      "bytes": 12326,
+      "sha256": "2df6e8959b45b5510ec80711d1e70134a009e7985cbaf920cd8446251d267250"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3d362c15b6237a4bc1a6b895-qwen.json": {
+      "bytes": 16402,
+      "sha256": "2181b5d782d5739a8af0db1e4aba1ac3668ce8cd86a7a8ec6cea82591da79386"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3d86e5da35e7276b9f193ada-deepseek.json": {
+      "bytes": 13202,
+      "sha256": "5b9e5fa69c80924bb87c3cc7cee813ec999c9d66b39cf3c607f72731a153356b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3d86e5da35e7276b9f193ada-qwen.json": {
+      "bytes": 11561,
+      "sha256": "89aa962b0fc6373f61e4aba90076a158cb5aafed26d5cb02d1e727942c627646"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3de402a3cf5160565fe98498-deepseek.json": {
+      "bytes": 10428,
+      "sha256": "31729e4e2e0ec3c799584a8713ac6617e43781aa39b1f2e03e955a8ab3ef59e8"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3de402a3cf5160565fe98498-qwen.json": {
+      "bytes": 12782,
+      "sha256": "4a9c471128f98c2d4cdbc09c1a6fdd7c99775721a46290c2e257e2f849fefac9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3e487a409dccabdf8b471f65-deepseek.json": {
+      "bytes": 9391,
+      "sha256": "dedf79138cc83c7358ba17861efe70ea1c07626a2ecdb53d509b1abc5c638322"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3e487a409dccabdf8b471f65-qwen.json": {
+      "bytes": 15127,
+      "sha256": "94d7a24318712c4ac2aafe8b2100e2b1944c84e3b8919814715d2575d4e74a7b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3eddc0cc4e75253c703c160e-deepseek.json": {
+      "bytes": 10467,
+      "sha256": "c434d7b32aff5ed0ca02cf17021ec5ed287fa90fb0a6714607892e63cc94d352"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3eddc0cc4e75253c703c160e-qwen.json": {
+      "bytes": 10359,
+      "sha256": "cca6762ac747485c8927a42a8ee61f559716776dda6fbb3f316aaf5b1e21fa2d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3f3b2b1f8b85ade75c1002f4-deepseek.json": {
+      "bytes": 14712,
+      "sha256": "94685828f8ef0d8d9bf52345516e74d98d01c1edb0ef6db84a24cfe1c6207200"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/3f3b2b1f8b85ade75c1002f4-qwen.json": {
+      "bytes": 11639,
+      "sha256": "7a8ae81c67c8b1aac115a966b57155ae682ab8277670bc00a469fe51415dc8ad"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/413aa59e41a305a0c733aaf0-deepseek.json": {
+      "bytes": 16601,
+      "sha256": "f9419a4fba5f44631cc96f9edf2437ee825ed276e8b5670a7c1eee3253cb91d8"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/413aa59e41a305a0c733aaf0-qwen.json": {
+      "bytes": 10637,
+      "sha256": "837aa5e71281b23b4ae672671af0f555c0a4ce528e02f77df5c0d33428e93165"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4190ccec74f93fbceadd8056-deepseek.json": {
+      "bytes": 9324,
+      "sha256": "be6d36405b976533db93bd3077a697207c0db45c42afc9fbee47c52e041e07c2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4190ccec74f93fbceadd8056-qwen.json": {
+      "bytes": 10634,
+      "sha256": "56d8d2df62beddb678dcb75c7edd2c6221611be24740eebc62f60a9f3a5b23da"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4271e438b61547cb228ed0c0-deepseek.json": {
+      "bytes": 10537,
+      "sha256": "6322440d31e5fbbe3b00c39a095520a13f9a98bf1f0419924c4cf7ad642b8332"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4271e438b61547cb228ed0c0-qwen.json": {
+      "bytes": 9026,
+      "sha256": "aa8fb96edc813ef650348ea890316f9214e2565b918c074a6424e498b43c7154"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/43b28b6d7c3f1a16ace58233-deepseek.json": {
+      "bytes": 9219,
+      "sha256": "5ae8edd9cfd9b009bf6521ea35a67724a8b87d297664dac2c2cc46156936d85b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/43b28b6d7c3f1a16ace58233-qwen.json": {
+      "bytes": 10506,
+      "sha256": "668af79374631bd4b9550c9827d6d732a22d211f21895ca17e4689be2cdca733"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/44dc4e8efcd02d0de31ad856-deepseek.json": {
+      "bytes": 11380,
+      "sha256": "1ca4ae682099b97b5bd5675db8deed6595c5e5a7374fcbf91d70ba666934ca85"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/44dc4e8efcd02d0de31ad856-qwen.json": {
+      "bytes": 12737,
+      "sha256": "1f61a1dccf2e48d648eac820cde4af53b672d708318693d1d01c6284163e9424"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/45728d6205b2a8605a9151fa-deepseek.json": {
+      "bytes": 13504,
+      "sha256": "dd0318bac93773275c9c6c99d4d60f6d93275bdc41583c26da15ba7fcc5e7578"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/45728d6205b2a8605a9151fa-qwen.json": {
+      "bytes": 11388,
+      "sha256": "7d4fc105a07983c5cfceab30d0044bd84011615a3f3b10662bb4f22672fa6782"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/46c608548d32e1e2c64edabd-deepseek.json": {
+      "bytes": 9888,
+      "sha256": "5ca3c7a25952dfa5b261d0fa8b5dd5d9c7f352ff4496f723314345b6d67ae037"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/46c608548d32e1e2c64edabd-qwen.json": {
+      "bytes": 10027,
+      "sha256": "e94ff967650d51c7db4ecee6ffc698d5336356ac8efc928d9f8a3d4ad2c0db09"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/47989d54d9eab6d2f5a20e08-deepseek.json": {
+      "bytes": 10393,
+      "sha256": "ba7c4830cf724352a13d48481a6a0892bfb66b3811df18fd58ef71cadb426904"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/47989d54d9eab6d2f5a20e08-qwen.json": {
+      "bytes": 9796,
+      "sha256": "30492a87600eb0fb9889ff73640406915a8b4fed65ace2b37241faec4edf9f73"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/495de5e00cf6809ff7014dce-deepseek.json": {
+      "bytes": 9475,
+      "sha256": "6b252390fae5cb4304ee13172c3054d0b36f0370898193aa9d6e9b98e1f941ca"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/495de5e00cf6809ff7014dce-qwen.json": {
+      "bytes": 10982,
+      "sha256": "817a9d9e40aeb625ce8c4185c8c0f8c92c3a94e7cf296da0084097cbd92e8123"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4ad079af2bd1eef5b1a00a4c-deepseek.json": {
+      "bytes": 9737,
+      "sha256": "11489e562421296997c3c171eca6cb998777ff4c8e7d844577510e168d144328"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4ad079af2bd1eef5b1a00a4c-qwen.json": {
+      "bytes": 11221,
+      "sha256": "49e95de68b79351aea7a126ab815ad3e42a17307acdd0b70220266a610ae4032"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4e3f43ded98596da95182d00-deepseek.json": {
+      "bytes": 9193,
+      "sha256": "a3f2e6870623d2c61a9db4b2b66f5fea1e78c9a84215c571c0300b74d4908f2d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4e3f43ded98596da95182d00-qwen.json": {
+      "bytes": 10459,
+      "sha256": "390b6abe3b0ae39698777f035ea9f79247b3d5347bfce7dc7f65f11c188eade7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4ea5d737226e0018c42080f5-deepseek.json": {
+      "bytes": 19121,
+      "sha256": "e3128bb1031b0eef44080bcbe81387d5171f10d2d66295693e674a12b94c5e1c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4ea5d737226e0018c42080f5-qwen.json": {
+      "bytes": 15666,
+      "sha256": "273f6f4838cd75cd686b0c247d65dcb7be3875ef861b65aa1fedd1b5eca11c96"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4f5e56891450a4db4a798941-deepseek.json": {
+      "bytes": 9760,
+      "sha256": "fe0412f2cd52111eee1b6cd5f3b34595c33efd7657cca99260fa9bb36dd5f2c6"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4f5e56891450a4db4a798941-qwen.json": {
+      "bytes": 12708,
+      "sha256": "076f7323d0c5a3352ed8f7c36d1513a46c5b675d91afde78b3dee5ce4b0814ef"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4f959af88b8956c7945fcd7a-deepseek.json": {
+      "bytes": 9568,
+      "sha256": "acdb3164522823c29c7e0a18d1cd629b8ed642476c230f664cc741585e950749"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/4f959af88b8956c7945fcd7a-qwen.json": {
+      "bytes": 10183,
+      "sha256": "d9ff20e3eb46c30f8275e955930c1a9f95e57cbebae936ddd4293dac389b240a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/513c746c30a57d58eade510b-deepseek.json": {
+      "bytes": 9047,
+      "sha256": "9f2dc7a5c8cc3a472c9ec0f742a6400a7d717a47bd0115dc4d344f36cc10737f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/513c746c30a57d58eade510b-qwen.json": {
+      "bytes": 9729,
+      "sha256": "ef84ac91550850a1ec70fb67fd830e06ddc0fc1449f91fff2f9c46938e6f2655"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/555c4a27f3d48f15c3d58590-deepseek.json": {
+      "bytes": 9575,
+      "sha256": "fc259c53ffe549df8db627e3b7e2fd41c65967ae162bd6e595f61ebbbbad4f0d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/555c4a27f3d48f15c3d58590-qwen.json": {
+      "bytes": 10604,
+      "sha256": "668ae0d544a7e7bedfa0114d405fb3667702b5457a1fd6abc687aaac3b20c831"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/55840e2fb8cde4c953b27411-deepseek.json": {
+      "bytes": 9305,
+      "sha256": "f01c615a1eb0676ef69f9a4788d72dc51899a2e496f9271c407b50b772a01a66"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/55840e2fb8cde4c953b27411-qwen.json": {
+      "bytes": 11080,
+      "sha256": "97c22677da84498ed63fc21624a12fc3107d481092ae43028af3e9cd759d77a1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/58a0f48eab95378df55de990-deepseek.json": {
+      "bytes": 20210,
+      "sha256": "5a203182bfd2b602d7dd62257d7a3cf02a87d5fe33a127dca71d3b0a7435eafc"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/58a0f48eab95378df55de990-qwen.json": {
+      "bytes": 12216,
+      "sha256": "40c89467b844d87ad6a6d5957b8a75d17710ddbdcd5969a4ebfd4215fcbbeeda"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/5c21bab7581c3494e35df9a9-deepseek.json": {
+      "bytes": 15478,
+      "sha256": "b4d074749934dbd74b2a8fd8e12b893cf2e27e3f78fb11e57551bbc6982a7e3b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/5c21bab7581c3494e35df9a9-qwen.json": {
+      "bytes": 12815,
+      "sha256": "de64d830febb07435f962155ecf3a9c0e9e274ed8768050b56657c972392cc9c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/5e493eefd4253481d2f011b6-deepseek.json": {
+      "bytes": 9461,
+      "sha256": "61185419726df215e03ef56d2a6e091acdac4977f5ad3e538f5d208ff102d050"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/5e493eefd4253481d2f011b6-qwen.json": {
+      "bytes": 10707,
+      "sha256": "5cf93849d6a05d60381ce58bdac1a46414c3d27f2ab4345b186915662c3ae38e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/62e3c32d66daf7a6856c7891-deepseek.json": {
+      "bytes": 9643,
+      "sha256": "5caef112abb6bcc1426ea4b2667eb871bfab706cb80af01b6bab1e370def2602"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/62e3c32d66daf7a6856c7891-qwen.json": {
+      "bytes": 12027,
+      "sha256": "c0501237a44f7ccf41cf38d0d0bdc6d141623a6f11cc7ac49d9146d643548e67"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/62ecb161f16212a36e36f959-deepseek.json": {
+      "bytes": 14765,
+      "sha256": "4820f3883e7980383bcd2829cf0e56b1848c11a018e2e80fe4c37d7d86556d7d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/62ecb161f16212a36e36f959-qwen.json": {
+      "bytes": 12941,
+      "sha256": "ba29b05ff5eb48d2ee976908c27357468ecf96d85b34f8d165ed7323fdce5586"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/657b40f63a11bf29d36685a1-deepseek.json": {
+      "bytes": 10047,
+      "sha256": "4f2ed08c95b45033fd265f2fe9bf9e315c4b33fc26d1c45919f7041a42d12348"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/657b40f63a11bf29d36685a1-qwen.json": {
+      "bytes": 10510,
+      "sha256": "711c611a28e5b9b3c5fac7a625543917441f0e76913c81e33b4ca1d532825873"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/66d54488d010674d31e35e1d-deepseek.json": {
+      "bytes": 16177,
+      "sha256": "88660712e279a51d5de8fa2d2ab9f7ca47512b2acca5a62b35bbe74c068def5e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/66d54488d010674d31e35e1d-qwen.json": {
+      "bytes": 11127,
+      "sha256": "316f64ea95063bc40d08d73fb44877c9c47c1339ba61f96c040a2fef0b649442"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/6743757c354808d3abd27be2-deepseek.json": {
+      "bytes": 13437,
+      "sha256": "d9e5bfe3281ee67781313298b4e47534f0082a7bfafc7b696bfd5dfc6e933d28"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/6743757c354808d3abd27be2-qwen.json": {
+      "bytes": 11070,
+      "sha256": "b8d92e3e810d9124db67f5ffd492610fc9c3ce8924414dc2f77d995c93b57993"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/674ead5ebde02a28a6312161-deepseek.json": {
+      "bytes": 10510,
+      "sha256": "0824dbf55568d71f02658c2e3f19c5ecacac5626c1e7d6d9a16f0c4e815f9c95"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/674ead5ebde02a28a6312161-qwen.json": {
+      "bytes": 12654,
+      "sha256": "906eeffe16d28061f89f289a48771207ed42e2bed6953eb466ca08a929663591"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/692037cad5ee402623ad0fd7-deepseek.json": {
+      "bytes": 10024,
+      "sha256": "69b6d4f4eda82354268cb5958b79fc7cccd2deb196411a99383a7d33fa5d1d71"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/692037cad5ee402623ad0fd7-qwen.json": {
+      "bytes": 11325,
+      "sha256": "5474613e21417ad75dc3951bfe03665b14bf4e65499c56e759a2ffd5cc7d04d6"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/6982ab46ae82c10cc7a71aac-deepseek.json": {
+      "bytes": 9291,
+      "sha256": "b973d9db9711169241951adc42f2cafb36bf481738d3fbd24cf63a528430f21d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/6982ab46ae82c10cc7a71aac-qwen.json": {
+      "bytes": 10078,
+      "sha256": "e1f98310c774305db9360c868724ef9260aa2ebbe747ee3642e0bb91ca252267"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/6b947ada06701b2515cbb189-deepseek.json": {
+      "bytes": 9829,
+      "sha256": "4e8c6bb620241ce7c31b57ec24059b461e3f607d2da51576cb8e5c512c7e6964"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/6b947ada06701b2515cbb189-qwen.json": {
+      "bytes": 11236,
+      "sha256": "6e5652652ca68b9edce1b5b09d204591dde3cb2a41ed9a6e898c5ab5de833c14"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/6cfb59d6f96bfa4fb5bc0e5f-deepseek.json": {
+      "bytes": 21322,
+      "sha256": "3842ef4af4e8528f21fa7f8cc58b955b83f1584475ad404f5c0fcc2d8bb35815"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/6cfb59d6f96bfa4fb5bc0e5f-qwen.json": {
+      "bytes": 14558,
+      "sha256": "dfb98962b66768dee7ee01db01d379ba8de409688e643ed2d4e35407a127c225"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/700d8a268b679b2f0a9cf2dc-deepseek.json": {
+      "bytes": 9314,
+      "sha256": "87bebbbf9959c0cc677924fc2b5a5b39e9dd6f00ba68678685909766de3d938c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/700d8a268b679b2f0a9cf2dc-qwen.json": {
+      "bytes": 10105,
+      "sha256": "3a1dc45600f51fc6a39a3e03792308e1512275b9edbd01e2f8f9e82457f2e635"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7140bf69ca8f2eb1f0b38ca3-deepseek.json": {
+      "bytes": 14854,
+      "sha256": "4a92646048d79ca595b305d6010e20e45e087dda26901e7701a4cb95fe66963c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7140bf69ca8f2eb1f0b38ca3-qwen.json": {
+      "bytes": 11358,
+      "sha256": "79b006807d2b1d2dd3af7ceb9df3c209950fd154b34187e77172bfd4e6b6a07a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7186c5d75828cec0419875dd-deepseek.json": {
+      "bytes": 9345,
+      "sha256": "99efbf876c678bef16c4657476906f6458565fbc7b6063a98bc7fbcb2459d97a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7186c5d75828cec0419875dd-qwen.json": {
+      "bytes": 10558,
+      "sha256": "3c5385e76f9c03c7ecd84e06fe4d7c60f08e441a44040a9a8c6e358fd8e5cc27"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/71aeb753870a93c2863c6e9f-deepseek.json": {
+      "bytes": 8662,
+      "sha256": "3085e06ba3d77f89e6aaf66852a129473863a32ad7d68d4390c0beb0478897c2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/71aeb753870a93c2863c6e9f-qwen.json": {
+      "bytes": 10444,
+      "sha256": "7053fe8bc1258d660bedf260277f542e8fee04b0542561df32603567daecdf3b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7288050c77da5d679bc2e223-deepseek.json": {
+      "bytes": 9932,
+      "sha256": "c0d353e2a1b0340a1a309d3a46fbd891d328e96059bea9aed59fccb5479df74e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7288050c77da5d679bc2e223-qwen.json": {
+      "bytes": 11336,
+      "sha256": "ee03925436062306e1cd85106ffbf1f9e5eeb36c4f29a9ab805ea8c2a388139c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/751fba364591a3444bdbc41a-deepseek.json": {
+      "bytes": 18496,
+      "sha256": "02b151a50b7cacd240aac1d6a01d1b9f80e68c520605232fbdb559f2a5a6ff2b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/751fba364591a3444bdbc41a-qwen.json": {
+      "bytes": 11638,
+      "sha256": "7e668497948ecebfeadbbcd3961f7879b6153bd70f57604ac3402699bb776e77"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/755a9a49783939d2d83ad877-deepseek.json": {
+      "bytes": 9306,
+      "sha256": "87c4bb285770f3f955a70b10846ad8247394f5008622b661e293f972269c7a3e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/755a9a49783939d2d83ad877-qwen.json": {
+      "bytes": 11365,
+      "sha256": "93cef064dc6cbbf3bec1e61723955d2b6b41635099a6f4f752119841d5fe146c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7730679eaf23714e35c4502b-deepseek.json": {
+      "bytes": 16452,
+      "sha256": "ef7ccb1474046c551e94041ecb8b88ec867ffd5cf85ff992761510879c298d22"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7730679eaf23714e35c4502b-qwen.json": {
+      "bytes": 15213,
+      "sha256": "a30c8e88fc5d3cd8f2a1137bb84f9b22723651c0c33dc8956388b6d208a14cc3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/779bd59a49ba999dfbc59fb3-deepseek.json": {
+      "bytes": 12028,
+      "sha256": "16b9a269fd0f5b5e44ac1ad005a25aef0dda675f7416ab746ef1d50ca150b602"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/779bd59a49ba999dfbc59fb3-qwen.json": {
+      "bytes": 11463,
+      "sha256": "5b62d4333eb1f68fb3ce563a0a9f2a0d5673471e1fdb17eef2fa474b242dcfcd"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/78287da245c4d50ebf78f6fe-deepseek.json": {
+      "bytes": 20168,
+      "sha256": "24996b408a205c0c0c1b950d1722bb9ef9283efe7c27c451a8b892339bb34e8f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/78287da245c4d50ebf78f6fe-qwen.json": {
+      "bytes": 14498,
+      "sha256": "d87be6dfee6896db905e6d603105be48ae0903b1f99acced772ce52ed06ae685"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/783aca06533e405e4739723b-deepseek.json": {
+      "bytes": 10536,
+      "sha256": "7a9c4ea2672af09026a6c1b618358c791134e0ee49c9197d39fa82203c8075b4"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/783aca06533e405e4739723b-qwen.json": {
+      "bytes": 13702,
+      "sha256": "c03f4bce0e819a3f1ce45747eda939eb8e1577b3222707f494108c40c270e907"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/78e1667a852b4e48124ea3d9-deepseek.json": {
+      "bytes": 10011,
+      "sha256": "ad68138fb70c09392db93a4401ccf2250fdc53c46376fb0892ed5d58ad97e33c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/78e1667a852b4e48124ea3d9-qwen.json": {
+      "bytes": 9744,
+      "sha256": "d0ee41f42dd28946f2e7f38b83300d680ea527b4659458ca86d7c883bb920f37"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/793cd352e298a58ef2f24a67-deepseek.json": {
+      "bytes": 9589,
+      "sha256": "758c413423aa5cf001129cee8368f47213ccde010477ffa7b27e1d76e2a31054"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/793cd352e298a58ef2f24a67-qwen.json": {
+      "bytes": 11539,
+      "sha256": "f30067c938bcb3f78ea0826a07e8d53fdf2c48495d37aae3dd15ba4a3061bc2f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/79e9ab194403dcefcda88c17-deepseek.json": {
+      "bytes": 20054,
+      "sha256": "78faf3ca382b1260d25f7892787104b35c0c229e151f4fbe58036d1982344cd3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/79e9ab194403dcefcda88c17-qwen.json": {
+      "bytes": 13965,
+      "sha256": "61c5a04a86109f66166d01ff6862429ecfe8adfdc56d2fc7b6ded635691017cb"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7b5e7d4b3ff53caec6edda5e-deepseek.json": {
+      "bytes": 10169,
+      "sha256": "89ad4fd4b0d1b2cd67b934072b5fe5beb499686f1913009fd24dd4824e694b83"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7b5e7d4b3ff53caec6edda5e-qwen.json": {
+      "bytes": 10691,
+      "sha256": "4f1cb3429fff82937f275561e36baad1208a8c309112050adc09ed1956e4bdd7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7e3031f29951dad5fd01b3f8-deepseek.json": {
+      "bytes": 10515,
+      "sha256": "6244211191610e0f9ebae0a3fdb92542f57ab3af1049bad54621a6f1f0eed0ba"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7e3031f29951dad5fd01b3f8-qwen.json": {
+      "bytes": 13882,
+      "sha256": "f2bb1d71721196e55030d01915a873c3b4057d75fabc90428c4f78fb4614547b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7fc586b5e30bc5dc18a49a6e-deepseek.json": {
+      "bytes": 9826,
+      "sha256": "2d199ce143d52d5eaa731048badbd1c314367be3f4f77def774abcfdda92254d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/7fc586b5e30bc5dc18a49a6e-qwen.json": {
+      "bytes": 9944,
+      "sha256": "fd2453c55c8a3ff2fecdb671514a9b9c4e21acca20e8cccdad6286cb2590c699"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/80dedc1bb5da0bdad187f85e-deepseek.json": {
+      "bytes": 9279,
+      "sha256": "a01d322efc44c8e26bb3156abd3a705edbf99d2639e2f0ea30f2306a3afe3b0d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/80dedc1bb5da0bdad187f85e-qwen.json": {
+      "bytes": 10153,
+      "sha256": "11ae69efd1fcd4d76be97def386c2d8a4b0465b31967bebfc19612bc8a5169bf"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/813c63a2c11cbef508bbb799-deepseek.json": {
+      "bytes": 11910,
+      "sha256": "225e12c278b7f96d4cae7b49f2848663dc8cb1c0d811497649e08edf04f70dd8"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/813c63a2c11cbef508bbb799-qwen.json": {
+      "bytes": 12637,
+      "sha256": "685dcb0faf697cf361ed159f1924947c1f3019f7da4e113a1c93598c2c2dd6ce"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/839ba7f50c4bfd157165ffd8-deepseek.json": {
+      "bytes": 10364,
+      "sha256": "cf18a543cd68804c2d4bd810ff14f11300a815d8f415011dd47d1e97369af962"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/839ba7f50c4bfd157165ffd8-qwen.json": {
+      "bytes": 12073,
+      "sha256": "4a972704dc1535e5ed74ab88174cf2e220d8da2b86d8264dec90a1bb29dd34da"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/84a7bb50ef48cd1b9799816f-deepseek.json": {
+      "bytes": 8438,
+      "sha256": "027493aabce3c756f7b1c1ba2de9bee0a8354ca3396044989670315b36b64020"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/84a7bb50ef48cd1b9799816f-qwen.json": {
+      "bytes": 11161,
+      "sha256": "117d44c0216e09a2da4bc761b7846dd4ab371cf40a8a073c95bd3b929627f368"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/84daf5ff9fbdf07bbca08898-deepseek.json": {
+      "bytes": 11694,
+      "sha256": "3ec896de4b4e099c9bf3a828af4acf3c260b4ae40a7712d05072b5b7f412e8c9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/84daf5ff9fbdf07bbca08898-qwen.json": {
+      "bytes": 10372,
+      "sha256": "143623be46e40d755ec5f65925c12d6db08ac46e3b25328d1fcfa8815f0ef213"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/86437effbba97cde7689add1-deepseek.json": {
+      "bytes": 8575,
+      "sha256": "43a04edfa9448902e7a99a6527fab8caf98a64347dd7c964953aed8308479941"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/86437effbba97cde7689add1-qwen.json": {
+      "bytes": 10124,
+      "sha256": "eb7764807bddb55f2ecb057e6b978eb92d44136efeb10e6fd1ce1c8d7a980b77"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/86fa2227c4941e364001d963-deepseek.json": {
+      "bytes": 9645,
+      "sha256": "71c6ef7aa3798696c9e513ad757ce55d5daa57f0109fa979e0466193973a7b8a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/86fa2227c4941e364001d963-qwen.json": {
+      "bytes": 10528,
+      "sha256": "44b2ae321e5330604270989a9f2e9abd02fb9e5b9e293ef86bc35c69488f4895"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/87270eb3b988b0fbc2eeb495-deepseek.json": {
+      "bytes": 10062,
+      "sha256": "e340aee4b4148b7b8b1add09c26c0237e4ae8d11dbf3d0df9972958ee168cf76"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/87270eb3b988b0fbc2eeb495-qwen.json": {
+      "bytes": 9859,
+      "sha256": "2a071a187798a0cc503f448bc6e282d4068bb81ae7af98608dbcdd09a280396b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/89461819d4b6617b24b59117-deepseek.json": {
+      "bytes": 12284,
+      "sha256": "bb46aa040c2b99579d2593229fa729ad947228c34a75926e863025da1e815eff"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/89461819d4b6617b24b59117-qwen.json": {
+      "bytes": 12523,
+      "sha256": "97c9bd4d11f59765e7a1eb1c5e2b8bc87da129dba366122260c92a3c9a9a1654"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/89f55463686f3af899cb9cfd-deepseek.json": {
+      "bytes": 10496,
+      "sha256": "d796f15c846aaa3924134c97e503b660f066ecd54ed5fe84422432ecfe1a828a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/89f55463686f3af899cb9cfd-qwen.json": {
+      "bytes": 11472,
+      "sha256": "3e6c5ae6bdd83f604e9b3ad793ba3719ad6f158457bf00853c5be0585f5d8674"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/8ccacf971099fbe708346148-deepseek.json": {
+      "bytes": 12945,
+      "sha256": "1f5f53f41d7ca46e9a207cc4d1de419beab06f6f2562e0b497602499b3b2be9f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/8ccacf971099fbe708346148-qwen.json": {
+      "bytes": 11910,
+      "sha256": "aa3f54e3e5ba107e015ed728bbe9d792c31362ee4e465add90cc9812e1fe4973"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/8fbb6606ce78200660719cba-deepseek.json": {
+      "bytes": 12827,
+      "sha256": "5f3a1f865bab41c7a37ae742ea9bdbb1fe86479199ad14f8add409aef4f43481"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/8fbb6606ce78200660719cba-qwen.json": {
+      "bytes": 11533,
+      "sha256": "c9194190f18e2b00b5e8eb677cb4d375e2d22d3873665650fca27230fee363e9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/91bb82c41e1119a4c69e702c-deepseek.json": {
+      "bytes": 10194,
+      "sha256": "c689a5d046c8beb61e258731fd64f9827b61c800c78aa7121aca09ec227d01ce"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/91bb82c41e1119a4c69e702c-qwen.json": {
+      "bytes": 10232,
+      "sha256": "4964eabbe8199efb8a0194e54aeff0e5856ba8fd0ac1906cbeb451755b1801a1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/95db1bcdb8de21f48b4d7365-deepseek.json": {
+      "bytes": 9766,
+      "sha256": "6d6b921b2f9191fb1ee34ac7375125ff14cef0d8e97cbebc90953353fc252246"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/95db1bcdb8de21f48b4d7365-qwen.json": {
+      "bytes": 11081,
+      "sha256": "b3ffdf34d32d42ff88c5239c9d64b5422a3e7c876e9f9ce9602a9980cda186a7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/979b4163eeb1b303a89372b3-deepseek.json": {
+      "bytes": 11998,
+      "sha256": "63cd2368bea1b3c851f8e0a94a773289ac67ac9ca9f3dbf95f93f205bf93a620"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/979b4163eeb1b303a89372b3-qwen.json": {
+      "bytes": 11031,
+      "sha256": "8e4d32d66b8c10f17bd59a5c8290e250622c4bba5d9ef44dcd054a173776f8da"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9b0cef9dd1e2eda2fe9bd43f-deepseek.json": {
+      "bytes": 9896,
+      "sha256": "49509d2a3e9735280b3b35d603267409a2332bc174b980b76660954bcd3bf7dc"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9b0cef9dd1e2eda2fe9bd43f-qwen.json": {
+      "bytes": 10708,
+      "sha256": "bc8df5e853ea01f4ffd378ccf08507904c25b094346e2404dabd40f63edb1d76"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9b0d24e99a9b0c945f86bc7b-deepseek.json": {
+      "bytes": 20956,
+      "sha256": "0ab04ae9b869ff3b6138e66831d833336387f8cf18e2f437fbec07a51c77e681"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9b0d24e99a9b0c945f86bc7b-qwen.json": {
+      "bytes": 18902,
+      "sha256": "c5b9043d5797299841fd49786d8d5687f88caa67e78077858196192645e40d45"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9d4d6a57ddfcde2fdf951ebe-deepseek.json": {
+      "bytes": 8907,
+      "sha256": "1c37445d2236f06ea5def38365918c08c9c911163c1c241e558945814a169bae"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9d4d6a57ddfcde2fdf951ebe-qwen.json": {
+      "bytes": 11294,
+      "sha256": "7960740b95a21a13cb8c2e1db5ea2fbe7852db2c7618707c8a55176c1b28c6e3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9e2520f49d2e80d1194159d5-deepseek.json": {
+      "bytes": 12392,
+      "sha256": "2dfc4b12554adb2861e87ba210916c9fd7a5d91b4f9fcdfe033a46b66d1280f9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9e2520f49d2e80d1194159d5-qwen.json": {
+      "bytes": 11180,
+      "sha256": "4624972f4ce99ee6af4e2c7a6015d6b835e648d289796fad197052f30d54511c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9e82987bf7364687be398921-deepseek.json": {
+      "bytes": 12686,
+      "sha256": "158f8a482c82c1f6618cfefa88f29be58a8f6c15918048aefd441844afc989f4"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9e82987bf7364687be398921-qwen.json": {
+      "bytes": 12068,
+      "sha256": "bb4c2abd92561b3444de7cd501a373d345c486d1c37a9f1d7c49a4431ed13f2e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9f2afcbca2b35247f487ad78-deepseek.json": {
+      "bytes": 19873,
+      "sha256": "ffad30af2e7ba00f59ba68367557540204b890a12f99ea21681c46090f0c2344"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/9f2afcbca2b35247f487ad78-qwen.json": {
+      "bytes": 17465,
+      "sha256": "46d47a8e79d2a0b4e6ef789d48de1b11fbcb2b013ca918310ca3207b5b0f5bba"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a01ef50865c2e27bd7be7b16-deepseek.json": {
+      "bytes": 14056,
+      "sha256": "ad6b6ec81e8ee3aa6c8aa7c97a2fb8be6af6836c22c1194e81539d66bd47fe2a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a01ef50865c2e27bd7be7b16-qwen.json": {
+      "bytes": 10796,
+      "sha256": "4854d6a0f500d0dd54722e7ccc4e4050cd3895c71519d6d566e21fe97522f87d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a0dc7ae144fd1433c7459e26-deepseek.json": {
+      "bytes": 8945,
+      "sha256": "438fad9f7ee8ec5a63b85606579657c6ecd86563f8341f2629e37a8f60d9863a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a0dc7ae144fd1433c7459e26-qwen.json": {
+      "bytes": 10330,
+      "sha256": "560e48004257810e35c867970cf5fc8b5aca12a1ebe5565de41e516a1200ef40"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a174f474194eeabb1fe980b8-deepseek.json": {
+      "bytes": 9825,
+      "sha256": "f27349aa76852ddde79ba40152ae0647a3341168f45576819273533231df22f1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a174f474194eeabb1fe980b8-qwen.json": {
+      "bytes": 10649,
+      "sha256": "372fa76c3b9356d48ebcc313242f80cfc7a4d7de6612620f4028737717de3509"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a2c3d220260458b49f151e20-deepseek.json": {
+      "bytes": 10414,
+      "sha256": "f0f8fb06cdf0616cee8a775e4201655f42a281dd768a25b73b2ff919681fc551"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a2c3d220260458b49f151e20-qwen.json": {
+      "bytes": 10670,
+      "sha256": "fbf0ba33b185b33462329a7c8e822132cb0f6265cb42f315118c7268c1b2d240"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a43b2fd2fcd6823abae1e3c4-deepseek.json": {
+      "bytes": 8415,
+      "sha256": "beabb8994bea468dd55a2401afcd9c974172d513204f991dfbf729c3c8134f02"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a43b2fd2fcd6823abae1e3c4-qwen.json": {
+      "bytes": 9019,
+      "sha256": "8ffdf13b1c35096d9fadbd8dffe0fa71c35e2299818c8799c7c30724bd45e926"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a7329c7991e65f03ee622a4b-deepseek.json": {
+      "bytes": 11935,
+      "sha256": "5511be79837b33d1fb80face5a69f512b2add35f3714a02c7509a4df35daf142"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a7329c7991e65f03ee622a4b-qwen.json": {
+      "bytes": 15426,
+      "sha256": "393ce056d7e1ee965481926242019fa59abf02aebe41fc9c575cedfba7f774ef"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a9500752a6e89ed24a2d4994-deepseek.json": {
+      "bytes": 12219,
+      "sha256": "3e2fc2fa02649aed9b3cf886094e9717d9eded370807352791654efdea63af89"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a9500752a6e89ed24a2d4994-qwen.json": {
+      "bytes": 11429,
+      "sha256": "d72f3a5fc1ce9e28d261a29fccce9c735362b399ea3c043e66d37fd91cd59ca8"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a956700d02070e1b2b3d8c6a-deepseek.json": {
+      "bytes": 9455,
+      "sha256": "7e1bdb4ba9d4597aacc4be5cef5bae7334cfe916799dc675a2db9c952a2238ae"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/a956700d02070e1b2b3d8c6a-qwen.json": {
+      "bytes": 11243,
+      "sha256": "42c72ba235ec72f851377807caca25f9d953247fbb4b9b26710363e058ed3946"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/ae8b4111b349ef416f6ec2e9-deepseek.json": {
+      "bytes": 11653,
+      "sha256": "cf35ebd37568cbedec8df6616f868de20a1d0dbf3b7695670cec4be154452b73"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/ae8b4111b349ef416f6ec2e9-qwen.json": {
+      "bytes": 13342,
+      "sha256": "c0912e7fdaaf3d038807e0492dbc8a69018f98f5c9bd61ed3ebd63f422bd32f8"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/aec5fa7af751f1681f29edf2-deepseek.json": {
+      "bytes": 9350,
+      "sha256": "cd85be2ba3aa6e17e5616b2686ae128068ca481e65ecbb89c6271c0c43af00cb"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/aec5fa7af751f1681f29edf2-qwen.json": {
+      "bytes": 10970,
+      "sha256": "f6bde2c6af997de3f0f07116abd0d8bc92ee237ce45def7f82f629be11c302a5"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/afbac0dce6d24a47ca0a8eae-deepseek.json": {
+      "bytes": 10318,
+      "sha256": "d2f8f204afcede8bafc84bac9e7a6337427a5af9cc370fe95e95d11bc62b3921"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/afbac0dce6d24a47ca0a8eae-qwen.json": {
+      "bytes": 10784,
+      "sha256": "b74b1c67d81720d5155d5597813e670a43536ede6b03aded64c9f3718c374886"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/aff259b48f182a00951f22fd-deepseek.json": {
+      "bytes": 10042,
+      "sha256": "568d0b2135a3d31f9d55453ec46b683fb6d9c147e71b437fec81577dfe0cd2e2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/aff259b48f182a00951f22fd-qwen.json": {
+      "bytes": 11716,
+      "sha256": "944a05cd915bc2e6b21b67398739a94a5186f06dbf417766446be37b61434621"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b0f40cdbe07de15d2d3134aa-deepseek.json": {
+      "bytes": 13568,
+      "sha256": "ee382c9707c2f673d449099f403a9a0bf7d341b0216ec0526598bf2b87cbd69c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b0f40cdbe07de15d2d3134aa-qwen.json": {
+      "bytes": 17497,
+      "sha256": "ee046fc05cab671213c51b5d1c6da41d285c51e5cd5af3e75b47935812be88ef"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b13412c7c92dc63c470ffff6-deepseek.json": {
+      "bytes": 9502,
+      "sha256": "dcf3d4d29feef9876ebfaa3a0f314d5e37ca5144ff76880ca17f203751bdf974"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b13412c7c92dc63c470ffff6-qwen.json": {
+      "bytes": 11098,
+      "sha256": "1c22330a511397a0a6f1ad4455d3c09d9bd5fdaaed6838e77c29773b92bf60f7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b22e8bf3fd5be444da8587ab-deepseek.json": {
+      "bytes": 10995,
+      "sha256": "04e28438e91c8f7b0d2f8b8c29b3a189efec84ab940c9774189a9e2ed33f2906"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b22e8bf3fd5be444da8587ab-qwen.json": {
+      "bytes": 10819,
+      "sha256": "c5e76efa598d2ab8db0a168789ba20085209d830fcbf0a710cd8b0dec073a33e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b24e364646feb1c09f4de6f6-deepseek.json": {
+      "bytes": 10029,
+      "sha256": "ba73f635ef87cb81b1d3d9b6378d5be4be2e0779809f2b6bf222a44a42246ac6"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b24e364646feb1c09f4de6f6-qwen.json": {
+      "bytes": 11299,
+      "sha256": "b2d086cc6b5139a826b84c6fd621c3547686163ec2a14e21bf5d7d3b008ce20c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b28023ed6e572bd036148210-deepseek.json": {
+      "bytes": 9116,
+      "sha256": "76a3ad45e1baa979041f410d05178c194b488beb1b73072d791404ae3b23d676"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b28023ed6e572bd036148210-qwen.json": {
+      "bytes": 9620,
+      "sha256": "4b875b45315a3fef870626da658201327f971fa911e3d13d6d38abd0bd600a2f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b2ba1acd8e69c257d0062e3b-deepseek.json": {
+      "bytes": 19294,
+      "sha256": "0b0b00f134d6d62aecf1ceeda702a7b4de18e16696a034148810535ac02d5af3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b2ba1acd8e69c257d0062e3b-qwen.json": {
+      "bytes": 12157,
+      "sha256": "d09ace9206db10b126ae28e17c4574bf55bf09a5a5d043e7530070d3381ead10"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b3c64389647fac0cb7986140-deepseek.json": {
+      "bytes": 11623,
+      "sha256": "4bb125f38a0a3f930214d27f41eb1e10cd0da840172d3785dfe0bf920d6b7736"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b3c64389647fac0cb7986140-qwen.json": {
+      "bytes": 11567,
+      "sha256": "3aac2edbc941db648f1fea50f45cdb3d20e29112b4e07ae94a46af9e773e1d7b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b52e71093acc75ebe38aed5c-deepseek.json": {
+      "bytes": 9001,
+      "sha256": "dabdb4dd9c9e522c50cde510f9a90cc8177f621391148671a59d679745817e23"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b52e71093acc75ebe38aed5c-qwen.json": {
+      "bytes": 11295,
+      "sha256": "2f16c1239b6c6c82686430c92e623d995d7c02238e2499390dd3d797ea2e2019"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b5f530645943507b82cd7c63-deepseek.json": {
+      "bytes": 8463,
+      "sha256": "2280c3148805c0bde6f17870cd53d73ff07d21b081bebc03b64098cf959b2391"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b5f530645943507b82cd7c63-qwen.json": {
+      "bytes": 9547,
+      "sha256": "b38dd1cb35242f597194423f663b091e8fdbb0f1b05237d05cdad36e3abb2d65"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b6051ffb8de3525d02d5df7a-deepseek.json": {
+      "bytes": 8533,
+      "sha256": "8876fca9dbff244fac2559ce3ef707391cc6ac3baac7c8e10f192bc3e9fc93ac"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b6051ffb8de3525d02d5df7a-qwen.json": {
+      "bytes": 10493,
+      "sha256": "6f1efd91ef58df09e421749323b93a2de6f203cc86bf414838c2464fb68c323c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b646d7ef1dfded069dc5d6f0-deepseek.json": {
+      "bytes": 19688,
+      "sha256": "451cf5d1d95a622c32f836412dc0f78e246c0dfc733181e43fda1ea06b602cf3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/b646d7ef1dfded069dc5d6f0-qwen.json": {
+      "bytes": 13867,
+      "sha256": "76d26a27cbf65cc073f44d6a3a510034fde34e51df174e546da9a0ec93a7711e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/bd0cef4cbc6afcc2f73be42a-deepseek.json": {
+      "bytes": 20259,
+      "sha256": "ab1d697ab25bdbdff15e191069b0a9a27d7001d8195f75cab64c6eb639aae1a9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/bd0cef4cbc6afcc2f73be42a-qwen.json": {
+      "bytes": 11740,
+      "sha256": "855529383ea6461453441bef93c02ffe7226c96067fb050a89f7c42f915679c5"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/bdaaf76c70c1bb95868c4053-deepseek.json": {
+      "bytes": 20137,
+      "sha256": "ae94b25f0c4d7dd7d4e55240b9fd9a78cb97bdbff4d2ebbb3a20d13306526c17"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/bdaaf76c70c1bb95868c4053-qwen.json": {
+      "bytes": 14002,
+      "sha256": "682311683ca50ad32bf4ae180c40382c4f58108bad6fef94f4d019016de0270c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/be3462262f10c3b5ba04d699-deepseek.json": {
+      "bytes": 8709,
+      "sha256": "56e0ea09c94b963eb31d2917515289ed5da8b90389bd62448024848df49670be"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/be3462262f10c3b5ba04d699-qwen.json": {
+      "bytes": 9684,
+      "sha256": "cb68099ed8ca6b6e8c57c43e591fa0a1788d55d9fe1a71e86815653d300d364f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/be99f3d04cfb9fcf37750375-deepseek.json": {
+      "bytes": 15945,
+      "sha256": "1b79d8bcbc892d35e32977397774e973f759a1f25add6017916941dcfb527d89"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/be99f3d04cfb9fcf37750375-qwen.json": {
+      "bytes": 13952,
+      "sha256": "31a9d7203143c584495da98f6985e6edc8d858627ca37aade179b00f143456ef"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/bfbe0288e7fbefaed7eaa448-deepseek.json": {
+      "bytes": 8926,
+      "sha256": "88fa3ae5dfddf49f21ce23e7ef60497e9c8b3b996284f2ba0318d71581840b51"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/bfbe0288e7fbefaed7eaa448-qwen.json": {
+      "bytes": 9482,
+      "sha256": "36ec979f8b672dec3bec5410c1c0690203ee74054837b8e07513b0bcdec2dd71"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c04e8a60f921920b8990d0c1-deepseek.json": {
+      "bytes": 8689,
+      "sha256": "9fb7ea3d379ced4dd98e6ac6df024a9a3107bfb990c6b6ea2c1b2e815e518782"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c04e8a60f921920b8990d0c1-qwen.json": {
+      "bytes": 10850,
+      "sha256": "b5ab826534a02e3ba873f11a2afd2507177eab38084fe63de8e5459e4c8faf77"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c157ab747af0b6f66b56d7f5-deepseek.json": {
+      "bytes": 9284,
+      "sha256": "7d771264f9e449aa594706fcc54b8a69b1175eac613775d7215e2d598fd5135e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c157ab747af0b6f66b56d7f5-qwen.json": {
+      "bytes": 9790,
+      "sha256": "24da882f11c8ea79e1a71b3ae01b211ad863db524542bbca676ea506ffce5baf"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c5a6153cf5ba5efffcd98e42-deepseek.json": {
+      "bytes": 10342,
+      "sha256": "59206b95f932a6359ee65616f43b904f616fb6a12450aa3971d0f6a4ab9d89a9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c5a6153cf5ba5efffcd98e42-qwen.json": {
+      "bytes": 11121,
+      "sha256": "0eaab4f2d8f1463dfb7da6c273df59b0f4dfc07c46e689480ebf24013db63bb2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c84f58f0c491fcee7e8ef68e-deepseek.json": {
+      "bytes": 12779,
+      "sha256": "091417d352f5d6460c5088e53bcbb79293dbfb04d41b41cd8361add15e06e863"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c84f58f0c491fcee7e8ef68e-qwen.json": {
+      "bytes": 11328,
+      "sha256": "8617b4c4a8820ee7032bc0d38e0dd2be54f4fdbb94cfef5f873b5a61a4e4e31c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c87e128f8f6644926fce2ce1-deepseek.json": {
+      "bytes": 11463,
+      "sha256": "48506ed4ce2f1c81eafc8a54a6c490e38b49a0d92d246680f9de9845c63b43ed"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c87e128f8f6644926fce2ce1-qwen.json": {
+      "bytes": 12896,
+      "sha256": "eb2425c9b17aba50ebb4925caa64f55df2fd52c264e80b9336e5579b7a9b1138"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c8828c66cc770d1b518924e8-deepseek.json": {
+      "bytes": 13082,
+      "sha256": "19f3b5643f9121d24d75c035c4cfe8b9f774723ada2280552404e7405f049db9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c8828c66cc770d1b518924e8-qwen.json": {
+      "bytes": 11397,
+      "sha256": "c514fb1b8fe6f82910eb8bc1a37784efdca3a4a1fca98986943c29f741568b77"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c9775c2211c409ecf9c45d96-deepseek.json": {
+      "bytes": 11633,
+      "sha256": "8c7a27bfb464548df8539ff5a278f47d55970f4db06473ab9e823fda33f6c921"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/c9775c2211c409ecf9c45d96-qwen.json": {
+      "bytes": 14456,
+      "sha256": "1a50010f161ddeb06beb7920e8717d53bf963f22bcdaae43f83026091ffceca8"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/ca9d5d3ca046ad76a881b61f-deepseek.json": {
+      "bytes": 9573,
+      "sha256": "fce7cc00b22ccf36262281140ca76e89372087c35b5515b391d8937333f4c9f3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/ca9d5d3ca046ad76a881b61f-qwen.json": {
+      "bytes": 9753,
+      "sha256": "7928d9ba2aa9f4edacf004bb15a2c0056f20eb044c3a6b2263b51f33876fc12d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cca86246bb563153a5c454f6-deepseek.json": {
+      "bytes": 9348,
+      "sha256": "e5985e6829af1e48b43e7184204350589ff9a1de1eeda3831c10d9814528cc07"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cca86246bb563153a5c454f6-qwen.json": {
+      "bytes": 9514,
+      "sha256": "ffe63494559beeb352937752691e14c8d7694996495cf85833956ff7c70b51d3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cd10953f7324e82c48b94232-deepseek.json": {
+      "bytes": 12412,
+      "sha256": "62d439e19d2134928302aee6a4f11bf7658fb82f4c1e7504716cdb6572dbe6b4"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cd10953f7324e82c48b94232-qwen.json": {
+      "bytes": 11641,
+      "sha256": "094ac1a722a65438b7718d9f8d36a1036299dc45697bc0056f2b1cb0e6527af8"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cd4ebca5d07f05fbf273b3a8-deepseek.json": {
+      "bytes": 9325,
+      "sha256": "b877fd58ba561e4d56e3badf0e5862ff7731688b7ddee320cab66337163ceb56"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cd4ebca5d07f05fbf273b3a8-qwen.json": {
+      "bytes": 10135,
+      "sha256": "bda341e03b47e6bb172bf8024e914182c77fb3267c3a92984854f95b998f3aa2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cf066806238bca4483b024d8-deepseek.json": {
+      "bytes": 15713,
+      "sha256": "12c3ebef7b7cd48dee2addf75d178445d0dc990b295202519f7c6b417443c778"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cf066806238bca4483b024d8-qwen.json": {
+      "bytes": 15496,
+      "sha256": "c7e370e43ea33d8261f015c89393bf50860be7101339b92f357d2cb837d5d110"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cf3d6764c77914d348054cd7-deepseek.json": {
+      "bytes": 9398,
+      "sha256": "e05767571772da6222fc994a6e4cc3a3c22f60d0deea812f567deb5c3d36289a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/cf3d6764c77914d348054cd7-qwen.json": {
+      "bytes": 11389,
+      "sha256": "a45a48124c9a04a9a9d2702189c37f56ca6ec15cc37e05fb094a9791ccd443a0"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d01648ba08a5bf9dd1b87e09-deepseek.json": {
+      "bytes": 11931,
+      "sha256": "74f54ded22e3a57b9d468327f9f8b6a87786529cdeae33e9a7c2acf7cd50a5df"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d01648ba08a5bf9dd1b87e09-qwen.json": {
+      "bytes": 12586,
+      "sha256": "5321d2a0cf19eafaac90a910339876dfebd7032b8479123d5c3c3c383dc78afe"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d5678547c359f69fe3a74364-deepseek.json": {
+      "bytes": 11143,
+      "sha256": "f0d1dfaea8bd7c322f246fa7e55d3a7d6ec4799dd9d445b69720567b2e6a180c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d5678547c359f69fe3a74364-qwen.json": {
+      "bytes": 10654,
+      "sha256": "fc35caea24f0ccbeb93388a6767541a542979dfff73172cf8f5697f6280ffa75"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d58a6923af3107869dff15b7-deepseek.json": {
+      "bytes": 9970,
+      "sha256": "1608babe9f5d2993120d01dc4619e35de0b909520ff8dde9b2e5fde1906b2360"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d58a6923af3107869dff15b7-qwen.json": {
+      "bytes": 10761,
+      "sha256": "e5063987ea992a47afb3fcd351687d84bf55d4d8bb5bb4bf50d7a5cffc9de21e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d5cf99e4a473dda0b60ab946-deepseek.json": {
+      "bytes": 9389,
+      "sha256": "df9346b23ffc10ba7e4fa816dbfd97e70b1be163e565ba91144a4dee744406ec"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d5cf99e4a473dda0b60ab946-qwen.json": {
+      "bytes": 12376,
+      "sha256": "091f6f37626b88a415f057a7091cb3b659dcf3c77c7349bf6d89612a4d06776b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d78472cd44055409fe31d7d2-deepseek.json": {
+      "bytes": 9596,
+      "sha256": "91ba06e23c2490876c1c5dec5679ada52128eeb27b8d1b454acbe434fa8d16e8"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d78472cd44055409fe31d7d2-qwen.json": {
+      "bytes": 11604,
+      "sha256": "922df77624d4f68fa006d07e66b2c74a30f8c65f7baa0fdd9cb5403ecfd8dc7d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d7c3a835b092084935d562e4-deepseek.json": {
+      "bytes": 11421,
+      "sha256": "0b77dc28d2c5db02c1e71cca786d63f25fec9e5163202bf249af8393a20ba4e5"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d7c3a835b092084935d562e4-qwen.json": {
+      "bytes": 11943,
+      "sha256": "23ab285bb65c95e604fb66489c1b2ceedec0e0642ae4cdcff961a2cc4d4110e7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d7d718b0ddc74a9d828374e6-deepseek.json": {
+      "bytes": 16431,
+      "sha256": "1940c691980422cc15bcfc5c8d10d9afdc0aa8976fc9f1d4ae4174e85d99d772"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d7d718b0ddc74a9d828374e6-qwen.json": {
+      "bytes": 11817,
+      "sha256": "58919e343bcf6c70b3da0b33258b3f8530c9774959e729410bc76ee5f3e808fa"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d878d69d8ceb0e420315443b-deepseek.json": {
+      "bytes": 9805,
+      "sha256": "1db94057aebcabfb26b7371bc25bcd520c5aabf8cbfbd1027a4aed4d24239dc2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d878d69d8ceb0e420315443b-qwen.json": {
+      "bytes": 10435,
+      "sha256": "58fe8705b3caad83ab9dde22759857fd856785cf7890c35272ba441936a765be"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d8b0b15f293736808bdff370-deepseek.json": {
+      "bytes": 9501,
+      "sha256": "024ad0f510e83ef51a36ddc2fefac2f0156d4b98c27e2191bc57ff8d25aab3cc"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d8b0b15f293736808bdff370-qwen.json": {
+      "bytes": 10203,
+      "sha256": "0654a9d2bed5866f304017725852c4e8b961002336fd9e90d9648064546198d1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d99d3ef2beb8c2d8fcae5261-deepseek.json": {
+      "bytes": 11561,
+      "sha256": "7b63773c083c53188be917b70464a90dfa13d88336de554651379cebe7c71c6e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/d99d3ef2beb8c2d8fcae5261-qwen.json": {
+      "bytes": 15986,
+      "sha256": "08091b1eb55ce1eea6a091de92197adcea4c40207fa9c87c42396480d6ad1d10"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/dae4123858a6c14e1ae4733a-deepseek.json": {
+      "bytes": 11154,
+      "sha256": "97d1bc5654c906a0c4d920c7fddcc65b2d7b73b43fe7093c674aae5527f57338"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/dae4123858a6c14e1ae4733a-qwen.json": {
+      "bytes": 10892,
+      "sha256": "f61e89dba9d2b47c5337720fa822db1d1348d982464b55f37e181ee569279363"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/db92639d74e6fe96207c733f-deepseek.json": {
+      "bytes": 20311,
+      "sha256": "be81e94b8abd17d2c6571eacdad6af05fca9cb5111c4560e3414de63034214a1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/db92639d74e6fe96207c733f-qwen.json": {
+      "bytes": 11737,
+      "sha256": "1788f069fc69983e7a2310ba1f1e12ac5c705f78fc09c3f3350fc45bd1b17bfd"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/dbdc324ffad381fd7db855b1-deepseek.json": {
+      "bytes": 10969,
+      "sha256": "d474fbdb8ec9b8ef7ad9b9209d822681ca0058aa4bc0139a62b475b5a1a7f8bd"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/dbdc324ffad381fd7db855b1-qwen.json": {
+      "bytes": 12032,
+      "sha256": "a0cb77c5c715cd5cfa6e4b385731c8909a34317db1f9b0e10c5060774adc5507"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/dc6be2fca7fbecafe0f21045-deepseek.json": {
+      "bytes": 19678,
+      "sha256": "1fb0f96d000a7ca4678bba08b078bb4cb986b535d11f9681be92f05559ebbcc3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/dc6be2fca7fbecafe0f21045-qwen.json": {
+      "bytes": 13173,
+      "sha256": "27c95cf9ff4acc3390eddf77490910cc122b6380731a5b54feb3da4f9230b45b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/dcdb949eb79d8df99a7c8910-deepseek.json": {
+      "bytes": 10467,
+      "sha256": "3fd77b78b6cce231794346cd0c882f6b0af11691d564243d19094c564d0fe5e3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/dcdb949eb79d8df99a7c8910-qwen.json": {
+      "bytes": 10132,
+      "sha256": "1b6947bdf3d93e40bcb07f0a29c6eff1ff30c4012c576bcb544a4363aeb07826"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/df4692423a07a2464967b0c5-deepseek.json": {
+      "bytes": 12365,
+      "sha256": "b03fad467c05e882f55059f602fe62030c36beba37c562cd9266654870efab52"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/df4692423a07a2464967b0c5-qwen.json": {
+      "bytes": 16536,
+      "sha256": "65e11c6bb7e0467b45ae44167759ceb45136041c7177f8254ec2a731d260f950"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/df96c3ef3dc4f67b0559f49f-deepseek.json": {
+      "bytes": 20662,
+      "sha256": "2b0924ddc7999d5f6f664153769103140c5b394197f4df470c70304f0bd92055"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/df96c3ef3dc4f67b0559f49f-qwen.json": {
+      "bytes": 13039,
+      "sha256": "49f20833184501d09d7a335737ae54c9f40eeef509eca43c39221f2950e4d95e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e0f3f921bb59bb6060671527-deepseek.json": {
+      "bytes": 10745,
+      "sha256": "0997622c273bb12511d616c6c5de1c26e7c5fb74c73e3a8774af071fd6da155c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e0f3f921bb59bb6060671527-qwen.json": {
+      "bytes": 15796,
+      "sha256": "514d36e61fe0d6183a78713cc1e947235ab609a267c3fbaf5773ab56a07a82a0"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e14999be9fe1721129f4c2a7-deepseek.json": {
+      "bytes": 17881,
+      "sha256": "329a40dec6a72c280309c21ff0495ce4d9808bac8e43102035edeca50fa81866"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e14999be9fe1721129f4c2a7-qwen.json": {
+      "bytes": 18334,
+      "sha256": "a4cd6e48cfd3b295b40ac9c8cf5ad37bd2981fe2d90a7837cf71c2fcee19979f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e29b807a888152e0e7eab69f-deepseek.json": {
+      "bytes": 11764,
+      "sha256": "d9368f6a1e30a133038de9eace24ddd233371f1782466c01f8c94840e415383c"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e29b807a888152e0e7eab69f-qwen.json": {
+      "bytes": 11767,
+      "sha256": "f55c89f1ec5d9e08d3c195d2b56852a885f6399887d427bc72c2065154f16d2b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e32afa8530c4c7b805206bc3-deepseek.json": {
+      "bytes": 9246,
+      "sha256": "054516526ba87d610b11a530a011fad98cccf86083ae73e4e292159529d98450"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e32afa8530c4c7b805206bc3-qwen.json": {
+      "bytes": 11301,
+      "sha256": "f1d9463a5c3695f4f6d19b266c0041f6973c30c9d7163d3e335de8cf08bfb685"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e8c0c180f4bd7fe00ee05ff4-deepseek.json": {
+      "bytes": 13789,
+      "sha256": "0071abff1e6eb1dd4eb230d69110b029180d79be9d223b307c43e2f395f1f8a5"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/e8c0c180f4bd7fe00ee05ff4-qwen.json": {
+      "bytes": 12521,
+      "sha256": "0bf78193677306779739eff06cc2868027a4bb73a9ef5970f83f107490630092"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/eaa3482879f93d02f696ae7a-deepseek.json": {
+      "bytes": 11380,
+      "sha256": "b7f885967fea9e9fa79f7d1c4a5c9fda26b9d446cd7d2d1d9e376a361c7975a5"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/eaa3482879f93d02f696ae7a-qwen.json": {
+      "bytes": 11809,
+      "sha256": "41babfb2596358f60d8ca8cda052dcb3794ab14246706e3146f23f9826f9cf79"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/ec2b06b277394f3ba3a278c8-deepseek.json": {
+      "bytes": 19360,
+      "sha256": "f2e4299f4af1bcc2c19dac1d3970b1295a2dfc63f25de60d14f366562fbddf22"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/ec2b06b277394f3ba3a278c8-qwen.json": {
+      "bytes": 18203,
+      "sha256": "b6b3de63c5315b5e5256c660cb3ce5d2cab88fc84c47f7e637081a8acdf9c8c3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/ed5335774415b72f4b729bfc-deepseek.json": {
+      "bytes": 12321,
+      "sha256": "f3ec7e2f7730f0dc4459ab6183b3bbd2215b02cc1d0f2bda4cacd80d62e4fef1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/ed5335774415b72f4b729bfc-qwen.json": {
+      "bytes": 11026,
+      "sha256": "d9f8537ef74b66d860ce95a9944485dd6a7f0f19ab9830e1cfee70c22863ae5f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f020a6b6b0f43abfdf8db76a-deepseek.json": {
+      "bytes": 8563,
+      "sha256": "2927650591c75709de664a76341b75236d2658a379d1cab5bf8c50ef8ed97f4e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f020a6b6b0f43abfdf8db76a-qwen.json": {
+      "bytes": 10652,
+      "sha256": "4177b1a432efa5bc1d918b9e7f38365a171dfa5baf245091baeb5a45480551e6"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f052d23d04742f3d11c76046-deepseek.json": {
+      "bytes": 11780,
+      "sha256": "b01dd77554bc439cabe457fd1de8fad1b1ecd1bbdba567988f9c53758da07290"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f052d23d04742f3d11c76046-qwen.json": {
+      "bytes": 15620,
+      "sha256": "b9f60841a9d37f64e07bf081fbe03286949f8fef5f9b0e63f6d543446c776a49"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f32d3b1149cd81d619845e9d-deepseek.json": {
+      "bytes": 8772,
+      "sha256": "ef965890314e824cac538475c0621000c6b04dafcf15963bffe87358762d280e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f32d3b1149cd81d619845e9d-qwen.json": {
+      "bytes": 10015,
+      "sha256": "4598986fb09d36d296de73ef4152f006cd6e80c67e0d8cee7157aeb150fb56d2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f3393cc29ddcf71047c2def2-deepseek.json": {
+      "bytes": 17828,
+      "sha256": "fe9c6de6c7c1398e526f40d924c4775cae3cd342c9741e4fe01fc59f760e668f"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f3393cc29ddcf71047c2def2-qwen.json": {
+      "bytes": 19636,
+      "sha256": "904d18df65a509b2e67e5362e69be5198c0866027cc3baf71e9b5996a4c67f93"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f46d0f4d69788f7ee6a18b82-deepseek.json": {
+      "bytes": 9989,
+      "sha256": "99767b6253fc056037e854dda4f10e794d0d8f1eb89df3060b3c2034186723c4"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f46d0f4d69788f7ee6a18b82-qwen.json": {
+      "bytes": 9519,
+      "sha256": "fc669a25a042135929f53da85127f5e40087247dbd423ab71a08f3317e304339"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f54ed2c943c7874e87353da7-deepseek.json": {
+      "bytes": 9163,
+      "sha256": "222c74f3cc4e62326dd499b9cc8bfca61b242574c0ee117ca32bc8a0dfd77877"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f54ed2c943c7874e87353da7-qwen.json": {
+      "bytes": 9541,
+      "sha256": "4c856603d44a4be7b58bd5575a18468cb433c530856615f75196661c3fb5f01d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f680dd3aa4e07b78399e5f48-deepseek.json": {
+      "bytes": 10874,
+      "sha256": "6246c39ca4594b5e8f79d21be38098c2cd09c00a7716a6926fc42c870353b383"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f680dd3aa4e07b78399e5f48-qwen.json": {
+      "bytes": 10975,
+      "sha256": "ac665e7ec674306e75891ae9477c0f014d9e83c8ccd3def4529cc9ae4601a1b7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f6cf1e6a13993febc6c92db3-deepseek.json": {
+      "bytes": 9812,
+      "sha256": "71eca707dfe6ea89535ec89efee7dffa3e19a349ad60febaf0536f8cb7908139"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f6cf1e6a13993febc6c92db3-qwen.json": {
+      "bytes": 10753,
+      "sha256": "3979e611348d046cb41ccb41b95be746fa509d99fea9a657240d74cbaf6ac7ea"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f6f67b17c5dc07b968beeb4e-deepseek.json": {
+      "bytes": 10036,
+      "sha256": "745082f47dee9364f304ac89cc364cae946484c18955351504b0f0e7b529c7c1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f6f67b17c5dc07b968beeb4e-qwen.json": {
+      "bytes": 10256,
+      "sha256": "444daf790cc2a12bfaf9022c0b3ab4f0f5ad3f3a3d22a0692cd6025d046265a8"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f6f720157687561aed309d1e-deepseek.json": {
+      "bytes": 8822,
+      "sha256": "72e1f4a6cdf4d36507717bfdfafd0d88e2d63eb7b096aec3ece04904d2063dba"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f6f720157687561aed309d1e-qwen.json": {
+      "bytes": 10345,
+      "sha256": "426f809fd55e34c98bc03f8b4abb88ae267411d402c801f8380aac60591f2f7d"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f7482dd1aca004f98a17fb7d-deepseek.json": {
+      "bytes": 8838,
+      "sha256": "8cd911ac7e7c43bf097bb69023661bbe27cf4d28f76ec959b0469404cb24b6e7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/f7482dd1aca004f98a17fb7d-qwen.json": {
+      "bytes": 9887,
+      "sha256": "b1f9b93f24169e8c5ddbc675c3008bbd3ce917ab5173015703590acdb1473ec7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/fb648b66dde6c5ab6cf52f1b-deepseek.json": {
+      "bytes": 9253,
+      "sha256": "aa2df030efe4e10529db9dccf87db87e0e21e28538d2ac5f70eff2ca4ba42ea5"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/annotations-v2/fb648b66dde6c5ab6cf52f1b-qwen.json": {
+      "bytes": 10941,
+      "sha256": "010d444d52c2fcae551ff959fcf984f874f9c153895486d92cfb5dea3d5541f0"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/admission.json": {
+      "bytes": 11265,
+      "sha256": "34b6786a0519a2c9e1049aa3f2170d61b0ea5bccd1505310279fdd1928c877a7"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/extract-queue.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/extract-snapshots.jsonl": {
+      "bytes": 59936,
+      "sha256": "f4151dbccf6e4b431f566f64275692de494937802266508860c642e13f021553"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/pool.jsonl": {
+      "bytes": 130255,
+      "sha256": "79ea3f6b4d162e0970a597be1040e620988fec4abb5c1c88adb23fa75ef0c736"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/queue.jsonl": {
+      "bytes": 1152028,
+      "sha256": "2da77b02dba990867bd0c8418bece77067049fd8b985001f6ef9c90576ba2acc"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/snapshots.jsonl": {
+      "bytes": 2061806,
+      "sha256": "15bee41b0526589a6cb90a43382fc03f7ef2fc8c962c4fcda84e41bac10460be"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/collection-plan.json": {
+      "bytes": 2120,
+      "sha256": "6a391f1202b235f0769716f8cb9a8cfdc5a978807d94e404701d111ef22d99f2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/dataset-v1/dataset.jsonl": {
+      "bytes": 38890304,
+      "sha256": "1aa835b3d2de7ccc733a02d0b3fbf9b4c186e9eaa0f3cce69e59659bbe7b0611"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/dataset-v1/manifest.json": {
+      "bytes": 3913,
+      "sha256": "dd763cf2094188bd9d89a09e2e7c4964341094eed1feb5fea1a9ab2acad8959e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/dataset-v1/new-trusted-labels.jsonl": {
+      "bytes": 30727328,
+      "sha256": "2b2d8e46172cb1a2954426d52f105a1d1e33cc9b4a20568fed08c12a4dacd76e"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/extract-queue.jsonl": {
+      "bytes": 1849836,
+      "sha256": "c20ab36571dbced94ec04ae0b67f7d8cff63d45d167e8ac6d88c7770cc75da62"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/extract-snapshots.jsonl": {
+      "bytes": 4177484,
+      "sha256": "24331ac28169610b3f8c59a31b0f98809cfd1788e917cd72f340823a6d2fd914"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/pool.jsonl": {
+      "bytes": 9745603,
+      "sha256": "03f7ed6c4246b6728632e1cfce466f0da27497bad43675f517632a866fb96068"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/preflight/preflight-20261026T172223011836Z.json": {
+      "bytes": 130581,
+      "sha256": "9d169e709057f0b5059e052d0fa5c415291dd925b8641dc9b45adfb9f953e8dd"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/preflight/preflight-20261026T172639664325Z.json": {
+      "bytes": 130430,
+      "sha256": "1b7df290f4b3adbf4557cd5a5ad9a101a89140d615b31a07b23e36ca3530b3d2"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/preflight/preflight-20261026T172643838306Z.json": {
+      "bytes": 130430,
+      "sha256": "8324df30a4ef9a48681a4bdb7e2ca9623459a94c516a45f86973444020aca724"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/preflight/preflight-20261027T041113496606Z.json": {
+      "bytes": 132391,
+      "sha256": "f23aa06dd0c9407400736650de2835257bff2c39b7229ca6e90d627d1c9029f9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/preflight/preflight-20261027T041115106944Z.json": {
+      "bytes": 132391,
+      "sha256": "7c63065b51fc8de4accea611186533687b9bc0847d229f0800cec786af54a68a"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/preflight/preflight-20261027T042803070911Z.json": {
+      "bytes": 132462,
+      "sha256": "ff7fead5f33ca01b1ca45fb5b9cbf8893e107a3967803891fd27885b546e2763"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/queue.jsonl": {
+      "bytes": 2888108,
+      "sha256": "67cbe16983c5c63bcce1e62b2ea7c988dcdfd999634508e6451d507a0134a5c1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/snapshots.jsonl": {
+      "bytes": 2866344,
+      "sha256": "76a13a8a61abb977ce6caa9de652573d1370198e89b94604aab8994bc6caf340"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trajectories/task_012.json": {
+      "bytes": 163765,
+      "sha256": "aadda30bec127c904f26a65d4b31fb2882224c318004c49c115848adfa1104a9"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trajectories/task_016.json": {
+      "bytes": 152693,
+      "sha256": "fe92196723c85732609b24f747d2a9c54b896b471b949830a306281e9e2e4cd1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trajectories/task_019.json": {
+      "bytes": 64527,
+      "sha256": "f8d1e6ec5101ae906029f3e83087eae9733aad210f91551b62e2c28f8dd63faa"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trajectories/task_033.json": {
+      "bytes": 255340,
+      "sha256": "da3a9c10cbc02074cf75dc40547b23c2b4fc6e2a9d6f8efdc5088424c4cde28b"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trajectories/task_051.json": {
+      "bytes": 395242,
+      "sha256": "2f6020b109413970726a59a4243fe7b42fdb737f1c3af523d36d577019b87528"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trajectories/task_062.json": {
+      "bytes": 629881,
+      "sha256": "8c9f212f54ba172301e19ac225e9dbf86dc59dbf93b91f6e22bf9780bf2b23f4"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trajectories/task_087.json": {
+      "bytes": 500500,
+      "sha256": "89ae30f582cabe2a956498b0610ef7c4bf1f82193bfbb294036a536f0c25dda1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trajectories/task_097.json": {
+      "bytes": 433957,
+      "sha256": "ca9ac8c1117f4c5b0affd9c4e376426327ef359e03b5ef9081daee97c797d1c1"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trusted-review-v1-backup.sqlite3": {
+      "bytes": 30912512,
+      "sha256": "f679fd140bba0e2b97f532e00f02a96a44a67cf2fa38c1b2c89a1308a82347b3"
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trusted-review-v1.sqlite3": {
+      "bytes": 30912512,
+      "sha256": "ee41181fc82f29b4c4a6b7755d17577daf8cc71e95730f56c1744f17465edff4"
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/export-full-tests.log": {
+      "bytes": 9264,
+      "sha256": "61c6fbc790c1231d38ad1a63e9b41568673c83ed37fa829bb6607a8b98d166a9"
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/export-targeted-tests.log": {
+      "bytes": 8245,
+      "sha256": "dea07d22386676f0e6dcb85a28ce52ffa6196792b06f2d4bba64974c6b2f62d2"
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/finalize-v1.log": {
+      "bytes": 3913,
+      "sha256": "dd763cf2094188bd9d89a09e2e7c4964341094eed1feb5fea1a9ab2acad8959e"
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/mkdocs-final.log": {
+      "bytes": 986,
+      "sha256": "2bac97327063f22536ad61b4e391f4bc058cf37867853c978f94b1cae46c7e01"
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/packet-continuation-v1.log": {
+      "bytes": 217405,
+      "sha256": "87de55581a05383cd8fc938dc842077d7f5a214cf212554ab654eb3c7ca0191e"
+    },
+    "artifacts/system-one-pilot/expansion-v1/ledger-final-v1.sqlite3": {
+      "bytes": 107622400,
+      "sha256": "e6ee49d71c8bc5fe8cc07c250862370dfb0fd8dd04be6b5c891c6e42c15a3360"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/annotation-summary.json": {
+      "bytes": 3869,
+      "sha256": "ba8b114149ac3a03e7a5fd46dfc0d5ab406edbaaf3b8bee30037ec2d7e055c0e"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/benchmark-grouped.py": {
+      "bytes": 3580,
+      "sha256": "243281b304f077fb641dd644122e5bc41fab546ab31993089ea197cda5cacb21"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/budget-final.json": {
+      "bytes": 1455,
+      "sha256": "8f261d80a26c537c655f8e2a657b7744d99be0b477fe375ca40422a6d8a87697"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/code-manifest.json": {
+      "bytes": 2808,
+      "sha256": "a0ebb686c757130de1c33abb5edfea5e3344493ea2cfa707ee6bc5662d9a5630"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/collection-summary.json": {
+      "bytes": 3921,
+      "sha256": "4d9bc98f154103191bfb05ca024818e2dcda453b48d8aa718681ed64a7fdfd4c"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/continuation-code-manifest.json": {
+      "bytes": 386,
+      "sha256": "71db9f81f7f21e4c05e04d975674c2f679516e57f00ca0055ea7d6542937d31c"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/continue-packet.py": {
+      "bytes": 1018,
+      "sha256": "beb2d224b2ec4640d0d2ae0fe50bef4cede0d056ba555d19316e4bb82d3928ac"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/dataset-summary.json": {
+      "bytes": 3993,
+      "sha256": "76dc8c224ad6464a5903bdcaa134b49350dcbf23174a5b955a9230642e90ac09"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/export-review.json": {
+      "bytes": 847,
+      "sha256": "886a699d478acbca8fecd68f38d6fbf25aa7aba3e0901af33c4e2f8ad7259b86"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/export-runtime-manifest.json": {
+      "bytes": 2850,
+      "sha256": "3021cc2c49afd65a95d05420feb7f2314e566daa032e2ef27476a8a969fd1fc2"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/finalize-packet.py": {
+      "bytes": 4220,
+      "sha256": "7a60e3613c07318fda39e652b43c5f3a7180b71e26f123aa414f21eb85efe396"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/grouped-benchmark-provenance.json": {
+      "bytes": 977,
+      "sha256": "8eb4ebc85cda60422412f8a41a07defa9b5ac84733ceee019230ee745c9c834e"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/grouped-benchmark.json": {
+      "bytes": 1182,
+      "sha256": "2c983f0c98040fc9a5c0c155a63fac34084b63a2d32e4dc145a30bcb67941c59"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/protocol.json": {
+      "bytes": 2120,
+      "sha256": "6a391f1202b235f0769716f8cb9a8cfdc5a978807d94e404701d111ef22d99f2"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/provider-504-approval.json": {
+      "bytes": 789,
+      "sha256": "17c6a0f127507107685131283d8162cb4f45360e45e0f3ef8374c49659730aa7"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/provider-504-reconciliation.json": {
+      "bytes": 621,
+      "sha256": "e58df44e3d81c00f0f4cdcf0317582bfa824837e0d9bbd22f85c4f66c6b44efb"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/provider504-review.json": {
+      "bytes": 501,
+      "sha256": "1f4f9077b0426516d60e586d35d1a2dbc88bee2aaad73c03e8646b56451b4190"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/queue-coverage.json": {
+      "bytes": 1861,
+      "sha256": "754326a109c2b7f8a951d03f707d647fed05d7c395511e2df5069dc7ccd24d64"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/queue-summary.json": {
+      "bytes": 749,
+      "sha256": "82a87a76b389571db515814dbc28a1dabf9be47bbb63cfd831f1bd160fe90b2c"
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/verification-final.json": {
+      "bytes": 1836,
+      "sha256": "12bdfef3f23b7cd51e2b08dc5987d6306e2d535d7a84aa64cfd9272211ff98aa"
+    }
+  },
+  "file_count": 527,
+  "ephemeral_sqlite_files_excluded": true,
+  "original_pause_manifest_preserved": "experiments/system-one-pilot/results/expansion-20261027/paused-artifact-manifest.json"
+}

@@ -1,0 +1,64 @@
+{
+  "recorded_at_utc": "2026-10-26T17:01:59.918668+00:00",
+  "kind": "read-only planning audit; no new API calls, no ledger mutation",
+  "context_date": "2026-10-27",
+  "timezone": "Asia/Novosibirsk",
+  "source_ledger": "artifacts/system-one-pilot/authorized-series-20261025.sqlite3",
+  "sql": "SELECT date(created_at,'+7 hours') AS local_day,series,COUNT(*) AS calls,SUM(COALESCE(actual_nusd,0)) AS known_nusd,SUM(COALESCE(actual_nusd,reserved_nusd)) AS charged_or_held_nusd,SUM(actual_nusd IS NULL) AS unknown_actual_calls FROM api_calls GROUP BY local_day,series ORDER BY local_day,series",
+  "days": [
+    {
+      "local_day": "2026-10-25",
+      "series": "annotation",
+      "calls": 321,
+      "known_nusd": 264627506,
+      "charged_or_held_nusd": 287930706,
+      "unknown_actual_calls": 3
+    },
+    {
+      "local_day": "2026-10-25",
+      "series": "collection",
+      "calls": 806,
+      "known_nusd": 281401699,
+      "charged_or_held_nusd": 335137099,
+      "unknown_actual_calls": 4
+    },
+    {
+      "local_day": "2026-10-26",
+      "series": "collection",
+      "calls": 139,
+      "known_nusd": 48707081,
+      "charged_or_held_nusd": 64761881,
+      "unknown_actual_calls": 1
+    }
+  ],
+  "totals": {
+    "calls": 1266,
+    "known_nusd": 594736286,
+    "charged_or_held_nusd": 687829686
+  },
+  "unresolved": 0,
+  "daily_cap_nusd": 1000000000,
+  "daily_cap_basis": "User said API limit 1 or 2 USD/day; agent conservatively chooses1, aggregate allAPI",
+  "today_held_nusd": 0,
+  "limitations": [
+    "local ledger is not an account-wide invoice; external spend not visible",
+    "NULL actual cost remains unknown and charged at full reserved maximum",
+    "old collection1USD/annotation0.50USD series limits unchanged; not daily limits",
+    "existing PaidClient does not yet enforce new aggregate daily limit"
+  ],
+  "source_hashes": {
+    "experiments/system-one-pilot/results/adaptation-20261025/collection-summary.json": "0a708dc0cfc6f38bdde7e37addd452c331f4ee0d3780d0ea6ec92b1d8dc7151e",
+    "experiments/system-one-pilot/results/adaptation-20261025/annotation-summary.json": "b8badc4fcca1c79325ad11d7539878c71d4d799a745a3219c7cebfe268301b1d",
+    "experiments/system-one-pilot/results/adaptation-20261025/budget-final.json": "1410c734b6054b584a54928c6f9b643fff9817cdb704e6f79423617796bbb9d7"
+  },
+  "historical_new100_pairs_nusd": {
+    "annotation_known": 169143379,
+    "annotation_held": 192446579,
+    "collection_known": 96949863,
+    "collection_held": 121067163,
+    "combined_known": 266093242,
+    "combined_held": 313513742
+  },
+  "new_calls": 0,
+  "gpu_rental_rub": 0
+}

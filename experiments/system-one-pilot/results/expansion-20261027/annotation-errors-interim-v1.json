@@ -1,0 +1,116 @@
+{
+  "at": "2026-10-27T06:03:27.846542+00:00",
+  "status": "interim, annotation still running",
+  "errors": [
+    {
+      "row_id": "140643ab757b6b40bd2ba818",
+      "model": "deepseek/deepseek-v4.1-flash-1017",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/140643ab757b6b40bd2ba818/deepseek",
+      "ledger": {
+        "status": "complete",
+        "actual_nusd": 208889,
+        "reserved_nusd": 6041100
+      }
+    },
+    {
+      "row_id": "140643ab757b6b40bd2ba818",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/140643ab757b6b40bd2ba818/qwen",
+      "ledger": {
+        "status": "complete",
+        "actual_nusd": 1141725,
+        "reserved_nusd": 7505800
+      }
+    },
+    {
+      "row_id": "38f0e13b1276d54a8e8c5bc2",
+      "model": "deepseek/deepseek-v4.1-flash-1017",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/38f0e13b1276d54a8e8c5bc2/deepseek",
+      "ledger": {
+        "status": "complete",
+        "actual_nusd": 359417,
+        "reserved_nusd": 6681000
+      }
+    },
+    {
+      "row_id": "38f0e13b1276d54a8e8c5bc2",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/38f0e13b1276d54a8e8c5bc2/qwen",
+      "ledger": {
+        "status": "complete",
+        "actual_nusd": 1170675,
+        "reserved_nusd": 7932400
+      }
+    },
+    {
+      "row_id": "3a76c22a51865949b2094df4",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/3a76c22a51865949b2094df4/qwen",
+      "ledger": {
+        "status": "complete",
+        "actual_nusd": 1888125,
+        "reserved_nusd": 7167600
+      }
+    },
+    {
+      "row_id": "b22e8bf3fd5be444da8587ab",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/b22e8bf3fd5be444da8587ab/qwen",
+      "ledger": {
+        "status": "complete",
+        "actual_nusd": 1680150,
+        "reserved_nusd": 8163800
+      }
+    },
+    {
+      "row_id": "bdaaf76c70c1bb95868c4053",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/bdaaf76c70c1bb95868c4053/qwen",
+      "ledger": {
+        "status": "complete",
+        "actual_nusd": 2084400,
+        "reserved_nusd": 8013400
+      }
+    },
+    {
+      "row_id": "dcdb949eb79d8df99a7c8910",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/dcdb949eb79d8df99a7c8910/qwen",
+      "ledger": {
+        "status": "complete",
+        "actual_nusd": 1520100,
+        "reserved_nusd": 9134600
+      }
+    },
+    {
+      "row_id": "f54ed2c943c7874e87353da7",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/f54ed2c943c7874e87353da7/qwen",
+      "ledger": {
+        "status": "complete",
+        "actual_nusd": 1558050,
+        "reserved_nusd": 9411000
+      }
+    }
+  ],
+  "counts_by_model": {
+    "deepseek/deepseek-v4.1-flash-1017": 2,
+    "qwen/qwen3.8-27b": 7
+  },
+  "affected_rows": 7,
+  "both_technical_rows": [
+    "140643ab757b6b40bd2ba818",
+    "38f0e13b1276d54a8e8c5bc2"
+  ],
+  "all_actual_known": true,
+  "repeat_requests": 0
+}

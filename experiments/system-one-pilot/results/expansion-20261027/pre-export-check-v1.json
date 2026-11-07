@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-27T06:12:09.257614+00:00",
+  "phase": "annotation still running; not a completed export",
+  "adjudications_validated": 28,
+  "all_unique_ids": true,
+  "all_exact_input_hashes_and_quotes": true,
+  "original_dataset_and_trusted_export_unchanged": true,
+  "protocol_and_queue_unchanged": true,
+  "reviewed_export_code_unchanged": true
+}

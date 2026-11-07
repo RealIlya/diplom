@@ -1,0 +1,29 @@
+{
+  "targeted": {
+    "passed": 71,
+    "total": 71,
+    "log": "artifacts/system-one-pilot/adaptation-v1/engineering/final-targeted-tests.log"
+  },
+  "full": {
+    "passed": 101,
+    "total": 102,
+    "failed": "test_presentations.PresentationTests.test_all_stored_presentations_are_complete_packages",
+    "reason": "pre-existing extra research-talk-15min-2026-10-11.pptx; unrelated files preserved",
+    "log": "artifacts/system-one-pilot/adaptation-v1/engineering/final-full-tests.log"
+  },
+  "review_ui": {
+    "passed": true,
+    "log": "artifacts/system-one-pilot/adaptation-v1/engineering/final-review-ui.log"
+  },
+  "gitmark_lint": {
+    "passed": true,
+    "documents": 31
+  },
+  "mkdocs_strict": {
+    "passed": true,
+    "site_dir": "/private/tmp/diplom-adaptation-check",
+    "log": "artifacts/system-one-pilot/adaptation-v1/engineering/final-mkdocs.log"
+  },
+  "numerical": "numerical-verification.json",
+  "scope": "code verification after header durability fix and offline training; online pilot is still running"
+}

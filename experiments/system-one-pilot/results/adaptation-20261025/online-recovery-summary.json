@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-25",
+  "read_only_lookup": "GET /api/v1/analytics/meta",
+  "http_status": 403,
+  "generation_id_available": false,
+  "inference_calls": 0,
+  "source_receipt": "artifacts/system-one-pilot/adaptation-v1/online-recovery-meta-v1.json",
+  "official_sources": [
+    "https://openrouter.ai/docs/api/api-reference/beta-analytics/get-analytics-meta",
+    "https://openrouter.ai/docs/api/api-reference/generations/get-generation"
+  ],
+  "result": "No request-specific receipt recovered; unknown reservation retained; no paid retry or series continuation."
+}

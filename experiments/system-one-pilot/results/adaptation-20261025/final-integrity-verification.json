@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "head_metric_groups": 18,
+  "head_max_metric_delta": 1.1102230246251565e-16,
+  "original_30_labels_unchanged": true,
+  "new_export_unchanged": true,
+  "protocol_unchanged": true,
+  "native_frozen_head_unchanged": true,
+  "ce_brier_weights_updated": true,
+  "temperature_lineage_checked": true,
+  "train_prior_independently_checked": true,
+  "online_attempts": 18,
+  "graded": 14,
+  "technical_failures": 4,
+  "missing": 0,
+  "observed_selection_events": 284,
+  "empty_packs": 0,
+  "retained_frozen_json_byte_identical": true,
+  "model_inference": false,
+  "external_api_calls": 0
+}

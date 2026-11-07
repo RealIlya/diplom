@@ -1,0 +1,20 @@
+{
+  "call_id": "rubric-v1/schema-v2/29f55515a21f862c526e6ca0/deepseek",
+  "evidence": {
+    "reason": "Оригинальный HTTP429 inspected: DeepInfra engine_overloaded/upstream_provider_shared_pool до acceptance, generation id/choices отсутствуют. Весь reserve удержан; actual не приравнен к0; эта annotation request не повторяется, техническая ошибка сохранена отдельно от semantic labels.",
+    "response_sha256": "ae0f95919c59b77c6ef3b8a435fed8f68024f9991b2bfd189fd916b329826134",
+    "checked_at": "2026-10-25T12:43:11.727580+00:00",
+    "source": "https://openrouter.ai/docs/api/reference/errors-and-debugging",
+    "full_reserved_usd": 0.0064698,
+    "retry": false
+  },
+  "budget_after": {
+    "series": "annotation",
+    "limit_usd": 0.5,
+    "calls": 144,
+    "actual_usd": 0.111742827,
+    "charged_or_held_usd": 0.118212627,
+    "unresolved": 0,
+    "conservatively_accounted_calls": 1
+  }
+}

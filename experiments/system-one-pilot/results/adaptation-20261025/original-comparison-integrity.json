@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "checked": {
+    "artifacts/system-one-pilot/kev-comparison-v1/runs/laya-v3/receipt-start.json": {
+      "sha256": "430d347132e63297c87793ae6b5eccebefa613559532bce6a8c340317dcfd0a6",
+      "unchanged": true
+    },
+    "artifacts/system-one-pilot/kev-comparison-v1/runs/laya-v3/records.jsonl": {
+      "sha256": "c63eda631132097c230cfa9698ebd0d6e768f7ed84794d60a161f2cff4873869",
+      "unchanged": true
+    },
+    "artifacts/system-one-pilot/kev-comparison-v1/runs/laya-v3/receipt.json": {
+      "sha256": "de179e9ed022fbdeec16aed74e878461e1d8e661cd99628254aa207a53632e6a",
+      "unchanged": true
+    },
+    "artifacts/system-one-pilot/kev-comparison-v1/runs/kev-0.8b-v1/receipt-start.json": {
+      "sha256": "901766d33d5e7bf3d8d43a19a18bd4d2e0894f68fdd11254696e868d604baf27",
+      "unchanged": true
+    },
+    "artifacts/system-one-pilot/kev-comparison-v1/runs/kev-0.8b-v1/records.jsonl": {
+      "sha256": "300e1e28478ade417c7716a46c7e03b919a24276ebb00170ce4ab277a9d44355",
+      "unchanged": true
+    },
+    "artifacts/system-one-pilot/kev-comparison-v1/runs/kev-0.8b-v1/receipt.json": {
+      "sha256": "58386570d721e985ada763c9ff388ec827010658a174ab41f5961e6bc2e9c008",
+      "unchanged": true
+    },
+    "artifacts/system-one-pilot/kev-comparison-v1/runs/kev-4b-v1/receipt-start.json": {
+      "sha256": "1d164bd5657801604747af39bb823c9056fd28d548759d716d2986a8fbcf294c",
+      "unchanged": true
+    },
+    "artifacts/system-one-pilot/kev-comparison-v1/runs/kev-4b-v1/records.jsonl": {
+      "sha256": "69da8416134fd8df93a7272f84023cd809227b3b3031a8345d81128ba8313ed8",
+      "unchanged": true
+    },
+    "artifacts/system-one-pilot/kev-comparison-v1/runs/kev-4b-v1/receipt.json": {
+      "sha256": "68e9fe8e4106120bee832c8c15c47cb30794414164ffa01777ac28abaff2d4d6",
+      "unchanged": true
+    }
+  },
+  "rerun_inference": false,
+  "scope": "Nine original final benchmark run records and receipts match the archived original manifest",
+  "summary_protocol": "Not present in the original artifact manifest; not hashed by this check"
+}

@@ -1,0 +1,3998 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../system-one-atlas-evidence/">
+      
+      
+        <link rel="next" href="../system-one-next-stage/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Пилот System One на banking_knowledge — диагностика CE и препятствия - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#пилот-system-one-технический-результат-и-граница-вывода" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Пилот System One на banking_knowledge — диагностика CE и препятствия
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki GitMark
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wiki GitMark
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Состояние и задачи
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Онтология
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-handoff-2026-10-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контекст продолжения 11.10.2026
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атлас адаптации System One
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Атлас адаптации System One
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общий план и карты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реализация этапов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные и эксперименты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура стенда
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверенные источники и результаты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот CE и проверенные блокеры
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот CE и проверенные блокеры
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-что-реализовано-и-откуда-взяты-данные" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Что реализовано и откуда взяты данные
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-разделение-и-проверяемая-разметка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Разделение и проверяемая разметка
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-проверка-checkpoint-и-обучения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Проверка checkpoint и обучения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-исходные-результаты-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Исходные результаты dev
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-расходы-ошибки-и-хранение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Расходы, ошибки и хранение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-следующий-эксперимент-и-устранение-препятствий" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Следующий эксперимент и устранение препятствий
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-api-профиль-нового-сбора--24102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. API-профиль нового сбора — 24.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-два-llm-разметчика--25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Два LLM-разметчика — 25.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-план-проверки-длинных-входов-laya--25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. План проверки длинных входов Laya — 25.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-реальный-apiui-пилот--25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Реальный API/UI-пилот — 25.10.2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Реальный API/UI-пилот — 25.10.2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#native-сбор-и-охват" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native сбор и охват
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#длинный-вход-и-разметка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Длинный вход и разметка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#расходы-сохранение-и-ограничения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расходы, сохранение и ограничения
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#русский-перевод-очереди--последующее-поручение-25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Русский перевод очереди — последующее поручение 25.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-доверенная-разметка-deepseek--qwen38--25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Доверенная разметка DeepSeek + Qwen3.8 — 25.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-frozen-kevlaya-фактическое-сравнение-25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Frozen KEV–Laya: фактическое сравнение 25.10.2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Frozen KEV–Laya: фактическое сравнение 25.10.2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#протокол-и-сравниваемые-реализации" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Протокол и сравниваемые реализации
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#согласие-с-метками" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Согласие с метками
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#скорость-и-память" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Скорость и память
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#воспроизведение-артефакты-и-ограничения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Воспроизведение, артефакты и ограничения
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-независимые-dev-семейства-и-head-only-kev-08b--2526102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Независимые dev-семейства и head-only KEV-0.8B — 25–26.10.2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Независимые dev-семейства и head-only KEV-0.8B — 25–26.10.2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#данные-и-закреплённый-метод" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Данные и закреплённый метод
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#качество-отдельного-узла" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Качество отдельного узла
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#результат-полного-native-агента" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результат полного native агента
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#расходы-технические-отказы-и-воспроизведение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расходы, технические отказы и воспроизведение
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#решение-о-rlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение о RLCD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-next-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Следующий этап — данные и инфраструктура
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерактивный атлас
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Термины общего агента
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — обзор и источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-training-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение System One — статьи и выжимки
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — темы и план ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ресурсы τ-bench, Laya и KEV
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../action-selection-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выбор действий и контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полные вызовы без LLM
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-native-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native аргументы и предусловия
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документы агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переводы статей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Переводы статей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как читать и словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/openjev-rlcd-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenJev-RLCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/sbert2s1-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBERT2S1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/translation-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запись подготовки и проверки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архив технических планов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Архив технических планов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-19-system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот System One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-kev-laya-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сравнение KEV и Laya
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-system-one-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимый dev и адаптация KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-27-system-one-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Первый пакет расширения и grouped KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — спецификация 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — выполненный план 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-что-реализовано-и-откуда-взяты-данные" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Что реализовано и откуда взяты данные
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-разделение-и-проверяемая-разметка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Разделение и проверяемая разметка
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-проверка-checkpoint-и-обучения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Проверка checkpoint и обучения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-исходные-результаты-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Исходные результаты dev
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-расходы-ошибки-и-хранение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Расходы, ошибки и хранение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-следующий-эксперимент-и-устранение-препятствий" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Следующий эксперимент и устранение препятствий
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-api-профиль-нового-сбора--24102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. API-профиль нового сбора — 24.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-два-llm-разметчика--25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Два LLM-разметчика — 25.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-план-проверки-длинных-входов-laya--25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. План проверки длинных входов Laya — 25.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-реальный-apiui-пилот--25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Реальный API/UI-пилот — 25.10.2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Реальный API/UI-пилот — 25.10.2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#native-сбор-и-охват" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native сбор и охват
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#длинный-вход-и-разметка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Длинный вход и разметка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#расходы-сохранение-и-ограничения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расходы, сохранение и ограничения
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#русский-перевод-очереди--последующее-поручение-25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Русский перевод очереди — последующее поручение 25.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-доверенная-разметка-deepseek--qwen38--25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Доверенная разметка DeepSeek + Qwen3.8 — 25.10.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-frozen-kevlaya-фактическое-сравнение-25102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Frozen KEV–Laya: фактическое сравнение 25.10.2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Frozen KEV–Laya: фактическое сравнение 25.10.2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#протокол-и-сравниваемые-реализации" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Протокол и сравниваемые реализации
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#согласие-с-метками" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Согласие с метками
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#скорость-и-память" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Скорость и память
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#воспроизведение-артефакты-и-ограничения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Воспроизведение, артефакты и ограничения
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-независимые-dev-семейства-и-head-only-kev-08b--2526102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Независимые dev-семейства и head-only KEV-0.8B — 25–26.10.2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Независимые dev-семейства и head-only KEV-0.8B — 25–26.10.2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#данные-и-закреплённый-метод" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Данные и закреплённый метод
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#качество-отдельного-узла" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Качество отдельного узла
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#результат-полного-native-агента" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результат полного native агента
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#расходы-технические-отказы-и-воспроизведение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Расходы, технические отказы и воспроизведение
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#решение-о-rlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Решение о RLCD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="пилот-system-one-технический-результат-и-граница-вывода">Пилот System One: технический результат и граница вывода</h1>
+<p><strong>19.10.2026, по поручению инициатора:</strong> реализован воспроизводимый локальный
+offline стенд, проверены опубликованные веса и реальное head-only CE обучение.
+BM25, frozen и CE сравнены на одном ограниченном dev snapshot. <strong>Научный пилот
+доменной адаптации пока заблокирован:</strong> после admission dev представлен одной
+группой, независимая проверка меток отсутствует, соответствие архивных task ID
+закреплённым задачам не подтверждено. Native агент и его итоговая экономия не
+объявляются работающими или измеренными.</p>
+<p>Решение: сохранить Laya multilingual как технически работоспособного кандидата;
+следующим опытом проверить валидный источник состояний и рубрику в нескольких
+dev-группах, прежде увеличения обучения. К RLCD, Brier-абляциям и HPO не переходить.
+В offline-опыте 19.10 API и аренда GPU — <strong>0</strong>. Отдельный разрешённый
+API-пилот 25.10 завершён до очереди human review: <a href="#api-implementation-v1">раздел 10</a>.</p>
+<h2 id="1-что-реализовано-и-откуда-взяты-данные">1. Что реализовано и откуда взяты данные</h2>
+<p>Код (<code>scripts/system_one_pilot/cli.py</code>) предоставляет prepare → replay → audit
+→ fit; инструкция воспроизведения (<code>experiments/system-one-pilot/README.md</code>)
+и закреплённый профиль (<code>experiments/system-one-pilot/config.json</code>) содержат
+реальные команды. Отдельный fetch проверяет контрольные суммы публичных входов.
+Выходные файлы создаются без перезаписи; неудачные и ранние попытки сохранены.</p>
+<p>Стенд строит snapshot перед assistant call, после полного tool batch. Исключает
+приватные user tools и будущие события; input собирается по allowlist, без Task,
+reward, required_documents и rationale. Хранятся raw видимая история, provenance,
+версии документов и hash snapshot. KB тела превращаются в квитанции в state;
+не-KB результаты, включая shell, сохраняются. Проекция поддерживает no-op и mixed
+batch, но <strong>не подключена к живому native runner</strong>. Это не эмуляция agent reward.</p>
+<p>Источник наблюдений — опубликованный неизменяемый префикс <strong>20 000 000 байт</strong>, SHA
+<code>4d7f30616a6c158079d1569e8213fbad20518d7725284af197d1383459ebe993</code>.
+Декодированы только <strong>52 полных</strong> эпизода; оборванный последний объект исключён.
+Восемь test-эпизодов не извлекались; 14 повторных эпизодов тех же задач пропущены.
+Остались 30 snapshots, 783 candidate chunks: <strong>619 train, 164 dev</strong>.
+Chunks — до 100 слов с исходными character offsets и видимым заголовком;
+полный input <code>(instructions, labels, state, candidate)</code> проверяется tokenizer.
+Shell-текст не обрезается ради попадания в окно; отсюда значительная часть отказов.</p>
+<p>Архив сообщает actor <code>openai/responses/gpt-5.4</code>, reasoning xhigh; simulator
+<code>gpt-5.2</code>, reasoning low, seed 300, retrieval <strong>AllTools</strong>, commit
+<code>1ba0913b59351dd87fcdd04008280c6c4cfb71f2</code>. Это чужие ранее оплаченные эпизоды,
+не наши новые rollouts. Их исходная цена неизвестна. Полный returned info и все
+usage-поля доступны в локальном replay manifest; новый API ни разу не вызывался.</p>
+<p>Рабочая ревизия проекта — τ <code>4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699</code>, 97 задач,
+698 документов; для целевого native опыта остаётся профиль <strong>bm25</strong>. Проверено
+266 наблюдаемых document versions: 253 текста точно совпали с текущим KB,
+13 отличаются (6 document ID), неизвестных ID нет. Старые тела не подменялись
+новыми. Загрузка tasks.json старой ревизии дала <strong>HTTP 404</strong>, git-tree API —
+<strong>HTTP 422 / Invalid object requested</strong>. Это подтверждает отсутствие доступного
+соответствия в проверенном upstream endpoint, а не доказывает, что commit не
+существует ни в одном fork. Проверка совместимости (<code>experiments/system-one-pilot/archive-compatibility.json</code>).</p>
+<h2 id="2-разделение-и-проверяемая-разметка">2. Разделение и проверяемая разметка</h2>
+<p>До извлечения train/dev observations закреплён групповой split:
+<strong>57 train / 20 dev / 20 test, 29 компонент</strong>, seed 20261019. Используются явные
+варианты шаблонов, конкретные общие entities из reference arguments и scenario
+5-gram Jaccard ≥0.55. Общий tool/policy сам по себе не образует группу.
+Все производные chunks наследуют task family/split; ни одной test-строки и ни
+одного exact input overlap train/dev в итоговой очереди нет.
+Split manifest (<code>experiments/system-one-pilot/manifests-v3/split.json</code>),
+аудит утечек (<code>experiments/system-one-pilot/leak-report.json</code>).</p>
+<p>Сохранены два отклонённых разбиения: ошибка tool-name-as-entity дала одну группу;
+после её исправления audit ancestry объединил близкие cash-back варианты.
+Окончательный split закреплён <strong>до меток, inference и CE</strong>. Технические длины
+входов изучались на train/dev отклонённого split; pristine blind-test не заявлен.
+Исходные задачи ранее изучались в проекте, сам benchmark публичный. Модельные
+метрики/метки окончательных test ID не получались и для настройки не использовались.
+Идентичность архивных task IDs текущим задачам остаётся отдельным блокером, поэтому
+этот архивный опыт не доказывает корректность независимого task-held-out сравнения.</p>
+<p>Рубрика <code>usefulness-v1</code>: useful — фрагмент даёт правило, исключение, факт или
+диагностический шаг, применимый к <strong>наблюдаемой</strong> текущей потребности; irrelevant —
+другая операция/известный другой продукт либо нет полезного правила; uncertain —
+неизвестное предусловие, тип карты или недостаточный обрывок. Например, при
+неизвестном типе карты специфичный referral threshold отмечен uncertain, а не 0.
+Оценка отдельного фрагмента не является меткой достаточности всего набора.</p>
+<p>Разметчик — один Codex-агент в текущей сессии, точный serving model ID недоступен.
+Нет второго независимого читателя, disagreement rate и adjudication. Метки
+<strong>предварительные</strong>, не validated gold. Required_documents и будущий reward
+не использовались как метки. Цитаты, input hashes, исходный event, причины и статус
+machine review сохранены в annotations-v1.jsonl (<code>experiments/system-one-pilot/annotations-v1.jsonl</code>).
+Локальная HTML-форма <code>artifacts/system-one-pilot/annotation-review.html</code> показывает
+каждый вход для ручной проверки. Синтетические контакты и тела наблюдений в Git
+не включены; исходная лицензия архивных trajectories отдельно не подтверждена.</p>
+<p>Выбор до прогнозов: round-robin по task IDs/row hashes до 64 admitted train,
+все 27 admitted dev. Итог — <strong>91 пара</strong>: train 11 useful / 37 irrelevant /
+16 uncertain; dev 8 useful / 19 irrelevant. CE получает <strong>48 hard train-пар</strong>
+из 7 задач / 5 групп; dev — <strong>27 пар одной задачи task_023 / одной группы</strong>.
+Unknown не превращается в отрицательную цель. Отбор по admission создаёт смещение:
+короткие хвосты длинных документов проходят чаще; 91 строка не равна 91 задаче.</p>
+<h2 id="3-проверка-checkpoint-и-обучения">3. Проверка checkpoint и обучения</h2>
+<table>
+<thead>
+<tr>
+<th>Кандидат</th>
+<th>Проверенные факты</th>
+<th>Решение для этого опыта</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya English <code>7b928d828b7b0e022f929d9bd2e44165aa270148</code></td>
+<td>Strict load, 421293827 параметров; SHA весов <code>891102d3…</code>; native окно 512 принимает <strong>31/783</strong>, из них dev 5</td>
+<td>Не использовать для текущего полного state; silent truncation запрещён</td>
+</tr>
+<tr>
+<td>Laya multilingual <code>1720e3e3357cfe1e281542e223f8273b0890ca34</code></td>
+<td>Strict load, 321908995 параметров; SHA весов <code>9d628fd9…</code>; окно 1024 принимает <strong>183/783</strong>: train156/dev27</td>
+<td>Технический кандидат для head-only CE; качество вне этого cohort не подтверждено</td>
+</tr>
+</tbody>
+</table>
+<p>Полные SHA, лицензии карточек Apache-2.0, локальные файлы и ревизии — в
+checkpoint manifest (<code>experiments/system-one-pilot/checkpoint-manifest.json</code>).
+SHA весов сверены с LFS metadata точных ревизий HF. Runtime Laya 0.4.2,
+commit <code>68804629e8ccd9d616d48a40e87de9fabbeae069</code>; в повторе записаны хеши
+фактически импортированных <code>.py</code>, tokenizer/config/weights. Исходная multilingual
+tokenizer config сохранена отдельно: pinned runtime исправляет совместимость
+<code>extra_special_tokens</code> list с Transformers 4.57.1. Содержимое tokenizer не заменено.</p>
+<p>Фактический hardware/runtime: Mac arm64, MPS доступен вне sandbox; Python 3.13.5,
+PyTorch 2.9.1, Transformers 4.57.1. Профиль машины M4 Pro/24 ГБ — исходное
+ограничение проекта; модель устройства отдельно системным запросом не измерялась.
+Полные версии зависимостей сохранены, requirements (<code>experiments/system-one-pilot/requirements.txt</code>).</p>
+<p>Обновляются <strong>14770945 non-encoder параметров</strong>; encoder и act_head заморожены.
+FP32, batch1, AdamW lr1e-4, weight decay0.01, clip1, 1 эпоха/48 updates,
+seed20261019. Loss — чистая CE по hard labels; RLCD, noise, Brier training,
+HPO, scheduler и temperature fitting отсутствуют. Published temperatures
+multilingual равны 1 и одинаковы у frozen/CE. В train голова имеет dropout,
+encoder — eval. Все градиенты конечны и ненулевые; минимальная gradient norm
+в повторе 0.670854. SHA адаптированной FP32 головы <code>a7fa717d…</code> одинаков у обоих
+прогонов; загрузка поверх исходного checkpoint дала <strong>max score difference 0</strong>.</p>
+<h2 id="4-исходные-результаты-dev">4. Исходные результаты dev</h2>
+<p>Знаменатель ниже — <strong>27 admitted hard-labelled chunks одного snapshot</strong>, а не
+все 164 dev candidates и не native задачи. Для этой admitted dev части разметка
+полная, uncertain нет. BM25 считает собственное переранжирование только этого
+наблюдаемого пула; scores не интерпретируются как p. Во всех arms один state,
+одни candidates и tie-break по порядку пула, rank-only top3. Packer/agent budget
+в этот диагностический rank-only опыт не включён.</p>
+<table>
+<thead>
+<tr>
+<th>Arm</th>
+<th style="text-align: right;">P@3</th>
+<th style="text-align: right;">Recall@3</th>
+<th style="text-align: right;">Binary Brier ↓</th>
+<th style="text-align: right;">NLL ↓</th>
+<th style="text-align: right;">Accuracy @0.5</th>
+<th style="text-align: right;">Median warm node time, ms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BM25</td>
+<td style="text-align: right;">0.667</td>
+<td style="text-align: right;">0.250</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">0.088 на chunk; ≈2.37 на pool</td>
+</tr>
+<tr>
+<td>Frozen multilingual</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.679150</td>
+<td style="text-align: right;">3.115983</td>
+<td style="text-align: right;">0.296296</td>
+<td style="text-align: right;">120.9</td>
+</tr>
+<tr>
+<td>CE head-only</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.375</td>
+<td style="text-align: right;">0.385741</td>
+<td style="text-align: right;">0.987744</td>
+<td style="text-align: right;">0.296296</td>
+<td style="text-align: right;">100.0</td>
+</tr>
+</tbody>
+</table>
+<p>Raw события ce-v1 (<code>experiments/system-one-pilot/results/ce-v1/events.jsonl</code>),
+raw ce-v2 (<code>experiments/system-one-pilot/results/ce-v2/events.jsonl</code>),
+полный manifest повторного запуска (<code>experiments/system-one-pilot/results/ce-v2/summary.json</code>),
+сверка повторяемости (<code>experiments/system-one-pilot/repeatability.json</code>).
+Оба прогона дали одинаковые predictions/метрики и head checksum. Повтор создан
+новым run ID после исправлений review; исходник сохранён. Полное время run:
+42.76 и 25.67 секунд. Разница включает прогрев/состояние системы; это не ускорение
+алгоритма. Порядок frozen→training→CE фиксирован, cold load и общий preprocessing
+не включены в warm node latency; сравнение полной задержки агента не выполнено.
+Конечный MPS driver allocation около 7.26 ГБ — <strong>не измерение истинного пика</strong>.</p>
+<p>Наблюдение: на одном snapshot CE улучшила ранжирование/Brier относительно frozen,
+но accuracy осталась прежней; дешёвый контроль уже извлекает 2 полезных из 3.
+Причинное обобщение на банковские задачи не следует: одна dev-группа,
+предварительные метки, admission bias и неподтверждённая ancestry архивных задач.
+CI по строкам создал бы ложную точность, поэтому не вычислялся; независимых
+dev-групп для group-level интервала недостаточно. Победитель не выбран.</p>
+<h2 id="5-расходы-ошибки-и-хранение">5. Расходы, ошибки и хранение</h2>
+<p>Новые inference API <strong>$0</strong>, аренда GPU <strong>0 ₽</strong>, платных вызовов нет. HTTP-загрузка
+публичных файлов не требует платного inference сервиса. Электроэнергия, время
+человека/агента, стоимость текущей Codex-сессии и исходной генерации архива не
+измерены; полная стоимость исследования не равна нулю. Стоимость полного
+agent service, simulator/judge, fallback и окупаемость пока неизвестна.</p>
+<p>Сохранены DNS failure sandbox, HTTP timeout архива с дозагрузкой хвоста и проверкой
+целого SHA, несовместимая tokenizer config, ошибочный split, ancestry/preprocessing
+revisions, HTTP404/422, результаты review и посторонний тест презентаций.
+Реестр ошибок (<code>experiments/system-one-pilot/errors.json</code>).
+Review воспроизвёл превращение <code>null</code> в negative и отсутствие hash source Laya;
+добавлены regression tests, строгие labels и фактические hashes. Реальная первая
+разметка null не содержала, поэтому её метрики этим дефектом не испорчены.</p>
+<p>Raw bodies, source archive, snapshot queue, исходные weights и обе adapted heads
+остаются локально; в Git — разрешённые metadata, labels без тел входов, события и
+отчёт. Каталог и контрольные суммы (<code>experiments/system-one-pilot/artifact-manifest.json</code>).
+Игнорируемые файлы не являются резервной копией; новое общее хранилище не выбрано.
+Код и предварительная разметка выполнены Codex по поручению инициатора;
+человеческая проверка меток и научное авторство этим не приписаны участникам.</p>
+<p>Проверки завершения: <strong>11/11 тестов пилота</strong>, повторное построение queue/snapshots
+с идентичными SHA, валидация всех 91 annotations, сверка checkpoint и raw results;
+GitMark strict lint/index, MkDocs strict build в <code>site/</code>, <code>git diff --check</code>.
+Общий unittest suite: <strong>41/42</strong>, одно существующее падение презентаций из-за
+уже имевшегося второго PPTX; чужой файл не удалялся. Независимый агент провёл
+read-only review и повторную проверку исправлений: новых Critical/Important нет.</p>
+<h2 id="6-следующий-эксперимент-и-устранение-препятствий">6. Следующий эксперимент и устранение препятствий</h2>
+<p><strong>Решение по этому пилоту:</strong> CE технически работает, но текущий replay не принимать
+как подтверждение полезной доменной адаптации. Не увеличивать training budget и
+не переходить к RLCD; сначала исправить данные.</p>
+<p><strong>Уточнение 24.10.2026:</strong> инициатор выбрал следующий сбор из полных диалогов;
+решение и объём технического старта — в вопросе
+<a href="../#wayfinder-dialogue-collection">«С каких диалогов начать новый сбор данных?»</a>.
+Описанный ниже first-turn-only путь сохранён как прежнее предложение 19.10.2026.
+Требования к проверке происхождения, рубрики, admission и независимости групп
+сохраняются; модели и бюджет нового сбора ещё обсуждаются.</p>
+<p>Прежнее предложение следующего опыта — first-turn <strong>retrieval-only probe</strong> текущего pinned
+banking KB: зафиксировать по одной видимой пользовательской реплике минимум для
+8 train и 6 dev <strong>разных групп</strong>, выполнить локальный native BM25 с query равным
+этой реплике и top-k10, сохранить настоящий tool output и snapshot. Реплики
+создать и проверить как отдельные scripted-user fixtures, наследующие sealed
+task family; не извлекать hidden Task в scorer. Это бесплатный способ проверить
+admission/рубрику, но он ещё не full-agent оценка. Этот collector пока не реализован:
+его контракт и целевой результат указаны здесь, исполняемая команда не выдумана.</p>
+<p>Сначала независимо разметить двумя читателями небольшой train audit, например
+20 пар с положительными, hard negative и uncertain, сохранить disagreement и
+adjudication; затем заморозить рубрику до dev. Получить несколько dev-групп с
+обоими hard-классами и опубликовать admission по всему пулу. После этого повторить
+один CE-vs-frozen-vs-BM25 опыт с тем же бюджетом, group-macro метриками и честным
+охватом. Проверять 1024 до расширения окна, чтобы не ввести новый фактор сразу.</p>
+<p>Для требуемых полных native эпизодов есть два конкретных пути: предоставить
+локальный OpenAI-совместимый actor/simulator/judge с закреплёнными версиями и
+запустить штатный evaluator; либо заранее определить provider/model, estimate,
+численный API hard limit и stop rule, получить разрешение и только затем собрать
+эпизоды на pinned bm25. <strong>30 000 ₽ планового GPU-резерва не являются разрешением.</strong>
+Архив можно использовать для основной серии только после получения исходного
+task bundle/KB и подтверждения соответствия IDs/ancestry; одного совпадения имён
+недостаточно. Test остаётся вне разметки для разработки, HPO и выбора порогов.</p>
+<p><a id="api-pilot-profile"></a></p>
+<h2 id="7-api-профиль-нового-сбора--24102026">7. API-профиль нового сбора — 24.10.2026</h2>
+<p><strong>Согласовано инициатором:</strong> использовать API и DeepSeek в обеих ролях;
+<strong>общий лимит первого технического сбора — $1</strong>, включая smoke-test и повторы.
+Конкретный snapshot — <code>deepseek/deepseek-v4.1-flash-1017</code> через
+OpenRouter. Предлагаемые настройки: закрепить провайдера DeepSeek без
+автоматической смены провайдера; роль агента — reasoning low,
+роль симулятора — без reasoning.
+Сценарии, промпты и доступ к данным у ролей разные. Совместимость параметров и
+поведение симулятора требуют smoke-test; утверждения о качестве в banking нет.
+Выбор двух разных LLM для разметки на 24.10.2026 оставался отдельным решением;
+25.10.2026 он принят в <a href="#annotation-model-proposal">профиле разметки</a>.</p>
+<p>Проверены публичные источники 24.10.2026:
+<a href="https://openrouter.ai/api/v1/models">каталог OpenRouter</a>,
+<a href="https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash-1017/endpoints">endpoint карточка snapshot</a>,
+<a href="https://api-docs.deepseek.com/quick_start/pricing/">тариф DeepSeek</a>,
+<a href="https://openrouter.ai/docs/guides/routing/provider-selection">закрепление провайдера</a>.
+В каталоге snapshot указан с input $0.15/M и output $0.60/M вне peak;
+для расчёта ниже консервативно взяты peak $0.30/M и $1.20/M соответственно.
+Перед исполнением тариф выбранного endpoint проверяется повторно.</p>
+<p><strong>Фактическое исполнение 25.10:</strong> после двух HTTP404 из-за account training
+policy инициатор отдельно разрешил <code>deepinfra/fp8</code> для сбора и DeepSeek-разметчика.
+Модель та же, privacy-настройки сохранены, fallback выключен. Исходное предложение
+официального provider выше заменено этим решением; <a href="#api-implementation-v1">измерения и расходы</a>.</p>
+<p><strong>Сценарная арифметика, не измеренный прогноз:</strong> на один эпизод суммарно у агента
+и симулятора 0.2–1.0 млн входных и 10–50 тыс. выходных токенов, включая reasoning.
+Вход учитывает повторную передачу накопленной истории на каждом вызове.
+Без скидок кеша это $0.072–0.36 за эпизод: 3 эпизода — $0.216–1.08;
+5 — $0.36–1.80. При других длинах или повторах сумма меняется.
+LLM-разметка в оценку не включена; используется native BM25 без embedding API.</p>
+<p>Первоначальное предложение агента о лимите $3 <strong>заменено решением инициатора
+о лимите $1</strong>. Цель — 3–5 эпизодов в пределах этого лимита; количество завершённых
+эпизодов не гарантируется скидкой кеша. Перед каждым вызовом проверять бюджет
+с резервом под полный некешированный input и разрешённый максимум output;
+при нехватке остатка остановить сбор, не повышать лимит и не перезапускать серию
+автоматически. Нужны численные ограничения шагов, токенов и повторов и учёт usage.
+Разметка двумя LLM не входит в разрешённый бюджет сбора. Ключ добавлен
+25.10.2026; <a href="#api-implementation-v1">актуальный статус исполнения</a>.</p>
+<p><strong>Кеш:</strong> у официального DeepSeek автоматическое серверное кеширование общих
+префиксов; отдельное клиентское хранилище или <code>cache_control</code> для него не нужны.
+Клиент продолжает передавать полный разрешённый контекст; стабильные инструкции,
+порядок tools и уже отправленные сообщения не переставляются ради каждого шага.
+Новые сообщения добавляются в конец; роли сохраняют раздельные истории и права
+видимости. Кеш не является сохранённым ответом, не освобождает контекстное окно
+и не отменяет стоимость генерации. Попадания best-effort, а не гарантированные.
+Фактические cached tokens и стоимость сохранять из usage OpenRouter.
+Источники, проверены 24.10.2026:
+<a href="https://api-docs.deepseek.com/guides/kv_cache/">DeepSeek Context Caching</a>,
+<a href="https://openrouter.ai/docs/guides/best-practices/prompt-caching">OpenRouter Prompt Caching</a>.</p>
+<p><a id="annotation-model-proposal"></a></p>
+<h2 id="8-два-llm-разметчика--25102026">8. Два LLM-разметчика — 25.10.2026</h2>
+<p><strong>Согласовано инициатором 25.10.2026:</strong> DeepSeek и Qwen, отдельный лимит
+разметки $0.50. Конкретные model IDs и предлагаемые endpoints:</p>
+<table>
+<thead>
+<tr>
+<th>Роль</th>
+<th>Model ID OpenRouter</th>
+<th>Предлагаемый endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Разметчик A</td>
+<td><code>deepseek/deepseek-v4.1-flash-1017</code></td>
+<td>DeepInfra FP8 (<code>deepinfra/fp8</code>), разрешён 25.10 после HTTP404</td>
+</tr>
+<tr>
+<td>Разметчик B</td>
+<td><code>qwen/qwen3.8-27b</code></td>
+<td>DeepInfra BF16, без автоматической смены провайдера</td>
+</tr>
+</tbody>
+</table>
+<p>В каталоге Qwen указан canonical slug <code>qwen/qwen3.8-27b-20260814</code>.
+По первичным карточкам весов DeepSeek имеет MIT, Qwen3.8-27B — Apache-2.0.
+Это два разных семейства с опубликованными весами и доступными API;
+их качество разметки наших banking-карточек ещё не измерено. Разные семейства
+не гарантируют независимости ошибок. DeepSeek-разметчик не получает ответы
+или скрытые данные агента/симулятора сверх разрешённого входа карточки.</p>
+<p>Оба разметчика независимо получают одну рубрику и одинаковые наблюдаемые
+<code>state + candidate</code>; ответы друг друга, будущие события, gold и итоговый reward
+не передаются. Запрашиваются <code>useful / irrelevant / uncertain</code>, короткая причина,
+проверяемая цитата и условия применимости. Предлагается reasoning low с явным
+лимитом общего output 2048 токенов на вызов; финальный JSON проверяется.
+Оборванный/некорректный ответ — техническая ошибка, не автоматическая метка
+uncertain. Исходные ответы, параметры, provider и usage сохраняются.</p>
+<p><strong>Сценарная оценка для первых 20–30 карточек</strong>, по одному вызову каждой модели:
+на каждый запрос 2000–4000 input и 500–1500 output токенов с учётом reasoning.
+Для расчёта без кеша и временных скидок взяты DeepSeek $0.30/M input, $1.20/M
+output и Qwen $0.20/M input, $2.50/M output. Текущий DeepInfra BF16 endpoint
+Qwen сообщает $0.15/M и $1.875/M с discount 0.25; расчёт не опирается на скидку.
+Итог: 20 карточек — $0.057–0.151; 30 — $0.0855–0.2265. Это арифметика
+предполагаемых длин, не измерение фактической серии. Ставки выбранных endpoints
+повторно проверяются перед исполнением.</p>
+<p>Согласован <strong>отдельный лимит $0.50</strong> на эту первую двойную разметку, включая
+проверку подключения и повторы; резерв следующего запроса считается без кеша.
+Он не входит в ранее согласованный $1 сбора диалогов. Ключ добавлен
+25.10.2026; <a href="#api-implementation-v1">фактический результат API-разметки</a>.
+Лимиты серий не перераспределяются автоматически.</p>
+<p>Первичные источники, проверены 25.10.2026:
+<a href="https://openrouter.ai/api/v1/models">каталог OpenRouter</a>,
+<a href="https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints">Qwen endpoints</a>,
+<a href="https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash-1017/endpoints">DeepSeek snapshot endpoints</a>,
+<a href="https://api-docs.deepseek.com/quick_start/pricing/">тариф DeepSeek</a>,
+<a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017">веса DeepSeek</a>,
+<a href="https://huggingface.co/Qwen/Qwen3.8-27B">веса Qwen</a>.</p>
+<p><a id="laya-overflow-proposal"></a></p>
+<h2 id="9-план-проверки-длинных-входов-laya--25102026">9. План проверки длинных входов Laya — 25.10.2026</h2>
+<p><strong>Проверенные факты:</strong> у локального multilingual checkpoint <code>max_len=1024</code>,
+<code>head_max_len=256</code>; у его encoder <code>max_position_embeddings=8192</code>. Текущая
+<a href="https://huggingface.co/convaiinnovations/laya-multilingual">карточка автора</a>
+описывает явный <code>max_len</code> до 8192, отдельно предупреждая о проверке качества
+длинных входов. Возможность настройки не является нашим измерением качества,
+памяти или времени на 4k/8k. Старый архивный профиль принял 183 из 783 пар при
+1024; это не прогноз покрытия нового BM25-сбора.</p>
+<p><strong>План согласован инициатором 25.10.2026:</strong> проверить профиль 4096, разбивать
+длинные документы и учитывать отказы отдельно. Новых измерений пока нет.
+На новых train-наблюдениях сначала
+измерить длины полного сериализованного входа для лимитов 1024/4096/8192;
+4096 рассмотреть как первый рабочий профиль после локальной runtime-проверки.
+Измерения длины не требуют inference API. До выбора основного профиля проверить
+входы и predictions на доступной проверенной train-подвыборке, время и память;
+зафиксировать один профиль для frozen/adapted. 1024 сохранить как исходную
+точку, 8192 — кандидат для отдельной проверки, а не автоматический оптимум.</p>
+<p>Длинный документ разбивать по заголовкам/абзацам с сохранением преамбулы,
+условий, source spans и версий; короткую запись оставлять целиком. Считается
+state + кандидат + инструкции/варианты/оформление и внутренние head limits,
+не одна длина фрагмента. Один oversized неделимый блок — <code>CANDIDATE_OVERFLOW</code>.
+Если обязательное состояние само не помещается — <code>STATE_OVERFLOW</code>; разбиение KB
+это не исправляет. Тихая truncation, удаление старых условий и подстановка
+LLM-сводки не входят в согласованную базовую серию.</p>
+<p>Непригодные пары и снимки сохраняются с причинами; их не превращают в negative
+labels и не вычёркивают из отчёта охвата. Offline метрики на admitted-подмножестве
+явно условные. В будущем online опыте техническая передача всего того же snapshot
+LLM требует учёта стоимости и пригодности входа; native baseline при этом
+остаётся самостоятельным неизменным контролем. Эта ветвь описана в
+<a href="../architecture/#context-contract-v0">контракте переполнений</a>, не реализована
+и не запускается в текущем сборе исходных диалогов.</p>
+<p>Сканирование длинного входа окнами (<code>predict_long</code>) есть в закреплённом коде
+Laya, но его агрегация не гарантирует совместного учёта условия и исключения
+из разных окон. Для текущего плана это отдельный возможный метод,
+не незаметная замена pointwise-входа и не выбранный fallback.</p>
+<p><a id="api-implementation-v1"></a></p>
+<h2 id="10-реальный-apiui-пилот--25102026">10. Реальный API/UI-пилот — 25.10.2026</h2>
+<p><strong>Актуально:</strong> по последующему поручению инициатора разметка завершена, принято30/30;
+обязательных ручных действий0. <a href="#trusted-annotation-policy">Действующая политика</a>.
+Ниже сохранён результат первоначальной готовности к ручной проверке. Локальный UI C
+с SQLite открыт на <code>http://127.0.0.1:8765</code>: 30 карточек, 13 обязательных,
+0 подтверждений человека. Автоматическая проверка сначала отклонила отправку
+payload, затем замену provider; оба препятствия сняты прямыми ответами инициатора.
+Полные тексты разрешений и отказов записаны в журнале. Обучение не запускалось.</p>
+<p>Протокол до прогнозов — <code>experiments/system-one-pilot/protocol-api-v1.md</code>,
+подробный журнал — <code>experiments/system-one-pilot/results/api-20261025/work-log.md</code>,
+численные исходные измерения, hashes и версии — <code>summary-delivery.json</code> в том же
+каталоге. Запуск, восстановление и экспорт — <code>experiments/system-one-pilot/README.md</code>,
+раздел «Новый API-пилот». Эти файлы доступны в репозитории, вне сайта MkDocs.</p>
+<h3 id="native-сбор-и-охват">Native сбор и охват</h3>
+<p>Штатные <code>LLMAgent + UserSimulator + Orchestrator/run_simulation</code> с native BM25,
+исходными prompts/tools/retrieval; System One не вмешивался. Выбраны 5 различных
+train-семейств по закреплённому manifests-v3 до вызовов; test не использован.
+Task_019,032,068 завершились <code>user_stop</code>, task_086 — лимитом 80 шагов,
+task_087 — HTTP404 после greeting. Все 5 попыток сохранены, неудачная не заменена.
+Native ENV evaluator использован отдельно: полного agent reward, NL judge и
+итогового преимущества System One эти результаты не измеряют.</p>
+<p>Из всех траекторий детерминированно получены 12 snapshots и 398 пар
+документ–снимок; состояние <code>context-v0-structural-v2</code> содержит только наблюдения
+до cutoff. Ошибки tools сохранены; hidden Task/gold/reward/simulator instructions
+не попадают в scorer/annotation payload. Охват по всему пулу:</p>
+<table>
+<thead>
+<tr>
+<th>Профиль</th>
+<th style="text-align: right;">Admitted</th>
+<th style="text-align: right;">STATE_OVERFLOW</th>
+<th style="text-align: right;">CANDIDATE_OVERFLOW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1024</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">309</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr>
+<td>4096</td>
+<td style="text-align: right;">277</td>
+<td style="text-align: right;">121</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>8192</td>
+<td style="text-align: right;">357</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Для очереди до прогнозов отобраны по 10 карточек task_032,068,086: 30 карточек,
+8 снимков, <strong>3 семейства</strong>, а не 30 независимых задач. Task_019 не дал admitted
+состояний, task_087 — KB-наблюдений. Parse errors=0; молчаливого усечения нет.
+Структурное разбиение сохраняет условия/заголовки/source spans; при 4096 новым
+документам разбиение не потребовалось. Семантическую полноту guards человек
+проверяет отдельно; overflow — отказ, а не отрицательная метка.</p>
+<h3 id="длинный-вход-и-разметка">Длинный вход и разметка</h3>
+<p>На новом MPS runtime 4096 реальные полные последовательности 364/1014/3364 токена
+заняли 0.923/0.250/1.361 s; finite logits, peak RSS 1 756 364 800 bytes, MPS driver
+до 4 260 823 040 bytes. Это одиночные инженерные измерения на Mac M4 Pro/24 GiB,
+не стабильная latency и не качество длинного контекста. В независимом review все
+30 token IDs/decode/hash совпали с фактическим Laya batch, все 12 снимков
+воспроизвелись из raw trajectories. Проверки выполнены без сети/forward.</p>
+<p>Ранее архивная проверка дала 24 пары, 9 admitted/15 state overflow на 4096;
+архивная task provenance остаётся неподтверждённой. Отдельный <strong>синтетический</strong>
+полный тензор 4096 дал 2.789 s, RSS 2 074 017 792 bytes, MPS driver 5 912 870 912
+bytes. Этот capacity probe не создавал карточек/меток. Raw и versions —
+<code>artifacts/system-one-pilot/archival-runtime-validation-v1/</code>, безопасные копии
+сохранены рядом с новым журналом. Архивные результаты не выданы за новые данные.</p>
+<p>Rubric-v1 проверена агентом на новых train-примерах до оплаты разметки.
+Каждая модель независимо получила одинаковые state+candidate и рубрику,
+без ответа другой модели и без scorer-прогнозов. Первый формат v1 (<code>json_object</code>):
+60 ответов, 42 valid, 18 technical_error (8 ключи схемы, 7 формат цитат, 3 length).
+После этого агент до нового запуска закрепил v2 strict schema: <strong>все те же</strong>
+30 входов размечены заново, старая версия сохранена. v2: 60 ответов, 59 valid,
+1 ошибка буквальной цитаты Qwen; из 29 валидных пар 26 совпадают, 3 расходятся,
+1 содержит uncertain, 1 отмечена LLM как дефект. Совпадение не доказывает истину.</p>
+<p>UI направляет человеку все 6 трудных карточек (3 расхождения, uncertain,
+model defect, technical error) и 7 случайных совпадений, seed=25. Контроль
+сначала требует собственной метки и явного reveal; первая метка сохраняется.
+Это проверка процесса без статистической гарантии. Оставшиеся 17 совпадений
+доступны в фильтре «Все карточки». При общей ошибке — остановить очередь,
+пересмотреть рубрику и создать новую версию; старые ответы не переписывать.</p>
+<h3 id="расходы-сохранение-и-ограничения">Расходы, сохранение и ограничения</h3>
+<p>Официальный DeepSeek endpoint дважды вернул HTTP404; второй ответ установил
+<code>paid-model-training-violation-by-account</code>. Privacy не ослаблялась. С прямого
+разрешения инициатора <strong>тот же</strong> DeepSeek V4.1 Flash 1017 закреплён на
+<code>deepinfra/fp8</code>, Qwen3.8-27B — <code>deepinfra/bf16</code>; fallback выключен. Верхние тарифы
+без кеша $0.30/$1.20 и $0.20/$2.50 за миллион input/output проверены preflight;
+перед каждым HTTP полный максимум резервируется в SQLite.</p>
+<p>Сбор: 141 call, точная сумма usage $0.05100023096. У двух HTTP404 actual cost
+неизвестна: полные максимумы $0.0083151 остаются учтёнными отдельными receipts.
+С округлением вверх ledger учитывает <strong>$0.059315396 из $1</strong>. Разметка (smoke,
+v1 и v2): 121 call, usage $0.09548411104, ledger <strong>$0.095484127 из $0.50</strong>.
+Unresolved=0; повторный запуск разметки и collector пропускает готовые записи.
+Общий финансовый ledger <code>artifacts/system-one-pilot/authorized-series-20261025.sqlite3</code>
+не зависит от <code>--root</code>; его нельзя удалять/откатывать ради нового бюджета.</p>
+<p>Review DB: <code>artifacts/system-one-pilot/api-v1/pilot.sqlite3</code>; raw/queue/annotations
+в том же каталоге. Сохраняются черновики, фильтры, текущая карточка, раскрытие,
+история исправлений; stale revision/input и подмена исходного paid-ответа
+отклоняются. Экспорт только подтверждённых семантических решений, сейчас пуст.
+Online backups обеих БД проходят integrity check; отдельная копия <strong>вне репозитория</strong>
+в <code>/Users/nikitapasinin/Documents/ChatGPT/diplom-backups/system-one-pilot/20261025T065434Z/</code>
+проверена восстановлением review в новый файл. Копии на том же Mac не защищают
+от потери диска. Финансовый ledger при restore review не откатывается.</p>
+<p>37 Python tests и JS regression прошли. Браузерные тесты autosave/reload/restart,
+blind reveal, история исправлений, экспорт и отказ сохранения выполнены на
+отдельной TEST ONLY БД; её решения не попали в реальную очередь. В настоящем
+приложении проверены открытие, backup и экспорт 0 решений. Независимый review
+помог исправить бюджет при смене root, гонку перехода, guards и привязку к
+оригинальному запросу/модели/schema; замечания закрыты регрессиями.</p>
+<p><strong>Граница вывода:</strong> технический путь работает, human audit ещё предстоит.
+Нет независимых человеческих меток, нового обучения, сравнительного качества
+или доказанного выигрыша агента. Достаточность данных для frozen-vs-CE-vs-BM25
+оценивается после проверки; 30 карточек/3 семейства сами её не доказывают.</p>
+<p><a id="russian-review-translation"></a></p>
+<h3 id="русский-перевод-очереди--последующее-поручение-25102026">Русский перевод очереди — последующее поручение 25.10.2026</h3>
+<p>Инициатор попросил перевод всего текста, который нужно оценить. Добавлен
+вспомогательный русский текст всех 30 карточек: 256 уникальных строк (8 состояний,
+26 документов, 26 названий, 1 рубрика, 89 причин/условий, 114 цитат; категории могут
+пересекаться). Перевод Codex подготовлен без новых API-вызовов/расходов. Числа,
+проценты/сроки, структура JSON-state и технические идентификаторы проверены;
+все 26 документов и 8 состояний семантически сверены агентами. Одна неточность о
+направлении письменного подтверждения отмены исправлена <strong>до</strong> импорта. Это не
+человеческое утверждение точности перевода: при неоднозначности нужен оригинал.</p>
+<p>Русский текст показан основным, рядом есть раскрываемый английский оригинал.
+Названия продуктов и технические IDs остаются исходными. Точные raw payload,
+source spans и диагностическая история до cutoff доступны для проверки в оригинале;
+это не дополнительные сведения для определения метки. Scorer/LLM inputs, исходные
+ответы, их хеши, 30 pending и прежние решения при импорте перевода не менялись.</p>
+<p>Перевод хранится отдельно в той же SQLite (<code>review_translation</code>); source hashes и
+полное покрытие проверяются до записи. Bundle hash
+<code>9c25d8d514687a797f885adee34f26e6ce01113db06276ed1d7de19ac0ffb4ac</code>.
+Backend передаёт переводы ответов только после reveal, вместе с видимыми ответами.
+Draft/confirm сохраняют хеш показанного bundle в audit; export включает перевод
+только для решения с таким подтверждением, без приписывания старым решениям.
+Перевод входит в backup/restore; закреплённый текст не перезаписывается.</p>
+<p>Код и команды — в существующем README эксперимента. Подробный журнал, миграционная
+проверка и итоговая квитанция — <code>experiments/system-one-pilot/results/api-20261025/</code>
+(<code>translation-ru-work-log.md</code>, <code>translation-ru-migration.json</code>,
+<code>translation-ru-verification.json</code>). Это изменение удобства human audit, а не новые
+измерения качества System One или новые человеческие метки.</p>
+<p><a id="trusted-annotation-policy"></a></p>
+<h2 id="11-доверенная-разметка-deepseek--qwen38--25102026">11. Доверенная разметка DeepSeek + Qwen3.8 — 25.10.2026</h2>
+<p><strong>Действующее решение инициатора после просмотра ответов:</strong> доверить всю разметку
+связке DeepSeek + Qwen3.8. Агент сам разрешает рядовые расхождения, ошибки формата,
+дефекты и неопределённости. Обращаться к инициатору <strong>только при критическом
+противоречии, которое агент не может разрешить сам</strong>. Это заменяет прежнюю
+обязательную ручную очередь, случайные слепые контроли и human audit как gate.
+Не возвращать их в следующих сериях без нового поручения. Выбор моделей,
+информационные границы, отдельные бюджеты и правила учёта остаются прежними.</p>
+<p>Политика <code>deepseek-qwen-agent-v1</code>:</p>
+<ul>
+<li>Полные валидные ответы обеих моделей совпадают и не указывают дефект — принять
+  автоматически, включая законную <code>uncertain</code> (без бинарной training-метки).</li>
+<li>Расхождение/technical error/defect — сначала разбирает агент по тому же
+  state+candidate, рубрике и происхождению. Его решение отдельно сохраняет
+  основание и точные цитаты; исходные ответы не переписываются. Ошибка JSON/цитаты
+  не превращается в семантическую uncertain и не считается вторым валидным ответом.</li>
+<li>Неизвестная применимость сама по себе разрешима как uncertain. Критическое
+  противоречие — существенная несовместимость фактов/правил либо нарушение
+  информационных границ/происхождения, которое нельзя разрешить по доступным
+  наблюдениям/исходникам и которое мешает корректному решению. Сначала расследует
+  агент; только оставшийся неразрешимым случай передаётся инициатору.</li>
+<li>Принятые LLM/agent labels сохраняют <code>human_review=false</code>, явный источник,
+  input/annotations hashes, историю и raw usage. Это доверенные рабочие метки,
+  а не независимая человеческая проверка качества.</li>
+</ul>
+<p><strong>Результат текущей очереди:</strong> принято30/30: 6 уже подтверждённых инициатором
+решений сохранены без изменения; 20 согласий моделей и 4 арбитража агента.
+Метки: useful11, irrelevant18, uncertain1. Неразрешимых критических противоречий0,
+обязательных действий инициатору0. Обучение и новые API-вызовы не запускались.
+Один uncertain исключён из бинарного обучения; eligibility23 относится к24 новым
+trusted labels, а не к оценке качества ранее подтверждённых6 human labels.</p>
+<p>Все3 исходных расхождения разобраны: продуктовая применимость совета Business
+Bronze не установлена → uncertain; правило пополнения нового savings частично
+помогает текущему запросу → useful; запрет использовать rebate/fee credits для
+ATM cash shortfall → useful как исключение неподходящего действия. Ошибка цитаты
+Qwen по APY stacking осталась technical_error, useful принято отдельным решением
+агента по валидному DeepSeek и самому документу. Случай BNPL placeholders уже
+подтверждён инициатором как irrelevant и не перезаписывался агентом; defect flag
+модели остаётся в raw. Ранее human useful вместо model uncertain тоже сохранён.</p>
+<p>Инженерно: отдельная append-only <code>trusted_labels</code> в той же SQLite. Исходные
+cards/reviews/review_events/translation не изменены. Человеческие draft/confirmed
+не затираются; старая вкладка не может отправить autosave/confirm поверх принятой
+метки. UI показывает принято30/30 и вам нужно0, без обязательного confirm для
+trusted labels. Экспорт <code>trusted-labels-v1.jsonl</code> содержит6 human-review-v1 и24
+trusted-label-v1 записи, с раздельным происхождением. Backup/restore включает всё.</p>
+<p>Подробный журнал и проверяемые числа — <code>experiments/system-one-pilot/results/api-20261025/</code>
+(<code>trusted-policy-work-log.md</code>, <code>trusted-labels-summary.json</code>,
+<code>summary-trusted-delivery-v2.json</code>, <code>trusted-policy-verification.json</code>). Старые
+summary-delivery/translation receipts сохранены как датированные состояния,
+не подменены новым результатом. Следующий научный опыт по-прежнему должен
+различать качество узла и агента и учитывать число независимых семейств;
+новое решение снимает ручной gate, но не создаёт измеренного выигрыша System One.</p>
+<p><a id="kev-laya-comparison"></a></p>
+<h2 id="12-frozen-kevlaya-фактическое-сравнение-25102026">12. Frozen KEV–Laya: фактическое сравнение 25.10.2026</h2>
+<p><strong>Статус:</strong> завершённый локальный inference, без обучения, новых меток и API.
+Автор runner и измерений — Codex по поручению инициатора. Использован прежний
+экспорт 30 train-карточек: 11 useful, 18 irrelevant, 1 uncertain; 8 snapshots,
+3 семейства. Метки: 6 human, 20 согласий DeepSeek/Qwen3.8, 4 арбитража агента.
+Одна uncertain предсказана, но исключена из бинарного качества. Результат —
+описательное согласие с этими метками, не held-out test и не успех всего агента.</p>
+<h3 id="протокол-и-сравниваемые-реализации">Протокол и сравниваемые реализации</h3>
+<p>Исходный protocol.json заморожен до прогнозов, дополнения агрегации в журнале
+тоже до них. У всех один английский state+candidate и один вопрос; нет перевода,
+сокращения или gold в запросе. Native serialization различается и сохраняется
+полными IDs/hashes. Порог ≥0.5; опубликованные температуры без подбора.
+Качество использует первый повтор; остальные два — измерение скорости и
+повторяемости, без увеличения quality n. Brier — бинарный <code>(p-y)^2</code>, NLL с
+clip 1e-7, F1 для useful, AUC с весом ties0.5. Малое число зависимых карточек не
+даёт основания объявлять статистически установленное превосходство.</p>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>Checkpoint revision</th>
+<th>Native стек</th>
+<th>T</th>
+<th>Full input tokens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya multilingual</td>
+<td><code>multilingual@1720e3e3357cfe1e281542e223f8273b0890ca34</code></td>
+<td>PyTorch2.9.1 MPS FP32; transformers4.57.1</td>
+<td>1.000000</td>
+<td>364–3364</td>
+</tr>
+<tr>
+<td>KEV-0.8B</td>
+<td><code>9a45d25eb2ab761841196625383fa1dff0e56c1e</code></td>
+<td>mlx-lm0.31.3, MLX0.32.4 BF16 + torch2.8 CPU head FP32; transformers5.17.0</td>
+<td>2.351096</td>
+<td>340–3181</td>
+</tr>
+<tr>
+<td>KEV-4B</td>
+<td><code>139fdd94f1b6a6ad80cc15e08fcb99cac885a101</code></td>
+<td>mlx-lm0.31.3, MLX0.32.4 BF16 + torch2.8 CPU head FP32; transformers5.17.0</td>
+<td>2.406050</td>
+<td>340–3181</td>
+</tr>
+</tbody>
+</table>
+<p>Это практическое сравнение доступных native стеков. Разные backbone,
+предобучение, dtype и backend смешивают факторы; причинный эффект архитектуры,
+RLCD, Brier или CE им не выделяется. Эксперимент ничего не дообучал.</p>
+<h3 id="согласие-с-метками">Согласие с метками</h3>
+<table>
+<thead>
+<tr>
+<th>Модель / контроль</th>
+<th>Верно / n</th>
+<th>Accuracy</th>
+<th>Balanced acc.</th>
+<th>F1 useful</th>
+<th>Brier ↓</th>
+<th>NLL ↓</th>
+<th>ROC AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya multilingual</td>
+<td>13/29</td>
+<td>0.448</td>
+<td>0.556</td>
+<td>0.579</td>
+<td>0.464</td>
+<td>1.693</td>
+<td>0.616</td>
+</tr>
+<tr>
+<td>KEV-0.8B</td>
+<td>17/29</td>
+<td>0.586</td>
+<td>0.649</td>
+<td>0.625</td>
+<td>0.245</td>
+<td>0.685</td>
+<td>0.753</td>
+</tr>
+<tr>
+<td>KEV-4B</td>
+<td>24/29</td>
+<td>0.828</td>
+<td>0.790</td>
+<td>0.737</td>
+<td>0.111</td>
+<td>0.364</td>
+<td>0.960</td>
+</tr>
+<tr>
+<td>Всегда irrelevant</td>
+<td>18/29</td>
+<td>0.621</td>
+<td>0.500</td>
+<td>0.000</td>
+<td>0.379</td>
+<td>6.114</td>
+<td>0.500</td>
+</tr>
+</tbody>
+</table>
+<p>Все три модели приняли 30/30 входов, ошибок и усечений 0, общий знаменатель 29.
+KEV-4B получил 24/29 верных, Laya 13/29, KEV-0.8B 17/29. При этом простой
+always-irrelevant даёт 18/29: улучшение KEV-0.8B против Laya не означает выигрыша
+по accuracy над дешёвым majority контролем. У KEV-4B лучшие наблюдаемые значения
+всех перечисленных quality metrics, но 4 ложных пропуска против 1 у KEV-0.8B и 0
+у Laya: лучший средний результат не гарантирует сохранения нужного контекста.</p>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>TP</th>
+<th>TN</th>
+<th>FP</th>
+<th>FN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya</td>
+<td>11</td>
+<td>2</td>
+<td>16</td>
+<td>0</td>
+</tr>
+<tr>
+<td>KEV-0.8B</td>
+<td>10</td>
+<td>7</td>
+<td>11</td>
+<td>1</td>
+</tr>
+<tr>
+<td>KEV-4B</td>
+<td>7</td>
+<td>17</td>
+<td>1</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Разброс вероятности max-min по 3 повторам=0 у всех 30 входов каждой модели;
+quality n при этом остаётся 29.</p>
+<p>BM25 использует observed state как query и кандидатов того же snapshot как
+IDF/ranking pool; uncertain остаётся в pool, но не в бинарных парах. Его score
+не превращается в вероятность и не получает подобранный порог.
+Within-snapshot AUC=0.600 на 20 positive-negative парах; описательный pooled AUC=0.596 на 29 hard labels. Это не бинарная accuracy.</p>
+<h3 id="скорость-и-память">Скорость и память</h3>
+<p>Mac Apple M4 Pro, 12 CPU cores, 16 GPU cores, 24 GiB unified RAM; macOS27.0, Python3.13.5.
+После окончания загрузок — отдельные последовательные процессы. Batch 1,
+3 прогрева по min/median/max native длине, 3 повтора всех 30 карточек в порядке
+seed 25. Таймер синхронизирует соответствующий backend, включает native CPU
+head/readout; request также включает токенизацию. Медиана/p95 рассчитаны по 90
+успешным запросам каждой модели, без load и warmups; p95 — линейная интерполяция.</p>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>Tokenize median, мс</th>
+<th>Forward median / p95, мс</th>
+<th>Request median / p95, мс</th>
+<th>Load, с</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya multilingual</td>
+<td>1.49</td>
+<td>193.9 / 940.8</td>
+<td>197.3 / 943.0</td>
+<td>4.89</td>
+</tr>
+<tr>
+<td>KEV-0.8B</td>
+<td>1.09</td>
+<td>232.1 / 573.8</td>
+<td>233.2 / 575.9</td>
+<td>4.48</td>
+</tr>
+<tr>
+<td>KEV-4B</td>
+<td>1.30</td>
+<td>1422.1 / 3511.2</td>
+<td>1423.5 / 3513.8</td>
+<td>25.70</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>Peak RSS процесса, GiB</th>
+<th>Backend после запросов, GiB</th>
+<th>MLX peak inference / load, GiB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya multilingual</td>
+<td>2.631</td>
+<td>MPS current 1.199; driver max sample 10.871</td>
+<td>неизвестен / неизвестен</td>
+</tr>
+<tr>
+<td>KEV-0.8B</td>
+<td>3.099</td>
+<td>MLX active 1.401; cache max sample 1.003</td>
+<td>2.375 / 2.396</td>
+</tr>
+<tr>
+<td>KEV-4B</td>
+<td>3.556</td>
+<td>MLX active 7.834; cache max sample 1.006</td>
+<td>8.923 / 14.778</td>
+</tr>
+</tbody>
+</table>
+<p>Пиковый RSS — ru_maxrss всего свежего процесса, включая load, в байтах macOS.
+MPS current/driver измерены после запросов: transient allocator peak неизвестен,
+поэтому эти samples не называются пиком активаций. У MLX native peak сброшен перед
+измеряемыми запросами, load/warmup записаны отдельно. RSS и backend allocations
+пересекаются в unified memory: их нельзя складывать.</p>
+<p>По медиане request KEV-4B медленнее Laya в 7.21 раза и KEV-0.8B в 6.10 раза.
+KEV-0.8B медленнее Laya по медиане примерно на 18%, но имеет меньший p95.
+Это фактические локальные замеры данного прогона, не обещание аппаратной скорости.
+Проверка SHA и импорты включены в load; load не является временем запроса.</p>
+<p>Машина работала с уже занятым swap: перед Laya 11498 MiB → после 13175 MiB;
+KEV-0.8B 13175 →13119 MiB; KEV-4B 13119 →14948 MiB. Это системные показатели,
+не индивидуальное потребление моделей. Пользовательские приложения не закрывались,
+порядок моделей фиксирован; давление памяти/фон и прогрев системы ограничивают
+переносимость чисел скорости. Низкий CPU RSS KEV-4B не означает, что модель
+потребляет 3.6 GiB: MLX active 7.834 GiB и peak inference 8.923 GiB фиксируются отдельно.
+У Laya driver sample растёт до 10.871 GiB при current 1.199 GiB; у MLX native
+cache limit 1 GiB. Политики кеширования различаются; строгий рейтинг физической
+памяти только по RSS или сравнению MPS driver sample с MLX active peak некорректен.</p>
+<h3 id="воспроизведение-артефакты-и-ограничения">Воспроизведение, артефакты и ограничения</h3>
+<p>Протокол и все разрешённые метаданные находятся в
+<code>experiments/system-one-pilot/results/kev-comparison-20261025/</code>:</p>
+<ul>
+<li><code>protocol.json</code>: исходный frozen протокол; cohort SHA
+  <code>e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0</code>.</li>
+<li><code>work-log.md</code>: подготовка, исходные ошибки загрузки/установки, все попытки,
+  исправление receipt Laya-v1, независимый code review и команды.</li>
+<li><code>summary-v1.json</code>: все вероятности repeat0, метрики, timing quantiles,
+  раздельные memory counters и run receipts; <code>numerical-verification.json</code> —
+  независимая сверка scikit-learn, hashes/IDs/order/counts и финансового ledger.</li>
+<li><code>model-manifest.json</code>, <code>source-verification.json</code>, <code>hardware.json</code>,
+  <code>artifact-manifest.json</code>: pinned происхождение, лицензии/версии/размеры/SHA,
+  оборудование и привязка к исходным измерениям.</li>
+</ul>
+<p>Сырые JSONL, полные IDs, начало/конец load и все 90timings/model — в
+<code>artifacts/system-one-pilot/kev-comparison-v1/runs/</code>: итоговые <code>laya-v3</code>,
+<code>kev-0.8b-v1</code>, <code>kev-4b-v1</code>. Папка игнорируется Git; данные/веса не публиковались.
+<code>laya-v1</code> сохранён с ошибкой финализации receipt, <code>laya-v2</code> — успешная техническая
+проверка при фоновой загрузке, не итоговое измерение. Реальная inference версия
+runner сохранена как <code>compare-runner-final.py</code>; последующее исправление
+относительного пути касается только summarize, повтор inference не нужен.
+Исходный patch грязного дерева, оба pip freeze и полные логи сохранены там же.</p>
+<p>Команды CLI — в <code>experiments/system-one-pilot/README.md</code>, runner —
+<code>scripts/system_one_pilot/compare.py</code>, тесты — <code>tests/test_system_one_compare.py</code>.
+Новые inference API-вызовы 0, rental0, training0. SHA финансового ledger
+подтверждён неизменным. Бесплатная загрузка публичных весов не является API inference.
+Ключи и <code>.env</code> не использовались.</p>
+<p>Проверки кода и документации приведены в verification.json рядом со сводкой.
+Все метрики независимо пересчитаны scikit-learn; 270 измеренных запросов
+успешны, semantic hashes и сериализованные IDs подтверждены.</p>
+<p><a id="kev-head-adaptation"></a></p>
+<h2 id="13-независимые-dev-семейства-и-head-only-kev-08b--2526102026">13. Независимые dev-семейства и head-only KEV-0.8B — 25–26.10.2026</h2>
+<p><strong>Статус: разрешённый пилот выполнен.</strong> Получены100 новых доверенных меток,
+обучены CE/Brier head и предприняты18 native эпизодов шести вариантов.
+14 эпизодов получили ALL-оценку,4 завершились техническим отказом; пропущенных
+запланированных задач0. У каждого варианта подтверждён1 успех из3 попыток.
+RLCD и аренда GPU не запускались; решение — пока не переходить к RL.
+Это инженерный dev pilot, не окончательное сравнение на test.</p>
+<p>Поручение инициатора после frozen сравнения — расширить train, получить
+независимую dev-проверку, сравнить CE/Brier одной модели и проверить полного
+агента. Раздел12 и исходные30 меток сохранены. План —
+<a href="../../superpowers/plans/2026-10-25-system-one-adaptation/">head-only адаптация</a>.
+Frozen protocol SHA <code>a57f34cb534e6b9ea9ee3c88f8a8747a630e17f8807133814fa94342f82fac84</code>,
+подробные метаданные и журнал —
+<code>experiments/system-one-pilot/results/adaptation-20261025/</code>.
+Реализация и измерения — Codex по поручению инициатора; новые метки —
+согласованная модельная разметка и арбитраж агента, без нового human review.</p>
+<h3 id="данные-и-закреплённый-метод">Данные и закреплённый метод</h3>
+<p>В неизменном manifests-v3 всего5 dev-семейств. До новых меток они разделены
+на2 calibration и3 validation; ранее изученное семейство task023 включено
+в calibration. Добавлены5 новых train-семейств, исключая все прежние попытки.
+Выбраны13 задач без отбора по исходу, до2 задач на dev-семейство.
+Test тела/метки/эпизоды в этой серии не читались и не запускались.</p>
+<p>Сбор дал10 user_stop и3 failed: HTTP429 и два обрезанных JSON tool arguments
+при max_tokens2048. Все попытки сохранены, задачи не заменялись. Из36 снимков
+выбраны100 карточек, по10 на каждое новое семейство:50 train,20 calibration,
+30 validation. Admission:713 пригодных document views,31 candidate overflow,
+185 state overflow;977 pool rows соответствуют929 document snapshots.
+Отбор ограничен ранними retrieval snapshots, поэтому не представляет весь
+поздний пул длинной траектории.</p>
+<p>Разметка — DeepSeek + Qwen3.8 независимо, strict schema v2 и точные цитаты.
+Из200 записей190 valid и10 technical:7 неточных цитат,2 HTTP429 и1 потерянный
+Qwen response. Приняты78 согласий моделей и22 решения агента:28 useful,
+62 irrelevant,10 uncertain; отдельно2 дефекта подготовки. Старые30 меток,
+включая6 human решений, неизменны. Это доверенные метки по принятой политике,
+а не новая независимая человеческая истина. Экспорт SHA
+<code>24f28618f6a919b2266fca9f90eed2650b99ac6dcaf6e43f11752ecf93c861cd</code>.</p>
+<p>Всего130 карточек: train80/calibration20/validation30. После исключения
+11 uncertain (включая одну старую) и2 дефектов — hard73/17/27, семейства8/2/3.
+Все заранее заданные gates пройдены. В validation только5 useful и22 irrelevant;
+27 карточек не являются27 независимыми задачами: они сгруппированы в3 семейства.</p>
+<p>KEV-0.8B использует исходные BF16 backbone и LoRA, обучается только штатная CPU
+FP32 pointer head. Обе ветви независимо начинаются с одних весов: AdamW,
+lr1e-4,wd.01,batch16,20epochs,seed25, фиксирована последняя эпоха.
+CE и scalar binary Brier не подбирались по validation. Температура выбирается
+только на17 calibration hard примерах из закреплённой сетки, порог.5.</p>
+<h3 id="качество-отдельного-узла">Качество отдельного узла</h3>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th style="text-align: right;">Верно /27</th>
+<th style="text-align: right;">F1 useful</th>
+<th style="text-align: right;">Balanced accuracy</th>
+<th style="text-align: right;">Brier ↓</th>
+<th style="text-align: right;">ROC AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Train-prior p=26/73, всегда irrelevant при пороге.5</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">.5000</td>
+<td style="text-align: right;">.1801</td>
+<td style="text-align: right;">.5000</td>
+</tr>
+<tr>
+<td>Frozen, T=3</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">.3571</td>
+<td style="text-align: right;">.5909</td>
+<td style="text-align: right;">.2831</td>
+<td style="text-align: right;">.8182</td>
+</tr>
+<tr>
+<td>CE head, T=2.3511</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">.4615</td>
+<td style="text-align: right;">.6864</td>
+<td style="text-align: right;">.2010</td>
+<td style="text-align: right;">.7818</td>
+</tr>
+<tr>
+<td>Brier head, T=2.3511</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">.5714</td>
+<td style="text-align: right;">.7864</td>
+<td style="text-align: right;">.2187</td>
+<td style="text-align: right;">.7818</td>
+</tr>
+</tbody>
+</table>
+<p>CE/Brier сократили false positives с18 до5, но пропустили2/1 из5 useful против0
+у frozen. CE лучше Brier head по Brier/NLL; Brier head лучше CE по F1 и balanced
+accuracy. Train-prior лучше обеих адаптаций по accuracy, Brier и NLL, но не
+извлекает ни одного useful. Положительная температура не меняет порог.5 и AUC.
+BM25 within-snapshot AUC=.7333 на15 hard парах в4 смешанных selected pools;
+это ranking контроль, его score не является бинарной вероятностью.</p>
+<p>С равным весом семейств accuracy: frozen .3714, CE .7524, Brier .8000.
+По семействам90a89/a5653/c2d90: frozen .1/.3/.7143, CE .5/.9/.8571,
+Brier .5/.9/1.0. Оба обученных варианта пропустили единственный useful первого
+семейства. Малое число positives, модельная разметка и snapshot sampling
+ограничивают обобщение; гиперпараметры после этих наблюдений не менялись.</p>
+<p>Все130 native features извлечены успешно, без truncation и labels в encoder.
+Cached/native frozen probability расходится максимум на5.82e-8.
+Featurecache занял44.18s, включая load4.97s; MLX peak2.396GiB.
+CE/Brier head train+prediction+temperature fit заняли .355/.335s наCPU FP32;
+это не изолированный optimizer timing. Память полного online эпизода отдельно
+не измерялась; эти counters не заменяют memory сравнение моделей раздела12.
+780 prediction records сохранены,18 общих hard metric sets независимо
+пересчитаны sklearn1.7.2/numpy2.5.3, maxdelta1.11e-16.</p>
+<h3 id="результат-полного-native-агента">Результат полного native агента</h3>
+<p>Для всех вариантов закреплены task035/061/041 — первая задача каждого
+validation-семейства, seed25, max80steps/5errors, native timeout900s.
+Seed25 относится к native orchestrator; provider seed не передавался,
+побитовая повторяемость API-ответов не проверялась. Использован сохранённый model
+tag/endpoint; точный hash hosted weights не измерен.
+Actor/simulator — DeepSeek через OpenRouter→DeepInfra FP8; другой провайдер
+автоматически не выбирается. Оценка запрошена как native ALL. Критерии доступны
+только evaluator; проверка полноты NL assertions исключает фиктивный успех
+пустого ответа. Фактически эти задачи использовали ACTION или DB reward basis,
+поэтому NL judge вызовов0. Это не замена ALL на ENV-only.</p>
+<p>Общий packer4096 native токенов действует только на KB evidence; policy,
+обычные tools и история диалога сохраняются. Весь actor prompt может быть
+значительно длиннее4096. Переносятся целые наблюдаемые документы, raw trajectory
+сохраняется. У local ошибки/пустой выбор идут в оплачиваемый LLM fallback;
+invalid completed selector answer — вBM25. В этом запуске CE один раз использовал
+LLM из-за пустого выбора; три invalid LLM ответа перешли наBM25.</p>
+<table>
+<thead>
+<tr>
+<th>Вариант</th>
+<th style="text-align: right;">Подтверждённый успех</th>
+<th style="text-align: right;">ALL-оценено</th>
+<th style="text-align: right;">Technical failed</th>
+<th style="text-align: right;">Known API usage,$</th>
+<th style="text-align: right;">С полными резервами,$</th>
+<th style="text-align: right;">Сумма wall трёх попыток,s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Native</td>
+<td style="text-align: right;">1/3</td>
+<td style="text-align: right;">2/3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.019589</td>
+<td style="text-align: right;">0.019589</td>
+<td style="text-align: right;">465.0</td>
+</tr>
+<tr>
+<td>BM25 pack4096</td>
+<td style="text-align: right;">1/3</td>
+<td style="text-align: right;">3/3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.040143</td>
+<td style="text-align: right;">0.040143</td>
+<td style="text-align: right;">438.5</td>
+</tr>
+<tr>
+<td>LLM selector</td>
+<td style="text-align: right;">1/3</td>
+<td style="text-align: right;">2/3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.051339</td>
+<td style="text-align: right;">0.051339</td>
+<td style="text-align: right;">1459.1</td>
+</tr>
+<tr>
+<td>Frozen KEV-0.8B</td>
+<td style="text-align: right;">1/3</td>
+<td style="text-align: right;">2/3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.024335</td>
+<td style="text-align: right;">0.045638</td>
+<td style="text-align: right;">1450.7</td>
+</tr>
+<tr>
+<td>CE head</td>
+<td style="text-align: right;">1/3</td>
+<td style="text-align: right;">3/3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.029756</td>
+<td style="text-align: right;">0.029756</td>
+<td style="text-align: right;">1696.7</td>
+</tr>
+<tr>
+<td>Brier head</td>
+<td style="text-align: right;">1/3</td>
+<td style="text-align: right;">2/3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.016997</td>
+<td style="text-align: right;">0.033052</td>
+<td style="text-align: right;">1000.8</td>
+</tr>
+</tbody>
+</table>
+<p>Пропущенных задач нет. Во всех шести вариантах успешен только task035.
+На остальных оценённых эпизодах reward0. Native/LLM task041 прерваны
+JSONDecodeError; frozen task061 — URLError без response/headers/id;
+Brier task041 — HTTP429 DeepInfra engine_overloaded/shared pool.
+BM25 task061/041 и CE task041 завершились поmax_steps; frozen task041,
+CE/Brier task061 — поtimeout. Failed попытки не переигрывались.</p>
+<p>Wall измеряет run_simulation вместе с evaluator; создание среды/импорты не
+входят, setup модели сохраняется отдельно. Native timeout проверяется между
+итерациями, поэтому фактические942.9/937.8/902.5s могут превышать900.
+Сумма включает ранние отказы: у Brier последний эпизод остановился через47.5s.
+Его низкая медиана50.8s не является доказательством быстрой успешной работы.
+Общее оценённое всеми arms подмножество — только task035; отбросить остальные
+и объявить100% качество было бы ошибкой. Это3 парные задачи, не18 независимых.</p>
+<p>Отбор занял суммарно: BM25 10.4s/83 события, LLM1003.8s/46,
+frozen864.6s/46, CE1188.9s/71, Brier715.2s/38. Медианы одного отбора:
+.144/22.283/11.885/13.563/15.569s соответственно. В текущем runner каждый
+кандидат отдельно проходит native forward, кешируется только весь input.
+Поздний frozen пул33–34 документов требовал около47s на отбор.
+Это измерение реализации с повторной обработкой состояния; оно не задаёт
+максимальную производительность оптимизированного KEV serving.</p>
+<p>API cost учитывает кеширование. Доли cached agent prompt tokens на известных
+ответах: native93.8%, BM25 65.2%, LLM75.3%, frozen60.6%, CE64.1%, Brier63.7%.
+Разные траектории, фиксированный порядок, пауза продолжения и состояние кеша
+не контролировались. Эти цены и задержки нельзя трактовать как чистый причинный
+эффект уменьшения KB. Для двух online запросов (URLError и HTTP429) нет usage токенов;
+суммируются только известные ответы, пропуски не являются измеренными нулями.</p>
+<h3 id="расходы-технические-отказы-и-воспроизведение">Расходы, технические отказы и воспроизведение</h3>
+<p>Внешние данные/destinations явно разрешены инициатором в прежних общих caps
+collection/online$1 и annotation$0.50, включая старые расходы. Общий ledger
+не сбрасывался после полуночи. По итоговому ledger:</p>
+<ul>
+<li>Collection/online: known usage$0.330108780, с полными резервами$0.399898980/$1.</li>
+<li>Annotation: known usage$0.264627506, с полными резервами$0.287930706/$0.50.</li>
+<li>Вместе: известный usage$0.594736286, учтено$0.687829686. Это usage/резервы,
+  не отдельно проверенный invoice; unresolved0, фактическая стоимость8
+  консервативно учтённых запросов остаётся неизвестной.</li>
+<li>Только18 online попыток: known$0.182158621, с резервами$0.219516421.
+  Включены actor/simulator/selector, технические отказы и fallback; judge0.</li>
+<li>Новые общие данные до online: known$0.266093242, с резервами$0.313513742;
+  это однократный общий расход, его не начисляем каждому arm заново.
+  Обучение API$0, GPU rental0₽. Электроэнергия и амортизация Mac вUSD не измерялись.</li>
+</ul>
+<p>Generic unknown останавливал серию. Для Qwen interruption и frozen URLError
+инициатор отдельно разрешил полный максимум$0.0097036/$0.021303 без повтора;
+ответ/actual cost не выдумывались. Frozen-v2 сохранил прежние035completed и
+061failed побайтно и запустил только041, затем CE/Brier. Конкретные HTTP429
+вручную сверены по exact response SHA/DeepInfra/engine_overloaded/shared pool;
+весь резерв удержан, actual не приравнен к нулю. Последний Brier429 учтён
+максимумом$0.0160548, после него inference не было. Это окончательный failed
+эпизод, оставшихся planned задач0. Все исходные попытки и receipts сохранены.</p>
+<p>Отдельная проверка реконструкцией284 selector events подтвердила state SHA,
+размер пула, только observed selected IDs и полный rendered pack token count≤4096.
+Пустых итоговых packs0. Метаданные и связи с исходными измерениями:</p>
+<ul>
+<li>protocol.json, external-approval.json, interruption-approval.json,
+  online-interruption-approval.json — закреплённые условия и отдельные исключения;</li>
+<li>collection-summary.json, annotation-summary.json, dataset-manifest.json —
+  данные/ошибки/происхождение; trusted export и adjudication SHA сохранены;</li>
+<li>feature-receipt.json, head-summary.json, cheap-controls.json,
+  numerical-verification.json, offline-audit.json — узел и независимые проверки;
+  final-integrity-verification.json повторно подтверждает18 metric sets,
+  train-prior, weights/temperature lineage и итоговую целостность;</li>
+<li>online-summary.json, online-audit.json, observed-online-verification.json,
+  budget-final.json, decision.json — все18 попыток и вывод;</li>
+<li>continuation-code-review.json — свежий read-only review, findings0;
+  original-comparison-integrity.json — сохранность9 исходных run files;</li>
+<li>work-log.md и artifact-manifest-final.json — все этапы, остановки, версии кода,
+  source snapshots, hashes сырых артефактов и команды. Сырые ответы/диалоги,
+  SQLite и веса остаются в игнорируемом artifacts/system-one-pilot/.</li>
+</ul>
+<p>73/73 целевых теста пройдены; полный набор103/104 — единственное прежнее
+падение теста фиксированного списка PPTX при наличии второй презентации.
+Оно не связано с этой серией. Review не нашёл новых Critical/Important/Minor;
+ретенция старых frozen JSON проверена SHA. GitMark31 документов, strict MkDocs build и diff check пройдены
+вместе с финальной записью. Команды воспроизведения — в существующем README эксперимента.</p>
+<h3 id="решение-о-rlcd">Решение о RLCD</h3>
+<p><strong>Рабочее решение: пока не запускать RLCD.</strong> CE/Brier улучшили согласие узла
+с метками относительно frozen, но не превзошли дешёвый train-prior по
+accuracy/Brier/NLL и не увеличили число подтверждённых успехов полного агента.
+Три семейства, пять useful validation примеров, четыре технических отказа и
+единственная общая полностью оценённая задача не дают основания выбирать
+более дорогой метод обучения. Это не эксперимент, доказывающий неэффективность RL.</p>
+<p>Следующие предложения — отдельный заранее закреплённый опыт с переиспользованием
+encoder prefix/батчированием, простым calibration/threshold контролем и более
+надёжным native tool-call output, затем расширение независимой проверки.
+Они этой серией не запускались. Финальная test-выборка остаётся нетронутой;
+выбор основного метода/формулировки ВКР этим техническим пилотом не утверждается.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

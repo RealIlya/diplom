@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-27T06:31:26.111681+00:00",
+  "known_nusd": 448283146,
+  "charged_or_held_nusd": 467319346,
+  "known_usd": 0.448283146,
+  "charged_or_held_usd": 0.467319346,
+  "unknown_actual_calls": 1,
+  "approved_full_bound_usd": 0.0190362,
+  "daily": {
+    "date": "2026-10-27",
+    "timezone": "Asia/Novosibirsk",
+    "calls": 627,
+    "limit_usd": 1.0,
+    "charged_or_held_usd": 0.467319346,
+    "remaining_usd": 0.532680654,
+    "held_nusd": 467319346,
+    "limit_nusd": 1000000000
+  },
+  "series": {
+    "expansion-v1-collection": {
+      "series": "expansion-v1-collection",
+      "limit_usd": 0.2,
+      "calls": 227,
+      "actual_usd": 0.070023007,
+      "charged_or_held_usd": 0.089059207,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 1
+    },
+    "expansion-v1-annotation": {
+      "series": "expansion-v1-annotation",
+      "limit_usd": 0.75,
+      "calls": 400,
+      "actual_usd": 0.378260139,
+      "charged_or_held_usd": 0.378260139,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 0
+    }
+  },
+  "backup": "artifacts/system-one-pilot/expansion-v1/ledger-final-v1.sqlite3",
+  "backup_sha256": "e6ee49d71c8bc5fe8cc07c250862370dfb0fd8dd04be6b5c891c6e42c15a3360",
+  "backup_integrity": "ok",
+  "all_previous_api_rows_unchanged": true,
+  "previous_api_rows_checked": 1275,
+  "first504_original_row_unchanged": true,
+  "paid_worker_exit_code": 0,
+  "no_active_new_calls": true,
+  "local_paid_retries": 0
+}

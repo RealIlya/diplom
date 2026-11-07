@@ -1,0 +1,137 @@
+{
+  "protocol_version": "banking-archive-offline-ce-v2",
+  "seed": 20261019,
+  "tau_revision": "4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699",
+  "laya_revision": "68804629e8ccd9d616d48a40e87de9fabbeae069",
+  "checkpoint_repo": "convaiinnovations/laya-multilingual",
+  "checkpoint_revision": "1720e3e3357cfe1e281542e223f8273b0890ca34",
+  "archive_url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gpt-5-4_sierra_2026-03-25/trajectories/gpt-5.4_xhigh_banking_knowledge_gpt-5.2_4trials.json",
+  "archive_prefix_bytes": 20000000,
+  "archive_sha256": "4d7f30616a6c158079d1569e8213fbad20518d7725284af197d1383459ebe993",
+  "manual_groups": [
+    [
+      "task_001",
+      "task_002",
+      "task_003",
+      "task_006",
+      "task_007",
+      "task_008"
+    ],
+    [
+      "task_004",
+      "task_005"
+    ],
+    [
+      "task_039",
+      "task_040",
+      "task_041"
+    ],
+    [
+      "task_043",
+      "task_044",
+      "task_045",
+      "task_046",
+      "task_047",
+      "task_048",
+      "task_049"
+    ],
+    [
+      "task_051",
+      "task_052"
+    ],
+    [
+      "task_058",
+      "task_059",
+      "task_063",
+      "task_064"
+    ],
+    [
+      "task_060",
+      "task_061"
+    ],
+    [
+      "task_065",
+      "task_066",
+      "task_067",
+      "task_068",
+      "task_069"
+    ],
+    [
+      "task_070",
+      "task_071"
+    ],
+    [
+      "task_072",
+      "task_073",
+      "task_074"
+    ],
+    [
+      "task_075",
+      "task_076"
+    ],
+    [
+      "task_077",
+      "task_078",
+      "task_079",
+      "task_080",
+      "task_081"
+    ],
+    [
+      "task_082",
+      "task_083",
+      "task_084",
+      "task_085",
+      "task_086"
+    ],
+    [
+      "task_090",
+      "task_091",
+      "task_092"
+    ],
+    [
+      "task_093",
+      "task_094",
+      "task_095",
+      "task_096",
+      "task_097"
+    ],
+    [
+      "task_098",
+      "task_099",
+      "task_100",
+      "task_101",
+      "task_102"
+    ],
+    [
+      "task_017",
+      "task_018",
+      "task_019",
+      "task_020",
+      "task_021",
+      "task_022",
+      "task_026",
+      "task_027",
+      "task_028",
+      "task_029"
+    ]
+  ],
+  "replay": {
+    "unique_tasks_only": true,
+    "first_kb_snapshot_only": true,
+    "chunk_words": 100
+  },
+  "training": {
+    "epochs": 1,
+    "head_lr": 0.0001,
+    "batch_size": 1,
+    "freeze_encoder": true,
+    "loss": "CE",
+    "temperature_fit": false,
+    "max_steps": 64,
+    "max_len": 1024,
+    "head_max_len": 256
+  },
+  "api_limit_usd": 0,
+  "gpu_rental_limit_rub": 0,
+  "local_wall_limit_seconds": 1200
+}

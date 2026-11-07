@@ -1,0 +1,14 @@
+{
+  "model": "kev-0.8b",
+  "weights_receipts": {
+    "artifacts/system-one-pilot/kev-comparison-v1/Qwen--Qwen3.5-0.8B-Base-verified.json": "aef08557648841d9aafe07f827659ffd75c38c95ca8951dee03aa82869a21700",
+    "artifacts/system-one-pilot/kev-comparison-v1/jaredpalmer--kev-0.8b-verified.json": "d781a0ae2dab01da1410d9346bb1eecafaee129709ac366ff7cf773dd7ffa440"
+  },
+  "kev_source_commit": "2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f",
+  "checkpoint_revision": "9a45d25eb2ab761841196625383fa1dff0e56c1e",
+  "benchmark_script_sha256": "243281b304f077fb641dd644122e5bc41fab546ab31993089ea197cda5cacb21",
+  "warmup": "one full pass over3groups per mode; mode order fixed",
+  "sampling": "first3sha-ordered savedtrain snapshots with5distinctdocuments; no labels used",
+  "failed_attempt": "v1 Metal unavailable beforeinference; logretained, v2newoutput",
+  "measurement_scope": "request includes tokenization/encode; MLX peak reset per group; unifiedRSS/backend mustnot be summed"
+}

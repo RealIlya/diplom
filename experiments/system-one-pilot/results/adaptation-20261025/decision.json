@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-26T03:30:58.920233+00:00",
+  "decision": "do_not_start_rlcd_now",
+  "status": "working research decision, not a claim about unrun RL effectiveness",
+  "rlcd_runs": 0,
+  "gpu_rental_rub": 0,
+  "evidence": {
+    "node_validation_hard": 27,
+    "node_validation_families": 3,
+    "useful_validation": 5,
+    "confirmed_online_successes_by_arm": {
+      "native": 1,
+      "bm25": 1,
+      "llm": 1,
+      "frozen": 1,
+      "ce": 1,
+      "brier": 1
+    },
+    "planned_tasks_per_arm": 3,
+    "graded_total": 14,
+    "technical_failures": 4,
+    "common_graded_tasks": [
+      "task_035"
+    ]
+  },
+  "reasons_ru": [
+    "CE/Brier улучшили согласие и balanced accuracy относительно frozen, но не превзошли train-prior по accuracy/Brier/NLL.",
+    "На трёх native задачах все шесть вариантов подтвердили только task035; прирост полного агента не наблюдался.",
+    "Малая разметка, три validation семейства и четыре технических отказа не отделяют эффект обучения от ошибок actor и инфраструктуры.",
+    "Покандидатный native forward на накопленном пуле повторяет обработку состояния; прежде RL полезно проверить более дешёвую реализацию отбора."
+  ],
+  "next_proposals_not_executed": [
+    "Отдельный заранее закреплённый опыт с повторным использованием encoder prefix/батчированием и простым calibration/threshold контролем.",
+    "Повысить надёжность native tool-call output и расширить независимую проверку перед новым методом обучения."
+  ],
+  "sources": [
+    "head-summary.json",
+    "cheap-controls.json",
+    "online-summary.json",
+    "online-audit.json",
+    "observed-online-verification.json"
+  ],
+  "scope": "small dev pilot, one seed, trusted model/agent labels, no held-out test or statistical superiority claim"
+}

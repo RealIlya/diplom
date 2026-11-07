@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-10-25T12:12:41.251919+00:00",
+  "protocol_sha256": "a57f34cb534e6b9ea9ee3c88f8a8747a630e17f8807133814fa94342f82fac84",
+  "timing": "before extraction, new labels and head predictions",
+  "status": "descriptive analysis addition; original protocol unchanged",
+  "controls": [
+    {
+      "name": "train_prior",
+      "probability": "hard nondefect train useful fraction; same scalar for every validation row",
+      "threshold": 0.5,
+      "fit_inputs": "train labels only"
+    },
+    {
+      "name": "bm25",
+      "method": "existing lexical bm25; rank candidates within selected snapshot; hard positive-negative pair AUC",
+      "threshold": null,
+      "probability": false,
+      "pool": "selected admitted cards in the dataset, including uncertain in IDF but excluding it from hard pairs"
+    }
+  ],
+  "selection_changes": false,
+  "hyperparameter_changes": false,
+  "rationale_ru": "Содержательный дешёвый offline контроль не требует отдельного encoder; online уже включает BM25 и LLM. Не выбираем majority по validation."
+}

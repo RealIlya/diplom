@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-25T07:58:15.724421+00:00",
+  "bundle_sha256": "9c25d8d514687a797f885adee34f26e6ce01113db06276ed1d7de19ac0ffb4ac",
+  "translation_strings": 256,
+  "cards": 30,
+  "confirmed": 0,
+  "extra_paid_calls": 0,
+  "extra_cost_usd": 0,
+  "budgets_unchanged": {
+    "collection": {
+      "series": "collection",
+      "limit_usd": 1.0,
+      "calls": 141,
+      "actual_usd": 0.051000296,
+      "charged_or_held_usd": 0.059315396,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 2
+    },
+    "annotation": {
+      "series": "annotation",
+      "limit_usd": 0.5,
+      "calls": 121,
+      "actual_usd": 0.095484127,
+      "charged_or_held_usd": 0.095484127,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 0
+    }
+  },
+  "backup": "/Users/nikitapasinin/Documents/ChatGPT/diplom-backups/system-one-pilot/20261025-ru-v1",
+  "backup_manifest": {
+    "at": "2026-10-25T07:58:15.709376+00:00",
+    "files_sha256": {
+      "translations-ru-v1.json": "50cfff8293ee012e7eb689c08b07844b62885a7910f185bfc3d938d82f4b32fe",
+      "pilot.sqlite3": "1e9283ad4e5e0f20b72438e118ab36c5b1018a4cbacf2e9941253d34edf71001",
+      "authorized-series-20261025.sqlite3": "7a3b5f451b9ad6a6ef1c24d06581772bfdb8c0577a8ad6e6f6356c9012bf95cd",
+      "pilot.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pilot.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    },
+    "bundle_sha256": "9c25d8d514687a797f885adee34f26e6ce01113db06276ed1d7de19ac0ffb4ac",
+    "restored_strings": 256,
+    "restored_cards": 30,
+    "scope": "Local backup outside repository; same Mac, not disk-loss protection"
+  },
+  "restore_validation": "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/api-v1/restore-validation-ru-v1.sqlite3",
+  "code": {
+    "at": "2026-10-25T07:58:15.774505+00:00",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "source_sha256": {
+      "scripts/system_one_pilot/fetch.py": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+      "scripts/system_one_pilot/review.html": "49762d9d347106bf84f55067dbb43e0b754556f4b9d968b95f561cfd632d320f",
+      "scripts/system_one_pilot/rubric-v1.txt": "e8d188c9c3fc56d2a74be63a1231c7b6d7aec6efa481658eb9057fc23833593d",
+      "scripts/system_one_pilot/live_data.py": "5c4e72403337a28a17f4ec37be5ca658811672d90a065ac54a9ab261e917385f",
+      "scripts/system_one_pilot/__init__.py": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+      "scripts/system_one_pilot/review.py": "f026df2d24a3c690277a1c66b9617c6a8335209310350f35e0dc071f09e84ca5",
+      "scripts/system_one_pilot/model.py": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+      "scripts/system_one_pilot/cli.py": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+      "scripts/system_one_pilot/live_api.py": "af02539e5c4b47494130a4ba6de5ffcf1d1a4f3fa8e076db09177ff6589eda7e",
+      "scripts/system_one_pilot/live.py": "5e4df1f38672aafa12e87bf3c9aff5e6f4d69af685f5e64b48efc097b7ac951c",
+      "scripts/system_one_pilot/report.py": "3708d184a8fae962927b27166c0e6e8d0d5b8af5d2d8fb02b97c44a050d2e95d",
+      "scripts/system_one_pilot/data.py": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380"
+    },
+    "source_bundle": "artifacts/system-one-pilot/code-snapshots/289a2c23475bde2299d23ef2629ebc57f5c04a5788c3d330a8dd297abed6da32.zip",
+    "source_bundle_sha256": "7095b18ece0aee6d38824d3e476dbfed9eb3a6490b19fefd701810c97a67db58",
+    "versions": {
+      "torch": "2.9.1",
+      "transformers": "4.57.1",
+      "litellm": "1.82.6",
+      "rank-bm25": "0.2.2",
+      "certifi": "2025.11.12"
+    }
+  },
+  "python_tests": {
+    "passed": 39,
+    "seconds": 5.674
+  },
+  "javascript_tests": "PASS bilingual/original/fallback/formatting, draft+confirm displayed hash, navigation race",
+  "review": "No actionable code findings; semantic review corrected1 issue before import",
+  "browser_checks": [
+    "RU title/state/candidate/rubric/reasons/conditions/quotes visible",
+    "EN original disclosure verified",
+    "blind controls keep answers hidden",
+    "original current card restored, no human label input"
+  ],
+  "gitmark_lint_strict": "pass31 documents",
+  "mkdocs_strict": "pass0.68s",
+  "diff_check": "pass",
+  "screenshots": {
+    "api-ui-ru-proof.png": "08ad73a5efcff3be1234b6e5b3a5e9d5d2b535f13105a118ae86596d0d02da11",
+    "api-ui-ru-blind-proof.png": "da92faef4be435a8ece4127bb8016c104beafee3f6184b390eca7b2c637aaac5"
+  },
+  "completed_at": "2026-10-25T07:59:40.805565+00:00",
+  "exact_secret_scan_hits": 0
+}

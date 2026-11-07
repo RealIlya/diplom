@@ -1,0 +1,67 @@
+{
+  "sealed_manifest_sha256": "12a93dc6e823f67e8469f72f3a1546f4bfa87f23097fdf7f6cac589dc0a00fb5",
+  "family_count": 29,
+  "counts": {
+    "train": 57,
+    "dev": 20,
+    "test": 20
+  },
+  "cross_split_family_edges": [],
+  "cross_split_exact_input_duplicates": 0,
+  "queue_test_rows": 0,
+  "largest_cross_split_scenario_5gram_jaccard": [
+    {
+      "similarity": 0.15584415584415584,
+      "a": "task_050",
+      "b": "task_051"
+    },
+    {
+      "similarity": 0.10901162790697674,
+      "a": "task_060",
+      "b": "task_065"
+    },
+    {
+      "similarity": 0.09810333551340746,
+      "a": "task_061",
+      "b": "task_065"
+    },
+    {
+      "similarity": 0.08881578947368421,
+      "a": "task_060",
+      "b": "task_066"
+    },
+    {
+      "similarity": 0.08840864440078586,
+      "a": "task_060",
+      "b": "task_067"
+    },
+    {
+      "similarity": 0.08719560094265515,
+      "a": "task_038",
+      "b": "task_039"
+    },
+    {
+      "similarity": 0.08069336521219367,
+      "a": "task_061",
+      "b": "task_066"
+    },
+    {
+      "similarity": 0.08035714285714286,
+      "a": "task_061",
+      "b": "task_067"
+    },
+    {
+      "similarity": 0.07959905660377359,
+      "a": "task_060",
+      "b": "task_068"
+    },
+    {
+      "similarity": 0.0730124391563007,
+      "a": "task_061",
+      "b": "task_068"
+    }
+  ],
+  "template_audit": "Agent reviewed notes and explicit ancestral variants before final replay/labels. Cash-back groups merged before first model inference. Human family review still required. Prior splits retired, never used for labels or model-quality tuning. Technical admission was inspected on retired train/dev; no pristine blind-test claim.",
+  "kb_overlap": "Same public synthetic KB permitted; candidate content and document titles can overlap splits; only state+candidate exact input overlap is prohibited.",
+  "raw_bodies_in_git": false
+}

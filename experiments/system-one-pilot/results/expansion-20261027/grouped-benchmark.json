@@ -1,0 +1,38 @@
+{
+  "model": "kev-0.8b",
+  "groups": 3,
+  "candidates_per_group": 5,
+  "repeats": 2,
+  "training": false,
+  "api_calls": 0,
+  "source_sha256": "fe89b8e3938df77a0b8ef574319c032c147523009db661808ea5a1fdcaafbf50",
+  "records_sha256": "6cfbd7df153b1da95a0eb2857081e5fae7b61f47798c62db988cd20cf2e3043f",
+  "modes": {
+    "scalar": {
+      "measured_groups": 6,
+      "total_seconds": 13.14614604198141,
+      "max_mlx_peak_bytes": 2546950366
+    },
+    "original_batch5": {
+      "measured_groups": 6,
+      "total_seconds": 14.728999917002511,
+      "max_mlx_peak_bytes": 3131542576
+    },
+    "branches1": {
+      "measured_groups": 6,
+      "total_seconds": 13.94651358401461,
+      "max_mlx_peak_bytes": 2547030662
+    },
+    "branches5": {
+      "measured_groups": 6,
+      "total_seconds": 7.228257040987955,
+      "max_mlx_peak_bytes": 3499690866
+    }
+  },
+  "max_probability_delta": {
+    "original_batch_vs_scalar": 0.007772362421273771,
+    "grouping_same_new_serializer": 0.006878486259518479,
+    "new_vs_old_serializer": 0.46958097142215705
+  },
+  "scope": "engineering timing on3saved train snapshots, fixed mode order; no heldout quality claim; raw logits not rounded"
+}

@@ -1,0 +1,19 @@
+{
+  "call_id": "rubric-v1/schema-v2/ab722f1abef135d13b311fcc/deepseek",
+  "evidence": {
+    "reason": "Inspected exact HTTP429 body: DeepInfra engine_overloaded/upstream_provider_shared_pool pre-inference rejection. Retain entire original reservation; no original request retry.",
+    "response_sha256": "ae0f95919c59b77c6ef3b8a435fed8f68024f9991b2bfd189fd916b329826134",
+    "at": "2026-10-25T13:23:55.973144+00:00",
+    "source": "https://openrouter.ai/docs/api/reference/errors-and-debugging",
+    "full_reserved_usd": 0.0071298
+  },
+  "budget": {
+    "series": "annotation",
+    "limit_usd": 0.5,
+    "calls": 234,
+    "actual_usd": 0.190206157,
+    "charged_or_held_usd": 0.213509357,
+    "unresolved": 0,
+    "conservatively_accounted_calls": 3
+  }
+}

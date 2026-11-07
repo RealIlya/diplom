@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-27T06:40:08.860247+00:00",
+  "actual_dataset_checks": {
+    "combined_rows": 330,
+    "new_rows": 200,
+    "new_hard_rows": 181,
+    "old_prefix_unchanged": true,
+    "new_inputs_and_snapshot_document_pairs_unique_and_disjoint_from_old": true,
+    "new_train_only": true,
+    "test_rows": 0,
+    "cross_role_family_overlap": false,
+    "adjudications_validated": 32,
+    "source_files_verified": 19
+  },
+  "actual_paid_provenance_import": "all400 original responses/requests checked by review.import_run;389 valid and11 retained technical errors",
+  "targeted_tests": {
+    "passed": 99,
+    "total": 99,
+    "log": "artifacts/system-one-pilot/expansion-v1/engineering/export-targeted-tests.log",
+    "sha256": "dea07d22386676f0e6dcb85a28ce52ffa6196792b06f2d4bba64974c6b2f62d2"
+  },
+  "full_tests": {
+    "passed": 129,
+    "total": 130,
+    "preexisting_failure": "test_presentations.PresentationTests.test_all_stored_presentations_are_complete_packages",
+    "log": "artifacts/system-one-pilot/expansion-v1/engineering/export-full-tests.log",
+    "sha256": "61c6fbc790c1231d38ad1a63e9b41568673c83ed37fa829bb6607a8b98d166a9"
+  },
+  "documentation": {
+    "gitmark_lint_strict": "pass;32files",
+    "index": "32files/446chunks",
+    "mkdocs_strict": "pass",
+    "mkdocs_log_sha256": "2bac97327063f22536ad61b4e391f4bc058cf37867853c978f94b1cae46c7e01",
+    "site_dir": "/private/tmp/diplom-expansion-final",
+    "tracked_git_diff_check": "pass",
+    "new_reference_noindex_check": "no whitespace output; exit1 denotes a new-file difference"
+  },
+  "new_model_training_or_quality_comparison": false,
+  "paid_worker_exit_code": 0,
+  "budget_final_sha256": "8f261d80a26c537c655f8e2a657b7744d99be0b477fe375ca40422a6d8a87697",
+  "dataset_summary_sha256": "76dc8c224ad6464a5903bdcaa134b49350dcbf23174a5b955a9230642e90ac09"
+}

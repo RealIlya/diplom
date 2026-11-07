@@ -1,0 +1,623 @@
+{
+  "at": "2026-10-25T05:43:26.554650+00:00",
+  "profile": 4096,
+  "rooms": {
+    "1024": 976,
+    "4096": 4048,
+    "8192": 8144
+  },
+  "head_max_len": 256,
+  "checkpoint_sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+  "tokenizer_sha256": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f",
+  "pool_document_snapshots": 24,
+  "pool_rows": 24,
+  "selected": 9,
+  "counts": {
+    "STATE_OVERFLOW": 15,
+    "accepted": 9
+  },
+  "rows": [
+    {
+      "snapshot_id": "838b27a689486024cd6fa7e2be50eca64d07dcda30bee25b85ec250124f07c03",
+      "episode_id": "ARCHIVAL-SMOKE-task_001",
+      "document_id": "doc_business_credit_cards_business_gold_rewards_card_001",
+      "lengths": {
+        "1024": {
+          "tokens": 42792,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42792,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42792,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "838b27a689486024cd6fa7e2be50eca64d07dcda30bee25b85ec250124f07c03",
+      "episode_id": "ARCHIVAL-SMOKE-task_001",
+      "document_id": "doc_credit_cards_platinum_rewards_card_002",
+      "lengths": {
+        "1024": {
+          "tokens": 42755,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42755,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42755,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "838b27a689486024cd6fa7e2be50eca64d07dcda30bee25b85ec250124f07c03",
+      "episode_id": "ARCHIVAL-SMOKE-task_001",
+      "document_id": "doc_credit_cards_bronze_rewards_card_002",
+      "lengths": {
+        "1024": {
+          "tokens": 42787,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42787,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42787,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "838b27a689486024cd6fa7e2be50eca64d07dcda30bee25b85ec250124f07c03",
+      "episode_id": "ARCHIVAL-SMOKE-task_001",
+      "document_id": "doc_business_credit_cards_business_bronze_rewards_card_002",
+      "lengths": {
+        "1024": {
+          "tokens": 42692,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42692,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42692,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "838b27a689486024cd6fa7e2be50eca64d07dcda30bee25b85ec250124f07c03",
+      "episode_id": "ARCHIVAL-SMOKE-task_001",
+      "document_id": "doc_credit_cards_diamond_elite_card_003",
+      "lengths": {
+        "1024": {
+          "tokens": 42713,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42713,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42713,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "838b27a689486024cd6fa7e2be50eca64d07dcda30bee25b85ec250124f07c03",
+      "episode_id": "ARCHIVAL-SMOKE-task_001",
+      "document_id": "doc_credit_cards_platinum_rewards_card_007",
+      "lengths": {
+        "1024": {
+          "tokens": 42767,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42767,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42767,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "838b27a689486024cd6fa7e2be50eca64d07dcda30bee25b85ec250124f07c03",
+      "episode_id": "ARCHIVAL-SMOKE-task_001",
+      "document_id": "doc_credit_cards_silver_rewards_card_001",
+      "lengths": {
+        "1024": {
+          "tokens": 42842,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42842,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42842,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "9c26e2b0636ea2f7978716545a37094e51474c02852e4f097a69e6283960fb38",
+      "episode_id": "ARCHIVAL-SMOKE-task_004",
+      "document_id": "doc_customer_support_special_support_codes_001",
+      "lengths": {
+        "1024": {
+          "tokens": 1373,
+          "room": 976,
+          "status": "CANDIDATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 1373,
+          "room": 4048,
+          "status": "accepted"
+        },
+        "8192": {
+          "tokens": 1373,
+          "room": 8144,
+          "status": "accepted"
+        }
+      },
+      "structural_4096": "accepted",
+      "parts": 1
+    },
+    {
+      "snapshot_id": "9c26e2b0636ea2f7978716545a37094e51474c02852e4f097a69e6283960fb38",
+      "episode_id": "ARCHIVAL-SMOKE-task_004",
+      "document_id": "doc_business_savings_accounts_joint_business_holders_+_user_roles_001",
+      "lengths": {
+        "1024": {
+          "tokens": 1029,
+          "room": 976,
+          "status": "CANDIDATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 1029,
+          "room": 4048,
+          "status": "accepted"
+        },
+        "8192": {
+          "tokens": 1029,
+          "room": 8144,
+          "status": "accepted"
+        }
+      },
+      "structural_4096": "accepted",
+      "parts": 1
+    },
+    {
+      "snapshot_id": "9c26e2b0636ea2f7978716545a37094e51474c02852e4f097a69e6283960fb38",
+      "episode_id": "ARCHIVAL-SMOKE-task_004",
+      "document_id": "doc_credit_cards_credit_card_replacements_003",
+      "lengths": {
+        "1024": {
+          "tokens": 857,
+          "room": 976,
+          "status": "accepted"
+        },
+        "4096": {
+          "tokens": 857,
+          "room": 4048,
+          "status": "accepted"
+        },
+        "8192": {
+          "tokens": 857,
+          "room": 8144,
+          "status": "accepted"
+        }
+      },
+      "structural_4096": "accepted",
+      "parts": 1
+    },
+    {
+      "snapshot_id": "9c26e2b0636ea2f7978716545a37094e51474c02852e4f097a69e6283960fb38",
+      "episode_id": "ARCHIVAL-SMOKE-task_004",
+      "document_id": "doc_credit_cards_credit_cards_(general)_014",
+      "lengths": {
+        "1024": {
+          "tokens": 1475,
+          "room": 976,
+          "status": "CANDIDATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 1475,
+          "room": 4048,
+          "status": "accepted"
+        },
+        "8192": {
+          "tokens": 1475,
+          "room": 8144,
+          "status": "accepted"
+        }
+      },
+      "structural_4096": "accepted",
+      "parts": 1
+    },
+    {
+      "snapshot_id": "9c26e2b0636ea2f7978716545a37094e51474c02852e4f097a69e6283960fb38",
+      "episode_id": "ARCHIVAL-SMOKE-task_004",
+      "document_id": "doc_savings_accounts_silver_account_008",
+      "lengths": {
+        "1024": {
+          "tokens": 884,
+          "room": 976,
+          "status": "accepted"
+        },
+        "4096": {
+          "tokens": 884,
+          "room": 4048,
+          "status": "accepted"
+        },
+        "8192": {
+          "tokens": 884,
+          "room": 8144,
+          "status": "accepted"
+        }
+      },
+      "structural_4096": "accepted",
+      "parts": 1
+    },
+    {
+      "snapshot_id": "9c26e2b0636ea2f7978716545a37094e51474c02852e4f097a69e6283960fb38",
+      "episode_id": "ARCHIVAL-SMOKE-task_004",
+      "document_id": "doc_bank_accounts_bank_accounts_(general)_027",
+      "lengths": {
+        "1024": {
+          "tokens": 1177,
+          "room": 976,
+          "status": "CANDIDATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 1177,
+          "room": 4048,
+          "status": "accepted"
+        },
+        "8192": {
+          "tokens": 1177,
+          "room": 8144,
+          "status": "accepted"
+        }
+      },
+      "structural_4096": "accepted",
+      "parts": 1
+    },
+    {
+      "snapshot_id": "9c26e2b0636ea2f7978716545a37094e51474c02852e4f097a69e6283960fb38",
+      "episode_id": "ARCHIVAL-SMOKE-task_004",
+      "document_id": "doc_everyone_pay_everyone_pay_010",
+      "lengths": {
+        "1024": {
+          "tokens": 867,
+          "room": 976,
+          "status": "accepted"
+        },
+        "4096": {
+          "tokens": 867,
+          "room": 4048,
+          "status": "accepted"
+        },
+        "8192": {
+          "tokens": 867,
+          "room": 8144,
+          "status": "accepted"
+        }
+      },
+      "structural_4096": "accepted",
+      "parts": 1
+    },
+    {
+      "snapshot_id": "9c26e2b0636ea2f7978716545a37094e51474c02852e4f097a69e6283960fb38",
+      "episode_id": "ARCHIVAL-SMOKE-task_004",
+      "document_id": "doc_checking_accounts_checking_accounts_(general)_002",
+      "lengths": {
+        "1024": {
+          "tokens": 1087,
+          "room": 976,
+          "status": "CANDIDATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 1087,
+          "room": 4048,
+          "status": "accepted"
+        },
+        "8192": {
+          "tokens": 1087,
+          "room": 8144,
+          "status": "accepted"
+        }
+      },
+      "structural_4096": "accepted",
+      "parts": 1
+    },
+    {
+      "snapshot_id": "9c26e2b0636ea2f7978716545a37094e51474c02852e4f097a69e6283960fb38",
+      "episode_id": "ARCHIVAL-SMOKE-task_004",
+      "document_id": "doc_business_credit_cards_virtual_card_management_007",
+      "lengths": {
+        "1024": {
+          "tokens": 883,
+          "room": 976,
+          "status": "accepted"
+        },
+        "4096": {
+          "tokens": 883,
+          "room": 4048,
+          "status": "accepted"
+        },
+        "8192": {
+          "tokens": 883,
+          "room": 8144,
+          "status": "accepted"
+        }
+      },
+      "structural_4096": "accepted",
+      "parts": 1
+    },
+    {
+      "snapshot_id": "4d11d9a05c5b77e562c47c754561d4052b1af44df6589e01d5ecc096a3fa309a",
+      "episode_id": "ARCHIVAL-SMOKE-task_010",
+      "document_id": "doc_credit_cards_platinum_rewards_card_008",
+      "lengths": {
+        "1024": {
+          "tokens": 42754,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42754,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42754,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "4d11d9a05c5b77e562c47c754561d4052b1af44df6589e01d5ecc096a3fa309a",
+      "episode_id": "ARCHIVAL-SMOKE-task_010",
+      "document_id": "doc_credit_cards_credit_cards_(general)_020",
+      "lengths": {
+        "1024": {
+          "tokens": 43011,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 43011,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 43011,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "4d11d9a05c5b77e562c47c754561d4052b1af44df6589e01d5ecc096a3fa309a",
+      "episode_id": "ARCHIVAL-SMOKE-task_010",
+      "document_id": "doc_business_credit_cards_silver_zoom_card_011",
+      "lengths": {
+        "1024": {
+          "tokens": 42728,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42728,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42728,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "4d11d9a05c5b77e562c47c754561d4052b1af44df6589e01d5ecc096a3fa309a",
+      "episode_id": "ARCHIVAL-SMOKE-task_010",
+      "document_id": "doc_business_credit_cards_business_bronze_rewards_card_011",
+      "lengths": {
+        "1024": {
+          "tokens": 42742,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42742,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42742,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "4d11d9a05c5b77e562c47c754561d4052b1af44df6589e01d5ecc096a3fa309a",
+      "episode_id": "ARCHIVAL-SMOKE-task_010",
+      "document_id": "doc_business_credit_cards_business_gold_rewards_card_010",
+      "lengths": {
+        "1024": {
+          "tokens": 42777,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42777,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42777,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "4d11d9a05c5b77e562c47c754561d4052b1af44df6589e01d5ecc096a3fa309a",
+      "episode_id": "ARCHIVAL-SMOKE-task_010",
+      "document_id": "doc_credit_cards_ecocard_011",
+      "lengths": {
+        "1024": {
+          "tokens": 42691,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42691,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42691,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "4d11d9a05c5b77e562c47c754561d4052b1af44df6589e01d5ecc096a3fa309a",
+      "episode_id": "ARCHIVAL-SMOKE-task_010",
+      "document_id": "doc_credit_cards_silver_rewards_card_011",
+      "lengths": {
+        "1024": {
+          "tokens": 42692,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42692,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42692,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    },
+    {
+      "snapshot_id": "4d11d9a05c5b77e562c47c754561d4052b1af44df6589e01d5ecc096a3fa309a",
+      "episode_id": "ARCHIVAL-SMOKE-task_010",
+      "document_id": "doc_business_credit_cards_business_silver_rewards_card_013",
+      "lengths": {
+        "1024": {
+          "tokens": 42671,
+          "room": 976,
+          "status": "STATE_OVERFLOW"
+        },
+        "4096": {
+          "tokens": 42671,
+          "room": 4048,
+          "status": "STATE_OVERFLOW"
+        },
+        "8192": {
+          "tokens": 42671,
+          "room": 8144,
+          "status": "STATE_OVERFLOW"
+        }
+      },
+      "structural_4096": "STATE_OVERFLOW",
+      "parts": 0
+    }
+  ],
+  "errors": [],
+  "versions": {
+    "at": "2026-10-25T05:43:26.818340+00:00",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "source_sha256": {
+      "scripts/system_one_pilot/fetch.py": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+      "scripts/system_one_pilot/review.html": "31a6d3a459e0c7c4132b9b1038a8daefd2bd18e8a001113e1849fe8051bbbe6f",
+      "scripts/system_one_pilot/rubric-v1.txt": "e8d188c9c3fc56d2a74be63a1231c7b6d7aec6efa481658eb9057fc23833593d",
+      "scripts/system_one_pilot/live_data.py": "d65b628ab52b4f5f287c3b53f3e18c1a9d4cf9622e681407d5cebd2a9316a30c",
+      "scripts/system_one_pilot/__init__.py": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+      "scripts/system_one_pilot/review.py": "ce022f15e7ecf92cd974cc60b6b5a3770a7e6c1153b4fe40dde39e518b341386",
+      "scripts/system_one_pilot/model.py": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+      "scripts/system_one_pilot/cli.py": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+      "scripts/system_one_pilot/live_api.py": "e96416117cd033f338e9f8fc8a0ea7616dc32bbcaef13f3e859bf41c6b8fdcd4",
+      "scripts/system_one_pilot/live.py": "a8e798ed9f8ffa18d84d60e4bdc6fa42a4adb88a8b3c19a5093dfcb89a5b9122",
+      "scripts/system_one_pilot/data.py": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380"
+    },
+    "versions": {
+      "torch": "2.9.1",
+      "transformers": "4.57.1",
+      "litellm": "1.82.6",
+      "rank-bm25": "0.2.2",
+      "certifi": "2025.11.12"
+    }
+  }
+}

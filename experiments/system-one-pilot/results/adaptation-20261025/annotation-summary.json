@@ -1,0 +1,183 @@
+{
+  "cards": 100,
+  "attempt_records": 200,
+  "statuses": {
+    "valid": 190,
+    "technical_error": 10
+  },
+  "errors": {
+    "ValueError:annotation quote absent from input": 7,
+    "HTTPError:HTTP429 upstream engine_overloaded; original request not retried; full reserve retained": 2,
+    "ClientProcessInterrupted:Provider answer lost during client interruption; no retry; entire original reserve retained with explicit user approval.": 1
+  },
+  "decisions": {
+    "irrelevant": 62,
+    "uncertain": 10,
+    "useful": 28
+  },
+  "defects": 2,
+  "sources": {
+    "llm_consensus": 78,
+    "agent_adjudication": 22
+  },
+  "new_human_review": 0,
+  "export_sha256": "24f28618f6a919b2266fca9f90eed2650b99ac6dcaf6e43f11752ecf93c861cd",
+  "adjudications_sha256": "0982d76b6947faf9fc20c19672dda3c37a22a3b31d7e8f56e868da75a5ffee30",
+  "adjudications": [
+    {
+      "row_id": "cd87b39102c16f9b04db925e",
+      "input_sha256": "a6b66e8a1c6f0ba93f4cafbfcbc381f20b7e5c2e9b79a3c05b76bfac972f4745",
+      "label": "uncertain",
+      "defect": false,
+      "reason_ru": "uncertain: пользователь выбирает checking account для поездки; документ явно про business account. Наблюдаемый вход не подтверждает ни соответствие типу checking, ни доступность business account этому клиенту. Qwen предполагает, что business checking подходит, но такого факта во входе нет. Конкретные ATM fees сами по себе не устраняют неопределённую применимость продукта; не используем скрытую задачу или будущие ответы."
+    },
+    {
+      "row_id": "29f55515a21f862c526e6ca0",
+      "input_sha256": "89b2c492c0d385f4ea4bc3fa93852cb1e5b7b705a750d6c825c55d5a9a1c876c",
+      "label": "useful",
+      "defect": false,
+      "reason_ru": "useful, defect=false. Пересмотр черновой uncertain до принятия labels: по действующей рубрике partial usefulness включает диагностический следующий шаг. Весь candidate содержит применимые к текущему debit-card decline вопросы о повреждении карты и условные действия для82/87; это помогает разбираться с отказом, не утверждая фактический код. Ранний черновик ошибочно требовал заранее знать причину отказа. DeepSeek HTTP429 остаётся техническим сбоем, semantic решение проверено агентом по исходному input и Qwen. Не использовались скрытая задача, gates или прогнозы моделей."
+    },
+    {
+      "row_id": "6731dc418e6047334655a974",
+      "input_sha256": "66ae122685758bf8ac16608438a7da9dd470e079496ad762c7b7b9d367c8e2f9",
+      "label": "useful",
+      "defect": false,
+      "reason_ru": "useful: observed пользователь прямо сообщает credit-card fraud и хочет оспорить Costco/Amazon charges. В документе есть unauthorized/fraudulent charges и конкретный способ начать dispute; это прямое частичное соответствие. Ошибка Qwen — неточная цитата, не смысловая метка. Весь input прочитан, DeepSeek решение проверено по его буквальным цитатам."
+    },
+    {
+      "row_id": "426ea055b9ae408f261dc25e",
+      "input_sha256": "f2659d611c49b4d4d8ebc9222f221e1fa12ce5fe9bfa0474455ff44964d3564e",
+      "label": "irrelevant",
+      "defect": true,
+      "reason_ru": "irrelevant, defect=true: текущая просьба — перевод к человеку для подачи business credit-card application, документ про debit disputes/provisional credit не помогает этому. При этом структурный fragment явно нарушен: перечень ALL conditions начинается с2, а NOT REQUIRED section пуст. Дефект отмечаем отдельно, но он не мешает определить нерелевантность. Такой ряд не входит в supervised hard loss."
+    },
+    {
+      "row_id": "2072c99d9613d02cb98b51af",
+      "input_sha256": "43c8de7b192aeb02f33601e7a8c5bf0bfec993ad773e3bc61155ec05e0afa9f2",
+      "label": "uncertain",
+      "defect": false,
+      "reason_ru": "uncertain: текущая потребность — выбор savings account, в том числе ATM reimbursement. В candidate описан Hunter Green Account, но его class=savings и применимость rebates к выбираемому savings продукту во входе не установлены. Сходство слов green/ATM не подтверждает продукт; известный Green checking в state не доказывает тождество Hunter Green. Ошибка цитирования Qwen отдельно техническая."
+    },
+    {
+      "row_id": "abf97fa5c103f898374c662f",
+      "input_sha256": "5752e2b1b6b8f241e797c1420024fa5539c492c80bf8b0f148f9f9ee0aca97ad",
+      "label": "irrelevant",
+      "defect": false,
+      "reason_ru": "irrelevant: после отказа в повторном referral пользователь явно просит transfer для review исключения. Candidate описывает выполнение statement credit, но не перевод, проверку referral exception или право выдать компенсацию за отклонённый бонус. Наличие goodwill_adjustment не устанавливает такое право и не помогает текущему transfer. Полный observed input проверен, claims assistant не принимались за разрешение на credit; неточная цитата Qwen остаётся технической ошибкой."
+    },
+    {
+      "row_id": "c41d5d117a17d407eea9d331",
+      "input_sha256": "265917febb1d3f12fdfa83d5c36556fbe15217c459809b01692512f052839a2e",
+      "label": "useful",
+      "defect": false,
+      "reason_ru": "useful, defect=false: при текущем debit-card decline документ даёт поля pin_locked/pin_attempts_remaining для диагностики и условные шаги поPIN55/75/83. Не утверждаем, что конкретный код уже установлен. Обязательная ссылка на отдельный fraud-risk protocol сохранена вместе с запретом unlock до его проверки; нормальная cross-reference не является потерей referent из-за подготовки. Наличие нужного next diagnostic step достаточно для partial usefulness."
+    },
+    {
+      "row_id": "586a2dbdca149ed5b776b2d1",
+      "input_sha256": "860d588ca0280e3ddec2103c22f9ffe58bc339bed5737706a88c22ef98db65c2",
+      "label": "uncertain",
+      "defect": false,
+      "reason_ru": "uncertain: здесь не общий справочник диагностических кодов, а конкретный product-specific порог shortfall5 и поведение Green checking. Ни Green Account, ни его баланс в observed tool results ещё не установлены. Переносить конкретную банковскую норму другого возможного продукта нельзя. Общий факт insufficient funds может вызывать decline не подтверждает применимость порога и решения этого продукта. Hidden lookup/future outcomes не использовались."
+    },
+    {
+      "row_id": "77a9211b49dba226a9eb16e2",
+      "input_sha256": "e01cb65cfb325397c67f915dc9aa7fb60319bcac0e004af3d65c2fe09959b671",
+      "label": "uncertain",
+      "defect": false,
+      "reason_ru": "uncertain: потребность закрыть Green checking явно есть, поэтому нельзя смотреть только на search про opening savings. Но правила candidate относятся к business checking и конкретным tier, а класс business/соответствующий tier пользовательского Green во входе не установлен. Несовпадение имён ещё не даёт доказанной несовместимости; перенос правил на Green тоже не обоснован. Сохраняем неопределённую применимость без скрытых catalog данных."
+    },
+    {
+      "row_id": "7d8cdfa6ead34352f38c9d1e",
+      "input_sha256": "485a7f0fb4bf02bcf186ac352410923121ea7bab99f745c0f051fb595ce6026c",
+      "label": "useful",
+      "defect": false,
+      "reason_ru": "useful: тот же ранее прочитанный state29f55515… с текущим debit-card decline. Candidate даёт общий catch-all расследовательский порядок card/account status, fraud flags, velocity block и поля lookup. Это применимый диагностический next step без утверждения actual decline code. Условия security transfer и запрет clear bank-initiated alert сохранены; дефекта нет. Неточная цитата Qwen отдельно техническая."
+    },
+    {
+      "row_id": "c4e70e947f95a8a7077f3faf",
+      "input_sha256": "1f98d8f841093e993616c27ba6b41e293ec423a7cd8c0905d042639ef7ec4640",
+      "label": "irrelevant",
+      "defect": false,
+      "reason_ru": "irrelevant, defect=false: текущая задача — credit-card fraud dispute и replacement, candidate описывает debit declines и generic errors без наблюдаемого такого error. Пропуски номеров в структурном view сами по себе не дефект: оставленные Card Replaced/If card IS expired/No Card Record ветви сохраняют свои условия и смысл. Здесь не обнаружена утрата обязательного ALL-condition или нужного referent, в отличие от426ea055… с недостающим обязательным условием."
+    },
+    {
+      "row_id": "e25c00162b7ff43335f3e72e",
+      "input_sha256": "917f5d02340254601f1a52bd74748b39c2bfa1bac490d828aaa33734a095bbe9",
+      "label": "irrelevant",
+      "defect": false,
+      "reason_ru": "irrelevant: state идентичен abf97fa5…, актуальная явная просьба transfer для review credit-card referral. Candidate явноchecking-account referrals, без human transfer или manual exception процедуры; общие похожие ограничения не разрешают применять checking правила кcredit-card программе. Расхождение7/9дней не использовалось как проверка истины: assistant claims не являются подтверждённой политикой. Qwen неточную цитату автоматически не исправляли."
+    },
+    {
+      "row_id": "d930d0bfa80302673deecfe6",
+      "input_sha256": "c58a3dcca1b220a41f3d07c2bee9c24d9f7daac84667f9cc49af3a8e63653fe2",
+      "label": "uncertain",
+      "defect": false,
+      "reason_ru": "uncertain: пользователь явно закрывает credit cards/Green Rewards, а candidate описывает generic account closure с deposit-подобным списанием fee из положительного баланса и business-savings связями. Область этих конкретных preconditions для credit-card account во входе не определена. Не переносим zero-balance/fee/notice правила по общему слову account. Общий контактный boilerplate не разрешает неоднозначность substantive правил; hidden bank schema и внешнее право не использовались."
+    },
+    {
+      "row_id": "2c2dfc55c5e54f14b5d036cd",
+      "input_sha256": "7ae94adc5f4399c475f92095bbae945c5c73dd0fb539f5f43628678a9f906b9c",
+      "label": "useful",
+      "defect": false,
+      "reason_ru": "useful: текущая задача — сравнить финансовую отдачу business credit cards. Candidate явно включает Business Platinum и другие business cash-back cards и даёт redemption conversion points→$0.01, то есть substantive факт для выражения отдачи в долларах. Отсутствие earning rate не отменяет partial usefulness; документ не обязан решать весь выбор. Полный observed input прочитан, database representation не отвергается только как внутренний implementation detail."
+    },
+    {
+      "row_id": "be759760872b08a0842175fb",
+      "input_sha256": "5f1fa4cea60ca7afc9999b6f7925bb03cdecc1df34e0f0e98a316084e6d5ff3c",
+      "label": "useful",
+      "defect": false,
+      "reason_ru": "useful: пользователь по-прежнему хочет открыть savings и выбирает его свойства; candidate даёт применимые eligibility/funding условия и точные параметры инструмента открытия после выбора account_class. Это partial next step, документ не обязан содержать feature comparison. Scope и checklist сохраняют все условия; пропуски номеров повторённых шагов не теряют обязательный guard. Ответ Qwen потерян при прерывании клиента и не приписывается модели; решение проверено агентом по whole observed input и валидному DeepSeek."
+    },
+    {
+      "row_id": "ab722f1abef135d13b311fcc",
+      "input_sha256": "773ba143f7f21db283217214f42d872df2dd283279f10cf60d2044cb9714971e",
+      "label": "irrelevant",
+      "defect": false,
+      "reason_ru": "irrelevant: current user просит повторить Platinum Rewards credit-card referral. Candidate явно про Navy Blue business checking с бизнесом, deposit5000 и своими qualifying terms; это другой продукт/программа, а не исключение к отклонённому credit-card referral. Факт7дней не принимался на веру отassistant и не нужен для решения о product mismatch. DeepSeekHTTP429 не является semantic vote; Qwen решение проверено по whole observed input."
+    },
+    {
+      "row_id": "bb618fc500bb03939b5164d0",
+      "input_sha256": "3f5d7ff01a4d425fbb75eb6161964f6bbf023b13caea424174c4657a63b5c073",
+      "label": "useful",
+      "defect": false,
+      "reason_ru": "useful: при том же текущем debit-card decline candidate содержит не только обзор RegulationE, но и конкретные diagnostic handling ветви lost/stolen/security с проверкой card status/issue_reason, enhanced verification и запретами небезопасного unlock/disclosure. Это partial помощь следующему диагностическому действию, не утверждение реальной причины. Смысл проверен по whole input; юридическая истинность synthetic KB и скрытая задача не оценивались. Qwen quote error отдельно технический."
+    },
+    {
+      "row_id": "86640d8caa091a14e978e06c",
+      "input_sha256": "e008d3087ee200831112975343746a1dd395374ce56bb2d2909c9e734674fd3c",
+      "label": "irrelevant",
+      "defect": false,
+      "reason_ru": "irrelevant, defect=false: state точносовпадаетc4e70e… (credit-card fraud dispute/replacement), это ещё один structural view того же debit-decline/general-error документа. Условия оставленных ветвей сохранены; пропуск step1 сам по себе не доказывает потерю essential guard. Нерелевантность обусловлена currentneed/product, а не отсутствием полного ответа. DeepSeek quote error остаётся техническим."
+    },
+    {
+      "row_id": "6ac10433957c1078d03db36d",
+      "input_sha256": "c9874281e89a8b508a7c7545db2e88f33c97621890b03c88795726caf0af0bff",
+      "label": "uncertain",
+      "defect": false,
+      "reason_ru": "uncertain: candidate привязан кCobalt Blue и конкретному zero-overdraft-fee/balance поведению. Наличие Cobalt Blue у пользователя до lookup не установлено. Общий совет проверить balance не подтверждает применимость конкретной fee policy и правил этого продукта; не переносим их по общему слову decline. Решение согласуется с586a2d… для неизвестного Green checking, не предполагает скрытый account."
+    },
+    {
+      "row_id": "d7803335fee728dc608374b7",
+      "input_sha256": "b237a8379d24e932db2ba28e3e826cf3f357681a01c964db94ce1f8c63024a95",
+      "label": "useful",
+      "defect": false,
+      "reason_ru": "useful: пользователь выбирает лучшую signup promo без ограничения Bronze. Observed get_current_time показывает14.11.2025; candidate закрывает qualifying window30.06.2025, то есть даёт конкретное полезное исключение этой опции. Рубрика прямо считает условие, исключающее вариант, полезным. SearchBronze не заменяет более широкий user need; expired не означает автоматически irrelevant."
+    },
+    {
+      "row_id": "1d7c7673500ae35d4f2428e5",
+      "input_sha256": "51d4d8b7dd2035dd5b46cd6607a735370e36c8816ccb404122116f325cbb26a1",
+      "label": "irrelevant",
+      "defect": true,
+      "reason_ru": "irrelevant, defect=true: currentneed — закрытие Green checking и открытие savings, candidate про youth-to-adult transition без связи с этими действиями. Независимо от метки candidate явно broken: title25/body24 и неопределённый referent «If Yes is True/False». Не восстанавливаем отсутствующий boolean/context. Дефект не мешает определить отсутствие применимого substantive факта к текущему запросу; ряд исключается из hard loss."
+    },
+    {
+      "row_id": "64b14234e66abaa5b0f4d421",
+      "input_sha256": "91c6699d217eb8367052cd017c106a61eb5d9a58b5b8579e202b60aa79090213",
+      "label": "uncertain",
+      "defect": false,
+      "reason_ru": "uncertain: это ранний snapshot, где известны только «four friends» иcredit cards, без названий продуктов или статусов referrals. Утверждать personal-only или несовместимость сbusiness из словаfriends нельзя. Но применять конкретные Business Platinum spend15000/135days правила тоже не обосновано. Другие snapshots/будущиеlookup не использовались для заполнения текущих неизвестных; Qwen сделал недоказанный вывод о product eligibility."
+    }
+  ],
+  "scope": "trusted DeepSeek/Qwen consensus + agent adjudication; not independent human gold"
+}

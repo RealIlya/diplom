@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "url": "https://codeload.github.com/sierra-research/tau2-bench/tar.gz/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699",
+      "path": "source/tau.tar.gz",
+      "sha256": "54af96f8b11a45eaaaface405a3c1783f1203898c2f9cc35211fc8da09741b49",
+      "extract_to": "source"
+    },
+    {
+      "url": "https://codeload.github.com/nandhakishorm/laya/tar.gz/68804629e8ccd9d616d48a40e87de9fabbeae069",
+      "path": "source/laya.tar.gz",
+      "sha256": "ff2367f72cbe7da4100a6d80525313921989f209d932f75bd9d01037327a8313",
+      "extract_to": "source"
+    },
+    {
+      "url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gpt-5-4_sierra_2026-03-25/trajectories/gpt-5.4_xhigh_banking_knowledge_gpt-5.2_4trials.json",
+      "path": "source/published-prefix-20MB.json",
+      "sha256": "4d7f30616a6c158079d1569e8213fbad20518d7725284af197d1383459ebe993",
+      "range": [
+        0,
+        19999999
+      ]
+    },
+    {
+      "url": "https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/rl_agent_config.json",
+      "path": "checkpoint/rl_agent_config.json",
+      "sha256": "25061739243b617ad88d1219ba6f8a9c86c5881ca28df024fa2d9b3b2fcc30c6"
+    },
+    {
+      "url": "https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/encoder/config.json",
+      "path": "checkpoint/encoder/config.json",
+      "sha256": "83f6916d13ef0f556ac461f28308dc2bffa7ebeadee8ec9e2db5812020ea5bb4"
+    },
+    {
+      "url": "https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/tokenizer/tokenizer.json",
+      "path": "checkpoint/tokenizer/tokenizer.json",
+      "sha256": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f"
+    },
+    {
+      "url": "https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/tokenizer/tokenizer_config.json",
+      "path": "checkpoint/tokenizer/tokenizer_config.json",
+      "sha256": "424b69444bf7b5809dc2cd2e36d0bd71b8055124dd24274d6db3c655d38205e7"
+    },
+    {
+      "url": "https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/model.safetensors",
+      "path": "checkpoint/model.safetensors",
+      "sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204"
+    }
+  ],
+  "note": "Public downloads only; no model inference API. Original tokenizer config is preserved before the pinned runtime compatibility patch."
+}

@@ -1,0 +1,31 @@
+{
+  "call_id": "online-adaptation-v1/frozen/task_061/022/agent",
+  "status": "unknown",
+  "error": "{\"http_status\":null,\"type\":\"URLError\"}",
+  "response": null,
+  "reserved_nusd": 21303000,
+  "request_hash": "90244879bc2b8c03d6957cd5b6a1bec9e5af90f999638380c17d2fcc81e5fd02",
+  "created_at": "2026-10-25T14:36:41.949870+00:00",
+  "series": "collection",
+  "unknown_usage": true,
+  "actual_usd": null,
+  "upper_bound_usd": 0.021303,
+  "automatic_retry": false,
+  "headers_received": false,
+  "remaining_unstarted_tasks": {
+    "frozen": [
+      "task_041"
+    ],
+    "ce": [
+      "task_035",
+      "task_061",
+      "task_041"
+    ],
+    "brier": [
+      "task_035",
+      "task_061",
+      "task_041"
+    ]
+  },
+  "status_note": "stopped; no accounting exception approved for this call"
+}

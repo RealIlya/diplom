@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-27T06:31:26.238490+00:00",
+  "attempts": 400,
+  "rows": 200,
+  "statuses": {
+    "valid": 389,
+    "technical_error": 11
+  },
+  "valid_by_model": {
+    "deepseek/deepseek-v4.1-flash-1017": 198,
+    "qwen/qwen3.8-27b": 191
+  },
+  "technical_by_model": {
+    "deepseek/deepseek-v4.1-flash-1017": 2,
+    "qwen/qwen3.8-27b": 9
+  },
+  "errors": [
+    {
+      "row_id": "140643ab757b6b40bd2ba818",
+      "model": "deepseek/deepseek-v4.1-flash-1017",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/140643ab757b6b40bd2ba818/deepseek",
+      "actual_nusd": 208889
+    },
+    {
+      "row_id": "140643ab757b6b40bd2ba818",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/140643ab757b6b40bd2ba818/qwen",
+      "actual_nusd": 1141725
+    },
+    {
+      "row_id": "35bd2ff516c67c3706f3bb5f",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/35bd2ff516c67c3706f3bb5f/qwen",
+      "actual_nusd": 1441875
+    },
+    {
+      "row_id": "38f0e13b1276d54a8e8c5bc2",
+      "model": "deepseek/deepseek-v4.1-flash-1017",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/38f0e13b1276d54a8e8c5bc2/deepseek",
+      "actual_nusd": 359417
+    },
+    {
+      "row_id": "38f0e13b1276d54a8e8c5bc2",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/38f0e13b1276d54a8e8c5bc2/qwen",
+      "actual_nusd": 1170675
+    },
+    {
+      "row_id": "3a76c22a51865949b2094df4",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/3a76c22a51865949b2094df4/qwen",
+      "actual_nusd": 1888125
+    },
+    {
+      "row_id": "4ea5d737226e0018c42080f5",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/4ea5d737226e0018c42080f5/qwen",
+      "actual_nusd": 2778600
+    },
+    {
+      "row_id": "b22e8bf3fd5be444da8587ab",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/b22e8bf3fd5be444da8587ab/qwen",
+      "actual_nusd": 1680150
+    },
+    {
+      "row_id": "bdaaf76c70c1bb95868c4053",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/bdaaf76c70c1bb95868c4053/qwen",
+      "actual_nusd": 2084400
+    },
+    {
+      "row_id": "dcdb949eb79d8df99a7c8910",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/dcdb949eb79d8df99a7c8910/qwen",
+      "actual_nusd": 1520100
+    },
+    {
+      "row_id": "f54ed2c943c7874e87353da7",
+      "model": "qwen/qwen3.8-27b",
+      "error": "annotation quote absent from input",
+      "call_id": "expansion-v1/rubric-v1/schema-v2/f54ed2c943c7874e87353da7/qwen",
+      "actual_nusd": 1558050
+    }
+  ],
+  "error_cost_nusd": 15832006,
+  "both_technical_rows": [
+    "140643ab757b6b40bd2ba818",
+    "38f0e13b1276d54a8e8c5bc2"
+  ],
+  "resolutions": {
+    "llm_consensus": 168,
+    "agent_adjudication": 32
+  },
+  "new_label_stats": {
+    "rows": 200,
+    "hard": 181,
+    "families": 7,
+    "labels": {
+      "irrelevant": 158,
+      "useful": 31,
+      "uncertain": 11
+    },
+    "hard_labels": {
+      "irrelevant": 152,
+      "useful": 29
+    },
+    "defects": 10,
+    "sources": {
+      "llm_consensus": 168,
+      "agent_adjudication": 32
+    }
+  },
+  "new_human_review": false,
+  "model_responses_modified": false,
+  "paid_retries": 0
+}

@@ -1,0 +1,15 @@
+{
+  "source": "human conversation27.10.2026",
+  "user_execution_request": "можем ли мы сейчас перейти к реализации?",
+  "user_budget": "1 или2$ лимит поapi вдень; постарайся сделать заэту сумму что-тоадекватное сразу",
+  "accepted": "1–3thousand pairs; commonstate withbinaryquestions; firstboundedpacket",
+  "agent_chosen_daily_limit_usd": 1,
+  "timezone": "Asia/Novosibirsk",
+  "caps_usd": {
+    "collection": 0.2,
+    "annotation": 0.75
+  },
+  "external_route": "OpenRouter→DeepInfra FP8/BF16, sameDeepSeek/Qwen models andrubric; selectedsynthetictrain only",
+  "protocol_sha256": "6a391f1202b235f0769716f8cb9a8cfdc5a978807d94e404701d111ef22d99f2",
+  "no_rental": true
+}

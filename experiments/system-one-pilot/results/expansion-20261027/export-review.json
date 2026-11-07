@@ -1,0 +1,18 @@
+{
+  "reviewer": "fresh gpt-6-astra/high",
+  "scope": [
+    "scripts/system_one_pilot/expansion.py",
+    "tests/test_system_one_expansion.py",
+    "experiments/system-one-pilot/results/expansion-20261027/finalize-packet.py"
+  ],
+  "critical": 0,
+  "important": 0,
+  "minor": 0,
+  "tests": "10/10 expansion fake tests passed; no paid HTTP; finalizer not executed",
+  "source_snapshot": "artifacts/system-one-pilot/expansion-v1/engineering/export-source-v1",
+  "files": {
+    "scripts/system_one_pilot/expansion.py": "e72d8328ed5a75cc36206c559bb30880a117349fc9b31553b2d54f74a921a726",
+    "tests/test_system_one_expansion.py": "3cb0195e5b9f4c9294bad97f25606bd8352e870068855c27dc319fd8261e8ab4",
+    "experiments/system-one-pilot/results/expansion-20261027/finalize-packet.py": "7a60e3613c07318fda39e652b43c5f3a7180b71e26f123aa414f21eb85efe396"
+  }
+}

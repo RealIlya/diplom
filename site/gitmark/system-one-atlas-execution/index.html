@@ -1,0 +1,2800 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../system-one-atlas/">
+      
+      
+        <link rel="next" href="../system-one-atlas-protocol/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Атлас System One — реализация этапов исследования - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#атлас-system-one--реализация-этапов-исследования" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Атлас System One — реализация этапов исследования
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki GitMark
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wiki GitMark
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Состояние и задачи
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Онтология
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-handoff-2026-10-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контекст продолжения 11.10.2026
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атлас адаптации System One
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Атлас адаптации System One
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общий план и карты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реализация этапов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реализация этапов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#p0-вопрос-и-контракт" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P0. Вопрос и контракт
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p1-аудит-стенда-и-моделей" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1. Аудит стенда и моделей
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2-минимальный-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P2. Минимальный harness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p3-разделение-задач" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P3. Разделение задач
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p4-сбор-наблюдений" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P4. Сбор наблюдений
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p5-разметка-и-датасет" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P5. Разметка и датасет
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p6-baseline-и-default-system-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P6. Baseline и default System One
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p7-дообучение-и-абляции" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P7. Дообучение и абляции
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p8-закрытая-итоговая-оценка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P8. Закрытая итоговая оценка
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p9-устойчивость-и-экономика" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P9. Устойчивость и экономика
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p10-выводы-воспроизведение-и-вкр" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P10. Выводы, воспроизведение и ВКР
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные и эксперименты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура стенда
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверенные источники и результаты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот CE и проверенные блокеры
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-next-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Следующий этап — данные и инфраструктура
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерактивный атлас
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Термины общего агента
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — обзор и источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-training-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение System One — статьи и выжимки
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — темы и план ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ресурсы τ-bench, Laya и KEV
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../action-selection-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выбор действий и контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полные вызовы без LLM
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-native-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native аргументы и предусловия
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документы агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переводы статей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Переводы статей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как читать и словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/openjev-rlcd-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenJev-RLCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/sbert2s1-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBERT2S1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/translation-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запись подготовки и проверки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архив технических планов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Архив технических планов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-19-system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот System One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-kev-laya-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сравнение KEV и Laya
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-system-one-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимый dev и адаптация KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-27-system-one-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Первый пакет расширения и grouped KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — спецификация 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — выполненный план 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#p0-вопрос-и-контракт" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P0. Вопрос и контракт
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p1-аудит-стенда-и-моделей" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1. Аудит стенда и моделей
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2-минимальный-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P2. Минимальный harness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p3-разделение-задач" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P3. Разделение задач
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p4-сбор-наблюдений" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P4. Сбор наблюдений
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p5-разметка-и-датасет" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P5. Разметка и датасет
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p6-baseline-и-default-system-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P6. Baseline и default System One
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p7-дообучение-и-абляции" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P7. Дообучение и абляции
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p8-закрытая-итоговая-оценка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P8. Закрытая итоговая оценка
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p9-устойчивость-и-экономика" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P9. Устойчивость и экономика
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p10-выводы-воспроизведение-и-вкр" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P10. Выводы, воспроизведение и ВКР
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="атлас-system-one--реализация-этапов-исследования">Атлас System One — реализация этапов исследования</h1>
+<p>Это операционные рецепты к <a href="../system-one-atlas/">общему плану</a>, а не сообщение
+о выполненных экспериментах. Все имена будущих модулей, manifest и наборов данных
+ниже — <strong>проект артефактов</strong>, пока их реализация и конкретные значения не проверены.
+Отдельное последующее выполнение — <a href="../system-one-pilot/">offline пилот 19.10.2026</a>:
+проверенные код, данные, raw результаты и оставшиеся препятствия указаны там;
+оно не означает завершения P0–P10 или native online серии.
+Не следует запускать придуманные команды: исполняемые entry points появляются
+только вместе с кодом и его проверкой. Актуальные задачи и владельцы — в
+<a href="../#ближайшие-задачи">wiki</a>; здесь описаны зависимости и критерии готовности.</p>
+<h2 id="p0-вопрос-и-контракт">P0. Вопрос и контракт</h2>
+<p><a href="../../research-atlas/phase-00.html">Анимированная иллюстрация P0</a>.
+<strong>Вход:</strong> поручение инициатора, действующая постановка, контракт v0, ограничения
+оборудования и личный вклад адаптации. <strong>Владелец результата:</strong> инициатор;
+контракт согласуется с участниками отбора и маршрутизации.</p>
+<p><strong>Действия.</strong> Выписать одну заменяемую операцию: оценка полезности каждой уже
+наблюдаемой KB-единицы относительно текущей потребности. Уточнить рубрику полезности:
+содержит ли фрагмент применимое правило, исключение, требуемый факт или средство
+устранить неопределённость текущего шага. Несколько кандидатов могут быть полезны
+одновременно, поэтому softmax по всему пулу не заменяет независимые бинарные pᵢ.
+Различить <code>irrelevant</code>, <code>useful</code>, <code>uncertain</code>; неопределённость не превращать в 0.</p>
+<p>Зафиксировать A/B/C и N/H, общие условия, главный контраст B↔C, offline и online
+единицы анализа. Указать, что default — опубликованный checkpoint без нашей
+адаптации, а не случайно инициализированная модель. Сформулировать H1–H5 и
+заранее описать, какой результат их не поддержит. Выбрать первичную метрику Q
+и допустимую потерю δ с научным смыслом; не брать δ из увиденного test.</p>
+<p>Определить границы самостоятельного вклада: адаптация C; packer, state extraction
+и маршрутизатор R фиксируются в основном опыте. Сравнение функций потерь и
+reasoning формулируется отдельными факторами, а не названием одного метода.</p>
+<p><strong>Выход:</strong> protocol version, таблица arms, словарь событий/метрик, rubric v0,
+решение о первичном контрасте и перечень открытых параметров. Каждый численный
+параметр имеет статус «предложение» или «закреплено до test» и источник решения.</p>
+<p><strong>Проверка:</strong> два читателя одинаково классифицируют 10–20 учебных примеров и
+могут указать, что именно меняется между B и C. Это предложение размера smoke audit.
+<strong>Стоп/альтернатива:</strong> если метка неоперациональна, сначала сузить задачу до
+evidence usefulness; не запускать обучение на суррогате без названия и проверки.</p>
+<h2 id="p1-аудит-стенда-и-моделей">P1. Аудит стенда и моделей</h2>
+<p><a href="../../research-atlas/phase-01.html">Анимированная иллюстрация P1</a>.
+<strong>Вход:</strong> P0, upstream τ-bench/τ²-bench, model cards, training code и статьи.</p>
+<p><strong>Действия.</strong> Зафиксировать репозиторий, commit, domain, tasks/KB/policy/tools/evaluator
+hashes и runtime. Не смешивать исходный τ-bench 2024 с τ-knowledge из современного
+τ²-bench: похожее имя не означает одинаковые задачи и протокол. Проверить фактический
+список task IDs и происхождение split. Проверить лицензии отдельно для кода,
+данных, весов и созданных teacher outputs; не считать лицензию библиотеки лицензией
+всего downstream corpus. Записать дату доступа и разрешённое распространение.</p>
+<p>Для кандидата компактной модели проверить end-to-end inference на полном
+сериализованном <code>(state, candidate, labels, instructions)</code>; измерить токены
+её tokenizer, пиковую память и batch latency. Протестировать границы окна без
+silent truncation. Различать заявленное/served окно и валидированное качество.
+Проверить один training step: loss конечен, градиент ненулевой, параметры
+обновились, checkpoint сохраняется/загружается и меняет прогноз воспроизводимо.
+Такая проверка ещё не доказывает улучшение качества.</p>
+<p>Для LLM выбрать точную версию, provider, режим reasoning и лимиты. Если snapshot
+не доступен через API, сохранять alias, дату, returned model ID, provider и
+отмечать невозможность строгого повторения backend. Зафиксировать одинаковую
+модель simulator/evaluator во всех сравнениях. Учесть обязательные поля истории
+reasoning и tool calls у provider; не стирать их незаметно в одной ветке.</p>
+<p><strong>Выход:</strong> source manifest, compatibility report, hardware profile, модель-кандидат
+для основного опыта и один резервный вариант. <strong>Критерий:</strong> подтверждены native
+runner, readout вероятностей и реальный путь обновления весов выбранной модели.</p>
+<p><strong>Стоп/альтернатива:</strong> если текущий API модели не поддерживает fine-tuning, сначала
+проверить публичный trainer. Замена на другой encoder — отдельная модельная линия,
+а не adapted версия прежнего checkpoint. Если inference не помещается, уменьшить
+общий допустимый input по заранее установленному правилу или выбрать модель;
+не обрезать отдельные arm по-разному.</p>
+<h2 id="p2-минимальный-harness">P2. Минимальный harness</h2>
+<p><a href="../../research-atlas/phase-02.html">Анимированная иллюстрация P2</a>.
+<strong>Вход:</strong> проверенная версия τ²-bench, контракт P0, manifest P1.
+<strong>Ответственность:</strong> общий компонент команды; инициатор отвечает за адаптационный
+интерфейс и воспроизводимость своего использования.</p>
+<p><strong>Действия.</strong> Сначала воспроизвести native episode и получить штатный reward/trace.
+Затем добавить agent adapter, который получает только разрешённые наблюдения.
+Хранить append-only raw history; отдельно построить observed_pool с provenance и
+дедупликацией по ID+content version. Сформировать immutable snapshot и общий hash.
+State extractor фиксирован и не вызывает отдельную LLM-сводку.</p>
+<p>Сделать три реализации scorer интерфейса: LLM, frozen compact, adapted compact;
+на этом этапе adapted может быть только будущей точкой подключения, её нельзя
+отмечать работающей. Добавить детерминированный packer и проверку бюджета готового
+payload. Model projection заменяет только retrieval bodies квитанциями, сохраняет
+call IDs/roles/non-KB responses, вставляет выбранный evidence block один раз.</p>
+<p>Native actor продолжает диалог и вызывает tools. Отдельный evaluator получает
+свой штатный контекст, но scorer не получает Task/gold/future/hidden corpus.
+Встроить trace emitter с таймингами, usage, cache, retries и причинами отказов.
+Технический fallback использует тот же snapshot, а его затраты включаются в arm.
+Ранжирование вероятностей не превращается в риск-гейт само собой.</p>
+<p><strong>Выход:</strong> adapter/scorer/packer/projection/trace modules и маленькие воспроизводимые
+fixtures с настоящими формами native сообщений. Предлагаемые интерфейсы и точки
+расширения — в <a href="../system-one-atlas-architecture/">техническом приложении</a>.</p>
+<p><strong>Критерий:</strong> проходят тесты mixed tool batch, no hidden data, state update,
+content version, exact token boundary, duplicate evidence, invalid IDs, timeout,
+NaN и exhausted fallback. No-op projection не меняет native поведение на fixture.
+<strong>Стоп/альтернатива:</strong> нарушение инварианта tool history блокирует сбор данных;
+не чинить его удалением неудобных tool calls или отключением evaluator.</p>
+<h2 id="p3-разделение-задач">P3. Разделение задач</h2>
+<p><a href="../../research-atlas/phase-03.html">Анимированная иллюстрация P3</a>.
+<strong>Вход:</strong> inventory реальных задач и правил P1; labels и траектории ещё не собраны.</p>
+<p><strong>Действия.</strong> Создать task-family graph: общий шаблон запроса, policy scenario,
+связанные entities, почти одинаковые формулировки/решения. Применить grouping
+и проверить компоненты вручную. Все turns, retries, paraphrases, teacher answers
+и synthetic descendants одной группы наследуют её split.</p>
+<p>Рабочее предложение — train/dev/test около 60/20/20 по независимым группам, а не
+случайно по парам. Фактические количества становятся известны после аудита.
+Если групп мало или одна группа слишком велика, сохранить связность и показать
+дисбаланс; не разрезать её ради красивой пропорции. Dev выделить для выбора
+гиперпараметров; при необходимости отдельный calibration subset либо grouped
+cross-validation внутри train/dev. Final test отделяется один раз.</p>
+<p>KB может быть общим доменным справочником по native правилам; это same-domain
+setting, а не гарантия unseen knowledge. Совпадение KB-текста, input пары и
+task template — разные виды пересечения, их отчёт ведётся отдельно. Hidden gold
+допускается только в закрытом offline процессе подготовки train labels/оценки
+с контролем происхождения, никогда в входах рабочего агента.</p>
+<p><strong>Выход:</strong> split manifest с IDs, family IDs, seed, hashes, алгоритмом и ручными
+исключениями; leak report; перечень запретов на использование test.
+<strong>Проверка:</strong> ни одна ancestry group не пересекает split; exact и near-duplicate
+пары проверены; test IDs не появляются в teacher train job и HPO manifest.</p>
+<p><strong>Стоп/альтернатива:</strong> full published 97-task оценка не является независимым test,
+если часть этих задач использована для обучения. При нехватке данных использовать
+grouped cross-validation для разведки и отдельный небольшой holdout с широкими CI;
+не обещать прежнюю сравнимость с leaderboard. Synthetic examples увеличивают
+число примеров, но не число независимых задач.</p>
+<h2 id="p4-сбор-наблюдений">P4. Сбор наблюдений</h2>
+<p><a href="../../research-atlas/phase-04.html">Анимированная иллюстрация P4</a>.
+<strong>Вход:</strong> working harness P2, sealed split P3, лимит будущей серии.</p>
+<p><strong>Действия.</strong> Начать с native и дешёвого/LLM baseline collector на train/dev,
+с заранее заданными task IDs, seeds, actor/simulator versions и retry policy.
+Сохранять не только успешные эпизоды: ранние ошибки и трудные состояния нужны
+для оценки границ. У каждого episode — immutable raw trace и runner outcome.</p>
+<p>После каждого нового KB batch сохранить snapshot до следующего actor call:
+cutoff, state fields с provenance, весь observed_pool, hashes и exact serialization.
+Не добавлять в pool документы, которые среда не вернула агенту. Не подменять
+старое наблюдение новой редакцией по тому же ID. Упаковка используется для
+выполнения, а full observed_pool сохраняется для последующего разбора.</p>
+<p>Контролировать частоты сценариев, длины состояния/кандидата, пустые пулы,
+переполнения, дубли и систематические ошибки парсинга. Отметить collector policy
+в dataset card: один teacher генерирует смещённое распределение состояний.
+При добавлении другого collector сохранять источник и сравнить покрытие;
+смешивание не превращает записи в независимые task samples.</p>
+<p><strong>Выход:</strong> episode manifests, raw trajectories, snapshot index, parser diagnostics,
+usage ledger. Тела данных — вне Git с checksum и доступным команде хранилищем;
+в Git — схемы, разрешённые примеры, metadata и команды после появления кода.</p>
+<p><strong>Проверка:</strong> из raw trace повторно строятся те же snapshot hashes; cutoff
+исключает будущее; каждый candidate ссылается на наблюдение; число пропущенных
+или повреждённых записей явно опубликовано. <strong>Стоп:</strong> превышение лимита расходов,
+утечка test, изменение provider/model или parser regression останавливает job.
+Повтор оформляется новым run ID; сырой результат не переписывается.</p>
+<h2 id="p5-разметка-и-датасет">P5. Разметка и датасет</h2>
+<p><a href="../../research-atlas/phase-05.html">Анимированная иллюстрация P5</a>.
+<strong>Вход:</strong> train/dev snapshots, rubric P0 и происхождение всех наблюдений.</p>
+<p><strong>Действия.</strong> Сначала создать небольшой вручную проверенный audit set с полезными,
+неполезными и неоднозначными фрагментами. Независимо разметить часть примеров
+двумя читателями; сохранить disagreement и adjudication. Не считать учителя
+золотым стандартом по факту высокой уверенности.</p>
+<p>Для масштабирования применить teacher к <code>(state, candidate)</code>, сохранив model,
+prompt, raw response, reasoning mode и расходы. Полезность проверять по тексту
+правила, применимости к фактам и информационной потребности. Для subset провести
+counterfactual проверку набора: при одинаковом состоянии/seed сравнить включение
+и удаление evidence. Стохастический rollout даёт оценку эффекта, а не абсолютный
+oracle; дубли и взаимодействия фрагментов могут скрывать необходимость каждого.</p>
+<p>Формировать hard negatives из observed_pool: близкая тема с неверным типом
+счёта, исключение с неподходящим условием, неприменимая к текущему состоянию версия.
+Дублирование применимого правила само по себе не делает candidate отрицательным:
+избыточность относится к составу набора и оценивается отдельно. Не брать произвольный hidden corpus
+как будто он был доступен агенту. Частоты классов и веса sampling фиксировать;
+на test сохранять естественную или явно описанную оценочную выборку.
+Resampling меняет доли классов и распределение оптимизируемого риска:
+зафиксировать целевую популяцию, выборочные веса и отдельно оценивать
+калибровку на её отложенной выборке. Balanced train сам по себе не делает
+вероятности откалиброванными для естественной частоты полезных фрагментов.</p>
+<p>Отдельные таблицы: candidate labels, set sufficiency labels, native episode
+outcomes. Success episode нельзя размножить как y=1 на все его chunks. Uncertain
+примеры исключать из primary hard-label loss по явному правилу либо моделировать
+как soft labels в отдельной абляции; не подменять несогласие вероятностью истины.</p>
+<p><strong>Выход:</strong> dataset card, rubric version, annotation lineage, train/dev manifests,
+class/length/source distributions, quality audit и frozen preprocessing.
+<strong>Критерий:</strong> известны оценка ошибок меток и интервалы/ограничения, все входы
+не содержат labels/rationales/gold; дубликаты не пересекают split.
+<strong>Стоп/альтернатива:</strong> если labels невалидны, уменьшить объём и повысить ручную
+проверку; большой шумный набор не считать достаточным основанием обучения.</p>
+<h2 id="p6-baseline-и-default-system-one">P6. Baseline и default System One</h2>
+<p><a href="../../research-atlas/phase-06.html">Анимированная иллюстрация P6</a>.
+<strong>Вход:</strong> P2 и проверенные данные P5. <strong>Цель:</strong> проверить весь измерительный тракт
+до дорогой адаптации и получить содержательную точку отсчёта.</p>
+<p><strong>Действия.</strong> На одинаковых frozen snapshots оценить BM25/recency, основной
+LLM joint selector A и default compact scorer. A выдаёт упорядоченные IDs,
+которые проходят общую проверку допустимости и бюджета. Для диагностического
+сравнения оценщиков добавить отдельный A-pointwise с выходом p(useful).
+Указать prompt/label descriptions: default не значит
+отсутствие настройки входа, поэтому prompt выбирается по train/dev и затем
+замораживается. Один packer и tie-breaking используются в B/C, дешёвых
+ranking-контролях и A-pointwise; общий бюджет и информация сохраняются также
+в joint A, который сам предлагает набор.</p>
+<p>Посчитать Brier/NLL для probabilistic arms, PR-AUC, ranking/coverage и полноту
+evidence set. BM25 scores не выдавать за вероятности; для него ranking/set/episode
+метрики достаточны. Не сравнивать NLL по разным ground-truth определениям.
+Сохранить штатную temperature default checkpoint как B-published. Дополнительно
+сравнить raw B/C и одинаково откалиброванные B+TS/C+TS, используя один отдельный
+calibration subset и одинаковое правило подбора temperature. Не приписывать
+обновлению весов эффект temperature, изменённой только у adapted модели.</p>
+<p>Запустить небольшой dev online pilot N/H/A/B. Измерить успех, ошибки policy/tools,
+длину эпизодов, частоты вызовов/fallback и полные расходы. Удерживать одинаковый
+actor/simulator/evaluator, задачи и seed schedule; порядок arm по возможности
+перемешивать, чтобы дрейф provider или нагрузка не совпали с методом.</p>
+<p><strong>Выход:</strong> baseline report, проверенный usage accounting, распределения latency,
+прогноз стоимости полной серии. Не перенести dev цифры в график final test.
+<strong>Критерий:</strong> native reward корректно считывается, failed/timeouts не потеряны,
+цена scorer включена; offline и online истории помечены отдельно.
+<strong>Стоп/альтернатива:</strong> если BM25 уже выигрывает и обучение не обещает улучшения,
+это основание сузить/переосмыслить гипотезу, а не убрать дешёвый baseline из статьи.</p>
+<h2 id="p7-дообучение-и-абляции">P7. Дообучение и абляции</h2>
+<p><a href="../../research-atlas/phase-07.html">Анимированная иллюстрация P7</a>.
+<strong>Вход:</strong> frozen checkpoint, dataset v1, baseline P6 и измеренный training budget.</p>
+<p><strong>Действия.</strong> Первый опыт — CE на проверенных hard labels без rationale в student
+input. Сначала smoke step, затем небольшой train subset, затем разрешённая серия.
+Сохранять seed, optimizer, learning rate, schedule, batch/accumulation, epochs,
+precision, trainable layers, tokenizer, data order, hardware и checkpoint lineage.
+Не предполагать, что LoRA поддерживается конкретным нестандартным encoder.
+Сравнение head-only и encoder adaptation — самостоятельная ось, если оно нужно.</p>
+<p>Повторить Brier-only с той же инициализацией, данными, числом примеров/шагов и
+сопоставимым HPO budget. Одинаковый learning rate — полезный контроль, но разные
+масштабы gradient могут требовать равноправного dev search для обоих losses.
+Не считать флаг CE+λBrier чистым Brier. Проверить реализацию формулы на малом
+ручном примере и finite gradients. Смешанный loss — дополнительный arm с явно
+записанным λ. Early stopping и победитель выбираются до final test.</p>
+<p>Предложенная основная матрица: frozen, adapted-CE, adapted-Brier; желательно
+несколько независимых training seeds по бюджету. Учитель с рассуждением/без
+рассуждения — следующий 2×2 опыт: teacher mode × student loss. При этом student
+в обоих случаях выдаёт p напрямую. У учителя одинаковая наблюдаемая информация,
+model snapshot и сопоставимый лимит генерации; расход и фактические tokens
+публикуются. Эффект teacher quality может быть медиатором, его надо измерить.</p>
+<p>Reasoning на inference у decoder — другой эксперимент. Compact encoder нельзя
+переключить в CoT тем же флагом. <strong>OpenJev-RLCD</strong> включает rollout rationale,
+readout и score-function обучение генерации; это другая модельная линия/teacher,
+которая не изолирует лишь смену CE на Brier. <strong>Laya/SBERT2S1-RLCD</strong> использует
+возмущения logits и составной proper-score reward без текстового rationale.
+Для этой ветки сравнивать прямую оптимизацию той же функции, PG-LOO и Reparam;
+не называть её автоматически Brier-only. Distillation в compact student
+оценивается отдельно. Основания и ограничения — в
+<a href="../system-one-atlas-evidence/#3-что-в-открытом-training-коде-подтверждено">проверке источников</a>.</p>
+<p><strong>Выход:</strong> checkpoints, training manifests, learning curves, dev selection ledger,
+loss audit, adapter compatibility. <strong>Критерий:</strong> положительный или отрицательный
+dev эффект измерен, а финальный набор конфигураций заморожен.
+<strong>Стоп/альтернатива:</strong> нет надёжных labels, OOM, нестабильный loss, отсутствие
+dev улучшения после ограниченного search или исчерпан бюджет — остановить
+расширения, сохранить причины и завершить основной сравнительный опыт.</p>
+<h2 id="p8-закрытая-итоговая-оценка">P8. Закрытая итоговая оценка</h2>
+<p><a href="../../research-atlas/phase-08.html">Анимированная иллюстрация P8</a>.
+<strong>Вход:</strong> sealed final configs/checkpoints, test manifest, analysis plan,
+зафиксированная δ, разрешённый расход и остановка.</p>
+<p><strong>Действия.</strong> Сначала подтвердить hashes и отсутствие test в training/HPO.
+Выполнить одинаковую test task-seed матрицу для A/B/C и N/H. Повторы считаются
+внутри задачи; все arm используют одну схему simulator seeds, но их диалоги
+могут расходиться после первого различия. Не требовать одинакового числа turns
+как условия справедливости; учитывать его как часть результата.</p>
+<p>Разделить offline оценку на фиксированных наблюдениях и on-policy closed-loop
+эпизоды. Успех native evaluator — первичная agent метрика; tool/policy ошибки,
+retrieval failures и качество контекста объясняют эффект. Вывести cost per attempted
+episode, total cost / number successful episodes и отдельно стоимость user
+simulator/evaluator как цену исследования. При нуле успехов cost per success
+не конечен, а не равен нулю.</p>
+<p>Для разности методов использовать парные оценки по задачам; доверительные
+интервалы bootstrap группировать по task/family, не по chunks. Training seed
+variability и simulator variability отражать отдельно. Заранее указать primary
+contrast, secondary contrasts и способ обращения с множественными сравнениями.
+Не считать каждый turn новой независимой задачей.</p>
+<p><strong>Выход:</strong> immutable run manifest, raw/aggregate metrics, paired differences,
+95% CI с описанным методом, failure inventory, reproducible analysis script.
+<strong>Критерий:</strong> на каждом графике есть unit, n задач/групп/seeds, split и версии;
+нет исключённых неудобных failures. <strong>Стоп/альтернатива:</strong> сбой измерения требует
+нового прогона с записью причины; после просмотра test нельзя бесшумно выбрать
+другие гиперпараметры и назвать повтор независимой оценкой.</p>
+<h2 id="p9-устойчивость-и-экономика">P9. Устойчивость и экономика</h2>
+<p><a href="../../research-atlas/phase-09.html">Анимированная иллюстрация P9</a>.
+<strong>Вход:</strong> primary results P8 и predeclared sensitivity plan.</p>
+<p><strong>Действия.</strong> Проверить бюджет контекста (например, предложенные 1024/2048/4096),
+длины входа, редкие policy exceptions, ошибочные/пустые retrieval, качество на
+сценариях с несколькими необходимыми фрагментами. Эти числа — профили, а не
+измеренный optimum. Не выбирать лучшую test конфигурацию как новый primary.</p>
+<p>Проверить вероятность technical fallback и цену его двойной работы; разложить
+полную latency на preprocessing, очередь/сеть, scorer, packer, actor, tools и
+retries. Замерять wall-clock после синхронизации устройства, cold start отдельно
+от steady state. Batch throughput и online single-episode latency не смешивать.</p>
+<p>Построить quality–cost и quality–latency Pareto plots по фактическим наблюдениям
+с CI. Отдельно посчитать цену teacher data, manual labels, HPO и GPU train;
+сравнить service inference и total research budget. N* считать лишь при
+положительной разности цены и допустимом качестве; при малой/неопределённой
+экономии публиковать диапазон или отсутствие устойчивой оценки окупаемости.</p>
+<p>Опционально проверить другой домен как external validation, не смешивая его
+с исходным same-domain вопросом. Риск-гейт R сравнивать в отдельной серии
+при фиксированном C и независимой calibration; это вклад маршрутизации.</p>
+<p><strong>Выход:</strong> robustness report, cost model, failure taxonomy и ограничения
+обобщения. <strong>Критерий:</strong> основной вывод не держится на одном удобном budget,
+игнорировании fallback или неподтверждённом тарифе. <strong>Стоп/альтернатива:</strong>
+неустойчивость — часть результата; не прятать её выбором единственного среза.</p>
+<h2 id="p10-выводы-воспроизведение-и-вкр">P10. Выводы, воспроизведение и ВКР</h2>
+<p><a href="../../research-atlas/phase-10.html">Анимированная иллюстрация P10</a>.
+<strong>Вход:</strong> P0–P9, источники с версиями, разрешения на распространение, правила ВКР.</p>
+<p><strong>Действия.</strong> Составить evidence ledger: каждое утверждение → таблица/график →
+analysis version → run IDs → model/data/split manifests. Разделить «наши
+измерения», «результаты авторов», «интерпретация» и «не проверено».
+Для каждого H написать поддержана/не поддержана/недостаточно данных и объяснить
+область применимости. Не заменять отсутствие значимости утверждением о равенстве.</p>
+<p>Пакет воспроизведения содержит окружение/lockfile, конфигурации, происхождение
+данных, split/checkpoint hashes, инструкции получения разрешённых assets,
+команды реального кода и небольшой smoke example. Секреты, персональные данные,
+веса и большие сырые выгрузки в Git не включаются. Проверить воспроизведение
+из чистого окружения хотя бы одним участником; если доступен только автор,
+честно обозначить ограничение самостоятельной проверки.</p>
+<p>Предложенная структура текста: постановка и ограничения; обзор typed decisions
+и адаптации; формальная модель/гипотезы; данные и предотвращение утечки;
+архитектура и реализация; протокол опытов; результаты с CI и ошибками;
+экономика/ограничения; заключение и личный вклад. Требования оформления и
+академические согласования берутся из <a href="../vkr/">реестра ВКР</a>, а не из атласа.</p>
+<p>Обновить HTML-карты фактическими статусами и ссылками на результаты. Анимации
+остаются объяснением, не заменяют raw metrics. Сохранить отрицательные прогоны,
+исправления версионировать. Публикацию репозитория, статьи и отправку материалов
+выполнять только в пределах отдельного поручения.</p>
+<p><strong>Выход:</strong> воспроизводимый исследовательский пакет, текст ВКР, материал доклада,
+явное указание общего/личного вклада и AI-помощи. <strong>Критерий завершения:</strong>
+получены постановка, воспроизводимый агент, измерения и честное сравнение;
+положительный эффект, RLCD и статья не обязательны для завершения.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "laya": {
+    "sklearn_metrics": {
+      "accuracy": 0.4482758620689655,
+      "balanced_accuracy": 0.5555555555555556,
+      "f1": 0.5789473684210527,
+      "roc_auc": 0.6161616161616161,
+      "brier": 0.46422354274809263,
+      "nll": 1.6934281215146834
+    },
+    "requests": 90,
+    "input_hashes_verified": 30,
+    "min_tokens": 364,
+    "max_tokens": 3364,
+    "probability_spread_max": 0.0
+  },
+  "kev-0.8b": {
+    "sklearn_metrics": {
+      "accuracy": 0.5862068965517241,
+      "balanced_accuracy": 0.648989898989899,
+      "f1": 0.625,
+      "roc_auc": 0.7525252525252526,
+      "brier": 0.2450578785760716,
+      "nll": 0.6850847390022229
+    },
+    "requests": 90,
+    "input_hashes_verified": 30,
+    "min_tokens": 340,
+    "max_tokens": 3181,
+    "probability_spread_max": 0.0
+  },
+  "kev-4b": {
+    "sklearn_metrics": {
+      "accuracy": 0.8275862068965517,
+      "balanced_accuracy": 0.7904040404040404,
+      "f1": 0.7368421052631579,
+      "roc_auc": 0.9595959595959596,
+      "brier": 0.110538085940763,
+      "nll": 0.3641057982090512
+    },
+    "requests": 90,
+    "input_hashes_verified": 30,
+    "min_tokens": 340,
+    "max_tokens": 3181,
+    "probability_spread_max": 0.0
+  },
+  "ledger_unchanged": true,
+  "order_identical": true,
+  "common_rows": 30,
+  "common_hard_n": 29,
+  "inference_runner_sha256": "2c639ca88c95bf9d437629a1fa0cd24788a673cfd892bb11570a8a3f0147c569"
+}

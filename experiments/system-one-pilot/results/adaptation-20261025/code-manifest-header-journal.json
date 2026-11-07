@@ -1,0 +1,10 @@
+[
+  {
+    "path": "scripts/system_one_pilot/live_api.py",
+    "sha256": "20469e11db4312ff0d87ea7af5b0428709f24ccf8c55f5e2fb2214a632eeafbc"
+  },
+  {
+    "path": "tests/test_system_one_live.py",
+    "sha256": "653fa7121fde9ceb913d3719a5d82d1ae45fd6a6d85d931521c0a926ff0b20b8"
+  }
+]

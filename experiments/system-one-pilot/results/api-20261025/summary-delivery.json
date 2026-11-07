@@ -1,0 +1,513 @@
+{
+  "at": "2026-10-25T06:55:27.839967+00:00",
+  "status": "ready_for_human_review",
+  "run_root": "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/api-v1",
+  "versions": {
+    "at": "2026-10-25T06:55:27.858767+00:00",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "source_sha256": {
+      "scripts/system_one_pilot/fetch.py": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+      "scripts/system_one_pilot/review.html": "26217deb9eae80f0fcca7f9da0f98d0b8f3ef4aae152f98ab77087ee3918b901",
+      "scripts/system_one_pilot/rubric-v1.txt": "e8d188c9c3fc56d2a74be63a1231c7b6d7aec6efa481658eb9057fc23833593d",
+      "scripts/system_one_pilot/live_data.py": "5c4e72403337a28a17f4ec37be5ca658811672d90a065ac54a9ab261e917385f",
+      "scripts/system_one_pilot/__init__.py": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+      "scripts/system_one_pilot/review.py": "d3d651b5b7c029677b0f8c5f8fbede4e1b5638cf77807999fb7dbffe6be47599",
+      "scripts/system_one_pilot/model.py": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+      "scripts/system_one_pilot/cli.py": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+      "scripts/system_one_pilot/live_api.py": "af02539e5c4b47494130a4ba6de5ffcf1d1a4f3fa8e076db09177ff6589eda7e",
+      "scripts/system_one_pilot/live.py": "5e4df1f38672aafa12e87bf3c9aff5e6f4d69af685f5e64b48efc097b7ac951c",
+      "scripts/system_one_pilot/report.py": "3708d184a8fae962927b27166c0e6e8d0d5b8af5d2d8fb02b97c44a050d2e95d",
+      "scripts/system_one_pilot/data.py": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380"
+    },
+    "source_bundle": "artifacts/system-one-pilot/code-snapshots/3098af5778d9726f750d999e3d2642dff303aa4709a0444f69df13fd28f1e18f.zip",
+    "source_bundle_sha256": "d0e5667a146044ab38498629c19f4bf0e5158452f4fd8c68fb5299da846e59bc",
+    "versions": {
+      "torch": "2.9.1",
+      "transformers": "4.57.1",
+      "litellm": "1.82.6",
+      "rank-bm25": "0.2.2",
+      "certifi": "2025.11.12"
+    }
+  },
+  "split_sha256": "6eedb7f5698bb1421498a2c760ca8699067ec30f1d26a7b9504049fd57e9be1c",
+  "episodes": [
+    {
+      "task_id": "task_019",
+      "status": "completed",
+      "messages": 48,
+      "termination_reason": "user_stop",
+      "error": null,
+      "wall_seconds": 234.689287,
+      "source": "trajectories/task_019.json",
+      "sha256": "5c2b26edc8f0f270d5243dc8cc9e2265189249daeff06cf04aed0e8f9d8f47d6"
+    },
+    {
+      "task_id": "task_032",
+      "status": "completed",
+      "messages": 26,
+      "termination_reason": "user_stop",
+      "error": null,
+      "wall_seconds": 104.46132,
+      "source": "trajectories/task_032.json",
+      "sha256": "6ac0764cd5f7db0b27275f4db6ba8cb0a8253d7d9a855f8833a0d8d0c861c702"
+    },
+    {
+      "task_id": "task_068",
+      "status": "completed",
+      "messages": 79,
+      "termination_reason": "user_stop",
+      "error": null,
+      "wall_seconds": 398.269655,
+      "source": "trajectories/task_068.json",
+      "sha256": "6c2768b5404e01f1350e510318593913f6f643bbe60999f5b57f5ab3ece4bb5d"
+    },
+    {
+      "task_id": "task_086",
+      "status": "completed",
+      "messages": 86,
+      "termination_reason": "max_steps",
+      "error": null,
+      "wall_seconds": 401.092767,
+      "source": "trajectories/task_086.json",
+      "sha256": "2158429bc449549e3f2bc2603e9cf420721b42d0e7471cf6b97cf9ab0d60c9bb"
+    },
+    {
+      "task_id": "task_087",
+      "status": "failed",
+      "messages": 1,
+      "termination_reason": null,
+      "error": {
+        "type": "BudgetError",
+        "detail": "unknown request outcome retained; no automatic retry"
+      },
+      "wall_seconds": 0.670796,
+      "source": "trajectories/task_087.json",
+      "sha256": "956bdcbaf6420148c7f47d44fca10bc1647eb967731f80e783cb37889665fa2b"
+    }
+  ],
+  "user_stop_dialogues": 3,
+  "admission": {
+    "document_snapshot_pairs": 398,
+    "counts_4096": {
+      "STATE_OVERFLOW": 121,
+      "accepted": 277
+    },
+    "raw_counts": {
+      "1024": {
+        "STATE_OVERFLOW": 309,
+        "accepted": 55,
+        "CANDIDATE_OVERFLOW": 34
+      },
+      "4096": {
+        "STATE_OVERFLOW": 121,
+        "accepted": 277
+      },
+      "8192": {
+        "accepted": 357,
+        "STATE_OVERFLOW": 41
+      }
+    },
+    "selected_cards": 30,
+    "selected_tasks": [
+      "task_032",
+      "task_068",
+      "task_086"
+    ],
+    "selected_families": 3,
+    "selected_snapshots": 8
+  },
+  "annotations": {
+    "v1": {
+      "responses": 60,
+      "statuses": {
+        "technical_error": 18,
+        "valid": 42
+      },
+      "by_model": {
+        "deepseek/deepseek-v4.1-flash-1017": {
+          "technical_error": 11,
+          "valid": 19
+        },
+        "qwen/qwen3.8-27b": {
+          "valid": 23,
+          "technical_error": 7
+        }
+      },
+      "valid_labels": {
+        "irrelevant": 30,
+        "useful": 10,
+        "uncertain": 2
+      },
+      "technical_errors": {
+        "annotation schema keys": 8,
+        "annotation quote schema": 7,
+        "incomplete response: length": 3
+      },
+      "pairs_with_two_valid_answers": 16,
+      "same_label_pairs": 16,
+      "different_label_pairs": 0,
+      "uncertain_pairs": 1,
+      "model_defect_pairs": 0
+    },
+    "v2": {
+      "responses": 60,
+      "statuses": {
+        "valid": 59,
+        "technical_error": 1
+      },
+      "by_model": {
+        "deepseek/deepseek-v4.1-flash-1017": {
+          "valid": 30
+        },
+        "qwen/qwen3.8-27b": {
+          "valid": 29,
+          "technical_error": 1
+        }
+      },
+      "valid_labels": {
+        "irrelevant": 39,
+        "useful": 18,
+        "uncertain": 2
+      },
+      "technical_errors": {
+        "annotation quote absent from input": 1
+      },
+      "pairs_with_two_valid_answers": 29,
+      "same_label_pairs": 26,
+      "different_label_pairs": 3,
+      "uncertain_pairs": 1,
+      "model_defect_pairs": 1
+    }
+  },
+  "human_review": {
+    "cards": 30,
+    "statuses": {
+      "pending": 30
+    },
+    "kinds": {
+      "agreement": 17,
+      "uncertain": 1,
+      "control": 7,
+      "model_defect": 1,
+      "technical_error": 1,
+      "conflict": 3
+    },
+    "required": 13,
+    "blind_control_seed": 25,
+    "blind_control_ids": [
+      "421bda8696430110c1fa65ae",
+      "cc0d178cb008040ad6c45530",
+      "bb7af50eb13f9714fafa584f",
+      "6a1e739b5686255d0733e225",
+      "5323f1ca828f42ce38d2e743",
+      "116e2f61dad5ebf09360e370",
+      "17b64cd1e920be8c6d39cb3e"
+    ]
+  },
+  "costs": {
+    "collection": {
+      "calls": 141,
+      "reported_usage_cost_usd_exact": "0.05100023096",
+      "budget_charged_or_held_usd": 0.059315396,
+      "unknown_actual_cost_calls": 2,
+      "reported_token_counters": {
+        "prompt_tokens": 3746796,
+        "completion_tokens": 58657,
+        "cached_tokens": 3507584,
+        "reasoning_tokens": 39341
+      },
+      "missing_token_counter_calls": {
+        "prompt_tokens": 2,
+        "completion_tokens": 2,
+        "cached_tokens": 2,
+        "reasoning_tokens": 2
+      },
+      "token_note": "API-reported counters; reasoning may use a different tokenizer and is not added to completion_tokens"
+    },
+    "annotation": {
+      "calls": 121,
+      "reported_usage_cost_usd_exact": "0.09548411104",
+      "budget_charged_or_held_usd": 0.095484127,
+      "unknown_actual_cost_calls": 0,
+      "reported_token_counters": {
+        "prompt_tokens": 196443,
+        "completion_tokens": 74511,
+        "cached_tokens": 61200,
+        "reasoning_tokens": 55345
+      },
+      "missing_token_counter_calls": {},
+      "token_note": "API-reported counters; reasoning may use a different tokenizer and is not added to completion_tokens"
+    }
+  },
+  "reconciliation_receipts": [
+    {
+      "series": "collection",
+      "call_id": "task_087/000/simulator",
+      "method": "full_reserved_upper_bound",
+      "evidence": "{\"reason\":\"Definite HTTP404 request rejection; first error body was not retained. Later GET /key usage=0, remaining=2. Retain full $0.0068856 as consumed budget, not claimed actual zero; next call is a different minimal routing diagnostic, never replay of the episode.\",\"receipt\":\"experiments/system-one-pilot/results/api-20261025/key-after-404.json\"}",
+      "at": "2026-10-25T05:56:01.882037+00:00"
+    },
+    {
+      "series": "collection",
+      "call_id": "diagnostic/simulator-routing-v1",
+      "method": "full_reserved_upper_bound",
+      "evidence": "{\"reason\":\"HTTP404 fully diagnosed: paid-model-training-violation-by-account. Retain entire maximum, unchanged model snapshot will use explicitly pinned DeepInfra FP8 with account privacy restriction preserved.\",\"receipt\":\"experiments/system-one-pilot/results/api-20261025/routing-rejection-v1.json\"}",
+      "at": "2026-10-25T05:57:37.402895+00:00"
+    }
+  ],
+  "budgets": {
+    "collection": {
+      "series": "collection",
+      "limit_usd": 1.0,
+      "calls": 141,
+      "actual_usd": 0.051000296,
+      "charged_or_held_usd": 0.059315396,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 2
+    },
+    "annotation": {
+      "series": "annotation",
+      "limit_usd": 0.5,
+      "calls": 121,
+      "actual_usd": 0.095484127,
+      "charged_or_held_usd": 0.095484127,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 0
+    }
+  },
+  "runtime": {
+    "at": "2026-10-25T06:21:05.909533+00:00",
+    "device": "mps",
+    "profile": 4096,
+    "frozen_adapted_same_profile": true,
+    "training_run": false,
+    "quality": "not measured; no human labels",
+    "versions": {
+      "at": "2026-10-25T06:21:05.920197+00:00",
+      "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+      "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+      "source_sha256": {
+        "scripts/system_one_pilot/fetch.py": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+        "scripts/system_one_pilot/review.html": "26217deb9eae80f0fcca7f9da0f98d0b8f3ef4aae152f98ab77087ee3918b901",
+        "scripts/system_one_pilot/rubric-v1.txt": "e8d188c9c3fc56d2a74be63a1231c7b6d7aec6efa481658eb9057fc23833593d",
+        "scripts/system_one_pilot/live_data.py": "c08d4ccd5b7cf4ad6b5a332cf0e6450f06efc330f6abb9533828dfa4f348035c",
+        "scripts/system_one_pilot/__init__.py": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+        "scripts/system_one_pilot/review.py": "10b14f553b16a6a9d3a733cd8f4162f3c69cf3a0aca80180114fa55965b287d7",
+        "scripts/system_one_pilot/model.py": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+        "scripts/system_one_pilot/cli.py": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+        "scripts/system_one_pilot/live_api.py": "50252be131d2904f3fef63a75036bf17075b10ffb9f1998ce17d52d8ac072043",
+        "scripts/system_one_pilot/live.py": "fd31e6bec58e70981f11ec06064e0ef16a171f36fe24d5ebfaaa78773e061e51",
+        "scripts/system_one_pilot/data.py": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380"
+      },
+      "source_bundle": "artifacts/system-one-pilot/code-snapshots/0671fd6c4135d2bbdecddb2d14b11fc8a3991dc5753f45e119157cf8a6b6a260.zip",
+      "source_bundle_sha256": "6281d4d68f9eee2a1e6c7841657ec7c575a36e69c68e1c7707d407ab9b754868",
+      "versions": {
+        "torch": "2.9.1",
+        "transformers": "4.57.1",
+        "litellm": "1.82.6",
+        "rank-bm25": "0.2.2",
+        "certifi": "2025.11.12"
+      }
+    },
+    "records": [
+      {
+        "row_id": "6a8ead89839ba273e7983347",
+        "input_sha256": "9970f7b0d5c37c98647b04adc34a99ab4e1bb3ddef6c7dbe6a89b5d0bd993c07",
+        "input_tokens": 316,
+        "full_sequence_tokens": 364,
+        "elapsed_seconds": 0.9225427920464426,
+        "logits": [
+          [
+            -1.4854964017868042,
+            0.04136312007904053
+          ]
+        ],
+        "useful_score_published_calibration": 0.8215463757514954,
+        "temperature": 1.0,
+        "output_finite": true,
+        "process_peak_rss_bytes": 1756364800,
+        "mps_driver_bytes": 1372520448
+      },
+      {
+        "row_id": "8e7f0c55bd3e0c354734b367",
+        "input_sha256": "4883fdd4a5dd7109f9b22bd467177cd5a6c986d55bb847226a3a2473e74a86ec",
+        "input_tokens": 966,
+        "full_sequence_tokens": 1014,
+        "elapsed_seconds": 0.2496187920914963,
+        "logits": [
+          [
+            -4.60936975479126,
+            0.8239259719848633
+          ]
+        ],
+        "useful_score_published_calibration": 0.9956503510475159,
+        "temperature": 1.0,
+        "output_finite": true,
+        "process_peak_rss_bytes": 1756364800,
+        "mps_driver_bytes": 2628960256
+      },
+      {
+        "row_id": "cc0d178cb008040ad6c45530",
+        "input_sha256": "290c4ea00905d804f5798da5e075c2b87a6e9dc0cc822031dcd32890f547736e",
+        "input_tokens": 3316,
+        "full_sequence_tokens": 3364,
+        "elapsed_seconds": 1.3610865420196205,
+        "logits": [
+          [
+            -0.09760378301143646,
+            -0.5788286924362183
+          ]
+        ],
+        "useful_score_published_calibration": 0.38196292519569397,
+        "temperature": 1.0,
+        "output_finite": true,
+        "process_peak_rss_bytes": 1756364800,
+        "mps_driver_bytes": 4260823040
+      }
+    ]
+  },
+  "artifacts": {
+    "admission.json": "45f742538a650f83b7f47b0ed1ddd41cd790debe0612d6cb9515b5a0ba814a4b",
+    "annotation-plan-v2.json": "c71b98d217c102d8e5bb910076316381a706ec44f38cfe4eaf8345a0a74f8627",
+    "annotations/013d9f65b1db2e02674bacb7-deepseek.json": "1abf302cfffea53a822395c468cbc43594fb9397ba6169b76b5344a1bac94230",
+    "annotations/013d9f65b1db2e02674bacb7-qwen.json": "1f03f73da980d8c399d5bac9f191a48186f74d80cc5047a90eef01d3e4418126",
+    "annotations/116e2f61dad5ebf09360e370-deepseek.json": "52a4a63d398115a5176717c8c8712646cd61924f71ad0c104f0b6f74bb761847",
+    "annotations/116e2f61dad5ebf09360e370-qwen.json": "308175916bfb3c0aa95bf669dc218ca804c4527ae851eb6bb5a891f7fbb48a7d",
+    "annotations/17b64cd1e920be8c6d39cb3e-deepseek.json": "c63836d5779faf3cb1b44b3e7f5e100ea72053e6153a0991cb0a204ca103d95f",
+    "annotations/17b64cd1e920be8c6d39cb3e-qwen.json": "3ddfc47f875fe875b71fada344dea13890711057b019b170676ea03e9172ae35",
+    "annotations/1c5ca18f7d3950cfbe0d06f9-deepseek.json": "0f4f03483593594d06755f4f991188406fe83980f6ed83e244976c22d307b744",
+    "annotations/1c5ca18f7d3950cfbe0d06f9-qwen.json": "169625888ac83201087483db378f0a2d594d2891b2075c4cc47cbf1b2afec7f5",
+    "annotations/1d15ad55cad2555503b3032a-deepseek.json": "da21e6c9e89cb973fd433705bb00be8e1cc7adc5bb5ca59a45fa60d87c45a27c",
+    "annotations/1d15ad55cad2555503b3032a-qwen.json": "3c6280cf7c1a1cb8a9d1d171e081b5c5a37935a091ea3db4e693ddd21ec17b41",
+    "annotations/21656bfb11c05ff62bda3303-deepseek.json": "dd5aad162c02a9f025a88c8e4bfb19b2cc643e4d23297271871057ef22c35f31",
+    "annotations/21656bfb11c05ff62bda3303-qwen.json": "65a043b35433125b4c52f3b55922ee221b0803f60d06a10f07c9ee0b86754059",
+    "annotations/3195ac7a9834c36f859c6d1e-deepseek.json": "0aab3d0b8f6dc8136982ea51ed9cefc2b444272a9a9330cee67a25327a078615",
+    "annotations/3195ac7a9834c36f859c6d1e-qwen.json": "29015ad886abfcbd615374d90377c8c978fb5be5f2433915a736f6fdc3c5655a",
+    "annotations/3631c5fb4f6e13fa2ceac8fd-deepseek.json": "dc30c26e268896be49d0fb0e48d0c741724d93c192fdfa022cecaa2a54deb443",
+    "annotations/3631c5fb4f6e13fa2ceac8fd-qwen.json": "496a7068228eaa1b7500a5a2c141101ee97b1ad5f2826b13140df6f3aec1e28d",
+    "annotations/3f864f7c7c9f44bcc4479c64-deepseek.json": "7b9e64ab71f089e08d74033830d8b7b3f309d9b424bf22da904c715701e11c45",
+    "annotations/3f864f7c7c9f44bcc4479c64-qwen.json": "cf2a2e9daa283a6d02952be4ad5fe3657e2db2d33ffa85a282056470e5534a24",
+    "annotations/4118735694674d5e9f9b4b8a-deepseek.json": "e093bdb95527073fb8d5f417c8a575a773bea9c44a1b908b92851aa0ebe43311",
+    "annotations/4118735694674d5e9f9b4b8a-qwen.json": "917730cd240e5314be4ff7fb647e99c4f116d971d4e87e36d6f5d898d8f9df8b",
+    "annotations/421bda8696430110c1fa65ae-deepseek.json": "53e88f59cdcc7acfcc9175a6f1f48e03aa5921357fcf5b705b3850bbf307053a",
+    "annotations/421bda8696430110c1fa65ae-qwen.json": "cf4310e974c8e397c37634c12817a3d5f0478d8e07c9abcd04c2de68ecff310d",
+    "annotations/5323f1ca828f42ce38d2e743-deepseek.json": "3c974ad1691d0325a1508b663a3f1d379a33332342602e15af8e83dcf2fee9db",
+    "annotations/5323f1ca828f42ce38d2e743-qwen.json": "8f7c9382f217a015d4a82d66e0908acda6dd8a4e8663de7b033fcd570e9587fa",
+    "annotations/696758e1d5ba4a93710adc3e-deepseek.json": "8ceb5638c5036761fda9a58d32f98efae742d273bd45a23d8e5503a25d396e01",
+    "annotations/696758e1d5ba4a93710adc3e-qwen.json": "722153170ed6a44ee7cf0adf801bbcc72db264c30f4e655b9622cd64df3d81fa",
+    "annotations/6a1e739b5686255d0733e225-deepseek.json": "6481f82091e179048dfb58fc88a2386c590ad9af96272ad028feac8eb9c98cf5",
+    "annotations/6a1e739b5686255d0733e225-qwen.json": "820db4c7ccd9f5a3dede65fdd9840ccaa544cdbb43a77530a4de458b0268cbea",
+    "annotations/6a8ead89839ba273e7983347-deepseek.json": "8cafa0ca672fdb674b68d2aa8482ab043e8a09f24184981d9e0d9d10d3bdb454",
+    "annotations/6a8ead89839ba273e7983347-qwen.json": "35fba44933078f46f694d7ec8a4d125fff807073ed99ab2a2ae5f92537f08411",
+    "annotations/824e44c64d2816de6cab45ec-deepseek.json": "9aa0d220d306f922dc28ecd15feeb62819f9b7b7c168808259fe37f99a626c22",
+    "annotations/824e44c64d2816de6cab45ec-qwen.json": "9e30292c510fa6c71c9bafafea76123dd5369d888f8a8ab3195a6f986280605e",
+    "annotations/8e7f0c55bd3e0c354734b367-deepseek.json": "85c90193be932e31af45b7cf3a0bc97b72844d25ad07e30d23033b09f88d918f",
+    "annotations/8e7f0c55bd3e0c354734b367-qwen.json": "1c4d73ca474bf29822cc927a724367958d0ac86ff94ea75b347cc606415fad05",
+    "annotations/8f34558113f205dca661c335-deepseek.json": "55b5e6630e7c7c90c3ac30dab8630d5f3dfaad0f8e3176598bd3a39332c82a5e",
+    "annotations/8f34558113f205dca661c335-qwen.json": "1586e7dbf5ef71c738f931375dea3b4cbcc137395cea9122967510adaa67cc8d",
+    "annotations/9e06268347afe4e21163844b-deepseek.json": "8ab73be23f64f20ee86a082a0fac6e37c983d12f53384d61bfe9807d1afa8fbf",
+    "annotations/9e06268347afe4e21163844b-qwen.json": "0efddc67be99f2163bb8d14a17845edd4e03f4fe2896e6d0f191d820fb255d22",
+    "annotations/ac78dc653b8f027a842267bd-deepseek.json": "6546dc91e108017f7b1f2155d2962af1e07f9b7d5323dd57084b824b7ca58c90",
+    "annotations/ac78dc653b8f027a842267bd-qwen.json": "cb0c6a4d5cc04332b039479d3a3e4ab32418bc736d297b8a6f316e07efad1314",
+    "annotations/ba46b0d9e7244518b8ca17b2-deepseek.json": "e5e25065961c7237a2eee0705bbf01a4da53eb581c00a06aa21f8e1b39c5c998",
+    "annotations/ba46b0d9e7244518b8ca17b2-qwen.json": "ef004596ef74f5b166239ef46e128dbe0f8b2b5e50d714ae4473ae0cecad2b41",
+    "annotations/bb7af50eb13f9714fafa584f-deepseek.json": "1c2c7dde2e7479ca30042bc3f39cb1777981f383ad45d81251a7838f29ed5f65",
+    "annotations/bb7af50eb13f9714fafa584f-qwen.json": "415d2e5e5379568614dfad07ad447ca2ac5ed51ab33bcacc31b6ea34f50cf124",
+    "annotations/c25c87badaf493c13925d88e-deepseek.json": "c3bbb3721691261eef8e6529e6748b6589222400e6e4f8d06e215247b8360732",
+    "annotations/c25c87badaf493c13925d88e-qwen.json": "dad7bf2cdf8fe5d409eb01b240a3bf5fdf344fc10745dc4ca6e68896793a2cb8",
+    "annotations/c8692353a90134e6752716ef-deepseek.json": "25951b76b919b78f2e2fbe6b00dfc654eca52d1bb5d1633a1960b2ec6a5f3e46",
+    "annotations/c8692353a90134e6752716ef-qwen.json": "133c63bca2365da55c5e1c9df7328deb9c24a740cc8ffabd948780e701c30081",
+    "annotations/cc0d178cb008040ad6c45530-deepseek.json": "18b65fbde485bf3f24ccc9153dec54059d67341112df63d0639627d8b80f2ffa",
+    "annotations/cc0d178cb008040ad6c45530-qwen.json": "0ffa1d7f4ea67f5eb35758e6f312aea2924871220db2433dce70cf0d97e96ee0",
+    "annotations/cdd196a02bb9e650224096ec-deepseek.json": "4e456080f742313b7fcb66c78aa4c3866ea40192d652f518bc48ec382aa5e7b6",
+    "annotations/cdd196a02bb9e650224096ec-qwen.json": "d1cdf1fc119fce4af1f3e2e309e1bb1a401cac780f80eed2cae69da5f2e11ad2",
+    "annotations/cfa9fdc780533c64c570de37-deepseek.json": "48a20eada7ee8573a05291868ce4e7e4a797ad62cf06034e2062d14f50f31a7a",
+    "annotations/cfa9fdc780533c64c570de37-qwen.json": "69a0f45bf273ff4c998fb6e5086c8e998feae654fb2b8ae9a62205afb4bfebff",
+    "annotations/d7aedd25efd51ae9824cc6cf-deepseek.json": "b9f0bce9b8d16ae4d3896001186ff6c85da1561e33e7d12ef515f497c09e05ed",
+    "annotations/d7aedd25efd51ae9824cc6cf-qwen.json": "45b90c62e8d8f4f363c53f169885cad885ca51f83641f0d69c27f48f0688b1b5",
+    "annotations/dbb3adde03d9d2b572693de5-deepseek.json": "beae6daa0d537f2ac2615bf6c684c249b8a83719d8b12bc7301406e40236288a",
+    "annotations/dbb3adde03d9d2b572693de5-qwen.json": "d8da83eb9b74f11d74bda0ced6dd8456cfc1cc607531d4d1a67f080ce897ef72",
+    "annotations/f8614990bb2e0f3c4ba53bb1-deepseek.json": "17392974c82fdec5098eabcecf492ef4fe002b315514d6f7f7ff43879023748c",
+    "annotations/f8614990bb2e0f3c4ba53bb1-qwen.json": "b9c5cc9f6ba65a0f2ef05de6a4e608745f3bcf7ad8cedd0825e51ac5b0b657a1",
+    "annotations-v2/013d9f65b1db2e02674bacb7-deepseek.json": "0fde4c19a0c797922b43415f1cad4cab14c51f7678547313bda0765338aae53f",
+    "annotations-v2/013d9f65b1db2e02674bacb7-qwen.json": "810f0fc15b9505c6ce522735df5c03fb353533336d301a4d454e7bcc8e4ee509",
+    "annotations-v2/116e2f61dad5ebf09360e370-deepseek.json": "536ea0420a5159544f3a732c1e493dde06273d6f6b183a4d82f73ad3d0c20965",
+    "annotations-v2/116e2f61dad5ebf09360e370-qwen.json": "3cbed3535ee99a097e7d6a0cb9512860b80c622f99012432a1a74948094365a0",
+    "annotations-v2/17b64cd1e920be8c6d39cb3e-deepseek.json": "7957e9c141753f3efe9266dbc55a7653b41c37250264b61c8dd2287688e0171e",
+    "annotations-v2/17b64cd1e920be8c6d39cb3e-qwen.json": "20e8c7279122d4aa7999d520181c6b651afe6332e96f985929ca6d889833f915",
+    "annotations-v2/1c5ca18f7d3950cfbe0d06f9-deepseek.json": "5861eef98cf6a36cbc46a1488b10dbe17b63d63706ae9d1d990e57224466bca9",
+    "annotations-v2/1c5ca18f7d3950cfbe0d06f9-qwen.json": "d261b21a5b24bd59e55c6b22cdc27d466e4cf8022d4c4b718b048a2229c67758",
+    "annotations-v2/1d15ad55cad2555503b3032a-deepseek.json": "9c31574bf44cf65f8c4d8406b2a6994ee835da3c6243ab6943007fa21df26576",
+    "annotations-v2/1d15ad55cad2555503b3032a-qwen.json": "e0c2102bbede9d8033526fb88840d5c4e8082a9282614d467911b5a7af638ada",
+    "annotations-v2/21656bfb11c05ff62bda3303-deepseek.json": "99b6dc20f4252ec97d3a7268a5d05d186b1125f609cc5ee4aa08ac1f013ebd82",
+    "annotations-v2/21656bfb11c05ff62bda3303-qwen.json": "4b677be176734740024d5da0325cb885e15d54a6165f82cc76271aa049658030",
+    "annotations-v2/3195ac7a9834c36f859c6d1e-deepseek.json": "76a314b5d35693a5640cfc0462f7f58544f19adcce33304727ec3d3b70e2a6e8",
+    "annotations-v2/3195ac7a9834c36f859c6d1e-qwen.json": "e272f562c96f06153451d3d78287a772ac99b35a08cb43ff35f7c7da77abcf66",
+    "annotations-v2/3631c5fb4f6e13fa2ceac8fd-deepseek.json": "d6fae09dd2ca50eb519aabef2b8e314c42d1752c2d97b4498a8a6e32f1b5e64d",
+    "annotations-v2/3631c5fb4f6e13fa2ceac8fd-qwen.json": "9222b1fdeae2d9a013378bd0594bfd0e57a1b5d71ff45bcc7551c5fc2940d979",
+    "annotations-v2/3f864f7c7c9f44bcc4479c64-deepseek.json": "70b5c7212456935e9ce1a6ae71cec0967770823d588247f7669ca02197c75042",
+    "annotations-v2/3f864f7c7c9f44bcc4479c64-qwen.json": "af23eacd1098daa28589b00a55af31138a8c2ac31b74f3d882769d3c2ad97325",
+    "annotations-v2/4118735694674d5e9f9b4b8a-deepseek.json": "ced24d35a89d7f79a7c70243941470d01133633ebaf6b426406e9a44ee71ca83",
+    "annotations-v2/4118735694674d5e9f9b4b8a-qwen.json": "305221b74044ca0cef652d6f8e627e2523172f174a1e629e77f51aceb7dfb6b4",
+    "annotations-v2/421bda8696430110c1fa65ae-deepseek.json": "fe0517297cd7ec99e3c4e3e70801aca4b351c400afa61a72a4d66aa93165daf1",
+    "annotations-v2/421bda8696430110c1fa65ae-qwen.json": "e8906713a3eec9dab91c4ff1d13835173c6d932270d74f2acaea1c545636e31a",
+    "annotations-v2/5323f1ca828f42ce38d2e743-deepseek.json": "6b3133a2e73098690e2d888625d56e51e22e1cc1166c09924ae6248921b7ac91",
+    "annotations-v2/5323f1ca828f42ce38d2e743-qwen.json": "1f2da7dbec0b73739eebd9485c6e752a4e3d4a5f7c8ffc3520e472674269b209",
+    "annotations-v2/696758e1d5ba4a93710adc3e-deepseek.json": "b3977b5e1f50ec444132b8efbf07cac41c7f44e5544090c73651ecdb62036e45",
+    "annotations-v2/696758e1d5ba4a93710adc3e-qwen.json": "532e2999493755fdbdc7de53d4e3161bdd44d877c1186d2c2dcd0e9d22a24a92",
+    "annotations-v2/6a1e739b5686255d0733e225-deepseek.json": "3f2a6586156949a103cd049ff38bcd7023d60811262d66c84c2166d0f15aed8e",
+    "annotations-v2/6a1e739b5686255d0733e225-qwen.json": "2df839ea0a744d84153346bfdde16885b6b570dd09dbbee792fcbb70c1263f7b",
+    "annotations-v2/6a8ead89839ba273e7983347-deepseek.json": "fcac56320ca99659109f5a8f0f28cfad63e3f950b035d2a1b4c18e3d9b9ebd83",
+    "annotations-v2/6a8ead89839ba273e7983347-qwen.json": "268e110b0ff6114f1f51da75da661ffc97ef4482d821c2bbc342044930fb5fcb",
+    "annotations-v2/824e44c64d2816de6cab45ec-deepseek.json": "3b0d4f9d04805ac170181422574d4887d76683ffec84836b3213b064c350ccb4",
+    "annotations-v2/824e44c64d2816de6cab45ec-qwen.json": "e77d8293b84653a72fa75f736d34087b16c6fa627e183397eb91dc4370f5312c",
+    "annotations-v2/8e7f0c55bd3e0c354734b367-deepseek.json": "e62276293421800fe7b45cb8bdc9660062bc9772c908fe3fd5d85b96fd37d5e0",
+    "annotations-v2/8e7f0c55bd3e0c354734b367-qwen.json": "5a8fa44f47aab5afa5628262ada827f2e55e0706bf4094155944a231cb64f9af",
+    "annotations-v2/8f34558113f205dca661c335-deepseek.json": "5a15347f911750948c894dac19ae3838e13ecbee73b8ff26826c3683b008983c",
+    "annotations-v2/8f34558113f205dca661c335-qwen.json": "da2fbba3ce6a52ee55f11cbeb81b6d739dbbf1a555926fc8484436d093026b69",
+    "annotations-v2/9e06268347afe4e21163844b-deepseek.json": "8964f42915a6484e6dd9b081dcb457de25b40f22b31fe0c0d1e77b3a311fce0e",
+    "annotations-v2/9e06268347afe4e21163844b-qwen.json": "e091966ea4841719bc46e2d1eaebf61594127a47c4aa86f936079d9ddd337a36",
+    "annotations-v2/ac78dc653b8f027a842267bd-deepseek.json": "9eccf8cd2ecaf1b0adf16120c62d7c939ed967129736332e634cc5c7cbc33083",
+    "annotations-v2/ac78dc653b8f027a842267bd-qwen.json": "686a8e00a5595c8da66b16c7e98c0626c17cebd8ec083d00723f318822161b85",
+    "annotations-v2/ba46b0d9e7244518b8ca17b2-deepseek.json": "2c5266cdbf6b6d463637e63f2aa2becc9b76020b4403cf48e6c18d3e647ecb32",
+    "annotations-v2/ba46b0d9e7244518b8ca17b2-qwen.json": "c4c580afe47cda709279e0ddaa8dd75fec2d4b3994e8bf567d046db840f16fa8",
+    "annotations-v2/bb7af50eb13f9714fafa584f-deepseek.json": "8caa9704ec4ea90392722517ea8757007c43a21e85117e51a202c91add9be558",
+    "annotations-v2/bb7af50eb13f9714fafa584f-qwen.json": "5d7a1ec6a0633868a6a6f8e34b4c72e1f67a4c0c087b99feca73afebc871a29b",
+    "annotations-v2/c25c87badaf493c13925d88e-deepseek.json": "f0508592609b29541bce736f71fb14a7c33c222ab327340c8e89fb2deb1f3946",
+    "annotations-v2/c25c87badaf493c13925d88e-qwen.json": "2422918f5d839e02cb9274e486411c75501e0cbc0991d7e0dda2c214d6815cc5",
+    "annotations-v2/c8692353a90134e6752716ef-deepseek.json": "eb7cd82c971aa4c2ce7590967aec42f3355080c778701047c194867d45039f3d",
+    "annotations-v2/c8692353a90134e6752716ef-qwen.json": "e2e7ec4f8b4b5886acec429f55860398044b2a797a1980cdc42b3f7eb58a56fa",
+    "annotations-v2/cc0d178cb008040ad6c45530-deepseek.json": "c1ee16fe80a9a936690c02331711d0e9df8d3311f8bf0f8310e3defab893b045",
+    "annotations-v2/cc0d178cb008040ad6c45530-qwen.json": "58499ed47f440b0a1c0a7091b2edfb9e0ae1c548cadfda8121aa139490a5cc5b",
+    "annotations-v2/cdd196a02bb9e650224096ec-deepseek.json": "cf1200f2cfbe9c61ec6dea7c383d6062b531a9cf8795f1e5f4bb6bdc26efa9dc",
+    "annotations-v2/cdd196a02bb9e650224096ec-qwen.json": "ac92bf5d07fbbfa50ce1fefb2529443abc89f08e329000d187c58409f1fda757",
+    "annotations-v2/cfa9fdc780533c64c570de37-deepseek.json": "6b455d227b57cdf14124f296be847c44d66559a1a9334f59b1ec352ec3fb8ceb",
+    "annotations-v2/cfa9fdc780533c64c570de37-qwen.json": "f05f17c4924873c2eab6b595ee0cd05911bad9220db0ede8a7059f66dd7e5870",
+    "annotations-v2/d7aedd25efd51ae9824cc6cf-deepseek.json": "6af8b69952e4d3dae0d1075bcc198611023704bff1075211ec5bceaf63d21895",
+    "annotations-v2/d7aedd25efd51ae9824cc6cf-qwen.json": "f53daa943ae002faa0e456198e3a676e616d4b579524e36b116af6095da58d56",
+    "annotations-v2/dbb3adde03d9d2b572693de5-deepseek.json": "978fe5825951a5ccb8cfced7daae9d36d272410b5e0bd5875de8082be2be3bc4",
+    "annotations-v2/dbb3adde03d9d2b572693de5-qwen.json": "a58aeb1f52010ba818acb2a13eecff18947461773903710d22ed70932b8b8fae",
+    "annotations-v2/f8614990bb2e0f3c4ba53bb1-deepseek.json": "000749594f6680ca3a1f3cce104bd611cbaf8b36f581c4a9b96ca1bdc8945e44",
+    "annotations-v2/f8614990bb2e0f3c4ba53bb1-qwen.json": "9610956915088a728f34f7b9436b24720b04ed16fbabe1150e87ab0efd4792ee",
+    "collection-plan.json": "ea7b587f96f8845cd2ae3e4582e28d555e9e4c5ee9ed0387b6070d6a3e5b2ada",
+    "exports/human-review-v1-04fab9c15255464da5af15b742973a5c.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pool.jsonl": "b2138d60732b353ccec0dd29c623588abe21c540c53199b4a051120b0149d354",
+    "preflight/preflight-20261025T055304216205Z.json": "89165f15cabc682e0da7b345fa45b51bf327eca02a3fb156b351b699e9e740e2",
+    "preflight/preflight-20261025T060057561680Z.json": "b6899b6968134561a651f0de85bdf85aec478d00f76678e995384ce9115f2ebd",
+    "preflight/preflight-20261025T060114339230Z.json": "faab9c3bc63ba0da62a1b860a59fa50a8f49eeb9d793e17c272b1512afde7b5a",
+    "preflight/preflight-20261025T062156411499Z.json": "7ae0a700eab05ee57f7a994e7926d4ace3bf50e2b8d494dad78578eaac56883d",
+    "preflight/preflight-20261025T063842794272Z.json": "11d93509321772f48f539cbfb519e9fd1798b36729ea0cc75ab23721f8c3f942",
+    "queue.jsonl": "db5129e90345fd65bc8f17cbb6651676753ac11bc91d66dbed4304f0a24479a4",
+    "repro/key-preflight-raw.json": "18861386d444a43d691ecd953382cc1d7b0a33c0a376e5055d91607f091f1274",
+    "repro/repository-state.json": "78cf64e07fbc245a16c2d162c8d238dc3f6f85e6c648a495ef75df774057972f",
+    "runtime-4096-mps.json": "2ed5fbcd155c29c4e2de533fe534af68e219e7d53fc77ec6dbefddafc5063202",
+    "snapshots.jsonl": "c0b9e683aa995825f801d5e123470acf5a34dba79d3b7130ef6cfb1bfa511bfa",
+    "trajectories/task_019.json": "5c2b26edc8f0f270d5243dc8cc9e2265189249daeff06cf04aed0e8f9d8f47d6",
+    "trajectories/task_032.json": "6ac0764cd5f7db0b27275f4db6ba8cb0a8253d7d9a855f8833a0d8d0c861c702",
+    "trajectories/task_068.json": "6c2768b5404e01f1350e510318593913f6f643bbe60999f5b57f5ab3ece4bb5d",
+    "trajectories/task_086.json": "2158429bc449549e3f2bc2603e9cf420721b42d0e7471cf6b97cf9ab0d60c9bb",
+    "trajectories/task_087.json": "956bdcbaf6420148c7f47d44fca10bc1647eb967731f80e783cb37889665fa2b"
+  },
+  "scientific_quality": "not measured; no confirmed human labels or adaptation; native ENV is not full agent reward"
+}

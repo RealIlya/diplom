@@ -1,0 +1,73 @@
+{
+  "train_prior": 0.3561643835616438,
+  "train_hard": 73,
+  "roles": {
+    "train": {
+      "train_prior_metrics": {
+        "n": 73,
+        "brier": 0.2293113154437981,
+        "nll": 0.6511793415739899,
+        "accuracy": 0.6438356164383562,
+        "f1": 0.0,
+        "balanced_accuracy": 0.5,
+        "roc_auc": 0.5,
+        "tp": 0,
+        "tn": 47,
+        "fp": 0,
+        "fn": 26
+      },
+      "bm25": {
+        "within_snapshot_auc": 0.75,
+        "hard_pairs": 40,
+        "selected_pools": 22,
+        "eligible_pools": 13,
+        "probability": false
+      }
+    },
+    "calibration": {
+      "train_prior_metrics": {
+        "n": 17,
+        "brier": 0.262227765942181,
+        "nll": 0.718924104703545,
+        "accuracy": 0.5294117647058824,
+        "f1": 0.0,
+        "balanced_accuracy": 0.5,
+        "roc_auc": 0.5,
+        "tp": 0,
+        "tn": 9,
+        "fp": 0,
+        "fn": 8
+      },
+      "bm25": {
+        "within_snapshot_auc": 1.0,
+        "hard_pairs": 3,
+        "selected_pools": 6,
+        "eligible_pools": 1,
+        "probability": false
+      }
+    },
+    "validation": {
+      "train_prior_metrics": {
+        "n": 27,
+        "brier": 0.18012551865057025,
+        "nll": 0.5499509253065874,
+        "accuracy": 0.8148148148148148,
+        "f1": 0.0,
+        "balanced_accuracy": 0.5,
+        "roc_auc": 0.5,
+        "tp": 0,
+        "tn": 22,
+        "fp": 0,
+        "fn": 5
+      },
+      "bm25": {
+        "within_snapshot_auc": 0.7333333333333333,
+        "hard_pairs": 15,
+        "selected_pools": 10,
+        "eligible_pools": 4,
+        "probability": false
+      }
+    }
+  },
+  "scope": "descriptive cheap controls; no threshold fit or final test"
+}

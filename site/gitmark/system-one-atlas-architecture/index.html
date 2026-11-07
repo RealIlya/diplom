@@ -1,0 +1,3276 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../system-one-atlas-protocol/">
+      
+      
+        <link rel="next" href="../system-one-atlas-evidence/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Атлас System One — архитектура стенда и потоки данных - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#атлас-system-one--архитектура-стенда-и-потоки-данных" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Атлас System One — архитектура стенда и потоки данных
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki GitMark
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wiki GitMark
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Состояние и задачи
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Онтология
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-handoff-2026-10-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контекст продолжения 11.10.2026
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атлас адаптации System One
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Атлас адаптации System One
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общий план и карты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реализация этапов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные и эксперименты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура стенда
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура стенда
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-что-существует-сейчас" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Что существует сейчас
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-проверенная-версия-τ-и-точки-расширения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Проверенная версия τ и точки расширения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-условия-сравнения-и-неизменная-часть" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Условия сравнения и неизменная часть
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-один-цикл-агентного-шага" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Один цикл агентного шага
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Один цикл агентного шага">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-raw-history-и-состояние" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Raw history и состояние
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-observed-pool-и-кандидаты" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Observed pool и кандидаты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-c-packer-и-llm-селектор" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. C, packer и LLM-селектор
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-проекция-actor-входа" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Проекция actor-входа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-контракты-полезной-нагрузки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Контракты полезной нагрузки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-бюджеты-отказы-и-будущий-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Бюджеты, отказы и будущий R
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-предлагаемая-структура-реализации" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Предлагаемая структура реализации
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-поток-материала-для-обучения-и-оценки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Поток материала для обучения и оценки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-журналирование-и-воспроизводимость" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Журналирование и воспроизводимость
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-минимальные-проверки-при-реализации" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Минимальные проверки при реализации
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-риски-и-открытые-технические-решения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Риски и открытые технические решения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#первичные-источники-и-область-проверки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Первичные источники и область проверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверенные источники и результаты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот CE и проверенные блокеры
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-next-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Следующий этап — данные и инфраструктура
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерактивный атлас
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Термины общего агента
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — обзор и источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-training-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение System One — статьи и выжимки
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — темы и план ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ресурсы τ-bench, Laya и KEV
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../action-selection-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выбор действий и контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полные вызовы без LLM
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-native-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native аргументы и предусловия
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документы агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переводы статей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Переводы статей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как читать и словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/openjev-rlcd-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenJev-RLCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/sbert2s1-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBERT2S1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/translation-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запись подготовки и проверки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архив технических планов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Архив технических планов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-19-system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот System One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-kev-laya-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сравнение KEV и Laya
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-system-one-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимый dev и адаптация KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-27-system-one-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Первый пакет расширения и grouped KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — спецификация 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — выполненный план 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-что-существует-сейчас" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Что существует сейчас
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-проверенная-версия-τ-и-точки-расширения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Проверенная версия τ и точки расширения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-условия-сравнения-и-неизменная-часть" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Условия сравнения и неизменная часть
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-один-цикл-агентного-шага" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Один цикл агентного шага
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Один цикл агентного шага">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-raw-history-и-состояние" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Raw history и состояние
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-observed-pool-и-кандидаты" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Observed pool и кандидаты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-c-packer-и-llm-селектор" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. C, packer и LLM-селектор
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-проекция-actor-входа" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Проекция actor-входа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-контракты-полезной-нагрузки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Контракты полезной нагрузки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-бюджеты-отказы-и-будущий-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Бюджеты, отказы и будущий R
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-предлагаемая-структура-реализации" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Предлагаемая структура реализации
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-поток-материала-для-обучения-и-оценки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Поток материала для обучения и оценки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-журналирование-и-воспроизводимость" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Журналирование и воспроизводимость
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-минимальные-проверки-при-реализации" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Минимальные проверки при реализации
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-риски-и-открытые-технические-решения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Риски и открытые технические решения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#первичные-источники-и-область-проверки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Первичные источники и область проверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="атлас-system-one--архитектура-стенда-и-потоки-данных">Атлас System One — архитектура стенда и потоки данных</h1>
+<p><strong>Статус на 19.10.2026:</strong> технический проект для реализации и review, не работающий
+стенд. Принятая граница исследования и определения остаются в
+<a href="../architecture/#shared-context-integration">общей архитектуре</a> и
+<a href="../GLOSSARY/">словаре</a>. Здесь описаны размещение кода, контракты, точки подключения
+к upstream и проверяемые границы данных. Этот документ конкретизирует
+<a href="../architecture/#context-contract-v0">контекстный контракт v0</a>, не заменяет его
+новым списком согласований. Метод обучения, окончательные модели и численные
+параметры остаются параметрами протокола.</p>
+<p>Главная замена — <strong>оценщик полезности наблюдаемого KB-контекста</strong>. Один и тот же
+основной LLM-агент выполняет действия и отвечает пользователю во всех трёх
+основных условиях. Компактная модель не получает ответственность за аргументы
+банковских tools. Научный вклад адаптации проверяется прежде всего парой
+исходная/дообученная компактная модель с одинаковым packer и состоянием.</p>
+<h2 id="1-что-существует-сейчас">1. Что существует сейчас</h2>
+<p>Последующее состояние 19.10.2026: реализован <a href="../system-one-pilot/">локальный offline стенд</a>
+в <code>scripts/system_one_pilot/</code>, с manifests/labels/results в
+<code>experiments/system-one-pilot/</code>. Таблица ниже описывает состояние при подготовке
+атласа; native adapter/runner пока не реализованы и не проверены эпизодом.</p>
+<table>
+<thead>
+<tr>
+<th>Объект</th>
+<th>Проверенный статус</th>
+<th>Что из этого не следует</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../architecture/">Каноническая архитектура</a> и <a href="../tau-bench-review/#native-context-pipeline-audit">аудит native retrieval</a></td>
+<td>Документированы принятая граница и инженерный контракт</td>
+<td>Реализация tau-агента ещё не готова</td>
+</tr>
+<tr>
+<td><code>scripts/measure_tau_history_context.py</code></td>
+<td>Анализирует закреплённый публичный префикс траекторий tokenizer Qwen; проверяет SHA-256; не вызывает модель</td>
+<td>Это не измерение качества KEV, не обучающий корпус и не репрезентативная оценка всего benchmark</td>
+</tr>
+<tr>
+<td><code>tests/test_agent_evaluator.py</code>, <code>tests/test_agent_planner.py</code>, <code>tests/test_vendor_examples.py</code></td>
+<td>Проверяют импортированный навык <code>agent-designer</code>, его CLI и примеры</td>
+<td>Слово evaluator в имени не означает native evaluator τ-bench</td>
+</tr>
+<tr>
+<td><a href="../resource-assessment/">Ресурсная оценка</a></td>
+<td>Содержит зафиксированные измерения длины опубликованных историй и ограничения их интерпретации</td>
+<td>Сквозное преимущество System One не измерено</td>
+</tr>
+<tr>
+<td>Локальный <code>artifacts/</code></td>
+<td>Найдены граф wiki, PDF/превью презентаций и их служебные результаты</td>
+<td>Не найдены экспериментальные run manifests, обученные веса или таблица результатов трёх условий</td>
+</tr>
+<tr>
+<td>Предлагаемые ниже <code>src/system_one_tau/</code>, <code>configs/atlas/</code>, <code>data/manifests/</code></td>
+<td><strong>Ещё не созданы</strong></td>
+<td>Дерево ниже — схема будущих файлов, не команда запуска</td>
+</tr>
+</tbody>
+</table>
+<p>Не импортировать vendor planner/evaluator как основу научного harness: они решают
+другую задачу. Проверки документации также не подтверждают работоспособность
+будущего агента.</p>
+<h2 id="2-проверенная-версия-τ-и-точки-расширения">2. Проверенная версия τ и точки расширения</h2>
+<p>Повторная статическая проверка исходников выполнена <strong>19.10.2026</strong> на commit
+<code>4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699</code> репозитория
+<code>sierra-research/tau2-bench</code>. Это закреплённая опора существующего аудита, а не
+утверждение, что commit — последний upstream или уже окончательно выбранная
+версия итоговой серии. В <code>pyproject.toml</code> этого commit пакет называется <code>tau2</code>,
+версия <code>1.0.1</code>, Python <code>&gt;=3.12,&lt;3.14</code>; для воспроизводимости commit важнее одного
+номера пакета. Перед запуском надо отдельно закрепить разрешённые зависимости
+и данные. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/pyproject.toml">Первичный manifest</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Путь upstream</th>
+<th>Реальный контракт на этом commit</th>
+<th>Как использовать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agent/base_agent.py</code></td>
+<td><code>HalfDuplexAgent</code>, вход <code>UserMessage \| ToolMessage \| MultiToolMessage</code></td>
+<td>Базовый интерфейс текстового адаптера; поддержать целый batch результатов</td>
+</tr>
+<tr>
+<td><code>agent/base/participant.py</code></td>
+<td><code>get_init_state(message_history=None)</code> и <code>generate_next_message(message, state) -&gt; (message, state)</code></td>
+<td>Реализовать собственный state с raw-наблюдениями и производной view</td>
+</tr>
+<tr>
+<td><code>agent/llm_agent.py</code></td>
+<td><code>LLMAgent</code> добавляет вход в state и передаёт <code>system_messages + messages</code> в <code>generate</code></td>
+<td>Native контроль; пример одной actor LLM. Его <code>_generate_next_message</code> не является готовым селектором</td>
+</tr>
+<tr>
+<td><code>registry.py</code></td>
+<td><code>register_agent_factory(factory, name, task_filter=None, metadata=None)</code></td>
+<td>Зарегистрировать фабрики условий до создания runner; имя фабрики и config входят в manifest</td>
+</tr>
+<tr>
+<td><code>runner/build.py</code></td>
+<td><code>build_agent</code> берёт tools/policy из среды и вызывает factory; <code>build_text_orchestrator</code> связывает agent/user/environment/task</td>
+<td>Переиспользовать native wiring, сохраняя текстовый режим и обычного user simulator</td>
+</tr>
+<tr>
+<td><code>runner/simulation.py</code></td>
+<td><code>run_simulation(orchestrator, evaluation_type=ALL, env_kwargs=None)</code> выполняет эпизод и оценивание</td>
+<td>Минимальный путь для smoke-test и одного эпизода</td>
+</tr>
+<tr>
+<td><code>runner/batch.py</code></td>
+<td><code>run_single_task</code>, <code>run_tasks</code>, <code>run_domain</code></td>
+<td>Пакетная серия после проверки одного эпизода; помнить о retries и побочных расходах</td>
+</tr>
+<tr>
+<td><code>evaluator/evaluator.py</code></td>
+<td><code>evaluate_simulation(simulation, task, evaluation_type, solo_mode, domain, …)</code></td>
+<td>Оставить native критерии; отдельно присоединить наши измерения селектора</td>
+</tr>
+</tbody>
+</table>
+<p>Первичные источники: <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/agent/base_agent.py">текстовый agent</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/agent/base/participant.py">participant</a>,
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/agent/llm_agent.py">LLMAgent</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/registry.py">registry</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/runner/build.py">builder</a>,
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/runner/simulation.py">simulation</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/runner/batch.py">batch</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/evaluator/evaluator.py">evaluator</a>.
+В этом commit <code>BaseAgent</code>/<code>LocalAgent</code> — совместимые устаревшие имена
+<code>HalfDuplexAgent</code>; в новом коде использовать актуальное имя.
+<code>src/tau2/runner/run.py</code> отсутствует: модуль runner разбит на перечисленные слои.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/__init__.py">Экспорты и aliases</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/runner/__init__.py">экспорты runner</a>.</p>
+<p><strong>Важная граница factory.</strong> <code>build_agent</code> передаёт <code>task=task</code> даже обычным
+фабрикам. Наш factory допускает этот keyword ради совместимости, но не передаёт
+объект <code>Task</code> в agent/scorer и не сохраняет его в state. Содержимое <code>Task</code>, включая
+evaluation criteria, необходимо orchestrator и evaluator, но не является
+наблюдением селектора. Не использовать <code>LLMGTAgent</code>: его назначение — доступ
+к ожидаемым действиям, а не честный baseline. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/runner/build.py">Builder</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/agent/llm_agent.py">GT-класс</a>.</p>
+<p>Для <code>banking_knowledge</code> builder также вычисляет из эталонных действий
+<code>read_log_allowlist</code>, влияющий на журналирование read-tools в среде. Его надо
+сохранить в native wiring, включая одинаковые <code>env_kwargs</code> при оценивании;
+переносить этот список в признаки модели нельзя. Это подтверждённая особенность
+закреплённого upstream, а не наш источник supervision. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/runner/build.py">Реализация</a>.</p>
+<h2 id="3-условия-сравнения-и-неизменная-часть">3. Условия сравнения и неизменная часть</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Кто отбирает контекст</th>
+<th>Что получает actor LLM</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NATIVE</code></td>
+<td>Отдельного селектора нет</td>
+<td>Штатную накопленную историю native <code>LLMAgent</code></td>
+<td>Исходная точка полной стоимости и качества</td>
+</tr>
+<tr>
+<td><code>RECENCY</code></td>
+<td>Последние уникальные наблюдаемые KB-единицы + общий packer</td>
+<td>Общую защищённую историю и выбранный блок</td>
+<td>Дешёвый контроль необходимости модели</td>
+</tr>
+<tr>
+<td><code>LEXICAL</code></td>
+<td>BM25-переранжирование только наблюдаемого пула + общий packer</td>
+<td>Ту же форму проекции</td>
+<td>Дешёвый содержательный контроль</td>
+</tr>
+<tr>
+<td><code>LLM_SELECT</code></td>
+<td>LLM выбирает упорядоченные ID из всего snapshot</td>
+<td>Ту же форму проекции</td>
+<td>Запрошенный LLM baseline для узла отбора</td>
+</tr>
+<tr>
+<td><code>S1_FROZEN</code></td>
+<td>Исходные веса C дают pointwise scores + общий packer</td>
+<td>Ту же форму проекции</td>
+<td>Дефолтная System One</td>
+</tr>
+<tr>
+<td><code>S1_ADAPTED</code></td>
+<td>Дообученные веса той же C + тот же packer</td>
+<td>Ту же форму проекции</td>
+<td>Эффект адаптации на данных выбранной области</td>
+</tr>
+</tbody>
+</table>
+<p><code>LLM_SELECT</code>, <code>S1_FROZEN</code>, <code>S1_ADAPTED</code> — три основные группы; <code>NATIVE</code>,
+<code>RECENCY</code>, <code>LEXICAL</code> нужны, чтобы не доказывать экономию только относительно
+заведомо дополнительного LLM-вызова. Joint LLM selection и pointwise C+packer
+различаются алгоритмом: дополнительный <code>LLM_POINTWISE</code> с тем же packer допустим
+как диагностическое условие, если нужно отделить модель от алгоритма упаковки.</p>
+<p>Во всех модифицированных условиях фиксируются actor model/revision, policy,
+tools, native retrieval, user simulator, evaluator, state extraction,
+допустимое разбиение, бюджет и обработка ошибок. При replay сравнивается один
+snapshot; в живых эпизодах действия и будущие наблюдения могут расходиться.
+Это часть end-to-end эффекта, а не нарушение парного назначения задач.</p>
+<p>Первый профиль — <code>banking_knowledge + bm25</code>. Upstream default retrieval нельзя
+оставлять неявным: в проверенном коде есть более дорогой <code>alltools</code> с другим
+набором возможностей. <code>KB_search</code> форматирует найденные записи с полным content;
+native top-k не ограничивает всю историю. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py">Formatter</a>,
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval.py">варианты retrieval</a>, <a href="../tau-bench-review/#native-context-pipeline-audit">подробный аудит</a>.</p>
+<p>DeepSeek V4.1 Flash из запроса пользователя — существующий кандидат: подтверждены
+релизы V4.1-Flash и V4.1-Flash-1017, текущий alias <code>deepseek-flash</code>.
+<a href="../system-one-atlas-evidence/#5-deepseek-v41-flash-подтверждён-alias-меняется">Версия, API и ограничения режимов</a>
+проверены по официальным источникам. Доступ аккаунта и совместимость нашего
+τ-адаптера ещё не проверены запуском. В manifest необходимы точный model ID,
+provider, revision/дата, reasoning mode, применимые sampling parameters, output
+limit и тариф; actor и selector обозначаются разными ролями даже при одном model ID.</p>
+<h2 id="4-один-цикл-агентного-шага">4. Один цикл агентного шага</h2>
+<pre><code class="language-text">native orchestrator доставляет видимое сообщение / batch
+  → append-only raw_history
+  → deterministic state extractor + парсер полученного KB
+  → observed_pool: все версии ранее наблюдавшихся доказательств
+  → immutable snapshot до текущего cutoff
+  → admission по полному сериализованному входу
+  → LLM_SELECT ИЛИ C_frozen/C_adapted → одинаковый packer
+  → техническая проверка результата / разрешённый fallback
+  → model_view: защищённая история + выбранный evidence block
+  → одна actor LLM
+  → native AssistantMessage: ответ ИЛИ вызов tools
+  → native environment/user → следующее наблюдение
+
+После эпизода, за отдельной границей:
+  native trajectory + Task + environment replay → native evaluator
+  traces + native result → отчёт по качеству, стоимости, задержке
+</code></pre>
+<p>Селектор запускается перед очередным actor-вызовом, если семантический snapshot
+изменился и есть наблюдаемый KB-пул. До первого KB-наблюдения он не вызывается.
+Нельзя переоценивать промежуточное состояние, пока получен только кусок
+<code>MultiToolMessage</code>: в snapshot должны войти все доставленные результаты.</p>
+<h3 id="41-raw-history-и-состояние">4.1. Raw history и состояние</h3>
+<p><code>raw_history</code> хранит только видимую агенту последовательность. Полная native
+trajectory может содержать также приватные tool calls симулятора; её нельзя
+целиком подавать extractor. В upstream есть
+<code>is_valid_agent_history_message</code>: assistant messages, пользовательские сообщения
+без user tool calls и результаты tools с <code>requestor == "assistant"</code>.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/agent/base_agent.py">Проверка видимости</a>.</p>
+<p><code>state</code> строится по <a href="../architecture/#context-contract-v0">контракту v0</a>: все
+пользовательские реплики до cutoff; связанные предшествующие речевые
+assistant-сообщения; последняя наблюдаемая query с исходом; все non-KB tool events
+с именами, аргументами, ответами и provenance. Это извлечение наблюдений, не
+LLM-summary и не вычисление «истинного банковского состояния». Старые поправки,
+отзыв согласия и повторные исполнения tools не схлопываются.</p>
+<h3 id="42-observed-pool-и-кандидаты">4.2. Observed pool и кандидаты</h3>
+<p>Parser принимает только реально доставленный body известного retrieval tool.
+Один ID с тем же content hash объединяет provenance; изменившийся content
+создаёт новую версию. Не найденные документы, ошибки и timing footer не становятся
+доказательствами. Недостоверный разбор означает <code>KB_PARSE_ERROR</code>, не чтение
+полного документа из корпуса по ID. Текст с похожим на разделитель content должен
+либо однозначно разбираться, либо отвергаться; одной наивной regex недостаточно.</p>
+<p>В пуле остаётся весь наблюдённый материал. Для конкретного snapshot сначала
+пробуется целая native запись; дополнительное разбиение одинаково для условий
+и оправдывается admission. Сохраняются source spans, заголовки и версия splitter.
+Нельзя незаметно ограничить пул последними top-M документами ради скорости.</p>
+<h3 id="43-c-packer-и-llm-селектор">4.3. C, packer и LLM-селектор</h3>
+<p>Скорер C обрабатывает <code>(state, candidate)</code> и выдаёт конечное <code>p_useful ∈ [0,1]</code>.
+Все кандидаты snapshot получают оценки. Packer сортирует по оценке и стабильному
+ID, добавляет целые единицы, которые помещаются, и пропускает слишком длинные;
+порог <code>p ≥ 0.5</code> в baseline отсутствует. Token budget относится к готовому
+evidence block с оформлением. Вероятность полезности одного фрагмента не равна
+вероятности достаточности набора.</p>
+<p>LLM-селектор видит тот же state, весь тот же candidate pool и бюджет; возвращает
+только IDs. Ему не передают compact scores, предварительный shortlist или
+дополнительную историю. Один форматный repair допустим по контракту v0;
+исходный snapshot неизменен, расходы repair сохраняются. Если совместный вход
+не помещается, результат <code>SELECTOR_OVERFLOW</code>; постраничный алгоритм — отдельное
+будущее условие, а не скрытый fallback.</p>
+<h3 id="44-проекция-actor-входа">4.4. Проекция actor-входа</h3>
+<p>Проекция каждый раз строится заново из raw. Policy, tool schemas, диалог и
+non-KB tools сохраняются. Только KB-body в retrieval messages заменяется
+квитанцией; tool-call IDs, порядок и роли остаются прежними. Один выбранный
+evidence block вставляется в последний существующий retrieval result и явно
+обозначается как agent-side projection накопленных наблюдений, а не оригинальная
+выдача последней query. Ошибка последнего поиска остаётся ошибкой.</p>
+<p>Объекты upstream сообщений нельзя изменять по общей ссылке: projection строит
+отдельные значения для модели. Иначе испортится native trajectory и strict replay
+evaluator сравнит изменённый ответ tool с оригинальным. В доказательствах могут
+быть инструкции — они остаются недоверенным содержимым, не system messages.
+Факты, уже процитированные в защищённых assistant-репликах, могут сохраниться;
+их токены входят в полную стоимость.</p>
+<h2 id="5-контракты-полезной-нагрузки">5. Контракты полезной нагрузки</h2>
+<p>Ниже <strong>предлагаемые схемы</strong>, не существующие upstream-типы. Nullable поле
+означает неизвестное, а не нулевое значение.</p>
+<table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>Обязательные поля и инвариант</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VisibleEvent</code></td>
+<td><code>event_id</code>, <code>role</code>, <code>content</code>, <code>tool_call_id?</code>, <code>tool_name?</code>, <code>arguments?</code>, <code>requestor?</code>; исходный порядок; отдельно сохранить исходный serialized hash</td>
+</tr>
+<tr>
+<td><code>EvidenceUnit</code></td>
+<td><code>unit_id</code>, <code>native_id?</code>, <code>content_hash</code>, <code>title</code>, <code>text</code>, <code>source_event_ids</code>, <code>source_spans</code>, <code>representation_version</code>; каждый span указывает на реально полученный текст</td>
+</tr>
+<tr>
+<td><code>SelectionState</code></td>
+<td><code>dialogue</code>, <code>search_context</code>, <code>tool_events</code>, <code>included_event_ids</code>, <code>excluded_event_ids</code>, <code>extractor_version</code>; без Task/gold</td>
+</tr>
+<tr>
+<td><code>SelectionSnapshot</code></td>
+<td><code>snapshot_id</code>, <code>cutoff_event_id</code>, <code>state</code>, <code>candidates</code>, <code>effective_kb_budget</code>, <code>representation_version</code>, <code>semantic_hash</code>; immutable</td>
+</tr>
+<tr>
+<td><code>ScoreBatch</code></td>
+<td><code>snapshot_hash</code>, <code>scorer_id</code>, <code>scores[{unit_id,p_useful}]</code>, <code>status</code>, <code>request_ids</code>; ровно одна валидная оценка каждой единицы либо явный отказ</td>
+</tr>
+<tr>
+<td><code>SelectionResult</code></td>
+<td><code>snapshot_hash</code>, <code>method_id</code>, <code>ordered_unit_ids</code>, <code>rendered_tokens</code>, <code>status</code>, <code>fallback_reason?</code>; все IDs принадлежат snapshot и уникальны</td>
+</tr>
+<tr>
+<td><code>ActorProjection</code></td>
+<td><code>snapshot_hash</code>, <code>messages</code>, <code>tools_hash</code>, <code>policy_hash</code>, <code>actor_token_count</code>, <code>reserved_output_tokens</code>, <code>selected_ids</code>, <code>projection_hash</code>; raw не меняется</td>
+</tr>
+<tr>
+<td><code>TrialOutcome</code></td>
+<td><code>run_id</code>, <code>task_id</code>, <code>trial</code>, <code>attempt_id</code>, <code>native_simulation_id?</code>, <code>native_reward?</code>, <code>native_termination?</code>, <code>technical_status</code>, <code>ledger_ref</code>; отсутствие native reward не заменяется выдуманным reward</td>
+</tr>
+</tbody>
+</table>
+<p>Предлагаемые чистые функции: <code>extract_state(visible_events)</code>,
+<code>update_observed_pool(pool, visible_events)</code>, <code>make_snapshot(state, pool, profile)</code>,
+<code>score(snapshot, scorer)</code>, <code>pack(snapshot, scores)</code>,
+<code>validate_selection(snapshot, result)</code>, <code>project(raw, snapshot, result)</code>.
+Побочные эффекты ограничены model adapters, native tools и записью traces.
+Новый оркестратор агентов или шина сообщений для этого не нужны.</p>
+<p>Семантический hash не включает model ID/веса/prompt конкретного метода, иначе
+равные сведения будут иметь разные hashes. Request/cache key, наоборот, включает
+model, tokenizer, prompt, inference config и content versions. Детерминированная
+канонизация JSON и правила float/Unicode должны иметь собственную версию.</p>
+<h2 id="6-бюджеты-отказы-и-будущий-r">6. Бюджеты, отказы и будущий R</h2>
+<p>Стартовые <code>B_KB=2048</code> и профиль <code>4096</code> для полного compact input уже описаны
+как <strong>предложение</strong> в <a href="../architecture/#context-contract-v0">контракте v0</a>.
+Они не гарантируют admission; окончательные пределы задаются после длинового
+аудита и не меняются по результатам test. Считать надо весь serialized input
+каждого tokenizer, включая state, wrappers, варианты ответа и reserved output.
+Нельзя разрешать runtime молча обрезать запрос.</p>
+<table>
+<thead>
+<tr>
+<th>Событие</th>
+<th>Предложенное поведение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Нет KB-пула</td>
+<td>Native actor-вызов, без искусственного retrieval message</td>
+</tr>
+<tr>
+<td><code>STATE_OVERFLOW</code>, <code>CANDIDATE_OVERFLOW</code>, <code>SCORER_ERROR</code></td>
+<td>Техническая передача того же snapshot LLM, если он помещается; отдельно считать это событие</td>
+</tr>
+<tr>
+<td><code>KB_PARSE_ERROR</code></td>
+<td>Остановить этот эпизод с диагностикой; отсутствующий текст не восстанавливать через corpus</td>
+</tr>
+<tr>
+<td><code>SELECTOR_ERROR</code>, <code>SELECTOR_OVERFLOW</code> после разрешённого repair</td>
+<td>Явная техническая неудача; не возвращаться к ранее отвергнутому набору</td>
+</tr>
+<tr>
+<td><code>MAIN_OVERFLOW</code></td>
+<td>Явная техническая неудача; policy/согласие пользователя не удаляются ради продолжения</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Технический terminal path требует реализации.</strong> В закреплённом orchestrator
+вызов agent может бросить исключение наружу; обработчик communication errors не
+оборачивает любое исключение scorer. В batch <code>run_with_retry</code> повторяет исключения
+и при исчерпании создаёт <code>INFRASTRUCTURE_ERROR</code> с пустыми messages и нулевой
+duration. Поэтому нельзя просто бросить <code>AgentError</code> и считать, что получен
+полный native failure record. Нужен минимальный внешний ledger: записать raw и
+причину до исключения, сохранить каждую попытку, задать явный retry policy,
+включить неудачу в общий знаменатель. Native evaluator/его reward при этом не
+подменяется. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/orchestrator/orchestrator.py">Orchestrator</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/runner/progress.py">retry implementation</a>.</p>
+<p>В native <code>evaluate_simulation</code> большинство преждевременных termination дают
+reward 0; режим <code>ALL</code> учитывает <code>reward_basis</code> конкретной задачи. Это не означает,
+что любой невозвращённый из runner эпизод автоматически получил проверенный
+native reward. В отчёте различаются возвращённый native ноль, отсутствие
+native оценки и заранее определённый нулевой end-to-end success технического
+срыва. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/evaluator/evaluator.py">Критерии</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/data_model/simulation.py">поля SimulationRun</a>.</p>
+<p>System One R остаётся отдельным модельным узлом для риска принятия <strong>набора</strong>.
+В первой серии адаптации применяется <code>always_accept</code> после технической валидации;
+R не обучается одновременно с C и не маскирует эффект C. Позже R получает
+state, выбранный набор и зафиксированные признаки наблюдаемого пула; событие
+ошибки, метки и отдельный calibration split задаются заранее. Нельзя получать
+<code>q_risk</code> как «автоматическую калибровку» минимума/среднего C scores. Ошибка
+исполнения R — технический fallback, а не откалиброванная передача. В сравнении
+адаптированного R фиксируются C, packer и actor; это другая экспериментальная серия.</p>
+<h2 id="7-предлагаемая-структура-реализации">7. Предлагаемая структура реализации</h2>
+<p>Создавать файлы по мере появления содержимого; пустые каталоги сейчас не нужны.
+Это минимальное разбиение ответственности, не требование написать отдельный
+framework или отдельный класс на каждую строку.</p>
+<pre><code class="language-text">src/system_one_tau/
+  contracts.py       # snapshot/result/config, инварианты и версии
+  tau_agent.py       # HalfDuplexAgent + factory; одна actor LLM
+  observations.py    # visible-event filter, state, observed pool/parser
+  selection.py       # recency/BM25, common packer, validation/admission
+  model_adapters.py  # LLM selector и compact scorer; frozen/adapted = config
+  projection.py      # detached model_view, tool-call protocol
+  telemetry.py       # request/decision/attempt ledger и расходы
+  dataset.py         # split-filtered snapshots, labels, lineage
+  training.py        # реализуется только для выбранного первого метода
+  evaluation.py      # join native outcomes + node metrics; без смены evaluator
+configs/atlas/
+  banking_pilot.yaml # роли моделей, arm, бюджеты, seeds, retry policy
+data/manifests/
+  sources.json       # URI, revision, hash, license, область использования
+  splits.json       # task/group IDs, rationale, версия и hash
+tests/
+  test_tau_contract.py
+  test_observations.py
+  test_projection.py
+  test_dataset_boundaries.py
+  test_failure_ledger.py
+artifacts/           # локальные ignored runs/данные/веса; не сырой Git-архив
+</code></pre>
+<p><code>model_adapters.py</code> содержит только реально выбранный compact backend. Не нужны
+заранее три параллельные обёртки и новая абстракция для неопределённых моделей.
+Frozen/adapted отличаются weight revision и, при необходимости, обученной головой,
+а не копией всей программы. Training entry point появляется после проверки
+лицензии, native train API и возможности честно считать выбранный loss.</p>
+<h2 id="8-поток-материала-для-обучения-и-оценки">8. Поток материала для обучения и оценки</h2>
+<pre><code class="language-text">закреплённые задачи/семейства τ + KB + policy + code revision
+  → manifest источников и группировка до генерации данных
+  → train / dev_tune / dev_cal для C и при наличии R / locked test
+  → collection runs ТОЛЬКО разрешённых задач нужного split
+  → native trajectory → фильтр видимых префиксов по cutoff
+  → тот же extractor/parser/snapshot, что в runtime
+  → отдельная разметка candidate usefulness / set sufficiency / outcome
+  → train examples + provenance → обучение C → checkpoint manifest
+  → validation: выбор checkpoint/настроек; затем freeze
+  → locked snapshot test и отдельные живые эпизоды всех arms
+  → native evaluator + traces → анализ с интервалами неопределённости
+</code></pre>
+<p>Training на данных того же benchmark означает обучение на выделенных задачах
+и/или независимых группах этой области, не reuse закрытого test. Все префиксы,
+повторы, teacher continuations, синтетические варианты и sibling tasks одной
+группы остаются в одном split. Простого random split строк недостаточно.</p>
+<p>Наличие общего банковского KB допустимо для опыта «новые задачи в знакомой
+области», но не доказывает перенос на новые policy. Для такого заявления нужен
+отдельный holdout документов/семейств и анализ пересечений. Публичные trajectory
+с известными решениями test не превращаются в разрешённый train только потому,
+что их можно скачать. Уже прочитанные публичные примеры отмечаются в contamination
+ledger. Конкретные доли и число задач закрепляются после аудита достаточности.</p>
+<table>
+<thead>
+<tr>
+<th>Материал</th>
+<th>Доступ runtime C/actor</th>
+<th>Доступ offline pipeline</th>
+<th>Правило</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Policy, доступные схемы tools</td>
+<td>По обычному native контракту</td>
+<td>Да</td>
+<td>Версии и hashes фиксируются</td>
+</tr>
+<tr>
+<td>Реально полученные agent-visible сообщения до cutoff</td>
+<td>Да</td>
+<td>Да</td>
+<td>Единственный источник состояния и observed pool</td>
+</tr>
+<tr>
+<td>KB-запись, ещё не полученная агентом</td>
+<td>Нет прямого доступа селектора</td>
+<td>Для аудита/разметки в разрешённом split</td>
+<td>Не подставлять текст в snapshot по известному ID</td>
+</tr>
+<tr>
+<td>Приватные инструкции/действия user simulator</td>
+<td>Нет</td>
+<td>Закрытый evaluator/аудит</td>
+<td>Не переносить в модельные признаки</td>
+</tr>
+<tr>
+<td><code>Task.evaluation_criteria</code>, эталонные действия, DB state</td>
+<td>Нет</td>
+<td>Native evaluator; train-only проверка меток при обоснованном протоколе</td>
+<td>Offline join после cutoff, без проникновения gold в input</td>
+</tr>
+<tr>
+<td>Будущие сообщения/финальный reward</td>
+<td>Нет</td>
+<td>Метки/анализ после завершения</td>
+<td>Нельзя использовать их для извлечения потребности текущего шага</td>
+</tr>
+<tr>
+<td>Teacher rationales</td>
+<td>Не обязательны; основной inference может быть без них</td>
+<td>Отдельный training artifact</td>
+<td>Не считать автоматически gold; provenance и доступ к данным фиксируются</td>
+</tr>
+</tbody>
+</table>
+<p>Разметка отделяется от features физически: <code>snapshot_id → labels</code> соединяется
+после формирования immutable snapshots. Датасет для C содержит
+<code>(snapshot_id, unit_id, target, label_source, confidence/ambiguity, label_version)</code>.
+Native reward — label эпизода; без дополнительного анализа он не становится
+правильной меткой каждого входившего в эпизод документа. Метки weak teacher,
+ручные проверки и контрфактические продолжения должны различаться.</p>
+<p>Калибровочный <code>dev_cal</code> нужен и без R: после выбора checkpoint на <code>dev_tune</code>
+сравниваются raw C и C после одинакового temperature-scaling протокола для
+frozen, adapted-CE и adapted-Brier. Штатная температура default checkpoint
+сохраняется отдельным условием <code>published default</code>, а не незаметно заменяется.
+Отчёт различает эффект обучения весов и post-hoc calibration; её параметры
+не выбираются по test. Калибровка <code>p(useful)</code> не калибрует <code>q(error_accept)</code>
+будущего R: это разные целевые события.
+<a href="../system-one-atlas-protocol/#7-обучение-от-дешёвого-контроля-к-адаптации">Matched raw/TS протокол</a>.</p>
+<p>Обучение CE/Brier на одинаковых метках и обучение с рассуждением/дистилляцией —
+разные факторы. Для них используются те же splits и snapshot contracts, но
+отдельные manifests. Возможность учить CE/Brier именно native вероятностную
+голову выбранной модели проверяется до реализации; текстовое «0.82» генеративной
+модели не подменяет calibrated probability. Подробности методов — в
+<a href="../system-one-training-review/">обзоре обучения</a>.</p>
+<h2 id="9-журналирование-и-воспроизводимость">9. Журналирование и воспроизводимость</h2>
+<p>Одна строка <code>decision_trace</code> соответствует одному cutoff, одна строка
+<code>request_ledger</code> — каждой попытке вызова любого backend, включая repair/fallback.
+Данные хранятся локально с разрешениями; в Git — schemas, manifests, checksums,
+команды воспроизведения и разрешённые агрегаты.</p>
+<table>
+<thead>
+<tr>
+<th>Таблица/артефакт</th>
+<th>Минимальные поля</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>run_manifest</code></td>
+<td>protocol ID, repo dirty state/commit, upstream/data hashes, split hash, arm, actor/selector/user/judge/C/R versions, prompts/tokenizers, retrieval, projection, training checkpoint, hardware/runtime, precision, seeds, limits, retries, tariff date</td>
+</tr>
+<tr>
+<td><code>decision_trace</code></td>
+<td>run/task/trial/attempt, cutoff, semantic hash, candidate count/versions, input admissions, per-unit scores, selected IDs, rendered tokens, fallback class, component durations, projection hash</td>
+</tr>
+<tr>
+<td><code>request_ledger</code></td>
+<td>request/parent IDs, role, backend, attempt, start/end, input/output/cache/reasoning tokens если доступны, reported cost, estimated cost и метод оценки, timeout/error, cache hit</td>
+</tr>
+<tr>
+<td><code>dataset_manifest</code></td>
+<td>source/split/group IDs, extraction and label versions, author/checker, contradictions/ambiguity, row hashes, licenses, known overlaps, excluded reasons</td>
+</tr>
+<tr>
+<td><code>checkpoint_manifest</code></td>
+<td>base revision, adapter/head revision, training rows hash, loss definition, seed, optimizer/schedule, precision, trainable parameters, selected checkpoint rule, compute/cost</td>
+</tr>
+<tr>
+<td><code>trial_outcome</code></td>
+<td>все назначенные эпизоды и попытки, native reward/termination если получены, technical status, actor quality metrics, общий ledger reference</td>
+</tr>
+</tbody>
+</table>
+<p>LLM latency отделяется от загрузки весов, tokenization, scoring, упаковки, native
+retrieval и judge. Сумма длительностей компонентов не всегда равна wall-clock
+при batching/overlap; оба значения хранятся отдельно. Actor cost, полная online
+стоимость, расходы генерации/разметки/обучения и амортизация — отдельные величины.
+Если данные о токенах/цене не получены, записывается <code>null</code> и причина. Кеш для
+воспроизведения и production cache могут давать разные оценки задержки: режим
+кеша обязан быть одинаковым в сравнении и явно указанным.</p>
+<p>Нельзя полагаться только на <code>SimulationRun.agent_cost</code>: отдельные вызовы C,
+LLM-селектора, repairs и потерянные при исключении попытки требуют собственного
+ledger. Суммирование не должно повторно учитывать actor cost из двух источников.
+Цена native simulator/judge относится к полной стоимости экспериментального
+стенда; отдельно показывается стоимость пользовательского agent service.</p>
+<h2 id="10-минимальные-проверки-при-реализации">10. Минимальные проверки при реализации</h2>
+<p>Это <strong>план meaningful tests</strong>, не сообщение о пройденных runtime-тестах.
+Сначала синтетические fixtures без API, затем один явно ограниченный smoke-run
+после выполнения ресурсных условий проекта.</p>
+<table>
+<thead>
+<tr>
+<th>Проверка</th>
+<th>Ошибка, которую обязана обнаруживать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Factory и visibility boundary</td>
+<td>В <code>task</code>/приватный user tool result помещён sentinel; ни snapshot, ни scorer/actor request его не содержат</td>
+</tr>
+<tr>
+<td>Старое исправление/отзыв согласия</td>
+<td>После десятков retrieval старый запрет не потерян; короткое «да» связано с правильной предыдущей репликой</td>
+</tr>
+<tr>
+<td>KB parsing и версии</td>
+<td>Повтор той же записи сохраняет provenance; изменённый content получает новую версию; неоднозначный разделитель даёт отказ, не выдуманный документ</td>
+</tr>
+<tr>
+<td>Mixed batch и detached projection</td>
+<td>Для KB+business tool batch сохранены все IDs/results; raw до/после идентичен; выбранный блок ровно один, невыбранный sentinel исчез только из KB-body</td>
+</tr>
+<tr>
+<td>Information parity</td>
+<td>LLM/frozen/adapted получают один semantic hash; LLM не видит compact scores или лишнюю историю; все candidate IDs учтены</td>
+</tr>
+<tr>
+<td>Полный token admission</td>
+<td>Точный предел принимается, превышение на один токен отвергается для state/C/selector/main; runtime не выполняет truncation</td>
+</tr>
+<tr>
+<td>Ошибки и ledger</td>
+<td>NaN, неполный score batch, чужой ID, timeout, исчерпанный repair дают различные статусы; потраченные запросы и все попытки остаются в итогах</td>
+</tr>
+<tr>
+<td>Split isolation</td>
+<td>Перенос одного sibling task/trajectory prefix между splits ломает проверку; future reward не входит в snapshot input</td>
+</tr>
+<tr>
+<td>No-op native equivalence</td>
+<td>При отключённом отборе на mocked LLM сохраняются исходные messages/tools/policy; native evaluator получает исходные tool outputs</td>
+</tr>
+<tr>
+<td>Frozen/adapted reproducibility</td>
+<td>При одном checkpoint/config получаются те же scores в детерминированном режиме; изменение только checkpoint отражается в manifests, не в state/packer</td>
+</tr>
+<tr>
+<td>Metric denominator</td>
+<td>Technical failures и повторные попытки нельзя потерять join-операцией; success rate и cost считаются по заранее определённым единицам</td>
+</tr>
+</tbody>
+</table>
+<p>До paid pilot нужны: воспроизводимый один эпизод, проверенные input lengths,
+неизменённый native evaluator, работающий ledger и согласованный предел затрат
+с условием остановки. Наличие такой схемы не разрешает запуск платной серии.</p>
+<h2 id="11-риски-и-открытые-технические-решения">11. Риски и открытые технические решения</h2>
+<ol>
+<li><strong>State extraction может потерять смысл.</strong> Тот же плохой state получат все
+   селекторы; LLM fallback не восстановит невидимый факт. Нужен отдельный аудит
+   представления, включая ссылки на более ранние assistant-объяснения.</li>
+<li><strong>Формат retrieval текстовый.</strong> Parser зависит от закреплённого formatter;
+   upstream update требует fixtures и повторной проверки. Подмена tool output
+   структурированным JSON без отдельного условия изменит среду.</li>
+<li><strong>Размер state растёт.</strong> Даже splitting всех KB не исправит state overflow.
+   Сжатие state — дополнительное изменение протокола, которое нельзя вводить
+   незаметно только для одной модели.</li>
+<li><strong>Стоимость pointwise C масштабируется с пулом.</strong> Обработка каждой пары
+   state/candidate может повторять длинный state и оказаться дороже одного joint
+   LLM selection. Измерять throughput, batching и cache, не выводить экономию
+   из числа параметров.</li>
+<li><strong>Нет гарантии переносимости loss.</strong> KEV/Laya имеют разные train/runtime
+   интерфейсы; нельзя обещать идентичный CE/Brier/RLCD pipeline до проверки
+   доступного кода, trainable head и ограничений лицензии.</li>
+<li><strong>Мало независимых задач.</strong> Тысячи candidate rows из десятков задач не дают
+   тысячи независимых испытаний. Необходимы task/group-level интервалы и анализ
+   overlap; размер split определяется доступными группами.</li>
+<li><strong>Native failure handling может скрывать расходы.</strong> Пустой placeholder после
+   retries не заменяет attempt ledger. Реализация terminal path обязательна
+   до сквозного измерения.</li>
+<li><strong>Изменчивые backend и upstream.</strong> Закрепить revision, список задач, исправления
+   evaluator, provider mode и тариф; при изменении — новая серия, не незаметное
+   продолжение старой таблицы.</li>
+</ol>
+<h2 id="первичные-источники-и-область-проверки">Первичные источники и область проверки</h2>
+<p>Все ссылки ниже закреплены на <code>4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699</code>,
+исходники прочитаны 19.10.2026. Это статическая проверка интерфейсов и control
+flow: upstream, модели и платные API в рамках подготовки документа не запускались.
+Локальные наблюдения о наличии файлов не являются результатами эксперимента.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

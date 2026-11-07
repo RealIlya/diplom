@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-25T05:44:09.635622+00:00",
+  "device": "mps",
+  "profile": 4096,
+  "frozen_adapted_same_profile": true,
+  "training_run": false,
+  "quality": "not measured; no human labels",
+  "versions": {
+    "at": "2026-10-25T05:44:09.635641+00:00",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "source_sha256": {
+      "scripts/system_one_pilot/fetch.py": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+      "scripts/system_one_pilot/review.html": "31a6d3a459e0c7c4132b9b1038a8daefd2bd18e8a001113e1849fe8051bbbe6f",
+      "scripts/system_one_pilot/rubric-v1.txt": "e8d188c9c3fc56d2a74be63a1231c7b6d7aec6efa481658eb9057fc23833593d",
+      "scripts/system_one_pilot/live_data.py": "d65b628ab52b4f5f287c3b53f3e18c1a9d4cf9622e681407d5cebd2a9316a30c",
+      "scripts/system_one_pilot/__init__.py": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+      "scripts/system_one_pilot/review.py": "ce022f15e7ecf92cd974cc60b6b5a3770a7e6c1153b4fe40dde39e518b341386",
+      "scripts/system_one_pilot/model.py": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+      "scripts/system_one_pilot/cli.py": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+      "scripts/system_one_pilot/live_api.py": "e96416117cd033f338e9f8fc8a0ea7616dc32bbcaef13f3e859bf41c6b8fdcd4",
+      "scripts/system_one_pilot/live.py": "a8e798ed9f8ffa18d84d60e4bdc6fa42a4adb88a8b3c19a5093dfcb89a5b9122",
+      "scripts/system_one_pilot/data.py": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380"
+    },
+    "versions": {
+      "torch": "2.9.1",
+      "transformers": "4.57.1",
+      "litellm": "1.82.6",
+      "rank-bm25": "0.2.2",
+      "certifi": "2025.11.12"
+    }
+  },
+  "records": [
+    {
+      "row_id": "7e5eedb2a19117c197f177cd",
+      "input_tokens": 857,
+      "elapsed_seconds": 0.3274818330537528,
+      "output_finite": true,
+      "process_peak_rss_bytes": 2806464512,
+      "mps_driver_bytes": 2577203200
+    },
+    {
+      "row_id": "09e403462ca574e7c886b66f",
+      "input_tokens": 1029,
+      "elapsed_seconds": 0.32966016698628664,
+      "output_finite": true,
+      "process_peak_rss_bytes": 2806464512,
+      "mps_driver_bytes": 2745270272
+    },
+    {
+      "row_id": "7bc61875b0dc011709746cbf",
+      "input_tokens": 1475,
+      "elapsed_seconds": 0.367622125078924,
+      "output_finite": true,
+      "process_peak_rss_bytes": 2806464512,
+      "mps_driver_bytes": 3081322496
+    }
+  ]
+}

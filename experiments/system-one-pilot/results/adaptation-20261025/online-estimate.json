@@ -1,0 +1,26 @@
+{
+  "purpose": "six-arm paired native ALL pilot; estimate, not guarantee",
+  "tasks": [
+    "task_035",
+    "task_061",
+    "task_041"
+  ],
+  "previous_ENV_task_actual_usd": {
+    "task_035": 0.001250256,
+    "task_061": 0.007827516,
+    "task_041": 0.008967001
+  },
+  "six_arms_same_ENV_estimate_usd": 0.108268638,
+  "scenario_ENV_x3_plus_judge_selector_fallback_usd": 0.5248059140000001,
+  "budget_before": {
+    "series": "collection",
+    "limit_usd": 1.0,
+    "calls": 455,
+    "actual_usd": 0.147950159,
+    "charged_or_held_usd": 0.180382559,
+    "unresolved": 0,
+    "conservatively_accounted_calls": 3
+  },
+  "stop": "persistent cap $1 including all previous calls; unresolved outcome stops; no automatic retries; max80steps/5errors/900s per task",
+  "approval": "external-approval.json; existing user authorization, no cap increase"
+}

@@ -28,9 +28,10 @@ def check(directory):
     if files != set(manifest):
         errors.append(f'Manifest coverage: missing={sorted(files-set(manifest))}; stale={sorted(set(manifest)-files)}')
     current = 'advisor-presentation.pptx'
+    dated_talk = 'research-talk-15min-2026-10-11.pptx'
     decks = {p.name for p in directory.glob('*.pptx') if not p.name.startswith('~$')}
-    if decks != {current}:
-        errors.append(f'Keep one current deck; found: {sorted(decks)}')
+    if decks - {current, dated_talk}:
+        errors.append(f'Unexpected decks: {sorted(decks - {current, dated_talk})}')
     content = json.loads((directory / 'source/content.json').read_text(encoding='utf-8'))
     if len(content['slides']) != 16 or content['main_slide_count'] != 14:
         errors.append('Current content must have 16 slides, 14 main')

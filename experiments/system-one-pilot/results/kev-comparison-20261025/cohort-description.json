@@ -1,0 +1,25 @@
+{
+  "rows": 30,
+  "snapshots": 8,
+  "families": 3,
+  "labels": {
+    "useful": 11,
+    "irrelevant": 18,
+    "uncertain": 1
+  },
+  "per_family": {
+    "family-6417604463bc": {
+      "useful": 5,
+      "irrelevant": 5
+    },
+    "family-d5f5698d5bf2": {
+      "irrelevant": 5,
+      "useful": 5
+    },
+    "family-d8eeaa1fe929": {
+      "useful": 1,
+      "irrelevant": 8,
+      "uncertain": 1
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "repository-checks-20261102",
+  "date": "2026-11-02",
+  "timezone": "Asia/Novosibirsk",
+  "author": "Codex по поручению инициатора",
+  "purpose": "Отправить все изменения в main через PR и обязательные checks",
+  "base_commit": "4f3229bd047d3d149f50705d254f3f00f16e0543",
+  "python": "3.13.5",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "versions": {
+    "jsonschema": "4.26.0",
+    "PyYAML": "6.0.3",
+    "yamllint": "1.38.0",
+    "mkdocs-material": "9.7.7"
+  },
+  "external_model_calls": 0,
+  "paid_api_cost_usd": 0,
+  "gpu_rental_rub": 0,
+  "note": "Суммы usage в тестовых журналах относятся к подставному HTTP и временным SQLite; это не новые расходы и не научные измерения."
+}

@@ -1,0 +1,187 @@
+{"budget":{"actual_usd":0.001,"calls":1,"charged_or_held_usd":0.001,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0},"model":"deepseek","row":"a","status":"valid"}
+{"budget":{"actual_usd":0.002,"calls":2,"charged_or_held_usd":0.002,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0},"model":"qwen","row":"a","status":"valid"}
+{"actual_usd":0.002,"calls":2,"charged_or_held_usd":0.002,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0}
+test_every_recommendation_branch_constructs_complete_record (test_agent_evaluator.AgentEvaluatorTests.test_every_recommendation_branch_constructs_complete_record) ... ok
+test_incomplete_tool_outcomes_do_not_trigger_error_bottleneck (test_agent_evaluator.AgentEvaluatorTests.test_incomplete_tool_outcomes_do_not_trigger_error_bottleneck) ... ok
+test_missing_action_telemetry_is_unknown_and_not_a_tool_failure (test_agent_evaluator.AgentEvaluatorTests.test_missing_action_telemetry_is_unknown_and_not_a_tool_failure) ... ok
+test_missing_time_telemetry_does_not_imply_low_throughput (test_agent_evaluator.AgentEvaluatorTests.test_missing_time_telemetry_does_not_imply_low_throughput) ... ok
+test_retry_count_does_not_invent_retry_latency (test_agent_evaluator.AgentEvaluatorTests.test_retry_count_does_not_invent_retry_latency) ... ok
+test_sample_cli_generates_complete_report (test_agent_evaluator.AgentEvaluatorTests.test_sample_cli_generates_complete_report)
+The distributed sample must be consumable without a constructor error. ... ok
+test_tool_usage_uses_individual_action_outcomes_and_durations (test_agent_evaluator.AgentEvaluatorTests.test_tool_usage_uses_individual_action_outcomes_and_durations) ... ok
+test_json_and_yaml_cli_roundtrip_enum_values (test_agent_planner.PlannerTests.test_json_and_yaml_cli_roundtrip_enum_values) ... ok
+test_sample_fixture_is_generated_by_current_cli (test_agent_planner.PlannerTests.test_sample_fixture_is_generated_by_current_cli) ... ok
+test_selected_patterns_at_boundaries (test_agent_planner.PlannerTests.test_selected_patterns_at_boundaries) ... ok
+test_supported_patterns_preserve_size_and_references (test_agent_planner.PlannerTests.test_supported_patterns_preserve_size_and_references) ... ok
+test_unsupported_pattern_and_invalid_team_sizes_refuse (test_agent_planner.PlannerTests.test_unsupported_pattern_and_invalid_team_sizes_refuse) ... ok
+test_checker_rejects_truncated_deck_even_with_matching_hash (test_presentations.PresentationTests.test_checker_rejects_truncated_deck_even_with_matching_hash) ... ok
+test_cost_of_success_keeps_all_attempts_and_zero_success_guard (test_presentations.PresentationTests.test_cost_of_success_keeps_all_attempts_and_zero_success_guard) ... ok
+test_current_content_has_complete_timing_and_closing_order (test_presentations.PresentationTests.test_current_content_has_complete_timing_and_closing_order) ... ok
+test_current_deck_has_portable_notes (test_presentations.PresentationTests.test_current_deck_has_portable_notes) ... ok
+test_current_objective_keeps_native_math_and_quality_constraint (test_presentations.PresentationTests.test_current_objective_keeps_native_math_and_quality_constraint) ... ok
+test_dated_talk_is_checked_alongside_current_deck (test_presentations.PresentationTests.test_dated_talk_is_checked_alongside_current_deck) ... ok
+test_manifest_matches_actual_files (test_presentations.PresentationTests.test_manifest_matches_actual_files) ... ok
+test_changed_sitemap_payload_is_stale (test_site.SiteSyncTests.test_changed_sitemap_payload_is_stale) ... ok
+test_detects_missing_page_and_changed_search_index (test_site.SiteSyncTests.test_detects_missing_page_and_changed_search_index) ... ok
+test_identical_corrupt_sitemap_archives_are_rejected (test_site.SiteSyncTests.test_identical_corrupt_sitemap_archives_are_rejected) ... ok
+test_identical_tree_is_current (test_site.SiteSyncTests.test_identical_tree_is_current) ... ok
+test_sitemap_gzip_metadata_does_not_make_site_stale (test_site.SiteSyncTests.test_sitemap_gzip_metadata_does_not_make_site_stale) ... ok
+test_system_one_adapt_head (unittest.loader.ModuleSkipped.test_system_one_adapt_head) ... skipped 'Head tests require torch; use the pilot environment'
+test_reservation_refusal_stops_before_starting_another_episode (test_system_one_adaptation.CollectionStopTests.test_reservation_refusal_stops_before_starting_another_episode) ... skipped 'Native tests require SYSTEM_ONE_NATIVE_TESTS=1 and the pinned pilot environment'
+test_dataset_rejects_cross_family_or_duplicate_input_leakage (test_system_one_adaptation.ExpansionTests.test_dataset_rejects_cross_family_or_duplicate_input_leakage) ... ok
+test_plan_is_deterministic_and_never_reassigns_or_reuses_families (test_system_one_adaptation.ExpansionTests.test_plan_is_deterministic_and_never_reassigns_or_reuses_families) ... ok
+test_sampling_caps_families_with_multiple_episodes_without_labels (test_system_one_adaptation.ExpansionTests.test_sampling_caps_families_with_multiple_episodes_without_labels) ... ok
+test_test_split_is_rejected_before_any_tokenizer_or_files_are_opened (test_system_one_adaptation.ExtractionBoundaryTests.test_test_split_is_rejected_before_any_tokenizer_or_files_are_opened) ... ok
+test_source_verification_does_not_open_unselected_task_bodies (test_system_one_adaptation.SealedSourceTests.test_source_verification_does_not_open_unselected_task_bodies) ... ok
+test_cohort_hash_duplicates_and_uncertain (test_system_one_compare.ComparisonTests.test_cohort_hash_duplicates_and_uncertain) ... ok
+test_errors_missing_and_repeats_do_not_inflate_denominator (test_system_one_compare.ComparisonTests.test_errors_missing_and_repeats_do_not_inflate_denominator) ... ok
+test_request_has_no_gold_or_future_fields (test_system_one_compare.ComparisonTests.test_request_has_no_gold_or_future_fields) ... ok
+test_run_finalizes_receipt_without_overwriting_start (test_system_one_compare.ComparisonTests.test_run_finalizes_receipt_without_overwriting_start) ... ok
+test_summary_accepts_relative_cli_run_paths (test_system_one_compare.ComparisonTests.test_summary_accepts_relative_cli_run_paths) ... ok
+test_summary_rejects_protocol_mismatch_and_incomplete_completed_run (test_system_one_compare.ComparisonTests.test_summary_rejects_protocol_mismatch_and_incomplete_completed_run) ... ok
+test_tied_auc_f1_and_one_class (test_system_one_compare.ComparisonTests.test_tied_auc_f1_and_one_class) ... ok
+test_verified_weights_detect_changed_bytes_or_revision (test_system_one_compare.ComparisonTests.test_verified_weights_detect_changed_bytes_or_revision) ... ok
+test_concurrent_roles_cannot_spend_same_last_reserve (test_system_one_daily_budget.DailyBudgetTests.test_concurrent_roles_cannot_spend_same_last_reserve) ... ok
+test_local_midnight_and_existing_calls_are_counted (test_system_one_daily_budget.DailyBudgetTests.test_local_midnight_and_existing_calls_are_counted) ... ok
+test_policy_and_series_authorizations_cannot_be_raised_on_restart (test_system_one_daily_budget.DailyBudgetTests.test_policy_and_series_authorizations_cannot_be_raised_on_restart) ... ok
+test_roles_share_cap_and_completed_replay_is_free (test_system_one_daily_budget.DailyBudgetTests.test_roles_share_cap_and_completed_replay_is_free) ... ok
+test_unknown_in_one_role_blocks_other_role_on_next_day (test_system_one_daily_budget.DailyBudgetTests.test_unknown_in_one_role_blocks_other_role_on_next_day) ... /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/functools.py:53: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1090433d0>
+  value = getattr(wrapped, attr)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/functools.py:53: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x108350400>
+  value = getattr(wrapped, attr)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_family_round_robin_prevents_one_pool_consuming_target (test_system_one_expansion.ExpansionTests.test_family_round_robin_prevents_one_pool_consuming_target) ... ok
+test_fresh_pairs_take_priority_over_cached_families (test_system_one_expansion.ExpansionTests.test_fresh_pairs_take_priority_over_cached_families) ... ok
+test_merge_labels_preserves_old_roles_and_keeps_uncertain_out_of_hard_rows (test_system_one_expansion.ExpansionTests.test_merge_labels_preserves_old_roles_and_keeps_uncertain_out_of_hard_rows) ... ok
+test_merge_labels_rejects_duplicate_inputs_and_snapshot_document_variants (test_system_one_expansion.ExpansionTests.test_merge_labels_rejects_duplicate_inputs_and_snapshot_document_variants) ... ok
+test_new_annotation_series_imports_through_paid_provenance_and_trusted_policy (test_system_one_expansion.ExpansionTests.test_new_annotation_series_imports_through_paid_provenance_and_trusted_policy) ... ok
+test_queue_excludes_old_inputs_and_document_snapshot_variants (test_system_one_expansion.ExpansionTests.test_queue_excludes_old_inputs_and_document_snapshot_variants) ... ok
+test_resuming_packet_calls_annotation_without_collection_or_extraction (test_system_one_expansion.ExpansionTests.test_resuming_packet_calls_annotation_without_collection_or_extraction) ... ok
+test_saved_queue_resume_validates_hash_without_reextracting (test_system_one_expansion.ExpansionTests.test_saved_queue_resume_validates_hash_without_reextracting) ... ok
+test_selected_snapshots_resolve_cached_and_fresh_sources (test_system_one_expansion.ExpansionTests.test_selected_snapshots_resolve_cached_and_fresh_sources) ... ok
+test_task_plan_prefers_unrepresented_train_families_and_never_test (test_system_one_expansion.ExpansionTests.test_task_plan_prefers_unrepresented_train_families_and_never_test) ... ok
+test_branch_text_is_not_put_into_shared_state (test_system_one_grouped.GroupedTests.test_branch_text_is_not_put_into_shared_state) ... ok
+test_groups_include_last_partial_batch_and_allow_empty_pool (test_system_one_grouped.GroupedTests.test_groups_include_last_partial_batch_and_allow_empty_pool) ... ok
+test_many_useful_and_none_are_valid_not_one_categorical_distribution (test_system_one_grouped.GroupedTests.test_many_useful_and_none_are_valid_not_one_categorical_distribution) ... ok
+test_old_input_batch_keeps_each_candidate_readout_and_tail (test_system_one_grouped.GroupedTests.test_old_input_batch_keeps_each_candidate_readout_and_tail) ... ok
+test_selector_uses_grouped_results_in_candidate_order (test_system_one_grouped.GroupedTests.test_selector_uses_grouped_results_in_candidate_order) ... ok
+test_changing_run_root_does_not_reset_authorized_series_budget (test_system_one_live.BudgetTests.test_changing_run_root_does_not_reset_authorized_series_budget) ... ok
+test_completed_request_is_replayed_after_restart_without_payment (test_system_one_live.BudgetTests.test_completed_request_is_replayed_after_restart_without_payment) ... ok
+test_definite_http_rejection_can_be_accounted_at_full_bound_without_repaying (test_system_one_live.BudgetTests.test_definite_http_rejection_can_be_accounted_at_full_bound_without_repaying) ... ok
+test_discount_free_reservation_covers_utf8_tools_and_output (test_system_one_live.BudgetTests.test_discount_free_reservation_covers_utf8_tools_and_output) ... ok
+test_generation_id_is_journaled_before_response_body_is_read (test_system_one_live.BudgetTests.test_generation_id_is_journaled_before_response_body_is_read) ... ok
+test_generic_429_cannot_be_reconciled_by_asserting_overload (test_system_one_live.BudgetTests.test_generic_429_cannot_be_reconciled_by_asserting_overload) ... ok
+test_http_status_survives_failure_while_reading_error_body (test_system_one_live.BudgetTests.test_http_status_survives_failure_while_reading_error_body) ... ok
+test_investigated_upstream_overload_keeps_full_bound_and_never_retries_call (test_system_one_live.BudgetTests.test_investigated_upstream_overload_keeps_full_bound_and_never_retries_call) ... ok
+test_missing_usage_keeps_maximum_and_disables_followup (test_system_one_live.BudgetTests.test_missing_usage_keeps_maximum_and_disables_followup) ... ok
+test_no_request_can_exceed_separate_persistent_budget (test_system_one_live.BudgetTests.test_no_request_can_exceed_separate_persistent_budget) ... ok
+test_unknown_outcome_holds_reserve_and_blocks_series (test_system_one_live.BudgetTests.test_unknown_outcome_holds_reserve_and_blocks_series) ... ok
+test_annotation_schema_literal_quotes_and_finish_are_required (test_system_one_live.DataTests.test_annotation_schema_literal_quotes_and_finish_are_required) ... ok
+test_collection_selection_is_sealed_train_and_distinct_families (test_system_one_live.DataTests.test_collection_selection_is_sealed_train_and_distinct_families) ... skipped 'Native tests require SYSTEM_ONE_NATIVE_TESTS=1 and pinned source data'
+test_context_contract_no_future_hidden_or_kb_body_in_state (test_system_one_live.DataTests.test_context_contract_no_future_hidden_or_kb_body_in_state) ... ok
+test_observed_tool_status_and_failed_search_are_not_lost_or_documents (test_system_one_live.DataTests.test_observed_tool_status_and_failed_search_are_not_lost_or_documents) ... ok
+test_report_invalid_raw_cost_remains_unknown_at_full_reservation (test_system_one_live.DataTests.test_report_invalid_raw_cost_remains_unknown_at_full_reservation) ... ok
+test_report_keeps_technical_errors_out_of_labels_and_counts_unknown_cost_bound (test_system_one_live.DataTests.test_report_keeps_technical_errors_out_of_labels_and_counts_unknown_cost_bound) ... ok
+test_reproducibility_manifest_keeps_source_and_marks_absent_packages_unknown (test_system_one_live.DataTests.test_reproducibility_manifest_keeps_source_and_marks_absent_packages_unknown) ... ok
+test_selection_caps_episode_and_round_robins_snapshots (test_system_one_live.DataTests.test_selection_caps_episode_and_round_robins_snapshots) ... ok
+test_strict_annotation_payload_is_independent_and_versioned (test_system_one_live.DataTests.test_strict_annotation_payload_is_independent_and_versioned) ... ok
+test_structural_parts_preserve_conditions_spans_and_whole_short_document (test_system_one_live.DataTests.test_structural_parts_preserve_conditions_spans_and_whole_short_document) ... ok
+test_structural_split_keeps_assumptions_with_numeric_evidence (test_system_one_live.DataTests.test_structural_split_keeps_assumptions_with_numeric_evidence) ... ok
+test_annotation_for_different_input_cannot_enter_review_queue (test_system_one_live.ReviewTests.test_annotation_for_different_input_cannot_enter_review_queue) ... ok
+test_blind_reveal_draft_session_confirmation_restart_and_export (test_system_one_live.ReviewTests.test_blind_reveal_draft_session_confirmation_restart_and_export) ... ok
+test_defer_defect_and_uncertain_are_distinct_backup_is_restorable (test_system_one_live.ReviewTests.test_defer_defect_and_uncertain_are_distinct_backup_is_restorable) ... ok
+test_import_binds_distinct_models_calls_and_strict_version_to_paid_requests (test_system_one_live.ReviewTests.test_import_binds_distinct_models_calls_and_strict_version_to_paid_requests) ... ok
+test_nonblind_visible_answers_are_recorded_as_revealed (test_system_one_live.ReviewTests.test_nonblind_visible_answers_are_recorded_as_revealed) ... ok
+test_russian_translation_persists_without_changing_input_or_revealing_blind_answers (test_system_one_live.ReviewTests.test_russian_translation_persists_without_changing_input_or_revealing_blind_answers) ... ok
+test_stale_revision_and_changed_input_cannot_overwrite_decisions (test_system_one_live.ReviewTests.test_stale_revision_and_changed_input_cannot_overwrite_decisions) ... ok
+test_translation_import_rejects_incomplete_unknown_and_wrong_hash_sources (test_system_one_live.ReviewTests.test_translation_import_rejects_incomplete_unknown_and_wrong_hash_sources) ... ok
+test_trusted_models_accept_consensus_and_agent_arbitration_without_human_labels (test_system_one_live.ReviewTests.test_trusted_models_accept_consensus_and_agent_arbitration_without_human_labels) ... ok
+test_trusted_resolution_preserves_existing_human_draft (test_system_one_live.ReviewTests.test_trusted_resolution_preserves_existing_human_draft) ... ok
+test_real_native_bm25_and_observation_path_without_paid_http (test_system_one_native.NativeSmoke.test_real_native_bm25_and_observation_path_without_paid_http) ... skipped 'Native tests require SYSTEM_ONE_NATIVE_TESTS=1 and the pinned pilot environment'
+test_continuation_rejects_changed_lineage_or_unrecorded_paid_attempt (test_system_one_online.ContinuationTests.test_continuation_rejects_changed_lineage_or_unrecorded_paid_attempt) ... ok
+test_continuation_retains_failed_attempt_and_only_leaves_unstarted_task (test_system_one_online.ContinuationTests.test_continuation_retains_failed_attempt_and_only_leaves_unstarted_task) ... ok
+test_empty_partial_or_duplicate_judge_assertions_never_become_success (test_system_one_online.JudgeCompletenessTests.test_empty_partial_or_duplicate_judge_assertions_never_become_success) ... skipped 'Native tests require SYSTEM_ONE_NATIVE_TESTS=1 and the pinned pilot environment'
+test_native_default_judge_is_routed_to_declared_model_and_paid_ledger (test_system_one_online.NativeJudgeBoundaryTests.test_native_default_judge_is_routed_to_declared_model_and_paid_ledger) ... skipped 'Native tests require SYSTEM_ONE_NATIVE_TESTS=1 and the pinned pilot environment'
+test_real_native_agent_keeps_raw_trajectory_but_sends_only_selected_kb (test_system_one_online.NativeProjectionTests.test_real_native_agent_keeps_raw_trajectory_but_sends_only_selected_kb) ... skipped 'Native tests require SYSTEM_ONE_NATIVE_TESTS=1 and the pinned pilot environment'
+test_reserve_refusal_stops_online_before_next_task (test_system_one_online.OnlineStopTests.test_reserve_refusal_stops_online_before_next_task) ... skipped 'Native tests require SYSTEM_ONE_NATIVE_TESTS=1 and the pinned pilot environment'
+test_summary_keeps_failed_and_missing_tasks_and_full_cost (test_system_one_online.OnlineSummaryTests.test_summary_keeps_failed_and_missing_tasks_and_full_cost) ... ok
+test_empty_local_selection_uses_fallback_and_ties_are_stable (test_system_one_online.OnlineTests.test_empty_local_selection_uses_fallback_and_ties_are_stable) ... ok
+test_local_failure_calls_accounted_llm_fallback_and_invalid_llm_keeps_bm25 (test_system_one_online.OnlineTests.test_local_failure_calls_accounted_llm_fallback_and_invalid_llm_keeps_bm25) ... ok
+test_packer_keeps_whole_observed_candidates_and_counts_full_render (test_system_one_online.OnlineTests.test_packer_keeps_whole_observed_candidates_and_counts_full_render) ... ok
+test_projection_preserves_policy_tools_non_kb_and_error_outcomes (test_system_one_online.OnlineTests.test_projection_preserves_policy_tools_non_kb_and_error_outcomes) ... ok
+test_ambiguous_kb_refuses_and_empty_is_valid (test_system_one_pilot.PilotTests.test_ambiguous_kb_refuses_and_empty_is_valid) ... ok
+test_bm25_is_deterministic_ranking_not_probability (test_system_one_pilot.PilotTests.test_bm25_is_deterministic_ranking_not_probability) ... ok
+test_dataset_rejects_test_hidden_and_conflicting_labels (test_system_one_pilot.PilotTests.test_dataset_rejects_test_hidden_and_conflicting_labels) ... ok
+test_download_integrity_is_checked_before_use (test_system_one_pilot.PilotTests.test_download_integrity_is_checked_before_use) ... ok
+test_exact_boundary_admission_refuses_truncation (test_system_one_pilot.PilotTests.test_exact_boundary_admission_refuses_truncation) ... ok
+test_family_and_entity_siblings_never_cross_split (test_system_one_pilot.PilotTests.test_family_and_entity_siblings_never_cross_split) ... ok
+test_incomplete_tool_batch_refuses_snapshot (test_system_one_pilot.PilotTests.test_incomplete_tool_batch_refuses_snapshot) ... ok
+test_metrics_keep_failures_and_uncertain_outside_binary_loss (test_system_one_pilot.PilotTests.test_metrics_keep_failures_and_uncertain_outside_binary_loss) ... ok
+test_pending_annotation_never_becomes_negative_target (test_system_one_pilot.PilotTests.test_pending_annotation_never_becomes_negative_target) ... ok
+test_shared_tool_name_is_not_shared_entity (test_system_one_pilot.PilotTests.test_shared_tool_name_is_not_shared_entity) ... ok
+test_visibility_cutoff_versions_and_projection_preserve_raw (test_system_one_pilot.PilotTests.test_visibility_cutoff_versions_and_projection_preserve_raw) ... ok
+test_504_without_saved_id_remains_blocking (test_system_one_provider_timeouts.TimeoutAccountingTests.test_504_without_saved_id_remains_blocking) ... ok
+test_full_bound_is_retained_and_original_error_is_immutable (test_system_one_provider_timeouts.TimeoutAccountingTests.test_full_bound_is_retained_and_original_error_is_immutable) ... ok
+test_mismatched_header_generation_id_stays_blocking (test_system_one_provider_timeouts.TimeoutAccountingTests.test_mismatched_header_generation_id_stays_blocking) ... ok
+test_modified_protocol_is_rejected (test_system_one_provider_timeouts.TimeoutAccountingTests.test_modified_protocol_is_rejected) ... ok
+test_other_namespace_is_not_covered_by_packet_permission (test_system_one_provider_timeouts.TimeoutAccountingTests.test_other_namespace_is_not_covered_by_packet_permission) ... ok
+test_other_status_and_missing_id_are_not_accounted (test_system_one_provider_timeouts.TimeoutAccountingTests.test_other_status_and_missing_id_are_not_accounted) ... ok
+test_array_identifier_description_does_not_change_type_or_items (test_tool_schema_generator.SchemaTests.test_array_identifier_description_does_not_change_type_or_items) ... ok
+test_cli_validate_examples_and_empty_tool (test_tool_schema_generator.SchemaTests.test_cli_validate_examples_and_empty_tool) ... ok
+test_explicit_format_preserves_declared_type_and_rules (test_tool_schema_generator.SchemaTests.test_explicit_format_preserves_declared_type_and_rules) ... ok
+test_nested_required_is_array_and_parent_required_stays_at_root (test_tool_schema_generator.SchemaTests.test_nested_required_is_array_and_parent_required_stays_at_root) ... ok
+test_readme_json_examples_run_with_cli (test_vendor_examples.VendorExamplesTests.test_readme_json_examples_run_with_cli) ... ok
+test_schema_fixture_has_all_sample_tools (test_vendor_examples.VendorExamplesTests.test_schema_fixture_has_all_sample_tools) ... /private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109451990>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1094515d0>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109451c60>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109450310>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109451d50>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109451a80>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109451e40>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10890d210>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1094522f0>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109452020>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1094524d0>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109452200>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1094527a0>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x109452890>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/private/var/folders/0j/t4qyqvn90h5dgylb5wjxjr8m0000gn/T/diplom-clean-check-91ve5ej8/tests/test_vendor_examples.py:38: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1089c8c70>
+  self.assertEqual([schema["name"] for schema in fixture["tool_schemas"]],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_upstream_license_notice_is_preserved (test_vendor_examples.VendorExamplesTests.test_upstream_license_notice_is_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 127 tests in 0.992s
+
+OK (skipped=8)

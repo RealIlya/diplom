@@ -1,0 +1,19 @@
+{
+  "reviewer": "fresh gpt-6-astra/high",
+  "critical": 0,
+  "important": 3,
+  "minor": 0,
+  "findings": [
+    "freshpriority",
+    "annotationresume",
+    "reviewprovenance/snapshots"
+  ],
+  "status": "all3fixed inone RED→GREEN pass;91targetedtests pass",
+  "declined": [
+    "realGPU",
+    "liveHTTP/prices",
+    "unrunlabels",
+    "unrelatedPPTX"
+  ],
+  "root_resolution": "separateGPUmeasurementandpreflight; labelresultspending; PPTXpreexistingfailure retained"
+}

@@ -1,0 +1,168 @@
+{
+  "files": [
+    {
+      "path": "artifacts/system-one-pilot/source/archive-git-tree-error.json",
+      "size_bytes": 178,
+      "sha256": "06b18874767f521fc46eff2ba3ab5fa19e9f0a506eae983ebbc934a91b01ef02",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/source/published-prefix-20MB.json",
+      "size_bytes": 20000000,
+      "sha256": "4d7f30616a6c158079d1569e8213fbad20518d7725284af197d1383459ebe993",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/source/multilingual-metadata.json",
+      "size_bytes": 3250,
+      "sha256": "40e9638b9fcd6381bf38c03d2c3c14e70deeb96d96c07f88cfc47232b18df9f1",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/source/english-metadata.json",
+      "size_bytes": 8293,
+      "sha256": "0ad80b77f38f439a6df62f3471a016e95575c3a2dd98ed96286782d191b13cec",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/source/published-prefix-20MB.json.part",
+      "size_bytes": 19024010,
+      "sha256": "1347958c9c9f479b8da55a067919b32b8b5c1c39779a930dc89a08a3404819a8",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/source/published-tail.part",
+      "size_bytes": 975990,
+      "sha256": "8873a369ece32a82710219569fab6d8a27ac29a01f5d02c527084267c75010a1",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/replay-v2/queue.jsonl",
+      "size_bytes": 54378268,
+      "sha256": "09b6821c3aca10d2a0da1cf4cd877c1bc271d72ddf94f7e2ef6ad762246186e2",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/replay-v3/queue.jsonl",
+      "size_bytes": 54435072,
+      "sha256": "362018f1a7141f4c7cef1b68aee0674c847934dccde6fa9260fcebd4848ccef3",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/replay-v1/queue.jsonl",
+      "size_bytes": 61044297,
+      "sha256": "0d7aaf6acba529dbd7f3b0515f9e2c2d4c76668f73ff0a1920e53021c600109f",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/replay-v2/snapshots.jsonl",
+      "size_bytes": 5108841,
+      "sha256": "28b4a910fc20cb106200b6ac3c5062a8b806da06d40e80e8bbf7f6dc16eba724",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/replay-v3/snapshots.jsonl",
+      "size_bytes": 5108841,
+      "sha256": "28b4a910fc20cb106200b6ac3c5062a8b806da06d40e80e8bbf7f6dc16eba724",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/replay-v1/snapshots.jsonl",
+      "size_bytes": 5485978,
+      "sha256": "6f794dab08aabf120d17cf9f64a7427e593be7d8ba08bbf9a969718c08415278",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/replay-v2/replay-manifest.json",
+      "size_bytes": 11334,
+      "sha256": "0487c136177c25ca2d2b466989fbde0fa0ded5f05c87678138823aa2212866f1",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/replay-v3/replay-manifest.json",
+      "size_bytes": 11986,
+      "sha256": "0b2b498332b04ca871b8fb9e5073c946efb68f9328cf31e7543de49c23d30443",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/replay-v1/replay-manifest.json",
+      "size_bytes": 11352,
+      "sha256": "ecb9d0c757b34d57bc0e45f1ce3a743597a74e2e649d00a0465b0c1c95f928b6",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/runs/ce-v2/summary.json",
+      "size_bytes": 11565,
+      "sha256": "822b3136e3af5f3597415b0d3b9eab74a55b07eb9bd54043bc0dd0912962c222",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/runs/ce-v2/adapted-head.safetensors",
+      "size_bytes": 59880768,
+      "sha256": "a7fa717d0da4302800d108426e20be8592d8daef9bf2adc34eba9677e109ff55",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/runs/ce-v2/events.jsonl",
+      "size_bytes": 50431,
+      "sha256": "b4868beb750acf7935cde6c32dc4a2956639f529639517eed56aad2d0947f67d",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/runs/ce-v1/summary.json",
+      "size_bytes": 6565,
+      "sha256": "e38ade5146602b0f9245378fb581a1de55df548d3d87f5225651fc4e3dc75ae1",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/runs/ce-v1/adapted-head.safetensors",
+      "size_bytes": 59880768,
+      "sha256": "a7fa717d0da4302800d108426e20be8592d8daef9bf2adc34eba9677e109ff55",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/runs/ce-v1/events.jsonl",
+      "size_bytes": 50435,
+      "sha256": "10acda1d685096761e6adb87cf5294908cd146cf4e7cc7a427a99a62151d4682",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "artifacts/system-one-pilot/annotation-review.html",
+      "size_bytes": 407832,
+      "sha256": "74abd26b8a7437b09765bc4f6e917d82fdbecdbcb044ed8c8ac6030e0646ed0c",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "models/laya-7b928d8/model.safetensors",
+      "size_bytes": 842609210,
+      "sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "models/laya-7b928d8/rl_agent_config.json",
+      "size_bytes": 745,
+      "sha256": "ae287b56bbcf5f8c4f4541ae9dfd00c914c4c48b940b8398c3058af37ba92bbd",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "models/laya-multilingual-1720e3e/model.safetensors",
+      "size_bytes": 643835514,
+      "sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "models/laya-multilingual-1720e3e/tokenizer_config.original.json",
+      "size_bytes": 502,
+      "sha256": "424b69444bf7b5809dc2cd2e36d0bd71b8055124dd24274d6db3c655d38205e7",
+      "storage": "local only; ignored by Git"
+    },
+    {
+      "path": "models/laya-multilingual-1720e3e/rl_agent_config.json",
+      "size_bytes": 472,
+      "sha256": "25061739243b617ad88d1219ba6f8a9c86c5881ca28df024fa2d9b3b2fcc30c6",
+      "storage": "local only; ignored by Git"
+    }
+  ],
+  "recovery": "Public inputs: acquisition.json + fetch CLI. Replay bodies: replay CLI. Adapted heads: fit CLI + frozen checkpoint + annotations. Local storage is not backed up to a team destination.",
+  "source_licenses": "Tau root MIT; Laya code/weights Apache-2.0; archive-specific license not verified, raw observations not redistributed."
+}

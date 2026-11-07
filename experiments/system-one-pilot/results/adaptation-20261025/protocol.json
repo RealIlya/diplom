@@ -1,0 +1,155 @@
+{
+  "version": 2,
+  "namespace": "adaptation-v1",
+  "tasks": [
+    "task_007",
+    "task_088",
+    "task_010",
+    "task_035",
+    "task_025",
+    "task_061",
+    "task_075",
+    "task_054",
+    "task_014",
+    "task_041",
+    "task_060",
+    "task_048",
+    "task_039"
+  ],
+  "seed": 25,
+  "train_families": [
+    "family-89b782e765e6",
+    "family-b2e6ce02f564",
+    "family-55bbb8b02f4c",
+    "family-4f614cfb5683",
+    "family-dc005fe2e7d8"
+  ],
+  "calibration_families": [
+    "family-44e874b4d182",
+    "family-ad9ff2b9f2e2"
+  ],
+  "validation_families": [
+    "family-90a89cee1a76",
+    "family-c2d90ea66829",
+    "family-a5653f1a5f2c"
+  ],
+  "task_roles": {
+    "task_007": "train",
+    "task_088": "calibration",
+    "task_010": "train",
+    "task_035": "validation",
+    "task_025": "train",
+    "task_061": "validation",
+    "task_075": "train",
+    "task_054": "calibration",
+    "task_014": "train",
+    "task_041": "validation",
+    "task_060": "validation",
+    "task_048": "calibration",
+    "task_039": "validation"
+  },
+  "max_steps": 80,
+  "max_errors": 5,
+  "timeout": 900,
+  "retrieval": "bm25",
+  "id": "head-adaptation-v1",
+  "created_at": "2026-10-25T11:30:33.561708+00:00",
+  "split_sha256": "6eedb7f5698bb1421498a2c760ca8699067ec30f1d26a7b9504049fd57e9be1c",
+  "agent": "deepseek/deepseek-v4.1-flash-1017",
+  "simulator": "deepseek/deepseek-v4.1-flash-1017",
+  "frozen_export": "artifacts/system-one-pilot/api-v1/exports/trusted-labels-v1.jsonl",
+  "frozen_export_sha256": "e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0",
+  "selection": {
+    "target": 100,
+    "per_family": 10,
+    "max_snapshots_per_episode": 3,
+    "profile": 4096
+  },
+  "model": {
+    "arm": "kev-0.8b",
+    "adaptation": "head only; original BF16 backbone and merged LoRA frozen",
+    "checkpoint_revision": "9a45d25eb2ab761841196625383fa1dff0e56c1e"
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "batch_size": 16,
+    "epochs": 20,
+    "seed": 25,
+    "losses": [
+      "ce",
+      "brier"
+    ],
+    "select_epoch": "fixed last",
+    "hpo": false,
+    "threshold": 0.5,
+    "temperature_grid": [
+      0.5,
+      1,
+      2,
+      2.3510958125672174,
+      3,
+      4,
+      6,
+      8
+    ]
+  },
+  "gates": {
+    "train_hard_min": 40,
+    "train_families_min": 6,
+    "calibration_families_min": 2,
+    "validation_families_min": 3,
+    "validation_hard_min": 15
+  },
+  "spending_before": {
+    "collection": {
+      "series": "collection",
+      "limit_usd": 1.0,
+      "calls": 141,
+      "actual_usd": 0.051000296,
+      "charged_or_held_usd": 0.059315396,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 2
+    },
+    "annotation": {
+      "series": "annotation",
+      "limit_usd": 0.5,
+      "calls": 121,
+      "actual_usd": 0.095484127,
+      "charged_or_held_usd": 0.095484127,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 0
+    }
+  },
+  "cost_estimate": {
+    "collection_13_episodes_historical_usd": 0.133,
+    "collection_original_scenario_range_usd": [
+      0.936,
+      4.68
+    ],
+    "annotation_100_pairs_historical_usd": 0.1547,
+    "annotation_scenario_x2_usd": 0.31,
+    "stop": "persistent common caps collection$1/annotation$0.50 including prior calls; unknown blocks, no retry"
+  },
+  "online": {
+    "arms": [
+      "native",
+      "bm25",
+      "llm",
+      "frozen",
+      "ce",
+      "brier"
+    ],
+    "tasks": "one first-hash task per validation family",
+    "seed": 25,
+    "max_steps": 80,
+    "evaluation": "ALL using native reward_basis; DeepSeek judge, no default model calls",
+    "pack_tokens": 4096,
+    "threshold": 0.5,
+    "fallback": "LLM selector on local error/overflow or no selected evidence; retained BM25 on invalid selector result",
+    "quality_scope": "small paired dev pilot, no test or claim of statistical significance"
+  },
+  "test_access": false,
+  "training_budget_gpu_rub": 0
+}

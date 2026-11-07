@@ -1,0 +1,26 @@
+{
+  "pilot_unit_tests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "full_suite": {
+    "passed": 41,
+    "failed": 1,
+    "failure": "pre-existing presentation inventory expects one deck; second deck was present before this task"
+  },
+  "raw_result_copies_match": true,
+  "replay_queue_and_snapshot_sha_match": true,
+  "annotations_validated": 91,
+  "checkpoint_files_sha_verified": true,
+  "gitmark_strict_lint": "passed",
+  "gitmark_index": "31 files, 389 chunks",
+  "mkdocs_strict_site_build": "passed",
+  "git_diff_check": "passed",
+  "review": {
+    "reviewer": "independent Codex subagent",
+    "initial_important_findings": 2,
+    "fixed": 2,
+    "final_critical_or_important": 0
+  },
+  "limit": "Native agent/evaluator and independently validated scientific comparison remain blocked; see report."
+}

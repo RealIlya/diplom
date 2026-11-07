@@ -1,0 +1,206 @@
+{
+  "planned": 13,
+  "attempted": 13,
+  "statuses": {
+    "completed": 10,
+    "failed": 3
+  },
+  "episodes": [
+    {
+      "task_id": "task_007",
+      "role": "train",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 18,
+      "started_at": "2026-10-25T11:59:31.959509+00:00",
+      "finished_at": "2026-10-25T12:00:27.278961+00:00"
+    },
+    {
+      "task_id": "task_088",
+      "role": "calibration",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 42,
+      "started_at": "2026-10-25T12:00:27.353205+00:00",
+      "finished_at": "2026-10-25T12:02:57.781194+00:00"
+    },
+    {
+      "task_id": "task_010",
+      "role": "train",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 30,
+      "started_at": "2026-10-25T12:02:57.860847+00:00",
+      "finished_at": "2026-10-25T12:05:23.842047+00:00"
+    },
+    {
+      "task_id": "task_035",
+      "role": "validation",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 15,
+      "started_at": "2026-10-25T12:05:23.913100+00:00",
+      "finished_at": "2026-10-25T12:05:58.049115+00:00"
+    },
+    {
+      "task_id": "task_025",
+      "role": "train",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 57,
+      "started_at": "2026-10-25T12:05:58.125956+00:00",
+      "finished_at": "2026-10-25T12:10:15.568622+00:00"
+    },
+    {
+      "task_id": "task_061",
+      "role": "validation",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 51,
+      "started_at": "2026-10-25T12:10:15.657706+00:00",
+      "finished_at": "2026-10-25T12:12:59.997915+00:00"
+    },
+    {
+      "task_id": "task_075",
+      "role": "train",
+      "status": "failed",
+      "termination_reason": null,
+      "error": {
+        "type": "BudgetError",
+        "detail": "unknown request outcome retained; no automatic retry"
+      },
+      "messages": 14,
+      "started_at": "2026-10-25T12:13:00.095771+00:00",
+      "finished_at": "2026-10-25T12:13:40.522387+00:00"
+    },
+    {
+      "task_id": "task_054",
+      "role": "calibration",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 46,
+      "started_at": "2026-10-25T12:17:49.005149+00:00",
+      "finished_at": "2026-10-25T12:20:31.658067+00:00"
+    },
+    {
+      "task_id": "task_014",
+      "role": "train",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 21,
+      "started_at": "2026-10-25T12:20:31.745089+00:00",
+      "finished_at": "2026-10-25T12:21:50.176599+00:00"
+    },
+    {
+      "task_id": "task_041",
+      "role": "validation",
+      "status": "failed",
+      "termination_reason": null,
+      "error": {
+        "type": "JSONDecodeError",
+        "detail": "Unterminated string starting at: line 1 column 79 (char 78)"
+      },
+      "messages": 51,
+      "started_at": "2026-10-25T12:21:50.331721+00:00",
+      "finished_at": "2026-10-25T12:25:13.260539+00:00"
+    },
+    {
+      "task_id": "task_060",
+      "role": "validation",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 51,
+      "started_at": "2026-10-25T12:25:13.489757+00:00",
+      "finished_at": "2026-10-25T12:28:35.445699+00:00"
+    },
+    {
+      "task_id": "task_048",
+      "role": "calibration",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "error": null,
+      "messages": 86,
+      "started_at": "2026-10-25T12:28:35.538051+00:00",
+      "finished_at": "2026-10-25T12:31:43.172658+00:00"
+    },
+    {
+      "task_id": "task_039",
+      "role": "validation",
+      "status": "failed",
+      "termination_reason": null,
+      "error": {
+        "type": "JSONDecodeError",
+        "detail": "Unterminated string starting at: line 1 column 79 (char 78)"
+      },
+      "messages": 42,
+      "started_at": "2026-10-25T12:31:43.276540+00:00",
+      "finished_at": "2026-10-25T12:34:20.991182+00:00"
+    }
+  ],
+  "budget": {
+    "series": "collection",
+    "limit_usd": 1.0,
+    "calls": 455,
+    "actual_usd": 0.147950159,
+    "charged_or_held_usd": 0.180382559,
+    "unresolved": 0,
+    "conservatively_accounted_calls": 3
+  },
+  "admission": {
+    "pool_document_snapshots": 929,
+    "pool_rows": 977,
+    "selected": 100,
+    "counts": {
+      "accepted": 713,
+      "CANDIDATE_OVERFLOW": 31,
+      "STATE_OVERFLOW": 185
+    },
+    "errors": [],
+    "rooms": {
+      "1024": 976,
+      "4096": 4048,
+      "8192": 8144
+    }
+  },
+  "snapshots": 36,
+  "new_cards_by_family": {
+    "family-89b782e765e6": 10,
+    "family-ad9ff2b9f2e2": 10,
+    "family-90a89cee1a76": 10,
+    "family-b2e6ce02f564": 10,
+    "family-55bbb8b02f4c": 10,
+    "family-c2d90ea66829": 10,
+    "family-4f614cfb5683": 10,
+    "family-dc005fe2e7d8": 10,
+    "family-44e874b4d182": 10,
+    "family-a5653f1a5f2c": 10
+  },
+  "new_cards_by_role": {
+    "train": 50,
+    "calibration": 20,
+    "validation": 30
+  },
+  "queue_sha256": "bbbd3e0546a1ef58f2f8166cc52332db601391bbbbc8975a68d9b38a9990e3ba",
+  "annotation_budget_before": {
+    "series": "annotation",
+    "limit_usd": 0.5,
+    "calls": 121,
+    "actual_usd": 0.095484127,
+    "charged_or_held_usd": 0.095484127,
+    "unresolved": 0,
+    "conservatively_accounted_calls": 0
+  },
+  "annotation_estimate_usd": 0.1547,
+  "annotation_scenario_x2_usd": 0.31,
+  "annotation_guarantee": false,
+  "scope": "collection ENV only; no full-agent success measured"
+}

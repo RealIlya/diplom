@@ -1,0 +1,51 @@
+{
+  "status": "agent sanity check before annotation, not human labels or gold",
+  "rubric_sha256": "e8d188c9c3fc56d2a74be63a1231c7b6d7aec6efa481658eb9057fc23833593d",
+  "source": "new native train trajectory task_086, pinned upstream; no test data",
+  "examples": [
+    {
+      "cutoff": 4,
+      "snapshot_sha256": "2e45820152b3b4de231305a4440a2e5f2eeaddec718d20d9c15bbf8007198819",
+      "observation": "Early need describes several disputes, while retrieved pool includes card-closing procedure. Rubric distinguishes matching vocabulary from applicability and allows uncertainty when dispute type is not yet observed."
+    },
+    {
+      "cutoff": 20,
+      "snapshot_sha256": "46d6709136f0f743e0eaef44002011a7c5bd341e6a22ab0b926f486e30174992",
+      "observation": "Current need is a short ATM dispense; latest query asks how to list accounts. Rubric correctly defines need from dialogue instead of treating query as target."
+    },
+    {
+      "cutoff": 86,
+      "snapshot_sha256": "9272ef9827607bde871beec8fdf89181f28cb49d90e5644689f2d1fa7c3ad7c1",
+      "observation": "Later search concerns replacement card. Same document version may have different applicability. Conditions include verification, status, pending operations and card age; partial usefulness must retain these conditions."
+    }
+  ],
+  "decision": "rubric-v1 retained unchanged; API labels and human review still required",
+  "labels_created": false,
+  "versions": {
+    "at": "2026-10-25T06:10:53.965586+00:00",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "source_sha256": {
+      "scripts/system_one_pilot/fetch.py": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+      "scripts/system_one_pilot/review.html": "d075b4e33dcfc2791c462605741b5ca96cf862792756115a42aa684021016043",
+      "scripts/system_one_pilot/rubric-v1.txt": "e8d188c9c3fc56d2a74be63a1231c7b6d7aec6efa481658eb9057fc23833593d",
+      "scripts/system_one_pilot/live_data.py": "c08d4ccd5b7cf4ad6b5a332cf0e6450f06efc330f6abb9533828dfa4f348035c",
+      "scripts/system_one_pilot/__init__.py": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+      "scripts/system_one_pilot/review.py": "c113f3abfebdb3e1e3255dd7d711d30c19ded253fec5bbfc0fd8868ebd65b20f",
+      "scripts/system_one_pilot/model.py": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+      "scripts/system_one_pilot/cli.py": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+      "scripts/system_one_pilot/live_api.py": "50252be131d2904f3fef63a75036bf17075b10ffb9f1998ce17d52d8ac072043",
+      "scripts/system_one_pilot/live.py": "4d6ab6fdea5ecde97e870b68e7aedfecae3660a9a20c70bd6c90c81c0c3ee1b0",
+      "scripts/system_one_pilot/data.py": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380"
+    },
+    "source_bundle": "artifacts/system-one-pilot/code-snapshots/cd247f9293353ba502e07ac353f9a458a366479e66adecd71cadf81a20031082.zip",
+    "source_bundle_sha256": "4b6669785921cb5c546438942ed48ec94425190a5d2416a8e16a844b2cb89526",
+    "versions": {
+      "torch": "2.9.1",
+      "transformers": "4.57.1",
+      "litellm": null,
+      "rank-bm25": null,
+      "certifi": "2025.11.12"
+    }
+  }
+}

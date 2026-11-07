@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "sklearn": "1.7.2",
+  "numpy": "2.5.3",
+  "checks": [
+    {
+      "arm": "frozen",
+      "metric_group": "published/train",
+      "n": 73
+    },
+    {
+      "arm": "frozen",
+      "metric_group": "published/calibration",
+      "n": 17
+    },
+    {
+      "arm": "frozen",
+      "metric_group": "published/validation",
+      "n": 27
+    },
+    {
+      "arm": "frozen",
+      "metric_group": "calibrated/train",
+      "n": 73
+    },
+    {
+      "arm": "frozen",
+      "metric_group": "calibrated/calibration",
+      "n": 17
+    },
+    {
+      "arm": "frozen",
+      "metric_group": "calibrated/validation",
+      "n": 27
+    },
+    {
+      "arm": "ce",
+      "metric_group": "published/train",
+      "n": 73
+    },
+    {
+      "arm": "ce",
+      "metric_group": "published/calibration",
+      "n": 17
+    },
+    {
+      "arm": "ce",
+      "metric_group": "published/validation",
+      "n": 27
+    },
+    {
+      "arm": "ce",
+      "metric_group": "calibrated/train",
+      "n": 73
+    },
+    {
+      "arm": "ce",
+      "metric_group": "calibrated/calibration",
+      "n": 17
+    },
+    {
+      "arm": "ce",
+      "metric_group": "calibrated/validation",
+      "n": 27
+    },
+    {
+      "arm": "brier",
+      "metric_group": "published/train",
+      "n": 73
+    },
+    {
+      "arm": "brier",
+      "metric_group": "published/calibration",
+      "n": 17
+    },
+    {
+      "arm": "brier",
+      "metric_group": "published/validation",
+      "n": 27
+    },
+    {
+      "arm": "brier",
+      "metric_group": "calibrated/train",
+      "n": 73
+    },
+    {
+      "arm": "brier",
+      "metric_group": "calibrated/calibration",
+      "n": 17
+    },
+    {
+      "arm": "brier",
+      "metric_group": "calibrated/validation",
+      "n": 27
+    }
+  ],
+  "max_metric_delta": 1.1102230246251565e-16,
+  "family_disjoint": true,
+  "test_used": false,
+  "prediction_records": 780,
+  "predictions_sha256": "b9144aaa238b1e3834d15a0cf02a85882f50cb32d02fa7d79a2bb03cb20ba4ab"
+}

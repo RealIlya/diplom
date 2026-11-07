@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-25T16:44:44.696627+00:00",
+  "series": {
+    "collection": {
+      "calls": 780,
+      "known_actual_usd": 0.269115019,
+      "charged_or_held_usd": 0.322850419,
+      "unresolved": 1,
+      "accounted_calls": 3
+    },
+    "annotation": {
+      "calls": 321,
+      "known_actual_usd": 0.264627506,
+      "charged_or_held_usd": 0.287930706,
+      "unresolved": 0,
+      "accounted_calls": 3
+    }
+  },
+  "caps": {
+    "collection": 1,
+    "annotation": 0.5
+  },
+  "snapshot": "artifacts/system-one-pilot/adaptation-v1/ledger-paused-v1.sqlite3",
+  "inference_stopped": true
+}

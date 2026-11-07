@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-25T06:48:06.470687+00:00",
+  "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "source_sha256": {
+    "scripts/system_one_pilot/fetch.py": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+    "scripts/system_one_pilot/review.html": "26217deb9eae80f0fcca7f9da0f98d0b8f3ef4aae152f98ab77087ee3918b901",
+    "scripts/system_one_pilot/rubric-v1.txt": "e8d188c9c3fc56d2a74be63a1231c7b6d7aec6efa481658eb9057fc23833593d",
+    "scripts/system_one_pilot/live_data.py": "5c4e72403337a28a17f4ec37be5ca658811672d90a065ac54a9ab261e917385f",
+    "scripts/system_one_pilot/__init__.py": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+    "scripts/system_one_pilot/review.py": "5f83210970d48ff0cbdb804723b9726114fa70e3e34fd7264bf75aee365725e8",
+    "scripts/system_one_pilot/model.py": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+    "scripts/system_one_pilot/cli.py": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+    "scripts/system_one_pilot/live_api.py": "af02539e5c4b47494130a4ba6de5ffcf1d1a4f3fa8e076db09177ff6589eda7e",
+    "scripts/system_one_pilot/live.py": "5e4df1f38672aafa12e87bf3c9aff5e6f4d69af685f5e64b48efc097b7ac951c",
+    "scripts/system_one_pilot/report.py": "a4601762d2c3f0031bd31d113576e4dd6aa11e49c3910b5e629f9f4d2ac41696",
+    "scripts/system_one_pilot/data.py": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380"
+  },
+  "source_bundle": "artifacts/system-one-pilot/code-snapshots/f1c24c309fb02ffd2e408347e30176c6873a2a4549329b25d8cd7953a3fb21d5.zip",
+  "source_bundle_sha256": "d7fe03b2ab01c9858379e72b5829caf49fe73fd693d3e33f54eff8c060aac6d3",
+  "versions": {
+    "torch": "2.9.1",
+    "transformers": "4.57.1",
+    "litellm": null,
+    "rank-bm25": null,
+    "certifi": "2025.11.12"
+  }
+}

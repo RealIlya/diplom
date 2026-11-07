@@ -1,0 +1,34 @@
+{
+  "started_at": "2026-10-25T13:46:36.680955+00:00",
+  "status": "completed",
+  "dataset_sha256": "a3e93a26ee7c7f7ee92b486cfe32765f12e1238af2e955656d11b6b1f7df835d",
+  "protocol_sha256": "a57f34cb534e6b9ea9ee3c88f8a8747a630e17f8807133814fa94342f82fac84",
+  "code_sha256": "0fba220cc5d1877258a2a71bf9a90fbd9b604ac90dc8ed65f7437281c94d6f24",
+  "feature_labels_in_input": false,
+  "load_seconds": 4.971023749999858,
+  "dtype": "bfloat16 + CPU head float32",
+  "published_temperature": 2.3510958125672174,
+  "head_dim": 256,
+  "hidden_dim": 1024,
+  "weights_receipts": [
+    "aef08557648841d9aafe07f827659ffd75c38c95ca8951dee03aa82869a21700",
+    "d781a0ae2dab01da1410d9346bb1eecafaee129709ac366ff7cf773dd7ffa440"
+  ],
+  "memory_after_load": {
+    "rss_bytes": 1418231808,
+    "peak_rss_bytes": 2575237120,
+    "mlx_active_bytes": 1504791240,
+    "mlx_cache_bytes": 163840,
+    "mlx_peak_bytes": 2572572364
+  },
+  "original_head_sha256": "735a4d8a2ccc2bce41a1f68e52c7d478c5ed743020a26c675f82c7c84166d754",
+  "memory_final": {
+    "rss_bytes": 1447723008,
+    "peak_rss_bytes": 2575237120,
+    "mlx_active_bytes": 1504791242,
+    "mlx_cache_bytes": 1073742994,
+    "mlx_peak_bytes": 2572572364
+  },
+  "index_sha256": "861c345a2ce81fd8e2042438405bd127c7997f3121d2611c84c4f5d337689031",
+  "finished_at": "2026-10-25T13:47:20.865139+00:00"
+}

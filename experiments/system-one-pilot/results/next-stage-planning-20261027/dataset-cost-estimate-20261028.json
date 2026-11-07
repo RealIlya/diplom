@@ -1,0 +1,84 @@
+{
+  "id": "dataset-cost-estimate-20261028",
+  "date": "2026-10-28",
+  "timezone": "Asia/Novosibirsk",
+  "status": "completed_cost_projection_not_experiment",
+  "author": "Codex по запросу инициатора",
+  "git_head": "966f2f89135bd0958d48eabc475532612c395d20",
+  "working_copy": "dirty; existing experiment sources not modified; calculations depend only on hashed JSON inputs",
+  "source_date": "2026-10-27",
+  "sources_sha256": {
+    "experiments/system-one-pilot/results/expansion-20261027/budget-final.json": "8f261d80a26c537c655f8e2a657b7744d99be0b477fe375ca40422a6d8a87697",
+    "experiments/system-one-pilot/results/expansion-20261027/dataset-summary.json": "76dc8c224ad6464a5903bdcaa134b49350dcbf23174a5b955a9230642e90ac09"
+  },
+  "inputs": {
+    "annotated_pairs": 200,
+    "binary_eligible_pairs": 181,
+    "eligible_useful": 29,
+    "collection_held_usd": "0.089059207",
+    "annotation_usd": "0.378260139",
+    "total_held_usd": "0.467319346",
+    "human_review_new": false
+  },
+  "formula": "ceil(target / observed_yield) * cost_per_candidate; source cost per candidate = held total / 200",
+  "scenarios": [
+    {
+      "scenario": "3000_annotated_pairs_from_zero",
+      "candidate_pairs": 3000,
+      "collection_usd": "1.335888105",
+      "annotation_usd": "5.673902085",
+      "total_usd": "7.009790190"
+    },
+    {
+      "scenario": "3000_binary_eligible_pairs_from_zero",
+      "candidate_pairs": 3315,
+      "collection_usd": "1.476156356025",
+      "annotation_usd": "6.269661803925",
+      "total_usd": "7.74581815995"
+    },
+    {
+      "scenario": "expand_existing_330_to_3000_annotated",
+      "candidate_pairs": 2670,
+      "collection_usd": "1.18894041345",
+      "annotation_usd": "5.04977285565",
+      "total_usd": "6.2387132691"
+    },
+    {
+      "scenario": "expand_existing_298_to_3000_binary_eligible",
+      "candidate_pairs": 2986,
+      "collection_usd": "1.32965396051",
+      "annotation_usd": "5.64742387527",
+      "total_usd": "6.97707783578"
+    },
+    {
+      "scenario": "3000_binary_eligible_half_useful_from_zero",
+      "candidate_pairs": 10345,
+      "collection_usd": "4.606587482075",
+      "annotation_usd": "19.565505689775",
+      "total_usd": "24.17209317185"
+    }
+  ],
+  "planning_ranges_usd": {
+    "natural_mix_3000_binary_eligible": [
+      10,
+      15
+    ],
+    "half_useful_3000_binary_eligible": [
+      30,
+      40
+    ]
+  },
+  "range_status": "judgmental contingency allowances, not measured confidence intervals or spending authorization",
+  "limitations": [
+    "Extrapolation of one engineering train-only packet, not verified current API tariffs or invoice.",
+    "Constant token lengths, task yield, annotation policy, routing and rates assumed; scales may change.",
+    "No estimate of human/agent review labor, local compute/electricity, training, agent evaluation, GPU rental or taxes/payment fees.",
+    "No claim that source has enough independent families for 3000 pairs; quotas and held-out evaluation remain open.",
+    "Model agreement plus agent arbitration is not independent human gold.",
+    "Balanced scenario assumes observed useful yield stays 29/200, all candidates double-annotated; selection improvements could reduce cost.",
+    "Existing 330 rows include uncertain/defect rows; 298 are binary eligible across all roles."
+  ],
+  "new_paid_calls": 0,
+  "new_cost_usd": 0,
+  "failures": []
+}

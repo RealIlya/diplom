@@ -1,0 +1,513 @@
+{
+  "status": "passed",
+  "arms": {
+    "native": {
+      "cost_and_tokens_by_role": {
+        "simulator": {
+          "calls": 24,
+          "actual_usd": 0.001287451,
+          "charged_or_held_usd": 0.001287451,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 90649,
+          "cached_prompt_tokens": 85504,
+          "completion_tokens": 1809,
+          "reasoning_tokens": 0
+        },
+        "agent": {
+          "calls": 56,
+          "actual_usd": 0.018301744999999994,
+          "charged_or_held_usd": 0.018301744999999994,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 1161386,
+          "cached_prompt_tokens": 1089408,
+          "completion_tokens": 27364,
+          "reasoning_tokens": 17085
+        }
+      },
+      "episodes": [
+        {
+          "task": "task_035",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 43.49369879200003,
+          "termination": "user_stop",
+          "reward": 1.0,
+          "reward_basis": [
+            "ACTION"
+          ],
+          "reward_breakdown": {
+            "ACTION": 1.0
+          },
+          "nl_checks": 0,
+          "messages": 18
+        },
+        {
+          "task": "task_041",
+          "status": "failed",
+          "error_type": "JSONDecodeError",
+          "wall_seconds": 270.4517700829997,
+          "termination": null,
+          "reward": null,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 69
+        },
+        {
+          "task": "task_061",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 151.05631833300004,
+          "termination": "user_stop",
+          "reward": 0.0,
+          "reward_basis": [
+            "DB"
+          ],
+          "reward_breakdown": {
+            "DB": 0.0
+          },
+          "nl_checks": 0,
+          "messages": 47
+        }
+      ],
+      "common_completed_diagnostic": {
+        "tasks": [
+          "task_035"
+        ],
+        "successes": 1,
+        "wall_seconds_total": 43.49369879200003,
+        "api_actual_usd": 0.001894475,
+        "api_charged_or_held_usd": 0.001894475
+      },
+      "selector_events": 0,
+      "empty_packs": 0,
+      "max_pack_tokens": null,
+      "selector_seconds_median": null
+    },
+    "bm25": {
+      "cost_and_tokens_by_role": {
+        "simulator": {
+          "calls": 9,
+          "actual_usd": 0.000532032,
+          "charged_or_held_usd": 0.000532032,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 24266,
+          "cached_prompt_tokens": 22528,
+          "completion_tokens": 1005,
+          "reasoning_tokens": 0
+        },
+        "agent": {
+          "calls": 86,
+          "actual_usd": 0.039611078,
+          "charged_or_held_usd": 0.039611078,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 941191,
+          "cached_prompt_tokens": 613376,
+          "completion_tokens": 19326,
+          "reasoning_tokens": 10027
+        }
+      },
+      "episodes": [
+        {
+          "task": "task_035",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 29.072026499999993,
+          "termination": "user_stop",
+          "reward": 1.0,
+          "reward_basis": [
+            "ACTION"
+          ],
+          "reward_breakdown": {
+            "ACTION": 1.0
+          },
+          "nl_checks": 0,
+          "messages": 15
+        },
+        {
+          "task": "task_041",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 221.96567437500016,
+          "termination": "max_steps",
+          "reward": 0.0,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 82
+        },
+        {
+          "task": "task_061",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 187.42425845800017,
+          "termination": "max_steps",
+          "reward": 0.0,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 118
+        }
+      ],
+      "common_completed_diagnostic": {
+        "tasks": [
+          "task_035"
+        ],
+        "successes": 1,
+        "wall_seconds_total": 29.072026499999993,
+        "api_actual_usd": 0.002036876,
+        "api_charged_or_held_usd": 0.002036876
+      },
+      "selector_events": 83,
+      "empty_packs": 0,
+      "max_pack_tokens": 4094,
+      "selector_seconds_median": 0.14408887499985212
+    },
+    "llm": {
+      "cost_and_tokens_by_role": {
+        "simulator": {
+          "calls": 19,
+          "actual_usd": 0.0013093880000000003,
+          "charged_or_held_usd": 0.0013093880000000003,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 69627,
+          "cached_prompt_tokens": 64000,
+          "completion_tokens": 1938,
+          "reasoning_tokens": 0
+        },
+        "agent": {
+          "calls": 54,
+          "actual_usd": 0.019168300000000003,
+          "charged_or_held_usd": 0.019168300000000003,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 445682,
+          "cached_prompt_tokens": 335488,
+          "completion_tokens": 25112,
+          "reasoning_tokens": 16755
+        },
+        "selector": {
+          "calls": 46,
+          "actual_usd": 0.030861484000000005,
+          "charged_or_held_usd": 0.030861484000000005,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 856868,
+          "cached_prompt_tokens": 740096,
+          "completion_tokens": 58646,
+          "reasoning_tokens": 48475
+        }
+      },
+      "episodes": [
+        {
+          "task": "task_035",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 112.32783045799988,
+          "termination": "user_stop",
+          "reward": 1.0,
+          "reward_basis": [
+            "ACTION"
+          ],
+          "reward_breakdown": {
+            "ACTION": 1.0
+          },
+          "nl_checks": 0,
+          "messages": 17
+        },
+        {
+          "task": "task_041",
+          "status": "failed",
+          "error_type": "JSONDecodeError",
+          "wall_seconds": 519.921285208,
+          "termination": null,
+          "reward": null,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 44
+        },
+        {
+          "task": "task_061",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 826.8937465829999,
+          "termination": "user_stop",
+          "reward": 0.0,
+          "reward_basis": [
+            "DB"
+          ],
+          "reward_breakdown": {
+            "DB": 0.0
+          },
+          "nl_checks": 0,
+          "messages": 63
+        }
+      ],
+      "common_completed_diagnostic": {
+        "tasks": [
+          "task_035"
+        ],
+        "successes": 1,
+        "wall_seconds_total": 112.32783045799988,
+        "api_actual_usd": 0.003713458,
+        "api_charged_or_held_usd": 0.003713458
+      },
+      "selector_events": 46,
+      "empty_packs": 0,
+      "max_pack_tokens": 4027,
+      "selector_seconds_median": 22.2826340204997
+    },
+    "frozen": {
+      "cost_and_tokens_by_role": {
+        "simulator": {
+          "calls": 11,
+          "actual_usd": 0.0007393030000000002,
+          "charged_or_held_usd": 0.0007393030000000002,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 30295,
+          "cached_prompt_tokens": 25728,
+          "completion_tokens": 735,
+          "reasoning_tokens": 0
+        },
+        "agent": {
+          "calls": 49,
+          "actual_usd": 0.023595388999999998,
+          "charged_or_held_usd": 0.044898389,
+          "unknown_actual_calls": 1,
+          "prompt_tokens": 460451,
+          "cached_prompt_tokens": 279168,
+          "completion_tokens": 17037,
+          "reasoning_tokens": 11538
+        }
+      },
+      "episodes": [
+        {
+          "task": "task_035",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 41.23346345899972,
+          "termination": "user_stop",
+          "reward": 1.0,
+          "reward_basis": [
+            "ACTION"
+          ],
+          "reward_breakdown": {
+            "ACTION": 1.0
+          },
+          "nl_checks": 0,
+          "messages": 14
+        },
+        {
+          "task": "task_041",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 942.885064,
+          "termination": "timeout",
+          "reward": 0.0,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 66
+        },
+        {
+          "task": "task_061",
+          "status": "failed",
+          "error_type": "BudgetError",
+          "wall_seconds": 466.5354203750003,
+          "termination": null,
+          "reward": null,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 37
+        }
+      ],
+      "common_completed_diagnostic": {
+        "tasks": [
+          "task_035"
+        ],
+        "successes": 1,
+        "wall_seconds_total": 41.23346345899972,
+        "api_actual_usd": 0.001834278,
+        "api_charged_or_held_usd": 0.001834278
+      },
+      "selector_events": 46,
+      "empty_packs": 0,
+      "max_pack_tokens": 4088,
+      "selector_seconds_median": 11.884550874499837
+    },
+    "ce": {
+      "cost_and_tokens_by_role": {
+        "simulator": {
+          "calls": 12,
+          "actual_usd": 0.0007665820000000001,
+          "charged_or_held_usd": 0.0007665820000000001,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 34192,
+          "cached_prompt_tokens": 29440,
+          "completion_tokens": 729,
+          "reasoning_tokens": 0
+        },
+        "agent": {
+          "calls": 74,
+          "actual_usd": 0.027899808000000005,
+          "charged_or_held_usd": 0.027899808000000005,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 655902,
+          "cached_prompt_tokens": 420352,
+          "completion_tokens": 12177,
+          "reasoning_tokens": 6157
+        },
+        "selector": {
+          "calls": 1,
+          "actual_usd": 0.001089172,
+          "charged_or_held_usd": 0.001089172,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 7313,
+          "cached_prompt_tokens": 0,
+          "completion_tokens": 1267,
+          "reasoning_tokens": 1052
+        }
+      },
+      "episodes": [
+        {
+          "task": "task_035",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 154.7389788749988,
+          "termination": "user_stop",
+          "reward": 1.0,
+          "reward_basis": [
+            "ACTION"
+          ],
+          "reward_breakdown": {
+            "ACTION": 1.0
+          },
+          "nl_checks": 0,
+          "messages": 13
+        },
+        {
+          "task": "task_041",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 604.0924792500009,
+          "termination": "max_steps",
+          "reward": 0.0,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 82
+        },
+        {
+          "task": "task_061",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 937.8402159999987,
+          "termination": "timeout",
+          "reward": 0.0,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 66
+        }
+      ],
+      "common_completed_diagnostic": {
+        "tasks": [
+          "task_035"
+        ],
+        "successes": 1,
+        "wall_seconds_total": 154.7389788749988,
+        "api_actual_usd": 0.001282917,
+        "api_charged_or_held_usd": 0.001282917
+      },
+      "selector_events": 71,
+      "empty_packs": 0,
+      "max_pack_tokens": 4029,
+      "selector_seconds_median": 13.563110291999692
+    },
+    "brier": {
+      "cost_and_tokens_by_role": {
+        "simulator": {
+          "calls": 8,
+          "actual_usd": 0.000335491,
+          "charged_or_held_usd": 0.000335491,
+          "unknown_actual_calls": 0,
+          "prompt_tokens": 20512,
+          "cached_prompt_tokens": 18944,
+          "completion_tokens": 429,
+          "reasoning_tokens": 0
+        },
+        "agent": {
+          "calls": 41,
+          "actual_usd": 0.016661398,
+          "charged_or_held_usd": 0.032716198,
+          "unknown_actual_calls": 1,
+          "prompt_tokens": 360521,
+          "cached_prompt_tokens": 229504,
+          "completion_tokens": 10704,
+          "reasoning_tokens": 6564
+        }
+      },
+      "episodes": [
+        {
+          "task": "task_035",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 50.78292770899861,
+          "termination": "user_stop",
+          "reward": 1.0,
+          "reward_basis": [
+            "ACTION"
+          ],
+          "reward_breakdown": {
+            "ACTION": 1.0
+          },
+          "nl_checks": 0,
+          "messages": 13
+        },
+        {
+          "task": "task_041",
+          "status": "failed",
+          "error_type": "BudgetError",
+          "wall_seconds": 47.47951862500122,
+          "termination": null,
+          "reward": null,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 8
+        },
+        {
+          "task": "task_061",
+          "status": "completed",
+          "error_type": null,
+          "wall_seconds": 902.5098050830002,
+          "termination": "timeout",
+          "reward": 0.0,
+          "reward_basis": null,
+          "reward_breakdown": null,
+          "nl_checks": 0,
+          "messages": 68
+        }
+      ],
+      "common_completed_diagnostic": {
+        "tasks": [
+          "task_035"
+        ],
+        "successes": 1,
+        "wall_seconds_total": 50.78292770899861,
+        "api_actual_usd": 0.001131202,
+        "api_charged_or_held_usd": 0.001131202
+      },
+      "selector_events": 38,
+      "empty_packs": 0,
+      "max_pack_tokens": 4040,
+      "selector_seconds_median": 15.568967187499766
+    }
+  },
+  "online_total_actual_usd": 0.182158621,
+  "online_total_charged_or_held_usd": 0.219516421,
+  "all_paid_roles_included": true,
+  "pack_budget_verified": true,
+  "token_scope": "Sums of known provider-response usage only; incomplete when response is missing. See unknown_actual_calls; missing usage is not a measured zero.",
+  "scope": "metadata only; API actual is known provider usage, held bound is not confirmed expenditure; small dev pilot, one seed"
+}

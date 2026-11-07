@@ -1,0 +1,75 @@
+............................2026-11-02 18:13:28.734 | ERROR    | tau2.utils.llm_utils:generate:417 - persistent series budget exhausted before HTTP
+2026-11-02 18:13:28.735 | WARNING  | tau2.orchestrator.orchestrator:run:287 - Simulation loop exited with an exception — running emergency cleanup
+{"budget":{"charged_or_held_usd":0.9,"limit_usd":1,"unresolved":0},"messages":1,"status":"failed","task":"task_007"}
+................../Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py:2247: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x116bbeb60>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py:2247: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x107585990>
+  def __init__(self, name, parent):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.....{"budget":{"actual_usd":0.001,"calls":1,"charged_or_held_usd":0.001,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0},"model":"deepseek","row":"a","status":"valid"}
+{"budget":{"actual_usd":0.002,"calls":2,"charged_or_held_usd":0.002,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0},"model":"qwen","row":"a","status":"valid"}
+.........................................../Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adca020>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adca6b0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcac50>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adca980>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcad40>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcaa70>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcae30>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10bd28040>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcb2e0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcb010>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcb4c0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcb1f0>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcb790>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:361: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12adcb880>
+  obj, end = self.scan_once(s, idx)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+{"actual_usd":0.002,"calls":2,"charged_or_held_usd":0.002,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0}
+{"call":"test-only/000/simulator","provider":"DeepSeek","usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only/001/agent","provider":"DeepSeek","usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only/002/agent","provider":"DeepSeek","usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only/003/simulator","provider":"DeepSeek","usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+...{"call":"test-only-judge-0/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+{"call":"test-only-judge-1/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+{"call":"test-only-judge-2/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+{"call":"test-only-judge-3/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+.{"call":"test-only-online/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+.{"call":"test-only-projection/000/simulator","provider":null,"usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only-projection/001/agent","provider":null,"usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only-projection/002/agent","provider":null,"usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only-projection/003/simulator","provider":null,"usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+.2026-11-02 18:13:30.675 | ERROR    | tau2.utils.llm_utils:generate:417 - persistent series budget exhausted before HTTP
+2026-11-02 18:13:30.675 | WARNING  | tau2.orchestrator.orchestrator:run:287 - Simulation loop exited with an exception — running emergency cleanup
+{"arm":"native","budget":{"charged_or_held_usd":0.9,"unresolved":0},"elapsed_seconds":0.0016758330002630828,"episode_id":"online-adaptation-v1/native/task_035","error_type":"BudgetError","finished_at":"2026-11-02T11:13:30.676308+00:00","started_at":"2026-11-02T11:13:30.674622+00:00","status":"failed","task_id":"task_035"}
+..............................
+----------------------------------------------------------------------
+Ran 130 tests in 4.719s
+
+OK

@@ -1,0 +1,20 @@
+{
+  "accepted": 30,
+  "by_source": {
+    "llm_consensus": 20,
+    "human": 6,
+    "agent_adjudication": 4
+  },
+  "labels": {
+    "useful": 11,
+    "irrelevant": 18,
+    "uncertain": 1
+  },
+  "trusted_training_eligible": 23,
+  "critical_unresolved": 0,
+  "human_review": 6,
+  "original_tables_unchanged": true,
+  "original_tables_sha256": "514b6d6fbc2d70c98b32330ad20c6d2b981b373124624b3c051bdd919090841b",
+  "export": "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/api-v1/exports/trusted-labels-v1.jsonl",
+  "policy": "deepseek-qwen-agent-v1"
+}

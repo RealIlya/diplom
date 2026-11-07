@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-25T06:38:35.771550+00:00",
+  "responses": 60,
+  "counts": {
+    "valid": 42,
+    "technical_error": 18
+  },
+  "technical_errors": {
+    "annotation schema keys": 8,
+    "annotation quote schema": 7,
+    "incomplete response: length": 3
+  },
+  "decision": "repeat all same 30 inputs with strict JSON schema as version2; preserve v1 unchanged; no outcome-based card selection",
+  "rubric_semantics_changed": false
+}

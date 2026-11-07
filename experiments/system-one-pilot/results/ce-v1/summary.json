@@ -1,0 +1,223 @@
+{
+  "status": "completed_diagnostic",
+  "created_at": "2026-10-19T12:43:31.803161+00:00",
+  "api_cost_usd": 0,
+  "rental_cost_rub": 0,
+  "local_energy_cost": null,
+  "codex_session_cost": "not available in runtime",
+  "test_used": false,
+  "independent_human_label_review": false,
+  "config": {
+    "protocol_version": "banking-archive-offline-ce-v2",
+    "seed": 20261019,
+    "tau_revision": "4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699",
+    "laya_revision": "68804629e8ccd9d616d48a40e87de9fabbeae069",
+    "checkpoint_repo": "convaiinnovations/laya-multilingual",
+    "checkpoint_revision": "1720e3e3357cfe1e281542e223f8273b0890ca34",
+    "archive_url": "https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gpt-5-4_sierra_2026-03-25/trajectories/gpt-5.4_xhigh_banking_knowledge_gpt-5.2_4trials.json",
+    "archive_prefix_bytes": 20000000,
+    "archive_sha256": "4d7f30616a6c158079d1569e8213fbad20518d7725284af197d1383459ebe993",
+    "manual_groups": [
+      [
+        "task_001",
+        "task_002",
+        "task_003",
+        "task_006",
+        "task_007",
+        "task_008"
+      ],
+      [
+        "task_004",
+        "task_005"
+      ],
+      [
+        "task_039",
+        "task_040",
+        "task_041"
+      ],
+      [
+        "task_043",
+        "task_044",
+        "task_045",
+        "task_046",
+        "task_047",
+        "task_048",
+        "task_049"
+      ],
+      [
+        "task_051",
+        "task_052"
+      ],
+      [
+        "task_058",
+        "task_059",
+        "task_063",
+        "task_064"
+      ],
+      [
+        "task_060",
+        "task_061"
+      ],
+      [
+        "task_065",
+        "task_066",
+        "task_067",
+        "task_068",
+        "task_069"
+      ],
+      [
+        "task_070",
+        "task_071"
+      ],
+      [
+        "task_072",
+        "task_073",
+        "task_074"
+      ],
+      [
+        "task_075",
+        "task_076"
+      ],
+      [
+        "task_077",
+        "task_078",
+        "task_079",
+        "task_080",
+        "task_081"
+      ],
+      [
+        "task_082",
+        "task_083",
+        "task_084",
+        "task_085",
+        "task_086"
+      ],
+      [
+        "task_090",
+        "task_091",
+        "task_092"
+      ],
+      [
+        "task_093",
+        "task_094",
+        "task_095",
+        "task_096",
+        "task_097"
+      ],
+      [
+        "task_098",
+        "task_099",
+        "task_100",
+        "task_101",
+        "task_102"
+      ],
+      [
+        "task_017",
+        "task_018",
+        "task_019",
+        "task_020",
+        "task_021",
+        "task_022",
+        "task_026",
+        "task_027",
+        "task_028",
+        "task_029"
+      ]
+    ],
+    "replay": {
+      "unique_tasks_only": true,
+      "first_kb_snapshot_only": true,
+      "chunk_words": 100
+    },
+    "training": {
+      "epochs": 1,
+      "head_lr": 0.0001,
+      "batch_size": 1,
+      "freeze_encoder": true,
+      "loss": "CE",
+      "temperature_fit": false,
+      "max_steps": 64,
+      "max_len": 1024,
+      "head_max_len": 256
+    },
+    "api_limit_usd": 0,
+    "gpu_rental_limit_rub": 0,
+    "local_wall_limit_seconds": 1200
+  },
+  "split_sha256": "12a93dc6e823f67e8469f72f3a1546f4bfa87f23097fdf7f6cac589dc0a00fb5",
+  "queue_sha256": "362018f1a7141f4c7cef1b68aee0674c847934dccde6fa9260fcebd4848ccef3",
+  "annotations_sha256": "bcee5f62d537119ba58b64f2229b3fedf6b43c4cc9130ef36d9b768b3e092dfb",
+  "source_hashes": {
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom/scripts/system_one_pilot/__init__.py": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom/scripts/system_one_pilot/model.py": "a09fd2d7a4665434c090a5d2d6ea35c804adca7d8cedc731c806077cb528e31b",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom/scripts/system_one_pilot/cli.py": "1359b3edc771a59a5a6ae06da4347105a667252c8676dc603f9a610622372d54",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom/scripts/system_one_pilot/data.py": "c7baa707da309e3556ecf13dfdbdd98780baed54acfc78cbe0b1bf2516719f24"
+  },
+  "environment": {
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "packages": {
+      "torch": "2.9.1",
+      "transformers": "4.57.1",
+      "tokenizers": "0.22.1",
+      "safetensors": "0.6.2",
+      "numpy": "2.3.4",
+      "huggingface_hub": "0.36.0"
+    }
+  },
+  "checkpoint_hashes": {
+    "model.safetensors": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+    "tokenizer_config.original.json": "424b69444bf7b5809dc2cd2e36d0bd71b8055124dd24274d6db3c655d38205e7",
+    "rl_agent_config.json": "25061739243b617ad88d1219ba6f8a9c86c5881ca28df024fa2d9b3b2fcc30c6",
+    "encoder/config.json": "83f6916d13ef0f556ac461f28308dc2bffa7ebeadee8ec9e2db5812020ea5bb4",
+    "tokenizer/tokenizer_config.json": "6c6b2d8e3c84ce0e671c129cd6b374b235d6f9863042a5836358d00a89bbb5a1",
+    "tokenizer/tokenizer.json": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f"
+  },
+  "train_rows": 48,
+  "dev_rows": 27,
+  "uncertain": 16,
+  "train_families": 5,
+  "dev_families": 1,
+  "total_parameters": 321908995,
+  "room": 976,
+  "question": {
+    "type": "noul",
+    "instructions": "Does the candidate evidence contain a rule, exception or fact applicable to the current user need in the observed conversation?"
+  },
+  "trainable_parameters": 14770945,
+  "results": {
+    "BM25": {
+      "n": 27,
+      "snapshots": 1,
+      "mean_precision_at_3": 0.6666666666666666,
+      "mean_recall_at_3": 0.25,
+      "latency_median_seconds": 8.102162973955274e-05
+    },
+    "frozen": {
+      "n": 27,
+      "snapshots": 1,
+      "mean_precision_at_3": 0.0,
+      "mean_recall_at_3": 0.0,
+      "latency_median_seconds": 0.12854766700183973,
+      "brier": 0.6791501642959537,
+      "nll": 3.1159826875719046,
+      "accuracy": 0.2962962962962963
+    },
+    "CE": {
+      "n": 27,
+      "snapshots": 1,
+      "mean_precision_at_3": 1.0,
+      "mean_recall_at_3": 0.375,
+      "latency_median_seconds": 0.10121891601011157,
+      "brier": 0.3857411799881014,
+      "nll": 0.9877435786992415,
+      "accuracy": 0.2962962962962963
+    }
+  },
+  "reload_max_abs_difference": 0.0,
+  "head_sha256": "a7fa717d0da4302800d108426e20be8592d8daef9bf2adc34eba9677e109ff55",
+  "warning": "Provisional single-agent labels; one dev family is not evidence of generalization or agent success.",
+  "mps_current_allocated_bytes": 1414674944,
+  "mps_driver_allocated_bytes": 7257112576,
+  "elapsed_seconds": 42.76380999997491
+}

@@ -1,0 +1,43 @@
+{
+  "archive_git_commit": "1ba0913b59351dd87fcdd04008280c6c4cfb71f2",
+  "pinned_tau_commit": "4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699",
+  "archive_retrieval": "AllTools",
+  "target_profile": "bm25",
+  "task_identity_verified": false,
+  "revision_lookup": {
+    "raw_tasks_json_http": 404,
+    "git_tree_http": 422,
+    "git_tree_message": "Invalid object requested. SHA must identify a commit or a tree."
+  },
+  "observed_documents": {
+    "exact": 253,
+    "content_differs": 13
+  },
+  "document_differences": {
+    "doc_credit_cards_diamond_elite_card_007": {
+      "observed_sha256": "2fbb0b48432f15145e3e9dade6c733eb6e6abc985ac5b453e2d5ac2cbcc60a1d",
+      "current_sha256": "8ffcb487ee02e7dfd3b50424e482196d456a1a8e7cdd6512847e9b1c3c936967"
+    },
+    "doc_credit_cards_platinum_rewards_card_007": {
+      "observed_sha256": "f2c6148780be95780385d8fccf55d715c0f5c12ce1f39ccf7a9bf4820b970dea",
+      "current_sha256": "285b62e6beb4df150440a0f33b818d9d555863baba92e6a2eb23be6332f4e86f"
+    },
+    "doc_credit_cards_gold_rewards_card_001": {
+      "observed_sha256": "a37a74dda2f4a63ef06ed189ca80437ba02d638eb5c032abf3a83c3b53d70db4",
+      "current_sha256": "e32bf1ed0e82b19603586ef14c19ab131c411ad9693d9f8f92d02d8acf24da3c"
+    },
+    "doc_bank_accounts_bank_accounts_(general)_008": {
+      "observed_sha256": "f2ffb37ac5470839a6c323a9ee42d1a4a3f0af67133cd100f675243bd02413cc",
+      "current_sha256": "7d8d78438587ebe652caca6563eb1e84d2042ed3234c6e5183aa8ef28bed567f"
+    },
+    "doc_bank_accounts_bank_accounts_(general)_006": {
+      "observed_sha256": "c6076ac3977a12bf1749d6da518f6796c08013c2756ebf74608ee55d87e213b5",
+      "current_sha256": "4a4384f550b7ebc9240d103f7574c3642c8dab3822d865fdfa0612101ff27af0"
+    },
+    "doc_bank_accounts_bank_accounts_(general)_007": {
+      "observed_sha256": "48abb324966999c8d25efdceb13fa89c91c8856ddd9637a8463c12f017d22e5d",
+      "current_sha256": "7855bd195a10c6dc7f018abd45eaf98f69d7a00cf54a90d969b6e2d3e0ee985d"
+    }
+  },
+  "conclusion": "Archive is a separate reproducible diagnostic source; not a validated native rollout on pinned tasks. Input data is archived observed content, never replaced with current KB."
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "continuation prepared and tested; not yet used for paid inference",
+  "files": [
+    {
+      "path": "scripts/system_one_pilot/online.py",
+      "sha256": "43864c56b2911eca8c2ba6eec51a9a0544cac31a987bc9b1dd35222e2903cded",
+      "size": 18047
+    },
+    {
+      "path": "tests/test_system_one_online.py",
+      "sha256": "7fcf820dc299e3dce9b710cfcc3022f437894186b9f0d9a06a8e2f18d4e318ee",
+      "size": 15394
+    },
+    {
+      "path": "experiments/system-one-pilot/results/adaptation-20261025/native-smoke.py",
+      "sha256": "b706d0a0b61a6c98c952e44812dac3d4712a1c16e69eb1b1a5ec5f63386731d8",
+      "size": 2139
+    },
+    {
+      "path": "experiments/system-one-pilot/results/adaptation-20261025/cheap-controls.py",
+      "sha256": "39a05803ec0eb444579b8b5b083d21882d323cf8cc9a4ac5a22af9e1cf1f78b4",
+      "size": 1797
+    },
+    {
+      "path": "experiments/system-one-pilot/results/adaptation-20261025/run-online.py",
+      "sha256": "5455d30610c0b82e2bf4afd6dc1dcbc4aed677373924376860df398c94929f14",
+      "size": 1317
+    },
+    {
+      "path": "experiments/system-one-pilot/results/adaptation-20261025/audit-online.py",
+      "sha256": "38af92985611cd5f42d49788a7dc1d06c0fde51acc4e169adb86fd5978e70a1e",
+      "size": 4733
+    },
+    {
+      "path": "experiments/system-one-pilot/results/adaptation-20261025/verify-observed-online.py",
+      "sha256": "09735376ea31e0fca364f29b7c6fdfb2360f57eae8685f197418e76847532836",
+      "size": 3325
+    },
+    {
+      "path": "experiments/system-one-pilot/results/adaptation-20261025/verify-numerics.py",
+      "sha256": "b06c8b4a1066e2cf9c35ea25d952290535da59153e5412df2496f39afe772332",
+      "size": 3215
+    },
+    {
+      "path": "experiments/system-one-pilot/results/adaptation-20261025/continue-online.py",
+      "sha256": "9af681c410cbac01cffdd1d7a803375a30e8bd31f3c6b0f285c216adaaa4b451",
+      "size": 1784
+    }
+  ]
+}

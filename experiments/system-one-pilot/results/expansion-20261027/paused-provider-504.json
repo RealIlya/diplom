@@ -1,0 +1,46 @@
+{
+  "status": "paused pending explicit provider504 full-bound exception",
+  "new_series": {
+    "calls": 9,
+    "known_nusd": 1544768,
+    "held_nusd": 20580968
+  },
+  "unresolved_call": {
+    "series": "expansion-v1-collection",
+    "call_id": "expansion-v1/task_019/008/agent",
+    "request_hash": "e6a2f3f925ddd18b7dcdd6b03eeeaf9be3e0fe790f80e3379109c4b13caaae88",
+    "status": "unreconciled",
+    "reserved_nusd": 19036200,
+    "actual_nusd": null,
+    "finished_at": "2026-10-26T17:32:50.425491+00:00",
+    "response_sha256": "e8d4b0ff23b6809f2888afef21658ab76fa61f1535b77afa18c12118d54156fd",
+    "generation_id": "gen-1793035659-eLaJ8b5L1uqNkHVBSDV7",
+    "provider_error": {
+      "code": 504,
+      "message": "Provider timed out after 310237ms",
+      "metadata": {
+        "error_type": "timeout"
+      }
+    }
+  },
+  "collection": {
+    "planned": 9,
+    "attempted": 1,
+    "failed": 1,
+    "unstarted": 8
+  },
+  "annotation_calls": 0,
+  "trusted_new_labels": 0,
+  "preview": {
+    "path": "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1",
+    "rows": 191,
+    "train_families": 5,
+    "fresh_rows": 0,
+    "scope": "unlabelled cached candidate preview only, not final queue or expanded trusted dataset"
+  },
+  "recovery": [
+    "generation GET before error404",
+    "generation GET after504404"
+  ],
+  "new_unknowns_policy": "no next paidcalls without reconciliation/explicit exception; no retry"
+}

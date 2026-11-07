@@ -1,0 +1,15 @@
+checks	Run python scripts/check_site.py	﻿2026-11-02T11:19:09.2547841Z ##[group]Run python scripts/check_site.py
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2548174Z ^[[36;1mpython scripts/check_site.py^[[0m
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2561751Z shell: /usr/bin/bash -e {0}
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2562039Z env:
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2584644Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.17/x64
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2585137Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib/pkgconfig
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2585552Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2585922Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2586296Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2586662Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib
+checks	Run python scripts/check_site.py	2026-11-02T11:19:09.2586970Z ##[endgroup]
+checks	Run python scripts/check_site.py	2026-11-02T11:19:10.7467424Z Tracked site differs from a fresh strict build:
+checks	Run python scripts/check_site.py	2026-11-02T11:19:10.7468149Z   different: search/search_index.json
+checks	Run python scripts/check_site.py	2026-11-02T11:19:10.7526320Z   different: superpowers/plans/2026-10-09-audit-remediation/index.html
+checks	Run python scripts/check_site.py	2026-11-02T11:19:10.7538092Z ##[error]Process completed with exit code 1.

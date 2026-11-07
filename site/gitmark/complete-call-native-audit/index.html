@@ -1,0 +1,2609 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../complete-call-options/">
+      
+      
+        <link rel="next" href="../tau-bench-review/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Полные native вызовы τ-knowledge из наблюдений - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#полные-native-вызовы-τ-knowledge-из-наблюдений" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Полные native вызовы τ-knowledge из наблюдений
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki GitMark
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wiki GitMark
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Состояние и задачи
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Онтология
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-handoff-2026-10-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контекст продолжения 11.10.2026
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атлас адаптации System One
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Атлас адаптации System One
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общий план и карты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реализация этапов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные и эксперименты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура стенда
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверенные источники и результаты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот CE и проверенные блокеры
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-next-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Следующий этап — данные и инфраструктура
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерактивный атлас
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Термины общего агента
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — обзор и источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-training-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение System One — статьи и выжимки
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — темы и план ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ресурсы τ-bench, Laya и KEV
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../action-selection-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выбор действий и контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полные вызовы без LLM
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native аргументы и предусловия
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native аргументы и предусловия
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-дата-метод-и-границы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Дата, метод и границы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-шесть-обычных-read-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Шесть обычных read tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-идентификация-и-подтверждения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Идентификация и подтверждения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-retrieval-discovery-и-служебные-записи" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Retrieval, discovery и служебные записи
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-цепочка-observation--id-reference--next-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Цепочка observation → ID reference → next candidate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#первичные-pinned-источники" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Первичные pinned источники
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документы агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переводы статей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Переводы статей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как читать и словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/openjev-rlcd-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenJev-RLCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/sbert2s1-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBERT2S1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/translation-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запись подготовки и проверки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архив технических планов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Архив технических планов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-19-system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот System One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-kev-laya-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сравнение KEV и Laya
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-system-one-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимый dev и адаптация KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-27-system-one-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Первый пакет расширения и grouped KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — спецификация 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — выполненный план 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-дата-метод-и-границы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Дата, метод и границы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-шесть-обычных-read-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Шесть обычных read tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-идентификация-и-подтверждения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Идентификация и подтверждения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-retrieval-discovery-и-служебные-записи" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Retrieval, discovery и служебные записи
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-цепочка-observation--id-reference--next-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Цепочка observation → ID reference → next candidate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#первичные-pinned-источники" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Первичные pinned источники
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="полные-native-вызовы-τ-knowledge-из-наблюдений">Полные native вызовы τ-knowledge из наблюдений</h1>
+<p><strong>Вывод:</strong> узкий complete-call path без генеративной LLM на автоматизированном
+шаге технически возможен: имя и все аргументы ряда вызовов собираются из
+наблюдений. Это не доказательство правильного выбора следующего действия,
+покрытия банковских задач или эффективности KEV/Laya. Полная идентификационная
+цепочка <strong>не является read-only</strong>: policy требует запись в журнал верификации.
+Контекст: <a href="../action-selection-review/">исходный аудит</a> и
+<a href="../#wayfinder-native-complete-calls">вопрос «Какие native вызовы можно собрать из наблюдений?»</a>.</p>
+<h2 id="1-дата-метод-и-границы">1. Дата, метод и границы</h2>
+<p>Статический аудит <strong>11.10.2026</strong>, <code>sierra-research/tau2-bench</code>, commit
+<code>4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699</code>. Прочитаны нужные участки
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py">banking tools</a>, обычные <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/policy_header.md#L6-L14">policy header</a> и
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md">additional instructions</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py#L15-L180">retrieval mixins</a>. Для проверки
+фактического формата returns дополнительно прочитаны <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/db_query.py#L433-L471">query helper</a>
+и <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/data_model.py#L80-L105">схема таблицы</a> — исходный код, <strong>не содержимое БД</strong>.</p>
+<p>Метод: pinned raw HTTP, <code>curl --fail --location</code> с проверкой TLS в новый
+временный каталог, затем <code>read</code>/<code>grep</code>; upstream не импортировался и не исполнялся.
+Полный исходник <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py">tools</a> — 189257 bytes, SHA256
+<code>e7287dc76ab74f7c172a9b632b6ebdb067a85bbc0cb7c769f7bdf08ec18aa1c0</code>.
+Не читались tasks, test goals, DB fixtures, <code>required_documents</code>; не было весов,
+модельных прогонов, платных API или измерений на Mac 24 GB. Среда, native policy,
+tools и evaluator не изменялись. Ниже нет реальной или восстановленной task trajectory.</p>
+<h2 id="2-шесть-обычных-read-tools">2. Шесть обычных read tools</h2>
+<p>Сигнатуры приведены без <code>self</code>; все аргументы обязательны, возвращаемый тип —
+<code>str</code>, декоратор — <code>ToolType.READ</code>. <strong>Общий фактический return:</strong> текст
+<code>Found N record(s) in 'table':</code>, затем <code>Record ID: ...</code> и все пары
+<code>field: value</code> каждой найденной записи; не JSON и не фиксированная проекция.
+Пустой результат — <code>No records found in 'table'.</code>; ошибки также строки.
+Таблица хранит <code>Dict[str, Dict[str, Any]]</code>: фиксированный перечень полей
+реальной записи не гарантирован схемой. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/db_query.py#L433-L471">Формат</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/data_model.py#L80-L105">схема</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Native сигнатура</th>
+<th>Поиск и реально возвращаемые поля</th>
+<th>Откуда собрать аргумент без hidden state</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_user_information_by_email(email: str) -&gt; str</code></td>
+<td><code>users</code>, точное равенство <code>email</code>; все поля и Record ID. Docstring обещает сведения DOB/email/phone/address, но не типизированную схему результата. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L395-L422">Код</a></td>
+<td>Email, явно сообщённый пользователем либо полученный в относящемся к нему tool result; не выдумывать и не считать найденный email подтверждением личности.</td>
+</tr>
+<tr>
+<td><code>get_user_information_by_name(customer_name: str) -&gt; str</code></td>
+<td><code>users.name</code>; регистр значим; все поля и Record ID. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L395-L422">Код</a></td>
+<td>Явно названное полное имя, без угадывания написания; несколько совпадений не дают единственного клиента.</td>
+</tr>
+<tr>
+<td><code>get_user_information_by_id(user_id: str) -&gt; str</code></td>
+<td><code>users.user_id</code>; все поля и Record ID. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L395-L422">Код</a></td>
+<td>Явный user ID из user/tool сообщения; привязка к человеку ещё требует проверки.</td>
+</tr>
+<tr>
+<td><code>get_credit_card_accounts_by_user(user_id: str) -&gt; str</code></td>
+<td><code>credit_card_accounts.user_id</code>; все поля и Record ID. Docstring перечисляет card type, date opened, current balance, reward points, <strong>не фиксирует имена JSON-полей</strong>. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L445-L479">Код</a></td>
+<td>ID установленного клиента после идентификации и её логирования; наличие интереса пользователя/основания в процедуре.</td>
+</tr>
+<tr>
+<td><code>get_credit_card_transactions_by_user(user_id: str) -&gt; str</code></td>
+<td><code>credit_card_transaction_history.user_id</code>; все поля и Record ID, без отдельной декларации полей транзакции. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L445-L479">Код</a></td>
+<td>Тот же проверенный user ID; конкретный transaction ID <strong>не входной аргумент</strong> этого метода.</td>
+</tr>
+<tr>
+<td><code>get_referrals_by_user(user_id: str) -&gt; str</code></td>
+<td><code>referrals.referrer_id</code>; все поля и Record ID. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L445-L479">Код</a></td>
+<td>ID клиента как <strong>referrer</strong>, а не автоматически ID приглашённого человека из другой записи.</td>
+</tr>
+</tbody>
+</table>
+<p>Эти шесть методов и их query helper не записывают DB/state. Фильтры используют
+точное сравнение, не fuzzy entity resolution. Внутренние JSON constraints
+собраны f-строками: кавычки/escape в значении могут нарушить разбор; внешне валидный
+вызов не гарантирует успех. Не исправлять это подменой native реализации.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L395-L422">Вызовы</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L445-L479">остальные reads</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/db_query.py#L145-L233">сравнение</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/db_query.py#L433-L471">helper</a>.</p>
+<p><strong>Граница знания о полях:</strong> ключ фильтра присутствует у успешного совпадения,
+но остальные поля надо извлекать именно из полученного сообщения. Нельзя
+обещать наличие <code>transaction_id</code>, <code>account_id</code> или <code>user_id</code> после любого поиска
+по email только по названию tool. <code>Record ID</code> — ключ записи конкретной таблицы,
+не универсальный бизнес-ID; <code>ID</code> документа KB — ещё другой тип. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/db_query.py#L433-L471">Query</a>,
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/data_model.py#L80-L105">схема</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py#L15-L180">retrieval format</a>.</p>
+<h2 id="3-идентификация-и-подтверждения">3. Идентификация и подтверждения</h2>
+<ul>
+<li>Policy требует перед доступом к данным проверить <strong>любые два из четырёх</strong>:
+  date of birth, email, phone number, address. Их должен правильно назвать
+  пользователь; имя/user ID недостаточны. Отдельного endpoint проверки policy
+  не назначает: написано <code>call the appropriate read tools</code>, затем сопоставить
+  значения. Повторная проверка в разговоре не нужна; общий KB-вопрос без доступа
+  к личным данным её не требует. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md#L31-L44">Обычная policy</a>.</li>
+<li><strong>Bootstrap ≠ доступ после проверки.</strong> Текст одновременно требует
+  <code>first verify ... before proceeding</code> и read tools для самой проверки; точный
+  bootstrap allowlist/порядок формально не описан. Lookup идентификационных полей
+  нельзя приравнивать к уже разрешённому чтению транзакций/рефералов. Этот аудит
+  не придумывает дополнительное разрешение: до проверки запрещена утечка любых
+  данных пользователю, неоднозначный bootstrap остаётся вне fast path. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md#L31-L44">Policy</a>.</li>
+<li>После проверки обязателен
+  <code>log_verification(name: str, user_id: str, address: str, email: str, phone_number: str, date_of_birth: str, time_verified: str) -&gt; str</code>.
+  Все <strong>семь</strong> аргументов обязательны, хотя проверяются два identity-поля.
+  <code>name/user_id</code> привязываются к найденному клиенту; четыре identity-поля — к
+  наблюдаемой записи и сообщённым пользователем значениям; <code>time_verified</code> —
+  к результату tool времени. Не названные пользователем поля технически можно
+  скопировать из наблюдаемой записи, <strong>но они не становятся подтверждёнными факторами</strong>.
+  Пропуск поля, несколько клиентов, расхождения форматов адреса/телефона/DOB
+  не разрешены статическим аудитом; для DOB docstring требует <code>MM/DD/YYYY</code>.
+  Метод лишь пишет <code>verification_history</code>, не проверяет два совпадения.
+  Успешный log не является endpoint-доказательством личности; этот WRITE-шаг
+  пока можно оставить LLM. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L481-L530">Код</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md#L31-L44">policy</a>.</li>
+<li>Timestamp надо получить через <code>get_current_time() -&gt; str</code>: policy запрещает
+  предполагать текущее время. Даже фиксированная строка в реализации не оправдывает
+  её hardcoding в кандидате: нужен наблюдаемый ответ tool. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/policy_header.md#L6-L14">Policy</a>,
+  <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L386-L393">код</a>. Успешный ответ на <code>log_verification</code> — отдельное наблюдение;
+  попытка вызова и сообщение об ошибке не равны успешной записи.</li>
+<li>В двух проверенных policy-компонентах нет общего требования отдельного «да»
+  перед каждым read. Это <strong>не отменяет</strong> намерение пользователя, идентификацию
+  и специальные условия найденной KB-процедуры. Для перевода к человеку header
+  содержит отдельное требование предварительно спросить пользователя, с
+  оговорёнными KB-исключениями. Не переносить его механически на все tools и
+  не считать проверку личности согласием на любую банковскую операцию.
+  <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/policy_header.md#L6-L14">Header</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md">additional</a>.</li>
+</ul>
+<h2 id="4-retrieval-discovery-и-служебные-записи">4. Retrieval, discovery и служебные записи</h2>
+<table>
+<thead>
+<tr>
+<th>Native контракт</th>
+<th>Наблюдаемый вход/выход и ограничение complete-call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KB_search(query: str) -&gt; str</code></td>
+<td>Query можно детерминированно копировать/собирать из видимого запроса и результатов, без LLM; это <strong>наше правило построения</strong>, не штатный генератор запросов. Return содержит title, document <code>ID</code>, score, <strong>полный content</strong> и timing, либо сообщение об отсутствии результатов. Качество поиска не следует из корректности строки. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py#L15-L180">Код</a></td>
+</tr>
+<tr>
+<td><code>KB_search_bm25(query: str, k: int = 10) -&gt; str</code>; <code>KB_search_dense(query: str, k: int = 10) -&gt; str</code></td>
+<td>Тот же formatter; <code>k</code> — параметр/default схемы, не скрытый факт клиента. Это варианты доступного retrieval toolkit, не разрешение подменить выбранный native backend. Dense backend и его ресурсы здесь не запускались и не проверялись. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py#L15-L180">Код</a></td>
+</tr>
+<tr>
+<td><code>grep(pattern: str) -&gt; str</code></td>
+<td>Regex, а не natural-language query; полный content совпавших документов, ID/title/score. Детерминированное экранирование буквальной видимой фразы — возможный кандидат, не универсальная поисковая стратегия. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py#L15-L180">Код</a></td>
+</tr>
+<tr>
+<td><code>unlock_discoverable_agent_tool(agent_tool_name: str) -&gt; str</code></td>
+<td>Имя <strong>из реально полученного KB content</strong>, tool нужен для текущей работы, не «про запас». Возвращает имя, description, параметры с type/required, разобранные из docstring. Хотя похоже на чтение описания, пишет <code>_agent_discoverable_tools_state</code> в памяти; DB-записи на unlock нет. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md#L19-L29">Policy</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L602-L641">код</a></td>
+</tr>
+<tr>
+<td><code>call_discoverable_agent_tool(agent_tool_name: str, arguments: str = "{}") -&gt; str</code></td>
+<td>Только после успешного unlock; внутренние args — <strong>JSON-строка</strong>, не вложенный dict во внешнем arguments. Имя/поля — из наблюдавшихся KB/unlock, значения — из user/tool сообщений и разрешённых defaults. Проверяет существование, unlock, JSON и вызов Python; числовые int при JSON-разборе нормализуются в float. Не проверяет факт KB-discovery, идентификацию и всю policy. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L643-L700">Код</a></td>
+</tr>
+<tr>
+<td><code>list_discoverable_agent_tools() -&gt; str</code></td>
+<td>Читает журнал <strong>вызванных</strong> функций, не каталог всех функций и не полный список unlocked. Не использовать для обхода поиска KB. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L702-L716">Код</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read-like ≠ отсутствие служебной записи.</strong> Wrapper call имеет тип WRITE:
+после возврата underlying метода он добавляет <code>tool_name/status=CALLED</code> в
+<code>agent_discoverable_tools</code> для mutating tool или read tool из внутреннего
+allowlist оценивания. Этот allowlist нельзя читать/передавать селектору или
+использовать при отборе кандидатов. Вызов underlying read может поэтому менять
+служебную DB; журнал может не содержать другие выполненные reads. Код также
+не проверяет, является ли возвращённая строка бизнес-ошибкой, перед записью.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L643-L700">Dispatcher</a>. Аналогично <code>give_discoverable_user_tool</code> меняет память и
+<code>user_discoverable_tools</code>; это выдача действия пользователю, не его исполнение
+агентом. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L532-L600">Код</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md">policy</a>.</p>
+<p>В query-retrieval mixins нет записи банковской DB; это не аудит всех побочных
+эффектов backend. Метка READ у <code>shell(command)</code> сама по себе также не доказывает
+чистоту произвольной команды: mixin передаёт её sandbox. Универсальный shell
+compiler в проверенный узкий path не включён. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py#L15-L180">Код</a>.</p>
+<h2 id="5-цепочка-observation--id-reference--next-candidate">5. Цепочка observation → ID reference → next candidate</h2>
+<p><strong>Вывод из контрактов, не task trajectory и не проверенный агент:</strong></p>
+<ol>
+<li>Пользователь явно назвал email <code>e</code>. Синтаксически собирается полный кандидат
+   <code>get_user_information_by_email(email=e)</code>; допуск bootstrap обсуждён выше,
+   само наличие аргумента не разрешает вызов. Совпадений может быть 0, 1 или несколько.</li>
+<li>Полученный tool result <code>m</code> содержит запись клиента. Только если в ней реально
+   есть <code>user_id=u</code>, сохранить ссылку вида <code>(message=m, record=r, field=user_id)</code>
+   со значением <code>u</code>, типом сущности и связью с этим пользователем. Не читать БД
+   напрямую и не выводить <code>u</code> из формы имени/email.</li>
+<li>Если пользователь правильно назвал два требуемых значения, есть все семь
+   наблюдаемых аргументов и время из <code>get_current_time</code>, можно собрать полный
+   <code>log_verification(...)</code>. Если данных/подтверждения нет — уточнение или fallback,
+   а не заполнение пропуска из gold. После успешной записи допустимо рассматривать,
+   например, <code>get_credit_card_accounts_by_user(user_id=u)</code>, когда это нужно запросу.</li>
+<li>После каждого нового результата перестроить кандидатов. ID счёта/транзакции
+   связывать с <strong>конкретной записью и типом аргумента</strong> следующей операции; document
+   ID не подставлять в user ID. Для specialized call дополнительно нужны видимая
+   KB-процедура, её условия и успешный unlock, а не имя из исходного Python-каталога.</li>
+</ol>
+<p>Здесь пункты 1–3 опираются на <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L395-L422">reads</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md#L31-L44">policy идентификации</a>,
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L481-L530">логирование</a> и <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L445-L479">account read</a>; пункт 4 — на
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/db_query.py#L433-L471">формат результатов</a> и <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md#L19-L29">discovery policy</a>. Автоматическая
+проверка/привязка таких ссылок — <strong>предложение адаптера</strong>, её реализация не проверена.</p>
+<p><strong>Три synthetic complete-call примера, не измеренный успех и не batch:</strong>
+условный <code>SYNTHETIC_USER_01</code> ранее получен как <code>user_id</code> нужного клиента в tool
+сообщении, два фактора правильно названы пользователем, логирование успешно.
+В каждом отдельном префиксе пользователь просит соответствующие сведения;
+остальные применимые условия policy/KB выполнены. Тогда возможны отдельные кандидаты:</p>
+<table>
+<thead>
+<tr>
+<th>Запрос</th>
+<th>Полностью заданные native name + arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>История приглашений</td>
+<td><code>{"name":"get_referrals_by_user","arguments":{"user_id":"SYNTHETIC_USER_01"}}</code></td>
+</tr>
+<tr>
+<td>Карточные счета</td>
+<td><code>{"name":"get_credit_card_accounts_by_user","arguments":{"user_id":"SYNTHETIC_USER_01"}}</code></td>
+</tr>
+<tr>
+<td>Карточные транзакции</td>
+<td><code>{"name":"get_credit_card_transactions_by_user","arguments":{"user_id":"SYNTHETIC_USER_01"}}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Здесь ID придуман <strong>только для иллюстрации</strong>; наличие реальной записи и результат
+вызова не утверждаются. Сигнатуры взяты из <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py#L445-L479">обычных tools</a>.</p>
+<p>Для KEV/Laya кандидатом должен быть <strong>целый native вызов с фиксированными
+аргументами</strong>, а не одно имя плюс генеративное заполнение. Технический ID вызова
+и сериализацию может создавать harness; бизнес-значения нельзя допридумывать.
+Селектор решает, какой кандидат уместен, а compiler не должен содержать
+<code>test task → next action</code>, скрытые ID, gold или oracle-флаг «verified».
+Общие ограничения из публичной policy допустимы; специфическую процедуру надо
+получать через штатный KB, не hardcode по test. Если уникальная привязка,
+процедура или требуемый факт не установлены — <code>defer</code>, не молчаливый guessed call.
+Это сохраняет native среду, но <strong>не обещает полного диалога без LLM</strong>.</p>
+<p>Остаётся непроверенным: покрытие реальных состояний такими кандидатами,
+неоднозначность ссылок, надёжность парсинга текстовых returns, выбор query,
+достаточность контекста и качество/память/задержка KEV/Laya. Policy-correctness,
+успех по evaluator и уверенность selector — разные проверки. Индекс/навигация
+и сборка сайта не изменялись: связывание отчёта с картой выполняется отдельно.</p>
+<h2 id="первичные-pinned-источники">Первичные pinned источники</h2>
+<p>Все ссылки ниже относятся к одному проверенному commit; номера строк — исходного кода.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

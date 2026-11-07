@@ -1,0 +1,34 @@
+{
+  "call_id": "adaptation-v1/task_041/028/agent",
+  "finish_reason": "tool_calls",
+  "completion_tokens": 2048,
+  "reasoning_tokens": 881,
+  "tool_calls": [
+    {
+      "name": "call_discoverable_agent_tool",
+      "arguments_chars": 630,
+      "valid_json": true
+    },
+    {
+      "name": "call_discoverable_agent_tool",
+      "arguments_chars": 615,
+      "valid_json": true
+    },
+    {
+      "name": "call_discoverable_agent_tool",
+      "arguments_chars": 626,
+      "valid_json": true
+    },
+    {
+      "name": "call_discoverable_agent_tool",
+      "arguments_chars": 615,
+      "valid_json": true
+    },
+    {
+      "name": "call_discoverable_agent_tool",
+      "arguments_chars": 79,
+      "valid_json": false
+    }
+  ],
+  "observation": "last tool arguments incomplete at max_tokens2048 despite finish_reason tool_calls; no retry or actor parameter change"
+}

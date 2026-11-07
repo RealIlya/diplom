@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-25T07:01:43.492390+00:00",
+  "python_tests": {
+    "passed": 37,
+    "elapsed_seconds": 5.879,
+    "scope": [
+      "test_system_one_live",
+      "test_system_one_pilot",
+      "test_system_one_native"
+    ],
+    "warnings": "Python3.13 sqlite ResourceWarning in fixtures/backup; no failure"
+  },
+  "javascript_tests": "PASS delayed navigation/session-save failure",
+  "gitmark": {
+    "lint_strict": "pass",
+    "documents": 31,
+    "index_chunks": 404
+  },
+  "mkdocs": {
+    "strict": "pass",
+    "elapsed_seconds": 0.7,
+    "site_dir": "site",
+    "theme_advisory": "Material emitted generic MkDocs2 advisory; no build validation warnings"
+  },
+  "diff_check": "pass",
+  "exact_secret_scan": {
+    "files": 265,
+    "source_bundles_unpacked": true,
+    "budget_and_external_backups_also_checked": true,
+    "hits": 0
+  },
+  "independent_review": {
+    "remaining_findings": 0,
+    "reproduced_snapshots": 12,
+    "matched_actual_scorer_batches": 30,
+    "final_regressions_passed": 2,
+    "network": "disabled"
+  },
+  "resume": {
+    "collection": "all5 already_recorded",
+    "annotation": "all60 skipped",
+    "call_counts_after": [
+      141,
+      121
+    ],
+    "cost_changed": false
+  },
+  "human": {
+    "cards": 30,
+    "required": 13,
+    "confirmed": 0,
+    "test_only_labels_imported": false
+  },
+  "backup": {
+    "outside_repository": "/Users/nikitapasinin/Documents/ChatGPT/diplom-backups/system-one-pilot/20261025T065434Z",
+    "restored_to": "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/api-v1/restore-validation.sqlite3",
+    "integrity": "ok",
+    "restored_cards": 30,
+    "financial_ledger_rolled_back": false
+  },
+  "files_sha256": {
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom-backups/system-one-pilot/20261025T065434Z/pilot.sqlite3": "e97de46ab8bcc23178777f39e23225af25ae04dcb8a6a4f15fb0ebb7edf7f1d5",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom-backups/system-one-pilot/20261025T065434Z/authorized-series-20261025.sqlite3": "7a3b5f451b9ad6a6ef1c24d06581772bfdb8c0577a8ad6e6f6356c9012bf95cd",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom-backups/system-one-pilot/20261025T065434Z/pilot.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom-backups/system-one-pilot/20261025T065434Z/pilot.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom-backups/system-one-pilot/20261025T065434Z/manifest.json": "c678b4508f4341410bbe371bda67d694801b9fc21b25eaa5776a252010078661",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/api-v1/backups/pilot-20261025T065504583294Z-budget.sqlite3": "7a3b5f451b9ad6a6ef1c24d06581772bfdb8c0577a8ad6e6f6356c9012bf95cd",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/api-v1/backups/pilot-20261025T065504583294Z.sqlite3": "8617a381d213072bf3f11f421ed0ef0c2186c72e537558850fafe3bb45cc086a",
+    "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/api-v1/exports/human-review-v1-04fab9c15255464da5af15b742973a5c.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "ui": {
+    "url": "http://127.0.0.1:8765/",
+    "screenshot": "artifacts/system-one-pilot/api-ui-real-proof.png",
+    "test_server_8766": "stopped"
+  }
+}

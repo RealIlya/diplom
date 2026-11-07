@@ -1,0 +1,80 @@
+{
+  "comparison_tests": {
+    "command": "python3 -m unittest discover -s tests -p test_system_one_compare.py",
+    "status": "passed",
+    "tests": 8
+  },
+  "system_one_tests": {
+    "command": "artifacts/system-one-pilot/live-venv/bin/python -m unittest discover -s tests -p 'test_system_one*.py'",
+    "status": "passed",
+    "tests": 49
+  },
+  "all_python_tests": {
+    "command": "artifacts/system-one-pilot/live-venv/bin/python -m unittest discover -s tests",
+    "status": "failed",
+    "tests": 80,
+    "failures": 1,
+    "failure": "test_presentations.PresentationTests.test_all_stored_presentations_are_complete_packages",
+    "reason": "Existing additional research-talk-15min-2026-10-11.pptx; test expects only advisor-presentation.pptx. Same failure before comparison final changes."
+  },
+  "ui_tests": {
+    "command": "node tests/test_system_one_review.cjs",
+    "status": "passed",
+    "checks": 3
+  },
+  "site_tests": {
+    "command": "artifacts/system-one-pilot/live-venv/bin/python -m unittest discover -s tests -p test_site.py",
+    "status": "passed",
+    "tests": 5
+  },
+  "gitmark_lint": {
+    "command": "python3 .claude/skills/kb-search/gitmark.py lint --strict",
+    "status": "passed",
+    "files": 31
+  },
+  "gitmark_index": {
+    "command": "python3 .claude/skills/kb-search/gitmark.py index",
+    "status": "passed",
+    "files": 31,
+    "chunks": 411
+  },
+  "mkdocs": {
+    "command": ".venv/bin/mkdocs build --strict",
+    "status": "passed",
+    "initial_failure": "3 warnings: plan missing in nav, two unsupported custom heading anchors; fixed using existing HTML anchor pattern and nav entry."
+  },
+  "diff_check": {
+    "command": "git diff --check",
+    "status": "passed"
+  },
+  "independent_review": {
+    "reviewer": "comparison_review",
+    "status": "completed",
+    "fixes": [
+      "validate protocol/status/repetitions",
+      "verify bytes and pinned revisions",
+      "report MPS backend peak unavailable",
+      "common latency and constant baseline"
+    ]
+  },
+  "financial_ledger": {
+    "status": "unchanged"
+  },
+  "inference_attempts": {
+    "laya-v1": "90 forwards succeeded; receipt finalization failed; retained, not final",
+    "laya-v2": "completed preparation smoke; not final",
+    "laya-v3": "completed, final",
+    "kev-0.8b-v1": "completed, final",
+    "kev-4b-v1": "completed, final"
+  },
+  "git_operations": {
+    "commit": false,
+    "push": false,
+    "publish": false
+  },
+  "source_sha256": {
+    "inference_runner": "2c639ca88c95bf9d437629a1fa0cd24788a673cfd892bb11570a8a3f0147c569",
+    "current_runner_after_summary_path_fix": "730e64beb708c6a2cffd19bc06795dc893d6d9e31f0ee9ac5109e4fabeeb0599"
+  },
+  "scope": "Local train-card descriptive inference; no held-out or end-to-end agent evaluation."
+}

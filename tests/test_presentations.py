@@ -15,6 +15,24 @@ ADVISOR = ROOT / "presentations/advisor"
 
 
 class PresentationTests(unittest.TestCase):
+    def test_dated_talk_is_checked_alongside_current_deck(self):
+        from scripts.check_presentations import check
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp) / 'advisor'
+            shutil.copytree(ADVISOR, directory, ignore=shutil.ignore_patterns('~$*', '__pycache__'))
+            def update_manifest():
+                files = sorted(p for p in directory.rglob('*')
+                               if p.is_file() and p.name != 'SHA256SUMS')
+                (directory / 'SHA256SUMS').write_text(''.join(
+                    f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(directory).as_posix()}\n'
+                    for p in files), encoding='utf-8')
+            update_manifest()
+            self.assertEqual(check(directory), [])
+            talk = directory / 'research-talk-15min-2026-10-11.pptx'
+            talk.write_bytes(b'truncated')
+            update_manifest()
+            self.assertTrue(any('PPTX ' + talk.name in e for e in check(directory)))
+
     def test_checker_rejects_truncated_deck_even_with_matching_hash(self):
         with tempfile.TemporaryDirectory() as tmp:
             directory = Path(tmp) / 'advisor'
@@ -87,17 +105,6 @@ class PresentationTests(unittest.TestCase):
             self.assertIn('S > 0', guard)
             self.assertIn('Все попытки входят в сумму.', guard)
             self.assertIn('При S = 0 стоимость успеха не определена', guard)
-
-    def test_all_stored_presentations_are_complete_packages(self):
-        decks = [p for p in ADVISOR.glob("*.pptx") if not p.name.startswith('~$')]
-        self.assertEqual([p.name for p in decks], ['advisor-presentation.pptx'])
-        for path in decks:
-            if path.name.startswith('~$'):
-                continue
-            with self.subTest(file=path.name):
-                with zipfile.ZipFile(path) as archive:
-                    self.assertIsNone(archive.testzip())
-                    ElementTree.fromstring(archive.read("ppt/presentation.xml"))
 
     def test_manifest_matches_actual_files(self):
         for line in (ADVISOR / "SHA256SUMS").read_text(encoding='utf-8').splitlines():

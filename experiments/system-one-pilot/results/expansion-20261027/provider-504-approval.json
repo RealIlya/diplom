@@ -1,0 +1,18 @@
+{
+  "kind": "human-approved full-bound exception, first expansion packet only",
+  "user_authorization": "Да, учитывай эти 504 по полному максимуму без повторов и продолжай пакет в пределах $1 в день.",
+  "protocol_path": "experiments/system-one-pilot/results/expansion-20261027/protocol.json",
+  "protocol_sha256": "6a391f1202b235f0769716f8cb9a8cfdc5a978807d94e404701d111ef22d99f2",
+  "namespace": "expansion-v1/",
+  "series": [
+    "expansion-v1-collection",
+    "expansion-v1-annotation"
+  ],
+  "allowed_code": 504,
+  "requires_saved_generation_id": true,
+  "keep_full_reserved_amount": true,
+  "retry_failed_request": false,
+  "daily_limit_usd": 1,
+  "timezone": "Asia/Novosibirsk",
+  "other_unknowns_stop": true
+}

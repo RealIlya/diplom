@@ -1,0 +1,22 @@
+.....F.
+======================================================================
+FAIL: test_dated_talk_is_checked_alongside_current_deck (test_presentations.PresentationTests.test_dated_talk_is_checked_alongside_current_deck)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nikitapasinin/Documents/ChatGPT/diplom/tests/test_presentations.py", line 30, in test_dated_talk_is_checked_alongside_current_deck
+    self.assertEqual(check(directory), [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ["Keep one current deck; found: ['advisor-[55 chars]x']"] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+"Keep one current deck; found: ['advisor-presentation.pptx', 'research-talk-15min-2026-10-11.pptx']"
+
++ []
+- ["Keep one current deck; found: ['advisor-presentation.pptx', "
+-  "'research-talk-15min-2026-10-11.pptx']"]
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.075s
+
+FAILED (failures=1)

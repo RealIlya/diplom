@@ -1,0 +1,27 @@
+{
+  "status": "completed bounded pilot; four technical failures retained, zero missing planned attempts",
+  "targeted": {
+    "passed": 73,
+    "total": 73,
+    "log": "artifacts/system-one-pilot/adaptation-v1/engineering/completed-targeted-tests.log"
+  },
+  "full": {
+    "passed": 103,
+    "total": 104,
+    "known_unrelated_failure": "test_presentations.PresentationTests.test_all_stored_presentations_are_complete_packages",
+    "log": "artifacts/system-one-pilot/adaptation-v1/engineering/completed-full-tests.log"
+  },
+  "review_ui_passed": true,
+  "independent_code_review_findings": 0,
+  "code_unchanged_since_tests": true,
+  "gitmark_strict_passed": true,
+  "gitmark_documents": 31,
+  "mkdocs_strict_passed": true,
+  "git_diff_check_passed": true,
+  "head_numeric_verification": "final-integrity-verification.json",
+  "online_observed_events_verified": 284,
+  "ledger_snapshot": "artifacts/system-one-pilot/adaptation-v1/ledger-final.sqlite3",
+  "ledger_integrity_check": "ok",
+  "ledger_snapshot_sha256": "095655d4167b56a473a4df7945a681ebba3b8e7bdc09b90e5d3eca099220281c",
+  "scientific_scope": "one-seed3-task dev pilot; no held-out test or statistical superiority; decision.json declines starting RLCD now"
+}

@@ -1,0 +1,37 @@
+{
+  "protocol_sha256": "a57f34cb534e6b9ea9ee3c88f8a8747a630e17f8807133814fa94342f82fac84",
+  "dataset_sha256": "a3e93a26ee7c7f7ee92b486cfe32765f12e1238af2e955656d11b6b1f7df835d",
+  "old_labels_sha256": "e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0",
+  "new_labels_sha256": "24f28618f6a919b2266fca9f90eed2650b99ac6dcaf6e43f11752ecf93c861cd",
+  "stats": {
+    "train": {
+      "rows": 80,
+      "hard": 73,
+      "families": 8,
+      "labels": {
+        "useful": 26,
+        "irrelevant": 47
+      }
+    },
+    "calibration": {
+      "rows": 20,
+      "hard": 17,
+      "families": 2,
+      "labels": {
+        "irrelevant": 9,
+        "useful": 8
+      }
+    },
+    "validation": {
+      "rows": 30,
+      "hard": 27,
+      "families": 3,
+      "labels": {
+        "irrelevant": 22,
+        "useful": 5
+      }
+    }
+  },
+  "gates_passed": true,
+  "errors": []
+}

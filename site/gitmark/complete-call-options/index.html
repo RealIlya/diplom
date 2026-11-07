@@ -1,0 +1,2825 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../action-selection-review/">
+      
+      
+        <link rel="next" href="../complete-call-native-audit/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Полные вызовы инструментов без LLM на каждом шаге - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#полные-вызовы-инструментов-без-llm-на-каждом-шаге" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Полные вызовы инструментов без LLM на каждом шаге
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki GitMark
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wiki GitMark
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Состояние и задачи
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Онтология
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-handoff-2026-10-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контекст продолжения 11.10.2026
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атлас адаптации System One
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Атлас адаптации System One
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общий план и карты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реализация этапов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные и эксперименты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура стенда
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверенные источники и результаты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот CE и проверенные блокеры
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-next-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Следующий этап — данные и инфраструктура
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерактивный атлас
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Термины общего агента
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — обзор и источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-training-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение System One — статьи и выжимки
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — темы и план ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ресурсы τ-bench, Laya и KEV
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../action-selection-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выбор действий и контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полные вызовы без LLM
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полные вызовы без LLM
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-главная-рекомендация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Главная рекомендация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-общий-контракт" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Общий контракт
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Общий контракт">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#что-уточнила-проверка-реальных-banking-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что уточнила проверка реальных banking tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a--выбор-полного-вызова-из-наблюдаемых-кандидатов" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A — выбор полного вызова из наблюдаемых кандидатов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-b--выбор-операции-и-значений-аргументов-по-частям" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. B — выбор операции и значений аргументов по частям
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-c--короткие-процедуры-с-параметрами" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. C — короткие процедуры с параметрами
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-d--llm-строит-короткий-план-system-one-исполняет" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. D — LLM строит короткий план, System One исполняет
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-kev-laya-и-контекст" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. KEV, Laya и контекст
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-как-доказать-что-llm-вызовов-действительно-меньше" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Как доказать, что LLM-вызовов действительно меньше
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-три-самостоятельные-работы-на-одном-контракте" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Три самостоятельные работы на одном контракте
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-предлагаемый-порядок-проверки-и-критерии-остановки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Предлагаемый порядок проверки и критерии остановки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-native-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native аргументы и предусловия
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документы агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переводы статей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Переводы статей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как читать и словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/openjev-rlcd-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenJev-RLCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/sbert2s1-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBERT2S1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/translation-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запись подготовки и проверки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архив технических планов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Архив технических планов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-19-system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот System One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-kev-laya-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сравнение KEV и Laya
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-system-one-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимый dev и адаптация KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-27-system-one-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Первый пакет расширения и grouped KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — спецификация 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — выполненный план 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-главная-рекомендация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Главная рекомендация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-общий-контракт" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Общий контракт
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Общий контракт">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#что-уточнила-проверка-реальных-banking-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что уточнила проверка реальных banking tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a--выбор-полного-вызова-из-наблюдаемых-кандидатов" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A — выбор полного вызова из наблюдаемых кандидатов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-b--выбор-операции-и-значений-аргументов-по-частям" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. B — выбор операции и значений аргументов по частям
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-c--короткие-процедуры-с-параметрами" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. C — короткие процедуры с параметрами
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-d--llm-строит-короткий-план-system-one-исполняет" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. D — LLM строит короткий план, System One исполняет
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-kev-laya-и-контекст" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. KEV, Laya и контекст
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-как-доказать-что-llm-вызовов-действительно-меньше" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Как доказать, что LLM-вызовов действительно меньше
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-три-самостоятельные-работы-на-одном-контракте" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Три самостоятельные работы на одном контракте
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-предлагаемый-порядок-проверки-и-критерии-остановки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Предлагаемый порядок проверки и критерии остановки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="полные-вызовы-инструментов-без-llm-на-каждом-шаге">Полные вызовы инструментов без LLM на каждом шаге</h1>
+<p><strong>Статус: проработка вариантов 11.10.2026, не принятая реализация.</strong> Пользователь
+попросил развивать второй путь — полный tool call без генеративной LLM на
+автоматизированном шаге. Name-only selector с последующей генерацией аргументов
+сохраняется как контроль, не основной механизм сокращения числа LLM-вызовов.
+<a href="../#wayfinder-decision-contract">Вопрос карты</a> остаётся открытым.</p>
+<p>Это уточнение <a href="../architecture/#shared-integration-proposal">общей схемы-кандидата</a>,
+а не новый benchmark или обещание автоматизировать весь диалог. Ни модельные
+прогоны, ни оценка покрытия/экономии, ни обучение здесь не выполнялись.</p>
+<h2 id="1-главная-рекомендация">1. Главная рекомендация</h2>
+<p>Начать с <strong>выбора небольшого набора полностью сформированных вызовов (A)</strong>.
+Когда нужный аргумент неоднозначен, расширять его <strong>выбором значения из наблюдаемых
+кандидатов (B)</strong>. После каждого tool result снова принимать решение; несколько
+таких шагов подряд могут обходиться без LLM и без заранее написанной процедуры.</p>
+<p><strong>Процедуры (C)</strong> — последующее расширение, если независимый выбор слишком
+дорог или нестабилен. <strong>LLM-план с локальным исполнителем (D)</strong> — отдельная
+альтернатива для сложных многошаговых задач, а не обязательный supervisor
+на каждом шаге. A/B задают способ построения вызова, C/D — управление
+последовательностью; они могут сочетаться, а не образуют четыре взаимоисключающие
+архитектуры. Это рекомендация для обсуждения, не выбранный пользователем вариант.</p>
+<p>Граница автоматизированного шага: <strong>ноль генеративных agent-вызовов для его
+подготовки, выбора, заполнения аргументов и проверки</strong>. Если дорогая модель
+сначала составляет кандидаты или сводку заново на каждом шаге, заявленного
+механизма сокращения вызовов нет. В D планирование — отдельный оплаченный
+LLM-шаг; лишь последующие шаги исполнения могут считаться автоматизированными.</p>
+<h2 id="2-общий-контракт">2. Общий контракт</h2>
+<p>Наблюдаемая история h порождает разрешённые факты F(h), видимые описания tools
+и конечный набор кандидатов C(h). Один кандидат содержит:</p>
+<ul>
+<li>имя native tool и полный словарь его аргументов;</li>
+<li>для discoverable операции — конкретное найденное имя, успешный unlock
+  и сериализованные внутренние аргументы;</li>
+<li>ссылки на наблюдения, откуда взяты значения и условия применимости;</li>
+<li>версию состояния, чтобы старый результат не использовался после изменения
+  пользователем цели, объекта или подтверждения.</li>
+</ul>
+<p>Модель выбирает кандидата, а политика маршрутизации решает принять его или
+передать <strong>всё решение</strong> LLM. Возможность <code>defer</code> обязательна; пустой/непокрываемый
+набор сразу передаётся LLM и не требует бессмысленного scorer-вызова.</p>
+<pre><code class="language-text">наблюдения → факты и разрешённые схемы → полные кандидаты
+          → KEV/Laya: выбор и оценки
+          → калиброванная политика + проверяемые предусловия
+              accept: точная сериализация → AssistantMessage → native tool
+              defer: native LLM выбирает действие и аргументы/реплику
+          → новый результат → заново построить кандидаты
+</code></pre>
+<p>JSON строит обычный код, не модель. Код обеспечивает соответствие схеме,
+копирование значений и известные ограничения, но не гарантирует правильность
+намерения или соблюдение всех естественно-языковых правил. Неразрешённая
+семантическая неоднозначность не объявляется «проверенным policy flag».</p>
+<p>Softmax по кандидатам не измеряет автоматически корректность полного вызова:
+при единственном варианте p=1 даже у ошибочного действия, а при отсутствии
+правильного варианта распределение всё равно нормировано. <code>defer</code> не исправляет
+это сам по себе; нужны метки полного вызова и независимая калибровка.</p>
+<p><strong>Это не скрытая генерация произвольного JSON.</strong> Новая сумма, формулировка
+объяснения, свободный поисковый запрос и значения, которых нет среди доступных
+вариантов, требуют отдельного способа получения либо fallback.</p>
+<h3 id="что-уточнила-проверка-реальных-banking-tools">Что уточнила проверка реальных banking tools</h3>
+<p><a href="../complete-call-native-audit/">Первичный аудит native вызовов</a> проверил commit
+<code>4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699</code>, без запуска среды и чтения test-задач.</p>
+<ol>
+<li>Обычные read tools возвращают <strong>текст</strong> <code>Record ID</code> / <code>field: value</code>,
+   а не schema-guaranteed JSON. Нужен версионированный parser наблюдений,
+   сохраняющий исходное сообщение и неоднозначности. Ошибка разбора — <code>defer</code>,
+   не восстановление поля из БД. Ключ записи, business user_id и document ID
+   не взаимозаменяемы; наличие нужного поля проверяется в полученном тексте.</li>
+<li>Для персональных данных policy требует два верно названных пользователем
+   identity-фактора и запись <code>log_verification</code>. Запись — WRITE с семью
+   обязательными строковыми аргументами, а не endpoint проверки личности.
+   Успешное логирование само не доказывает совпадение факторов. Время берётся
+   из <code>get_current_time</code>, не из константы исходника или системных часов harness.</li>
+<li>Точный bootstrap lookup до верификации формально не описан policy.
+   Неоднозначную начальную идентификацию и её логирование в первом пилоте
+   предлагается оставить штатной LLM; fast path обычных персональных reads
+   начинается <strong>после</strong> их корректного исполнения. Эпизод в целом не read-only.</li>
+<li>Unlock меняет внутреннее состояние, а вызов discoverable read через wrapper
+   может писать служебную DB. Нельзя считать их чистыми чтениями, пропускать
+   логируемые шаги или пользоваться внутренним allowlist оценивания.</li>
+</ol>
+<p><strong>Иллюстрация, не benchmark-задача:</strong> <code>U</code> — значение user_id из реально
+наблюдавшегося результата, связанное с проверенным клиентом; идентификация,
+логирование и прочие предпосылки уже выполнены. Тогда синтаксически полные
+кандидаты можно представить так:</p>
+<pre><code class="language-json">[
+  {&quot;name&quot;: &quot;get_credit_card_transactions_by_user&quot;, &quot;arguments&quot;: {&quot;user_id&quot;: &quot;U&quot;}},
+  {&quot;name&quot;: &quot;get_credit_card_accounts_by_user&quot;, &quot;arguments&quot;: {&quot;user_id&quot;: &quot;U&quot;}},
+  {&quot;name&quot;: &quot;get_referrals_by_user&quot;, &quot;arguments&quot;: {&quot;user_id&quot;: &quot;U&quot;}}
+]
+</code></pre>
+<p>В реальном вызове строка <code>U</code> заменяется наблюдённым значением, не шаблоном.
+Смысловой выбор зависит от текущего запроса; список не означает разрешение
+выполнить всё, наличие всех предусловий или доказанную потребность в нейросети.
+Технические ID/requestor добавляет адаптер. Конкретные сигнатуры и ограничения
+возврата приведены в <a href="../complete-call-native-audit/#2-шесть-обычных-read-tools">таблице первичного аудита</a>.</p>
+<h2 id="3-a--выбор-полного-вызова-из-наблюдаемых-кандидатов">3. A — выбор полного вызова из наблюдаемых кандидатов</h2>
+<p><strong>Как работает.</strong> Существующие схемы и данные наблюдений дают готовые к
+сериализации варианты. Простой пример типа связывания: инструмент принимает
+идентификатор клиента, а этот идентификатор уже присутствует в разрешённом
+ответе поиска клиента. Создать полный словарь аргументов можно без LLM.
+Один и тот же идентификатор может подходить нескольким разным операциям;
+смысловой выбор остаётся за компактной моделью.</p>
+<p>Другие источники кандидатов: точное копирование явно названного значения,
+объекты из наблюдаемого списка, enum из реально полученной схемы. Новые
+значения не придумываются, hidden DB не читается.</p>
+<p><strong>Выход:</strong> ID одного полного вызова. Обычно один логический choice-запрос,
+если весь набор и состояние помещаются; это не гарантия одного физического
+forward для любого runtime/формата.</p>
+<p><strong>Что экономит:</strong> принятый вызов не требует LLM для выбора имени или аргументов.
+Несколько принятых итераций могут сократить число генеративных запросов; факт
+сокращения устанавливается по полным траекториям, с учётом native multi-call.</p>
+<p><strong>Ограничения:</strong></p>
+<ul>
+<li>Для нескольких полей декартово произведение значений быстро разрастается.
+  Совместимые пары строятся по наблюдаемым связям, а не по совпадению строк.</li>
+<li>Если допустимого следующего вызова нет в C(h), никакое обучение selector
+  не исправит это. Нужны candidate recall и fallback, не подмешивание gold.</li>
+<li>Если правила уже однозначно выбирают действие, модель может быть лишней.
+  Нужен самостоятельный rule-only контроль, а не искусственно слабая заглушка.</li>
+<li>Получить объект недостаточно: он может относиться к другому обращению,
+  а сведения — устареть после новой реплики.</li>
+</ul>
+<p><strong>Пилот:</strong> обычные инструменты чтения с уже наблюдёнными идентификаторами;
+retrieval и discovery считать отдельными семействами, не автоматически
+эквивалентными read-only банковским запросам. Политики идентификации сохраняются.
+Это начальная проверка механики, не обещание достаточного охвата всего banking.</p>
+<p><strong>Дальнейшая область:</strong> после проверки можно обсуждать полные discoverable
+и изменяющие состояние вызовы с тем же механизмом выбора. Для них отдельно
+определяются наблюдаемые предусловия, актуальность подтверждений и цена ошибок;
+высокая уверенность не заменяет ни одно из условий. Это не запрет всех write-calls
+навсегда, но и не разрешение автоматически включить их в первый пилот.</p>
+<h2 id="4-b--выбор-операции-и-значений-аргументов-по-частям">4. B — выбор операции и значений аргументов по частям</h2>
+<p><strong>Как работает.</strong> Компактная модель выбирает операцию, затем значения из
+допустимых наборов: какой наблюдаемый клиент/счёт/транзакция, какой enum,
+какой заранее извлечённый фрагмент. Последующие наборы зависят от предыдущего
+выбора; serializer собирает полный вызов только после всех обязательных полей.</p>
+<p>Это отличается от первого пути пользователя: <strong>аргументы тоже выбираются без
+генеративной LLM</strong>, а не передаются ей после выбора tool name.</p>
+<p><strong>Выход:</strong> составной выбор, заканчивающийся полным вызовом; ориентировочно
+один запрос на операцию плюс запросы по неоднозначным полям. Независимые вопросы
+иногда можно батчить; зависимые поля нельзя объявлять одним независимым проходом.
+Можно сначала детерминированно связать очевидные поля и спрашивать модель
+только о действительно неоднозначных значениях.</p>
+<p><strong>Что экономит:</strong> нет LLM-вызова для name/args, но появляется несколько
+scorer-запросов. На длинном state повторный prefill может съесть выигрыш.</p>
+<p><strong>Ограничения:</strong></p>
+<ul>
+<li>Ошибка раннего выбора меняет все последующие множества.</li>
+<li>Нельзя независимо выбрать user_id одного клиента и account_id другого.
+  Нужны условные маски и наблюдаемые связи; полнота схемы этого не гарантирует.</li>
+<li>Произведение отдельных marginal probabilities полей не является joint
+  distribution без обоснованной независимости. Настоящая условная факторизация
+  может задать joint выбранной модели, но и оно не гарантирует эмпирической
+  калибровки. Оценивать совместный результат и калибровать событие
+  «полный вызов приемлем в этом наблюдаемом состоянии».</li>
+<li>Произвольный текст, не присутствующий среди кандидатов, остаётся за пределами
+  такого интерфейса. Извлечение кандидатов само является частью метода.</li>
+</ul>
+<p><strong>Роль:</strong> точечное расширение A при множестве объектов, не обязательный
+многопроходный маршрут для каждого простого вызова.</p>
+<h2 id="5-c--короткие-процедуры-с-параметрами">5. C — короткие процедуры с параметрами</h2>
+<p><strong>Как работает.</strong> Повторяющийся участок работы представляется небольшой
+процедурой с предусловиями, шагами, ветвлениями и точками остановки. System One
+выбирает подходящую процедуру/следующий шаг и привязки аргументов; сами значения
+берутся из наблюдений как в A/B. Процедуры выводятся из разрешённых общих правил
+и development-материала, не из test reference actions.</p>
+<p><strong>Что экономит:</strong> процедура может выполнить несколько инструментальных шагов
+без генеративного планирования между ними. При этом A тоже может выполнить
+несколько шагов подряд: наличие процедуры само по себе не доказывает
+дополнительного сокращения LLM-вызовов.</p>
+<p><strong>Условия:</strong></p>
+<ul>
+<li>Каждый underlying tool call проходит native цикл, лимиты, checks и журнал.
+  Нельзя превратить несколько действий в один невидимый среде «суперинструмент».</li>
+<li>Успех предыдущего шага и неизменность цели проверяются после каждого ответа.
+  При неожиданном результате, новой инструкции пользователя или нехватке
+  данных — остановка и пересборка/передача решения, не слепой replay.</li>
+<li>Заготовка процедуры не раскрывает каталог discoverable functions.
+  Имена и параметры всё равно получаются штатным discovery в текущем эпизоде.</li>
+<li>Если план полностью описывается простым автоматом, сравнить этот автомат
+  без модели. Модель оправдана только там, где остаётся содержательный выбор.</li>
+</ul>
+<p><strong>Scorer-цена:</strong> выбор процедуры — один вопрос; однозначный переход — ноль,
+смысловое ветвление — один, плюс необходимые B-привязки. Если все переходы
+однозначны, их исполнение — вклад автомата, а не модели System One.
+Потолок корректной автоматизации задают покрытие библиотеки, доступные ветки
+и полные bindings; fallback может расширить успех системы, но за свою цену.</p>
+<p><strong>Риск:</strong> дорогая ручная инженерия и узкий охват, перенос домена требует
+нового протокола процедур. Не выбирать C первым только ради количества
+автоматизированных строк кода.</p>
+<h2 id="6-d--llm-строит-короткий-план-system-one-исполняет">6. D — LLM строит короткий план, System One исполняет</h2>
+<p><strong>Как работает.</strong> LLM вызывается при входе в сложный участок и предлагает
+ограниченный условный план: шаги, ссылки на будущие результаты, условия
+выхода. Затем локальный исполнитель с A/B и System One выбирает переходы
+и подставляет реально полученные значения. LLM возвращается при исключениях
+или новом намерении, а не утверждает каждый следующий вызов.</p>
+<p><strong>Что экономит:</strong> один вызов планирования может заменить несколько последующих
+вызовов генератора. Все planning/replanning-вызовы, токены плана и его проверки
+включаются в стоимость. Если каждый ход требует нового плана или plan-validity
+LLM, преимущество исчезает.</p>
+<p><strong>Ограничения:</strong> план с будущим transaction_id должен содержать ссылку на
+ещё не полученное наблюдение, а не угаданный ID. Необнаруженная функция
+не становится разрешённой от того, что LLM включила её в план. План — данные
+ограниченного формата, не произвольный исполняемый Python/shell. После новых
+наблюдений перепроверяются предусловия; длинные open-loop планы не нужны.</p>
+<p><strong>Scorer-цена:</strong> после отдельного генеративного planning/replanning — ноль
+на однозначном переходе или один вопрос на смысловой выбор, плюс B-привязки.
+Немодельная калибровка не требует нового backbone pass; дополнительный neural
+validator требует. До перепланирования автоматизация ограничена ветками плана
+и доступными bindings, а не всей выразительностью fallback LLM.</p>
+<p><strong>Роль:</strong> отдельное расширение после A/B; у него другая цена ошибок и больше
+сложности. Нужен контроль «тот же LLM-план + детерминированный исполнитель»,
+чтобы не приписать модели System One пользу самого плана.</p>
+<h2 id="7-kev-laya-и-контекст">7. KEV, Laya и контекст</h2>
+<ul>
+<li><strong>KEV-4B:</strong> кандидат для прямого выбора полного вызова A при достаточном
+  ограниченном входе. Статистика When2Call не доказывает умение выбирать
+  корректные аргументы; это новая проверяемая задача.</li>
+<li><strong>Laya multilingual:</strong> альтернативный selector того же смыслового входа;
+  длинное окно включается явно и проверяется целиком с вариантами.</li>
+<li><strong>Laya English/typed:</strong> возможны для действительно короткого связывания
+  или локального evidence scoring. Полную policy нельзя молча обрезать до
+  512/1024; короткий вход должен сохранять все существенные для этого решения
+  условия либо приводить к fallback.</li>
+<li><strong>KEV-0.8B:</strong> не основной готовый router; возможен отдельный адаптационный
+  или отрицательный контроль, а не обещание улучшить routing после обучения.</li>
+</ul>
+<p>Ограничения и первичные карточки — в <a href="../action-selection-review/#8-ограничения-конкретных-моделей">аудите моделей</a>.
+Для Laya длинные option descriptions могут обрезаться. Короткие ID вариантов
+должны однозначно ссылаться на доступное модели полное описание кандидата;
+прятать различия аргументов ради помещения в окно нельзя.</p>
+<p>Отбор контекста должен сохранять не только тематическую релевантность документа,
+но и условия действия, ссылки на связанные объекты и необходимые реплики.
+Источник факта тоже существенен: значение из ответа инструмента не доказывает,
+что пользователь сам правильно назвал это значение при проверке личности.
+Сведения об идентификации и подтверждении нельзя получать из hidden state
+или заменять необоснованным резюме. Построение view/summary также имеет цену;
+LLM-summary на каждом ходе может вернуть все удалённые LLM-вызовы.</p>
+<p>Нельзя спрятать выбор правильного действия в state builder: он предоставляет
+факты, связи и ограничения, а не метку «следующая операция». Если semantic parser
+или LLM уже решили, какой tool и какие аргументы нужны, сравнение исследует
+другой узел; цену и ошибки такого решателя необходимо учитывать отдельно.</p>
+<h2 id="8-как-доказать-что-llm-вызовов-действительно-меньше">8. Как доказать, что LLM-вызовов действительно меньше</h2>
+<p>Считать <strong>генеративные вызовы агента</strong>, отдельно — scorer calls, user simulator,
+evaluator и разовую подготовку данных. «Локальная LLM» всё равно является
+генеративным вызовом; переименование её в helper не создаёт экономию.</p>
+<p>Native LLM может одним сообщением выбрать несколько tools. Поэтому число
+автоматически исполненных tools не равно числу удалённых LLM-вызовов.
+Сравнивать фактические полные траектории на одинаковых задачах, а не объявлять
+каждый fast-path tool сэкономленным вызовом. <a href="../action-selection-review/#1-что-является-следующим-действием">Native контракт</a>.</p>
+<p>На одинаковом распределении задач измеряются:</p>
+<ul>
+<li>разность числа всех генеративных вызовов агента, включая planning, retries
+  и fallback; не только успешные автоматизированные шаги;</li>
+<li>полная стоимость агента и на успешную задачу, setup отдельно;</li>
+<li>native pass^1 и интервалы разницы качества, policy/args/discovery ошибки;</li>
+<li>задержка p50/p95, длины входов, overflow, повторы поисков;</li>
+<li>доля состояний с полным candidate set, candidate recall по проверенным меткам,
+  доля принятых решений и риск полного вызова среди принятых.</li>
+</ul>
+<p>Локальный ориентир для A/B: ожидаемая цена пропущенной генерации должна
+превышать цену построения кандидатов, scorers, контекста и последствий ошибок.
+Это лишь диагностическое условие: новые траектории меняют количество шагов,
+а сокращение числа вызовов не гарантирует сокращение токенов или денег.
+Для D из выигрыша дополнительно вычитается planning/replanning.</p>
+<p><strong>Минимальные контроли:</strong> native joint LLM; тот же candidate builder и view
+с простыми правилами; тот же набор с LLM-selector; KEV/Laya-selector с routing.
+LLM на том же C(h) нужен для выделения эффекта селектора, native — для итоговой
+пользы всей системы. Для нового контекста и factorized B — отдельные абляции,
+не полный декартов перебор моделей. На принятом шаге A/B generator отсутствует.</p>
+<h2 id="9-три-самостоятельные-работы-на-одном-контракте">9. Три самостоятельные работы на одном контракте</h2>
+<table>
+<thead>
+<tr>
+<th>Работа</th>
+<th>Свой фактор</th>
+<th>Что сравнивается</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Маршрутизация</td>
+<td>Калибровка, accept/defer, цена ошибки</td>
+<td>При одинаковых весах и view: правила/пороги, охват, риск полного вызова, итоговые расходы</td>
+</tr>
+<tr>
+<td>Контекст</td>
+<td>Отбор доказательств при бюджете</td>
+<td>При фиксированной модели: recall условий/объектов, допустимость вызовов, качество против бюджета; простая релевантность не единственный критерий</td>
+</tr>
+<tr>
+<td>Адаптация инициатора</td>
+<td>Обучение и количество размеченных состояний</td>
+<td>Один и тот же узел и архитектура: frozen против adapted, кривая обучения и перенос; RLCD-vs-без-RL — возможное последующее уточнение</td>
+</tr>
+</tbody>
+</table>
+<p>Candidate builder в опыте адаптации фиксируется. Если допустимого вызова нет
+в наборе, усиление loss это не исправит. Для CE/Brier/RLCD нужны проверенные
+приемлемые полные вызовы и явное правило target distribution при неоднозначности;
+одна reference trajectory не предоставляет такую разметку автоматически.</p>
+<p>Для честного RLCD-сравнения фиксируются исходные веса/backbone/head, данные,
+view и настройка routing по одному протоколу. Готовая Laya против готовой KEV
+не изолирует эффект RL. Обучение логитного scorer не называть rationale-RLCD.</p>
+<h2 id="10-предлагаемый-порядок-проверки-и-критерии-остановки">10. Предлагаемый порядок проверки и критерии остановки</h2>
+<ol>
+<li>На development-состояниях, отделённых по исходным задачам, проверить
+   построение C(h), аргументы, provenance и наличие приемлемого вызова.
+   Отдельно посчитать, сколько решений тривиальны для правил, сколько требуют
+   смыслового выбора, сколько пока непокрываемы. Не начинать с большого обучения.</li>
+<li>Проверить A на ограниченном наборе обычных чтений; retrieval/discovery
+   расширять отдельными условиями после проверки policy. Необратимые write-calls
+   и свободные ответы на этом этапе остаются LLM.</li>
+<li>Сравнить правила, KEV-4B и один совместимый Laya-вариант при одинаковой
+   информации; подобрать routing вне test. Если модель не лучше правил по
+   итоговому компромиссу качества/цены, не усложнять её ради обязательного использования.</li>
+<li>Ввести B только там, где основной источник пропусков — множество возможных
+   привязок. C/D вводить по обнаруженной причине, а не одновременно с A.</li>
+<li>При достаточном покрытии и осмысленном модельном выборе зафиксировать узел
+   и сравнить адаптацию; затем полные τ-knowledge диалоги с контролями и бюджетом.</li>
+</ol>
+<p>Технический read-only пилот не гарантирует материал для трёх ВКР. Для
+содержательного основного опыта нужны повторяющиеся нетривиальные выборы,
+необходимые KB-условия и измеримый запас относительно правил/лексического
+контроля. Три работы используют общую платформу; не обязательно заставлять
+каждую ограничиться одним тривиальным lookup-микроузлом.</p>
+<p><strong>No-go для выбранного узла:</strong> недостаточный candidate recall; почти все решения
+уже решены правилами; модель требует практически всегда fallback; или overhead
+и последствия ошибок уничтожают экономию при согласованном качестве. Численные
+границы и размер пилота ещё не выбраны; до test они должны быть зафиксированы.
+Это повод пересмотреть контракт/область применения, а не скрыть невыгодные задачи.</p>
+<p>Конкретные варианты A/B/C/D пока не утверждены. Следующее HITL-решение:
+принимать ли A как базовый контракт и B как ограниченное расширение, оставив
+процедуры и LLM-планирование последующими альтернативами.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3392 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../sbert2s1-ru/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>OpenJev-RLCD - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#openjev-rlcd-работающая-реализация-rlcd" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OpenJev-RLCD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki GitMark
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wiki GitMark
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Состояние и задачи
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Онтология
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/system-one-handoff-2026-10-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контекст продолжения 11.10.2026
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атлас адаптации System One
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Атлас адаптации System One
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/system-one-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общий план и карты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/system-one-atlas-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реализация этапов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/system-one-atlas-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные и эксперименты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/system-one-atlas-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура стенда
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/system-one-atlas-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверенные источники и результаты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот CE и проверенные блокеры
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/system-one-next-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Следующий этап — данные и инфраструктура
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерактивный атлас
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Термины общего агента
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/rlcd-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — обзор и источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/system-one-training-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение System One — статьи и выжимки
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/rlcd-study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — темы и план ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/resource-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ресурсы τ-bench, Laya и KEV
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/action-selection-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выбор действий и контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/complete-call-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полные вызовы без LLM
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/complete-call-native-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native аргументы и предусловия
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документы агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitmark/agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переводы статей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Переводы статей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как читать и словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenJev-RLCD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenJev-RLCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#аннотация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аннотация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-введение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Введение
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Введение">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#основные-результаты" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные результаты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-постановка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Постановка
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-метод" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Метод
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Метод">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-что-оценивать-смесь-или-каждое-обоснование" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Что оценивать: смесь или каждое обоснование
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-два-режима-неудачи-целевой-функции-для-отдельных-обоснований" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Два режима неудачи целевой функции для отдельных обоснований
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-рецепт-сначала-калибровать-затем-подкреплять" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Рецепт: сначала калибровать, затем подкреплять
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-условия-экспериментов" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Условия экспериментов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-результаты" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Результаты
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Результаты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-основное-сравнение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Основное сравнение
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-что-даёт-подкрепление-рассуждений" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Что даёт подкрепление рассуждений
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-алеаторная-неопределённость-когда-rl-не-может-помочь" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Алеаторная неопределённость: когда RL не может помочь
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-абляции" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Абляции
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-связанные-работы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Связанные работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ограничения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Ограничения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-заключение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 Заключение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#литература" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Литература
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#приложение-a-оценки-градиента-и-их-точные-проверки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение A. Оценки градиента и их точные проверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#приложение-b-гиперпараметры" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение B. Гиперпараметры
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#приложение-c-считываемое-распределение-смеси" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение C. Считываемое распределение смеси
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#примечания-переводчика" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Примечания переводчика
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sbert2s1-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBERT2S1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translation-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запись подготовки и проверки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архив технических планов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Архив технических планов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-19-system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот System One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-kev-laya-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сравнение KEV и Laya
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-system-one-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимый dev и адаптация KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-27-system-one-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Первый пакет расширения и grouped KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — спецификация 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — выполненный план 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#аннотация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аннотация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-введение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Введение
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Введение">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#основные-результаты" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные результаты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-постановка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Постановка
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-метод" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Метод
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Метод">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-что-оценивать-смесь-или-каждое-обоснование" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Что оценивать: смесь или каждое обоснование
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-два-режима-неудачи-целевой-функции-для-отдельных-обоснований" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Два режима неудачи целевой функции для отдельных обоснований
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-рецепт-сначала-калибровать-затем-подкреплять" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Рецепт: сначала калибровать, затем подкреплять
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-условия-экспериментов" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Условия экспериментов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-результаты" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Результаты
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Результаты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-основное-сравнение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Основное сравнение
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-что-даёт-подкрепление-рассуждений" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Что даёт подкрепление рассуждений
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-алеаторная-неопределённость-когда-rl-не-может-помочь" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Алеаторная неопределённость: когда RL не может помочь
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-абляции" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Абляции
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-связанные-работы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Связанные работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ограничения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Ограничения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-заключение" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8 Заключение
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#литература" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Литература
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#приложение-a-оценки-градиента-и-их-точные-проверки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение A. Оценки градиента и их точные проверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#приложение-b-гиперпараметры" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение B. Гиперпараметры
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#приложение-c-считываемое-распределение-смеси" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Приложение C. Считываемое распределение смеси
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#примечания-переводчика" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Примечания переводчика
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="openjev-rlcd-работающая-реализация-rlcd">OpenJev-RLCD: работающая реализация RLCD</h1>
+<p><strong>Оригинальное название:</strong> <em>OpenJev-RLCD: A Working RLCD Implementation</em>.
+<strong>Авторы:</strong> Zhimin Gao, Pichao Wang.
+<strong>Контактные адреса, указанные авторами:</strong> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#122;&#104;&#105;&#109;&#105;&#110;&#103;&#97;&#111;&#49;&#49;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#122;&#104;&#105;&#109;&#105;&#110;&#103;&#97;&#111;&#49;&#49;&#51;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>; <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#105;&#99;&#104;&#97;&#111;&#119;&#97;&#110;&#103;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#112;&#105;&#99;&#104;&#97;&#111;&#119;&#97;&#110;&#103;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>.
+<strong>Источник:</strong> <a href="https://arxiv.org/html/2609.38850v1">arXiv:2609.38850v1</a>, версия 1 от 30.09.2026.
+<strong>Лицензия оригинала:</strong> <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.
+<strong>Перевод:</strong> неофициальный полный перевод на русский язык, выполненный Codex 25.10.2026. Авторы оригинала перевод не проверяли. Изменение по отношению к оригиналу — перевод текста и представление таблиц в Markdown; библиографические записи сохранены на языке оригинала. Примечания переводчика вынесены в конец и не являются частью статьи.</p>
+<h2 id="аннотация">Аннотация</h2>
+<p>Модели принятия решений, такие как Jev, отвечают на вопросы о состоянии агента вероятностями, и эти вероятности полезны лишь тогда, когда они откалиброваны: система, автоматизирующая решения, в которых она уверена, должна оказываться права, когда заявляет об этом. Открытые воспроизведения этой идеи обучают с помощью контролируемого дообучения, а затем исправляют их уверенность температурным масштабированием, тогда как стандартное обучение с подкреплением по проверяемым вознаграждениям делает рассуждающие модели резко переуверенными. Мы описываем работающую реализацию <em>обучения с подкреплением для калиброванных решений</em> (reinforcement learning for calibrated decisions, RLCD) для рассуждающих моделей и анализ, который к ней привёл. Модель сэмплирует обоснование (rationale), а мы затем <em>считываем</em> распределение ответов, которое она задаёт после него; каждое обоснование оценивается строго собственным правилом оценки[^proper] этого распределения. Однострочное тождество для дисперсии объясняет, почему популярная альтернатива — оценивать смесь нескольких выборок — вознаграждает обоснования за несогласие друг с другом и приводит к вырождению рассуждений; оно также показывает, что RLVR в точности соответствует целевой функции смеси без слагаемого разнообразия. Целевая функция для отдельных обоснований имеет калиброванный оптимум, но при наивной оптимизации она либо отключает рассуждения, либо теряется на фоне высокодисперсных градиентов политики. Отсюда получается рецепт: <em>сначала калибровать, затем подкреплять</em>. Сначала следует обучить решение, выдаваемое после обоснования, с помощью собственного правила оценки на обоснованиях самой модели, а затем оптимизировать рассуждения, используя ту же оценку как вознаграждение. На Qwen3-1.7B в двух реальных задачах, требующих рассуждений (3 случайных зерна, парные проверки), RLCD достигает не меньшей точности, чем SFT, RFT/STaR и GRPO — каждый с последующим температурным масштабированием, — либо превосходит их и превосходит все эти методы в предсказании с возможностью отказа, измеряемом площадью под кривой «риск–охват». В задаче проверки ответов GSM8K один запрос RLCD позволяет принять решение для 81% примеров при ошибке ≤5%, тогда как GRPO — для 19%. В задаче, где неопределённость обусловлена несогласием аннотаторов, та же целевая функция доказуемо не может превзойти кросс-энтропию и, будучи предоставлена сама себе, обнаруживает, что рассуждения следует прекратить. Мы публикуем код, все журналы запусков и сервер с совместимым API. Код доступен по адресу: <a href="https://github.com/ZimmyGao/openjev-rlcd">https://github.com/ZimmyGao/openjev-rlcd</a>.</p>
+<h2 id="1-введение">1 Введение</h2>
+<p>Калиброванная модель принятия решений возвращает для вопроса о некотором состоянии («будет ли этот план успешным?», «правилен ли этот ответ?», «какой вариант верен?») распределение вероятностей ответов, уверенность которого соответствует его точности. Ценность такой модели заключается не столько в её точности, сколько в возможностях, которые даёт калибровка: последующий агент может автоматизировать решения, в которых модель уверена, а остальные передавать на следующий уровень обработки, причём делать это на основе собственной уверенности модели, без меток. Jev от TypeSafe AI [<a href="https://arxiv.org/html/2609.38850v1#bib.bib1">17</a>] рекламирует именно эту возможность под названием <em>обучение с подкреплением для калиброванных решений</em> (RLCD), не раскрывая алгоритм обучения. Возникшая вслед за ним открытая экосистема — несколько сотен репозиториев за считаные недели — обучает модели-оценщики с помощью контролируемого дообучения (supervised fine-tuning, SFT), а затем исправляет их уверенность постфактум с помощью температурного масштабирования (temperature scaling, TS) [<a href="https://arxiv.org/html/2609.38850v1#bib.bib4">8</a>].</p>
+<p>Обучение с подкреплением — естественный инструмент для решений, исходы которых становятся известны лишь постфактум; именно так сегодня обучают рассуждающие модели [<a href="https://arxiv.org/html/2609.38850v1#bib.bib9">15</a>]. Однако вознаграждение, используемое для рассуждений, — 1 за правильный ответ — не является собственным правилом оценки ни одной из величин, сообщаемых моделью, и обучение с подкреплением на таком вознаграждении порождает модели, которые уверенно ошибаются. Поэтому ряд недавних работ вознаграждает <em>наборы</em> выборок: использует штрафы за дубликаты, слагаемые совпадений и групповые вознаграждения за калибровку. В этой статье мы ставим вопрос о том, как выглядит работающий RLCD для рассуждающих моделей, и отвечаем на него посредством анализа, практического рецепта и контролируемого эмпирического исследования.</p>
+<h3 id="основные-результаты">Основные результаты</h3>
+<ul>
+<li>Формулировка через считывание распределения ответов и тождество для дисперсии (§<a href="https://arxiv.org/html/2609.38850v1#S3">3</a>). Мы оцениваем распределение ответов $u(r)$, которое рассуждающая модель задаёт после собственного обоснования $r$. Для оценки Брайера $J(\mathbb{E}<em>{r}u)=\mathbb{E}</em>{r}J(u)+\mathrm{Var}_{r}(u)$: оценивание смеси выборок выплачивает бонус за несогласие обоснований друг с другом независимо от того, имеет ли это несогласие основания. Для ответов в формате one-hot то же тождество представляет калиброванное групповое вознаграждение как RLVR плюс бонус за разнообразие по Джини, коэффициент при котором должен быть в точности равен единице. Оценивание собственного распределения каждого обоснования устраняет этот бонус и имеет калиброванный оптимум $u(r)=q(x)$ для каждого обоснования, так что уже один запрос оказывается калиброванным.</li>
+<li>Два режима неудачи и рецепт, позволяющий их избежать (§<a href="https://arxiv.org/html/2609.38850v1#S3.SS2">3.2</a>). При сквозной оптимизации целевая функция для отдельных обоснований либо отказывается от рассуждений (коллапс «System-One», предотвращаемый KL-привязкой), либо оказывается заглушена слагаемым градиента политики: его градиент в 7–12 раз больше градиента считываемого распределения и доминирует в оптимизаторе. <em>Сначала калибровать, затем подкреплять</em>: сначала обучить считываемое распределение, а затем подкреплять рассуждения, используя собственную оценку как вознаграждение и привязываясь к откалиброванной модели.</li>
+<li>Контролируемое сравнение на реальных задачах (§<a href="https://arxiv.org/html/2609.38850v1#S5">5</a>). На MMLU-Pro и в задаче проверки ответов GSM8K, при трёх случайных зернах и парных проверках по каждому тестовому примеру, RLCD достигает не меньших точности и качества по оценке Брайера, чем SFT+TS, RFT/STaR+TS (с KL и без него) и GRPO+TS, либо превосходит их, а по площади под кривой «риск–охват» превосходит все эти методы. Контрольные продолжения обучения от одной контрольной точки показывают, когда подкрепление рассуждений помогает — когда рассуждение является вычислением — и почему вознаграждение должно быть собственным: вознаграждение за правильность разрушает калибровку считываемого распределения.</li>
+<li>Случай, когда RL не может помочь (§<a href="https://arxiv.org/html/2609.38850v1#S5.SS3">5.3</a>). Если неопределённость обусловлена несогласием аннотаторов (ChaosNLI), рассуждения не могут её уменьшить; целевая функция для отдельных обоснований обнаруживает это и отключает рассуждения, а ни один вариант RL не превосходит кросс-энтропию на тех же метках.</li>
+</ul>
+<h2 id="2-постановка">2 Постановка</h2>
+<p>Вопрос $x$ имеет $K$ вариантов ответа и исход $Y\sim q(\cdot\mid x)$; $q$ является one-hot-распределением, когда существует правильный ответ (эпистемическая неопределённость), и распределено между несколькими вариантами, когда люди расходятся во мнениях (алеаторная неопределённость). Рассуждающая модель с параметрами $\theta$ сэмплирует обоснование $r\sim\pi_{\theta}(\cdot\mid x)$, завершающееся маркером <code>Answer:</code>; затем мы <em>считываем</em> её распределение следующего токена по $K$ токенам вариантов ответа:</p>
+<p>$$
+u_{\theta}(x,r)=\mathrm{softmax}\big(\text{logits}<em>{\theta}(x,r)[\text{option tokens}]\big)\in\Delta</em>{K},
+$$</p>
+<p>вместо того чтобы сэмплировать из него ответ. Распределение решений модели представляет собой смесь $p_{\theta}(x)=\mathbb{E}<em>{r}u</em>{\theta}(x,r)$; один запрос возвращает $u_{\theta}(x,r)$ для одного сэмплированного обоснования. Мы используем оценку Брайера со сдвигом и сменой знака $J(u,y)=2u_{y}-|u|^{2}=1-|u-e_{y}|^{2}$, математическое ожидание которой $J(u,q)=\mathbb{E}_{Y\sim q}J(u,Y)=2u^{\top}q-|u|^{2}$ имеет единственный максимум при $u=q$ [<a href="https://arxiv.org/html/2609.38850v1#bib.bib2">2</a>, <a href="https://arxiv.org/html/2609.38850v1#bib.bib3">7</a>]; логарифмическая оценка в наших экспериментах ведёт себя аналогично.</p>
+<h2 id="3-метод">3 Метод</h2>
+<h3 id="31-что-оценивать-смесь-или-каждое-обоснование">3.1 Что оценивать: смесь или каждое обоснование</h3>
+<p><strong>Утверждение 1 (Разложение дисперсии).</strong> Для любого распределения обоснований и любого $q$, если $p=\mathbb{E}_{r}u(r)$, то</p>
+<p>$$
+J(p,q)\;=\;\mathbb{E}<em>{r}\,J\big(u(r),q\big)\;+\;\mathbb{E}</em>{r}\big|u(r)-p\big|^{2}.
+$$</p>
+<p><strong>Доказательство.</strong> $J(p,q)-\mathbb{E}<em>{r}J(u(r),q)=\mathbb{E}</em>{r}|u(r)|^{2}-|p|^{2}=\mathbb{E}_{r}|u(r)-p|^{2}$, поскольку $J$ аффинна по $u$, за исключением слагаемого $-|u|^{2}$. ∎</p>
+<p>Таким образом, целевая функция смеси $J(p,q)$ — функция, стоящая за оцениванием групп выборок, — равна средней оценке отдельных обоснований плюс бонус за несогласие обоснований друг с другом. Ничто в этом бонусе не требует, чтобы несогласие имело основания: политика может получать его, рандомизируя свои выводы. Отсюда следуют два результата.</p>
+<p><strong>Следствие 1 (RLVR — целевая функция смеси без слагаемого разнообразия).</strong> Если ответ сэмплируется, $u(r)=e_{A}$ при $A\sim p$, то $\mathbb{E}<em>{A}J(e</em>{A},q)=2p^{\top}q-1=2\Pr(A=Y)-1$ является целевой функцией RLVR, а $\mathrm{Var}=1-|p|^{2}$ — неоднородностью Джини распределения $p$: калиброванное групповое вознаграждение есть «RLVR + бонус Джини». При любом коэффициенте $\lambda&lt;1$ перед бонусом оптимум уже не равен $p=q$; при $\lambda=0$ (RLVR) он соответствует моде.</p>
+<p><strong>Утверждение 2 (Целевая функция для отдельных обоснований).</strong> Пусть $J_{\lambda}(\theta)=\mathbb{E}<em>{x}\mathbb{E}</em>{r}J(u_{\theta}(x,r),q(x))+\lambda\,\mathbb{E}<em>{x}\mathrm{Var}</em>{r}(u_{\theta})$. Если при заданном вопросе исход не зависит от собственного обоснования модели ($Y\perp r\mid x$, что верно всегда, когда $Y$ порождается внешним миром), то для любого $\lambda&lt;1$ единственный максимум по считываемым распределениям достигается при $u(x,r)=q(x)$ для каждого обоснования $r$; при $\lambda=1$ оптимально любое считываемое распределение, удовлетворяющее $\mathbb{E}_{r}u(x,r)=q(x)$.</p>
+<p><strong>Доказательство.</strong> По утверждению <a href="https://arxiv.org/html/2609.38850v1#Thmproposition1">1</a>, $J_{\lambda}=(1-\lambda)\mathbb{E}_{r}J(u(r),q)+\lambda J(p,q)$. Оба слагаемых максимизируются при $u(r)\equiv q$; первое строго вогнуто по каждому $u(r)$, что даёт единственность при $\lambda&lt;1$. ∎</p>
+<p>Поэтому мы используем целевую функцию для отдельных обоснований ($\lambda=0$): в оптимуме один запрос калиброван, и целевая функция больше не оплачивает несогласие. Обоснования по-прежнему важны — более качественное обоснование позволяет модели ограниченной ёмкости точнее вычислять $q(x)$, — однако за случайность они никогда не вознаграждаются.</p>
+<p><strong>Оценка градиента.</strong> При $M$ обоснованиях на вопрос и одном исходе $Y$ обозначим $R_{i}=J(u_{\theta}(x,r_{i}),Y)$. Градиент $\mathbb{E}_{r}J$ распадается на градиент по пути вычислений через считываемое распределение и оценку градиента через логарифм плотности (score-function) для обоснований:</p>
+<p>$$
+\widehat{\nabla}=\frac{1}{M}\sum_{i=1}^{M}\nabla_{\theta}R_{i}\;+\;\frac{1}{M}\sum_{i=1}^{M}\Big(R_{i}-\frac{1}{M-1}\sum_{j\neq i}R_{j}\Big)\nabla_{\theta}\log\pi_{\theta}(r_{i}\mid x),
+$$</p>
+<p>с базовой линией, вычисляемой по всем обоснованиям, кроме текущего (leave-one-out) [<a href="https://arxiv.org/html/2609.38850v1#bib.bib6">10</a>, <a href="https://arxiv.org/html/2609.38850v1#bib.bib7">1</a>]. Эта оценка несмещённая; то же верно для её вариантов с KL-штрафом или затратами отдельных обоснований в качестве добавок к вознаграждению, а также для оценки целевой функции смеси, полученной рао-блэкуэллизацией (приложение <a href="https://arxiv.org/html/2609.38850v1#A1">A</a>). Мы проверили все эти оценки сравнением с точным перебором на табличных моделях; максимальная ошибка составила $&lt;10^{-15}$. Считывание $u$ вместо сэмплирования ответа представляет собой рао-блэкуэллизацию оценки, использующей только сэмплирование [<a href="https://arxiv.org/html/2609.38850v1#bib.bib8">11</a>]; при пустом обосновании оно сводится к обучению прямой модели-оценщика с помощью оценки Брайера.</p>
+<h3 id="32-два-режима-неудачи-целевой-функции-для-отдельных-обоснований">3.2 Два режима неудачи целевой функции для отдельных обоснований</h3>
+<p><strong>Она отключает рассуждения.</strong> Рассуждающие модели уверенно завершают свои обоснования, поэтому $u$ после обоснования почти является one-hot-распределением, а оценка Брайера штрафует каждую уверенную ошибку. Снижать уверенность после <em>пустого</em> обоснования модель учится быстрее, чем после рассуждения, и градиент политики переносит всю вероятностную массу на пустое обоснование. На MMLU-Pro это происходит примерно за 100 шагов (рисунок <a href="https://arxiv.org/html/2609.38850v1#S3.F1">1</a>, красный): все четыре обоснования превращаются в один лишь маркер, а модель становится прямой моделью-оценщиком. KL-привязка к рассуждающей модели ($\beta=0.04$, синий) предотвращает коллапс и позволяет модели научиться снижать уверенность <em>после</em> рассуждения.</p>
+<p><strong>Она теряется на фоне градиента политики.</strong> Даже с привязкой добавление слагаемого score-function при обучении с нуля ухудшает каждую метрику по сравнению с обучением только считываемого распределения, причём монотонно с ростом веса этого слагаемого (таблица <a href="https://arxiv.org/html/2609.38850v1#S5.T4">4</a>). Норма градиента слагаемого score-function в 7–12 раз больше нормы градиента по пути вычислений (среднеквадратичное значение за обучение), поэтому оно доминирует в оценке второго момента в Adam: полезный сигнал считываемого распределения с низкой дисперсией используется в шагах, размер которых определяется шумом. На ранней стадии его направление также не помогает: пока считываемое распределение ещё плохо откалибровано, вознаграждение преимущественно учит обоснования звучать уверенно.</p>
+<p><img alt="Рисунок 1 — Коллапс System-One" src="../assets/openjev-1.svg" /></p>
+<p><strong>Рисунок 1.</strong> Коллапс System-One (MMLU-Pro, целевая функция для отдельных обоснований, сквозное обучение). Без KL-привязки четыре обоснования каждого вопроса становятся одинаковыми и пустыми через ∼100 шагов (слева: дисперсия $u$ между обоснованиями), в то время как считываемое распределение учится отражать меньшую уверенность (справа). С KL-привязкой модель продолжает рассуждать и учится снижать уверенность после рассуждения. Запуск без KL был остановлен на шаге 150, после коллапса.</p>
+<h3 id="33-рецепт-сначала-калибровать-затем-подкреплять">3.3 Рецепт: сначала калибровать, затем подкреплять</h3>
+<p><strong>Алгоритм 1. RLCD для рассуждающей модели (один шаг; $M$ обоснований для каждого вопроса в пакете).</strong></p>
+<table>
+<thead>
+<tr>
+<th>Строка</th>
+<th>Действие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Сэмплировать $r_{1},\dots,r_{M}\sim\pi_{\theta}(\cdot\mid x)$ до <code>Answer:</code>; считать $u_{i}=u_{\theta}(x,r_{i})$; наблюдать $Y$.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$R_{i}\leftarrow J(u_{i},Y)$; $\triangleright$ любая строго собственная оценка считываемого распределения.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Если</strong> этап 1 (калибровка решения), <strong>то</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>$\quad\mathcal{L}\leftarrow-\frac{1}{M}\sum_{i}R_{i}$; $\triangleright$ только градиент по пути вычислений: обоснования сэмплируются из текущей политики, но не подкрепляются.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Иначе</strong> этап 2 (подкрепление рассуждений), начиная с модели этапа 1 $\theta_{1}$.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>$\quad A_{i}\leftarrow\frac{1}{M}\big(R_{i}-\beta\log\frac{\pi_{\theta}(r_{i})}{\pi_{\theta_{1}}(r_{i})}\big)-\text{среднее без текущего обоснования}$.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>$\quad\mathcal{L}\leftarrow-\frac{1}{M}\sum_{i}R_{i}-c\sum_{i}\mathrm{sg}(A_{i})\log\pi_{\theta}(r_{i}\mid x)$; $\triangleright$ $c=0.3$, $\beta=0.04$.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Конец условия.</strong></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Обновить $\theta$ с помощью Adam по $\mathcal{L}$.</td>
+</tr>
+</tbody>
+</table>
+<p>Алгоритм <a href="https://arxiv.org/html/2609.38850v1#alg1">1</a> разделяет эти две роли. Этап 1 обучает решение, которое модель сообщает после собственного рассуждения, с помощью собственного правила оценки; это та половина градиента RLCD, которая проходит по пути вычислений, то есть детерминированный градиент политики для вознаграждения в виде собственной оценки по отношению к сообщаемому распределению, причём обоснование рассматривается как латентная переменная, полученная из текущей политики. Затем этап 2 подкрепляет рассуждения, используя <em>ту же</em> собственную оценку как вознаграждение, слагаемое score-function с уменьшенным весом и KL-привязку к откалиброванной модели, чтобы вознаграждение было информативным, а привязка защищала выученное на этапе 1. На обоих этапах наблюдается ровно исход $Y$ каждого вопроса, как и во всех базовых методах.</p>
+<h2 id="4-условия-экспериментов">4 Условия экспериментов</h2>
+<p><strong>Задачи.</strong> <em>MMLU-Pro</em> [<a href="https://arxiv.org/html/2609.38850v1#bib.bib17">18</a>]: вопросы с 10 вариантами ответа, случайное разбиение бенчмарка из 12 тысяч вопросов на 4000/500/1500 (мы оцениваем качество на первых 1000 тестовых и 300 валидационных вопросах); задача требует большого объёма знаний. <em>GSM8K-Verify</em>: задача решения «да/нет», построенная на GSM8K [<a href="https://arxiv.org/html/2609.38850v1#bib.bib18">4</a>], — «правилен ли этот предложенный окончательный ответ?»; предложение представляет собой сэмплированное решение Qwen3-0.6B (53% предложений правильны на обучающей выборке, 50% — на тестовой); обучающая и валидационная выборки взяты из GSM8K-train (использованы 4000/300 примеров), тестовая — все 1260 задач GSM8K-test, для которых удалось разобрать предложенный ответ. Рассуждения необходимы: в пробе на 400 примерах базовая модель достигает 56% при прямом ответе и 87% после рассуждения. <em>ChaosNLI</em> [<a href="https://arxiv.org/html/2609.38850v1#bib.bib19">12</a>]: примеры MNLI со 100 метками аннотаторов на каждый пример (199 валидационных, 400 тестовых примеров); при каждом обращении к обучающему примеру выбирается одна новая метка аннотатора, а целевым является распределение человеческих меток.</p>
+<p><strong>Модель и методы.</strong> Все методы стартуют с Qwen3-1.7B [<a href="https://arxiv.org/html/2609.38850v1#bib.bib20">14</a>] в режиме non-thinking, используют AdamW со скоростью обучения $2\cdot 10^{-6}$, 8 вопросов и $M=4$ обоснования на шаг и при заданном случайном зерне видят одну и ту же последовательность вопросов и исходов. SFT+TS: та же модель отвечает напрямую и дообучается с кросс-энтропией по токену метки (400 или 800 шагов; на обеих задачах 800 шагов не дали улучшения по сравнению с 400, поэтому мы приводим результат для 400). RFT/STaR+TS [<a href="https://arxiv.org/html/2609.38850v1#bib.bib10">20</a>]: дообучение на выборке с отбраковкой траекторий; используются траектории, у которых сэмплированный ответ правилен (по токенам обоснования и ответа), с KL-привязкой и без неё. GRPO+TS [<a href="https://arxiv.org/html/2609.38850v1#bib.bib9">15</a>]: вознаграждение за правильность, преимущества, нормированные по группе, KL-привязка $\beta=0.04$. RLCD: этап 1 (400 шагов, оценка Брайера или логарифмическая оценка) и этап 2 (ещё 400 шагов от контрольной точки этапа 1). Ко всем базовым методам применяется одинаковое температурное масштабирование, подобранное поиском по сетке на валидационной выборке.</p>
+<p><strong>Метрики и статистика.</strong> Точность, оценка Брайера, NLL и ECE считываемого распределения одного запроса после температурного масштабирования; площадь под кривой «риск–охват» (AURC; примеры упорядочены по уверенности, риск — доля ошибок); Cov@$\epsilon$ — наибольшая доля примеров, упорядоченных по уверенности, для которой доля ошибок не превышает $\epsilon$ [<a href="https://arxiv.org/html/2609.38850v1#bib.bib16">6</a>]; а также подобранная температура $T$ ($T\approx 1$: модель откалибрована самим обучением). Все значения усредняются по трём случайным зернам; проверки парные по тестовым примерам (значения для каждого примера усреднены по случайным зернам), с 95%-ными бутстреп-интервалами и двусторонними перестановочными $p$-значениями для средних, полученными сменой знаков. $\ast$: $p&lt;0.05$, $\ast\ast$: $p&lt;0.01$.</p>
+<h2 id="5-результаты">5 Результаты</h2>
+<h3 id="51-основное-сравнение">5.1 Основное сравнение</h3>
+<p><strong>Таблица 1.</strong> Решения по одному запросу после температурного масштабирования (среднее ± стандартное отклонение по 3 случайным зернам). Cov@$\epsilon$: доля тестовых примеров, для которых можно автоматически принять решение при доле ошибок $\leq\epsilon$ (5% для GSM8K-Verify, 20% для MMLU-Pro, где доля ошибок выше). $T$: температура, подобранная на валидационной выборке (1 = модель откалибрована самим обучением). Лучшие результаты выделены полужирным.</p>
+<p><em>GSM8K-Verify — рассуждения необходимы.</em></p>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th style="text-align: right;">Точность $\uparrow$</th>
+<th style="text-align: right;">Брайер $\downarrow$</th>
+<th style="text-align: right;">AURC $\downarrow$</th>
+<th style="text-align: right;">Cov@5% $\uparrow$</th>
+<th style="text-align: right;">$T$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Базовая модель (рассуждения без примеров)</td>
+<td style="text-align: right;">84.1</td>
+<td style="text-align: right;">0.211</td>
+<td style="text-align: right;">0.073</td>
+<td style="text-align: right;">14.9</td>
+<td style="text-align: right;">9.1</td>
+</tr>
+<tr>
+<td>SFT + TS (прямой ответ)</td>
+<td style="text-align: right;">$70.4\pm0.2$</td>
+<td style="text-align: right;">$0.382\pm0.009$</td>
+<td style="text-align: right;">$0.174\pm0.010$</td>
+<td style="text-align: right;">$6.2\pm2.0$</td>
+<td style="text-align: right;">2.1</td>
+</tr>
+<tr>
+<td>RFT/STaR + TS</td>
+<td style="text-align: right;">$89.0\pm1.6$</td>
+<td style="text-align: right;">$0.207\pm0.020$</td>
+<td style="text-align: right;">$0.103\pm0.013$</td>
+<td style="text-align: right;">$0.9\pm0.7$</td>
+<td style="text-align: right;">7.3</td>
+</tr>
+<tr>
+<td>RFT/STaR + KL + TS</td>
+<td style="text-align: right;">$91.4\pm0.5$</td>
+<td style="text-align: right;">$0.160\pm0.006$</td>
+<td style="text-align: right;">$0.075\pm0.010$</td>
+<td style="text-align: right;">$11.6\pm8.1$</td>
+<td style="text-align: right;">6.6</td>
+</tr>
+<tr>
+<td>GRPO + KL + TS</td>
+<td style="text-align: right;">$91.8\pm0.6$</td>
+<td style="text-align: right;">$0.150\pm0.009$</td>
+<td style="text-align: right;">$0.061\pm0.006$</td>
+<td style="text-align: right;">$19.4\pm7.3$</td>
+<td style="text-align: right;">7.2</td>
+</tr>
+<tr>
+<td>RLCD, этап 1, считывание распределения с оценкой Брайера</td>
+<td style="text-align: right;">$90.4\pm2.0$</td>
+<td style="text-align: right;">$0.164\pm0.020$</td>
+<td style="text-align: right;">$0.047\pm0.010$</td>
+<td style="text-align: right;">$62.6\pm21.3$</td>
+<td style="text-align: right;">1.6</td>
+</tr>
+<tr>
+<td>RLCD, этап 1, считывание распределения с логарифмической оценкой</td>
+<td style="text-align: right;">$91.3\pm0.4$</td>
+<td style="text-align: right;">$0.149\pm0.009$</td>
+<td style="text-align: right;">$0.038\pm0.002$</td>
+<td style="text-align: right;">$72.2\pm7.2$</td>
+<td style="text-align: right;">1.8</td>
+</tr>
+<tr>
+<td>Двухэтапный RLCD (этап 1 + RLCD-RL)</td>
+<td style="text-align: right;"><strong>$92.2\pm0.7$</strong></td>
+<td style="text-align: right;"><strong>$0.135\pm0.009$</strong></td>
+<td style="text-align: right;"><strong>$0.034\pm0.001$</strong></td>
+<td style="text-align: right;"><strong>$81.1\pm7.2$</strong></td>
+<td style="text-align: right;">1.4</td>
+</tr>
+</tbody>
+</table>
+<p><em>MMLU-Pro — задача, требующая большого объёма знаний.</em></p>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th style="text-align: right;">Точность $\uparrow$</th>
+<th style="text-align: right;">Брайер $\downarrow$</th>
+<th style="text-align: right;">AURC $\downarrow$</th>
+<th style="text-align: right;">Cov@20% $\uparrow$</th>
+<th style="text-align: right;">$T$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Базовая модель (рассуждения без примеров)</td>
+<td style="text-align: right;">38.9</td>
+<td style="text-align: right;">0.786</td>
+<td style="text-align: right;">0.516</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">10.9</td>
+</tr>
+<tr>
+<td>SFT + TS (прямой ответ)</td>
+<td style="text-align: right;">$42.3\pm0.4$</td>
+<td style="text-align: right;">$0.711\pm0.002$</td>
+<td style="text-align: right;">$0.386\pm0.005$</td>
+<td style="text-align: right;">$15.6\pm0.7$</td>
+<td style="text-align: right;">1.6</td>
+</tr>
+<tr>
+<td>RFT/STaR + TS</td>
+<td style="text-align: right;">$32.7\pm0.9$</td>
+<td style="text-align: right;">$0.830\pm0.004$</td>
+<td style="text-align: right;">$0.619\pm0.011$</td>
+<td style="text-align: right;">$0.0\pm0.0$</td>
+<td style="text-align: right;">17.6</td>
+</tr>
+<tr>
+<td>RFT/STaR + KL + TS</td>
+<td style="text-align: right;">$40.9\pm0.6$</td>
+<td style="text-align: right;">$0.761\pm0.006$</td>
+<td style="text-align: right;">$0.493\pm0.008$</td>
+<td style="text-align: right;">$0.0\pm0.0$</td>
+<td style="text-align: right;">11.0</td>
+</tr>
+<tr>
+<td>GRPO + KL + TS</td>
+<td style="text-align: right;">$42.4\pm0.5$</td>
+<td style="text-align: right;">$0.753\pm0.006$</td>
+<td style="text-align: right;">$0.481\pm0.015$</td>
+<td style="text-align: right;">$0.0\pm0.0$</td>
+<td style="text-align: right;">11.1</td>
+</tr>
+<tr>
+<td>RLCD, этап 1, считывание распределения с оценкой Брайера</td>
+<td style="text-align: right;">$47.0\pm1.3$</td>
+<td style="text-align: right;">$0.667\pm0.014$</td>
+<td style="text-align: right;">$0.312\pm0.019$</td>
+<td style="text-align: right;">$27.3\pm2.1$</td>
+<td style="text-align: right;">1.4</td>
+</tr>
+<tr>
+<td>RLCD, этап 1, считывание распределения с логарифмической оценкой</td>
+<td style="text-align: right;">$46.5\pm0.7$</td>
+<td style="text-align: right;">$0.668\pm0.009$</td>
+<td style="text-align: right;">$0.319\pm0.012$</td>
+<td style="text-align: right;">$24.8\pm1.6$</td>
+<td style="text-align: right;">1.5</td>
+</tr>
+<tr>
+<td>Двухэтапный RLCD (этап 1 + RLCD-RL)</td>
+<td style="text-align: right;"><strong>$47.7\pm2.0$</strong></td>
+<td style="text-align: right;"><strong>$0.658\pm0.015$</strong></td>
+<td style="text-align: right;"><strong>$0.304\pm0.022$</strong></td>
+<td style="text-align: right;"><strong>$27.6\pm3.3$</strong></td>
+<td style="text-align: right;">1.6</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Рисунок 2 — Риск и охват решений по одному запросу" src="../assets/openjev-2.svg" /></p>
+<p><strong>Рисунок 2.</strong> Риск и охват решений по одному запросу (после температурного масштабирования, с усреднением по случайным зернам). Пунктир: допустимый уровень ошибки, использованный для Cov@$\epsilon$ в таблице <a href="https://arxiv.org/html/2609.38850v1#S5.T1">1</a>. Температурное масштабирование не может исправить ранжирование переуверенных моделей (GRPO, RFT), у которых доля ошибок не меняется с охватом.</p>
+<p>Таблица <a href="https://arxiv.org/html/2609.38850v1#S5.T1">1</a> и рисунок <a href="https://arxiv.org/html/2609.38850v1#S5.F2">2</a> обобщают результаты сравнения. На GSM8K-Verify, где рассуждения необходимы, SFT+TS достигает точности лишь 70.4%, а двухэтапный RLCD улучшает этот результат на +21.8 процентного пункта по точности и на −0.247 по оценке Брайера. Базовые методы с рассуждениями точны, но плохо откалиброваны в отношении ранжирования: после температурного масштабирования GRPO сопоставим с RLCD по точности (91.8% против 92.2%, статистически незначимо) и близок по оценке Брайера (разность −0.015, $p=0.09$), однако его уверенность значительно хуже отделяет правильные ответы от неправильных (AURC 0.061 против 0.034, парный бутстреп $p&lt;10^{-3}$), поэтому при допустимой доле ошибок 5% он позволяет принять решение для 19% примеров против 81% у RLCD. RFT ведёт себя подобно GRPO: с KL-привязкой он достигает точности 91.4%, но всё равно позволяет принять решение лишь для 12% примеров при 5% ошибок (двухэтапный RLCD против RFT+KL: Брайер −0.025, AURC −0.041, $p&lt;0.01$). Подобранные температуры показывают ту же картину с другой стороны: GRPO и RFT требуют $T\approx 7$, RLCD — $T=1.4$.</p>
+<p>На MMLU-Pro ни один базовый метод с рассуждениями после температурного масштабирования не превосходит SFT+TS, а без KL-привязки RFT во всех трёх случайных зернах коллапсирует к пустым обоснованиям (точность 32.7%, ниже 38.9% у базовой модели). RLCD повышает точность на +5.3 процентного пункта относительно SFT+TS и на +5.2 относительно GRPO+TS, с изменением оценки Брайера на −0.053 и −0.095 соответственно (во всех случаях $p&lt;10^{-3}$). При допустимой доле ошибок 20% он позволяет принять решение для 28% примеров против 16% у SFT+TS и ни одного примера у любого из базовых методов с рассуждениями, уверенность которых после температурного масштабирования неинформативна. Уже один этап 1 обеспечивает основную часть выигрыша на обеих задачах; выбор собственного правила оценки для считываемого распределения мало влияет на результат (оценка Брайера против логарифмической оценки).</p>
+<h3 id="52-что-даёт-подкрепление-рассуждений">5.2 Что даёт подкрепление рассуждений</h3>
+<p><strong>Таблица 2.</strong> Продолжения этапа 2, ответвлённые от одной и той же контрольной точки этапа 1 (3 случайных зерна); изменение относительно контрольной точки (один запрос, после TS). Только привязка: тот же шум score-function и та же KL-привязка, что и в RLCD-RL, но без вознаграждения за исход.</p>
+<table>
+<thead>
+<tr>
+<th>Продолжение этапа 2 (400 шагов, одна контрольная точка)</th>
+<th style="text-align: right;">GSM8K-Verify: $\Delta$точность</th>
+<th style="text-align: right;">GSM8K-Verify: $\Delta$Брайер</th>
+<th style="text-align: right;">GSM8K-Verify: $\Delta$AURC</th>
+<th style="text-align: right;">MMLU-Pro: $\Delta$точность</th>
+<th style="text-align: right;">MMLU-Pro: $\Delta$Брайер</th>
+<th style="text-align: right;">MMLU-Pro: $\Delta$AURC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Продолжение обучения только считываемого распределения</td>
+<td style="text-align: right;">$-1.7^{\ast\ast}$</td>
+<td style="text-align: right;">$+0.028^{\ast\ast}$</td>
+<td style="text-align: right;">$+0.011^{\ast}$</td>
+<td style="text-align: right;">+0.5</td>
+<td style="text-align: right;">−0.010</td>
+<td style="text-align: right;">−0.011</td>
+</tr>
+<tr>
+<td>Только привязка (шум REINFORCE, без вознаграждения)</td>
+<td style="text-align: right;">$-2.6^{\ast\ast}$</td>
+<td style="text-align: right;">$+0.031^{\ast\ast}$</td>
+<td style="text-align: right;">$+0.016^{\ast\ast}$</td>
+<td style="text-align: right;">−0.1</td>
+<td style="text-align: right;">+0.002</td>
+<td style="text-align: right;">+0.007</td>
+</tr>
+<tr>
+<td>GRPO (вознаграждение за правильность)</td>
+<td style="text-align: right;">$+1.8^{\ast\ast}$</td>
+<td style="text-align: right;">$-0.028^{\ast\ast}$</td>
+<td style="text-align: right;">$-0.012^{\ast\ast}$</td>
+<td style="text-align: right;">−1.1</td>
+<td style="text-align: right;">$+0.026^{\ast\ast}$</td>
+<td style="text-align: right;">$+0.033^{\ast\ast}$</td>
+</tr>
+<tr>
+<td>RLCD-RL (вознаграждение в виде собственной оценки)</td>
+<td style="text-align: right;">$+1.8^{\ast\ast}$</td>
+<td style="text-align: right;">$-0.029^{\ast\ast}$</td>
+<td style="text-align: right;">$-0.013^{\ast\ast}$</td>
+<td style="text-align: right;">+0.6</td>
+<td style="text-align: right;">−0.009</td>
+<td style="text-align: right;">−0.009</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Рисунок 3 — Вознаграждение на этапе 2 имеет значение" src="../assets/openjev-3.svg" /></p>
+<p><strong>Рисунок 3.</strong> Вознаграждение на этапе 2 имеет значение. Улучшение оценки Брайера по сравнению с продолжением обучения только считываемого распределения при одинаковом бюджете 400 шагов от одной и той же контрольной точки (95%-ные бутстреп-интервалы по тестовым примерам, данные 3 случайных зерён объединены).</p>
+<p>Чтобы выделить вклад этапа 2, мы сохранили модель этапа 1 для каждого случайного зерна и ответвили от неё четыре продолжения по 400 шагов с одним и тем же потоком данных (таблица <a href="https://arxiv.org/html/2609.38850v1#S5.T2">2</a>, рисунок <a href="https://arxiv.org/html/2609.38850v1#S5.F3">3</a>). Три вывода согласуются между случайными зернами.</p>
+<ul>
+<li>Там, где рассуждение является вычислением, его подкрепление помогает. На GSM8K-Verify продолжение обучения только считываемого распределения <em>ухудшает</em> модель, тогда как RLCD-RL её улучшает; по сравнению с продолжением обучения только считываемого распределения RLCD-RL даёт +3.5 процентного пункта точности и −0.057 по оценке Брайера ($p&lt;10^{-3}$, для каждого из трёх случайных зерён результат по отдельности значим).</li>
+<li>Результат обеспечивает вознаграждение за исход, а не привязка. Контрольный вариант только с привязкой имеет тот же шум score-function и ту же KL-привязку, но не имеет вознаграждения; он хуже RLCD-RL (GSM8K-Verify: +4.4 процентного пункта в пользу RLCD-RL; MMLU-Pro: Брайер −0.011; оба $p&lt;0.01$) и нестабилен между случайными зернами (в одном из них произошёл коллапс).</li>
+<li>Вознаграждение должно быть собственным. Продолжение обучения с вознаграждением GRPO за правильность даёт такой же хороший результат, как RLCD-RL, на GSM8K-Verify, но на MMLU-Pro, где RL не может существенно повысить точность, вновь завышает уверенность откалиброванного считываемого распределения ($T$ возрастает с 1.4 до 3.8) и делает оценку Брайера и AURC значимо хуже, чем в контрольной точке; RLCD-RL превосходит его на +1.8 процентного пункта точности и −0.035 по оценке Брайера ($p&lt;10^{-3}$).</li>
+</ul>
+<p>На MMLU-Pro подкрепление рассуждений собственной оценкой в среднем нейтрально (разность по оценке Брайера относительно продолжения обучения только считываемого распределения +0.002, статистически незначима; знак различается между случайными зернами): польза этапа 2 специфична для задач, где более качественное рассуждение меняет ответ.</p>
+<h3 id="53-алеаторная-неопределённость-когда-rl-не-может-помочь">5.3 Алеаторная неопределённость: когда RL не может помочь</h3>
+<p><strong>Таблица 3.</strong> ChaosNLI (400 тестовых примеров). Цель — распределение 100 человеческих меток; при каждом обращении каждый метод видит одну новую метку аннотатора.</p>
+<table>
+<thead>
+<tr>
+<th>ChaosNLI (100 аннотаторов на пример), Qwen3-1.7B</th>
+<th style="text-align: right;">JSD относительно людей $\downarrow$</th>
+<th style="text-align: right;">Точность относительно большинства $\uparrow$</th>
+<th style="text-align: right;">Случайные зерна</th>
+<th>Обоснования</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Прямой ответ, CE на потоке меток (SFT)</td>
+<td style="text-align: right;">0.074</td>
+<td style="text-align: right;">66.2</td>
+<td style="text-align: right;">3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Целевая функция смеси $\lambda{=}1$, смесь 16 обоснований</td>
+<td style="text-align: right;">0.121</td>
+<td style="text-align: right;">63.1</td>
+<td style="text-align: right;">3</td>
+<td>Вырожденные (достигают ограничения длины)</td>
+</tr>
+<tr>
+<td>Целевая функция смеси $\lambda{=}1$, одно обоснование</td>
+<td style="text-align: right;">0.342</td>
+<td style="text-align: right;">55.4</td>
+<td style="text-align: right;">3</td>
+<td>Вырожденные</td>
+</tr>
+<tr>
+<td>Целевая функция смеси $\lambda{=}1$ + KL, смесь</td>
+<td style="text-align: right;">0.149</td>
+<td style="text-align: right;">67.8</td>
+<td style="text-align: right;">1</td>
+<td>Нормальные (48 токенов)</td>
+</tr>
+<tr>
+<td>Целевая функция для отдельных траекторий $\lambda{=}0$, без KL</td>
+<td style="text-align: right;">0.075</td>
+<td style="text-align: right;">63.0</td>
+<td style="text-align: right;">1</td>
+<td>Пустые (System-One)</td>
+</tr>
+</tbody>
+</table>
+<p>Если $q(x)$ распределено между несколькими вариантами из-за несогласия аннотаторов, рассуждения не могут уменьшить неопределённость, а при явном считывании распределения градиент RLCD в среднем равен градиенту Брайера, поэтому он не может превзойти контролируемое обучение на тех же метках. ChaosNLI подтверждает обе части этого утверждения (таблица <a href="https://arxiv.org/html/2609.38850v1#S5.T3">3</a>). Целевая функция смеси ($\lambda=1$) калибрует свою смесь из 16 выборок (JSD 0.121), делая обоснования случайными: они достигают ограничения длины, а отдельное обоснование плохо откалибровано, как и предсказывает утверждение <a href="https://arxiv.org/html/2609.38850v1#Thmproposition1">1</a>. Напротив, целевая функция для отдельных обоснований обнаруживает, что рассуждения здесь бесполезны, и отключает их, достигая того же качества, что и кросс-энтропия на прямых ответах (JSD 0.075 против 0.074). Мы считаем это правильным поведением целевой функции принятия решений и основанием предпочесть быструю прямую модель-оценщик, когда неопределённость алеаторна.</p>
+<h3 id="54-абляции">5.4 Абляции</h3>
+<p><strong>Таблица 4.</strong> Вес слагаемого score-function при обучении с нуля (MMLU-Pro, случайное зерно 17, целевая функция для отдельных обоснований с KL-привязкой, один запрос после TS). Увеличение вклада градиента политики монотонно ухудшает результат; это мотивирует разделение этапов.</p>
+<table>
+<thead>
+<tr>
+<th>Вес REINFORCE $c$ (с нуля)</th>
+<th style="text-align: right;">Точность $\uparrow$</th>
+<th style="text-align: right;">Брайер $\downarrow$</th>
+<th style="text-align: right;">AURC $\downarrow$</th>
+<th style="text-align: right;">Токены обоснования</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 (только считываемое распределение)</td>
+<td style="text-align: right;">46.3</td>
+<td style="text-align: right;">0.676</td>
+<td style="text-align: right;">0.323</td>
+<td style="text-align: right;">182</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td style="text-align: right;">45.0</td>
+<td style="text-align: right;">0.677</td>
+<td style="text-align: right;">0.327</td>
+<td style="text-align: right;">155</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td style="text-align: right;">44.6</td>
+<td style="text-align: right;">0.694</td>
+<td style="text-align: right;">0.352</td>
+<td style="text-align: right;">148</td>
+</tr>
+<tr>
+<td>1 (несмещённая оценка)</td>
+<td style="text-align: right;">43.7</td>
+<td style="text-align: right;">0.703</td>
+<td style="text-align: right;">0.354</td>
+<td style="text-align: right;">178</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Вес слагаемого score-function.</strong> Таблица <a href="https://arxiv.org/html/2609.38850v1#S5.T4">4</a>: если этапы не разделены, любой положительный вес слагаемого score-function вредит, что согласуется с объяснением через ослабление полезного градиента в §<a href="https://arxiv.org/html/2609.38850v1#S3.SS2">3.2</a>.</p>
+<p><strong>Одного предварительного обучения считываемого распределения недостаточно.</strong> Обучение считываемого распределения в течение 200 шагов с последующим подкреплением в течение 200 шагов (в обоих случаях — с нуля) даёт результат на уровне модели, обучаемой только по считываемому распределению; выигрыши в таблице <a href="https://arxiv.org/html/2609.38850v1#S5.T2">2</a> требуют, чтобы считываемое распределение сошлось.</p>
+<p><strong>Кто оценивает обоснование.</strong> Оценивание обоснований с помощью замороженной копии откалиброванной модели считывания вместо собственной модели считывания политики (для предотвращения совместной адаптации) дало худший результат на GSM8K-Verify (случайное зерно 17: Брайер $+0.021$, AURC $+0.030$): рассуждения стали короче, а собственное считываемое распределение политики стало переуверенным.</p>
+<p><strong>Отсутствие KL-привязки на этапе 2.</strong> Рассуждения вырождаются через ∼330 шагов (модель перестаёт писать маркер и повторяет свой вывод до ограничения длины); вознаграждение на основе считываемого распределения не чувствительно к формату обоснования, поэтому привязка необходима.</p>
+<p><strong>RLCD с явными вероятностями.</strong> Для модели без обоснований (прямой модели-оценщика) RLCD с явным распределением имеет тот же ожидаемый градиент, что и функция потерь Брайера; на CLINC150 и ChaosNLI он ни разу не превзошёл кросс-энтропию (точность на CLINC150: 94.6% против 96.3%), а RLVR на тех же моделях коллапсировал к моде.</p>
+<h2 id="6-связанные-работы">6 Связанные работы</h2>
+<p><strong>Калибровка языковых моделей.</strong> Температурное масштабирование постфактум [<a href="https://arxiv.org/html/2609.38850v1#bib.bib4">8</a>] и уверенность, выраженная словами или оценённая по выборкам [<a href="https://arxiv.org/html/2609.38850v1#bib.bib14">9</a>, <a href="https://arxiv.org/html/2609.38850v1#bib.bib15">16</a>], калибруют <em>уровень</em> уверенности, но не ранжирование по ней; предсказание с возможностью отказа [<a href="https://arxiv.org/html/2609.38850v1#bib.bib16">6</a>] оценивает именно ранжирование, по которому методы из таблицы <a href="https://arxiv.org/html/2609.38850v1#S5.T1">1</a> различаются сильнее всего. Обучение с собственными правилами оценки [<a href="https://arxiv.org/html/2609.38850v1#bib.bib2">2</a>, <a href="https://arxiv.org/html/2609.38850v1#bib.bib3">7</a>] стандартно для классификаторов; наш вклад состоит в выборе места его применения в рассуждающей модели.</p>
+<p><strong>RL для рассуждений и калибровки.</strong> RLVR и GRPO [<a href="https://arxiv.org/html/2609.38850v1#bib.bib9">15</a>] оптимизируют вероятность правильного сэмплированного ответа, которую следствие <a href="https://arxiv.org/html/2609.38850v1#Thmcorollary1">1</a> отождествляет с целевой функцией смеси без слагаемого разнообразия; нашей оценкой градиента служит REINFORCE с базовыми линиями leave-one-out [<a href="https://arxiv.org/html/2609.38850v1#bib.bib5">19</a>, <a href="https://arxiv.org/html/2609.38850v1#bib.bib6">10</a>, <a href="https://arxiv.org/html/2609.38850v1#bib.bib7">1</a>]. В параллельно выполнявшейся работе выраженная словами уверенность вознаграждается оценкой Брайера [<a href="https://arxiv.org/html/2609.38850v1#bib.bib13">5</a>]; мы же оцениваем распределение ответов, которое модель фактически задаёт, и анализируем групповые вознаграждения через утверждение <a href="https://arxiv.org/html/2609.38850v1#Thmproposition1">1</a>.</p>
+<p><strong>Обоснования как латентные переменные.</strong> Этап 1 напоминает слагаемое правдоподобия ответа в обучении с латентными обоснованиями (TRICE, LaTRO) [<a href="https://arxiv.org/html/2609.38850v1#bib.bib11">13</a>, <a href="https://arxiv.org/html/2609.38850v1#bib.bib12">3</a>] и STaR [<a href="https://arxiv.org/html/2609.38850v1#bib.bib10">20</a>], которые максимизируют правдоподобие правильного ответа; различие состоит в собственной оценке полного распределения, именно благодаря которой сообщаемая уверенность становится пригодной для использования. Базовый метод RFT/STaR в таблице <a href="https://arxiv.org/html/2609.38850v1#S5.T1">1</a> показывает, что клонирование правильных траекторий на основе правдоподобия наследует переуверенность RLVR.</p>
+<h2 id="7-ограничения">7 Ограничения</h2>
+<p>Во всех экспериментах используются модель с 1.7 миллиарда параметров, 400–800 шагов обновления и три случайных зерна; эффекты велики по сравнению с вариативностью между случайными зернами, но более крупные модели и более долгое обучение могут изменить соотношение двух этапов. GSM8K-Verify — задача, которую мы построили из GSM8K с моделью-предлагателем размером 0.6 миллиарда параметров. С Jev мы сравниваемся только по поведению (API воспроизведён; обучающие данные не опубликованы) и ничего не утверждаем о внутреннем алгоритме Jev. Этап 2 помогает на задаче, где рассуждения необходимы, и нейтрален на задаче, требующей большого объёма знаний; мы пока не знаем, как предсказать его пользу, не выполняя его.</p>
+<h2 id="8-заключение">8 Заключение</h2>
+<p>Работающий RLCD для рассуждающих моделей оценивает с помощью собственного правила оценки то, что модель фактически решает, — распределение ответов после собственного обоснования, — сначала для калибровки этого решения, а затем для подкрепления рассуждения, которое к нему приводит. Оценивание групп выборок, напротив, вознаграждает несогласие, а вознаграждение за правильность разрушает калибровку; оба эффекта видны в одном тождестве. Выигрыш состоит не в нескольких пунктах точности, а в решениях, которые можно делегировать: при той же точности, что и GRPO, один запрос RLCD знает, каким из своих ответов доверять.</p>
+<h2 id="литература">Литература</h2>
+<ul>
+<li>[1] A. Ahmadian, C. Cremer, M. Gallé, M. Fadaee, J. Kreutzer, O. Pietquin, A. Üstün, and S. Hooker (2024) Back to basics: revisiting REINFORCE-style optimization for learning from human feedback in LLMs. In Annual Meeting of the Association for Computational Linguistics (ACL), Cited by: <a href="https://arxiv.org/html/2609.38850v1#S3.SS1.SSS0.Px1.p1.2">§3.1</a>, <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px2.p1.1">§6</a>.</li>
+<li>[2] G. W. Brier (1950) Verification of forecasts expressed in terms of probability. Monthly Weather Review 78 (1), pp. 1–3. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S2.p1.2">§2</a>, <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px1.p1.1">§6</a>.</li>
+<li>[3] H. Chen, Y. Feng, Z. Liu, W. Yao, A. Prabhakar, S. Heinecke, R. Ho, P. Mui, S. Savarese, C. Xiong, and H. Wang (2024) Language models are hidden reasoners: unlocking latent reasoning capabilities via self-rewarding. arXiv preprint arXiv:2411.04282. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px3.p1.1">§6</a>.</li>
+<li>[4] K. Cobbe, V. Kosaraju, M. Bavarian, M. Chen, H. Jun, L. Kaiser, M. Plappert, J. Tworek, J. Hilton, R. Nakano, C. Hesse, and J. Schulman (2021) Training verifiers to solve math word problems. arXiv preprint arXiv:2110.14168. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S4.SS0.SSS0.Px1.p1.1">§4</a>.</li>
+<li>[5] M. Damani, I. Puri, S. Slocum, I. Shenfeld, L. Choshen, Y. Kim, and J. Andreas (2025) Beyond binary rewards: training LMs to reason about their uncertainty. arXiv preprint arXiv:2507.16806. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px2.p1.1">§6</a>.</li>
+<li>[6] Y. Geifman and R. El-Yaniv (2017) Selective classification for deep neural networks. In Advances in Neural Information Processing Systems (NeurIPS), Cited by: <a href="https://arxiv.org/html/2609.38850v1#S4.SS0.SSS0.Px3.p1.1">§4</a>, <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px1.p1.1">§6</a>.</li>
+<li>[7] T. Gneiting and A. E. Raftery (2007) Strictly proper scoring rules, prediction, and estimation. Journal of the American Statistical Association 102 (477), pp. 359–378. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S2.p1.2">§2</a>, <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px1.p1.1">§6</a>.</li>
+<li>[8] C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger (2017) On calibration of modern neural networks. In International Conference on Machine Learning (ICML), Cited by: <a href="https://arxiv.org/html/2609.38850v1#S1.p1.1">§1</a>, <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px1.p1.1">§6</a>.</li>
+<li>[9] S. Kadavath et al. (2022) Language models (mostly) know what they know. arXiv preprint arXiv:2207.05221. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px1.p1.1">§6</a>.</li>
+<li>[10] W. Kool, H. van Hoof, and M. Welling (2019) Buy 4 REINFORCE samples, get a baseline for free!. In ICLR Workshop on Deep Reinforcement Learning Meets Structured Prediction, Cited by: <a href="https://arxiv.org/html/2609.38850v1#S3.SS1.SSS0.Px1.p1.2">§3.1</a>, <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px2.p1.1">§6</a>.</li>
+<li>[11] S. Mohamed, M. Rosca, M. Figurnov, and A. Mnih (2020) Monte Carlo gradient estimation in machine learning. Journal of Machine Learning Research 21 (132), pp. 1–62. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S3.SS1.SSS0.Px1.p1.2">§3.1</a>.</li>
+<li>[12] Y. Nie, X. Zhou, and M. Bansal (2020) What can we learn from collective human opinions on natural language inference data?. In Conference on Empirical Methods in Natural Language Processing (EMNLP), Cited by: <a href="https://arxiv.org/html/2609.38850v1#S4.SS0.SSS0.Px1.p1.1">§4</a>.</li>
+<li>[13] D. Phan, M. D. Hoffman, D. Dohan, S. Douglas, T. A. Le, A. Parisi, P. Sountsov, C. Sutton, S. Vikram, and R. A. Saurous (2023) Training chain-of-thought via latent-variable inference. In Advances in Neural Information Processing Systems (NeurIPS), Cited by: <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px3.p1.1">§6</a>.</li>
+<li>[14] Qwen Team (2025) Qwen3 technical report. arXiv preprint arXiv:2505.09388. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S4.SS0.SSS0.Px2.p1.1">§4</a>.</li>
+<li>[15] Z. Shao, P. Wang, Q. Zhu, R. Xu, J. Song, M. Zhang, Y. K. Li, Y. Wu, and D. Guo (2024) DeepSeekMath: pushing the limits of mathematical reasoning in open language models. arXiv preprint arXiv:2402.03300. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S1.p2.1">§1</a>, <a href="https://arxiv.org/html/2609.38850v1#S4.SS0.SSS0.Px2.p1.1">§4</a>, <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px2.p1.1">§6</a>.</li>
+<li>[16] K. Tian, E. Mitchell, A. Zhou, A. Sharma, R. Rafailov, H. Yao, C. Finn, and C. D. Manning (2023) Just ask for calibration: strategies for eliciting calibrated confidence scores from language models fine-tuned with human feedback. In Conference on Empirical Methods in Natural Language Processing (EMNLP), Cited by: <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px1.p1.1">§6</a>.</li>
+<li>[17] TypeSafe AI (2026) Jev: calibrated decisions for ai agents. Note: Product documentation, <a href="https://typesafe.ai">https://typesafe.ai</a> Cited by: <a href="https://arxiv.org/html/2609.38850v1#S1.p1.1">§1</a>.</li>
+<li>[18] Y. Wang, X. Ma, G. Zhang, Y. Ni, A. Chandra, S. Guo, W. Ren, A. Arulraj, X. He, Z. Jiang, T. Li, M. Ku, K. Wang, A. Zhuang, R. Fan, X. Yue, and W. Chen (2024) MMLU-Pro: a more robust and challenging multi-task language understanding benchmark. In Advances in Neural Information Processing Systems (NeurIPS) Datasets and Benchmarks Track, Cited by: <a href="https://arxiv.org/html/2609.38850v1#S4.SS0.SSS0.Px1.p1.1">§4</a>.</li>
+<li>[19] R. J. Williams (1992) Simple statistical gradient-following algorithms for connectionist reinforcement learning. Machine Learning 8, pp. 229–256. Cited by: <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px2.p1.1">§6</a>.</li>
+<li>[20] E. Zelikman, Y. Wu, J. Mu, and N. D. Goodman (2022) STaR: bootstrapping reasoning with reasoning. In Advances in Neural Information Processing Systems (NeurIPS), Cited by: <a href="https://arxiv.org/html/2609.38850v1#S4.SS0.SSS0.Px2.p1.1">§4</a>, <a href="https://arxiv.org/html/2609.38850v1#S6.SS0.SSS0.Px3.p1.1">§6</a>.</li>
+</ul>
+<h2 id="приложение-a-оценки-градиента-и-их-точные-проверки">Приложение A. Оценки градиента и их точные проверки</h2>
+<p><strong>Целевая функция для отдельных обоснований с дополнительными слагаемыми вознаграждения.</strong> Для слагаемых $s_{i}$, относящихся к отдельным обоснованиям и зависящих только от $r_{i}$ (и $Y$), например $s_{i}=-\frac{\beta}{M}\log\frac{\pi_{\theta}(r_{i})}{\pi_{\mathrm{ref}}(r_{i})}$ или затрат на длину, суррогатная функция</p>
+<p>$$
+\mathcal{L}=-\frac{1}{M}\sum_{i}R_{i}-\sum_{i}\mathrm{sg}\Big(\tfrac{R_{i}}{M}+s_{i}-\frac{1}{M-1}\sum_{j\neq i}\big(\tfrac{R_{j}}{M}+s_{j}\big)\Big)\log\pi_{\theta}(r_{i})
+$$</p>
+<p>имеет ожидаемый градиент $-\nabla_{\theta}\big(\mathbb{E}<em>{r}J(u</em>{\theta},q)+\mathbb{E}_{r}s\big)$, поскольку каждая базовая линия использует только другие, независимые обоснования.</p>
+<p><strong>Целевая функция смеси.</strong> $\widehat{J}=\frac{2}{M}\sum_{i}u_{i}[Y]-\frac{1}{M(M-1)}\sum_{i\neq j}u_{i}^{\top}u_{j}$ — несмещённая оценка $J(p,q)$, поскольку обоснования независимы; её градиент равен производной $\widehat{J}$ по пути вычислений плюс, для каждого обоснования, слагаемое score-function, вознаграждением в котором служит зависящая от $r_{i}$ часть $\widehat{J}$, а базовая линия от $r_{i}$ не зависит.</p>
+<p><strong>Проверки.</strong> Для табличных моделей ($R\leq 4$ типов обоснований, $K\leq 4$, $M\in{3,4}$) мы перебираем все $R^{M}$ кортежей обоснований и все исходы и сравниваем ожидаемый градиент суррогатной функции с точным градиентом целевой функции: максимальное абсолютное различие меньше $10^{-15}$ для оценки смеси, оценки для отдельных обоснований, их выпуклых комбинаций и версий с дополнительными слагаемыми вознаграждения (<code>test_rlcd_rb.py</code>).</p>
+<h2 id="приложение-b-гиперпараметры">Приложение B. Гиперпараметры</h2>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Модель</td>
+<td>Qwen3-1.7B, шаблон чата non-thinking; обоснования сэмплируются с температурой 1 (копия в bf16).</td>
+</tr>
+<tr>
+<td>Оптимизатор</td>
+<td>AdamW, скорость обучения $2\cdot 10^{-6}$, без затухания весов, обрезка градиента 1.0, веса fp32, автоматическое приведение типов bf16.</td>
+</tr>
+<tr>
+<td>Пакет</td>
+<td>8 вопросов × $M=4$ обоснования; длина обоснования ≤256 (MMLU-Pro), ≤320 (GSM8K-Verify).</td>
+</tr>
+<tr>
+<td>Этап 1</td>
+<td>400 шагов, оценка Брайера (или логарифмическая) для отдельных обоснований, только градиент по пути вычислений.</td>
+</tr>
+<tr>
+<td>Этап 2</td>
+<td>400 шагов от этапа 1, вес слагаемого score-function $c=0.3$, KL $\beta=0.04$ относительно модели этапа 1.</td>
+</tr>
+<tr>
+<td>GRPO / RFT</td>
+<td>400 шагов, KL $\beta=0.04$ относительно базовой модели (RFT также без KL).</td>
+</tr>
+<tr>
+<td>SFT</td>
+<td>Прямой ответ, кросс-энтропия по токену варианта ответа, 400 или 800 шагов.</td>
+</tr>
+<tr>
+<td>Оценивание</td>
+<td>4 обоснования на тестовый вопрос; один запрос = первое из них; TS: поиск по сетке $T\in[0.1,50]$, NLL на валидационной выборке.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="приложение-c-считываемое-распределение-смеси">Приложение C. Считываемое распределение смеси</h2>
+<p><em>GSM8K-Verify.</em></p>
+<table>
+<thead>
+<tr>
+<th>Метод (среднее $u$ по 4 обоснованиям)</th>
+<th style="text-align: right;">Точность</th>
+<th style="text-align: right;">Брайер</th>
+<th style="text-align: right;">AURC</th>
+<th style="text-align: right;">$T$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Базовая модель (рассуждения без примеров)</td>
+<td style="text-align: right;">88.4</td>
+<td style="text-align: right;">0.181</td>
+<td style="text-align: right;">0.035</td>
+<td style="text-align: right;">5.1</td>
+</tr>
+<tr>
+<td>RFT/STaR + TS</td>
+<td style="text-align: right;">$91.7\pm1.4$</td>
+<td style="text-align: right;">$0.139\pm0.021$</td>
+<td style="text-align: right;">$0.034\pm0.013$</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+<tr>
+<td>RFT/STaR + KL + TS</td>
+<td style="text-align: right;">$93.1\pm0.4$</td>
+<td style="text-align: right;">$0.119\pm0.003$</td>
+<td style="text-align: right;">$0.026\pm0.003$</td>
+<td style="text-align: right;">3.5</td>
+</tr>
+<tr>
+<td>GRPO + KL + TS</td>
+<td style="text-align: right;">$93.8\pm0.3$</td>
+<td style="text-align: right;">$0.114\pm0.007$</td>
+<td style="text-align: right;">$0.025\pm0.002$</td>
+<td style="text-align: right;">3.7</td>
+</tr>
+<tr>
+<td>RLCD, этап 1, считывание распределения с оценкой Брайера</td>
+<td style="text-align: right;">$92.8\pm2.0$</td>
+<td style="text-align: right;">$0.111\pm0.025$</td>
+<td style="text-align: right;">$0.019\pm0.006$</td>
+<td style="text-align: right;">0.9</td>
+</tr>
+<tr>
+<td>RLCD, этап 1, считывание распределения с логарифмической оценкой</td>
+<td style="text-align: right;">$92.7\pm0.9$</td>
+<td style="text-align: right;">$0.116\pm0.010$</td>
+<td style="text-align: right;">$0.022\pm0.004$</td>
+<td style="text-align: right;">1.2</td>
+</tr>
+<tr>
+<td>Двухэтапный RLCD (этап 1 + RLCD-RL)</td>
+<td style="text-align: right;">$94.5\pm0.3$</td>
+<td style="text-align: right;">$0.092\pm0.005$</td>
+<td style="text-align: right;">$0.014\pm0.000$</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+</tbody>
+</table>
+<p><em>MMLU-Pro.</em></p>
+<table>
+<thead>
+<tr>
+<th>Метод (среднее $u$ по 4 обоснованиям)</th>
+<th style="text-align: right;">Точность</th>
+<th style="text-align: right;">Брайер</th>
+<th style="text-align: right;">AURC</th>
+<th style="text-align: right;">$T$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Базовая модель (рассуждения без примеров)</td>
+<td style="text-align: right;">40.8</td>
+<td style="text-align: right;">0.758</td>
+<td style="text-align: right;">0.473</td>
+<td style="text-align: right;">9.3</td>
+</tr>
+<tr>
+<td>RFT/STaR + TS</td>
+<td style="text-align: right;">$32.7\pm0.9$</td>
+<td style="text-align: right;">$0.830\pm0.004$</td>
+<td style="text-align: right;">$0.619\pm0.011$</td>
+<td style="text-align: right;">17.6</td>
+</tr>
+<tr>
+<td>RFT/STaR + KL + TS</td>
+<td style="text-align: right;">$42.2\pm0.7$</td>
+<td style="text-align: right;">$0.745\pm0.005$</td>
+<td style="text-align: right;">$0.458\pm0.008$</td>
+<td style="text-align: right;">9.5</td>
+</tr>
+<tr>
+<td>GRPO + KL + TS</td>
+<td style="text-align: right;">$44.3\pm0.4$</td>
+<td style="text-align: right;">$0.729\pm0.004$</td>
+<td style="text-align: right;">$0.428\pm0.005$</td>
+<td style="text-align: right;">9.6</td>
+</tr>
+<tr>
+<td>RLCD, этап 1, считывание распределения с оценкой Брайера</td>
+<td style="text-align: right;">$49.3\pm1.5$</td>
+<td style="text-align: right;">$0.655\pm0.014$</td>
+<td style="text-align: right;">$0.303\pm0.018$</td>
+<td style="text-align: right;">1.3</td>
+</tr>
+<tr>
+<td>RLCD, этап 1, считывание распределения с логарифмической оценкой</td>
+<td style="text-align: right;">$48.6\pm1.1$</td>
+<td style="text-align: right;">$0.655\pm0.007$</td>
+<td style="text-align: right;">$0.311\pm0.009$</td>
+<td style="text-align: right;">1.4</td>
+</tr>
+<tr>
+<td>Двухэтапный RLCD (этап 1 + RLCD-RL)</td>
+<td style="text-align: right;">$48.9\pm2.0$</td>
+<td style="text-align: right;">$0.651\pm0.014$</td>
+<td style="text-align: right;">$0.300\pm0.020$</td>
+<td style="text-align: right;">1.5</td>
+</tr>
+</tbody>
+</table>
+<p>Усреднение считываемого распределения по четырём обоснованиям улучшает каждый метод с рассуждениями; порядок методов из таблицы <a href="https://arxiv.org/html/2609.38850v1#S5.T1">1</a> не меняется.</p>
+<h2 id="примечания-переводчика">Примечания переводчика</h2>
+<ol>
+<li><strong>Строго собственное правило оценки</strong> (<em>strictly proper scoring rule</em>) — правило, при котором ожидаемая оценка имеет единственный максимум, когда сообщённое распределение совпадает с истинным. Авторы используют для обучения оценку Брайера со сменой знака и сдвигом, которую максимизируют; в экспериментальных таблицах приведена обычная ошибка Брайера, которую минимизируют. Термин <em>score-function</em> относится к оценке градиента через логарифм вероятности, а не к правилу оценки распределения и не к вознаграждению.</li>
+<li><strong>Считывание распределения ответов</strong> (<em>readout</em>) здесь означает извлечение и нормирование логитов токенов вариантов после обоснования. Это не сэмплирование ответа. <em>Hedging</em> переведено как «снижение уверенности»: речь идёт о менее концентрированном распределении вероятностей, а не об уклончивой словесной формулировке.</li>
+<li>Формулы и границы утверждений сохранены в виде оригинала. В частности, утверждение 2 сформулировано для всех $\lambda&lt;1$, хотя приведённое авторами рассуждение о двух максимизируемых слагаемых непосредственно применимо при $0\leq\lambda&lt;1$; для отрицательного $\lambda$ требуется отдельное обоснование. В приложении A обозначение $s$ в ожидаемом градиенте не уточняет, как оно нормировано относительно $s_i$ и суммы по $M$ обоснованиям. Перевод не устраняет эти особенности исходного текста.</li>
+<li>Число случайных зерён сохранено для каждой строки: в таблице 3 некоторые варианты проверены на одном зерне, хотя общее описание экспериментов говорит о трёх. Название режима <em>non-thinking</em> также сохранено: в нём авторы всё равно сэмплируют текстовые обоснования. Никакой новой проверки результатов авторов в рамках перевода не выполнялось.</li>
+</ol>
+<p>[^proper]: Определение термина и различие между оценкой для максимизации и ошибкой Брайера приведены в примечании переводчика 1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

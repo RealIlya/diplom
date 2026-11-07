@@ -1,0 +1,2638 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src 'none'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<meta name="generator" content="architecture-diagram-skill 1.4.0" />
+<title>Маршрут к защите · Атлас ВКР</title>
+
+
+
+
+
+
+<style>
+  :root{
+    color-scheme: dark;
+    /* Dark base, tuned for didactic clarity.
+       Text tokens keep ≥ 4.5:1 on --bg and --panel (WCAG AA for small text). */
+    --bg:        #0a0d12;
+    --bg-2:      #0f1419;
+    --panel:     #121821;
+    --panel-2:   #182030;
+    --border:    #1f2937;
+    --border-2:  #2a3650;
+    --text:      #e6edf7;
+    --muted:     #8492a8;
+    --dim:       #7a889e;
+
+    /* Accent text that must stay readable on surfaces (pills, mode badge, hover text).
+       Dark can reuse the role colors; light overrides these with darker inks. */
+    --accent-fg:  #46f9b8;
+    --accent-bg:  rgba(70,249,184,.14);
+    --mode-a-fg:  #6aa9ff;
+    --mode-a-bg:  rgba(106,169,255,.16);
+    --mode-b-fg:  #d9a6ff;
+    --mode-b-bg:  rgba(162,1,255,.18);
+
+    /* component colors — each role has its own */
+    --c-user:        #46f9b8;   /* mint */
+    --c-orch:        #6aa9ff;   /* sky */
+    --c-compute:      #ff6b8a;   /* magenta */
+    --c-embed:       #ffc14d;   /* amber */
+    --c-vector:      #b388ff;   /* violet */
+    --c-seed:        #ff9457;   /* orange */
+
+    /* Brand accents */
+    --brand-violet:  #a201ff;
+    --brand-mint:    #46f9b8;
+
+    --radius:        14px;
+    --radius-sm:     8px;
+
+    --shadow-soft:   0 10px 30px rgba(0,0,0,.45);
+    --shadow-pop:    0 0 0 1px rgba(255,255,255,.04), 0 18px 50px rgba(0,0,0,.55);
+
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-feature-settings: "ss01","ss02","cv11";
+    min-height:100vh;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(1200px 600px at 15% -10%, rgba(106,169,255,.07), transparent 60%),
+      radial-gradient(1000px 500px at 100% 0%, rgba(162,1,255,.06), transparent 60%),
+      radial-gradient(800px 600px at 50% 120%, rgba(70,249,184,.04), transparent 60%);
+  }
+
+  /* faint grid */
+  body::before{
+    content:"";
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%);
+  }
+
+  /* ───────── header ───────── */
+  header{
+    position:relative; z-index:2;
+    padding: 36px 32px 12px;
+    max-width: 1480px; margin: 0 auto;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family: var(--mono); font-size:11px; letter-spacing:.18em;
+    color: var(--muted); text-transform: uppercase;
+    padding: 6px 10px;
+    border:1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(255,255,255,.015);
+  }
+  .eyebrow .dot{
+    width:6px; height:6px; border-radius:50%; background: var(--brand-mint);
+    box-shadow: 0 0 12px var(--brand-mint);
+  }
+  h1{
+    margin: 16px 0 6px;
+    font-size: clamp(28px, 3.6vw, 44px);
+    font-weight: 600; letter-spacing:-.02em;
+    line-height: 1.05;
+  }
+  h1 .accent{
+    background: linear-gradient(90deg, var(--accent-fg), var(--c-orch) 50%, var(--brand-violet));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sub{
+    color: var(--muted); font-size: 15px; max-width: 70ch;
+    margin: 0;
+  }
+
+  /* ───────── controls bar ───────── */
+  .controls{
+    position:relative; z-index:2;
+    max-width: 1480px; margin: 28px auto 0; padding: 0 32px;
+    display:flex; flex-wrap:wrap; gap:18px;
+    align-items:center; justify-content:space-between;
+  }
+
+  .modepick{
+    display:inline-flex; padding:4px;
+    background: var(--panel); border:1px solid var(--border);
+    border-radius: 12px;
+  }
+  .modepick button{
+    border:0; background:transparent; color: var(--muted);
+    font-family: var(--sans); font-weight:500; font-size:13px;
+    padding: 9px 16px; border-radius: 8px; cursor:pointer;
+    display:inline-flex; align-items:center; gap:8px;
+    transition: all .25s ease;
+  }
+  .modepick button .pill{
+    font-family: var(--mono); font-size:10px;
+    padding: 2px 6px; border-radius: 4px;
+    background: rgba(255,255,255,.05); color: var(--muted);
+  }
+  .modepick button[aria-pressed="true"]{
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    color: var(--text);
+    box-shadow: inset 0 0 0 1px var(--border-2);
+  }
+  /* generic accent — covers renamed / 3rd modes; offline/online below override it */
+  .modepick button[aria-pressed="true"] .pill{ background: var(--accent-bg); color: var(--accent-fg); }
+  .modepick button[aria-pressed="true"][data-mode="offline"] .pill{ background: var(--mode-a-bg); color: var(--mode-a-fg); }
+  .modepick button[aria-pressed="true"][data-mode="online"] .pill{ background: var(--mode-b-bg); color: var(--mode-b-fg); }
+
+  .legend{
+    display:flex; flex-wrap:wrap; gap:14px;
+    font-family: var(--mono); font-size:11px; color: var(--muted);
+  }
+  .legend .item{ display:inline-flex; align-items:center; gap:6px; }
+  .legend .swatch{ width:10px; height:10px; border-radius:3px; box-shadow: 0 0 0 1px rgba(255,255,255,.06); }
+
+  /* ───────── flow tabs ───────── */
+  .flowtabs{
+    position:relative; z-index:2;
+    max-width: 1480px; margin: 18px auto 0; padding: 0 32px;
+    display:flex; flex-wrap:wrap; gap:8px;
+  }
+  .flowtab{
+    appearance:none; border:1px solid var(--border);
+    background: var(--panel); color: var(--muted);
+    font-family: var(--mono); font-size: 12px; letter-spacing:.04em;
+    padding: 10px 14px; border-radius: 10px;
+    display:inline-flex; align-items:center; gap:10px;
+    cursor:pointer; transition: all .2s ease;
+  }
+  .flowtab .num{
+    font-size:10px;
+    background: rgba(255,255,255,.06); color: var(--muted);
+    padding: 2px 6px; border-radius: 4px;
+  }
+  .flowtab:hover{ color: var(--text); border-color: var(--border-2); }
+  .flowtab[aria-pressed="true"]{
+    border-color: var(--brand-mint);
+    color: var(--text);
+    background: linear-gradient(180deg, rgba(70,249,184,.10), rgba(70,249,184,.02));
+    box-shadow: 0 0 0 4px rgba(70,249,184,.06);
+  }
+  .flowtab[aria-pressed="true"] .num{
+    background: var(--brand-mint); color: #08120e;
+  }
+
+  /* ───────── main layout ───────── */
+  main{
+    position:relative; z-index:1;
+    max-width: 1480px; margin: 22px auto 80px; padding: 0 32px;
+    display:grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 1180px){
+    main{ grid-template-columns: 1fr; }
+  }
+
+  /* ───────── canvas (the diagram) ───────── */
+  .canvas{
+    position:relative;
+    background:
+      radial-gradient(800px 400px at 50% 20%, rgba(106,169,255,.06), transparent 60%),
+      linear-gradient(180deg, var(--panel) 0%, var(--bg-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 36px 28px 28px;
+    min-height: 540px;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+  }
+  .canvas::before{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+    background-size: 48px 48px;  /* matches body grid + drag SNAP_PX so nodes snap onto visible lines */
+    mask-image: radial-gradient(circle at 50% 40%, #000 30%, transparent 80%);
+  }
+
+  .canvas-head{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-bottom: 18px; position:relative; z-index:2;
+  }
+  .canvas-title{
+    font-family: var(--mono); font-size:11px; letter-spacing:.16em;
+    color: var(--muted); text-transform: uppercase;
+  }
+  .player{
+    display:flex; gap:6px; align-items:center;
+    font-family: var(--mono); font-size: 11px; color: var(--muted);
+  }
+  .player button{
+    appearance:none; border:1px solid var(--border); background: var(--panel-2);
+    color: var(--muted); cursor:pointer;
+    width: 30px; height: 30px; border-radius: 8px;
+    display:inline-flex; align-items:center; justify-content:center;
+    transition: all .15s ease;
+  }
+  .player button:hover{ color: var(--text); border-color: var(--border-2); }
+  .player button[aria-pressed="true"]{
+    background: var(--accent-bg); border-color: var(--brand-mint); color: var(--accent-fg);
+  }
+  .player button:disabled{ opacity:.4; cursor:not-allowed; }
+  .player .stepidx{
+    padding: 0 10px; min-width: 64px; text-align:center;
+  }
+
+  /* flow-level note (the flow's `note`, plus an offline-only hint from `onlineNote`) */
+  .flow-note{
+    font-family: var(--mono); font-size: 11px; color: var(--dim);
+    margin: 8px 0 0; line-height: 1.4;
+  }
+  .flow-note:empty{ display:none; }
+
+  /* On stacked (single-column) layouts the side panel is below the fold, so the
+     canvas itself echoes the current step title. Hidden on the two-column layout. */
+  .step-brief{
+    display:none;
+    font-family: var(--mono); font-size: 11.5px; color: var(--muted);
+    margin: 10px 0 0; line-height: 1.4;
+  }
+  .step-brief strong{ color: var(--text); font-weight: 600; }
+  @media (max-width: 1180px){ .step-brief{ display:block; } }
+
+  /* text-style button used for the клавиши вкл./off switch */
+  .linkbtn{
+    appearance:none; border:0; background:transparent; padding:0; margin:0;
+    font: inherit; color: var(--accent-fg); text-decoration: underline; cursor:pointer;
+  }
+  .linkbtn:hover{ color: var(--text); }
+
+  /* flow progress bar */
+  .progress-track{
+    width:100%; height: 3px; background: var(--border);
+    border-radius: 2px; margin-top: 4px;
+    grid-column: 1 / -1;
+  }
+  .progress-fill{
+    height:100%; border-radius: 2px;
+    background: var(--brand-mint);
+    transition: width .35s ease;
+    box-shadow: 0 0 8px rgba(70,249,184,.3);
+  }
+
+  /* ── stage where nodes & svg live ── */
+  .stage{
+    position:relative;
+    width: 100%;
+    height: 460px;
+  }
+
+  .stage svg.wires{
+    position:absolute; inset:0; width:100%; height:100%;
+    pointer-events:none;
+  }
+
+  /* node */
+  .node{
+    position:absolute;
+    width: 150px;
+    padding: 14px 14px 12px;
+    background: var(--panel-2);
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .35s ease, border-color .25s ease, box-shadow .25s ease;
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;   /* touch: tap = jump to step, swipe = scroll the page */
+  }
+  @media (pointer: fine){ .node{ touch-action: none; } }  /* mouse/pen: drag to reposition */
+  .node.dimmed{ cursor: default; }
+  /* Hover affordance — every node lifts and reveals its role color, so
+     viewers learn "these are clickable". Click = jump to first step where
+     this node appears in the current flow. */
+  .node:hover{
+    border-color: color-mix(in srgb, var(--c) 60%, var(--border-2));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft), 0 0 0 1px color-mix(in srgb, var(--c) 30%, transparent);
+  }
+  .node:hover .label{ color: var(--c); }
+  /* Declared after :hover so the drag styling wins while the pointer is over the node. */
+  .node.dragging, .node.dragging:hover{
+    z-index: 100;
+    cursor: grabbing;
+    transition: none;
+    box-shadow: 0 0 0 2px var(--c), 0 20px 60px rgba(0,0,0,.5);
+    transform: scale(1.04);
+  }
+  .node:focus-visible{
+    outline: 2px solid var(--c);
+    outline-offset: 4px;
+  }
+  .node .label{
+    font-size: 13px; font-weight: 600; letter-spacing:-.01em;
+    margin: 0 0 4px;
+  }
+  .node .tech{
+    font-family: var(--mono); font-size: 10.5px; color: var(--muted);
+    line-height: 1.4;
+  }
+  .node .port{
+    margin-top: 8px;
+    font-family: var(--mono); font-size: 10.5px;
+    color: var(--c-orch);
+  }
+  .node .icon{
+    width: 28px; height: 28px; border-radius: 8px;
+    display:inline-flex; align-items:center; justify-content:center;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border-2);
+  }
+  .node[data-role="user"]   { --c: var(--c-user); }
+  .node[data-role="orch"]   { --c: var(--c-orch); }
+  .node[data-role="compute"] { --c: var(--c-compute); }
+  .node[data-role="embed"]  { --c: var(--c-embed); }
+  .node[data-role="vector"] { --c: var(--c-vector); }
+  .node[data-role="seed"]   { --c: var(--c-seed); }
+  .node .icon{ color: var(--c); }
+  .node::before{
+    content:""; position:absolute; left:0; top:14px; bottom:14px; width:3px;
+    background: var(--c); border-radius: 3px;
+    opacity:.7;
+  }
+
+  /* hidden nodes when mode mismatched */
+  .node.hidden{ opacity: 0; transform: scale(.92); pointer-events: none; }
+
+  /* shake feedback when a non-participating node is clicked */
+  @keyframes node-shake {
+    0%, 100%{ transform: translateX(0); }
+    20%{ transform: translateX(-4px); }
+    40%{ transform: translateX(4px); }
+    60%{ transform: translateX(-3px); }
+    80%{ transform: translateX(2px); }
+  }
+
+  /* active node = TARGET of the active step (full color, ring, badge) */
+  .node.active{
+    border-color: var(--c);
+    box-shadow:
+      0 0 0 1px var(--c),
+      0 0 0 6px color-mix(in srgb, var(--c) 18%, transparent),
+      var(--shadow-pop);
+    transform: translateY(-2px);
+  }
+  /* active-from node = SOURCE of the active step (full color, softer ring,
+     no badge). Lets the viewer see WHERE the data is coming from this step. */
+  .node.active-from{
+    border-color: var(--c);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--c) 70%, transparent),
+      0 0 0 4px color-mix(in srgb, var(--c) 10%, transparent),
+      var(--shadow-soft);
+    opacity: .95;
+  }
+  /* participant = appears somewhere in this flow but not in this step.
+     Stays visible at near-full color so viewer can see the whole flow path
+     at a glance. Critical for didactic clarity — without this, only the
+     active node is visible and the rest look "dead". */
+  .node.participant{
+    opacity: .8;
+    filter: saturate(.85);
+  }
+  /* dimmed = NOT in this flow at all (e.g. Seed node during the ask flow) */
+  .node.dimmed{ opacity: .25; filter: saturate(.4); }
+
+  /* node small badge (step number sticker) */
+  .node .step-badge{
+    position:absolute; top:-10px; right:-10px;
+    width:24px; height:24px; border-radius:50%;
+    background: var(--c); color:#0a0d12;
+    font-family: var(--mono); font-weight:600; font-size: 11px;
+    display:flex; align-items:center; justify-content:center;
+    opacity: 0; transform: scale(.6);
+    transition: opacity .2s ease, transform .25s cubic-bezier(.2,1.2,.2,1);
+    box-shadow: 0 4px 14px rgba(0,0,0,.4), 0 0 0 2px var(--bg-2);
+  }
+  .node.has-badge .step-badge{ opacity:1; transform: scale(1); }
+
+  /* ── wire styles (SVG) ── */
+  .wire{
+    fill:none;
+    stroke: var(--dim);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 6;
+    opacity: .55;
+    transition: opacity .3s ease, stroke .3s ease;
+  }
+  /* active = current step's wire (full color, glow, packet animates) */
+  .wire.active{
+    stroke: var(--wire-color, var(--brand-mint));
+    stroke-width: 2.5;
+    stroke-dasharray: 0;
+    opacity: 1;
+    filter: drop-shadow(0 0 6px var(--wire-color, var(--brand-mint)));
+  }
+  /* preview = other steps of CURRENT flow — show the full path at once */
+  .wire.preview{
+    stroke: var(--wire-color, var(--border-2));
+    stroke-width: 1.5;
+    stroke-dasharray: 3 5;
+    opacity: .5;
+  }
+  /* muted = wires that don't belong to this flow at all */
+  .wire.muted{ opacity: .08; }
+
+  /* moving data packet */
+  .packet{
+    r: 5;
+    fill: var(--wire-color, var(--brand-mint));
+    filter: drop-shadow(0 0 8px var(--wire-color, var(--brand-mint)));
+    opacity: 0;
+  }
+  .packet.run{ opacity: 1; }
+
+  /* tiny wire label */
+  .wire-label{
+    font-family: var(--mono); font-size: 10px;
+    fill: var(--muted);
+    paint-order: stroke;
+    stroke: var(--bg-2); stroke-width: 4;
+    transition: fill .3s ease;
+  }
+  .wire-label.active{ fill: var(--wire-color, var(--brand-mint)); font-weight: 600; }
+  .wire-label.preview{ fill: var(--muted); opacity: .8; }
+
+  /* ───────── side panel ───────── */
+  aside{
+    position: sticky; top: 18px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.005));
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px 20px 18px;
+    box-shadow: var(--shadow-soft);
+    min-height: 540px;
+    display:flex; flex-direction:column;
+  }
+  .panel-head{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .panel-step{
+    font-family: var(--mono); font-size: 11px; letter-spacing:.16em;
+    color: var(--muted); text-transform: uppercase;
+  }
+  .panel-step strong{
+    color: var(--text); font-weight: 600;
+  }
+  .panel-mode{
+    font-family: var(--mono); font-size: 10px;
+    padding: 4px 8px; border-radius: 6px;
+    background: rgba(255,255,255,.04); color: var(--muted);
+    border:1px solid var(--border);
+  }
+  .panel-mode[data-mode]{ color: var(--accent-fg); border-color: var(--accent-bg); }
+  .panel-mode[data-mode="offline"]{ color: var(--mode-a-fg); border-color: var(--mode-a-bg); }
+  .panel-mode[data-mode="online"]{ color: var(--mode-b-fg); border-color: var(--mode-b-bg); }
+  .panel-mode[hidden]{ display:none; }
+
+  .panel-title{
+    font-size: 18px; font-weight: 600; margin: 14px 0 4px;
+    letter-spacing:-.01em;
+  }
+  .panel-route{
+    font-family: var(--mono); font-size: 12px;
+    color: var(--muted); margin-bottom: 12px;
+    display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap;
+  }
+  .panel-route .from, .panel-route .to{
+    color: var(--text);
+    padding: 3px 7px; border-radius: 6px;
+    background: rgba(255,255,255,.04);
+    border:1px solid var(--border);
+  }
+  .panel-route .arrow{ color: var(--accent-fg); }
+
+  .panel-desc{
+    color: var(--muted); font-size: 13.5px; line-height: 1.55;
+    margin: 0 0 14px;
+  }
+  .panel-desc em{ color: var(--text); font-style: normal; }
+
+  .panel-payload{
+    font-family: var(--mono); font-size: 11.5px;
+    background: #08111c;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #c9d6e8;
+    overflow:auto; max-height: 260px;
+    line-height: 1.6;
+    margin: 0 0 14px;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+  }
+  .panel-payload:empty{ display:none; }
+  .panel-payload .k{ color: #ffc14d; }
+  .panel-payload .s{ color: #46f9b8; }
+  .panel-payload .n{ color: #b388ff; }
+  .panel-payload .c{ color: var(--muted); }
+
+  .panel-meta{
+    margin-top:auto; padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    display:flex; gap: 8px; flex-wrap:wrap;
+  }
+  .chip{
+    font-family: var(--mono); font-size: 10.5px;
+    padding: 5px 9px; border-radius: 999px;
+    background: rgba(255,255,255,.035); border:1px solid var(--border);
+    color: var(--muted);
+  }
+  .chip.lat::before{ content:"⏱ "; color: var(--accent-fg); }
+  .chip.size::before{ content:"⛁ "; color: var(--c-vector); }
+
+  /* prev/next */
+  .step-nav{
+    display:flex; gap:8px; margin-top: 14px;
+  }
+  .step-nav button{
+    flex:1; padding: 9px 12px;
+    background: var(--panel-2); color: var(--text);
+    border:1px solid var(--border); border-radius: 9px;
+    font-family: var(--sans); font-size: 12.5px; cursor:pointer;
+    transition: all .15s ease;
+    display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  }
+  .step-nav button:hover{ border-color: var(--brand-mint); color: var(--accent-fg); }
+  .step-nav button:disabled{ opacity:.4; cursor:not-allowed; }
+
+  /* visually hidden, still announced by screen readers (step-change live region) */
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+  .nojs{
+    position:relative; z-index:2; max-width:1480px; margin:14px auto 0; padding:12px 32px;
+    color: var(--text); font-size:14px;
+  }
+
+  /* footer / legend below */
+  .scenario-note{
+    position: relative; z-index: 2;
+    max-width: 1480px; margin: 14px auto 0; padding: 0 32px;
+    color: var(--dim); font-size: 12px;
+    font-family: var(--mono);
+  }
+  .scenario-note kbd{
+    font-family: var(--mono); font-size: 11px;
+    padding: 2px 6px; border-radius: 4px;
+    background: var(--panel-2); border:1px solid var(--border); color: var(--text);
+  }
+
+  /* mobile adjustments */
+  @media (max-width: 720px){
+    header{ padding: 24px 18px 8px; }
+    .controls, .flowtabs, main, .scenario-note, .nojs{ padding-left: 18px; padding-right: 18px; }
+    .controls{ gap: 12px; }
+    .modepick{ flex-wrap: wrap; max-width: 100%; }
+    main{ gap:18px; }
+    /* Percent-positioned nodes need ~640px to stay unclipped; let the stage
+       scroll sideways inside the canvas instead of cutting the right-most node off. */
+    .canvas{ padding: 22px 14px 18px; overflow-x: auto; overflow-y: hidden; }
+    .stage{ height: 420px; min-width: 640px; }
+    .node{ width: 132px; padding: 12px; }
+    .node .label{ font-size: 12px; }
+    .node .tech{ font-size: 10px; }
+    aside{ position: static; min-height: 0; }
+  }
+
+  /* keyboard focus rings */
+  button:focus-visible, .flowtab:focus-visible{
+    outline: 2px solid var(--accent-fg); outline-offset: 2px;
+  }
+  .canvas:focus-visible{ outline: 2px solid var(--accent-fg); outline-offset: -2px; }
+
+  /* Respect users who ask for reduced motion: no flying packet, near-instant transitions. */
+  @media (prefers-reduced-motion: reduce){
+    *{
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+    }
+    .packet{ display: none !important; }
+    .progress-fill{ transition: none !important; }
+  }
+
+  /* ───────── light theme ───────── */
+  body.light{
+    color-scheme: light;
+    --bg:        #f6f7fa;
+    --bg-2:      #ffffff;
+    --panel:     #ffffff;
+    --panel-2:   #f1f3f8;
+    --border:    #e2e6ee;
+    --border-2:  #c8d0dd;
+    --text:      #0f1419;
+    --muted:     #555f70;
+    --dim:       #5f6b7e;
+
+    --accent-fg:  #00714a;
+    --accent-bg:  rgba(0,179,119,.12);
+    --mode-a-fg:  #1f5fc4;
+    --mode-a-bg:  rgba(42,111,219,.12);
+    --mode-b-fg:  #6d28d9;
+    --mode-b-bg:  rgba(122,28,217,.12);
+
+    --c-user:    #00b377;
+    --c-orch:    #2a6fdb;
+    --c-compute: #d63a5f;
+    --c-embed:   #c98a00;
+    --c-vector:  #7a4ed1;
+    --c-seed:    #d96e2c;
+
+    --brand-violet: #7a1cd9;
+    --brand-mint:   #00b377;
+
+    --shadow-soft: 0 4px 18px rgba(15,20,25,.06);
+    --shadow-pop:  0 0 0 1px rgba(15,20,25,.04), 0 8px 24px rgba(15,20,25,.08);
+
+    background-image:
+      radial-gradient(1200px 600px at 15% -10%, rgba(42,111,219,.05), transparent 60%),
+      radial-gradient(1000px 500px at 100% 0%, rgba(122,28,217,.04), transparent 60%),
+      radial-gradient(800px 600px at 50% 120%, rgba(0,179,119,.03), transparent 60%);
+  }
+  body.light::before{
+    background-image:
+      linear-gradient(rgba(0,0,0,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,.03) 1px, transparent 1px);
+  }
+  body.light .panel-payload{
+    background: #f0f2f7;
+    color: #1e2838;
+    border-color: var(--border);
+  }
+  body.light .panel-payload .k{ color: #8a5a00; }
+  body.light .panel-payload .s{ color: #00714a; }
+  body.light .node:hover .label{ color: color-mix(in srgb, var(--c) 65%, var(--text)); }
+  body.light .panel-payload .n{ color: #6b3faf; }
+  body.light .eyebrow{ background: rgba(0,0,0,.02); }
+  body.light .eyebrow .dot{ box-shadow: 0 0 8px var(--brand-mint); }
+  body.light .legend .swatch{ box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
+  body.light .wire-label{ stroke: var(--panel); stroke-width: 5; }
+  body.light .node{ box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+  body.light .node.active{ box-shadow: 0 0 0 1px var(--c), 0 0 0 6px color-mix(in srgb, var(--c) 12%, transparent), 0 4px 16px rgba(0,0,0,.08); }
+  body.light .wire.active{ filter: drop-shadow(0 0 4px var(--wire-color, var(--brand-mint))); }
+  body.light .chip{ background: rgba(0,0,0,.04); }
+  body.light aside{ background: linear-gradient(180deg, rgba(0,0,0,.01), rgba(0,0,0,.005)); }
+
+  /* theme toggle */
+  .theme-toggle, .layout-reset, .fullscreen-toggle{
+    appearance:none; border:1px solid var(--border); background: var(--panel);
+    color: var(--muted); cursor:pointer;
+    width: 34px; height: 34px; border-radius: 10px;
+    display:inline-flex; align-items:center; justify-content:center;
+    transition: all .2s ease;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover, .layout-reset:hover, .fullscreen-toggle:hover{ color: var(--text); border-color: var(--border-2); }
+  .layout-reset{ display:none; }
+  .layout-reset.has-custom{ display:inline-flex; }
+  .theme-toggle .icon-sun{ display:none; }
+  body.light .theme-toggle .icon-moon{ display:none; }
+  body.light .theme-toggle .icon-sun{ display:block; }
+
+  /* fullscreen canvas.
+     `main` normally creates a stacking context (position:relative + z-index),
+     which would trap the fixed canvas BELOW the header/controls. In fullscreen
+     we flatten that context, hide header + shortcut note, pin the controls bar
+     (mode toggle, legend, theme, fullscreen/exit) to the top and the flow tabs
+     to the bottom, lock body scroll, and keep the side panel as a fixed overlay
+     so the presenter still sees step details. Everything stays clickable, so
+     touch users can leave fullscreen too. */
+  :root{ --fs-top: 58px; --fs-bottom: 62px; }
+  body.is-fullscreen{ overflow:hidden; }
+  body.is-fullscreen header,
+  body.is-fullscreen .scenario-note{ visibility:hidden; }
+  body.is-fullscreen main{ position:static; z-index:auto; }
+  body.is-fullscreen .controls{
+    position:fixed; top:0; left:0; right:0; height: var(--fs-top); z-index:10001;
+    margin:0; max-width:none; padding: 0 16px;
+    flex-wrap: nowrap; overflow-x:auto; gap:14px;
+    background: var(--bg); border-bottom:1px solid var(--border);
+  }
+  body.is-fullscreen .flowtabs{
+    position:fixed; bottom:0; left:0; right:0; min-height: var(--fs-bottom); z-index:10001;
+    margin:0; max-width:none; padding: 10px 16px;
+    overflow-x:auto; flex-wrap: nowrap; align-items:center;
+    background: var(--bg); border-top:1px solid var(--border);
+  }
+  .canvas.is-fullscreen{
+    position:fixed; top: var(--fs-top); bottom: var(--fs-bottom); left:0; right:0; z-index:9999;
+    border-radius:0; margin:0; max-width:none; min-height:0;
+    overflow:auto;
+    padding: 20px 428px 16px 28px;  /* right padding = room for the overlay panel */
+  }
+  .canvas.is-fullscreen .stage{ height: calc(100vh - var(--fs-top) - var(--fs-bottom) - 120px); min-width: 0; }
+  body.is-fullscreen aside{
+    position:fixed; top: calc(var(--fs-top) + 12px); right:12px; bottom: calc(var(--fs-bottom) + 12px); width:392px;
+    z-index:10000; overflow:auto; min-height:0;
+    background: var(--panel);
+  }
+  @media (max-width: 1000px){
+    .canvas.is-fullscreen{ padding-right: 28px; }
+    body.is-fullscreen aside{ display:none; }
+  }
+
+header{max-width:1540px;padding-top:24px} h1{font-size:clamp(27px,3.2vw,44px);line-height:1.15}
+h1 .accent{background:none;color:var(--text)} .sub{max-width:92ch;line-height:1.6}
+.atlas-nav{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0 12px}
+a{color:var(--c-orch);text-underline-offset:3px}.atlas-nav a{text-decoration:none;padding:7px 10px;border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--muted)}
+.atlas-nav a[aria-current=page]{color:var(--text);background:var(--panel-2);border-color:var(--c-orch)}
+.status-line{font-size:12px;color:var(--muted);line-height:1.6;border-left:3px solid var(--c-embed);padding:8px 13px;background:var(--panel)}
+.controls{margin-top:16px}.stage{height:470px}.node{width:170px}.node .label{line-height:1.3}.node .tech{white-space:normal;line-height:1.45;max-width:155px}.node .port{font-size:10px}aside{min-width:0;max-width:100%}.panel-payload{max-width:100%;min-width:0}.panel-route{overflow-wrap:anywhere}
+.atlas-content{position:relative;z-index:2;max-width:1416px;margin:32px auto;padding:0 24px 64px;line-height:1.75;overflow-wrap:anywhere;min-width:0}
+.atlas-content h1{font-size:30px}.atlas-content h2{font-size:25px;margin-top:44px;color:var(--text);line-height:1.35}.atlas-content h3{margin-top:26px;line-height:1.4}
+.atlas-content p,.atlas-content li{max-width:105ch;color:var(--muted)}.atlas-content strong{color:var(--text)}
+.atlas-content table{border-collapse:collapse;min-width:640px;width:100%;font-size:13px;line-height:1.6}
+.atlas-content th,.atlas-content td{padding:12px 14px;text-align:left;vertical-align:top;border:1px solid var(--border)}
+.atlas-content th{background:var(--panel-2);color:var(--text)}.table-wrap{overflow:auto;margin:18px 0;border-radius:8px}
+.atlas-content pre{background:var(--panel);border:1px solid var(--border);padding:16px;border-radius:9px;overflow:auto;font-size:12px;line-height:1.6}
+.atlas-content code{font-family:var(--mono);font-size:.88em;overflow-wrap:anywhere}.atlas-content blockquote{border-left:3px solid var(--c-orch);margin-left:0;padding-left:18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:20px 0}
+.card{display:block;text-decoration:none;border:1px solid var(--border);border-radius:13px;padding:18px;background:var(--panel);color:var(--text)}
+.card:hover{border-color:var(--c-orch);transform:translateY(-2px)}.card b{font-size:16px}.card small{display:block;margin-top:7px;color:var(--muted);line-height:1.6}
+.card .tag{font-family:var(--mono);color:var(--c-embed);font-size:11px;display:block;margin-bottom:6px}
+.guide{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px;color:var(--muted);font-size:12px}.guide span{border:1px solid var(--border);border-radius:8px;padding:8px 12px}
+.timeline-controls{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--panel);padding:18px;border:1px solid var(--border);border-radius:10px}
+input,select{background:var(--panel-2);color:var(--text);border:1px solid var(--border-2);border-radius:6px;padding:7px;font:inherit}
+input[type=range]{accent-color:var(--c-orch);width:210px}.timeline-scroll{overflow:auto;margin-top:20px}.timeline{min-width:800px}
+.timeline-row{display:grid;grid-template-columns:235px 1fr;gap:12px;align-items:center;margin:8px 0}.timeline-name{font-size:12px;color:var(--text);text-decoration:none}
+.track{height:32px;position:relative;background:repeating-linear-gradient(to right,var(--panel) 0,var(--panel) calc(100%/24 - 1px),var(--border) calc(100%/24 - 1px),var(--border) calc(100%/24));border-radius:5px}
+.bar{position:absolute;top:4px;height:24px;border-radius:5px;border:1px solid var(--c-orch);background:color-mix(in srgb,var(--c-orch) 30%,var(--panel));color:var(--text);font-size:11px;display:flex;align-items:center;justify-content:center;white-space:nowrap;text-decoration:none}
+.bar.is-active{border-color:var(--c-embed);background:color-mix(in srgb,var(--c-embed) 33%,var(--panel));box-shadow:0 0 14px #ffc14d25}
+.bar.is-past{opacity:.55}.timeline-labels{display:grid;grid-template-columns:repeat(24,1fr);font-size:10px;color:var(--muted)}
+.roadmap-detail{margin-top:18px;padding:18px;border:1px solid var(--border);border-radius:10px;background:var(--panel);min-height:100px}
+.matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.matrix button{text-align:left;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text);padding:20px;cursor:pointer;font:inherit}
+.matrix button[aria-pressed=true]{border-color:var(--c-embed)}.matrix small{display:block;color:var(--muted);margin-top:8px}.calc{display:flex;flex-wrap:wrap;gap:15px}.calc label{display:grid;gap:5px;font-size:12px}.calc-output{margin-top:15px;padding:15px;border:1px solid var(--border);border-radius:10px;color:var(--c-embed)}
+.doc-source{padding:12px 16px;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:12px}.toc ul{columns:2;column-gap:30px}.toc li{break-inside:avoid;font-size:13px}.toc a{color:var(--muted)}
+footer{position:relative;z-index:2;max-width:1416px;margin:30px auto;padding:20px 24px;color:var(--muted);font-size:11px;border-top:1px solid var(--border)}
+@media(max-width:1000px){.node{width:150px}.stage{min-width:700px}.canvas{overflow-x:auto}aside{min-height:300px}}
+@media(max-width:720px){.atlas-content{padding:0 18px 40px}.matrix{grid-template-columns:1fr}.toc ul{columns:1}.stage{height:440px;min-width:680px}.node{width:145px}.atlas-nav a{font-size:11px;padding:6px}.atlas-content h2{font-size:23px}.atlas-content h1{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.card:hover{transform:none}}
+
+</style>
+</head>
+<body>
+
+<header>
+  
+  <span class="eyebrow"><span class="dot"></span> НГТУ · ФПМИ · ВКР 2027</span>
+  <h1>Маршрут к защите <span class="accent"></span></h1>
+  <p class="sub">Предлагаемые зависимости и 24-недельный сценарий. Даты и положение ползунка не являются фактическим статусом работ.</p>
+<nav class="atlas-nav" aria-label="Карты исследования"><a href="index.html">Вся картина</a><a href="research-plan.html">Общий план</a><a href="execution.html">Реализация этапов</a><a href="roadmap.html" aria-current="page">Roadmap</a><a href="software.html">Архитектура</a><a href="material.html">Сбор материала</a><a href="dataset.html">Датасеты</a><a href="training.html">Обучение</a><a href="experiments.html">Измерения</a><a href="results.html">Результаты и источники</a></nav><div class="status-line">Срез 19.10.2026 · Проект исследования. Новые модельные эксперименты не запускались. Значения в payload — примеры контрактов или отмеченные стартовые предложения.</div></header>
+
+<div class="controls">
+  
+  
+
+  
+  <div class="legend" role="group" aria-label="Обозначения"><span class="item"><span class="swatch" style="background:var(--c-user)"></span> Вопрос / результат</span><span class="item"><span class="swatch" style="background:var(--c-orch)"></span> Контракт / процесс</span><span class="item"><span class="swatch" style="background:var(--c-compute)"></span> Модель / прогон</span><span class="item"><span class="swatch" style="background:var(--c-embed)"></span> Обучение / проверка</span><span class="item"><span class="swatch" style="background:var(--c-vector)"></span> Данные / источник</span><span class="item"><span class="swatch" style="background:var(--c-seed)"></span> Ограничение / аудит</span></div>
+
+  
+  <button class="theme-toggle" id="btnTheme" title="Переключить тему (T)" aria-label="Light theme" aria-pressed="false">
+    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+
+  
+  <button class="layout-reset" id="btnResetLayout" title="Сбросить позиции (R)" aria-label="Сбросить схему">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+  </button>
+
+  
+  <button class="fullscreen-toggle" id="btnFullscreen" title="На весь экран (F)" aria-label="На весь экран" aria-pressed="false">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+  </button>
+</div>
+
+
+<nav class="flowtabs" aria-label="Сценарии"><button class="flowtab" data-flow="core" aria-pressed="true"><span class="num">1</span> Основной маршрут</button><button class="flowtab" data-flow="stop" aria-pressed="false"><span class="num">2</span> Если гипотеза не подтверждается</button></nav>
+
+<p class="scenario-note"><kbd>Space</kbd> пуск / пауза · <kbd>←</kbd>/<kbd>→</kbd> шаг · <kbd>1</kbd>–<kbd id="kbFlowMax">3</kbd> сценарий · <kbd>T</kbd> тема · <kbd>F</kbd> экран · перетащите узел · <button type="button" class="linkbtn" id="btnShortcuts" aria-pressed="true">клавиши вкл.</button></p>
+
+<noscript><p class="nojs">Для анимации нужен JavaScript. Подробный текст доступен ниже без JavaScript.</p></noscript>
+
+<main>
+  <section class="canvas" aria-label="Схема исследования">
+    <div class="canvas-head">
+      <span class="canvas-title">Сценарий · <span id="flowName">—</span></span>
+      <div class="player" role="group" aria-label="Воспроизведение">
+        <button id="btnPrev" title="Предыдущий шаг (←)" aria-label="Предыдущий шаг">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button id="btnPlay" title="Пуск/пауза (Space)" aria-label="Пуск/пауза" aria-pressed="false">
+          <svg id="playIcon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+        </button>
+        <button id="btnNext" title="Следующий шаг (→)" aria-label="Следующий шаг">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <span class="stepidx" id="stepIdx">— / —</span>
+      </div>
+    </div>
+    <div class="flow-note" id="flowNote"></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="step-brief" id="stepBrief" aria-hidden="true"></div>
+
+    <div class="stage" id="stage"><div class="node" data-role="user" data-id="scope" style="left:2%;top:8%;"><div class="icon">01</div><div class="label">P0–P1 · Основание</div><div class="tech">контракт · версии</div><div class="port">scope</div><span class="step-badge">·</span></div>
+<div class="node" data-role="orch" data-id="infra" style="left:38%;top:8%;"><div class="icon">02</div><div class="label">P2–P3 · Стенд</div><div class="tech">harness · split</div><div class="port">infra</div><span class="step-badge">·</span></div>
+<div class="node" data-role="vector" data-id="data" style="left:74%;top:8%;"><div class="icon">03</div><div class="label">P4–P5 · Данные</div><div class="tech">сбор · разметка</div><div class="port">data</div><span class="step-badge">·</span></div>
+<div class="node" data-role="embed" data-id="fit" style="left:74%;top:66%;"><div class="icon">04</div><div class="label">P6–P7 · Модели</div><div class="tech">baseline · адаптация</div><div class="port">fit</div><span class="step-badge">·</span></div>
+<div class="node" data-role="compute" data-id="test" style="left:38%;top:66%;"><div class="icon">05</div><div class="label">P8–P9 · Измерение</div><div class="tech">test · устойчивость</div><div class="port">test</div><span class="step-badge">·</span></div>
+<div class="node" data-role="user" data-id="thesis" style="left:2%;top:66%;"><div class="icon">06</div><div class="label">P10 · ВКР</div><div class="tech">выводы · воспроизведение</div><div class="port">thesis</div><span class="step-badge">·</span></div>
+<svg class="wires" id="wires" aria-hidden="true">
+        <defs>
+          
+          <marker id="ah-mint"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--brand-mint)"/>
+          </marker>
+          <marker id="ah-sky"    markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--c-orch)"/>
+          </marker>
+          <marker id="ah-amber"  markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--c-embed)"/>
+          </marker>
+          <marker id="ah-violet" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--c-vector)"/>
+          </marker>
+          <marker id="ah-mag"    markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--c-compute)"/>
+          </marker>
+          <marker id="ah-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--c-seed)"/>
+          </marker>
+        </defs>
+        
+      </svg>
+    </div>
+  </section>
+
+  <aside aria-label="Описание шага" id="sidepanel">
+    <div class="panel-head">
+      <div class="panel-step">ШАГ <strong id="panelStepIdx">—</strong> / <span id="panelStepTotal">—</span></div>
+      <div class="panel-mode" id="panelMode" data-mode="offline">OFFLINE</div>
+    </div>
+    <h2 class="panel-title" id="panelTitle">—</h2>
+    <div class="panel-route" id="panelRoute"></div>
+    <p class="panel-desc" id="panelDesc">Выберите сценарий и нажмите пуск.</p>
+    <pre class="panel-payload" id="panelPayload"></pre>
+    <div class="panel-meta" id="panelMeta"></div>
+    <div class="sr-only" id="liveRegion" aria-live="polite" aria-atomic="true"></div>
+    <div class="step-nav">
+      <button id="btnPrev2">&larr; Назад</button>
+      <button id="btnNext2">Далее &rarr;</button>
+    </div>
+  </aside>
+</main>
+
+<script>
+/* ─────────────────────────────────────────────────────────────────────
+   ARCHITECTURE DIAGRAM — interactive flow visualization
+   Flow data is single source of truth.
+   ───────────────────────────────────────────────────────────────────── */
+
+const flows = {
+  "core": {
+    "name": "Основной маршрут",
+    "note": "Анимация описывает предложенный процесс; это не запуск моделей.",
+    "steps": [
+      {
+        "from": "scope",
+        "to": "infra",
+        "color": "--c-orch",
+        "title": "Из постановки в проверяемый контракт",
+        "route": "",
+        "desc": "Рабочий extension point и sealed split нужны до сбора материала.",
+        "payload": {
+          "phases": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "weeks": "1–4"
+        },
+        "chips": [
+          "проект протокола"
+        ]
+      },
+      {
+        "from": "infra",
+        "to": "data",
+        "color": "--c-vector",
+        "title": "Получить независимые данные",
+        "route": "",
+        "desc": "Истории → snapshots → проверенные метки, с lineage и аудитом.",
+        "payload": {
+          "phases": [
+            "P4",
+            "P5"
+          ],
+          "weeks": "4–8"
+        },
+        "chips": [
+          "проект протокола"
+        ]
+      },
+      {
+        "from": "data",
+        "to": "fit",
+        "color": "--c-embed",
+        "title": "Сначала контроль, затем обучение",
+        "route": "",
+        "desc": "Frozen и дешёвые baseline предшествуют CE/Brier; reasoning — расширение.",
+        "payload": {
+          "phases": [
+            "P6",
+            "P7"
+          ],
+          "weeks": "7–13"
+        },
+        "chips": [
+          "проект протокола"
+        ]
+      },
+      {
+        "from": "fit",
+        "to": "test",
+        "color": "--c-compute",
+        "title": "Заморозить и оценить",
+        "route": "",
+        "desc": "Test не выбирает checkpoint, budget, prompt или threshold.",
+        "payload": {
+          "phases": [
+            "P8",
+            "P9"
+          ],
+          "weeks": "14–18"
+        },
+        "chips": [
+          "проект протокола"
+        ]
+      },
+      {
+        "from": "test",
+        "to": "thesis",
+        "color": "--c-user",
+        "title": "Довести до воспроизведения",
+        "route": "",
+        "desc": "Связать измерения с выводами, личным вкладом и ограничениями.",
+        "payload": {
+          "phase": "P10",
+          "weeks": "18–22",
+          "buffer": "23–24"
+        },
+        "chips": [
+          "проект протокола"
+        ]
+      }
+    ]
+  },
+  "stop": {
+    "name": "Если гипотеза не подтверждается",
+    "note": "Анимация описывает предложенный процесс; это не запуск моделей.",
+    "steps": [
+      {
+        "from": "fit",
+        "to": "test",
+        "color": "--c-compute",
+        "title": "Сохранить отрицательный опыт",
+        "route": "",
+        "desc": "Нет прироста после ограниченного dev search — измеримый результат, а не повод бесконечно подбирать.",
+        "payload": {
+          "stop": [
+            "budget",
+            "invalid labels",
+            "no dev gain",
+            "runtime infeasible"
+          ]
+        },
+        "chips": [
+          "проект протокола"
+        ]
+      },
+      {
+        "from": "test",
+        "to": "scope",
+        "color": "--c-user",
+        "title": "Пересмотреть объяснение",
+        "route": "",
+        "desc": "Отделить ограничение метода от ошибки данных или реализации.",
+        "payload": {
+          "distinguish": [
+            "bug",
+            "measurement error",
+            "negative effect",
+            "underpowered study"
+          ]
+        },
+        "chips": [
+          "проект протокола"
+        ]
+      },
+      {
+        "from": "scope",
+        "to": "thesis",
+        "color": "--c-user",
+        "title": "Завершить честное исследование",
+        "route": "",
+        "desc": "Положительный эффект, RLCD и публикация не являются обязательным исходом.",
+        "payload": {
+          "required": [
+            "formal question",
+            "reproducible agent",
+            "measurements",
+            "comparison"
+          ]
+        },
+        "chips": [
+          "проект протокола"
+        ]
+      }
+    ]
+  }
+};
+
+/* ─── state ─────────────────────────────────────────────────────────────
+   Initial mode and initial flow SHOULD match keys used above:
+   - state.mode    matches data-mode on a button in .modepick (e.g. "offline")
+   - state.flow    matches data-flow on a button in .flowtabs (e.g. "flow_a")
+   - state.stepMs  is the autoplay interval in ms; tweak for talk pacing.
+   If a key doesn't exist the runtime falls back to the first button instead of
+   throwing (and logs an integrity warning in the console).
+   ───────────────────────────────────────────────────────────────────── */
+const state = {
+  mode: "offline",   // ← if you renamed mode keys, update this
+  flow: "core",    // ← if you renamed flow keys, update this
+  step: 0,
+  playing: false,
+  timer: null,
+  stepMs: 4200,
+  shortcuts: true    // single-key shortcuts; the viewer can switch them off (WCAG 2.1.4)
+};
+
+/* ─── config used by handlers ─────────────────────────────────────────
+   Flow order (digits 1–9) and the mode cycle (O) are read from the .flowtabs
+   and .modepick buttons, so there is nothing to duplicate here. */
+const CONFIG = {
+  // Flow to fall back to when an `onlyMode` flow becomes invalid after a mode
+  // switch. Leave as-is: if it doesn't exist (or is itself mode-exclusive) the
+  // first eligible flow tab is used.
+  fallbackFlow: "core"
+};
+
+/* Live check so we don't fire SMIL packet animation for reduced-motion users. */
+const reducedMotion = (()=>{ try{ return window.matchMedia("(prefers-reduced-motion: reduce)"); }catch(e){ return { matches:false }; } })();
+
+/* ─── dom refs ──────────────────────────────────────── */
+const stage = document.getElementById("stage");
+const svgWires = document.getElementById("wires");
+const nodes = Array.from(document.querySelectorAll(".node"));
+const flowName = document.getElementById("flowName");
+const stepIdx = document.getElementById("stepIdx");
+const btnPlay = document.getElementById("btnPlay");
+const playIcon = document.getElementById("playIcon");
+const btnPrev = document.getElementById("btnPrev");
+const btnNext = document.getElementById("btnNext");
+const btnPrev2 = document.getElementById("btnPrev2");
+const btnNext2 = document.getElementById("btnNext2");
+
+const panelStepIdx = document.getElementById("panelStepIdx");
+const panelStepTotal = document.getElementById("panelStepTotal");
+const panelTitle = document.getElementById("panelTitle");
+const panelRoute = document.getElementById("panelRoute");
+const panelDesc = document.getElementById("panelDesc");
+const panelPayload = document.getElementById("panelPayload");
+const panelMeta = document.getElementById("panelMeta");
+const panelMode = document.getElementById("panelMode");
+const flowNoteEl = document.getElementById("flowNote");
+const stepBrief = document.getElementById("stepBrief");
+const liveRegion = document.getElementById("liveRegion");
+const progressFill = document.getElementById("progressFill");
+
+/* Single source of truth for modes and flow order: the buttons in the HTML. */
+const modeButtons = Array.from(document.querySelectorAll(".modepick button"));
+const flowTabs = Array.from(document.querySelectorAll(".flowtab"));
+const MODES = modeButtons.map(b=>b.dataset.mode).filter(Boolean);
+const FLOW_ORDER = flowTabs.map(b=>b.dataset.flow).filter(k=>k && flows[k]);
+
+const EMPTY_FLOW = { name:"", steps:[] };
+/* Always returns a usable flow object, never undefined. */
+function currentFlow(){
+  const f = flows[state.flow];
+  return (f && Array.isArray(f.steps)) ? f : EMPTY_FLOW;
+}
+
+/* ─── helpers ───────────────────────────────────────── */
+function nodeById(id){ return nodes.find(n=>n.dataset.id===id); }
+
+/* Step `color` is interpolated into CSS (`var(--c-x)`). Only accept a plain
+   custom-property name so a typo or stray characters can't break the stylesheet. */
+const SAFE_COLOR = /^--[A-Za-z0-9_-]{1,64}$/;
+function safeColor(c){ return (typeof c === "string" && SAFE_COLOR.test(c)) ? c : "--brand-mint"; }
+
+function capMode(){ return state.mode.charAt(0).toUpperCase() + state.mode.slice(1); }
+
+/* Human label of a mode = its button text without the hint pill. */
+function modeLabel(m){
+  const b = modeButtons.find(x=>x.dataset.mode===m);
+  if(!b) return String(m || "").toUpperCase();
+  const t = Array.from(b.childNodes).filter(n=>n.nodeType===3).map(n=>n.textContent).join(" ").trim();
+  return (t || m).toUpperCase();
+}
+
+function esc(s){ const d=document.createElement("span"); d.textContent=(s==null?"":String(s)); return d.innerHTML; }
+
+/* `desc` is author-written HTML. Keep it to inline formatting: block/unknown
+   tags unwrap to their text, active content is dropped, attributes are removed
+   (except a safe href on <a>). This is defense in depth — the file is static
+   and author-controlled — but it means a pasted snippet can't take the page over. */
+const ALLOWED_TAGS = new Set(["EM","STRONG","B","I","CODE","KBD","BR","U","S","SMALL","SUP","SUB","MARK","SPAN","A"]);
+const DROP_TAGS = new Set(["SCRIPT","STYLE","IFRAME","OBJECT","EMBED","SVG","MATH","TEMPLATE","LINK","META","FORM","INPUT","BUTTON","TEXTAREA","SELECT"]);
+function sanitizeHtml(html){
+  const tpl = document.createElement("template");
+  tpl.innerHTML = (html == null) ? "" : String(html);
+  Array.from(tpl.content.querySelectorAll("*")).forEach(el=>{
+    if(DROP_TAGS.has(el.tagName)){ el.remove(); return; }
+    if(!ALLOWED_TAGS.has(el.tagName)){
+      const parent = el.parentNode;
+      if(!parent) return;
+      while(el.firstChild) parent.insertBefore(el.firstChild, el);
+      el.remove();
+      return;
+    }
+    const href = el.tagName === "A" ? el.getAttribute("href") : null;
+    Array.from(el.attributes).forEach(a=>el.removeAttribute(a.name));
+    if(el.tagName === "A"){
+      if(href && /^(https?:|mailto:|#)/i.test(href.trim())){
+        el.setAttribute("href", href.trim());
+        el.setAttribute("rel", "noopener noreferrer");
+        if(!href.trim().startsWith("#")) el.setAttribute("target", "_blank");
+      }
+    }
+  });
+  return tpl.innerHTML;
+}
+
+function announce(text){ if(liveRegion) liveRegion.textContent = text; }
+
+/* participant set is recomputed only when the flow changes (cheap per-step applyStep) */
+let participantIds = new Set();
+let participantFlow = null;
+
+function applyModeToNodes(){
+  const modeKey = capMode();
+  nodes.forEach(n=>{
+    ["label","tech","port"].forEach(cls=>{
+      const el = n.querySelector(`.${cls}`);
+      if(!el) return;
+      const val = el.dataset[cls + modeKey];
+      if(val !== undefined) el.textContent = val;
+    });
+    /* a11y: expose each node as a button and keep its label announced per mode */
+    if(!n.getAttribute("role")) n.setAttribute("role","button");
+    const lbl = n.querySelector(".label");
+    const tech = n.querySelector(".tech");
+    const name = (lbl ? lbl.textContent.trim() : n.dataset.id) + (tech && tech.textContent.trim() ? " · " + tech.textContent.trim() : "");
+    n.setAttribute("aria-label", name + " — jump to its step");
+    const allowedModes = n.dataset.modes;
+    const visible = !allowedModes || allowedModes.split(",").map(x=>x.trim()).includes(state.mode);
+    n.classList.toggle("hidden", !visible);
+    n.tabIndex = visible ? 0 : -1;  /* keep keyboard focus off hidden nodes */
+    n.setAttribute("aria-hidden", visible ? "false" : "true");
+  });
+  if(MODES.length){
+    panelMode.hidden = false;
+    panelMode.textContent = modeLabel(state.mode);
+    panelMode.dataset.mode = state.mode;
+  } else {
+    panelMode.hidden = true;  /* single-mode diagram: no badge to show */
+  }
+}
+
+/* compute center of a node in stage coordinates.
+   Pass `sRect` (stage.getBoundingClientRect()) to avoid re-reading layout per call. */
+function nodeCenter(node, sRect){
+  sRect = sRect || stage.getBoundingClientRect();
+  const r = node.getBoundingClientRect();
+  return {
+    x: r.left - sRect.left + r.width/2,
+    y: r.top  - sRect.top  + r.height/2,
+    w: r.width, h: r.height
+  };
+}
+
+/* compute an anchor on a node edge via ray-rect intersection.
+   `c` is the node's already-computed center; `towards` is the point to aim at. */
+function nodeAnchor(c, towards){
+  const dx = towards.x - c.x;
+  const dy = towards.y - c.y;
+  const dist = Math.hypot(dx, dy);
+  const hw = c.w/2, hh = c.h/2;
+  const pad = 6;
+
+  if(dist < 1) return { x: c.x + hw + pad, y: c.y };
+
+  const tx = Math.abs(dx) > 0.001 ? hw / Math.abs(dx) : 1e6;
+  const ty = Math.abs(dy) > 0.001 ? hh / Math.abs(dy) : 1e6;
+  const t = Math.min(tx, ty);
+
+  return {
+    x: c.x + dx * t + (dx / dist) * pad,
+    y: c.y + dy * t + (dy / dist) * pad
+  };
+}
+
+/* compute geometry for all wires in the current flow.
+   `sRect` is read once by the caller and threaded through to avoid per-node layout reads.
+
+   Side rule: every wire bends to the RIGHT of its direction of travel, so a
+   request (A→B) and its response (B→A) land on opposite sides instead of on
+   top of each other. Repeated same-direction wires between the same pair get
+   progressively wider lanes. A self-step (from === to) is drawn as a loop
+   above the node. Labels sit ON the curve (its midpoint), not at the control point. */
+function computeWireGeometry(sRect){
+  sRect = sRect || stage.getBoundingClientRect();
+  const flow = currentFlow();
+  const geom = [];
+  const laneCount = new Map();
+  flow.steps.forEach((s, i) => {
+    const a = nodeById(s.from);
+    const b = nodeById(s.to);
+    if(!a || !b || a.classList.contains("hidden") || b.classList.contains("hidden")){
+      geom.push(null);
+      return;
+    }
+    const key = s.from + "\u0000" + s.to;
+    const lane = laneCount.get(key) || 0;
+    laneCount.set(key, lane + 1);
+
+    const ca = nodeCenter(a, sRect);
+
+    if(a === b){
+      /* self-loop: leave from the top edge, arc up and over, return to the top edge */
+      const top = ca.y - ca.h/2 - 6;
+      const half = 22;
+      const lift = 44 + lane * 18;
+      const A = { x: ca.x - half, y: top };
+      const B = { x: ca.x + half, y: top };
+      const c1 = { x: A.x - 28, y: top - lift };
+      const c2 = { x: B.x + 28, y: top - lift };
+      const d = `M ${A.x} ${A.y} C ${c1.x} ${c1.y} ${c2.x} ${c2.y} ${B.x} ${B.y}`;
+      /* cubic midpoint (t = .5): (A + 3c1 + 3c2 + B) / 8 */
+      const cx = (A.x + 3*c1.x + 3*c2.x + B.x) / 8;
+      const cy = (A.y + 3*c1.y + 3*c2.y + B.y) / 8;
+      geom.push({ d, cx, cy });
+      return;
+    }
+
+    const cb = nodeCenter(b, sRect);
+    const A = nodeAnchor(ca, cb);
+    const B = nodeAnchor(cb, ca);
+
+    const ddx = B.x - A.x;
+    const ddy = B.y - A.y;
+    const len = Math.hypot(ddx, ddy) || 1;
+    let nx, ny;
+    if(len < 5){ nx = 0; ny = -1; }
+    else { nx = -ddy/len; ny = ddx/len; }   /* right-hand normal (screen coords, y down) */
+
+    const mx = (A.x + B.x) / 2;
+    const my = (A.y + B.y) / 2;
+
+    const curveAmount = Math.max(14, Math.min(50, len * 0.12)) * (1 + lane * 0.9);
+    const cxp = mx + nx * curveAmount;
+    const cyp = my + ny * curveAmount;
+    const d = `M ${A.x} ${A.y} Q ${cxp} ${cyp} ${B.x} ${B.y}`;
+    /* quadratic midpoint (t = .5): (A + 2C + B) / 4 */
+    const cx = (A.x + 2*cxp + B.x) / 4;
+    const cy = (A.y + 2*cyp + B.y) / 4;
+
+    geom.push({ d, cx, cy });
+  });
+  return geom;
+}
+
+/* cache of per-step SVG elements, rebuilt by drawWires() and reused by updateWirePaths()
+   so the drag path never re-queries the DOM. Index = step index; holes are undefined. */
+let wireEls = [];
+
+function sizeSvgToStage(sRect){
+  svgWires.setAttribute("viewBox", `0 0 ${sRect.width} ${sRect.height}`);
+  svgWires.setAttribute("width", sRect.width);
+  svgWires.setAttribute("height", sRect.height);
+}
+
+/* draw all wires for current flow (full rebuild) */
+function drawWires(){
+  Array.from(svgWires.querySelectorAll(".wire, .packet, .wire-label")).forEach(el=>el.remove());
+  wireEls = [];
+
+  const sRect = stage.getBoundingClientRect();
+  sizeSvgToStage(sRect);
+
+  const flow = currentFlow();
+  const geom = computeWireGeometry(sRect);
+  const ahMap = {
+    "--c-user":"ah-mint","--c-orch":"ah-sky","--c-embed":"ah-amber",
+    "--c-vector":"ah-violet","--c-compute":"ah-mag","--c-seed":"ah-orange"
+  };
+
+  flow.steps.forEach((s, i)=>{
+    const g = geom[i];
+    if(!g) return;
+    const color = safeColor(s.color);
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg","path");
+    path.setAttribute("class","wire");
+    path.setAttribute("data-step", i);
+    path.setAttribute("d", g.d);
+    path.style.setProperty("--wire-color", `var(${color})`);
+    path.setAttribute("marker-end", `url(#${ahMap[color] || "ah-mint"})`);
+    svgWires.appendChild(path);
+
+    const lab = document.createElementNS("http://www.w3.org/2000/svg","text");
+    lab.setAttribute("class","wire-label");
+    lab.setAttribute("data-step", i);
+    lab.setAttribute("x", g.cx);
+    lab.setAttribute("y", g.cy + 4);
+    lab.setAttribute("text-anchor","middle");
+    lab.style.setProperty("--wire-color", `var(${color})`);
+    lab.textContent = (i+1);
+    svgWires.appendChild(lab);
+
+    const pkt = document.createElementNS("http://www.w3.org/2000/svg","circle");
+    pkt.setAttribute("class","packet");
+    pkt.setAttribute("data-step", i);
+    pkt.setAttribute("cx", 0);
+    pkt.setAttribute("cy", 0);
+    pkt.style.setProperty("--wire-color", `var(${color})`);
+    svgWires.appendChild(pkt);
+
+    const m = document.createElementNS("http://www.w3.org/2000/svg","animateMotion");
+    m.setAttribute("dur","1.5s");
+    m.setAttribute("repeatCount","1");
+    m.setAttribute("fill","freeze");
+    m.setAttribute("begin","indefinite");
+    m.setAttribute("path", g.d);
+    pkt.appendChild(m);
+
+    wireEls[i] = { path, label: lab, packet: pkt, motion: m };
+  });
+}
+
+/* fast incremental path update — reuses existing SVG elements during drag */
+function updateWirePaths(){
+  const sRect = stage.getBoundingClientRect();
+  sizeSvgToStage(sRect);
+
+  const geom = computeWireGeometry(sRect);
+  const flow = currentFlow();
+
+  flow.steps.forEach((s, i) => {
+    const g = geom[i];
+    const w = wireEls[i];
+    if(!w) return;
+
+    if(!g){
+      if(w.path) w.path.setAttribute("d", "");
+      return;
+    }
+
+    if(w.path) w.path.setAttribute("d", g.d);
+    if(w.label){
+      w.label.setAttribute("x", g.cx);
+      w.label.setAttribute("y", g.cy + 4);
+    }
+    if(w.motion) w.motion.setAttribute("path", g.d);
+  });
+}
+
+/* A step is "playable" only if both endpoints exist AND are visible in the
+   current mode. Landing on an unplayable step would show a dead frame (no lit
+   node, no wire, no packet) while the panel still shows text. */
+function stepPlayable(i){
+  const s = currentFlow().steps[i];
+  if(!s) return false;
+  const a = nodeById(s.from), b = nodeById(s.to);
+  return !!(a && b && !a.classList.contains("hidden") && !b.classList.contains("hidden"));
+}
+/* Next playable step index from `from` (exclusive) in direction `dir`, or -1. */
+function nextPlayable(from, dir){
+  const total = currentFlow().steps.length;
+  for(let i = from + dir; i >= 0 && i < total; i += dir){ if(stepPlayable(i)) return i; }
+  return -1;
+}
+function firstPlayable(){ const i = nextPlayable(-1, +1); return i < 0 ? 0 : i; }
+
+/* highlight current step.
+   opts.replay=false re-renders without restarting the packet animation (used by
+   resize / drag / fullscreen, where the step did not actually change). */
+let lastAnimatedKey = null;
+function applyStep(opts){
+  const replay = !(opts && opts.replay === false);
+  const flow = currentFlow();
+  /* Guard against hand-edited breakage: a missing flow key or an empty steps[]
+     degrades to an empty panel instead of throwing. */
+  if(flow.steps.length === 0){
+    stepIdx.textContent = "— / —";
+    panelStepIdx.textContent = "—"; panelStepTotal.textContent = "—";
+    flowName.textContent = flow.name || "—";
+    panelTitle.textContent = "—";
+    panelRoute.innerHTML = ""; panelDesc.textContent = "This flow has no steps."; panelPayload.textContent = ""; panelMeta.innerHTML = "";
+    if(stepBrief) stepBrief.textContent = "";
+    btnPrev.disabled = btnPrev2.disabled = btnNext.disabled = btnNext2.disabled = true;
+    progressFill.style.width = "0%";
+    return;
+  }
+  const total = flow.steps.length;
+  state.step = Math.max(0, Math.min(total - 1, state.step));
+  const step = flow.steps[state.step] || {};
+  const color = safeColor(step.color);
+
+  stepIdx.textContent = `${state.step+1} / ${total}`;
+  panelStepIdx.textContent = String(state.step+1).padStart(2,"0");
+  panelStepTotal.textContent = String(total).padStart(2,"0");
+  flowName.textContent = flow.name || state.flow;
+
+  /* Renders the documented flow-level `note`, plus `onlineNote` for onlyMode flows. */
+  if(flowNoteEl){
+    const parts = [];
+    if(flow.note) parts.push(flow.note);
+    if(flow.onlyMode && flow.onlineNote) parts.push(flow.onlineNote);
+    flowNoteEl.textContent = parts.join(" · ");
+  }
+
+  /* Compute the set of node ids that participate ANYWHERE in this flow.
+     Nodes in this set stay near-full opacity (participant class) so the
+     viewer can see the whole path at a glance. Nodes NOT in this set get
+     heavily dimmed — this is what makes "Direct Query bypasses Embed and
+     Vector" visually obvious. */
+  if(participantFlow !== state.flow){
+    participantIds = new Set();
+    flow.steps.forEach(s=>{ participantIds.add(s.from); participantIds.add(s.to); });
+    participantFlow = state.flow;
+  }
+
+  /* Apply node classes:
+     - active       = TARGET of the current step (badge + ring)
+     - active-from  = SOURCE of the current step (soft ring, no badge)
+     - participant  = in the flow but not in this step
+     - dimmed       = not in this flow at all
+     A node can only have one of these; we clear all then set the right one. */
+  nodes.forEach(n=>{
+    n.classList.remove("active","active-from","participant","dimmed","has-badge");
+    const badge = n._badge || (n._badge = n.querySelector(".step-badge"));
+    if(badge) badge.textContent = "·";
+    n.removeAttribute("title");
+  });
+  const a = nodeById(step.from);
+  const b = nodeById(step.to);
+  /* A step is only lit when BOTH endpoints are visible in the current mode —
+     lighting one end of a hidden wire would look like a bug. */
+  const playable = stepPlayable(state.step);
+  if(playable && a !== b){
+    a.classList.add("active-from");
+  }
+  if(playable){
+    b.classList.add("active","has-badge");
+    if(b._badge){
+      b._badge.textContent = state.step+1;
+      b._badge.style.background = `var(${color})`;
+    }
+  }
+  nodes.forEach(n=>{
+    if(playable && (n===a || n===b)) return;
+    if(n.classList.contains("hidden")) return;
+    if(participantIds.has(n.dataset.id)){
+      n.classList.add("participant");
+    } else {
+      n.classList.add("dimmed");
+      n.setAttribute("title", "Not part of this flow");
+    }
+  });
+
+  /* Apply wire classes:
+     - active   = current step (full color, glow, packet animates)
+     - preview  = belongs to this flow, but not the active step
+     - muted    = doesn't belong to this flow at all (e.g. a stale wire) */
+  const animKey = state.flow + ":" + state.step;
+  Array.from(svgWires.querySelectorAll(".wire, .wire-label, .packet")).forEach(el=>{
+    const s = parseInt(el.dataset.step,10);
+    el.classList.remove("active","preview","muted");
+    if(s === state.step){
+      if(el.classList.contains("wire") || el.classList.contains("wire-label")) el.classList.add("active");
+      if(el.classList.contains("packet")){
+        el.classList.add("run");
+        const motion = el.querySelector("animateMotion");
+        if(motion && !reducedMotion.matches && (replay || animKey !== lastAnimatedKey)){
+          try{ motion.beginElement(); }catch(e){}
+        }
+      }
+    } else if(!isNaN(s) && s >= 0 && s < total){
+      el.classList.remove("run");
+      if(el.classList.contains("wire") || el.classList.contains("wire-label")) el.classList.add("preview");
+    } else {
+      el.classList.remove("run");
+      el.classList.add("muted");
+    }
+  });
+  lastAnimatedKey = animKey;
+
+  /* side panel */
+  const title = step.title == null ? "" : String(step.title);
+  panelTitle.textContent = title || "—";
+  /* route bubble */
+  panelRoute.innerHTML = `<span class="from">${prettyId(step.from)}</span><span class="arrow">→</span><span class="to">${prettyId(step.to)}</span><span style="margin-left:6px;color:var(--muted)">${esc(step.route || "")}</span>`;
+  panelDesc.innerHTML = sanitizeHtml(step.desc);
+  /* payload + chips, keyed off the active mode so renamed modes work:
+     dev → payloadDev/chipsDev, v2 → payloadV2/chipsV2, etc.
+     The mode-specific key WINS over the generic one (same rule for both). */
+  const cap = capMode();
+  const rawPayload = step["payload" + cap] !== undefined ? step["payload" + cap] : (step.payload !== undefined ? step.payload : "");
+  panelPayload.textContent = formatPayload(rawPayload);
+  const chipsRaw = step["chips" + cap] !== undefined ? step["chips" + cap] : step.chips;
+  const chips = Array.isArray(chipsRaw) ? chipsRaw : [];
+  panelMeta.innerHTML = chips.map(c=>{
+    c = String(c);
+    const cls = /\d+\s*(?:ms|s|min)\b/.test(c) ? "chip lat" : (/dim|×|loaded|rules|count/.test(c) ? "chip size" : "chip");
+    return `<span class="${cls}">${esc(c)}</span>`;
+  }).join("") + (playable ? "" : `<span class="chip">not available in ${esc(MODES.length ? modeLabel(state.mode) : "this")} mode</span>`);
+
+  /* single-column echo of the step in the canvas */
+  if(stepBrief){
+    stepBrief.innerHTML = `<strong>${state.step+1}.</strong> ${esc(title)} <span style="color:var(--dim)">· ${prettyId(step.from)} → ${prettyId(step.to)}</span>`;
+  }
+
+  /* button states: disabled when there is no playable step in that direction */
+  btnPrev.disabled = btnPrev2.disabled = nextPlayable(state.step, -1) < 0;
+  btnNext.disabled = btnNext2.disabled = nextPlayable(state.step, +1) < 0;
+
+  /* progress bar */
+  const pct = total > 1 ? ((state.step) / (total - 1)) * 100 : 100;
+  progressFill.style.width = pct + "%";
+
+  /* screen-reader announcement */
+  announce(`Step ${state.step+1} of ${total}: ${title}. ${plainId(step.from)} to ${plainId(step.to)}.`);
+}
+
+/* Strings are shown verbatim; objects/arrays are pretty-printed so an author
+   who pastes a JSON object instead of a template literal still gets output. */
+function formatPayload(p){
+  if(p == null) return "";
+  if(typeof p === "string") return p;
+  try{ return JSON.stringify(p, null, 2); }catch(e){ return String(p); }
+}
+
+function plainId(id){
+  const node = nodeById(id);
+  const label = node && node.querySelector(".label");
+  return label ? label.textContent.trim() : String(id == null ? "" : id);
+}
+function prettyId(id){ return esc(plainId(id)); }
+
+/* ─── play / pause ──────────────────────────────────── */
+function setPlaying(p){
+  clearTimeout(state.timer);
+  if(p){
+    /* Pressing Play at the end restarts the flow from its first playable step. */
+    if(nextPlayable(state.step, +1) < 0){
+      state.step = firstPlayable();
+      applyStep();
+    }
+  }
+  state.playing = p;
+  btnPlay.setAttribute("aria-pressed", p ? "true" : "false");
+  btnPlay.setAttribute("aria-label", p ? "Pause" : "Play");
+  playIcon.innerHTML = p
+    ? '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>'
+    : '<polygon points="6 4 20 12 6 20 6 4"/>';
+  if(p){
+    state.timer = setTimeout(tick, state.stepMs);
+  }
+}
+
+function tick(){
+  if(!state.playing) return;
+  const next = nextPlayable(state.step, +1);           /* skips dead steps */
+  if(next < 0){ setPlaying(false); return; }           /* stop at the end, don't loop */
+  state.step = next;
+  applyStep();
+  state.timer = setTimeout(tick, state.stepMs);
+}
+
+/* ─── nav ──────────────────────────────────────────── */
+function go(delta){
+  const dir = delta < 0 ? -1 : 1;
+  let remaining = Math.abs(delta) || 1;
+  let i = state.step;
+  while(remaining > 0){
+    const next = nextPlayable(i, dir);
+    if(next < 0) break;
+    i = next;
+    remaining--;
+  }
+  state.step = i;
+  applyStep();
+}
+function syncPressed(buttons, attr, value){
+  buttons.forEach(b=>b.setAttribute("aria-pressed", b.dataset[attr] === value ? "true" : "false"));
+}
+function pickFlow(key){
+  if(!flows[key]) return;
+  setPlaying(false);  /* don't let a pending autoplay timer resume on the new flow */
+  const f = flows[key];
+  /* mode-exclusive flow picked from the wrong mode → switch mode inline
+     (no pickMode() call, to avoid mutual recursion with its fallback path). */
+  if(f.onlyMode && f.onlyMode !== state.mode && (MODES.length === 0 || MODES.includes(f.onlyMode))){
+    state.mode = f.onlyMode;
+    syncPressed(modeButtons, "mode", state.mode);
+  }
+  state.flow = key;
+  syncPressed(flowTabs, "flow", key);
+  applyModeToNodes();
+  state.step = firstPlayable();   /* never land on a dead step */
+  drawWires();
+  applyStep();
+}
+/* A flow usable in mode `m`: CONFIG.fallbackFlow if eligible, else the first eligible tab. */
+function fallbackFlowFor(m){
+  const ok = k => flows[k] && (!flows[k].onlyMode || flows[k].onlyMode === m);
+  if(ok(CONFIG.fallbackFlow)) return CONFIG.fallbackFlow;
+  return FLOW_ORDER.find(ok) || Object.keys(flows).find(ok) || FLOW_ORDER[0] || Object.keys(flows)[0];
+}
+function pickMode(m){
+  if(MODES.length && !MODES.includes(m)) return;
+  setPlaying(false);  /* stop autoplay so it doesn't resume mid-switch */
+  state.mode = m;
+  syncPressed(modeButtons, "mode", m);
+  /* If current flow is mode-exclusive and we just switched away, fall back. */
+  const f = currentFlow();
+  if(f.onlyMode && f.onlyMode !== m){
+    const fb = fallbackFlowFor(m);
+    if(fb && fb !== state.flow){ pickFlow(fb); return; }
+  }
+  applyModeToNodes();
+  if(!stepPlayable(state.step)) state.step = firstPlayable();
+  drawWires();
+  applyStep();
+}
+
+/* ─── theme toggle ─────────────────────────────────── */
+const btnTheme = document.getElementById("btnTheme");
+function applyTheme(light){
+  document.body.classList.toggle("light", light);
+  btnTheme.setAttribute("aria-pressed", light ? "true" : "false");
+  /* No redraw needed: wire/packet/label colors resolve from live CSS variables,
+     which re-evaluate automatically when the .light class flips :root. */
+}
+function toggleTheme(){
+  const isLight = !document.body.classList.contains("light");
+  applyTheme(isLight);
+  try{ localStorage.setItem("arch-theme", isLight ? "light" : "dark"); }catch(e){}
+}
+btnTheme.addEventListener("click", toggleTheme);
+(function initTheme(){
+  let saved = null;
+  try{ saved = localStorage.getItem("arch-theme"); }catch(e){}
+  if(saved === "light" || saved === "dark"){ applyTheme(saved === "light"); return; }
+  /* No saved choice: honour the author's default (class="light" on <body>), else the OS. */
+  if(document.body.classList.contains("light")){ applyTheme(true); return; }
+  let prefersLight = false;
+  try{ prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches; }catch(e){}
+  applyTheme(prefersLight);
+})();
+
+/* ─── wiring up controls ───────────────────────────── */
+modeButtons.forEach(b=>{ b.addEventListener("click", ()=>pickMode(b.dataset.mode)); });
+flowTabs.forEach(b=>{ b.addEventListener("click", ()=>pickFlow(b.dataset.flow)); });
+btnPlay.addEventListener("click", ()=>setPlaying(!state.playing));
+btnPrev.addEventListener("click", ()=>{ setPlaying(false); go(-1); });
+btnNext.addEventListener("click", ()=>{ setPlaying(false); go(+1); });
+btnPrev2.addEventListener("click", ()=>{ setPlaying(false); go(-1); });
+btnNext2.addEventListener("click", ()=>{ setPlaying(false); go(+1); });
+
+/* ─── drag-and-drop node repositioning ─────────────────────────────────
+   Hold and drag any node (mouse / pen) to reposition it. Short clicks (< 5px
+   movement) still trigger the jump-to-step behavior. Wires redraw live.
+   Positions are in % of the stage dimensions for responsive layout.
+   On touch screens nodes are tap-to-jump only, so swiping over a node still
+   scrolls the page; keyboard users move a focused node with Shift+Arrows. */
+const DRAG_THRESHOLD = 5;
+const SNAP_PX = 48;  /* matches the 48px background grid */
+let dragState = null;
+
+function stageRect(){ return stage.getBoundingClientRect(); }
+
+function startDrag(n, e){
+  const nr = n.getBoundingClientRect();
+  dragState = {
+    node: n,
+    pointerId: e.pointerId,
+    startX: e.clientX,
+    startY: e.clientY,
+    offsetX: e.clientX - nr.left,
+    offsetY: e.clientY - nr.top,
+    dragging: false
+  };
+}
+
+let dragRAF = null;
+
+/* Clamp a node's top-left (px, stage coords) so the whole tile stays inside the
+   stage, and return the position as % of the stage. */
+function clampToStage(n, sr, rawX, rawY){
+  const nr = n.getBoundingClientRect();
+  const maxX = Math.max(0, sr.width  - nr.width);
+  const maxY = Math.max(0, sr.height - nr.height);
+  const x = Math.max(0, Math.min(maxX, rawX));
+  const y = Math.max(0, Math.min(maxY, rawY));
+  return { pctX: (x / sr.width) * 100, pctY: (y / sr.height) * 100 };
+}
+
+function moveDrag(e){
+  if(!dragState || e.pointerId !== dragState.pointerId) return;
+  const dx = e.clientX - dragState.startX;
+  const dy = e.clientY - dragState.startY;
+  if(!dragState.dragging && Math.hypot(dx, dy) < DRAG_THRESHOLD) return;
+
+  if(!dragState.dragging){
+    dragState.dragging = true;
+    dragState.node.classList.add("dragging");
+  }
+
+  const sr = stageRect();
+  let rawX = e.clientX - sr.left - dragState.offsetX;
+  let rawY = e.clientY - sr.top  - dragState.offsetY;
+
+  rawX = Math.round(rawX / SNAP_PX) * SNAP_PX;
+  rawY = Math.round(rawY / SNAP_PX) * SNAP_PX;
+
+  const p = clampToStage(dragState.node, sr, rawX, rawY);
+  dragState.node.style.left = p.pctX + "%";
+  dragState.node.style.top  = p.pctY + "%";
+
+  if(!dragRAF){
+    dragRAF = requestAnimationFrame(()=>{
+      updateWirePaths();
+      dragRAF = null;
+    });
+  }
+}
+
+function endDrag(){
+  if(!dragState) return false;
+  const wasDrag = dragState.dragging;
+  const n = dragState.node;
+  n.classList.remove("dragging");
+
+  if(wasDrag){
+    saveLayout();
+    showResetBtn();
+    updateWirePaths();  /* geometry already current from drag; no need to rebuild SVG */
+    applyStep({ replay:false });
+  }
+
+  dragState = null;
+  return wasDrag;
+}
+
+/* Keyboard alternative to dragging: move the focused node one grid cell. */
+function nudgeNode(n, dxCells, dyCells){
+  const sr = stageRect();
+  const nr = n.getBoundingClientRect();
+  const rawX = (nr.left - sr.left) + dxCells * SNAP_PX;
+  const rawY = (nr.top  - sr.top)  + dyCells * SNAP_PX;
+  const p = clampToStage(n, sr, rawX, rawY);
+  n.style.left = p.pctX + "%";
+  n.style.top  = p.pctY + "%";
+  saveLayout();
+  showResetBtn();
+  updateWirePaths();
+  applyStep({ replay:false });
+}
+
+nodes.forEach(n=>{
+  n.addEventListener("pointerdown", (e)=>{
+    if(e.button !== 0) return;
+    if(dragState) return;                 /* ignore a second pointer mid-drag */
+    if(e.pointerType === "touch") return; /* touch: tap only (page keeps scrolling) */
+    e.preventDefault();
+    try{ n.setPointerCapture(e.pointerId); }catch(err){}
+    startDrag(n, e);
+  });
+  n.addEventListener("pointermove", (e)=>{ moveDrag(e); });
+  n.addEventListener("pointerup", (e)=>{
+    if(e.button !== 0) return;
+    if(dragState){
+      if(dragState.node !== n || dragState.pointerId !== e.pointerId) return;
+      const wasDrag = endDrag();
+      if(!wasDrag) handleNodeClick(n);
+    } else if(e.pointerType === "touch"){
+      handleNodeClick(n);                 /* tap on touch screens */
+    }
+  });
+  n.addEventListener("pointercancel", ()=>{ endDrag(); });
+
+  n.tabIndex = 0;
+  n.addEventListener("keydown", (e)=>{
+    if(e.key === "Enter" || e.key === " "){
+      e.preventDefault();
+      e.stopPropagation();  /* don't also trigger the window Space=play handler */
+      handleNodeClick(n);
+    } else if(e.shiftKey && /^Arrow(Left|Right|Up|Down)$/.test(e.key)){
+      e.preventDefault();
+      e.stopPropagation();
+      const d = { ArrowLeft:[-1,0], ArrowRight:[1,0], ArrowUp:[0,-1], ArrowDown:[0,1] }[e.key];
+      nudgeNode(n, d[0], d[1]);
+    }
+  });
+});
+
+function handleNodeClick(n){
+  const flow = currentFlow();
+  const id = n.dataset.id;
+  /* jump to the first step touching this node where BOTH endpoints are visible
+     in the current mode; otherwise shake (don't land on a dead step). */
+  const i = flow.steps.findIndex((s, idx)=> (s.from===id || s.to===id) && stepPlayable(idx));
+  if(i>=0){
+    setPlaying(false);
+    /* pointerdown preventDefault suppresses native focus; focus here so keyboard
+       users who click a node can then Tab/arrow from it. */
+    try{ n.focus({ preventScroll:true }); }catch(e){}
+    state.step = i;
+    applyStep();
+  } else {
+    n.style.animation = "none";
+    void n.offsetWidth;
+    n.style.animation = "node-shake .4s ease";
+    setTimeout(()=>{ n.style.animation = ""; }, 450);
+    announce(`${plainId(id)} is not part of the ${flow.name || "current"} flow.`);
+  }
+}
+
+/* ─── layout persistence (localStorage) ─────────────────────────────── */
+/* Key the saved layout by title AND a hash of the node-id set, so two diagrams
+   sharing a title on the same origin don't clobber each other's positions.
+   (Adding/removing a node re-keys and drops the prior saved layout — acceptable.) */
+const LAYOUT_KEY = (()=>{
+  const ids = nodes.map(n=>n.dataset.id).join("|");
+  let h = 0;
+  for(let i=0;i<ids.length;i++){ h = (h*31 + ids.charCodeAt(i)) | 0; }
+  const title = document.title.replace(/\s/g,"-").toLowerCase();
+  return "arch-layout-" + title + "-" + (h>>>0).toString(36);
+})();
+
+function saveLayout(){
+  const positions = {};
+  nodes.forEach(n=>{
+    positions[n.dataset.id] = { left: n.style.left, top: n.style.top };
+  });
+  try{ localStorage.setItem(LAYOUT_KEY, JSON.stringify(positions)); }catch(e){}
+}
+
+/* Only a plain percentage within the stage is accepted back from storage;
+   anything else (another page on the same origin, a hand edit) is ignored. */
+const PCT_RE = /^(\d{1,3}(?:\.\d+)?)%$/;
+function validPct(v){
+  const m = PCT_RE.exec(String(v == null ? "" : v).trim());
+  if(!m) return null;
+  const n = parseFloat(m[1]);
+  return (n >= 0 && n <= 95) ? n + "%" : null;
+}
+
+function loadLayout(){
+  try{
+    const saved = localStorage.getItem(LAYOUT_KEY);
+    if(!saved) return false;
+    const positions = JSON.parse(saved);
+    if(!positions || typeof positions !== "object") return false;
+    let applied = false;
+    nodes.forEach(n=>{
+      const p = positions[n.dataset.id];
+      if(!p || typeof p !== "object") return;
+      const l = validPct(p.left), t = validPct(p.top);
+      if(l !== null && t !== null){ n.style.left = l; n.style.top = t; applied = true; }
+    });
+    return applied;
+  }catch(e){ return false; }
+}
+
+function resetLayout(){
+  try{ localStorage.removeItem(LAYOUT_KEY); }catch(e){}
+  nodes.forEach(n=>{
+    const orig = n.dataset.origLeft;
+    const origT = n.dataset.origTop;
+    if(orig) n.style.left = orig;
+    if(origT) n.style.top = origT;
+  });
+  drawWires(); applyStep({ replay:false });
+  hideResetBtn();
+}
+
+nodes.forEach(n=>{
+  n.dataset.origLeft = n.style.left;
+  n.dataset.origTop  = n.style.top;
+});
+
+const btnResetLayout = document.getElementById("btnResetLayout");
+function showResetBtn(){ btnResetLayout.classList.add("has-custom"); }
+function hideResetBtn(){ btnResetLayout.classList.remove("has-custom"); }
+btnResetLayout.addEventListener("click", resetLayout);
+
+if(loadLayout()) showResetBtn();
+
+/* ─── fullscreen toggle ─────────────────────────────────────────────── */
+const canvas = document.querySelector(".canvas");
+const btnFullscreen = document.getElementById("btnFullscreen");
+const fsInertEls = Array.from(document.querySelectorAll("header, .scenario-note"));
+let fsPrevFocus = null;
+
+function toggleFullscreen(force){
+  const on = typeof force === "boolean" ? force : !canvas.classList.contains("is-fullscreen");
+  if(on === canvas.classList.contains("is-fullscreen")) return;
+  canvas.classList.toggle("is-fullscreen", on);
+  document.body.classList.toggle("is-fullscreen", on);
+  btnFullscreen.setAttribute("aria-pressed", on ? "true" : "false");
+  btnFullscreen.setAttribute("aria-label", on ? "Exit fullscreen" : "Fullscreen");
+  /* Hidden page chrome must not keep focusable targets under the overlay. */
+  fsInertEls.forEach(el=>{ if(on) el.setAttribute("inert", ""); else el.removeAttribute("inert"); });
+  if(on){
+    fsPrevFocus = document.activeElement;
+    canvas.tabIndex = -1;
+    try{ canvas.focus({ preventScroll:true }); }catch(e){}
+    /* Also ask for real fullscreen (hides browser chrome). Needs a user gesture; ignore refusals. */
+    try{
+      const el = document.documentElement;
+      if(el.requestFullscreen && !document.fullscreenElement){ const p = el.requestFullscreen(); if(p && p.catch) p.catch(()=>{}); }
+    }catch(e){}
+  } else {
+    try{ if(document.fullscreenElement && document.exitFullscreen){ const p = document.exitFullscreen(); if(p && p.catch) p.catch(()=>{}); } }catch(e){}
+    if(fsPrevFocus && fsPrevFocus.focus && document.contains(fsPrevFocus)){ try{ fsPrevFocus.focus({ preventScroll:true }); }catch(e){} }
+    fsPrevFocus = null;
+  }
+  setTimeout(()=>{ drawWires(); applyStep({ replay:false }); }, 50);
+}
+btnFullscreen.addEventListener("click", ()=>toggleFullscreen());
+/* Leaving native fullscreen (Esc, browser UI) also leaves our layout mode. */
+document.addEventListener("fullscreenchange", ()=>{
+  if(!document.fullscreenElement && canvas.classList.contains("is-fullscreen")) toggleFullscreen(false);
+});
+
+/* ─── keyboard ─────────────────────────────────────────────────────── */
+const btnShortcuts = document.getElementById("btnShortcuts");
+function setShortcuts(on){
+  state.shortcuts = on;
+  if(btnShortcuts){
+    btnShortcuts.setAttribute("aria-pressed", on ? "true" : "false");
+    btnShortcuts.textContent = on ? "клавиши вкл." : "клавиши выкл.";
+  }
+  try{ localStorage.setItem("arch-shortcuts", on ? "on" : "off"); }catch(e){}
+}
+if(btnShortcuts) btnShortcuts.addEventListener("click", ()=>setShortcuts(!state.shortcuts));
+try{ if(localStorage.getItem("arch-shortcuts") === "off") setShortcuts(false); }catch(e){}
+
+window.addEventListener("keydown",(e)=>{
+  const t = e.target;
+  if(t && t.closest && t.closest("input,textarea,select,[contenteditable=''],[contenteditable='true']")) return;
+  /* Never hijack browser/OS shortcuts (Cmd+R reload, Cmd+T new tab, Alt+←/→ history). */
+  if(e.metaKey || e.ctrlKey || e.altKey) return;
+  /* Escape always works (it is not a "single character" shortcut). */
+  if(e.key === "Escape"){ if(canvas.classList.contains("is-fullscreen")) toggleFullscreen(false); return; }
+  if(!state.shortcuts) return;
+  /* Let a focused button/tab handle its own Space/Enter activation instead of toggling play. */
+  if((e.code === "Space" || e.key === "Enter") && t && t.closest && t.closest("button,[role=button]")) return;
+  if(e.code === "Space"){ e.preventDefault(); setPlaying(!state.playing); }
+  else if(e.key === "ArrowRight"){ setPlaying(false); go(+1); }
+  else if(e.key === "ArrowLeft"){ setPlaying(false); go(-1); }
+  else if(e.key === "t" || e.key === "T"){ toggleTheme(); }
+  else if(e.key === "f" || e.key === "F"){ toggleFullscreen(); }
+  else if(e.key === "r" || e.key === "R"){ if(btnResetLayout.classList.contains("has-custom")) resetLayout(); }
+  else if(e.key === "o" || e.key === "O"){
+    if(MODES.length > 1){
+      const idx = MODES.indexOf(state.mode);
+      pickMode(MODES[(idx + 1) % MODES.length]);   /* cycles through 2, 3, … modes */
+    }
+  }
+  else if(/^[1-9]$/.test(e.key)){
+    const key = FLOW_ORDER[parseInt(e.key,10)-1];
+    if(key) pickFlow(key);
+  }
+});
+
+/* responsive redraw (window resize + any stage size change, e.g. layout reflow) */
+let rrTimer;
+function scheduleRedraw(){
+  clearTimeout(rrTimer);
+  rrTimer = setTimeout(()=>{ drawWires(); applyStep({ replay:false }); }, 80);
+}
+window.addEventListener("resize", scheduleRedraw);
+if("ResizeObserver" in window){
+  try{ new ResizeObserver(scheduleRedraw).observe(stage); }catch(e){}
+}
+
+/* ─── self-check ──────────────────────────────────────────────────────
+   Lints the authored data so a hand-edit mistake is visible in the console
+   (and to references/screenshot.js via window.archValidate) instead of
+   silently rendering a dead step. Returns an array of human-readable warnings. */
+const PLACEHOLDER_RE = /\{\{[A-Z0-9_]+\}\}/;
+function validateDiagram(){
+  const w = [];
+  const ids = nodes.map(n=>n.dataset.id);
+  ids.forEach((id,i)=>{
+    if(!id) w.push(`node #${i+1} has no data-id`);
+    else if(ids.indexOf(id) !== i) w.push(`duplicate node id "${id}"`);
+  });
+  nodes.forEach(n=>{
+    if(!n.dataset.role) w.push(`node "${n.dataset.id}" has no data-role`);
+    const m = n.dataset.modes;
+    if(m && MODES.length) m.split(",").forEach(x=>{ x = x.trim(); if(!MODES.includes(x)) w.push(`node "${n.dataset.id}" data-modes references unknown mode "${x}"`); });
+  });
+  const tabKeys = flowTabs.map(b=>b.dataset.flow);
+  tabKeys.forEach(k=>{ if(!flows[k]) w.push(`flow tab "${k}" has no entry in flows`); });
+  Object.keys(flows).forEach(k=>{
+    if(!tabKeys.includes(k)) w.push(`flow "${k}" has no .flowtab button`);
+    const f = flows[k];
+    if(!f || !Array.isArray(f.steps) || f.steps.length === 0){ w.push(`flow "${k}" has no steps`); return; }
+    if(f.onlyMode && MODES.length && !MODES.includes(f.onlyMode)) w.push(`flow "${k}" onlyMode "${f.onlyMode}" is not a mode button`);
+    f.steps.forEach((s,i)=>{
+      ["from","to"].forEach(side=>{ if(!nodeById(s[side])) w.push(`flow "${k}" step ${i+1}: ${side} "${s[side]}" is not a node id`); });
+      if(!s.title) w.push(`flow "${k}" step ${i+1}: missing title`);
+      if(!s.color) w.push(`flow "${k}" step ${i+1}: missing color`);
+      else if(!SAFE_COLOR.test(s.color)) w.push(`flow "${k}" step ${i+1}: color "${s.color}" must be a CSS variable name like --c-orch`);
+    });
+  });
+  if(MODES.length && !MODES.includes(state.mode)) w.push(`state.mode "${state.mode}" is not a mode button; using "${MODES[0]}"`);
+  if(!flows[state.flow]) w.push(`state.flow "${state.flow}" is not a flow key; using "${FLOW_ORDER[0] || Object.keys(flows)[0]}"`);
+  if(PLACEHOLDER_RE.test(document.title) || PLACEHOLDER_RE.test(document.body.innerText || "")) w.push("unfilled template-placeholder text is still visible on the page");
+  try{ if(PLACEHOLDER_RE.test(JSON.stringify(flows))) w.push("unfilled template-placeholder inside the flows data"); }catch(e){}
+  return w;
+}
+window.archValidate = validateDiagram;
+
+/* ─── boot ─────────────────────────────────────────────────────────── */
+(function boot(){
+  const warnings = validateDiagram();
+  if(warnings.length){
+    console.warn(`[architecture-diagram] ${warnings.length} integrity warning(s):\n - ` + warnings.join("\n - "));
+  }
+  /* Reconcile state with the HTML: unknown keys fall back instead of throwing. */
+  if(MODES.length && !MODES.includes(state.mode)) state.mode = MODES[0];
+  if(!flows[state.flow]) state.flow = FLOW_ORDER[0] || Object.keys(flows)[0] || state.flow;
+  const f = currentFlow();
+  if(f.onlyMode && (MODES.length === 0 || MODES.includes(f.onlyMode))) state.mode = f.onlyMode;
+  syncPressed(modeButtons, "mode", state.mode);
+  syncPressed(flowTabs, "flow", state.flow);
+
+  const kbFlowMax = document.getElementById("kbFlowMax");
+  if(kbFlowMax) kbFlowMax.textContent = Math.min(9, FLOW_ORDER.length) || 1;
+
+  applyModeToNodes();
+  state.step = firstPlayable();
+  applyStep({ replay:false });          /* text first: no "0 / 0" flash */
+  requestAnimationFrame(()=>{
+    drawWires();
+    applyStep();
+  });
+})();
+</script>
+<section class="atlas-content"><div class="guide"><span>▶ Пуск / пауза</span><span>← → Переход по шагам</span><span>Нажмите узел для пояснения</span><span>Сценарии — над схемой</span><span>Тема: T · экран: F</span></div><h2>Интерактивный roadmap</h2><p>Сценарий сроков: работа ещё запланирована. Нажмите полосу этапа для зависимостей, затем откройте его рецепт. Недели 23–24 — резерв.</p>
+<div class="timeline-controls"><label>Начало <input id="roadStart" type="date" value="2026-10-19"></label><label>Неделя сценария <input id="roadWeek" type="range" min="1" max="24" value="1"></label><strong id="roadDate"></strong></div>
+<div class="timeline-scroll"><div class="timeline"><div class="timeline-row"><span>Этап / недели от начала</span><div class="timeline-labels"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span></div></div><div class="timeline-row"><a class="timeline-name" href="phase-00.html">P0 · Вопрос и контракт</a><div class="track"><a class="bar" data-phase="0" href="phase-00.html" style="left:0.0000%;width:8.3333%">1–2</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-01.html">P1 · Аудит стенда и моделей</a><div class="track"><a class="bar" data-phase="1" href="phase-01.html" style="left:0.0000%;width:8.3333%">1–2</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-02.html">P2 · Минимальный harness</a><div class="track"><a class="bar" data-phase="2" href="phase-02.html" style="left:4.1667%;width:12.5000%">2–4</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-03.html">P3 · Разделение задач</a><div class="track"><a class="bar" data-phase="3" href="phase-03.html" style="left:4.1667%;width:12.5000%">2–4</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-04.html">P4 · Сбор наблюдений</a><div class="track"><a class="bar" data-phase="4" href="phase-04.html" style="left:12.5000%;width:12.5000%">4–6</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-05.html">P5 · Разметка и датасет</a><div class="track"><a class="bar" data-phase="5" href="phase-05.html" style="left:20.8333%;width:12.5000%">6–8</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-06.html">P6 · Baseline и default S1</a><div class="track"><a class="bar" data-phase="6" href="phase-06.html" style="left:25.0000%;width:8.3333%">7–8</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-07.html">P7 · Дообучение и абляции</a><div class="track"><a class="bar" data-phase="7" href="phase-07.html" style="left:29.1667%;width:25.0000%">8–13</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-08.html">P8 · Закрытая итоговая оценка</a><div class="track"><a class="bar" data-phase="8" href="phase-08.html" style="left:54.1667%;width:12.5000%">14–16</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-09.html">P9 · Устойчивость и экономика</a><div class="track"><a class="bar" data-phase="9" href="phase-09.html" style="left:62.5000%;width:12.5000%">16–18</a></div></div><div class="timeline-row"><a class="timeline-name" href="phase-10.html">P10 · Выводы и ВКР</a><div class="track"><a class="bar" data-phase="10" href="phase-10.html" style="left:70.8333%;width:20.8333%">18–22</a></div></div></div></div>
+<div class="roadmap-detail" id="roadDetail" aria-live="polite"></div>
+<script>(()=>{const phases=[["P0", "Вопрос и контракт", 1, 2, [], "Гипотезы · arms · определение метки", "Ясно, какая операция заменяется и что остаётся неизменным"], ["P1", "Аудит стенда и моделей", 1, 2, ["P0"], "Версии · лицензии · runtime profile", "Проверены полный input, inference и один training step"], ["P2", "Минимальный harness", 2, 4, ["P1"], "Adapter · snapshot · scorer · trace", "History, tools и hidden-data boundary проходят проверку"], ["P3", "Разделение задач", 2, 4, ["P1"], "Split manifest · leak report", "Связанные task families не пересекают train/dev/test"], ["P4", "Сбор наблюдений", 4, 6, ["P2", "P3"], "Raw trajectories · snapshots · usage", "Snapshot восстанавливается из raw без будущих сообщений"], ["P5", "Разметка и датасет", 6, 8, ["P4"], "Rubric · labels · dataset card", "Проверены качество меток, lineage и неопределённость"], ["P6", "Baseline и default S1", 7, 8, ["P2", "P5"], "Native / BM25 / LLM / frozen report", "Работает весь путь измерения качества и полной цены"], ["P7", "Дообучение и абляции", 8, 13, ["P5", "P6"], "CE / Brier checkpoints · dev ledger", "Конфигурации выбраны по dev и заморожены до test"], ["P8", "Закрытая итоговая оценка", 14, 16, ["P7"], "Test runs · paired metrics · CI", "Все попытки и расходы включены; test не использован для выбора"], ["P9", "Устойчивость и экономика", 16, 18, ["P8"], "Sensitivity · failure taxonomy · N*", "Вывод выдерживает дешёвые контроли и учёт fallback"], ["P10", "Выводы и ВКР", 18, 22, ["P8", "P9"], "Evidence ledger · воспроизведение · текст", "Каждый вывод прослеживается до измерения или источника"]];const start=document.getElementById('roadStart'),week=document.getElementById('roadWeek'),date=document.getElementById('roadDate'),detail=document.getElementById('roadDetail');let chosen=0;
+function draw(){if(!start.value)return;const w=Number(week.value),d=new Date(start.value+'T12:00:00');d.setDate(d.getDate()+7*(w-1));date.textContent='Неделя '+w+' · '+d.toLocaleDateString('ru-RU');document.querySelectorAll('.bar').forEach(b=>{const p=phases[Number(b.dataset.phase)];b.classList.toggle('is-active',w>=p[2]&&w<=p[3]);b.classList.toggle('is-past',w>p[3]);});show(chosen);}
+function show(i){chosen=i;const p=phases[i];detail.replaceChildren();const h=document.createElement('strong');h.textContent=p[0]+' · '+p[1];detail.append(h);for(const text of ['Зависимости: '+(p[4].join(', ')||'поручение и контекст'),'Артефакт: '+p[5],'Критерий: '+p[6],'Статус: запланировано. Подсветка отражает выбранную неделю сценария.']){const el=document.createElement('p');el.textContent=text;detail.append(el);}const a=document.createElement('a');a.href='phase-'+String(i).padStart(2,'0')+'.html';a.textContent='Открыть подробный план и анимацию →';detail.append(a);}
+document.querySelectorAll('.bar').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();show(Number(b.dataset.phase));}));start.addEventListener('change',draw);week.addEventListener('input',draw);draw();})();</script><div class="cards"><a class="card" href="phase-00.html"><span class="tag">P0 · недели 1–2</span><b>Вопрос и контракт</b><small>Гипотезы · arms · определение метки</small></a><a class="card" href="phase-01.html"><span class="tag">P1 · недели 1–2</span><b>Аудит стенда и моделей</b><small>Версии · лицензии · runtime profile</small></a><a class="card" href="phase-02.html"><span class="tag">P2 · недели 2–4</span><b>Минимальный harness</b><small>Adapter · snapshot · scorer · trace</small></a><a class="card" href="phase-03.html"><span class="tag">P3 · недели 2–4</span><b>Разделение задач</b><small>Split manifest · leak report</small></a><a class="card" href="phase-04.html"><span class="tag">P4 · недели 4–6</span><b>Сбор наблюдений</b><small>Raw trajectories · snapshots · usage</small></a><a class="card" href="phase-05.html"><span class="tag">P5 · недели 6–8</span><b>Разметка и датасет</b><small>Rubric · labels · dataset card</small></a><a class="card" href="phase-06.html"><span class="tag">P6 · недели 7–8</span><b>Baseline и default S1</b><small>Native / BM25 / LLM / frozen report</small></a><a class="card" href="phase-07.html"><span class="tag">P7 · недели 8–13</span><b>Дообучение и абляции</b><small>CE / Brier checkpoints · dev ledger</small></a><a class="card" href="phase-08.html"><span class="tag">P8 · недели 14–16</span><b>Закрытая итоговая оценка</b><small>Test runs · paired metrics · CI</small></a><a class="card" href="phase-09.html"><span class="tag">P9 · недели 16–18</span><b>Устойчивость и экономика</b><small>Sensitivity · failure taxonomy · N*</small></a><a class="card" href="phase-10.html"><span class="tag">P10 · недели 18–22</span><b>Выводы и ВКР</b><small>Evidence ledger · воспроизведение · текст</small></a></div><div class="doc-source">Подробный текст ниже встроен из <code>docs/gitmark/system-one-atlas.md</code>. Канонические решения — в wiki; схема является объясняющим представлением.</div><div class="toc">
+<ul>
+<li><a href="#как-читать-атлас">Как читать атлас</a></li>
+<li><a href="#что-зафиксировано-и-что-предлагается">Что зафиксировано и что предлагается</a></li>
+<li><a href="#формальная-схема">Формальная схема</a></li>
+<li><a href="#три-главных-сравнения-и-обязательные-контроли">Три главных сравнения и обязательные контроли</a></li>
+<li><a href="#общий-план-исследования">Общий план исследования</a></li>
+<li><a href="#гипотезы-и-опровержения">Гипотезы и опровержения</a></li>
+<li><a href="#предлагаемый-roadmap">Предлагаемый roadmap</a></li>
+<li><a href="#ресурсы-и-условия-остановки">Ресурсы и условия остановки</a></li>
+<li><a href="#реестр-результатов-на-19102026">Реестр результатов на 19.10.2026</a></li>
+<li><a href="#как-строить-выводы">Как строить выводы</a></li>
+<li><a href="#как-пересобрать-и-проверить-сам-атлас">Как пересобрать и проверить сам атлас</a></li>
+</ul>
+</div>
+<h1 id="атлас-исследования--адаптация-system-one-на-τ-bench">Атлас исследования — адаптация System One на τ-bench</h1>
+<p>Подготовлено <strong>19.10.2026</strong> по поручению инициатора. Это подробный проект исследования
+и навигация по его реализации. Обучение, новые агентные прогоны и измерение качества
+этим документом <strong>не выполнялись</strong>. Численные объёмы и сроки ниже — стартовые
+предложения, которые проверяются пилотом. Поддержку направления руководителем
+не следует трактовать как утверждение этой матрицы опытов.</p>
+<p><strong>Рабочая тема:</strong> «Влияние доменной адаптации компактной модели вероятностного
+отбора контекста на качество, стоимость и задержку языкового агента».</p>
+<p><strong>Основной вопрос:</strong> улучшает ли дообучение System One на наблюдениях из обучающей
+части <code>banking_knowledge</code> соотношение качества и полной стоимости по сравнению
+с той же моделью без адаптации и LLM-селектором на независимых задачах той же области?</p>
+<h2 id="как-читать-атлас">Как читать атлас</h2>
+<p><a href="index.html">Открыть общую анимированную карту</a>.
+В каждой HTML-странице есть пошаговое воспроизведение, переключение сценариев,
+описание передаваемых данных и подробный текст под схемой. Страницы автономны:
+анимации и тексты работают без CDN, API и загрузки моделей. Для полной навигации
+открывать собранную версию <code>site/research-atlas/index.html</code>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Артефакт</th>
+<th>Анимация</th>
+<th>Подробный документ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Вся картина</td>
+<td><a href="index.html">Карта исследования</a></td>
+<td>Этот документ</td>
+</tr>
+<tr>
+<td>Общий план</td>
+<td><a href="research-plan.html">Последовательность исследования</a></td>
+<td>Этапы и критерии ниже</td>
+</tr>
+<tr>
+<td>Реализация каждого этапа</td>
+<td><a href="execution.html">Переходы и контрольные точки</a></td>
+<td><a href="execution.html">Пошаговый план</a>, отдельная HTML на каждый P0–P10</td>
+</tr>
+<tr>
+<td>Интерактивный roadmap</td>
+<td><a href="roadmap.html">Сроки, зависимости и готовность</a></td>
+<td>Предлагаемый календарь ниже</td>
+</tr>
+<tr>
+<td>Архитектура кода и τ-bench</td>
+<td><a href="software.html">Путь одного решения агента</a></td>
+<td><a href="software.html">Техническое приложение</a></td>
+</tr>
+<tr>
+<td>Сбор материала</td>
+<td><a href="material.html">От источника к проверенному наблюдению</a></td>
+<td><a href="results.html">Источники</a> и <a href="dataset.html">протокол</a></td>
+</tr>
+<tr>
+<td>Датасеты</td>
+<td><a href="dataset.html">Разделение, разметка, версии</a></td>
+<td><a href="dataset.html">Протокол данных</a></td>
+</tr>
+<tr>
+<td>CE / Brier / reasoning</td>
+<td><a href="training.html">Матрица обучения</a></td>
+<td><a href="results.html">Проверенные основания</a> и <a href="execution.html#p7-дообучение-и-абляции">P7</a></td>
+</tr>
+<tr>
+<td>Эксперименты и метрики</td>
+<td><a href="experiments.html">От snapshot до итогового вывода</a></td>
+<td><a href="dataset.html">Протокол сравнений</a></td>
+</tr>
+<tr>
+<td>Результаты и выводы</td>
+<td><a href="results.html">Что известно и что проверять</a></td>
+<td>Реестр результатов ниже, <a href="results.html">внешние свидетельства</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="что-зафиксировано-и-что-предлагается">Что зафиксировано и что предлагается</h2>
+<p><strong>Поручение 19.10.2026:</strong> сравнить LLM baseline, default System One и дообученную
+System One; данные адаптации получать из той же области τ-bench. Рассмотреть
+влияние функции обучения и рассуждений. Нужны общий и подробные планы, roadmap,
+архитектура, сбор данных, протокол измерений и анимированные иллюстрации.</p>
+<p><strong>Ранее принятая граница:</strong> System One выбирает контекст из накопленного пула
+KB-наблюдений текущего диалога. Один основной LLM-агент формирует ответы и tool calls.
+Native policy, задачи, tools и evaluator сохраняются. Три направления команды —
+маршрутизация, отбор и адаптация; личный вклад инициатора — адаптация.
+См. <a href="../gitmark/research/index.html#постановка-и-границы">каноническую постановку</a> и
+<a href="../gitmark/architecture/index.html#context-contract-v0">контракт v0</a>.</p>
+<p><strong>Предложение атласа:</strong> минимальный обязательный опыт — frozen против adapted
+одной компактной модели при фиксированных входе, packer и actor; LLM-селектор
+и дешёвые контроли показывают практическую ценность. CE/Brier — первая абляция.
+Рассуждения учителя и RLCD добавляются только после рабочего базового сравнения.
+При этом OpenJev-RLCD генерирует rationale, а Laya/SBERT2S1-RLCD использует
+возмущения logits без генерации текста; эти рецепты не взаимозаменяемы.
+Выбор весов, split IDs, расходный лимит API, гиперпараметры и допустимая потеря
+качества ещё не закреплены.</p>
+<h2 id="формальная-схема">Формальная схема</h2>
+<p>В момент t наблюдаемая история Hₜ преобразуется фиксированным правилом в состояние
+sₜ. Пул Dₜ содержит только реально полученные к этому моменту KB-единицы.
+Компактный оценщик Cθ выдаёт для каждой пары (sₜ, dᵢ) значение pᵢ в [0, 1].
+Метка yᵢ означает заранее определённую полезность фрагмента для текущей
+информационной потребности; это не вероятность успеха всего диалога.</p>
+<p>Детерминированный packer P выбирает Sₜ = P(Dₜ, p, Bₜ). Производный вход основного
+агента содержит защищённую историю, неизменную policy/tools и один блок Sₜ.
+Решение и новый tool result меняют следующий snapshot; цикл продолжается до native
+завершения. На одном offline snapshot сравнивается качество оценщиков; в online
+прогонах история разных агентов может разойтись. Эти два типа эксперимента
+отвечают на разные вопросы и не заменяют друг друга.</p>
+<p>Для бинарного полезен/неполезен:</p>
+<ul>
+<li>CE: −mean[y log p + (1−y) log(1−p)].</li>
+<li>Binary Brier: mean[(p−y)²]. Векторный Brier по двум классам вдвое больше;
+  соглашение фиксируется в метриках.</li>
+<li>Цель deployment: уменьшить E[C_episode] при ограничении на потерю Q_episode
+  относительно выбранного baseline; L_episode публикуется отдельно.</li>
+</ul>
+<p>Proper loss не гарантирует калибровку вне распределения обучения. Полезность
+отдельных фрагментов не доказывает достаточность набора. Поэтому измеряются
+полезность, полнота evidence set, native успех и полные расходы.</p>
+<h2 id="три-главных-сравнения-и-обязательные-контроли">Три главных сравнения и обязательные контроли</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Что меняется</th>
+<th>Что фиксируется</th>
+<th>Какой вывод допустим</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A — LLM selector</td>
+<td>LLM совместно выбирает упорядоченный список IDs; результат проходит валидацию</td>
+<td>Общие state/pool/budget, actor, seeds, policy/tools</td>
+<td>Практическая цена генеративного отбора</td>
+</tr>
+<tr>
+<td>B — S1 default</td>
+<td>Исходные опубликованные веса compact scorer</td>
+<td>Тот же packer и вход, что C</td>
+<td>Точка отсчёта доменной адаптации; default уже предобучен</td>
+</tr>
+<tr>
+<td>C — S1 adapted</td>
+<td>Веса/адаптер обучены только на train</td>
+<td>Всё кроме адаптации, одинаковая процедура dev selection</td>
+<td>Добавочный эффект адаптации</td>
+</tr>
+<tr>
+<td>N — native</td>
+<td>Исходный агент без нашего selector harness</td>
+<td>Native policy/tools/evaluator и версии actor</td>
+<td>Исходный уровень качества и расходов</td>
+</tr>
+<tr>
+<td>H — дешёвые</td>
+<td>BM25 по observed_pool, recency, при возможности простой classifier</td>
+<td>Общий packer/бюджет</td>
+<td>Нужна ли вообще обучаемая модель</td>
+</tr>
+</tbody>
+</table></div>
+<p>Основной A выбирает список целиком, поэтому сравнение с B/C включает различие алгоритма отбора.
+Для сравнения именно оценщиков добавить отдельную абляцию A-pointwise с тем же packer. Все arm
+используют один основной actor, например закреплённый snapshot DeepSeek Flash.
+Название модели, provider, режим reasoning, дата и возвращённый ID сохраняются;
+плавающий API alias недостаточен. Наличие версии проверено в
+<a href="results.html">реестре источников</a>.</p>
+<p>Первый причинный опыт B↔C проводится без обучаемого маршрутизатора: семантическая
+политика always_accept, одинаковый технический fallback. Технические отказы и его
+стоимость остаются в метриках. R и подбор порогов — отдельный блок команды.
+Штатную temperature исходной модели фиксировать как часть B-published. Чтобы
+отделить адаптацию от новой калибровки, отдельно сравнить raw B/C и B+TS/C+TS
+с одинаковой процедурой на общем отложенном calibration subset; calibration
+не должна незаметно появляться только у C. Основной контраст выбирается до test.</p>
+<h2 id="общий-план-исследования">Общий план исследования</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Этап</th>
+<th>Результат этапа</th>
+<th>Зависит от</th>
+<th>Критерий перехода</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0. Вопрос и контракт</td>
+<td>Зафиксированные гипотезы, arms, событие метки</td>
+<td>Текущие решения</td>
+<td>Нет неоднозначности, что заменяет S1</td>
+</tr>
+<tr>
+<td>P1. Аудит стенда и моделей</td>
+<td>Manifest источников, лицензий и ограничений</td>
+<td>P0</td>
+<td>Runtime, окно и путь обновления весов проверены</td>
+</tr>
+<tr>
+<td>P2. Минимальный harness</td>
+<td>Native replay и selector adapter</td>
+<td>P1</td>
+<td>Инварианты истории/tools/evaluator проходят</td>
+</tr>
+<tr>
+<td>P3. Разделение задач</td>
+<td>Неизменяемый split manifest и leak report</td>
+<td>P1; до P4</td>
+<td>Нет известных связанных групп между split</td>
+</tr>
+<tr>
+<td>P4. Сбор наблюдений</td>
+<td>Versioned rollout/snapshot store</td>
+<td>P2, P3</td>
+<td>Данные воспроизводимы, расходы учтены</td>
+</tr>
+<tr>
+<td>P5. Разметка и датасет</td>
+<td>Проверенные labels, dataset card</td>
+<td>P4</td>
+<td>Качество/неопределённость меток измерены</td>
+</tr>
+<tr>
+<td>P6. Baseline и default S1</td>
+<td>Offline и малый dev online baseline</td>
+<td>P2, P5</td>
+<td>Измерение качества и полной цены работает</td>
+</tr>
+<tr>
+<td>P7. Дообучение и абляции</td>
+<td>Checkpoint CE/Brier и train reports</td>
+<td>P5, P6</td>
+<td>Выбор модели завершён по dev без test</td>
+</tr>
+<tr>
+<td>P8. Закрытая оценка</td>
+<td>Парные test runs и доверительные интервалы</td>
+<td>P7</td>
+<td>Все arms и неудачи отражены в знаменателе</td>
+</tr>
+<tr>
+<td>P9. Устойчивость и экономика</td>
+<td>Ограничения, sensitivity, break-even</td>
+<td>P8</td>
+<td>Утверждения выдерживают контроли</td>
+</tr>
+<tr>
+<td>P10. Выводы и ВКР</td>
+<td>Воспроизводимый пакет, текст и личный вклад</td>
+<td>P8, P9</td>
+<td>Каждый вывод связан с измерением и источником</td>
+</tr>
+</tbody>
+</table></div>
+<p>У каждого пункта есть <a href="execution.html">операционный план</a>: вход,
+конкретные действия, файлы результата, проверка, остановка и альтернативный путь.
+Это описание последовательности; актуальные назначенные задачи ведутся только
+в <a href="../gitmark/index.html#ближайшие-задачи">wiki</a>.</p>
+<h2 id="гипотезы-и-опровержения">Гипотезы и опровержения</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Гипотеза</th>
+<th>Проверка</th>
+<th>Что опровергает или ограничивает её</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1: адаптация повышает полезность compact scorer</td>
+<td>B↔C на held-out snapshots, затем episodes</td>
+<td>Улучшение только train; test CI не позволяет заключить о выигрыше</td>
+</tr>
+<tr>
+<td>H2: Brier меняет качество вероятностей относительно CE</td>
+<td>Один checkpoint, данные, budget, seeds; Brier/NLL и ranking</td>
+<td>Эффект объясняется HPO, class balance или temperature scaling</td>
+</tr>
+<tr>
+<td>H3: reasoning teacher даёт лучшие targets</td>
+<td>Один учитель с/без reasoning; независимая проверка меток; student без rationale</td>
+<td>Только согласие с учителем, без выигрыша проверенных меток/episode</td>
+</tr>
+<tr>
+<td>H4: compact selector экономит</td>
+<td>Полная стоимость против A и N/H</td>
+<td>Время и цена scorer/fallback выше экономии actor/context</td>
+</tr>
+<tr>
+<td>H5: качество сохраняется в допустимом диапазоне</td>
+<td>Парная разность Q и заранее выбранная граница δ</td>
+<td>Нижняя граница CI ниже −δ или слишком широкий CI</td>
+</tr>
+</tbody>
+</table></div>
+<p>Статистическая неопределённость — самостоятельный вывод. «Значимого различия
+не найдено» не означает эквивалентность; критерий non-inferiority и δ задаются
+до final test. Если эффект не отделим при доступных данных, это ограничение
+исследования, а не разрешение расширять поиск по тесту.</p>
+<h2 id="предлагаемый-roadmap">Предлагаемый roadmap</h2>
+<p>Отсчёт от фактического начала S, без выдуманной даты защиты. Один автор адаптации
+работает совместно с владельцами общей платформы. Диапазоны ориентировочные,
+разметка и runtime могут менять длительность. В интерфейсе roadmap можно задать
+свою дату начала; это локальный сценарий планирования, не изменение wiki.
+Перекрывающиеся недели допускают параллельную подготовку; зависимый запуск
+ждёт входного артефакта и критерия готовности. При их задержке календарь сдвигается,
+а границы test и проверки не сокращаются ради исходной даты.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Недели от S</th>
+<th>Основная работа</th>
+<th>Проверяемый рубеж</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td>P0, P1</td>
+<td>Контракт и техническая выполнимость</td>
+</tr>
+<tr>
+<td>2–4</td>
+<td>P2, параллельно P3</td>
+<td>Harness и запечатанный split</td>
+</tr>
+<tr>
+<td>4–6</td>
+<td>P4</td>
+<td>Первый train/dev corpus с provenance</td>
+</tr>
+<tr>
+<td>6–8</td>
+<td>P5, начало P6</td>
+<td>Dataset v1, цена разметки, baseline</td>
+</tr>
+<tr>
+<td>8–11</td>
+<td>P7: сначала CE, затем Brier</td>
+<td>Frozen↔adapted на dev</td>
+</tr>
+<tr>
+<td>11–13</td>
+<td>P7: teacher reasoning — только если базовый опыт готов</td>
+<td>Небольшая дополнительная абляция</td>
+</tr>
+<tr>
+<td>14–16</td>
+<td>P8</td>
+<td>Замороженный final test и отчёт</td>
+</tr>
+<tr>
+<td>16–18</td>
+<td>P9</td>
+<td>Устойчивость, стоимость адаптации и окупаемость</td>
+</tr>
+<tr>
+<td>18–22</td>
+<td>P10</td>
+<td>Текст, приложение, воспроизведение и защита</td>
+</tr>
+<tr>
+<td>23–24</td>
+<td>Резерв</td>
+<td>Исправления проверок, без скрытого подбора по test</td>
+</tr>
+</tbody>
+</table></div>
+<p>Написание постановки, обзора и методики идёт с первой недели. RLCD не находится
+на критическом пути: если не помещается по данным, ресурсам или срокам,
+он остаётся рассмотренной научной перспективой с точным основанием отказа.</p>
+<h2 id="ресурсы-и-условия-остановки">Ресурсы и условия остановки</h2>
+<p>Доступные ресурсы и их статус — в <a href="../gitmark/resource-assessment/index.html">ресурсной оценке</a>.
+Основная рабочая машина — Mac M4 Pro / 24 ГБ; GPU rental до 30 000 ₽. Это потолок
+планирования, не разрешение начинать платную серию. Лимит API ещё не установлен.</p>
+<p>Предложение распределить GPU-резерв: 20% на профилирование и первый CE пилот,
+45% на основное сравнение CE/Brier, 15% на повторения и 20% на резерв. Доли
+пересматриваются по измеренной цене часа и времени шага. Стоимость учителя,
+simulator и evaluator оценивается отдельно и может доминировать над training.</p>
+<p>До платной серии требуется run estimate с числом задач, повторов, средним/верхним
+потреблением, стоимостью токенов и GPU, жёстким лимитом и остановкой при его
+достижении. Ранее согласованное разрешение используется без повторного запроса.
+Сейчас артефакты только описывают эти будущие действия.</p>
+<p>Сначала проверить 50–100 train-пар и малый batch на доступном устройстве;
+дальше — pilot subset train/dev. Объёмы являются предложениями, не обещанием
+достаточности. Проверить память, latency, backward/update и полезность gradient
+до планирования большой серии. Нет рабочего пути обучения выбранной модели —
+сменить compact checkpoint с записью причины, а не объявлять новый classifier
+«дообученной той же моделью».</p>
+<h2 id="реестр-результатов-на-19102026">Реестр результатов на 19.10.2026</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Объект</th>
+<th>Статус</th>
+<th>Что известно</th>
+<th>Что не следует заключать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Новая матрица A/B/C</td>
+<td>Запланирована</td>
+<td>Есть протокол и архитектура</td>
+<td>Нет измеренного победителя</td>
+</tr>
+<tr>
+<td>CE↔Brier на banking</td>
+<td>Запланировано</td>
+<td>Есть критерии сравнения</td>
+<td>Улучшение не доказано</td>
+</tr>
+<tr>
+<td>Reasoning teacher / RLCD</td>
+<td>Необязательные исследования</td>
+<td>Есть методические основания и ограничения</td>
+<td>Не готовый быстрый encoder и не гарантированная калибровка</td>
+</tr>
+<tr>
+<td>Измерение истории τ-bench</td>
+<td>Ранее записанное наблюдение проекта</td>
+<td>703 момента выбора в 52 опубликованных banking-траекториях; полная история часто длиннее 8k</td>
+<td>Это не качество будущего scorer; измерение не повторялось в работе над атласом</td>
+</tr>
+<tr>
+<td>Результаты работ других авторов</td>
+<td>Внешние свидетельства</td>
+<td>Приведены с областью применимости в evidence</td>
+<td>Не результаты нашей системы и не обещание эффекта на τ-bench</td>
+</tr>
+<tr>
+<td>HTML-карты</td>
+<td>Документационные артефакты</td>
+<td>Показывают предложенный процесс</td>
+<td>Анимация не является прогоном моделей</td>
+</tr>
+</tbody>
+</table></div>
+<p>Источник прежнего наблюдения — <a href="../gitmark/resource-assessment/index.html#14-хватает-ли-8192-без-сжатия-реальные-банковские-истории">ресурсная оценка и команда измерения</a>.
+Будущая сводная таблица хранит <code>null / не измерено</code>, пока нет run manifest.
+Не заполнять графики вымышленными точками. После опытов каждая строка должна
+ссылаться на split, checkpoint, run IDs и анализ, включая отрицательные результаты.</p>
+<h2 id="как-строить-выводы">Как строить выводы</h2>
+<ol>
+<li>Сначала подтвердить валидность данных и сравнения: split, labels, общий вход,
+   версии, учёт fallback и ошибок. При нарушении исправить протокол новым прогоном.</li>
+<li>Сопоставить B и C: как изменились вероятности и отбор; объяснить, перешёл ли
+   эффект в native успех. Не подменять одно другим.</li>
+<li>Сопоставить C с A, N и H: оправдана ли сложность и сколько стоит полный эпизод.</li>
+<li>Проверить стоимость адаптации. Если допустимость потери качества подтверждена
+   и экономия на эпизод положительна,
+   N<em> = C_adaptation / (C_reference − C_adapted); если неположительна,
+   конечной окупаемости нет. Диапазон N</em> должен учитывать неопределённость.</li>
+<li>Разделить локальный вывод по этому домену, возможный механизм и непроверенное
+   обобщение на другие домены. Same-domain split не доказывает перенос в другой банк.</li>
+<li>Описать собственный вклад: dataset design/labels, обучение, абляции, измерения,
+   анализ. Общий harness и работа других участников обозначаются явно.</li>
+</ol>
+<p>ВКР может быть завершена при любом знаке эффекта, если выполнены постановка,
+воспроизводимый агент, корректные измерения и сравнение. Итоговая карта связывает
+«вопрос → данные → метод → опыт → измерение → вывод», а не заранее заданного победителя.</p>
+<h2 id="как-пересобрать-и-проверить-сам-атлас">Как пересобрать и проверить сам атлас</h2>
+<p>Содержательный текст хранится в пяти документах <code>docs/gitmark/system-one-atlas*.md</code>.
+Данные схем — в <code>scripts/research_atlas_data.py</code>, генератор —
+<code>scripts/build_research_atlas.py</code>, локальная копия MIT-шаблона
+architecture-diagram v1.4.0 — в <code>scripts/templates/research_atlas.html</code>.
+HTML в <code>docs/research-atlas/</code> и <code>site/research-atlas/</code> — производные представления.</p>
+<p>Реальные команды сборки документации из корня репозитория:</p>
+<pre><code class="language-sh">.venv/bin/python scripts/build_research_atlas.py
+python3 .claude/skills/kb-search/gitmark.py lint --strict
+python3 .claude/skills/kb-search/gitmark.py index
+.venv/bin/mkdocs build --strict
+.venv/bin/python scripts/check_site.py
+</code></pre>
+<p>Для браузерной проверки предназначен <code>scripts/check_research_atlas.cjs</code>:
+нужны Node.js, установленный Playwright и локальный Chrome. Скрипт использует
+пакет через стандартный <code>NODE_PATH</code>, при ином расположении браузера — <code>CHROME_PATH</code>.
+Он открывает только локальные страницы и блокирует HTTP(S), проверяет сценарии,
+каждый шаг, пуск/паузу, тему, узкий экран, roadmap, матрицу обучения, калькулятор
+и reduced motion. Снимки и <code>report.json</code> пишет в игнорируемый
+<code>artifacts/research-atlas-check/</code>. Модельные эксперименты эти команды не запускают.</p>
+<p>Для показа открыть <code>site/research-atlas/index.html</code> или обслуживать <code>site/</code>
+локальным HTTP-сервером. Каждый файл содержит собственные CSS, JavaScript
+и подробный текст; для переходов к соседним страницам нужен весь каталог сайта.
+Изменение даты/ползунка roadmap — просмотр сценария, не запись фактического прогресса.</p>
+<p>Проверка артефактов 19.10.2026: 21 HTML-страница, 48 сценариев и 183 перехода
+пройдены в локальном Chrome без ошибок JavaScript, предупреждений браузера и
+сетевых запросов. Проверены 610 локальных ссылок/якорей, desktop и ширина 390 px,
+переключатели, roadmap, калькулятор и reduced motion. GitMark strict, MkDocs strict
+и сверка производного <code>site/</code> прошли. Это результаты проверки документации,
+не измерения исследовательских моделей.</p></section><footer>Атлас подготовлен как исследовательский план с AI-помощью · 19.10.2026. Схемы: architecture-diagram v1.4.0, MIT; содержательные документы — GitMark проекта. Страницы не выполняют запросы к моделям и не отправляют данные.</footer></body>
+</html>

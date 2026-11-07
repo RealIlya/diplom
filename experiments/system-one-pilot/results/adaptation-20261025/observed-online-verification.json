@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "arms": {
+    "native": {
+      "checked_events": 0,
+      "all_selected_ids_observed": true,
+      "full_evidence_render_token_count_verified": true
+    },
+    "bm25": {
+      "checked_events": 83,
+      "all_selected_ids_observed": true,
+      "full_evidence_render_token_count_verified": true
+    },
+    "llm": {
+      "checked_events": 46,
+      "all_selected_ids_observed": true,
+      "full_evidence_render_token_count_verified": true
+    },
+    "frozen": {
+      "checked_events": 46,
+      "all_selected_ids_observed": true,
+      "full_evidence_render_token_count_verified": true
+    },
+    "ce": {
+      "checked_events": 71,
+      "all_selected_ids_observed": true,
+      "full_evidence_render_token_count_verified": true
+    },
+    "brier": {
+      "checked_events": 38,
+      "all_selected_ids_observed": true,
+      "full_evidence_render_token_count_verified": true
+    }
+  },
+  "all_six_arms_present": true,
+  "external_calls": 0,
+  "model_inference": false
+}

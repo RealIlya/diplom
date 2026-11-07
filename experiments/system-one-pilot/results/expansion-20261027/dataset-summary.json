@@ -1,0 +1,162 @@
+{
+  "at": "2026-10-27T06:26:49.104121+00:00",
+  "protocol_sha256": "6a391f1202b235f0769716f8cb9a8cfdc5a978807d94e404701d111ef22d99f2",
+  "queue_sha256": "67cbe16983c5c63bcce1e62b2ea7c988dcdfd999634508e6451d507a0134a5c1",
+  "old_dataset_sha256": "a3e93a26ee7c7f7ee92b486cfe32765f12e1238af2e955656d11b6b1f7df835d",
+  "old_trusted_sha256": "24f28618f6a919b2266fca9f90eed2650b99ac6dcaf6e43f11752ecf93c861cd",
+  "split_sha256": "6eedb7f5698bb1421498a2c760ca8699067ec30f1d26a7b9504049fd57e9be1c",
+  "new_labels_sha256": "2b2d8e46172cb1a2954426d52f105a1d1e33cc9b4a20568fed08c12a4dacd76e",
+  "dataset_sha256": "1aa835b3d2de7ccc733a02d0b3fbf9b4c186e9eaa0f3cce69e59659bbe7b0611",
+  "new": {
+    "rows": 200,
+    "hard": 181,
+    "families": 7,
+    "labels": {
+      "irrelevant": 158,
+      "useful": 31,
+      "uncertain": 11
+    },
+    "hard_labels": {
+      "irrelevant": 152,
+      "useful": 29
+    },
+    "defects": 10,
+    "sources": {
+      "llm_consensus": 168,
+      "agent_adjudication": 32
+    }
+  },
+  "combined": {
+    "rows": 330,
+    "hard": 298,
+    "families": 20,
+    "labels": {
+      "useful": 70,
+      "irrelevant": 238,
+      "uncertain": 22
+    },
+    "hard_labels": {
+      "useful": 68,
+      "irrelevant": 230
+    },
+    "defects": 12,
+    "sources": {
+      "llm_consensus": 266,
+      "human": 6,
+      "agent_adjudication": 58
+    }
+  },
+  "roles": {
+    "calibration": {
+      "rows": 20,
+      "hard": 17,
+      "families": 2,
+      "labels": {
+        "irrelevant": 9,
+        "useful": 8,
+        "uncertain": 3
+      },
+      "hard_labels": {
+        "irrelevant": 9,
+        "useful": 8
+      },
+      "defects": 0,
+      "sources": {
+        "llm_consensus": 11,
+        "agent_adjudication": 9
+      }
+    },
+    "train": {
+      "rows": 280,
+      "hard": 254,
+      "families": 15,
+      "labels": {
+        "useful": 57,
+        "irrelevant": 206,
+        "uncertain": 17
+      },
+      "hard_labels": {
+        "useful": 55,
+        "irrelevant": 199
+      },
+      "defects": 11,
+      "sources": {
+        "llm_consensus": 230,
+        "human": 6,
+        "agent_adjudication": 44
+      }
+    },
+    "validation": {
+      "rows": 30,
+      "hard": 27,
+      "families": 3,
+      "labels": {
+        "irrelevant": 23,
+        "useful": 5,
+        "uncertain": 2
+      },
+      "hard_labels": {
+        "irrelevant": 22,
+        "useful": 5
+      },
+      "defects": 1,
+      "sources": {
+        "llm_consensus": 25,
+        "agent_adjudication": 5
+      }
+    }
+  },
+  "resolutions": {
+    "llm_consensus": 168,
+    "agent_adjudication": 32
+  },
+  "annotation_statuses": {
+    "valid": 389,
+    "technical_error": 11
+  },
+  "family_counts": {
+    "family-fbde50414600": 31,
+    "family-4b27d1b6add2": 31,
+    "family-1e5193f94dab": 16,
+    "family-ab2bce7aa21d": 31,
+    "family-613b0b87acce": 30,
+    "family-5f106c4a0d02": 31,
+    "family-6e4302e654a1": 30
+  },
+  "unchanged_old_rows": true,
+  "test_rows": 0,
+  "series_budget": {
+    "expansion-v1-collection": {
+      "series": "expansion-v1-collection",
+      "limit_usd": 0.2,
+      "calls": 227,
+      "actual_usd": 0.070023007,
+      "charged_or_held_usd": 0.089059207,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 1
+    },
+    "expansion-v1-annotation": {
+      "series": "expansion-v1-annotation",
+      "limit_usd": 0.75,
+      "calls": 400,
+      "actual_usd": 0.378260139,
+      "charged_or_held_usd": 0.378260139,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 0
+    }
+  },
+  "daily_budget": {
+    "date": "2026-10-27",
+    "timezone": "Asia/Novosibirsk",
+    "calls": 627,
+    "limit_usd": 1.0,
+    "charged_or_held_usd": 0.467319346,
+    "remaining_usd": 0.532680654,
+    "held_nusd": 467319346,
+    "limit_nusd": 1000000000
+  },
+  "scope": "train-only engineering packet; no new independent validation or model quality claim",
+  "training_run": false,
+  "human_review": false,
+  "artifact_root": "artifacts/system-one-pilot/expansion-packet-v1/dataset-v1"
+}

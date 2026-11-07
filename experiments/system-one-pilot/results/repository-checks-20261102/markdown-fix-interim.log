@@ -1,0 +1,6 @@
+markdownlint-cli2 v0.23.2 (markdownlint v0.41.1)
+Finding: README.md AGENTS.md CLAUDE.md docs/**/*.md .claude/commands/*.md .claude/skills/dev-flow/SKILL.md .claude/skills/task-breakdown/SKILL.md .claude/skills/kb-search/SKILL.md .claude/skills/kb-maintain/SKILL.md .agents/skills/kb-*/SKILL.md
+Linting: 57 files
+Attempted: 221 fixes in 6 files
+Summary: 1 issue in 1 file
+docs/gitmark/architecture.md:469 error MD048/code-fence-style Code fence style [Expected: tilde; Actual: backtick]

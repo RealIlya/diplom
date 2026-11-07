@@ -1,0 +1,24 @@
+{
+  "call_id": "adaptation-v1/task_075/010/agent",
+  "evidence": {
+    "reason": "Исследован сохранённый HTTP429: явный отказ до inference engine_overloaded/upstream_provider_shared_pool от DeepInfra, HTTP status не200; generation id/choices отсутствуют. Весь исходный upper bound остаётся в расходах; actual cost НЕ объявляется нулём. task_075 failed сохраняется, тот же request/episode не повторяется; только ещё не начатые закреплённые задачи.",
+    "response_sha256": "ae0f95919c59b77c6ef3b8a435fed8f68024f9991b2bfd189fd916b329826134",
+    "checked_at": "2026-10-25T12:17:31.961519+00:00",
+    "source": "https://openrouter.ai/docs/api/reference/errors-and-debugging",
+    "source_scope": "HTTP status is final; accepted provider request uses200 even if later generation error; upstream overload body inspected",
+    "http_status": 429,
+    "provider_error_code": "engine_overloaded",
+    "limit_source": "upstream_provider_shared_pool",
+    "full_reserved_usd": 0.0241173,
+    "original_task_retry": false
+  },
+  "budget_after": {
+    "series": "collection",
+    "limit_usd": 1.0,
+    "calls": 279,
+    "actual_usd": 0.094361999,
+    "charged_or_held_usd": 0.126794399,
+    "unresolved": 0,
+    "conservatively_accounted_calls": 3
+  }
+}

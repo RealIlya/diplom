@@ -1,0 +1,19 @@
+{
+  "rows": 191,
+  "families": {
+    "family-89b782e765e6": 43,
+    "family-b2e6ce02f564": 46,
+    "family-55bbb8b02f4c": 47,
+    "family-4f614cfb5683": 35,
+    "family-dc005fe2e7d8": 20
+  },
+  "snapshots": 14,
+  "queue_sha256": "2da77b02dba990867bd0c8418bece77067049fd8b985001f6ef9c90576ba2acc",
+  "fresh_task_rows": 0,
+  "test_rows": 0,
+  "scope": "train-only engineering packet; incomplete collection, annotation blocked by unresolved provider504",
+  "collection_planned": 9,
+  "collection_attempted": 1,
+  "collection_failed": 1,
+  "annotation_calls": 0
+}

@@ -20,12 +20,30 @@ nav:
       - Онтология: gitmark/ontology.md
   - Исследование:
       - Короткий обзор: gitmark/research-overview.md
+      - Контекст продолжения 11.10.2026: gitmark/system-one-handoff-2026-10-11.md
       - Научные источники: gitmark/sources.md
+  - Атлас адаптации System One:
+      - Общий план и карты: gitmark/system-one-atlas.md
+      - Реализация этапов: gitmark/system-one-atlas-execution.md
+      - Данные и эксперименты: gitmark/system-one-atlas-protocol.md
+      - Архитектура стенда: gitmark/system-one-atlas-architecture.md
+      - Проверенные источники и результаты: gitmark/system-one-atlas-evidence.md
+      - Пилот CE и проверенные блокеры: gitmark/system-one-pilot.md
+      - Следующий этап — данные и инфраструктура: gitmark/system-one-next-stage.md
+      - Интерактивный атлас: research-atlas/index.html
   - Подробные материалы:
       - Постановка и протокол: gitmark/research.md
-      - Архитектура v0.3: gitmark/architecture.md
+      - Термины общего агента: gitmark/GLOSSARY.md
+      - Архитектура v0.2: gitmark/architecture.md
       - Протокол HotpotQA: gitmark/hotpotqa-protocol.md
       - Модели: gitmark/model-research.md
+      - RLCD — обзор и источники: gitmark/rlcd-review.md
+      - Обучение System One — статьи и выжимки: gitmark/system-one-training-review.md
+      - RLCD — темы и план ВКР: gitmark/rlcd-study-plan.md
+      - Ресурсы τ-bench, Laya и KEV: gitmark/resource-assessment.md
+      - Выбор действий и контекст: gitmark/action-selection-review.md
+      - Полные вызовы без LLM: gitmark/complete-call-options.md
+      - Native аргументы и предусловия: gitmark/complete-call-native-audit.md
       - Стенд τ-bench: gitmark/tau-bench-review.md
   - Работа над ВКР:
       - Совместная работа: gitmark/team.md
@@ -35,10 +53,18 @@ nav:
       - Доменный контекст: gitmark/agents/domain.md
       - Задачи проекта: gitmark/agents/issue-tracker.md
       - Статусы триажа: gitmark/agents/triage-labels.md
-
-  - Проект исправлений:
-      - Дизайн аудита: superpowers/specs/2026-10-09-audit-remediation-design.md
-      - План реализации: superpowers/plans/2026-10-09-audit-remediation.md
+  - Переводы статей:
+      - Как читать и словарь: translations/README.md
+      - OpenJev-RLCD: translations/openjev-rlcd-ru.md
+      - SBERT2S1: translations/sbert2s1-ru.md
+      - Запись подготовки и проверки: translations/translation-record.md
+  - Архив технических планов:
+      - Пилот System One: superpowers/plans/2026-10-19-system-one-pilot.md
+      - Сравнение KEV и Laya: superpowers/plans/2026-10-25-kev-laya-comparison.md
+      - "Независимый dev и адаптация KEV": superpowers/plans/2026-10-25-system-one-adaptation.md
+      - "Первый пакет расширения и grouped KEV": superpowers/plans/2026-10-27-system-one-expansion.md
+      - Аудит — спецификация 09.10.2026: superpowers/specs/2026-10-09-audit-remediation-design.md
+      - Аудит — выполненный план 09.10.2026: superpowers/plans/2026-10-09-audit-remediation.md
 
 plugins:
   - search:

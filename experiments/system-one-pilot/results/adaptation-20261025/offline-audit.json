@@ -1,0 +1,9 @@
+{
+  "feature_count": 130,
+  "errors": 0,
+  "old_export_unchanged_sha256": "e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0",
+  "native_frozen_probability_max_delta": 5.8160902871584597e-08,
+  "feature_request_seconds_median": 0.20635939600015263,
+  "feature_request_seconds_total": 39.061307125999065,
+  "scope": "feature-cache engineering timing on all130 rows including uncertain/defects; not270-repeat frozen speed benchmark"
+}

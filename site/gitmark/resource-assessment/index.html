@@ -1,0 +1,4123 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../rlcd-study-plan/">
+      
+      
+        <link rel="next" href="../action-selection-review/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Ресурсы исследования τ-bench с Laya и KEV - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ресурсы-исследования-τ-bench-с-laya-и-kev" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ресурсы исследования τ-bench с Laya и KEV
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki GitMark
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wiki GitMark
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Состояние и задачи
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Онтология
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-handoff-2026-10-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контекст продолжения 11.10.2026
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атлас адаптации System One
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Атлас адаптации System One
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общий план и карты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реализация этапов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные и эксперименты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура стенда
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверенные источники и результаты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот CE и проверенные блокеры
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-next-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Следующий этап — данные и инфраструктура
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерактивный атлас
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Термины общего агента
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — обзор и источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-training-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение System One — статьи и выжимки
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — темы и план ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ресурсы τ-bench, Laya и KEV
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ресурсы τ-bench, Laya и KEV
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#краткий-вывод" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Краткий вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-какие-версии-проверены" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Какие версии проверены
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-архитектуры-и-три-разных-смысла-обучения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Архитектуры и три разных смысла обучения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Архитектуры и три разных смысла обучения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#контекст--четыре-разных-ограничения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Контекст — четыре разных ограничения
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mlx-mps-dtype-и-зависимости" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. MLX, MPS, dtype и зависимости
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-что-авторы-действительно-измерили" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Что авторы действительно измерили
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-нижняя-граница-памяти-только-состояния-параметров" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Нижняя граница памяти: только состояния параметров
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Нижняя граница памяти: только состояния параметров">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#head-only-lora-и-full--не-взаимозаменяемые-режимы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Head-only, LoRA и full — не взаимозаменяемые режимы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-практические-диапазоны-для-планирования-не-измерения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Практические диапазоны для планирования, не измерения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Практические диапазоны для планирования, не измерения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#дополнительный-пк-с-gtx-1660" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительный ПК с GTX 1660
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-граница-all-local-agent--user-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Граница all-local agent + user simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-объём-τ-bench-задачи-не-равны-обучающим-решениям" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Объём τ-bench: задачи не равны обучающим решениям
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Объём τ-bench: задачи не равны обучающим решениям">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#предлагаемый-собственный-decision-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Предлагаемый собственный decision-dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#откуда-получить-данные-не-испортив-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Откуда получить данные, не испортив test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#стоимость-создания-данных-в-человеческом-времени" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Стоимость создания данных в человеческом времени
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-сколько-вычислений-потребуется-всей-серии" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Сколько вычислений потребуется всей серии
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Сколько вычислений потребуется всей серии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#обучение-маленькой-модели" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обучение маленькой модели
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#полные-агентные-диалоги" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Полные агентные диалоги
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#цена-api-и-аренды" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цена API и аренды
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#если-всё-таки-воспроизводить-именно-openjev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Если всё-таки воспроизводить именно OpenJev
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-можно-ли-обойтись-одним-mac-три-сценария" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Можно ли обойтись одним Mac: три сценария
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Можно ли обойтись одним Mac: три сценария">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#диск-и-ежедневная-эксплуатация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диск и ежедневная эксплуатация
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-какие-структурные-элементы-будут-созданы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Какие структурные элементы будут созданы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-рекомендуемая-конфигурация-и-точки-принятия-решений" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Рекомендуемая конфигурация и точки принятия решений
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-уточнение-что-именно-означает-validated-8192-у-kev-4b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Уточнение: что именно означает validated 8192 у KEV-4B
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-хватает-ли-8192-без-сжатия-реальные-банковские-истории" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Хватает ли 8192 без сжатия: реальные банковские истории
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Хватает ли 8192 без сжатия: реальные банковские истории">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#объект-и-метод" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект и метод
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#результаты-токены-kev-tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты: токены KEV tokenizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#воспроизведение-и-границы-личной-адаптационной-темы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Воспроизведение и границы личной адаптационной темы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#источники-и-границы-проверки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Источники и границы проверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../action-selection-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выбор действий и контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полные вызовы без LLM
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-native-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native аргументы и предусловия
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документы агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переводы статей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Переводы статей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как читать и словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/openjev-rlcd-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenJev-RLCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/sbert2s1-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBERT2S1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/translation-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запись подготовки и проверки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архив технических планов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Архив технических планов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-19-system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот System One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-kev-laya-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сравнение KEV и Laya
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-system-one-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимый dev и адаптация KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-27-system-one-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Первый пакет расширения и grouped KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — спецификация 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — выполненный план 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#краткий-вывод" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Краткий вывод
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-какие-версии-проверены" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Какие версии проверены
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-архитектуры-и-три-разных-смысла-обучения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Архитектуры и три разных смысла обучения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Архитектуры и три разных смысла обучения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#контекст--четыре-разных-ограничения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Контекст — четыре разных ограничения
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mlx-mps-dtype-и-зависимости" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. MLX, MPS, dtype и зависимости
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-что-авторы-действительно-измерили" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Что авторы действительно измерили
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-нижняя-граница-памяти-только-состояния-параметров" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Нижняя граница памяти: только состояния параметров
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Нижняя граница памяти: только состояния параметров">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#head-only-lora-и-full--не-взаимозаменяемые-режимы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Head-only, LoRA и full — не взаимозаменяемые режимы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-практические-диапазоны-для-планирования-не-измерения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Практические диапазоны для планирования, не измерения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Практические диапазоны для планирования, не измерения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#дополнительный-пк-с-gtx-1660" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительный ПК с GTX 1660
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-граница-all-local-agent--user-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Граница all-local agent + user simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-объём-τ-bench-задачи-не-равны-обучающим-решениям" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Объём τ-bench: задачи не равны обучающим решениям
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Объём τ-bench: задачи не равны обучающим решениям">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#предлагаемый-собственный-decision-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Предлагаемый собственный decision-dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#откуда-получить-данные-не-испортив-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Откуда получить данные, не испортив test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#стоимость-создания-данных-в-человеческом-времени" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Стоимость создания данных в человеческом времени
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-сколько-вычислений-потребуется-всей-серии" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Сколько вычислений потребуется всей серии
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Сколько вычислений потребуется всей серии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#обучение-маленькой-модели" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Обучение маленькой модели
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#полные-агентные-диалоги" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Полные агентные диалоги
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#цена-api-и-аренды" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цена API и аренды
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#если-всё-таки-воспроизводить-именно-openjev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Если всё-таки воспроизводить именно OpenJev
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-можно-ли-обойтись-одним-mac-три-сценария" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Можно ли обойтись одним Mac: три сценария
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Можно ли обойтись одним Mac: три сценария">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#диск-и-ежедневная-эксплуатация" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Диск и ежедневная эксплуатация
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-какие-структурные-элементы-будут-созданы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Какие структурные элементы будут созданы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-рекомендуемая-конфигурация-и-точки-принятия-решений" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Рекомендуемая конфигурация и точки принятия решений
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-уточнение-что-именно-означает-validated-8192-у-kev-4b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Уточнение: что именно означает validated 8192 у KEV-4B
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-хватает-ли-8192-без-сжатия-реальные-банковские-истории" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Хватает ли 8192 без сжатия: реальные банковские истории
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Хватает ли 8192 без сжатия: реальные банковские истории">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#объект-и-метод" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект и метод
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#результаты-токены-kev-tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Результаты: токены KEV tokenizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#воспроизведение-и-границы-личной-адаптационной-темы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Воспроизведение и границы личной адаптационной темы
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#источники-и-границы-проверки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Источники и границы проверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ресурсы-исследования-τ-bench-с-laya-и-kev">Ресурсы исследования τ-bench с Laya и KEV</h1>
+<p><strong>Статус:</strong> кабинетная проверка первичных model cards и кода на 11.10.2026;
+не локальный бенчмарк, не разрешение на расходы. Веса не скачивались,
+зависимости не устанавливались, обучение и платные вызовы не запускались.
+Документ фиксирует модели, память, объём данных, условные расчёты времени/цены
+и создаваемые компоненты. Факты источников отделены от наших плановых оценок.
+Уточнение по запросу 11.10.2026: <a href="../action-selection-review/">проверен переход к выбору действия</a>
+вместо binary gate. Аппаратные факты сохраняются, но объём action-разметки
+и память длинного контекста требуют нового пилота; 6000 — ориентир, не гарантия.</p>
+<p>Контекст: <a href="../research/">постановка</a>, <a href="../rlcd-study-plan/">план RLCD</a>,
+<a href="../tau-bench-review/">обзор τ-bench</a>.</p>
+<h2 id="краткий-вывод">Краткий вывод</h2>
+<ul>
+<li><strong>MacBook M4 Pro / 24 GB достаточно для разработки и последовательного
+  inference Laya / KEV-0.8B; KEV-4B через MLX выглядит реалистично.</strong> Последнее
+  сильнее прежней гипотезы: автор измерил 4B на M5 / 32 GB с footprint 11.9 GB
+  при 8k входе. Но это не замер M4 Pro и не гарантия пика при загрузке.</li>
+<li><strong>Laya head-only и короткое full fine-tuning теперь имеют открытый MPS-путь.</strong>
+  Утверждение «есть только notebook для 2×T4» устарело: проверен
+  <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/notebooks/laya_finetune_typed_decisions_mps.py">отдельный MPS-скрипт</a>. Это наличие кода,
+  а не подтверждённые время/память обучения на нашем Mac.</li>
+<li><strong>KEV-0.8B LoRA — локальный малый пилот, не повторение авторского длинного
+  рецепта.</strong> Последний занял 23.94 GB GPU памяти. Для 4B LoRA разумнее NVIDIA
+  класса 48 GB после smoke-test; авторский пик 47.74 GB = примерно 44.46 GiB.
+  Сверять доступную память карты в bytes и оставлять запас для allocator/контекста.
+  Short-context рецепт может быть дешевле.</li>
+<li><strong>Full training KEV-4B на 24 GB исключается обычной арифметикой Adam.</strong>
+  Обучение всей основы 0.8B теоретически помещается по состояниям параметров,
+  но остаётся рискованным локальным экспериментом, не первым этапом.</li>
+<li><strong>Laya/KEV не заменяют генеративного агента и user simulator.</strong> Полностью
+  локальный стенд возможен как отдельный конфигурационный эксперимент;
+  достаточность памяти не подтверждает качество открытого симулятора.</li>
+</ul>
+<h2 id="1-какие-версии-проверены">1. Какие версии проверены</h2>
+<p>SHA фиксирует прочитанный снимок, а не доказывает запуск. HF API возвращает
+текущую ревизию карточки; для KEV она новее опубликованной ревизии весов,
+которую карточка прямо называет неизменной. При эксперименте закреплять
+<strong>runtime, adapter/head и backbone отдельно</strong>, не только имя модели.</p>
+<table>
+<thead>
+<tr>
+<th>Объект</th>
+<th>Проверенный SHA / первичный источник</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya runtime 0.4.2</td>
+<td><a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/README.md">68804629e8ccd9d616d48a40e87de9fabbeae069</a></td>
+</tr>
+<tr>
+<td>Laya English, карточка/веса</td>
+<td><a href="https://huggingface.co/convaiinnovations/laya/blob/7b928d828b7b0e022f929d9bd2e44165aa270148/README.md">7b928d828b7b0e022f929d9bd2e44165aa270148</a></td>
+</tr>
+<tr>
+<td>Laya multilingual, карточка/веса</td>
+<td><a href="https://huggingface.co/convaiinnovations/laya-multilingual/blob/1720e3e3357cfe1e281542e223f8273b0890ca34/README.md">1720e3e3357cfe1e281542e223f8273b0890ca34</a></td>
+</tr>
+<tr>
+<td>KEV runtime</td>
+<td><a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/README.md">2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f</a></td>
+</tr>
+<tr>
+<td>KEV-0.8B, текущая карточка</td>
+<td><a href="https://huggingface.co/jaredpalmer/kev-0.8b/blob/bf75a6a8848ea6960ff2ed108d9ed44c2941174f/README.md">bf75a6a8848ea6960ff2ed108d9ed44c2941174f</a>; выпущенные веса: 9a45d25eb2ab761841196625383fa1dff0e56c1e</td>
+</tr>
+<tr>
+<td>KEV-4B, текущая карточка</td>
+<td><a href="https://huggingface.co/jaredpalmer/kev-4b/blob/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/README.md">6cfce5c2fa4b4bd64026336ab649c5ca78857d52</a>; выпущенные веса: 139fdd94f1b6a6ad80cc15e08fcb99cac885a101</td>
+</tr>
+<tr>
+<td>Основа KEV-0.8B</td>
+<td><a href="https://huggingface.co/Qwen/Qwen3.5-0.8B-Base/blob/dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68/config.json">Qwen3.5-0.8B-Base @ dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68</a></td>
+</tr>
+<tr>
+<td>Основа KEV-4B</td>
+<td><a href="https://huggingface.co/Qwen/Qwen3.5-4B-Base/blob/1001bb4d826a52d1f399e183466143f4da7b741b/config.json">Qwen3.5-4B-Base @ 1001bb4d826a52d1f399e183466143f4da7b741b</a></td>
+</tr>
+</tbody>
+</table>
+<p>KEV-0.6B на Qwen3 — предыдущее поколение, не уменьшенная копия Qwen3.5:
+его возможное преимущество — отсутствие DeltaNet, но он не нужен для первого
+ресурсного вывода. Текущий MLX backend проверенного KEV предназначен для
+гибридных Qwen3.5; не переносить его автоматически на 0.6B.</p>
+<h2 id="2-архитектуры-и-три-разных-смысла-обучения">2. Архитектуры и три разных смысла обучения</h2>
+<table>
+<thead>
+<tr>
+<th>Семейство</th>
+<th>Что фактически вычисляется</th>
+<th>Что нельзя приписывать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya</td>
+<td>Bidirectional encoder ModernBERT-large / mmBERT-base, два transformer-слоя одной головы принятия решений, scorer маркеров вариантов; один batched forward, без генерации rationale. Текущий train loss: шум Gaussian в logits + proper reward + policy-gradient term <strong>и soft CE</strong>; отдельно доступен soft-CE контроль.</td>
+<td>Это не OpenJev с генерацией цепочек рассуждений; четыре noise samples не означают четыре авторегрессионных rollout.</td>
+</tr>
+<tr>
+<td>KEV-0.8B / 4B</td>
+<td>Замороженная Qwen3.5 + LoRA rank 16, α=32 + pointer head; prefill и распределение по вариантам. Релизные модели обучены supervised cross-entropy, затем temperature scaling.</td>
+<td>Наличие типизированных вероятностей не делает этот SFT-рецепт RLCD.</td>
+</tr>
+<tr>
+<td>OpenJev-RLCD</td>
+<td>Генерирует rationale, читает распределение после Answer; proper score используется для readout и затем rationale policy.</td>
+<td>Его стоимость generation/group samples нельзя оценить одним forward Laya или KEV.</td>
+</tr>
+</tbody>
+</table>
+<p>Источники: <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/laya/train.py">Laya train</a>, <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/laya/common.py">Laya архитектура</a>,
+<a href="https://huggingface.co/jaredpalmer/kev-0.8b/blob/bf75a6a8848ea6960ff2ed108d9ed44c2941174f/README.md">KEV карточки</a>, <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/train.py">KEV train</a>, <a href="https://github.com/ZimmyGao/openjev-rlcd/blob/22db40ad3333f5cf0bc5139097da70e0f8c05018/README.md">OpenJev README @ 22db40ad</a>.
+Короткие цитаты: Laya — «a policy-gradient term over noisy logits plus soft
+cross-entropy»; OpenJev — «The model samples a rationale»; KEV — «The loss is
+cross-entropy over each question's options».</p>
+<h3 id="контекст--четыре-разных-ограничения">Контекст — четыре разных ограничения</h3>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>По умолчанию / лимит runtime</th>
+<th>Что действительно подтверждено</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya English 421M</td>
+<td>512 токенов на вопрос, head budget 192, состоянию примерно 320</td>
+<td>Увеличение окна основы само по себе не подтверждает качество English checkpoint на длинных входах.</td>
+</tr>
+<tr>
+<td>Laya multilingual 322M</td>
+<td>1024, head budget 256; явно max_len=8192, состоянию примерно 7936</td>
+<td>Небольшой авторский probe: 16–18 правильных из 20 примерно до 4k, далее 8–17/20. Не широкий long-context benchmark. Для английского длинного текста явно выбирать multilingual.</td>
+</tr>
+<tr>
+<td>KEV-0.8B / 4B</td>
+<td>Основа 262144; runtime state ≤65536, row state+question ≤73728</td>
+<td>Обучение state ≤7552; обе текущие cards называют <strong>validated context 8192</strong>. У 4B уже 16k не прошло заранее заданный допуск качества.</td>
+</tr>
+</tbody>
+</table>
+<p>Источники: <a href="https://huggingface.co/convaiinnovations/laya/blob/7b928d828b7b0e022f929d9bd2e44165aa270148/README.md">Laya card</a>, <a href="https://huggingface.co/convaiinnovations/laya-multilingual/blob/1720e3e3357cfe1e281542e223f8273b0890ca34/README.md">multilingual</a>,
+<a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/model.py">KEV model constants</a>, <a href="https://huggingface.co/jaredpalmer/kev-0.8b/blob/bf75a6a8848ea6960ff2ed108d9ed44c2941174f/README.md">0.8B</a>, <a href="https://huggingface.co/jaredpalmer/kev-4b/blob/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/README.md">4B</a>, <a href="https://huggingface.co/Qwen/Qwen3.5-0.8B-Base/blob/dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68/config.json">Qwen configs</a>.
+Описание инструментов, инструкции и варианты тоже расходуют окно.
+Одновременные вопросы увеличивают batch/число ветвей; «один вызов API» не
+значит константную память. Для τ-bench нужно явно формировать состояние узла,
+а не молча обрезать историю до первых 320 токенов.</p>
+<h2 id="3-mlx-mps-dtype-и-зависимости">3. MLX, MPS, dtype и зависимости</h2>
+<p><strong>Laya.</strong> Проверенный путь Apple — PyTorch/MPS, не MLX. Файлы весов в основном
+FP16, но обычная модель строится в FP32; размер файла не равен resident RAM.
+В README есть устаревшее обобщение «CPU and MPS run fp32», однако текущий
+<a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/laya/agent.py">agent.py</a> и подробный precision-раздел уточняют: на MPS FP16
+autocast включается от 5 question rows; меньшие вызовы FP32. Поэтому
+agent.dtype показывает цель autocast, а dtype_for(rows) — режим конкретного
+вызова. При неподдержанном autocast возможен возврат в FP32; это нужно логировать.
+<a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/README.md">TileLang fast path</a> — CUDA kernels/graphs, не ускорение Metal.
+Обычный encoder использует SDPA; для experimental parallel option layout
+есть собственные ограничения eager/transformers, он не нужен первому пилоту.</p>
+<p><strong>KEV.</strong> <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/mlx_model.py">MLX backend</a> выбран автоматически для Qwen3.5 serving на
+Apple Silicon; использует BF16 основу, слитую LoRA, FP32 pointer head,
+chunked prefill по 1024 токена и ограничение MLX buffer cache 1 GiB.
+Фраза кода «MPS has no Gated DeltaNet kernels» означает медленный reference
+PyTorch-путь, а не отсутствие GPU вообще. MLX inference <strong>не означает MLX training</strong>:
+<a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/train.py">train.py</a> обучает через PyTorch. Его --dtype bf16 явно требует
+--device cuda; --weights_dtype задаётся отдельно и по умолчанию fp32.
+На MPS короткий LoRA-пилот поэтому начинается с FP32, не с арифметики BF16 serving.</p>
+<p><a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/model.py">KEV model.py</a> выбирает eager attention на MPS/CPU и SDPA на CUDA
+для произвольной additive mask. Старые attention-only основы используют
+block-causal 4D mask [B,1,L,L]; гибридная Qwen3.5 не может применить её к
+рекуррентным DeltaNet-слоям, поэтому вопросы идут отдельными causal rows.
+В serving состояние кешируется; training без shared-prefix может повторно
+вычислять state на каждый вопрос. Сам dense FP32 mask 8192² — 0.268 GB на
+строку ещё до attention scores; наличие linear attention не устраняет все
+квадратичные члены и активации.</p>
+<p>CUDA serving использует flash-linear-attention/fused DeltaNet и CUDA graphs;
+это не зависимости, которые нужно пытаться установить ради MPS. Проверенный
+<a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/README.md">README KEV</a> рекомендует flash-linear-attention именно на CUDA,
+а <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/pyproject.toml">pyproject</a> подключает mlx-lm 0.31.3–&lt;0.32 для Darwin arm64.
+На Mac сначала проверять поддерживаемый backend, dtype, operators и реальные
+результаты; CPU fallback не выдавать за быстрый Metal inference.</p>
+<h2 id="4-что-авторы-действительно-измерили">4. Что авторы действительно измерили</h2>
+<p>Все строки ниже — <strong>внешние авторские результаты</strong>, не измерения нашего M4 Pro.
+Латентность модели не включает всю агентную оркестрацию; cached state и new
+state принципиально различны. Длинный кеш применим только при повторном
+использовании совместимого prefix, не ко всем ходам диалога автоматически.</p>
+<table>
+<thead>
+<tr>
+<th>Модель / аппаратный режим</th>
+<th>Авторский результат</th>
+<th>Граница переноса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya English / multilingual, Tesla T4</td>
+<td>1 вопрос: 39.5 / 32.8 ms; 10 вопросов: 158.6 / 72.3 ms</td>
+<td>Это CUDA/T4, не M4 Pro.</td>
+</tr>
+<tr>
+<td>Laya multilingual, Apple GPU (точная модель в карточке не названа)</td>
+<td>Около 1.7 s на вход 4k</td>
+<td>Нельзя представлять как замер именно M4.</td>
+</tr>
+<tr>
+<td>KEV-0.8B, MLX BF16, <strong>M5 32 GB</strong>, 3 вопроса, state 8192</td>
+<td>New 1.4 s; cached 74 ms; MLX peak 2.7 GB, process footprint 5.3 GB</td>
+<td>Модель/ОС/allocator и M4 отличаются; planted-fact probe не проверяет агентное качество.</td>
+</tr>
+<tr>
+<td>KEV-4B, тот же M5</td>
+<td>New 6.6 s; cached 354 ms; MLX peak 10.2 GB, footprint 11.9 GB</td>
+<td>Автор рекомендует Mac 32 GB, но measured footprint поддерживает осторожный пилот на 24 GB.</td>
+</tr>
+<tr>
+<td>KEV-0.8B / 4B, M5, state 65000</td>
+<td>New 21.2 / 84.5 s; footprint 5.4 / 14.1 GB</td>
+<td>Это возможность обработки, <strong>не validated accuracy на 65k</strong>.</td>
+</tr>
+<tr>
+<td>KEV-0.8B, NVIDIA L4 BF16, короткий state, 6 вопросов</td>
+<td>22.7 / 16.1 ms new/cached; resident 3.8 GB</td>
+<td>CUDA graphs/fused kernels, не Metal.</td>
+</tr>
+<tr>
+<td>KEV-4B, L40S / H100, тот же короткий workload</td>
+<td>41.5/27.7 ms и 18.1/12.9 ms; resident 14.3 GB</td>
+<td>Не прогноз latency Mac.</td>
+</tr>
+<tr>
+<td>KEV-0.8B LoRA, documents+skills, H200</td>
+<td>3136 s ≈52 min; peak 23,937,857,536 bytes; batch 4, 2818 optimizer steps</td>
+<td>Полный авторский рецепт; не обещание «обучится за час на Mac».</td>
+</tr>
+<tr>
+<td>KEV-4B LoRA, base H100 / skills H200</td>
+<td>Base ≈56 min, peak 24.6 GB; skills 5031 s ≈1.4 h, peak 47,737,451,520 bytes, batch 2, 1915 steps</td>
+<td>Обычная 24 GB GPU не гарантирует даже точное повторение base-рецепта.</td>
+</tr>
+</tbody>
+</table>
+<p>Источники: <a href="https://huggingface.co/convaiinnovations/laya/blob/7b928d828b7b0e022f929d9bd2e44165aa270148/README.md">Laya card</a>, <a href="https://huggingface.co/jaredpalmer/kev-0.8b/blob/bf75a6a8848ea6960ff2ed108d9ed44c2941174f/README.md">KEV-0.8B card</a>, <a href="https://huggingface.co/jaredpalmer/kev-4b/blob/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/README.md">KEV-4B card</a>,
+<a href="https://huggingface.co/jaredpalmer/kev-0.8b/blob/bf75a6a8848ea6960ff2ed108d9ed44c2941174f/training_metrics.json">сырые training metrics 0.8B</a>, <a href="https://huggingface.co/jaredpalmer/kev-4b/blob/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/training_metrics.json">4B</a>. Пик device и process
+RSS на NVIDIA — разные пулы; на Apple CPU/GPU делят unified memory.</p>
+<p>У KEV BF16 и FP32 не побитово эквивалентны: на короткой MLX проверке автора
+0.8B изменился 1 ответ из 100, max |Δp|=0.020; у 4B 0 из 60, max |Δp|=0.018.
+Это аргумент фиксировать dtype и отдельно проверять калибровку, не гарантия
+паритета на τ-bench. KEV-0.8B card прямо пишет «Do not use it for tool-call
+routing»: When2Call test 0.133 при случайном выборе 0.25. Низкая цена не
+компенсирует непригодность исходного checkpoint к конкретному узлу.</p>
+<h2 id="5-нижняя-граница-памяти-только-состояния-параметров">5. Нижняя граница памяти: только состояния параметров</h2>
+<p>Единицы: <strong>GB = 10⁹ bytes; GiB = 2³⁰ bytes</strong>. Это не peak и не потребность
+в установленной RAM. Пусть N — обучаемые параметры при full FT, A — число
+обучаемых параметров при frozen backbone. Без активаций и временных копий:</p>
+<ul>
+<li>inference: FP16/BF16 веса 2N; FP32 — 4N;</li>
+<li>full Adam, FP32 weights+grads+два FP32 moment: (4+4+8)N = <strong>16N</strong>;</li>
+<li>условный mixed режим без отдельной master copy: (2+2+8)N = <strong>12N</strong>;</li>
+<li>BF16/FP16 weights+grads + FP32 masters+moments: (2+2+4+8)N = <strong>16N</strong>;</li>
+<li>frozen backbone N и FP32 trainable A: <strong>bN + 16A</strong>, b=2 или 4.</li>
+</ul>
+<p>12N — оптимистическая арифметическая граница выбранного режима, не обещание,
+что конкретный optimizer хранит именно так. В KEV full_ft код предусматривает
+FP32 masters; перенос optimizer на CPU не освобождает физическую unified RAM Mac.</p>
+<table>
+<thead>
+<tr>
+<th>Модель / N для расчёта</th>
+<th>Только веса 16 / 32 bit, GB</th>
+<th>Full: 12N, GB</th>
+<th>Full: 16N, GB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya English, 421,293,827 параметров (+3 FP32 calibration scalars)</td>
+<td>0.843 / 1.685</td>
+<td>5.056</td>
+<td>6.741</td>
+</tr>
+<tr>
+<td>Laya multilingual, 321,908,995 (+3 scalars)</td>
+<td>0.644 / 1.288</td>
+<td>3.863</td>
+<td>5.151</td>
+</tr>
+<tr>
+<td>KEV-0.8B, text backbone ≈0.752B</td>
+<td>≈1.505 / 3.010</td>
+<td>≈9.03</td>
+<td>≈12.04</td>
+</tr>
+<tr>
+<td>KEV-4B, text backbone ≈4.206B</td>
+<td>≈8.412 / 16.823</td>
+<td>≈50.47</td>
+<td>≈67.29</td>
+</tr>
+</tbody>
+</table>
+<p>Laya counts взяты из <a href="https://huggingface.co/api/models/convaiinnovations/laya/revision/7b928d828b7b0e022f929d9bd2e44165aa270148">HF metadata English</a> / <a href="https://huggingface.co/api/models/convaiinnovations/laya-multilingual/revision/1720e3e3357cfe1e281542e223f8273b0890ca34">multilingual</a>.
+KEV N — <strong>расчётная оценка text architecture</strong>, не выполненный numel():
+embeddings + MLP + full-attention и DeltaNet projections по <a href="https://huggingface.co/Qwen/Qwen3.5-0.8B-Base/blob/dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68/config.json">конфигурациям</a>
+(<a href="https://huggingface.co/Qwen/Qwen3.5-4B-Base/blob/1001bb4d826a52d1f399e183466143f4da7b741b/config.json">4B</a>); согласуется с авторскими ≈1.5 / 8.4 GB BF16 weights.
+Округление и небольшой pointer head не меняют вывода. HF total whole-checkpoint
+0.873B / 4.660B включает другие компоненты базовой multimodal модели; нельзя
+молча считать всё это resident KEV backbone или использовать имя «4B» как точный N.
+При реальном smoke-test дополнительно фиксировать sum(numel), реально загруженные
+модули и peak загрузки, не только steady-state. Во время загрузки/merge возможны копии.</p>
+<h3 id="head-only-lora-и-full--не-взаимозаменяемые-режимы">Head-only, LoRA и full — не взаимозаменяемые режимы</h3>
+<table>
+<thead>
+<tr>
+<th>Режим</th>
+<th>Нижняя оценка состояния параметров</th>
+<th>Реальная поддержка / ограничения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya frozen encoder, FP32 head</td>
+<td>English ≈2.00 GB; multilingual ≈1.47 GB</td>
+<td><a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/laya/train.py">TrainConfig.freeze_encoder</a> и detach_encoder реализованы. «Голова» включает 2 transformer-слоя, примерно 26.51M / 14.97M параметров, не только последний linear. Это расчёт по <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/laya/common.py">common.py</a>.</td>
+</tr>
+<tr>
+<td>Laya LoRA</td>
+<td>Зависит от target modules и rank, отдельная оценка после выбора</td>
+<td>В проверенном штатном TrainConfig готового LoRA-рецепта не найдено. Не подменять им доступный head-only/full.</td>
+</tr>
+<tr>
+<td>KEV head-only, FP32 backbone</td>
+<td>≈3.02 / 16.84 GB для 0.8B / 4B</td>
+<td>Pointer head H=2(d×256+256): 0.525M / 1.311M. Нужен явно frozen backbone/adapter, no_grad или detached features; штатный --lora 0 не является head-only режимом (CLI требует positive rank).</td>
+</tr>
+<tr>
+<td>KEV LoRA+head, FP32 backbone</td>
+<td>≈3.20 / 17.38 GB</td>
+<td>A≈11.3M+0.525M / 33.8M+1.311M; BF16 frozen backbone дал бы ≈1.69 / 8.97 GB, но это <strong>не MPS default</strong>.</td>
+</tr>
+<tr>
+<td>KEV full FT</td>
+<td>См. 16N выше; плюс небольшая head</td>
+<td>Текущий <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/train.py">train.py</a> уже имеет --full_ft, MasterAdamW и FSDP2. Наличие функции не доказывает пригодность Mac; 4B не помещается даже без активаций.</td>
+</tr>
+</tbody>
+</table>
+<p>Head-only дешевле LoRA не только optimizer: frozen encoder можно считать без
+backward graph. При LoRA градиент проходит через основу к адаптерам, поэтому
+нельзя удалить все активации аргументом «основа заморожена». У KEV штатный
+MLX scoring не даёт end-to-end MLX autograd через Torch pointer head; перенос
+обучения туда — отдельная инженерная работа.</p>
+<h2 id="6-практические-диапазоны-для-планирования-не-измерения">6. Практические диапазоны для планирования, не измерения</h2>
+<p>Ниже — <strong>оценочные envelopes процесса</strong>, не дополнительные факты авторов.
+Условие: один процесс/модель, batch 1, один или немного вопросов, короткий
+вход 512–1024, без параллельных генеративных LLM. Для обучения — checkpointing,
+небольшой microbatch; gradient accumulation повышает effective batch, но не
+превращает большой физический batch в бесплатный. Длинные входы меняют диапазон.</p>
+<table>
+<thead>
+<tr>
+<th>Режим на M4 Pro 24 GB</th>
+<th>Плановый диапазон RAM процесса</th>
+<th>Оценка выполнимости</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya MPS inference, один checkpoint</td>
+<td>2–4 GB</td>
+<td>Хороший первый локальный кандидат. Не preload всей семьи без причины.</td>
+</tr>
+<tr>
+<td>KEV-0.8B MLX inference</td>
+<td>3–7 GB</td>
+<td>Реалистично; сверить footprint и cold load.</td>
+</tr>
+<tr>
+<td>KEV-4B MLX inference</td>
+<td>10–15 GB</td>
+<td>Реалистичный последовательный пилот; не одновременно с двумя тяжёлыми LLM.</td>
+</tr>
+<tr>
+<td>Laya head-only</td>
+<td>3–7 GB</td>
+<td>Вероятно локально; сначала сотня коротких примеров для peak/time.</td>
+</tr>
+<tr>
+<td>Laya full FT FP32</td>
+<td>8–16 GB</td>
+<td>По памяти возможно коротким microbatch 1; скорость неизвестна, 8k не входит в обещание.</td>
+</tr>
+<tr>
+<td>KEV-0.8B LoRA FP32/MPS</td>
+<td>6–14 GB</td>
+<td>Возможен малый пилот 384–1024 tokens; DeltaNet reference path может оказаться слишком медленным.</td>
+</tr>
+<tr>
+<td>KEV-4B LoRA FP32/MPS</td>
+<td>20–30+ GB</td>
+<td>Плохой план на 24 GB: мало/нет места ОС и активациям. Предпочтительнее NVIDIA.</td>
+</tr>
+<tr>
+<td>KEV-0.8B full FT</td>
+<td>16–24+ GB</td>
+<td>Только рискованный отдельный эксперимент; не рекомендуемый старт.</td>
+</tr>
+<tr>
+<td>KEV-4B full FT</td>
+<td>&gt;67 GB до активаций</td>
+<td>Не помещается на Mac 24 GB; вне первого пилота.</td>
+</tr>
+</tbody>
+</table>
+<p>Диапазоны опираются на arithmetic floor, код backend и авторские footprint,
+а не на проведённое измерение. В Mac 24 GB входят ОС, браузер, IDE, CPU/GPU
+allocators; практически оставлять хотя бы 4–6 GB запаса — плановое правило,
+не аппаратная константа. Swap не считать успешным fit для latency benchmark.
+Не обещать время обучения M4 масштабированием только по FLOPS H100.</p>
+<p>Для будущего smoke-test достаточно измерить cold load, warmed p50/p95,
+process footprint/MLX peak/MPS allocated+driver memory, memory pressure/swap,
+input tokens × questions, dtype, backend и явные fallback. Сначала 512–1024,
+затем 2k/4k/8k там, где это содержательно допустимо. Здесь такие запуски
+<strong>не выполнялись</strong>.</p>
+<h3 id="дополнительный-пк-с-gtx-1660">Дополнительный ПК с GTX 1660</h3>
+<p><strong>Уточнение инициатора 19.10.2026:</strong> дополнительно доступен ПК с GTX 1660,
+32 GB DDR4 и i7-9700KF. ОС, драйверы и рабочая CUDA-среда не проверены;
+удалённый доступ не установлен. Новые модельные замеры не выполнялись.</p>
+<p>По <a href="https://www.nvidia.com/en-us/geforce/graphics-cards/compare/">спецификации NVIDIA</a>
+обычная GTX 1660 имеет <strong>6 GB GDDR5</strong>, CUDA cores и не имеет Tensor Cores.
+32 GB системной RAM помогают с данными и CPU-задачами, но не превращаются
+в 32 GB видеопамяти. Для современных BF16-рецептов требуется проверка и смена
+режима: <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/mathematical-functions.html">аппаратный BF16 относится к compute capability 8.0+</a>.
+Наличие CUDA само по себе не гарантирует совместимости всех fused kernels.
+Аппаратные источники проверены 19.10.2026.</p>
+<p><strong>Предложение распределения работы, не измеренная производительность:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Роль</th>
+<th>Предпочтительный первый опыт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ПК</td>
+<td>Подготовка данных, BM25/логистическая регрессия, обучение небольшого MiniLM/SetFit или GLiClass Edge; независимые повторы и объёмы train</td>
+</tr>
+<tr>
+<td>Mac</td>
+<td>Основная разработка, пилот Laya head-only/full на коротком входе, применение KEV через MLX</td>
+</tr>
+<tr>
+<td>GTX 1660 после проверки памяти</td>
+<td>Laya head-only с коротким входом и microbatch 1; полный FT 421M не считать гарантированным на 6 GB</td>
+</tr>
+</tbody>
+</table>
+<p>KEV-0.8B LoRA/QLoRA на этой карте — отдельная проверка backend, памяти и
+скорости, а не основа первого плана. Обучение KEV-4B и тяжёлый rationale-RLCD
+по-прежнему не закладываются в локальный обязательный минимум.
+Скорость GTX 1660 относительно M4 Pro неизвестна: сравнивать один workload
+с зафиксированными dtype, длиной, batch и качеством результата.</p>
+<p>Машины позволяют параллельно выполнять <strong>разные прогоны</strong>, но их память
+не складывается в один общий GPU-пул. Полноценную серию адаптации компактных
+оценщиков можно планировать на этой паре; для генеративного агента и симулятора
+сохраняется отдельная проверка качества и ресурсов. Перед выбором основной
+машины измерить peak memory и время шага одного и того же короткого опыта.</p>
+<h2 id="7-граница-all-local-agent--user-simulator">7. Граница all-local agent + user simulator</h2>
+<p>Laya/KEV возвращают распределения, но не генерируют реплики пользователя,
+текстовые ответы или произвольные аргументы tools. Для полностью локальной
+серии нужны отдельно генеративный agent, user simulator, оркестратор,
+retrieval и оценка. Один и тот же сервер LLM может обслуживать роли
+последовательно с разными history, но надо проверить контекст, доступность
+нужного API и отсутствие смешения диалогов; общие веса не делают simulator
+эквивалентным эталонному.</p>
+<p>Арифметика как <strong>пример</strong>, не рекомендация непроверенного checkpoint:
+две отдельные 8B LLM в 4 bit — минимум 8 GB только packed weights,
+плюс quantization scales, KV caches, buffers. Вместе с KEV-4B BF16 это уже
+≈16.4 GB до ОС и runtime; такой одновременный набор на 24 GB рискован.
+Одна shared 8B 4-bit модель (≈4 GB raw weights), последовательные роли и
+Laya/KEV-0.8B оставляют больше запаса. При offload/reload учитывать wall time,
+а не исключать переключения из стоимости. Качество reasoning/tools и
+правдоподобие user simulator всё равно требуют отдельной валидации.</p>
+<p>Поэтому честный первый план — <strong>локальные decision models + независимо
+проверенный генеративный backend</strong>, затем отдельная all-local абляция.
+«Open-source через удалённый API», «локальный агент» и «весь стенд локально» —
+три разных условия; затраты симулятора и оценщика нельзя опускать.</p>
+<h2 id="8-объём-τ-bench-задачи-не-равны-обучающим-решениям">8. Объём τ-bench: задачи не равны обучающим решениям</h2>
+<p>При слове «τ-bench» необходимо выбрать версию. Для текущей проектной постановки
+сохраняем τ-knowledge в текстовом режиме, но отдельно показываем исходный
+τ-bench, где есть полезные обучающие задачи.</p>
+<table>
+<thead>
+<tr>
+<th>Версия / домен</th>
+<th style="text-align: right;">Train</th>
+<th style="text-align: right;">Dev</th>
+<th>Test / стандартный набор</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Исходный τ-bench: retail</td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">20</td>
+<td>test 115</td>
+</tr>
+<tr>
+<td>Исходный τ-bench: airline</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td>test 50</td>
+</tr>
+<tr>
+<td>Текущий τ³: retail</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">—</td>
+<td>test 40; base 114</td>
+</tr>
+<tr>
+<td>Текущий τ³: airline</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">—</td>
+<td>test 20; base 50</td>
+</tr>
+<tr>
+<td>Текущий τ³: telecom</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">—</td>
+<td>test 40; base 114; full 2285</td>
+</tr>
+<tr>
+<td>Текущий τ³: banking_knowledge</td>
+<td style="text-align: right;">Не задан</td>
+<td style="text-align: right;">Не задан</td>
+<td><strong>97 задач</strong>, официального train/test-разбиения нет</td>
+</tr>
+</tbody>
+</table>
+<p>Источники: <a href="https://github.com/sierra-research/tau-bench/tree/59a200c6d575d595120f1cb70fea53cef0632f6b/tau_bench/envs">исходный τ-bench @59a200c6</a>, <a href="https://github.com/sierra-research/tau2-bench/tree/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains">current domains @4ce7c039</a>,
+<a href="https://raw.githubusercontent.com/sierra-research/tau2-bench/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/airline/split_tasks.json">airline split</a>, <a href="https://raw.githubusercontent.com/sierra-research/tau2-bench/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/retail/split_tasks.json">retail split</a>,
+<a href="https://raw.githubusercontent.com/sierra-research/tau2-bench/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/telecom/split_tasks.json">telecom split</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/environment.py">banking loader</a>.
+Текущий commit 4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699 от 07.10.2026 — потомок
+прежнего проверенного в проекте 5bfa7e37. Исторический τ² v0.1.0 имел retail114,
+airline50, telecom114, но без нынешних train/test splits; версии не смешивать.
+Telecom full2285 не означает 2285 независимых банковских или обучающих задач.</p>
+<p>Текущие три домена дают <strong>178 native train задач</strong> и 100 native test задач.
+Четыре стандартных набора дают 375 задач, <strong>не готовую разметку отдельных решений</strong>.
+У banking есть <strong>698 документов</strong>; статья сообщает 194562 токена корпуса
+при cl100k_base, а не миллиарды токенов для предобучения.
+<a href="https://github.com/sierra-research/tau2-bench/tree/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/documents">Корпус</a>, <a href="https://arxiv.org/html/2603.04370v1">статья τ-knowledge v1</a>.
+BM25 для такого корпуса выполняется на CPU; отдельная GPU или distributed
+vector database ради этого объёма не нужны.</p>
+<h3 id="предлагаемый-собственный-decision-dataset">Предлагаемый собственный decision-dataset</h3>
+<p>Это <strong>плановый ориентир</strong>, не готовый upstream dataset и не доказанный минимум:</p>
+<table>
+<thead>
+<tr>
+<th>Часть</th>
+<th style="text-align: right;">Целевое число размеченных решений</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Пилот, прежде основной серии</td>
+<td style="text-align: right;">200–300</td>
+<td>Проверить рубрику, контекст, память и цену одного примера</td>
+</tr>
+<tr>
+<td>Train</td>
+<td style="text-align: right;">4000</td>
+<td>Адаптировать один компактный backbone/head</td>
+</tr>
+<tr>
+<td>Dev</td>
+<td style="text-align: right;">500</td>
+<td>Выбор конфигурации, temperature и кандидатных порогов</td>
+</tr>
+<tr>
+<td>Calibration/confirmation</td>
+<td style="text-align: right;">500</td>
+<td>Независимая проверка заранее выбранного рабочего порога</td>
+</tr>
+<tr>
+<td>Offline test</td>
+<td style="text-align: right;">Ориентир до 1000</td>
+<td>Оценка на состояниях из отложенных задач, без настройки</td>
+</tr>
+<tr>
+<td>Итого основная цель</td>
+<td style="text-align: right;">Около 6000</td>
+<td>Не 6000 независимых workflow</td>
+</tr>
+</tbody>
+</table>
+<p>Начинать с learning curve 250 → 500 → 1000 → 2000 → 4000 <strong>на train/dev</strong>:
+не размечать все 6000 заранее, если небольшой пилот выявит непригодный узел.
+Кривую сначала строить для одного дешёвого метода, не умножать весь grid на
+все объёмы. 4000 — небольшой domain adaptation, не обучение новой foundation model.
+При среднем компактном входе 512–1024 токена все 6000 записей дают примерно
+3–6 млн входных токенов; полные траектории хранятся отдельно.</p>
+<p>Одна запись решения: наблюдаемое состояние до действия, вопрос, варианты/
+кандидат действия, рубрика, метка и источник её обоснования. Пограничные случаи
+и недостаточность наблюдаемой информации не принуждать к уверенной binary gold.
+Native финальная награда, schema validity и единственная reference trajectory
+<strong>не являются</strong> разметкой семантической допустимости каждого шага.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/docs/evaluation.md">Оценивание upstream</a>.</p>
+<h3 id="откуда-получить-данные-не-испортив-test">Откуда получить данные, не испортив test</h3>
+<p><strong>Более дешёвый первый путь — явный transfer:</strong> использовать 178 native train
+задач текущего τ³ для train/dev/cal с группировкой до rollouts; все 97 banking
+задач оставить нашим финальным holdout. Это проверка переноса между доменами,
+не in-domain calibration банковского узла. Гарантию риска на banking из
+калибровки retail/airline/telecom не выводить.</p>
+<p><strong>Если нужна банковская адаптация:</strong> дополнительно создать train-only сценарии
+по публичным policy/KB с валидными initial states, user flows и reference
+checks. Генератор не получает инструкции/gold банковских test-задач.
+Нужны аудит решаемости и проверка near-duplicates. Общая база знаний допустима
+при заявленном обобщении на новые задачи, но это не unseen-knowledge experiment.
+Исходные 500 retail train можно использовать только как явно объявленный
+перенос с проверкой совместимости версий и пересечений, не выдавая за native
+train текущего τ³.</p>
+<p>При ограничении только имеющимися 97 banking-задачами придётся выделять
+собственные grouped train/dev/cal/test ID. Тогда финальный test существенно
+меньше 97 и статистическая мощность ниже. Получить одновременно большой
+независимый банковский train и полный untouched test только из этих 97 нельзя.</p>
+<p>Все повторы, состояния, отрицательные кандидаты и перефразировки исходной
+задачи идут в один split. При заявке на новые workflow делить также по семейству
+workflow; для обычного task-generalization явно раскрывать общие семейства.
+Разбиение строк случайным shuffle недопустимо. На offline test использовать
+одинаковый фиксированный пул состояний для всех моделей; full-agent on-policy
+траектории — другая, отдельная оценка.</p>
+<p><strong>1000 test-решений не гарантированы.</strong> Если 97 задач дают меньше пригодных
+узлов, публиковать фактическое число, не добирать искусственными test-копиями.
+Интервалы кластеризовать по исходной задаче/семейству, а не по строке. Для
+ориентира 97 независимых задач около 50% успеха дают обычную 95%-ю погрешность
+порядка ±10 п.п.; повторы не превращают их в тысячи независимых задач.</p>
+<h3 id="стоимость-создания-данных-в-человеческом-времени">Стоимость создания данных в человеческом времени</h3>
+<p>Если проверка одного решения занимает <strong>1–2 минуты</strong>, полный ручной просмотр
+6000 решений потребует <strong>100–200 человеко-часов</strong>. Это сценарная арифметика,
+не измеренная производительность; сложные policy cases и второй annotator
+увеличат время. Автоматические проверки preconditions и программно
+размеченные minimal pairs могут уменьшить работу, но экономию подтвердить
+пилотом. Teacher LLM не считается бесплатным и безошибочным разметчиком.
+В этой ВКР корректная разметка может быть труднее и дороже вычислений.</p>
+<h2 id="9-сколько-вычислений-потребуется-всей-серии">9. Сколько вычислений потребуется всей серии</h2>
+<h3 id="обучение-маленькой-модели">Обучение маленькой модели</h3>
+<p>Минимальная причинная серия: <strong>один Laya checkpoint</strong>, один и тот же набор
+обучаемых параметров, CE / прямой Brier / конкретный Gaussian-logit RLCD,
+3 training seeds, одинаковый calibration protocol. KEV-0.8B и KEV-4B — внешние
+reference models, их не обязательно тоже дообучать. Сравнение готовых Laya
+и KEV само по себе не изолирует RL от архитектуры и обучающих данных.</p>
+<p>Для 4000 train decisions, 3 epochs, 3 методов × 3 seeds:</p>
+<ul>
+<li>9 основных запусков, 12000 предъявлений примеров на запуск;</li>
+<li>108000 предъявлений в серии, без tuning/validation;</li>
+<li>при effective batch16 — около 750 optimizer steps на запуск, если одна
+  запись означает одну training decision и last batch обработан обычным образом.</li>
+</ul>
+<p>Скорость пока неизвестна. <strong>Чувствительность расчёта</strong>, не прогноз M4 Pro:</p>
+<table>
+<thead>
+<tr>
+<th>Измеренная end-to-end training скорость</th>
+<th style="text-align: right;">Один run</th>
+<th style="text-align: right;">Все 9 runs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 example/s</td>
+<td style="text-align: right;">3 ч 20 мин</td>
+<td style="text-align: right;">30 ч</td>
+</tr>
+<tr>
+<td>5 examples/s</td>
+<td style="text-align: right;">40 мин</td>
+<td style="text-align: right;">6 ч</td>
+</tr>
+<tr>
+<td>20 examples/s</td>
+<td style="text-align: right;">10 мин</td>
+<td style="text-align: right;">1.5 ч</td>
+</tr>
+</tbody>
+</table>
+<p>Validation, checkpoint IO и прогрев добавляются. Если скорость ниже 1 example/s,
+время соответственно больше. Tokens, batch, trainable layers и loss должны
+входить в измеряемую скорость. Noise group=4 в Laya не означает автоматически
+четыре полных encoder forward. Learning curves и debugging — дополнительные
+серии, для которых нужен отдельный лимит, не «бесплатный tuning».</p>
+<h3 id="полные-агентные-диалоги">Полные агентные диалоги</h3>
+<p>Число эпизодов оценки: <strong>N_tasks × N_configurations × N_trials</strong>.</p>
+<ul>
+<li>Малый smoke-test: 10–20 <strong>не тестовых</strong> задач, 1–2 повтора, 1–2 конфигурации.</li>
+<li>Основной пример: <strong>97 × 4 × 3 = 1164 полных диалога</strong>.</li>
+<li>Четыре повтора вместо трёх: 1552 диалога.</li>
+<li>Checkpoints разных training seeds — дополнительные конфигурации. Если все
+  четыре условия проверять в трёх training seeds, верхний простой расчёт
+  станет 3492 диалога; не дублировать неизменный baseline ради формального числа.</li>
+</ul>
+<p>Сначала сравнить все методы offline, затем перенести 3–4 заранее выбранные
+конфигурации в full-agent. Не выбирать seed по test; допустим заранее заданный
+seed для основной агентной серии с честной оговоркой и offline-разбросом всех seeds.</p>
+<table>
+<thead>
+<tr>
+<th>Измеренное среднее wall time полного эпизода</th>
+<th style="text-align: right;">1164 последовательных эпизода</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 минута</td>
+<td style="text-align: right;">19.4 часа</td>
+</tr>
+<tr>
+<td>3 минуты</td>
+<td style="text-align: right;">58.2 часа</td>
+</tr>
+<tr>
+<td>10 минут</td>
+<td style="text-align: right;">194 часа</td>
+</tr>
+</tbody>
+</table>
+<p>Это <strong>арифметические сценарии</strong>, не опубликованные скорости M4 Pro. Уже поэтому
+«модель помещается» не равно «вся серия закончится за вечер». Полное wall time
+включает агента, симулятор, tools, scorer, retries и evaluator; в научных метриках
+отдельно показывать latency самого агента.</p>
+<p>Обучающие данные требуют дополнительных диалогов. При q пригодных уникальных
+размеченных узлах на эпизод: E_collect ≈ ceil(5000/q) для train+dev+cal.
+Например q=3/5/10 означает примерно 1667/1000/500 эпизодов. Это условие расчёта;
+реальное q измерить на пилоте, не принять число всех turns за число usable labels.
+Программные minimal pairs можно создавать без нового полного диалога, но они
+не добавляют независимых сценариев. Во всех бюджетах учитывать discarded runs.</p>
+<h3 id="цена-api-и-аренды">Цена API и аренды</h3>
+<p>Open-source weights не означают бесплатный inference. Для внешнего хостинга:</p>
+<p>$$
+C_{API}=\sum_{r\in{agent,user,judge,teacher}}
+\left(\frac{T_{in,r}P_{in,r}+T_{out,r}P_{out,r}}{10^6}\right).
+$$</p>
+<p>Пример только для понимания масштаба: 20 суммарных agent/user вызовов за эпизод,
+по 4000 входных и 150 выходных токенов, на 1164 эпизода дают <strong>93.12 млн input</strong>
+и <strong>3.492 млн output tokens</strong>. Это не наблюдаемый workload. Цена получается
+только после выбора модели/провайдера/тарифа, cache policy и измерения токенов.
+Сбор train, teacher labels, повторы и judge сюда автоматически не включены.</p>
+<p>GPU-лимит проекта 30000 ₽ разумно оставить на <strong>одну выбранную модель и короткие
+серии</strong>, не тратить на воспроизведение обучения всех KEV. При условном тарифе
+r ₽/ч доступно 30000/r часов до хранения и прочих сборов. Например r=500 даёт
+60 часов — это арифметический пример, <strong>не проверенный текущий рыночный тариф</strong>.
+API-лимит отдельно ещё не установлен; его нельзя считать включённым в GPU-лимит.
+Для Laya/малой LoRA первый класс аренды — 16–24 GB с пилотом памяти, для KEV-4B
+короткой LoRA — класс 48 GB с пилотом; авторские 47.7 GB ≈44.5 GiB,
+а фактически доступный запас зависит от карты, allocator и конфигурации.</p>
+<h3 id="если-всё-таки-воспроизводить-именно-openjev">Если всё-таки воспроизводить именно OpenJev</h3>
+<p>Это отдельная reasoning-ветка на Qwen3-1.7B, <strong>не обучение Laya/KEV тем же кодом</strong>.
+Автор сообщает 48 GB GPU и 1–1.5 часа на 400-step run плюс evaluation.
+<a href="https://github.com/ZimmyGao/openjev-rlcd/blob/22db40ad3333f5cf0bc5139097da70e0f8c05018/README.md">Закреплённый OpenJev README</a>. Для stage1, readout-continuation и stage2
+в трёх seeds получится 9 таких стадий, то есть 9–13.5 часов только если
+сохраняются авторские hardware/workload. Наши длинные agent states, дополнительные
+контроли и rollout/evaluation могут радикально изменить цифру. На Mac 24 GB
+точное full-weight воспроизведение исходного рецепта не планировать.
+QLoRA/MLX-порт — другой инженерный эксперимент, не бесплатный способ объявить
+репликацию выполнимой. Если центральный вопрос именно о rationale-RL стадии,
+эту GPU-ветку нельзя молча заменить Gaussian-logit RLCD и сохранить тот же claim.</p>
+<h2 id="10-можно-ли-обойтись-одним-mac-три-сценария">10. Можно ли обойтись одним Mac: три сценария</h2>
+<table>
+<thead>
+<tr>
+<th>Сценарий</th>
+<th>Что локально</th>
+<th>Что остаётся вне Mac</th>
+<th>Вывод</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Узкий all-local</td>
+<td>τ-среда/BM25, один scorer Laya или KEV-0.8B, calibration, Laya head-only; один небольшой quantized генеративный backend последовательно на роли</td>
+<td>Ничего, если проверены tools/context и fidelity симулятора/judge</td>
+<td>Технически реалистичный пилот, не подтверждённая готовая конфигурация; полные серии могут идти днями</td>
+</tr>
+<tr>
+<td>Рекомендуемый гибрид</td>
+<td>Весь исследовательский код, данные, decision models, метрики и короткое обучение</td>
+<td>Хостинг выбранных открытых agent/user LLM; GPU только при медленном/непомещающемся training</td>
+<td>Наиболее надёжный путь к ВКР без покупки нового компьютера</td>
+</tr>
+<tr>
+<td>Точное reasoning-RLCD / тяжёлое дообучение</td>
+<td>Разработка, подготовка, анализ</td>
+<td>NVIDIA GPU для OpenJev и тяжёлых KEV training recipes</td>
+<td>Одного M4 Pro24GB недостаточно для исходной полной программы</td>
+</tr>
+</tbody>
+</table>
+<p>В all-local нужен <strong>генеративный</strong> backend с корректным tool calling, не Laya
+в роли чат-модели. Небольшой 4–8B quantized checkpoint — класс для пилота,
+не выбранная и доказанно достаточная модель. Один сервер может последовательно
+обслуживать agent/user с разными независимыми history. Это экономит веса,
+но не отменяет KV/prefill, увеличивает wall time и может давать коррелированные
+ошибки ролей. Не держать Laya, KEV0.8, KEV4 и несколько LLM в памяти одновременно.
+Во время full fine-tuning выключить генеративные серверы.</p>
+<p>Для local baseline явно выбрать <strong>BM25</strong>. Upstream default alltools включает
+embeddings API/shell, а некоторые reranker-конфигурации — внешние API.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/knowledge/README.md">Retrieval configs</a>. Пользователь в τ-bench — LLM-симулятор с
+инструментами, а не статическая заготовка текста. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/user/user_simulator.py">Код симулятора</a>.
+Banking: 87 задач reward DB, 9 ACTION, 1 DB+NL_ASSERTION; нельзя убрать последнюю
+из теста ради объявления «вообще без judge». Открытый judge backend выбирать
+штатной конфигурацией и фиксировать одинаковым для сравниваемых агентов;
+не менять критерии или код evaluator. Диагностические nonempty NL assertions
+зависят также от выбранного evaluation type. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/docs/evaluation.md">Оценивание</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/evaluator/evaluator.py">evaluator</a>.</p>
+<p>Upstream модельные defaults не обязаны быть открытыми; их нельзя молча оставить
+и назвать серию open-source. Фиксировать открытые agent, user, judge и их
+лицензии/revisions. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/config.py">Defaults</a>. Замена simulator/evaluator LLM —
+изменение протокола: результаты не являются точной репликацией leaderboard.</p>
+<h3 id="диск-и-ежедневная-эксплуатация">Диск и ежедневная эксплуатация</h3>
+<p>Планировать <strong>50 GB свободного SSD для пилота, около 100 GB для основной работы</strong>:
+выбранные веса, HF cache, virtual environments, checkpoint exports и traces.
+Это резерв, не измеренный размер. Сам компактный decision-dataset — обычно
+порядок десятков/сотен MB в зависимости от сохранения контекста; сырой JSONL
+с повторяющимися длинными prompts легко становится больше. Периодические full
+optimizer checkpoints способны потребовать дополнительные десятки GB.
+Оставлять только нужные контрольные точки по заранее заданному retention policy,
+хранить hash/manifest; не коммитить веса и сырые большие выгрузки.</p>
+<h2 id="11-какие-структурные-элементы-будут-созданы">11. Какие структурные элементы будут созданы</h2>
+<p>Не новая foundation model и не собственный аналог всего τ-bench. Нужны следующие
+<strong>научные и программные артефакты</strong>; сейчас это проектируемые элементы, кода ещё нет.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Что создаём сами</th>
+<th>Что переиспользуем</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Постановка и protocol manifest</td>
+<td>Target события, гипотезы, splits, риск/качество, лимиты, seeds, hashes</td>
+<td>Проектную методику, определения native metrics</td>
+</tr>
+<tr>
+<td>2. Dataset решений</td>
+<td>Извлечение состояний, provenance, каталоги действий, рубрика приемлемых next steps/неоднозначностей, аннотации и grouped splits</td>
+<td>Native tasks, KB/policies; train-only генераторы только при необходимости</td>
+</tr>
+<tr>
+<td>3. State builder</td>
+<td>Явный компактный вход узла; учёт потерянных фактов и context overflow</td>
+<td>Траекторию upstream и уже доступные policy/retrieval результаты</td>
+</tr>
+<tr>
+<td>4. Адаптер агента</td>
+<td>Один заменяемый selector следующей операции через HalfDuplexAgent</td>
+<td>Runner, среду, инструменты, симулятор и native evaluator τ-bench</td>
+</tr>
+<tr>
+<td>5. Унифицированные scorers</td>
+<td>Адаптеры Laya/KEV/дешёвого контроля; raw probabilities, dtype/backend и ошибки</td>
+<td>Готовые checkpoints и runtime, без переписывания нейросетей</td>
+</tr>
+<tr>
+<td>6. Calibration и fallback</td>
+<td>Калибровка определённого события, fixed fallback, цена неверного выбора и ошибки делегата</td>
+<td>Существующие математические методы, не новый фреймворк</td>
+</tr>
+<tr>
+<td>7. Training recipes</td>
+<td>Один backbone/head, сопоставимые CE/Brier/выбранный RLCD, seeds и checkpoints</td>
+<td>Laya MPS trainer / KEV LoRA при отдельной гипотезе</td>
+</tr>
+<tr>
+<td>8. Журнал всех вызовов</td>
+<td>JSONL traces: token/time/cost/memory, retries/fallback, task/run/model IDs</td>
+<td>Native messages, дополненные расходами внутренних узлов</td>
+</tr>
+<tr>
+<td>9. Два уровня evaluator</td>
+<td>Offline Brier/NLL/AURC/рабочие пороги и paired full-agent comparison</td>
+<td>Native DB/ACTION/NL success, без изменения gold</td>
+</tr>
+<tr>
+<td>10. Воспроизводимый отчёт</td>
+<td>CLI/config для серий, таблицы/графики, интервалы, ошибки, model/dataset cards</td>
+<td>Простые Python-команды и wiki проекта</td>
+</tr>
+</tbody>
+</table>
+<p>Минимальный runtime flow:</p>
+<pre><code class="language-text">Native τ-runner + user simulator
+          ↓
+Наблюдаемая история + доступные правила + каталог известных операций
+          ↓
+Фиксированный state builder
+          ↓
+Сменный scorer: правило / Laya / KEV
+          ↓
+Выбор ID операции + calibration/fallback выбора
+          ↓
+Фиксированный generator args/реплики, исходный scaffold и tools τ-bench
+          ↓
+Native evaluator + наш журнал узлов/стоимости/времени
+</code></pre>
+<p>Fallback и generator зафиксировать одинаково для сравниваемых selectors.
+Native LLM выбирает имя и аргументы одним вызовом; выбор имени маленькой
+моделью не устраняет автоматически генерацию аргументов. Нужны native joint
+baseline и факторизованная LLM со сменным selector, плюс дешёвый контроль.
+Экономию оценивать относительно обоих; эффект новой факторизации не приписывать
+способу обучения. Полный протокол — в <a href="../action-selection-review/">проверке action selection</a>.</p>
+<p>State builder важен из-за окна Laya: нельзя скрытно обрезать policy до 320 токенов,
+а потом сравнить с KEV, которому дали весь диалог. Основная причинная серия
+использует одинаковую наблюдаемую информацию и token budget; длинный режим —
+отдельная абляция. Потерянная информация и стоимость её получения фиксируются.
+Для KEV адаптер использует распределения, а не считает нормированное
+choice.confidence готовой оценкой вероятности корректности.</p>
+<p>Не нужны для первой ВКР: новый web-интерфейс, Kubernetes, distributed vector DB,
+свой пользовательский симулятор, собственный движок benchmark, обучение всех
+размеров KEV, multi-agent swarm. Простейший воспроизводимый пакет/CLI достаточен.
+Общие компоненты и личный вклад учитывать по <a href="../team/">правилам команды</a>.</p>
+<h2 id="12-рекомендуемая-конфигурация-и-точки-принятия-решений">12. Рекомендуемая конфигурация и точки принятия решений</h2>
+<ol>
+<li><strong>Один selector следующей операции</strong>, один основной текстовый τ-knowledge домен;
+   retail/native train — отладка и явно объявленный источник transfer.</li>
+<li><strong>Одна Laya для причинного training-сравнения</strong>; начать с frozen encoder,
+   затем короткий full FT, если это нужно гипотезе. Для русского/длинного входа
+   выбрать соответствующий checkpoint явно, не надеяться на auto-routing.</li>
+<li><strong>KEV4B и Laya multilingual для routing-пилота</strong>; KEV0.8 — дешёвый/отрицательный
+   reference, его card прямо не рекомендует tool-call routing. Для Laya English
+   и typed нужен явно compact input; policy-only уже превышает их default окно.</li>
+<li><strong>Один простой контроль</strong>: правила или frozen embeddings + logistic regression.</li>
+<li><strong>200–300 размеченных pilot decisions</strong>, затем target около 6000 только если
+   learning curve, разметка и вопрос оправдывают такой объём.</li>
+<li>На Mac — development, последовательное scoring, calibration и Laya training
+   smoke-test. Удалённый open-weight agent/user — практичный основной вариант,
+   all-local — отдельная абляция после проверки simulator fidelity.</li>
+<li>В full-agent переносить 3–4 условия; на 97 задачах с 3 trials это 873–1164
+   эпизода, плюс сбор данных. Дорогую learning curve всех моделей не обещать.</li>
+<li>До платной серии провести 50–100 training steps и 10–20 non-test задач:
+   измерить peak/cold load, usable decisions per episode, token/time/cost каждого
+   участника. Если прогноз превышает лимит или память уходит в swap — сокращать
+   scope либо выбирать подходящую GPU, не делать test тюнинговой площадкой.</li>
+</ol>
+<p><strong>Итог:</strong> новый компьютер для разумно ограниченной ВКР не требуется. Полностью
+на одном M4 Pro24GB можно пробовать компактный вариант с Laya и небольшими
+локальными генеративными моделями, но не обещать заранее качество симулятора,
+срок полной серии и репликацию OpenJev. Наиболее устойчивый план — Mac как
+основная машина, отдельный ограниченный GPU/API-резерв и переход к нему только
+по замерам. Главный риск — корректный dataset и протокол, а не место для KB.</p>
+<h2 id="13-уточнение-что-именно-означает-validated-8192-у-kev-4b">13. Уточнение: что именно означает validated 8192 у KEV-4B</h2>
+<p><strong>Проверено 11.10.2026 по pinned card <code>6cfce5c2</code> и коду <code>2ecafc49</code>; не наш модельный прогон.</strong>
+Изначально это проверка достаточности входа для предлагаемого сравнения RLCD
+с CE/Brier. После уточнения личной темы она остаётся ресурсной проверкой общего
+узла, а не решением выбрать RLCD или новую context/action architecture.</p>
+<ul>
+<li><strong>8192 — номинальный бюджет полной строки одного вопроса, не 8192 токена
+  состояния плюс вопрос.</strong> В longdoc-v1 бакет 8k задаёт state <strong>6553–7618</strong>
+  токенов (80–93% номинала; включая state delimiter) и <code>row_limit=8192</code>.
+  Генератор <code>admit</code> проверяет <code>len(state)+max(len(question_branch)) &lt;= T</code>;
+  branch содержит инструкции, <strong>все варианты данного вопроса</strong> и служебные
+  маркеры. Несколько вопросов — отдельные строки с общим state, не сумма всех
+  вопросов в одном 8k окне. <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/scripts/build_longdoc_v1.py#L295-L308">Генератор</a>,
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/evals/longdoc-v1/manifest.json#L834-L850">manifest</a>,
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/model.py#L87-L127">encode/rows_of</a>.</li>
+<li><strong>1024 не скрытый лимит longdoc-eval.</strong> Это default <code>MAX_BRANCH</code> низкоуровневого
+  encoder (в действительности лимит state+branch). Генератор передаёт явные
+  <code>max_state=65536, max_branch=73728, strict=True</code>, затем отдельно проверяет
+  бюджет бакета. Benchmark берёт context из manifest; LocalPredictor передаёт
+  его в encode через kwargs и проверяет packed limit <strong>139264</strong>. Поэтому
+  runtime admission 64k/72k, ограничение конкретного 8k бакета и default 1024 —
+  разные величины; runtime-допуск не доказательство качества.
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/benchmark.py#L196-L207">Benchmark</a>,
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/predictors.py#L108-L139">predictor</a>.</li>
+<li><strong>7552 — не текущий CLI default обучения.</strong> В pinned коде defaults:
+  state=384, row=<code>MAX_BRANCH=1024</code>, packed=2048;
+  <code>training_context(S)</code> прибавляет <code>S−384</code> к row и packed.
+  При явно выбранном <strong>S=7552</strong> получаются <strong>row=8192, packed=9216</strong>:
+  при максимальном state остаётся <strong>640</strong> токенов на вопрос+варианты+маркеры,
+  не 8192 дополнительных. 7552 сохранён как <code>MAX_TRAIN_STATE_8K</code> и назван
+  карточкой максимальным state релизного обучения; текущий код разрешает
+  поднять training state до 65536, что не переобучает выпущенные веса.
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/model.py#L12-L38">Константы и формула</a>,
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/train.py#L411-L414">CLI default</a>.</li>
+<li><strong>Document budgets тоже не равны полному 8192-token state.</strong> CFPB
+  documents-v1 отбирает long narratives по <strong>4000–28000 символов</strong> (приблизительно
+  1k–7k токенов), не по 8k токенам; его freezer сохраняет исторический
+  <code>SERVING_CONTEXT_8K</code>: state≤8192 <strong>и row≤8192</strong>. В longdoc генерации длина
+  измеряется pinned tokenizer Qwen3.8-27B; это нужно отличать от собственного
+  точного подсчёта входа токенизатором KEV-4B.
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/scripts/build_documents_v1.py">CFPB builder</a>,
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/scripts/freeze_documents_v1.py">freezer</a>,
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/suite.py#L21-L31">контексты</a>,
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/scripts/build_longdoc_v1.py#L44-L50">longdoc tokenizer</a>.</li>
+<li><strong>Что валидировано:</strong> по <a href="https://huggingface.co/jaredpalmer/kev-4b/blob/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/README.md">карточке</a> — longdoc-v1 <strong>development</strong>, CUAD
+  вопросы о контрактах; 8k: 453 вопроса, accuracy 0.837, ECE 0.048.
+  Заранее заданное правило расширения требует полного покрытия и нижней
+  границы 95% CI парной разницы accuracy против 8k ≥−3 п.п. во всех
+  промежуточных бакетах. Для 16k: −1.1 [−3.4; +1.2] п.п., поэтому правило
+  возвращает базовые 8192. Это <strong>не гарантия качества любого входа до 8192</strong>,
+  не τ-bench и не доказательство переноса на action selection.
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/scripts/longdoc_report.py#L91-L107">Правило</a>.</li>
+<li><strong>Авторские tests подтверждают смысл, не качество на нашей задаче:</strong>
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/tests/test_research.py#L942-L958">test_research</a> проверяет совместный рост
+  row/packed budgets, <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/tests/test_research.py#L1000-L1018">тест validated_context</a>
+  — возврат 8192 при провале 16k и разрыв цепочки допусков;
+  <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/tests/test_longdoc_v1.py">test_longdoc_v1</a> — labels/window/depth/manifest,
+  причём с <strong>имитацией токенов по символам</strong>, без весов и токенизатора.
+  Здесь эти tests прочитаны, не исполнялись.</li>
+</ul>
+<p><strong>Узкий вывод:</strong> отсутствие summarization/нового retrieval не опровергнуто
+самим лимитом модели. Достаточность требует фактических token counts
+фиксированного полного state и каждой строки <code>state+question+options+markers</code>
+(не только policy или диалога), затем проверки качества на целевых данных.
+Даже попадание в 8192 устраняет лишь превышение бюджета, а не гарантирует
+полезность/калибровку. Архитектуру и информацию на входе надо удерживать
+одинаковыми в RLCD/CE/Brier; решение менять их из этой проверки не следует.</p>
+<h2 id="14-хватает-ли-8192-без-сжатия-реальные-банковские-истории">14. Хватает ли 8192 без сжатия: реальные банковские истории</h2>
+<p><strong>Собственное измерение 11.10.2026; без inference, весов и платных API.</strong>
+Взяты опубликованные <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/web/leaderboard/public/submissions/gpt-5-4_sierra_2026-03-25/submission.json">траектории Sierra GPT-5.4 xhigh / GPT-5.2</a>
+для banking_knowledge, AllTools, standard scaffold. <a href="https://sierra-tau-bench-public.s3.us-west-2.amazonaws.com/submissions/gpt-5-4_sierra_2026-03-25/trajectories/gpt-5.4_xhigh_banking_knowledge_gpt-5.2_4trials.json">Официальный S3 artifact</a>,
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/web/leaderboard/public/submissions/README.md">описание размещения</a>.</p>
+<h3 id="объект-и-метод">Объект и метод</h3>
+<ul>
+<li>Из файла 232042897 bytes (ETag 5ff17c044793e7472446e9bc9f1b3ffb-28)
+  прочитан HTTP Range bytes=0-19999999, ровно 20 MB, только в память.</li>
+<li>Извлечены <strong>52 полные траектории / 38 уникальных задач / 703 момента
+  выбора сообщения</strong>. Следующий неполный JSON-объект исключён. Это неслучайный
+  префикс файла, <strong>не оценка частоты переполнения всего benchmark</strong>; trials зависимы.</li>
+<li>Artifact содержит commit 1ba0913b59351dd87fcdd04008280c6c4cfb71f2, seed300,
+  num_trials4, max_steps200. Это не текущий checkout4ce7c039. Его policy взята
+  из artifact; старый SHA исходников не разрешился по проверенному raw URL,
+  поэтому точные внутренние backend-запросы исходного прогона не восстановлены.</li>
+<li>Оставлены assistant, user без tool_calls, tool только requestor=assistant.
+  Исключены 52 user tool-call сообщения и 54 результата user tools —
+  в соответствии с <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/agent/base_agent.py#L38-L44">контрактом видимости</a>.
+  Hidden task goals, DB/evaluation, raw_data/reasoning/usage не включены.
+  Начальное scripted greeting не считается модельным решением.</li>
+<li>Перед каждым последующим assistant-сообщением токенизирована полная видимая
+  история: compact JSON с role/content, tool-call names/args/IDs. Это <strong>явная
+  несокращённая сериализация, не native chat template и не полный KEV request</strong>.
+  Policy, tool definitions, question/options и markers в history counts отсутствуют.</li>
+<li>tokenizers0.22.1; Qwen3.5-4B-Base tokenizer pinned1001bb4d826a52d1f399e183466143f4da7b741b;
+  special tokens не добавлялись, padding/truncation отключены. Квантили linear
+  interpolation по (n−1)p. Родитель независимо повторил скрипт — результаты совпали.</li>
+</ul>
+<h3 id="результаты-токены-kev-tokenizer">Результаты: токены KEV tokenizer</h3>
+<table>
+<thead>
+<tr>
+<th>Величина</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">Минимум</th>
+<th style="text-align: right;">Медиана</th>
+<th style="text-align: right;">p90</th>
+<th style="text-align: right;">Максимум</th>
+<th style="text-align: right;">Больше8192</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>История перед каждым выбором</td>
+<td style="text-align: right;">703</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">55209</td>
+<td style="text-align: right;">103165.4</td>
+<td style="text-align: right;">158042</td>
+<td style="text-align: right;">618/703, 87.91%</td>
+</tr>
+<tr>
+<td>Максимум истории перед выбором в каждой траектории</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">17588</td>
+<td style="text-align: right;">70818.5</td>
+<td style="text-align: right;">122803.2</td>
+<td style="text-align: right;">158042</td>
+<td style="text-align: right;">52/52</td>
+</tr>
+<tr>
+<td>Только content перед последним выбором, без JSON/имён/args/IDs</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">15335</td>
+<td style="text-align: right;">67974.5</td>
+<td style="text-align: right;">118041.5</td>
+<td style="text-align: right;">151120</td>
+<td style="text-align: right;">52/52</td>
+</tr>
+<tr>
+<td>Самый длинный отдельный ответ инструмента в каждой траектории</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">4026</td>
+<td style="text-align: right;">34526</td>
+<td style="text-align: right;">39737.3</td>
+<td style="text-align: right;">48852</td>
+<td style="text-align: right;">41/52</td>
+</tr>
+</tbody>
+</table>
+<p>Policy artifact добавляет ещё <strong>1677 токенов</strong>, tool_defs=null. Моменты с
+history≤8192 не объявляются помещающимися: остальные части входа ещё отсутствуют.
+Content-only контроль показывает, что переполнение не вызвано JSON-обёрткой.</p>
+<p><strong>Вывод:</strong> полное несжатое состояние этого официального banking AllTools
+workload в8192 не помещается. Все52 траектории доходят до переполнения, часто
+уже один ответ инструмента превышает8k. Это не проверка качества KEV, не
+репрезентативная benchmark-wide статистика и не универсальное утверждение
+о любых агентах/доменах. <strong>BM25-only, retail и airline здесь не измерялись</strong>;
+нельзя переносить на них87.91% или обещать, что они помещаются.</p>
+<h3 id="воспроизведение-и-границы-личной-адаптационной-темы">Воспроизведение и границы личной адаптационной темы</h3>
+<p>Измерение воспроизводится следующей командой из корня нашего проекта.
+Она загружает только заданный Range и tokenizer в память, проверяет
+SHA256/число полных объектов и печатает агрегаты. Сырые данные и веса
+не сохраняются в Git.</p>
+<pre><code class="language-sh">python3 scripts/measure_tau_history_context.py
+</code></pre>
+<p>SHA256 Range: 4d7f30616a6c158079d1569e8213fbad20518d7725284af197d1383459ebe993.
+SHA256 tokenizer: fe000e3ed39ed12b8d2481d527d44f93c65d37e87645d2dcc80d1bf9d50d2927.</p>
+<p><strong>Последнее уточнение инициатора 11.10.2026:</strong> личное направление — адаптация
+модели; RLCD против обучения без RL остаётся возможным уточнением после общей
+схемы. <a href="../research/#согласованные-направления-трёх-исследований">Согласованные направления</a>.
+Измерение длины не превращает его ВКР в работу о compression/retrieval.
+Практические варианты — зафиксировать вход общего командного scaffold либо
+явно ограниченную задачу решений, чей полный вход помещается. Выбор пока
+не согласован; отбор по длине надо объявлять и показывать coverage, не выдавая
+поднабор за полный benchmark. τ-knowledge остаётся основным стендом.</p>
+<p>Поднять runtime limit можно без новой архитектуры, но64k admission не равно
+validated quality; в измеренных историях встречается и больше64k. Input
+contract и overflow rule одинаковы для сравниваемых способов обучения. Это
+условие честного сравнения, а не личная новизна вместо исследования адаптации.</p>
+<h2 id="источники-и-границы-проверки">Источники и границы проверки</h2>
+<p>Использованы только первичные HF model cards/metadata, исходный код GitHub
+и существующая постановка проекта. Поиск намеренно ограничен названными
+моделями; отсутствие найденного M4 Pro benchmark не доказывает, что его нет
+нигде. Изменившиеся runtime и карточки не переписывают автоматически
+исторические сведения в других документах. Наличие кода MPS/head-only/full FT
+отмечено как новое относительно прежнего обзора. Данные τ-bench пересчитаны
+по полным JSON/AST и Git tree без усечения; большие ответы web_fetch, обрезанные
+по 100000 символов, не использовались как полный census. Полные ответы прочитаны
+по HTTP в памяти, без установки/исполнения upstream. Математические расчёты
+бюджета — сценарные; M4 Pro runtime и деньги здесь не измерялись.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

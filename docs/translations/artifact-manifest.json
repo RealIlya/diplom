@@ -1,0 +1,71 @@
+{
+  "record_id": "paper-translations-20261025-v1",
+  "date": "2026-10-25",
+  "python": "3.13.5",
+  "lxml": "6.1.3.0",
+  "pandoc": "3.8.3",
+  "artifacts": [
+    {
+      "path": "docs/translations/README.md",
+      "bytes": 9437,
+      "sha256": "1e39188c91da0af66201e44ab3f955e95ae189d2a02c0173623086aa02703ae1"
+    },
+    {
+      "path": "docs/translations/openjev-rlcd-ru.md",
+      "bytes": 75748,
+      "sha256": "8be9c0e4adff511ff68165e74d74e8b17196e65bd1fd1d96dc2a2d177d53b624"
+    },
+    {
+      "path": "docs/translations/openjev-rlcd-ru.html",
+      "bytes": 408815,
+      "sha256": "3de5b5c342b0fb77f2aa3894ba395876cdc655da39b76587716ba418400d23b8"
+    },
+    {
+      "path": "docs/translations/sbert2s1-ru.md",
+      "bytes": 176720,
+      "sha256": "44ff3bc1321e76ea5e93689d44c2bac98f51c1a11ffeb7e3a5f608764371f435"
+    },
+    {
+      "path": "docs/translations/sbert2s1-ru.html",
+      "bytes": 1212130,
+      "sha256": "b5d23ac285b2e2e9bf4a1c769e7d1f65c219359030d09d052d99872f3158de35"
+    },
+    {
+      "path": "docs/translations/reading.css",
+      "bytes": 2330,
+      "sha256": "631059f651101f328f9950da136a246c977e8d9886dd5e94b78e349d95449060"
+    },
+    {
+      "path": "docs/translations/translation-record.md",
+      "bytes": 15686,
+      "sha256": "7d8a4d8b8c0eff087c3bf4fba78fb992983a3f38bb43dfe3d60801ad83c9a6e0"
+    },
+    {
+      "path": "docs/translations/source-manifest.json",
+      "bytes": 6326,
+      "sha256": "7aa2c593c06264419329557439ea3954929c47e00cb6eab35a1c82ccde02e7f7"
+    },
+    {
+      "path": "docs/translations/verification.json",
+      "bytes": 1460,
+      "sha256": "4d058c5f835ced6651b7429424ace7e60df52b1a5bf4e80509f3b6851975c97c"
+    }
+  ],
+  "maintenance": {
+    "date": "2026-11-02",
+    "base_commit": "4f3229b",
+    "changes": "Механическое оформление Markdown для CI; текст, числа, формулы и HTML-версии статей сохранены.",
+    "changed_artifacts": [
+      {
+        "path": "docs/translations/openjev-rlcd-ru.md",
+        "previous_sha256": "85eedba3b90b704ebde083b9ead9b222db885e2a917b6cb22f068a2704f37790",
+        "sha256": "8be9c0e4adff511ff68165e74d74e8b17196e65bd1fd1d96dc2a2d177d53b624"
+      },
+      {
+        "path": "docs/translations/sbert2s1-ru.md",
+        "previous_sha256": "331e8c1ef4a182c69cbbd39f51bd1c5bd5b5521c943dd9059aa21e9c97901b84",
+        "sha256": "44ff3bc1321e76ea5e93689d44c2bac98f51c1a11ffeb7e3a5f608764371f435"
+      }
+    ]
+  }
+}

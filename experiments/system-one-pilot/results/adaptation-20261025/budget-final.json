@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-26T03:30:58.918579+00:00",
+  "status": "all18planned attempts recorded; no missing; final HTTP429 retained, no retry",
+  "series": {
+    "collection": {
+      "calls": 945,
+      "known_actual_usd": 0.33010878,
+      "charged_or_held_usd": 0.39989898,
+      "unresolved": 0,
+      "accounted_unknown_actual_calls": 5,
+      "cap_usd": 1
+    },
+    "annotation": {
+      "calls": 321,
+      "known_actual_usd": 0.264627506,
+      "charged_or_held_usd": 0.287930706,
+      "unresolved": 0,
+      "accounted_unknown_actual_calls": 3,
+      "cap_usd": 0.5
+    }
+  },
+  "known_actual_usd_total": 0.5947362860000001,
+  "charged_or_held_usd_total": 0.6878296859999999,
+  "new_shared_data_known_usd": 0.266093242,
+  "new_shared_data_charged_or_held_usd": 0.313513742,
+  "local_training_api_usd": 0,
+  "gpu_rental_rub": 0,
+  "local_energy_or_machine_amortization_usd": null,
+  "note": "Usage sums from durable ledger, not a provider invoice; unknown actual costs remain unknown and bounded, never imputed zero. Caps include prior series and did not reset at midnight."
+}

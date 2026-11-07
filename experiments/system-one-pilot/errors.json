@@ -1,0 +1,82 @@
+{
+  "errors": [
+    {
+      "id": "network-dns-sandbox",
+      "stage": "acquisition",
+      "error": "curl exit6: Could not resolve host huggingface.co",
+      "resolution": "Public downloads succeeded outside sandbox; no paid service."
+    },
+    {
+      "id": "archive-timeout",
+      "stage": "acquisition",
+      "error": "curl exit28 after90003ms,19024010/20000000 bytes",
+      "resolution": "Preserved prefix part; fetched bytes19024010-19999999 separately; combined20000000 bytes matched pinned SHA."
+    },
+    {
+      "id": "split-tool-name",
+      "stage": "prepare",
+      "error": "97 tasks collapsed into1family because action.name was treated as a customer entity",
+      "artifact": "manifests/split.json",
+      "resolution": "Regression test shared_tool_name_is_not_shared_entity; parse only reference action.arguments; invalid split unused for labels/inference."
+    },
+    {
+      "id": "split-ancestry",
+      "stage": "prepare",
+      "error": "Manual audit found cash-back template descendants split across intermediate groups",
+      "artifact": "manifests-v2/split.json",
+      "resolution": "Merged before labels/model inference; final manifests-v3. Technical admission examined on retired train/dev; do not claim pristine blind test."
+    },
+    {
+      "id": "candidate-title",
+      "stage": "preprocessing",
+      "error": "Early archive rows omitted visible document title from model input",
+      "artifact": "artifacts/system-one-pilot/replay-v2",
+      "resolution": "New replay-v3 explicitly includes title; annotations and both model runs use only v3."
+    },
+    {
+      "id": "tokenizer-compatibility",
+      "stage": "load",
+      "error": "AttributeError: list object has no attribute keys (extra_special_tokens)",
+      "resolution": "Pinned Laya upstream _fix_tokenizer_config; original config preserved; actual raw/derived hashes saved."
+    },
+    {
+      "id": "source-task-bundle-404",
+      "stage": "source-audit",
+      "error": "HTTP404 at raw.githubusercontent.com/sierra-research/tau2-bench/1ba0913b59351dd87fcdd04008280c6c4cfb71f2/data/tau2/domains/banking_knowledge/tasks.json",
+      "resolution": "No task equivalence claim; source bundle needed or collect fresh pinned observations."
+    },
+    {
+      "id": "source-git-tree-422",
+      "stage": "source-audit",
+      "error": "HTTP422 Invalid object requested. SHA must identify a commit or a tree.",
+      "url": "https://api.github.com/repos/sierra-research/tau2-bench/git/trees/1ba0913b59351dd87fcdd04008280c6c4cfb71f2?recursive=1",
+      "resolution": "Preserved JSON response; underlying commit may be in another fork; unverified."
+    },
+    {
+      "id": "annotation-null",
+      "stage": "code-review",
+      "error": "Pending null annotation could be converted to negative target",
+      "resolution": "Regression test and strict final-label validation; annotations-v1 contained no null; existing results unaffected."
+    },
+    {
+      "id": "runtime-source-hash",
+      "stage": "code-review",
+      "error": "First run recorded claimed Laya revision without hashes of imported runtime files",
+      "resolution": "ce-v2 stores actual Laya source hashes/import location and verifies checkpoint manifest; originalce-v1 retained."
+    },
+    {
+      "id": "partial-tool-batch",
+      "stage": "boundary-review",
+      "error": "Explicit snapshot call could accept an unfinished tool result batch",
+      "resolution": "Fail-closed pending-call validation with regression test; archived snapshots were taken only before native assistant calls."
+    },
+    {
+      "id": "presentation-test-preexisting",
+      "stage": "full-suite",
+      "error": "test_all_stored_presentations_are_complete_packages expects only advisor-presentation.pptx; pre-existing untracked research-talk-15min-2026-10-11.pptx creates a second deck",
+      "resolution": "Not modified or deleted; independent existing work. Targeted pilot tests pass; full suite failure reported."
+    }
+  ],
+  "new_paid_attempts": 0,
+  "failed_rows_preserved": "All783 rows have admission status; overflow not scored; no inference/CE failures in the two completed diagnostic runs."
+}

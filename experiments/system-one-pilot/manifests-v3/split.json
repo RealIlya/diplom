@@ -1,0 +1,1111 @@
+{
+  "version": 1,
+  "seed": 20261019,
+  "algorithm": "entity/template/5gram-components-largest-deficit",
+  "counts": {
+    "train": 57,
+    "dev": 20,
+    "test": 20
+  },
+  "groups": 29,
+  "tasks": {
+    "task_004": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_005": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_017": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_018": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_019": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_020": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_021": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_022": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_026": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_027": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_028": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_029": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_031": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_036": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_037": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_038": {
+      "split": "train",
+      "family": "family-3c6f4469343f"
+    },
+    "task_023": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_043": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_044": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_045": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_046": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_047": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_048": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_049": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_050": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_054": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_055": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_070": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_071": {
+      "split": "dev",
+      "family": "family-44e874b4d182"
+    },
+    "task_072": {
+      "split": "test",
+      "family": "family-def672d81de1"
+    },
+    "task_073": {
+      "split": "test",
+      "family": "family-def672d81de1"
+    },
+    "task_074": {
+      "split": "test",
+      "family": "family-def672d81de1"
+    },
+    "task_077": {
+      "split": "test",
+      "family": "family-def672d81de1"
+    },
+    "task_078": {
+      "split": "test",
+      "family": "family-def672d81de1"
+    },
+    "task_079": {
+      "split": "test",
+      "family": "family-def672d81de1"
+    },
+    "task_080": {
+      "split": "test",
+      "family": "family-def672d81de1"
+    },
+    "task_081": {
+      "split": "test",
+      "family": "family-def672d81de1"
+    },
+    "task_057": {
+      "split": "train",
+      "family": "family-1e5193f94dab"
+    },
+    "task_058": {
+      "split": "train",
+      "family": "family-1e5193f94dab"
+    },
+    "task_059": {
+      "split": "train",
+      "family": "family-1e5193f94dab"
+    },
+    "task_063": {
+      "split": "train",
+      "family": "family-1e5193f94dab"
+    },
+    "task_064": {
+      "split": "train",
+      "family": "family-1e5193f94dab"
+    },
+    "task_087": {
+      "split": "train",
+      "family": "family-1e5193f94dab"
+    },
+    "task_001": {
+      "split": "train",
+      "family": "family-55bbb8b02f4c"
+    },
+    "task_002": {
+      "split": "train",
+      "family": "family-55bbb8b02f4c"
+    },
+    "task_003": {
+      "split": "train",
+      "family": "family-55bbb8b02f4c"
+    },
+    "task_006": {
+      "split": "train",
+      "family": "family-55bbb8b02f4c"
+    },
+    "task_007": {
+      "split": "train",
+      "family": "family-55bbb8b02f4c"
+    },
+    "task_008": {
+      "split": "train",
+      "family": "family-55bbb8b02f4c"
+    },
+    "task_098": {
+      "split": "test",
+      "family": "family-6bc4c8d152e2"
+    },
+    "task_099": {
+      "split": "test",
+      "family": "family-6bc4c8d152e2"
+    },
+    "task_100": {
+      "split": "test",
+      "family": "family-6bc4c8d152e2"
+    },
+    "task_101": {
+      "split": "test",
+      "family": "family-6bc4c8d152e2"
+    },
+    "task_102": {
+      "split": "test",
+      "family": "family-6bc4c8d152e2"
+    },
+    "task_065": {
+      "split": "train",
+      "family": "family-d5f5698d5bf2"
+    },
+    "task_066": {
+      "split": "train",
+      "family": "family-d5f5698d5bf2"
+    },
+    "task_067": {
+      "split": "train",
+      "family": "family-d5f5698d5bf2"
+    },
+    "task_068": {
+      "split": "train",
+      "family": "family-d5f5698d5bf2"
+    },
+    "task_069": {
+      "split": "train",
+      "family": "family-d5f5698d5bf2"
+    },
+    "task_082": {
+      "split": "train",
+      "family": "family-6417604463bc"
+    },
+    "task_083": {
+      "split": "train",
+      "family": "family-6417604463bc"
+    },
+    "task_084": {
+      "split": "train",
+      "family": "family-6417604463bc"
+    },
+    "task_085": {
+      "split": "train",
+      "family": "family-6417604463bc"
+    },
+    "task_086": {
+      "split": "train",
+      "family": "family-6417604463bc"
+    },
+    "task_093": {
+      "split": "train",
+      "family": "family-6e4302e654a1"
+    },
+    "task_094": {
+      "split": "train",
+      "family": "family-6e4302e654a1"
+    },
+    "task_095": {
+      "split": "train",
+      "family": "family-6e4302e654a1"
+    },
+    "task_096": {
+      "split": "train",
+      "family": "family-6e4302e654a1"
+    },
+    "task_097": {
+      "split": "train",
+      "family": "family-6e4302e654a1"
+    },
+    "task_039": {
+      "split": "dev",
+      "family": "family-90a89cee1a76"
+    },
+    "task_040": {
+      "split": "dev",
+      "family": "family-90a89cee1a76"
+    },
+    "task_041": {
+      "split": "dev",
+      "family": "family-90a89cee1a76"
+    },
+    "task_090": {
+      "split": "test",
+      "family": "family-d80eb0b6845f"
+    },
+    "task_091": {
+      "split": "test",
+      "family": "family-d80eb0b6845f"
+    },
+    "task_092": {
+      "split": "test",
+      "family": "family-d80eb0b6845f"
+    },
+    "task_051": {
+      "split": "train",
+      "family": "family-613b0b87acce"
+    },
+    "task_052": {
+      "split": "train",
+      "family": "family-613b0b87acce"
+    },
+    "task_075": {
+      "split": "train",
+      "family": "family-dc005fe2e7d8"
+    },
+    "task_076": {
+      "split": "train",
+      "family": "family-dc005fe2e7d8"
+    },
+    "task_024": {
+      "split": "train",
+      "family": "family-b2e6ce02f564"
+    },
+    "task_025": {
+      "split": "train",
+      "family": "family-b2e6ce02f564"
+    },
+    "task_060": {
+      "split": "dev",
+      "family": "family-c2d90ea66829"
+    },
+    "task_061": {
+      "split": "dev",
+      "family": "family-c2d90ea66829"
+    },
+    "task_053": {
+      "split": "test",
+      "family": "family-4ebc53484a2d"
+    },
+    "task_032": {
+      "split": "train",
+      "family": "family-d8eeaa1fe929"
+    },
+    "task_033": {
+      "split": "train",
+      "family": "family-fbde50414600"
+    },
+    "task_056": {
+      "split": "test",
+      "family": "family-d59dc14add96"
+    },
+    "task_012": {
+      "split": "train",
+      "family": "family-4b27d1b6add2"
+    },
+    "task_010": {
+      "split": "train",
+      "family": "family-4f614cfb5683"
+    },
+    "task_014": {
+      "split": "train",
+      "family": "family-89b782e765e6"
+    },
+    "task_088": {
+      "split": "dev",
+      "family": "family-ad9ff2b9f2e2"
+    },
+    "task_089": {
+      "split": "test",
+      "family": "family-6193ccb1b250"
+    },
+    "task_015": {
+      "split": "train",
+      "family": "family-dd704b148d2b"
+    },
+    "task_062": {
+      "split": "train",
+      "family": "family-5f106c4a0d02"
+    },
+    "task_016": {
+      "split": "train",
+      "family": "family-ab2bce7aa21d"
+    },
+    "task_035": {
+      "split": "dev",
+      "family": "family-a5653f1a5f2c"
+    },
+    "task_034": {
+      "split": "test",
+      "family": "family-d9654fa5271e"
+    }
+  },
+  "edges": [
+    {
+      "a": "task_001",
+      "b": "task_002",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_002",
+      "b": "task_003",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_003",
+      "b": "task_006",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_006",
+      "b": "task_007",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_007",
+      "b": "task_008",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_004",
+      "b": "task_005",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_039",
+      "b": "task_040",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_040",
+      "b": "task_041",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_043",
+      "b": "task_044",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_044",
+      "b": "task_045",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_045",
+      "b": "task_046",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_046",
+      "b": "task_047",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_047",
+      "b": "task_048",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_048",
+      "b": "task_049",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_051",
+      "b": "task_052",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_058",
+      "b": "task_059",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_059",
+      "b": "task_063",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_063",
+      "b": "task_064",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_060",
+      "b": "task_061",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_065",
+      "b": "task_066",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_066",
+      "b": "task_067",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_067",
+      "b": "task_068",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_068",
+      "b": "task_069",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_070",
+      "b": "task_071",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_072",
+      "b": "task_073",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_073",
+      "b": "task_074",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_075",
+      "b": "task_076",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_077",
+      "b": "task_078",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_078",
+      "b": "task_079",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_079",
+      "b": "task_080",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_080",
+      "b": "task_081",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_082",
+      "b": "task_083",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_083",
+      "b": "task_084",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_084",
+      "b": "task_085",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_085",
+      "b": "task_086",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_090",
+      "b": "task_091",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_091",
+      "b": "task_092",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_093",
+      "b": "task_094",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_094",
+      "b": "task_095",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_095",
+      "b": "task_096",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_096",
+      "b": "task_097",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_098",
+      "b": "task_099",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_099",
+      "b": "task_100",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_100",
+      "b": "task_101",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_101",
+      "b": "task_102",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_017",
+      "b": "task_018",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_018",
+      "b": "task_019",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_019",
+      "b": "task_020",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_020",
+      "b": "task_021",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_021",
+      "b": "task_022",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_022",
+      "b": "task_026",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_026",
+      "b": "task_027",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_027",
+      "b": "task_028",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_028",
+      "b": "task_029",
+      "reason": "reviewed template/ancestry"
+    },
+    {
+      "a": "task_005",
+      "b": "task_017",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_018",
+      "b": "task_028",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_018",
+      "b": "task_029",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_018",
+      "b": "task_031",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_018",
+      "b": "task_036",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_018",
+      "b": "task_037",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_018",
+      "b": "task_038",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_019",
+      "b": "task_020",
+      "reason": "scenario 5-gram Jaccard 0.7289 >= 0.55"
+    },
+    {
+      "a": "task_020",
+      "b": "task_026",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_020",
+      "b": "task_027",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_023",
+      "b": "task_043",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_023",
+      "b": "task_045",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_023",
+      "b": "task_046",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_023",
+      "b": "task_055",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_023",
+      "b": "task_070",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_024",
+      "b": "task_025",
+      "reason": "scenario 5-gram Jaccard 0.6561 >= 0.55"
+    },
+    {
+      "a": "task_026",
+      "b": "task_027",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_028",
+      "b": "task_029",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_028",
+      "b": "task_031",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_028",
+      "b": "task_036",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_028",
+      "b": "task_037",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_028",
+      "b": "task_038",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_029",
+      "b": "task_031",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_029",
+      "b": "task_036",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_029",
+      "b": "task_037",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_029",
+      "b": "task_038",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_031",
+      "b": "task_036",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_031",
+      "b": "task_037",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_031",
+      "b": "task_038",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_036",
+      "b": "task_037",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_036",
+      "b": "task_038",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_037",
+      "b": "task_038",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_039",
+      "b": "task_040",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_043",
+      "b": "task_045",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_043",
+      "b": "task_046",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_043",
+      "b": "task_055",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_043",
+      "b": "task_070",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_044",
+      "b": "task_050",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_044",
+      "b": "task_054",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_045",
+      "b": "task_046",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_045",
+      "b": "task_055",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_045",
+      "b": "task_070",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_046",
+      "b": "task_055",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_046",
+      "b": "task_070",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_050",
+      "b": "task_054",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_051",
+      "b": "task_052",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_055",
+      "b": "task_070",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_057",
+      "b": "task_059",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_057",
+      "b": "task_087",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_058",
+      "b": "task_063",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_060",
+      "b": "task_061",
+      "reason": "scenario 5-gram Jaccard 0.7083 >= 0.55"
+    },
+    {
+      "a": "task_065",
+      "b": "task_066",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_065",
+      "b": "task_067",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_065",
+      "b": "task_068",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_065",
+      "b": "task_069",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_066",
+      "b": "task_067",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_066",
+      "b": "task_068",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_066",
+      "b": "task_069",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_067",
+      "b": "task_068",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_067",
+      "b": "task_069",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_068",
+      "b": "task_069",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_072",
+      "b": "task_073",
+      "reason": "scenario 5-gram Jaccard 0.6552 >= 0.55"
+    },
+    {
+      "a": "task_072",
+      "b": "task_074",
+      "reason": "scenario 5-gram Jaccard 0.6392 >= 0.55"
+    },
+    {
+      "a": "task_072",
+      "b": "task_077",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_073",
+      "b": "task_074",
+      "reason": "scenario 5-gram Jaccard 0.6974 >= 0.55"
+    },
+    {
+      "a": "task_080",
+      "b": "task_081",
+      "reason": "shared concrete reference entity"
+    },
+    {
+      "a": "task_101",
+      "b": "task_102",
+      "reason": "shared concrete reference entity"
+    }
+  ],
+  "task_hashes": {
+    "task_001": "421aa3044b02c1167fd72be9a538b737d6ac0eda93b54da9d6bfb3f9a806dd1a",
+    "task_002": "5964481f90897f01cb212a132b12f9a0bd56eb09e806ae68b3282c9084f732db",
+    "task_003": "f7d2efd274ef804b356dbc39c1fb65612cd32a0a553eca15936de6ebafb04459",
+    "task_004": "12f8117cdcca256641e5cd06797c128e5f2e3cbba28404323a030dafda27ba4d",
+    "task_005": "bc88352d49b79b40b594907b449fa3a86440ede9d9e2419247967effeb19be85",
+    "task_006": "1237a51c13f478e963c4e5eb705fe6c112aa1d3cf202157a4387dd17f019f6c8",
+    "task_007": "ffd84e31b9c68d5f132357724c813c415f74865fd357320e85500c0bb426dace",
+    "task_008": "d4e367f0381ab0f64f03afb9236660c4a65f2e36064d24bff322e4443af70124",
+    "task_010": "110d98f8378e24eff3dd9bcdf455f3ca77fa92c331bfecb699b33cfc80634c88",
+    "task_012": "9f8b3e8d3c1b109d595b58d36fa6ef88ff1be4c0ef3479888c7a11c4f67eaef5",
+    "task_014": "7e7be29eda6aad35cad08aa0f27cb6ee569666f7fe8a6fc1e6cbcdf52fb86593",
+    "task_015": "70f413d06e1d52da094ae036f08fba6c8ae88425b948caac83607abfe4fc6c4f",
+    "task_016": "437df8d713b7b9a4550fe855bf8c8501d5977df09069afe69dcd88991e3ef658",
+    "task_017": "20704293f31baca95746dd0b85e2b45cb72c3187d380dbbd798e7f07bcb31d8d",
+    "task_018": "53fb2467d310f57073afa8c15669efe46949029ae02f467236da1b0ff5161d35",
+    "task_019": "78dd30a80bc18dbc3b770b5c4127ecaee975254d5ee2ff0c611b953af74282e6",
+    "task_020": "92ab819c52869f35e0fca188cce2050f6220e6710a1c3fd6e6472c847906af77",
+    "task_021": "8c37f4aa625701a7255f30e9d3fbafdf2b9e0743a819338f25b25a087a1351ab",
+    "task_022": "190f507fb1f92e1af98b763ded457f0910075948efd97d80ee9825fea56c62b2",
+    "task_023": "7dc6f061bf4a332b956b12629becf1653b47dc135ce7bda47ce5fc0634cbcbf3",
+    "task_024": "e6a3d02cf7f36efc57ef4ed36147b6eea85b6816da0cf01275d3db18340152fd",
+    "task_025": "457c5abd1083f5ffb5224aa4a59ec842b068fea850a7383f7f55315fa7bd9b85",
+    "task_026": "619d8c971175a9c710a3c873d0910ea97818f1513fecd140a376de305389be0d",
+    "task_027": "3e35bf36c5c9452dd8570d5c698b248df7ab9c9b5f44e49fdf2b8856f5a08d65",
+    "task_028": "a28d70b119db61e4f265c7fab741c97c8d31108318de89fdfd478ed08bbbf46d",
+    "task_029": "9dbcdf5ee2e1e6dbc5b2376106319f567e78b1be225cc3649043fd27509fe8cf",
+    "task_031": "3bc82ada95311ca32b3b116aad39ad01ac5503c983295ce683923ac367f1772a",
+    "task_032": "c8d5f7257464f0a6ce8069342f508753409d10c28dc4df2610c07706aed4f129",
+    "task_033": "570361e6318a2c12e908428b1aa547cbcc580af6617991f762c56eca9d563150",
+    "task_034": "da18e17251744cfdd5f81c7906ef027caf331378c7db4787afbddd7f96f36d9d",
+    "task_035": "8a1351c86cbdc778b586cab4a25fc9eccbf965818189181d389865ac97a4d2d4",
+    "task_036": "b145e01682b1dd746c813284b4b6e99c87d85cf6af465107ddb292c267950eff",
+    "task_037": "3cd7e5af06912ae75b553c3556bb5144082607766fd56f3199a9369917bb5736",
+    "task_038": "c85f93b558ca889855d5d03bad28c300c97274cc8a2e28a9d84028e59129cf16",
+    "task_039": "49f6306f9f598fb738a18a1ae96c0d1818ce713825df4dbb37843c89a8bb3578",
+    "task_040": "fcef2ae5588850030e1c976a7752e303efc2eb72ab80ac016fcaa0971ad5e71d",
+    "task_041": "6580e2f75d0b38289743e3453170dd3cf6c032dc88fec758442c315572eeeb64",
+    "task_043": "5d35957c5af8ec9ec89a6bc5bca1583fbce56000bc171c06762ce1bbe3b277c6",
+    "task_044": "6e37b20db915fbab284c17268b59dc8b31e4a6812b210388433e54ba47ea2ca9",
+    "task_045": "3f1f004d55123f5cafd957ba6f89284606546c94205a28e2db5a044e47c80723",
+    "task_046": "9790455ee4df926bf7c80437154fc3d55a6b047db29f19cc43d35d28721e5cfe",
+    "task_047": "c1737e9bf7483bd5a0c0bc7234631ea9223f7c19b70b65299ae917f40247486e",
+    "task_048": "98671d361398dc59b4ef105ae7e99b6f1d23d30e54cb7a908291f4a7f3174213",
+    "task_049": "5de5a41539c8f6405b322155c27ea0f73d6062dcacb26b9d0aa5ada955e9af7f",
+    "task_050": "26348a32751bee9d4478b6838ce2e316e1879705f1af2cd8954da599cc616f1d",
+    "task_051": "0721b1014b394f6e9b76f87512da11203c9fd8fdff648a9b5a3d32f0f62cb2a4",
+    "task_052": "0a479328139fd0fc17dc635234e9de556d428cde51f70db2c2576aa62f9ba292",
+    "task_053": "90081101308c602d41c1654b079ce54b2654ae659ae69e74646222db217eb67e",
+    "task_054": "acbe3639614cfad1719961a7d001c4d2adf1fa8e96bbbf722c8cac733d4cf01f",
+    "task_055": "c5a145344e59717458eb5e32ffd605783527ab398fced30272dac7e79bfda122",
+    "task_056": "053785873767bb8cc854a46008312eb486888425a7437734a67334c3f0f81a58",
+    "task_057": "af4ca79206c6a1df8ca7106f9a0be00a0f3fe7f14e3b94f0dad701e192909759",
+    "task_058": "407a89cfa67ba7bd1aa64e6df7ee1c1bfa7170538f1b67ef0c0ba705c62fc4f3",
+    "task_059": "b0e38e4f9ddb4eaf4e969d55785f59d2bdf9b28ebad5ad8716d6f731dc2bcd6d",
+    "task_060": "8f55bfe391cdaaa02c11c269509f388e21e77a08e3b026cde8f8b28a2f992e3c",
+    "task_061": "0d1d28311a0940dcdc0bd34710c10f734187e270fed730d4a542a6afcda949e9",
+    "task_062": "af6227edb4678569eb658b143b1418343ce3ca5f58baaf15f35824f7c8adfcaa",
+    "task_063": "e319762aae3fab3fe27f9314f8d6bb81aa0f6712804fb7a2f8e070b369df9eaf",
+    "task_064": "1151850a1b83396a76e6799f76840d42e811a3a559da60ef8896ab8af48e94ac",
+    "task_065": "164e3eaaef466852addb5c4b93ed43ec312fc30a5f9f9f5317cfccddba0458ad",
+    "task_066": "f46efa7f4d8d51f9119029255a2e701c68ec1e1405159a148020bfd66e58bca8",
+    "task_067": "691dd59f7ce16b50189b0aff60bf4692e0b850d89bf3b5ba61bba376cdaf6c38",
+    "task_068": "465b34e07681fed83c6e6e81eb2f9a7493f40328ebcf9816a78135d1d1757c7a",
+    "task_069": "eeb53eb067fb847f50a8b62044b420b48d526dc506dd0e102e1da16801506999",
+    "task_070": "6f1d13aa13e02fc480bbd0b2c4ec876f533182c89a86b1ebf81e6c709e3d573d",
+    "task_071": "4225a07eb17ed1e40d1279c679ea83969e51628006ea00e503d4a081ac86cf67",
+    "task_072": "133a45d7e81f4ffd0bc2e63f40ad0cea3be049b18171a86a5997afcd7e2dcf24",
+    "task_073": "466bfef7a1b5ee9e41995fd2e79882120cc0f9676c474fcac0a1939b8352f66e",
+    "task_074": "b36338181307e45ce04fbc221b36375b5333b7382b9d06d89485ba94a4c0ac49",
+    "task_075": "bbde712e9301b6f01d323d17ad82e35de5e303684da8356ffb86777fbcde4dad",
+    "task_076": "539ba9609bd1c3ae1f7b2f58f043137faa8cffccf2592e762cf51e4f0ace8827",
+    "task_077": "786fc0defa764bc269f57c6549c1e0e86913e951eb018607c9ac26b9b54b6bc0",
+    "task_078": "357d95aa99a8cf372db65464b8c04a039e2912f222e3ad9db44b4d93feb2d4ba",
+    "task_079": "74f9350c203f3987ab55ad83f6c7ee930b13bf48a1df5e78fb49a79c6b963640",
+    "task_080": "4a2fe3e277d8191a7215836a04294c23a36bd4871a8d55e902f703325e0c29af",
+    "task_081": "e9b0b7a3c16afad63ae48d629fa459043fb9c7b83de8317db6d5fee4a5261b44",
+    "task_082": "735a479b351f8eb87b1dfb2f85d39165c0539ef2147e56d160f8f510d9382db0",
+    "task_083": "dd37975734624d67f81e8cb77bc9858791057b95db5578eb88abc5ea3f273c46",
+    "task_084": "8da549893706866b2f893514f0eb4d7b9c923656faa6c4ce737bfc849ecf3e16",
+    "task_085": "6d5813dc2a60c0becb6221fd2cdc7684f52266098c99b96eedd00710c58428bb",
+    "task_086": "ef181aec01e55853535ebeac68617de116e41df8f87cd6c792fb936ed8574388",
+    "task_087": "3a60d38cdb49347e8b8ab713366629ffb9141a2d8bd8508322eb9659f66f21f8",
+    "task_088": "f328e18bbafdf3e4a9cea206f0492ac1b22f89865b50f642e34a77d7dcb850a6",
+    "task_089": "77b9d8fcc683665724edc557f912adfaafa0ee425323a21d97347f5cd5ccf18b",
+    "task_090": "ca706611eb829da93349a9cc754808eb7d4727af5708c274918c3ed8aed8c151",
+    "task_091": "6ff14cff1f170f8692d2c58b6f40fafc6d5f23fbd768a8fd374f425d7924e326",
+    "task_092": "9ef68fbfcfed54e8ac6acf9726fc4cfce6feea0b9f872ba1821581a7e6e7b1b6",
+    "task_093": "a65c18fa309a25d1274be580095665c5baf4bee36f632f72141131c5e0270159",
+    "task_094": "40a430007f59b09ecd40db48add6233da46c04c888208447589416922dfef622",
+    "task_095": "f34594c6e1702fe253bf0068a662a5394a7a1602546a48ec5cd29c1f901b3520",
+    "task_096": "85fba2cb0ffcd2ee0740f4b3f6fcc269ab567b94d0ca5bbece737560ee7cb68e",
+    "task_097": "faa96241d8c5e9d194e8eee9762582f8ba9af0441128d91d6a988f930d8152a0",
+    "task_098": "b75e2619a8041415d56d302fd99ff20b8438635824fd2742be47fde44d38c143",
+    "task_099": "55bdda9501138183f3b21e0a8866df7d2c4fbc4746dc51c057780077767e11e1",
+    "task_100": "e7a874632af5bd5e36fa13f47f437cbdec67361fdd8fe033e64b049ebc0c2195",
+    "task_101": "d1b144682caf815a02c03fba1f57c1141d0b617a7272dad4c1c9c89fdc9bd4b4",
+    "task_102": "1ec266d18993d50f47f1a605873ddefbaf9d203e5b214dc1255a8c10a43cf9a6"
+  },
+  "created_at": "2026-10-19T12:37:32.630824+00:00",
+  "config_sha256": "a0fc0cd9341cf6c2bddd46d75999f08f50518a14ef6ac939d213abab8bbbbb2d",
+  "warning": "Conservative automated + agent template audit; no independent human audit. Public tasks previously inspected in project; not pristine blind test.",
+  "manifest_sha256": "12a93dc6e823f67e8469f72f3a1546f4bfa87f23097fdf7f6cac589dc0a00fb5"
+}

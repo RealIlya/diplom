@@ -1,0 +1,75 @@
+...........................2026-11-02 18:08:56.012 | ERROR    | tau2.utils.llm_utils:generate:417 - persistent series budget exhausted before HTTP
+2026-11-02 18:08:56.013 | WARNING  | tau2.orchestrator.orchestrator:run:287 - Simulation loop exited with an exception — running emergency cleanup
+{"budget":{"charged_or_held_usd":0.9,"limit_usd":1,"unresolved":0},"messages":1,"status":"failed","task":"task_007"}
+.......................{"budget":{"actual_usd":0.001,"calls":1,"charged_or_held_usd":0.001,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0},"model":"deepseek","row":"a","status":"valid"}
+{"budget":{"actual_usd":0.002,"calls":2,"charged_or_held_usd":0.002,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0},"model":"qwen","row":"a","status":"valid"}
+........./Users/nikitapasinin/Documents/ChatGPT/diplom/scripts/system_one_pilot/grouped.py:22: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d06b010>
+  if not logits or any(len(z)!=2 or not all(math.isfinite(float(x)) for x in z) for z in logits):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/nikitapasinin/Documents/ChatGPT/diplom/scripts/system_one_pilot/grouped.py:22: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1097cd990>
+  if not logits or any(len(z)!=2 or not all(math.isfinite(float(x)) for x in z) for z in logits):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+................................../Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1097cd990>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d8310>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d89a0>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d86d0>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d8a90>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d87c0>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d8b80>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x10def45e0>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d9030>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d8d60>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d9210>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d8f40>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d94e0>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/pydantic/main.py:240: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x12d6d95d0>
+  def __init__(self, /, **data: Any) -> None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+{"actual_usd":0.002,"calls":2,"charged_or_held_usd":0.002,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0}
+{"call":"test-only/000/simulator","provider":"DeepSeek","usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only/001/agent","provider":"DeepSeek","usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only/002/agent","provider":"DeepSeek","usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only/003/simulator","provider":"DeepSeek","usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+...{"call":"test-only-judge-0/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+{"call":"test-only-judge-1/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+{"call":"test-only-judge-2/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+{"call":"test-only-judge-3/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+.{"call":"test-only-online/000/judge","provider":null,"usage":{"completion_tokens":5,"cost":1e-05,"prompt_tokens":10}}
+.{"call":"test-only-projection/000/simulator","provider":null,"usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only-projection/001/agent","provider":null,"usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only-projection/002/agent","provider":null,"usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+{"call":"test-only-projection/003/simulator","provider":null,"usage":{"completion_tokens":20,"cost":0.0001,"prompt_tokens":100}}
+.2026-11-02 18:08:58.694 | ERROR    | tau2.utils.llm_utils:generate:417 - persistent series budget exhausted before HTTP
+2026-11-02 18:08:58.694 | WARNING  | tau2.orchestrator.orchestrator:run:287 - Simulation loop exited with an exception — running emergency cleanup
+{"arm":"native","budget":{"charged_or_held_usd":0.9,"unresolved":0},"elapsed_seconds":0.0017174589993373957,"episode_id":"online-adaptation-v1/native/task_035","error_type":"BudgetError","finished_at":"2026-11-02T11:08:58.695271+00:00","started_at":"2026-11-02T11:08:58.693544+00:00","status":"failed","task_id":"task_035"}
+..............................
+----------------------------------------------------------------------
+Ran 129 tests in 6.184s
+
+OK

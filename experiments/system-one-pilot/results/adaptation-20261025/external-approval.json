@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-25T11:59:24.612344+00:00",
+  "source": "explicit user reply to full payload/destination/budget question",
+  "answer": "Разрешаю в прежних лимитах",
+  "protocol_sha256": "a57f34cb534e6b9ea9ee3c88f8a8747a630e17f8807133814fa94342f82fac84",
+  "destinations": [
+    "OpenRouter -> DeepInfra FP8 (DeepSeek)",
+    "OpenRouter -> DeepInfra BF16 (Qwen3.8)"
+  ],
+  "limits_total_usd": {
+    "collection_and_online": 1,
+    "annotation": 0.5
+  },
+  "test_excluded": true
+}

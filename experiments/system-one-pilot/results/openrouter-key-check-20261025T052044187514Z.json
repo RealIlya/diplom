@@ -1,0 +1,25 @@
+{
+  "checked_at_utc": "2026-10-25T05:20:43.475772+00:00",
+  "endpoint": "https://openrouter.ai/api/v1/key",
+  "method": "GET",
+  "key_present": true,
+  "source": ".env",
+  "generation_requests": 0,
+  "previous_attempts": [
+    {
+      "result": "network_error_in_sandbox"
+    },
+    {
+      "result": "local_certificate_verification_failure"
+    }
+  ],
+  "http_status": 200,
+  "authenticated": true,
+  "key_metadata": {
+    "limit": 2,
+    "limit_remaining": 2,
+    "usage": 0,
+    "is_free_tier": false,
+    "is_management_key": false
+  }
+}

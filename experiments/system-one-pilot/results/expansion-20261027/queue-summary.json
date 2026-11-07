@@ -1,0 +1,27 @@
+{
+  "rows": 200,
+  "families": {
+    "family-fbde50414600": 31,
+    "family-4b27d1b6add2": 31,
+    "family-1e5193f94dab": 16,
+    "family-ab2bce7aa21d": 31,
+    "family-613b0b87acce": 30,
+    "family-5f106c4a0d02": 31,
+    "family-6e4302e654a1": 30
+  },
+  "snapshots": 18,
+  "queue_sha256": "67cbe16983c5c63bcce1e62b2ea7c988dcdfd999634508e6451d507a0134a5c1",
+  "fresh_task_rows": 200,
+  "test_rows": 0,
+  "scope": "train-only engineering packet; no independent validation claim",
+  "daily_before_annotation": {
+    "date": "2026-10-27",
+    "timezone": "Asia/Novosibirsk",
+    "calls": 227,
+    "limit_usd": 1.0,
+    "charged_or_held_usd": 0.089059207,
+    "remaining_usd": 0.910940793,
+    "held_nusd": 89059207,
+    "limit_nusd": 1000000000
+  }
+}

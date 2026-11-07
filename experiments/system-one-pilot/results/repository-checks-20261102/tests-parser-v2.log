@@ -1,0 +1,14 @@
+........................ss................./Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:277: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x108f23100>
+  @property
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:277: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x1081f04f0>
+  @property
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.....{"budget":{"actual_usd":0.001,"calls":1,"charged_or_held_usd":0.001,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0},"model":"deepseek","row":"a","status":"valid"}
+{"budget":{"actual_usd":0.002,"calls":2,"charged_or_held_usd":0.002,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0},"model":"qwen","row":"a","status":"valid"}
+.......................s...................s..ssss.............................
+----------------------------------------------------------------------
+Ran 127 tests in 1.016s
+
+OK (skipped=8)
+{"actual_usd":0.002,"calls":2,"charged_or_held_usd":0.002,"conservatively_accounted_calls":0,"limit_usd":0.75,"series":"packet","unresolved":0}

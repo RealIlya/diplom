@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-25T13:22:19.249295+00:00",
+  "source": "explicit user reply to interrupted request upper-bound question",
+  "answer": "Учесть максимум и продолжить",
+  "call_id": "rubric-v1/schema-v2/be759760872b08a0842175fb/qwen",
+  "request_sha256": "e71c218834f4ff780db36f7cbd930ae8e7846121add831798c4696cf6f6f191d",
+  "reserved_usd": 0.0097036,
+  "annotation_cap_total_usd": 0.5,
+  "retry": false,
+  "exception": "manual full upper-bound accounting after client interruption, not zero-cost inference"
+}

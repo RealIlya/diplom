@@ -1,0 +1,7 @@
+{
+  "call_id": "diagnostic/simulator-routing-v1",
+  "created_at": "2026-10-25T05:56:03.859312+00:00",
+  "error": "{\"http_status\":404,\"type\":\"HTTPError\"}",
+  "response": "{\"body\":\"{\\\"error\\\":{\\\"message\\\":\\\"0 endpoints out of 1 requested are available matching your guardrail restrictions and data policy. We removed them for the following reasons (an endpoint may have matched multiple reasons):\\\\nPaid model training violation (account settings): 1 endpoint excluded; configurable at https://openrouter.ai/settings/privacy\\\",\\\"code\\\":404,\\\"metadata\\\":{\\\"input_endpoint_count\\\":1,\\\"ineligibility_reasons\\\":[{\\\"reason\\\":\\\"paid-model-training-violation-by-account\\\",\\\"endpoint_count\\\":1,\\\"configure_url\\\":\\\"https://openrouter.ai/settings/privacy\\\"}],\\\"routing_funnel\\\":[{\\\"step\\\":\\\"Initial Endpoints\\\",\\\"endpoint_count\\\":34},{\\\"step\\\":\\\"Filter by Tier Endpoint Rows\\\",\\\"endpoint_count\\\":33,\\\"reason\\\":\\\"Excluded tier endpoint rows the request did not opt into\\\"},{\\\"step\\\":\\\"Filter by Max Price\\\",\\\"endpoint_count\\\":32},{\\\"step\\\":\\\"Filter by Allowed Providers\\\",\\\"endpoint_count\\\":1,\\\"reason\\\":\\\"not in your request's provider.only preference\\\"}],\\\"failed_routing_step\\\":\\\"Filter by Guardrails\\\"}}}\",\"http_status\":404}",
+  "reserved_nusd": 1429500
+}

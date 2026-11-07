@@ -1,0 +1,552 @@
+{
+  "queue_sha256": "362018f1a7141f4c7cef1b68aee0674c847934dccde6fa9260fcebd4848ccef3",
+  "policy": "Round-robin sorted task IDs, ascending row hashes, up to 64 accepted train; all accepted dev. Selected before labels/model predictions.",
+  "rows": [
+    {
+      "row_id": "3c9d521781c82c89ad1a",
+      "task_id": "task_004",
+      "split": "train",
+      "input_sha256": "a3bdbe295a17bf32c7f98ac06c6b52340ef7036f32f1bd214a68d4f67bde00ae"
+    },
+    {
+      "row_id": "0e6b91860dbdd05868ce",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "06797645566fb03c5518f7aed46b0e9a1652b0f6df8f70a415aa7764943d279e"
+    },
+    {
+      "row_id": "074483ac072b0ffd7ae4",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "4438bb8e649af9cd08433d521a7cb9ba5eb3adce252f66465b3c9b85a004678e"
+    },
+    {
+      "row_id": "008f0e12bd02e8ddbe6a",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "72545a4af53e6e240266397ef073778ac641edf79b156af81691f14149018a8e"
+    },
+    {
+      "row_id": "0272e784ff3da043f996",
+      "task_id": "task_017",
+      "split": "train",
+      "input_sha256": "6ff30e4efd99cd7cd6c3d388ce25a01268c57bcbbe4dd15b5cdf06453ba7dad2"
+    },
+    {
+      "row_id": "1146b40a12f4eb53c547",
+      "task_id": "task_018",
+      "split": "train",
+      "input_sha256": "0181c6676b4fbda5f021a19cfde7533604dd6e3e729f80a9bbe7dbb547f1f2c3"
+    },
+    {
+      "row_id": "0378ddb236df03670a16",
+      "task_id": "task_087",
+      "split": "train",
+      "input_sha256": "07f9b99374d9f2046a5933a678a47a45f0b64ad8d17d783b0215a463a6aeb221"
+    },
+    {
+      "row_id": "9295bc3219988d2c835c",
+      "task_id": "task_004",
+      "split": "train",
+      "input_sha256": "5c0836717e621a3eb396cade7eb0ea311cb61e509742d36d438c940641272950"
+    },
+    {
+      "row_id": "10c78b2f78ec99441439",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "ec985906faa4baecf0da3a7c26fde11e820fb81ee4db3c2bc24a29441ace5525"
+    },
+    {
+      "row_id": "0b1c8bdf5c78580efc2b",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "47e5d0bc05747900b144d75b638b57d2ba69551c9b7db98df545f200f8afa890"
+    },
+    {
+      "row_id": "35b6b66184a638b772ba",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "f5843ec2f0490f350149a5de12d7364ed2a710cbf79e61473096f7197bc818ac"
+    },
+    {
+      "row_id": "036ffe896f7722cdf99e",
+      "task_id": "task_017",
+      "split": "train",
+      "input_sha256": "1fda4f1699f3a1adf6ba746bc4d4f255b49489a133b27d3637c4870639620a06"
+    },
+    {
+      "row_id": "149758ab576d940e8c33",
+      "task_id": "task_018",
+      "split": "train",
+      "input_sha256": "6ecfa496c12a69de4d32f8b9dd2a7535e8d5fe20b1dbf1c1f6a4a4159b539d24"
+    },
+    {
+      "row_id": "046726c8dd40f0c27c7e",
+      "task_id": "task_087",
+      "split": "train",
+      "input_sha256": "b38f3ba138897772d1d8a47ed247dfce109f8742c88a76e954c985a6487739fe"
+    },
+    {
+      "row_id": "be08d035c2c2084f34d1",
+      "task_id": "task_004",
+      "split": "train",
+      "input_sha256": "ddd318d0718b08b1abd001a4797f365164ea313782d3774de08fc3bed8d58687"
+    },
+    {
+      "row_id": "1168397034b934843b2a",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "a048d09929d8c73e65a1fd7db62c799fdcdc3b8e7c243b16b2e0dc5c20620825"
+    },
+    {
+      "row_id": "1119fa1a298d4158fe5b",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "91ca1dd8ef30fac047c6913577c216678ae970d4b4f86c0a044fdef34f129ccc"
+    },
+    {
+      "row_id": "45c1427b007910ecf0fa",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "d14e1087979c3734939b0e0ed8f03edad34d091cf431892fb2417f8cbc8da636"
+    },
+    {
+      "row_id": "0799c9ad57735b01ebb2",
+      "task_id": "task_017",
+      "split": "train",
+      "input_sha256": "e1b5b3b5f1f1b08f2a17876a8cba9de0d6d2a3116f0e71430d928590089d0682"
+    },
+    {
+      "row_id": "150c9a4171ae075b44ff",
+      "task_id": "task_018",
+      "split": "train",
+      "input_sha256": "d730a3c364847fcdbaf573b2beb79097027e1a50694b7d47ea796173c9efa69d"
+    },
+    {
+      "row_id": "05e2f092779e4243d2d3",
+      "task_id": "task_087",
+      "split": "train",
+      "input_sha256": "42763da76b5f931e3aeefe1f7d315fbd5cb8a6608dd736eb3284bf18efbfbd07"
+    },
+    {
+      "row_id": "d7c4ba302115baeedfeb",
+      "task_id": "task_004",
+      "split": "train",
+      "input_sha256": "d4c864d0b0f74fb986948eddeef59d38f2bf69c779f77b6fd0f5d787211f525b"
+    },
+    {
+      "row_id": "153c10240c6c0cb779ef",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "dc57c7e78b6dc6aa4736de3518f2cfcbc7052fc4b9b1739f66e11a12fd11d0ee"
+    },
+    {
+      "row_id": "1ea4cb117d51f9c22375",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "7a28c5dff11e4b282255632c153a7ce001be09034b12a84cebb4c2fa0d70317b"
+    },
+    {
+      "row_id": "4c56be8838f8b57435c9",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "5d08ec9132c5e323d9860eb354ad8f7237aff9bf2183bb0d66e660f9dee22d91"
+    },
+    {
+      "row_id": "2c8c1a347707d412dc6f",
+      "task_id": "task_017",
+      "split": "train",
+      "input_sha256": "85c96dfcb73954845c3277d692d66d82d1f03f4fd3fff17ab0ca3e1c43568c5e"
+    },
+    {
+      "row_id": "1eabb85c10eb9bbe5870",
+      "task_id": "task_018",
+      "split": "train",
+      "input_sha256": "22e86e6fb87c29b003b4b39ec73da970174631cc3c067ccce3ff74e93f0a5dfa"
+    },
+    {
+      "row_id": "0b16af88e03071138e87",
+      "task_id": "task_087",
+      "split": "train",
+      "input_sha256": "a92f44c9dfd138d609c7279474ae1320d978e7a610c35da9239a139bf972e911"
+    },
+    {
+      "row_id": "e531b5020c13716f5d7d",
+      "task_id": "task_004",
+      "split": "train",
+      "input_sha256": "c6684274a74dfc2b0e0ebfabff125f74ffc7e239c35573c318c97b91f756aa2a"
+    },
+    {
+      "row_id": "2110b9bbfd2e9548cd93",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "74ec3e6d906a841da00525ab37301b295927c5c83d17bcddfd6853d446fea763"
+    },
+    {
+      "row_id": "2ad11e34cc7701fe2cc8",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "557253053643fd162957858441748a297fcad8f229fc7daba3877d107c42daa3"
+    },
+    {
+      "row_id": "55a8a1d1f70024dc8129",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "41eab2be3c4dce3cc27242692cc501fef63e7e98090df11724c9a3cd398e5d1e"
+    },
+    {
+      "row_id": "38c6ca1cca084b69ab68",
+      "task_id": "task_017",
+      "split": "train",
+      "input_sha256": "1a9e764cecf216778abdeb537212aca8d1fbdbb37a841434b0421c4468cb6ca1"
+    },
+    {
+      "row_id": "1fb75d6eb139dced977c",
+      "task_id": "task_018",
+      "split": "train",
+      "input_sha256": "d9bc4e2ab857ed28e8f70b1ae89e409f54db678a01ba1a3111b3713738e1356a"
+    },
+    {
+      "row_id": "14da2da4a654091805f7",
+      "task_id": "task_087",
+      "split": "train",
+      "input_sha256": "0be7bc7b8e93a3578c3fbffcb6ff205686003e81ad45f16affd3cb7802d6db40"
+    },
+    {
+      "row_id": "f48b05f592395df98126",
+      "task_id": "task_004",
+      "split": "train",
+      "input_sha256": "26837ac0d7cfd38644239c7c1deaf26cba9fdd61fc3d713b9979369d99064764"
+    },
+    {
+      "row_id": "31ec22ad7f4f987dfb9c",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "266948c99156b07b36f013409464a1af8cd1e1e14f10bc2251cc377225e66240"
+    },
+    {
+      "row_id": "36968a1d0b8dea41166f",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "ea4cb5c09eabd51966ee9b2f5deee476056241fe2ad2a951147c192199db4d11"
+    },
+    {
+      "row_id": "805e02f29a505266962b",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "8073073046316b668572a6d8c2ba1f2bd53f29dd38aab3719cbb53b478950c88"
+    },
+    {
+      "row_id": "3c301749be882f134ca7",
+      "task_id": "task_017",
+      "split": "train",
+      "input_sha256": "78ce61fd40531c5fb2ae885a6254d085282f9b9b90ef452fe2f427699baf92a8"
+    },
+    {
+      "row_id": "20cb297e65e05f1cfa02",
+      "task_id": "task_018",
+      "split": "train",
+      "input_sha256": "b30bbeeec6fdebb012228a8951effec4c90fa976d1c2421c85a6317cbab34661"
+    },
+    {
+      "row_id": "16736f12751425185e2c",
+      "task_id": "task_087",
+      "split": "train",
+      "input_sha256": "95772ee6cd883d5b4465504cf5a8bc071237e166ce5622c1f979622ef77cf201"
+    },
+    {
+      "row_id": "f6a7ee0719335156f930",
+      "task_id": "task_004",
+      "split": "train",
+      "input_sha256": "fa7ba44f9063db7b91a1959569dd7fce19d2cfc5d6bbbba1562f06e78546a7ba"
+    },
+    {
+      "row_id": "3ad486247db05bcaf865",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "04a4bb8a8b9be62fc4406c4cfc89a7f1d6ebd91ab1afd46723252e6c367ab633"
+    },
+    {
+      "row_id": "3c809bd31aa8e9522372",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "a344ae3b2cc2919471dd6197eace7c6a3f8991c212613ac6a666c1244d6ce5fb"
+    },
+    {
+      "row_id": "8c305043b16287bde652",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "c4533239b38ad4a09c323a7ec6075437836d69c2afe5d0784608d8d45f549e33"
+    },
+    {
+      "row_id": "3c5ba5467492209fd0a6",
+      "task_id": "task_017",
+      "split": "train",
+      "input_sha256": "354f8265d0d5c135b440fd9c6321b46e2d6c23a2acf7e9680fb9e16b967a9b6f"
+    },
+    {
+      "row_id": "40fb3ff0af139ae4a030",
+      "task_id": "task_018",
+      "split": "train",
+      "input_sha256": "2f0298cc03c85b6b6e24a13ba70ccbb25eb3479535af4bc990b565405659df0e"
+    },
+    {
+      "row_id": "18376b3960b8679922fa",
+      "task_id": "task_087",
+      "split": "train",
+      "input_sha256": "f6baaa0d0e7e361eb8a0dda48aa4216219b1dcd83cc524f395cbe255c7f6b9a6"
+    },
+    {
+      "row_id": "3e6057917b79593751cf",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "758d18b6019168266e9692800487fc3dccebd40b47fb179e9e9906cfd1600afd"
+    },
+    {
+      "row_id": "595304235d7dc740ccca",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "2b0b75830965c2cc43450b304fbb9af48e8f58ac1241310e4e6a565d3e1a425e"
+    },
+    {
+      "row_id": "ad5f3789fada8ada0305",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "584996329e9d9ee4dc6bc9538c8345fbc5690cd866f37e814a7f7dbb26c0e03c"
+    },
+    {
+      "row_id": "58abb9e087a05c9e643d",
+      "task_id": "task_017",
+      "split": "train",
+      "input_sha256": "b7742e9e4e43044954deee793d6e07fdc5fdbbdf8edefd787838ceead43dffcc"
+    },
+    {
+      "row_id": "4e56d1b7842f5a936806",
+      "task_id": "task_018",
+      "split": "train",
+      "input_sha256": "8d480fabf5965defb7fad9aec9d9003277293112fefe5ab7d79e4485d57bdb94"
+    },
+    {
+      "row_id": "21320548e8fc98e1febe",
+      "task_id": "task_087",
+      "split": "train",
+      "input_sha256": "3a8790a80d4fd8d32d78fe9940e7851d0a47c91a27fc2f066a8923a343c2781a"
+    },
+    {
+      "row_id": "3ff81662ede9699ec02f",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "1e38a53cbafa285f0de0bd6f13c63c3607b88a6cf1a35a3570219a5fc385140d"
+    },
+    {
+      "row_id": "5c9e01fe77a354130852",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "6f19f2bbcab7c7becc65290d1a611d2313ff3310d872fb6f0bd19be8940bb0f8"
+    },
+    {
+      "row_id": "b0422486c16c645c8171",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "be32a2e0abf6dad664e681f632914f819dcdab8167fa3f225647ee60c077ff05"
+    },
+    {
+      "row_id": "7fb2f35305099145b297",
+      "task_id": "task_017",
+      "split": "train",
+      "input_sha256": "08d99f7d63a33d1b8e729d391176b2a3ece30d2448d9d9716bdcec8cb248086e"
+    },
+    {
+      "row_id": "6b9e267b2044ccc2802c",
+      "task_id": "task_018",
+      "split": "train",
+      "input_sha256": "6b7729e8446063586ee04c2a6229f68165fc633f952c93a9f2b8cd04d2b72791"
+    },
+    {
+      "row_id": "2421a038a9fe40b62b36",
+      "task_id": "task_087",
+      "split": "train",
+      "input_sha256": "7259f8779a0f63d8e7863a154a8b1709a9a1380a0188623a6e085bc312269d4c"
+    },
+    {
+      "row_id": "5091a2b56e491de87b64",
+      "task_id": "task_012",
+      "split": "train",
+      "input_sha256": "986cd068e6912ccb4081f1faab60595d4baa8d398bcd65504269f51ddf1bb328"
+    },
+    {
+      "row_id": "64ba78b421b4562afc01",
+      "task_id": "task_015",
+      "split": "train",
+      "input_sha256": "5a2c26f1da557fa2b308763c68ea1d1390e33ce1ad19040ec2b0817d815c2efc"
+    },
+    {
+      "row_id": "b7d18a953ea0a8633e6a",
+      "task_id": "task_016",
+      "split": "train",
+      "input_sha256": "d5421cea3757eb7a75c854ec57c45931e0c1c1102b8a428cd1e52f41ef336f6f"
+    },
+    {
+      "row_id": "99bb64f02b92227c75ec",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "4c49cf5f73c603bc571e73ef79b3d6e3a30f188cd9072026e5eae423f19852bb"
+    },
+    {
+      "row_id": "773f4c0a2b0fcd4357e5",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "93c55977a38e005a7ba8c8b1507d897c25658cc283cb1efeb7c57a14527eedd8"
+    },
+    {
+      "row_id": "98eee9dd0dddf5c82f83",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "92670c1b7e5dbd98fea65ee0d1b692ee7b3359884f3c58381d891a770971c162"
+    },
+    {
+      "row_id": "47393031791c1d9bcd03",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "d519fbde1deaceeeb96fab7cc0d2dde41c313227f21df5e245bd99e8e567dd1e"
+    },
+    {
+      "row_id": "d460377588bc9cc758bd",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "af54ce392b91318de95308620aef495c0666c962280eeb413515e7ad55d63d57"
+    },
+    {
+      "row_id": "0a35e7865c8f9a762085",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "1ed240ed83d0bfebf9a2e6c7faef16f54b4ca83e09cd3b53d7223be38e99c52b"
+    },
+    {
+      "row_id": "ac1de175d60a3ab09dcb",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "8174ce4e9518ea16f7058b5fd2c30f46e705952378936714fe8b29589009d3a3"
+    },
+    {
+      "row_id": "aacf0d8ee2e98937bddf",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "e4bb36ac49064b094318df63c765a5a2004139448150f6a61acaf2d1328e01f8"
+    },
+    {
+      "row_id": "74d37f17bc333d196df7",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "15ea13f97eae12b87eef3b5093ef55d59387ff52f1a2e388195d3b555766434e"
+    },
+    {
+      "row_id": "b252ccaf76414e2fa8a9",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "41f8b586473d7ec85f645b2c67e3c42386047b4e02ddaabcd49c0619409d7e84"
+    },
+    {
+      "row_id": "2df48140598924e13af9",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "118fb20ace4d3637e1187d8306fd5d2418bad52878833718924d12a7a7e4d918"
+    },
+    {
+      "row_id": "c11cdd8fd0d79b8af588",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "c2036fdafddce347af2a39257fa4520fa19d4d2f9c4b89153aa859539213e96c"
+    },
+    {
+      "row_id": "61fdc65f5f93b7ea3705",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "c682bf57b3b07a3d0f0054203488cdc825dadf2f21cc5c0a258014192f3f75e3"
+    },
+    {
+      "row_id": "46ff7e6c0d463d5f1c60",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "da7d4152098fa6e638fb5d6e6a59068b46e897779e074138ca8997cabe40e6e3"
+    },
+    {
+      "row_id": "a0c296f7d01c987b2988",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "68725222b834cf03e6d363039d885b3711fac3520314beb26efda47bf2fe1e8a"
+    },
+    {
+      "row_id": "8cbdadf9186a91341d0a",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "6558f8537d888c91f6d845d3105e01f3f8442a455efe6dfb565360e73231dc04"
+    },
+    {
+      "row_id": "32ff7d3202a8d9face77",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "ca5d623d8162ee7c755cfcb3be0688ab7c67648d9d77e25264688b323bd65c84"
+    },
+    {
+      "row_id": "b191c8b9eabd110b7deb",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "b36b49dad5f3c1d045299f28c9faab37a2b0d8770b9c0885749f1cee9a4215b4"
+    },
+    {
+      "row_id": "2692bcfa6683577f5a47",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "2306b0f19d1defa9841678dcfe9aea2016782018a05a12a49ce0c4dcb0bce87a"
+    },
+    {
+      "row_id": "7bcc40f7962f698cfe5a",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "27b0f68f4e6592eafca955ce3bd51da92dbd6f16eeb2b487882cc80e868d3c96"
+    },
+    {
+      "row_id": "7f767b4dff53e0fe6910",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "cc494ea5db6d094ed9dcedc3dcf21e81f7d601e0b22e8ae4a2a01c779bce4a4b"
+    },
+    {
+      "row_id": "5c9b3ddcfcbb6877c00b",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "64154329e8b82abb99cd18c3c409a971ed732eb1e5a063c175da6aba182d357d"
+    },
+    {
+      "row_id": "e4961b6f8ad75b50db81",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "3a1772cbfe42535b9695dc4534e8ec06ece3e592994aa9589b32790e876981f3"
+    },
+    {
+      "row_id": "60be3857d663f7461614",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "068bfc3ec318dc6148a880a545d32c0275024179a81424aa3c2fd1bb4b7d3dd8"
+    },
+    {
+      "row_id": "478b86aee40aa786bc99",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "78b65a8569dd873e54dbe786a7d0e3a984516098dee0e9b79370871c4954cfda"
+    },
+    {
+      "row_id": "e53bbf9ec7da94562238",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "285587089718bd422f543156d2189b8e4e088847671dba242d83ffd472b5825b"
+    },
+    {
+      "row_id": "df338daadc2ee3597da1",
+      "task_id": "task_023",
+      "split": "dev",
+      "input_sha256": "5d0f92cdd1537d556def8744b3e72fbba7912d58ccff3eb6c39c22fe50567e7c"
+    }
+  ]
+}

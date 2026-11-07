@@ -1,0 +1,3233 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../resource-assessment/">
+      
+      
+        <link rel="next" href="../complete-call-options/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Выбор действий в τ-bench при ограниченном контексте - Исследовательская wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#выбор-действий-в-τ-bench-при-ограниченном-контексте" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Исследовательская wiki" class="md-header__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Исследовательская wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Выбор действий в τ-bench при ограниченном контексте
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Исследовательская wiki" class="md-nav__button md-logo" aria-label="Исследовательская wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Исследовательская wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki GitMark
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wiki GitMark
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Состояние и задачи
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Онтология
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исследование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Исследование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Короткий обзор
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-handoff-2026-10-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контекст продолжения 11.10.2026
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Научные источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атлас адаптации System One
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Атлас адаптации System One
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общий план и карты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реализация этапов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные и эксперименты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура стенда
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-atlas-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверенные источники и результаты
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот CE и проверенные блокеры
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-next-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Следующий этап — данные и инфраструктура
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research-atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интерактивный атлас
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подробные материалы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подробные материалы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постановка и протокол
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Термины общего агента
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура v0.2
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hotpotqa-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Протокол HotpotQA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модели
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — обзор и источники
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-one-training-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение System One — статьи и выжимки
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rlcd-study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RLCD — темы и план ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ресурсы τ-bench, Laya и KEV
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выбор действий и контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Выбор действий и контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-что-является-следующим-действием" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Что является следующим действием
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-что-видно-агенту-banking-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Что видно агенту: banking tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-поиск-открытие-описания-и-исполнение--разные-шаги" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Поиск, открытие описания и исполнение — разные шаги
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-доступная-информация-и-реальный-объём-контекста" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Доступная информация и реальный объём контекста
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reference-actions-не-дают-единственную-метку-next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Reference actions не дают единственную метку next step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-узкая-выполнимая-постановка-вместо-validity-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Узкая выполнимая постановка вместо validity gate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-реально-измеренный-размер-policy-в-токенах" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Реально измеренный размер policy в токенах
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Реально измеренный размер policy в токенах">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#источники-и-воспроизведение-измерения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Источники и воспроизведение измерения
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ограничения-конкретных-моделей" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Ограничения конкретных моделей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Ограничения конкретных моделей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-тоже-расходуют-контекст-и-иногда-обрезаются" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options тоже расходуют контекст, и иногда обрезаются
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#что-известно-о-пригодности-к-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что известно о пригодности к routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-контракт-общего-узла-не-личная-тема-rlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Контракт общего узла; не личная тема RLCD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Контракт общего узла; не личная тема RLCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#что-считать-выбранной-операцией" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что считать выбранной операцией
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#два-честных-варианта-контекста" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Два честных варианта контекста
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ранее-предложенный-архитектурный-пилот--не-личный-rlcd-план" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ранее предложенный архитектурный пилот — не личный RLCD-план
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#разметка-меняется-это-не-переименование-binary-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разметка меняется, это не переименование binary labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-как-это-меняет-ресурсы-и-критерий-завершения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Как это меняет ресурсы и критерий завершения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#первичные-источники-закреплённого-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Первичные источники закреплённого commit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полные вызовы без LLM
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complete-call-native-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native аргументы и предусловия
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tau-bench-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стенд τ-bench
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа над ВКР
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Работа над ВКР
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Совместная работа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vkr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования ВКР
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документы агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Процесс для агентов
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доменный контекст
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/issue-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи проекта
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/triage-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статусы триажа
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переводы статей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Переводы статей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как читать и словарь
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/openjev-rlcd-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenJev-RLCD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/sbert2s1-ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SBERT2S1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/translation-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запись подготовки и проверки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архив технических планов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Архив технических планов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-19-system-one-pilot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пилот System One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-kev-laya-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сравнение KEV и Laya
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-25-system-one-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимый dev и адаптация KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-27-system-one-expansion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Первый пакет расширения и grouped KEV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/specs/2026-10-09-audit-remediation-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — спецификация 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../superpowers/plans/2026-10-09-audit-remediation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аудит — выполненный план 09.10.2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-что-является-следующим-действием" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Что является следующим действием
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-что-видно-агенту-banking-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Что видно агенту: banking tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-поиск-открытие-описания-и-исполнение--разные-шаги" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Поиск, открытие описания и исполнение — разные шаги
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-доступная-информация-и-реальный-объём-контекста" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Доступная информация и реальный объём контекста
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reference-actions-не-дают-единственную-метку-next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Reference actions не дают единственную метку next step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-узкая-выполнимая-постановка-вместо-validity-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Узкая выполнимая постановка вместо validity gate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-реально-измеренный-размер-policy-в-токенах" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Реально измеренный размер policy в токенах
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Реально измеренный размер policy в токенах">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#источники-и-воспроизведение-измерения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Источники и воспроизведение измерения
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ограничения-конкретных-моделей" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Ограничения конкретных моделей
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Ограничения конкретных моделей">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-тоже-расходуют-контекст-и-иногда-обрезаются" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options тоже расходуют контекст, и иногда обрезаются
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#что-известно-о-пригодности-к-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что известно о пригодности к routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-контракт-общего-узла-не-личная-тема-rlcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Контракт общего узла; не личная тема RLCD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Контракт общего узла; не личная тема RLCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#что-считать-выбранной-операцией" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что считать выбранной операцией
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#два-честных-варианта-контекста" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Два честных варианта контекста
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ранее-предложенный-архитектурный-пилот--не-личный-rlcd-план" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ранее предложенный архитектурный пилот — не личный RLCD-план
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#разметка-меняется-это-не-переименование-binary-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разметка меняется, это не переименование binary labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-как-это-меняет-ресурсы-и-критерий-завершения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Как это меняет ресурсы и критерий завершения
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#первичные-источники-закреплённого-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Первичные источники закреплённого commit
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="выбор-действий-в-τ-bench-при-ограниченном-контексте">Выбор действий в τ-bench при ограниченном контексте</h1>
+<p><strong>Статус:</strong> статический аудит первичных исходников и собственное измерение
+токенизации policy; не inference/training benchmark и не утверждённая тема ВКР.
+Проверен <code>sierra-research/tau2-bench</code>, текущий τ³, commit
+<code>4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699</code>; дата проверки — 11.10.2026.
+Область: текстовый half-duplex агент, прежде всего <code>banking_knowledge</code>.
+Веса не скачивались, зависимости не устанавливались, upstream и платные
+вызовы не запускались. Скрытые цели задач не использованы для примеров: ниже
+нет реконструкции банковских test-сценариев.</p>
+<p>Контекст: <a href="../architecture/">T-node и E2</a>,
+<a href="../resource-assessment/">ресурсные ограничения</a>,
+<a href="../rlcd-study-plan/">план исследования</a>. Это уточнение контрактов стенда;
+выбор моделей и подробный план обучения здесь не утверждаются.</p>
+<h2 id="1-что-является-следующим-действием">1. Что является следующим действием</h2>
+<p>В обычном <code>LLMAgent.generate_next_message</code> модель получает policy, доступные
+схемы tools и историю, после чего <strong>одним генеративным вызовом</strong> возвращает
+<code>AssistantMessage</code>. Вызов <code>generate</code> получает одновременно <code>messages</code> и
+<code>tools</code>: upstream не выделяет отдельный обязательный классификатор имени.
+Возвращённое сообщение добавляется в историю. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/agent/llm_agent.py">LLMAgent</a></p>
+<table>
+<thead>
+<tr>
+<th>Уровень</th>
+<th>Фактический контракт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Реплика</td>
+<td><code>AssistantMessage.content</code>: текст пользователю, без tool calls</td>
+</tr>
+<tr>
+<td>Один вызов</td>
+<td><code>AssistantMessage.tool_calls = [ToolCall(name, arguments, id, requestor)]</code>; <code>arguments</code> — словарь</td>
+</tr>
+<tr>
+<td>Несколько вызовов</td>
+<td>Тот же <code>AssistantMessage</code>, но список из нескольких <code>ToolCall</code>; это не отдельный тип выходного <code>MultiToolMessage</code></td>
+</tr>
+<tr>
+<td>Результаты</td>
+<td>Один <code>ToolMessage</code> либо входной <code>MultiToolMessage(tool_messages=[...])</code>; агент разворачивает пакет в историю</td>
+</tr>
+</tbody>
+</table>
+<p>Правила half-duplex оркестратора требуют <strong>текст или tool calls</strong>, не оба
+одновременно. Он поддерживает несколько вызовов в одном сообщении, но
+<code>_execute_tool_calls</code> исполняет их <strong>последовательно циклом</strong>, а не обещает
+параллельный runtime. Поэтому единственный class ID имени не описывает всё
+пространство native next-message. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/data_model/message.py">Схемы сообщений</a>,
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/orchestrator/orchestrator.py">оркестратор</a></p>
+<p>Следствия для постановки:</p>
+<ul>
+<li>Выбор <code>respond</code> не генерирует правильный ответ: нужна отдельная генерация
+  реплики, включая уточнение, объяснение, отказ или завершение обращения.</li>
+<li>Выбор имени не определяет аргументы, необходимые наблюдения и соблюдение
+  policy. JSON-validity также не доказывает правильность действия.</li>
+<li>Multi-tool нельзя молча удалить только у исследуемого метода. Для узкого
+  опыта допустим общий single-call режим, явно отличный от native режима;
+  либо общий <code>defer</code> к native агенту для сложного решения.</li>
+<li>В <code>banking_knowledge</code> solo-режим не поддерживается; убрать диалог с
+  пользователем — не штатный способ упростить этот домен. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/environment.py">Environment</a></li>
+</ul>
+<h2 id="2-что-видно-агенту-banking-tools">2. Что видно агенту: banking tools</h2>
+<p><code>ToolKitBase.get_tools()</code> исключает <code>@is_discoverable_tool</code>. Такие функции
+существуют в среде, но их определения не включаются в исходный список
+схем агента. Это <strong>discoverable</strong>, а не секретные функции вне области задачи:
+агент должен узнать о них через KB. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/environment/toolkit.py">Toolkit</a></p>
+<p>В <code>KnowledgeTools</code> проверенного commit <strong>14 обычных tools</strong>:</p>
+<ul>
+<li><code>transfer_to_human_agents</code>, <code>get_current_time</code>;</li>
+<li><code>get_user_information_by_id</code>, <code>get_user_information_by_name</code>,
+  <code>get_user_information_by_email</code>, <code>change_user_email</code>;</li>
+<li><code>get_referrals_by_user</code>, <code>get_credit_card_transactions_by_user</code>,
+  <code>get_credit_card_accounts_by_user</code>, <code>log_verification</code>;</li>
+<li><code>give_discoverable_user_tool</code>, <code>unlock_discoverable_agent_tool</code>,
+  <code>call_discoverable_agent_tool</code>, <code>list_discoverable_agent_tools</code>.</li>
+</ul>
+<p>Отдельно объявлены <strong>44 discoverable agent tools</strong>, включая учебный
+<code>example_agent_tool_0000</code>: операции с транзакциями, спорами, счетами,
+кредитными лимитами и картами. Это инвентаризация реализации, <strong>не 44
+дополнительных кандидата, разрешённых селектору с первого шага</strong>. В отдельном
+<code>KnowledgeUserTools</code> — 6 обычных и 4 discoverable функции пользователя;
+они не становятся прямыми инструментами agent-роли. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py">Banking tools</a></p>
+<p>Retrieval добавляет схемы к этим 14, а не заменяет их:</p>
+<table>
+<thead>
+<tr>
+<th>Вариант</th>
+<th>Дополнительные видимые tools</th>
+<th style="text-align: right;">Всего исходно</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bm25</code></td>
+<td><code>KB_search(query)</code></td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td><code>bm25_grep</code></td>
+<td><code>KB_search(query)</code>, <code>grep(pattern)</code></td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td><code>terminal_use</code></td>
+<td><code>shell(command)</code></td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td>default <code>alltools</code></td>
+<td><code>KB_search_bm25(query, k=10)</code>, <code>KB_search_dense(query, k=10)</code>, <code>shell(command)</code></td>
+<td style="text-align: right;">17</td>
+</tr>
+</tbody>
+</table>
+<p>Default <code>alltools</code> использует OpenAI <code>text-embedding-3-large</code>; <code>bm25</code> —
+отдельное объявленное условие без этого dense backend. Не путать «все
+retrieval tools» с раскрытием всех discoverable domain tools.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval.py">Registry</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_toolkits.py">состав toolkit</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py">retrieval tools</a></p>
+<h2 id="3-поиск-открытие-описания-и-исполнение--разные-шаги">3. Поиск, открытие описания и исполнение — разные шаги</h2>
+<ol>
+<li><strong>Найти сведения в KB.</strong> <code>KB_search</code> возвращает title, document ID, score
+   и <strong>полный content</strong> найденного документа: слово excerpts в docstring
+   не означает, что реализация отдаёт только короткий snippet. <code>grep</code> тоже
+   возвращает полное содержимое. В shell-варианте есть отдельное чтение
+   найденного файла и индекс документов; это не универсальный <code>open_tool</code>.
+   <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py">Retrieval mixins</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/shell_instructions.md">shell policy</a></li>
+<li><strong>Открыть agent tool.</strong> По явно найденному имени вызвать
+   <code>unlock_discoverable_agent_tool(agent_tool_name)</code>. Ответ содержит
+   описание и параметры, разобранные из docstring. Имя сохраняется во
+   внутреннем unlocked-state. Это не добавление новой top-level схемы
+   в список <code>LLMAgent.tools</code>. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py">Banking tools</a></li>
+<li><strong>Исполнить.</strong> Вызвать <code>call_discoverable_agent_tool(agent_tool_name,
+   arguments)</code>, где внутренние аргументы передаются <strong>JSON-строкой</strong>,
+   хотя внешние <code>ToolCall.arguments</code> — словарь. Dispatcher проверяет
+   существование функции и предварительный unlock, разбирает JSON и
+   вызывает функцию. Неверные имя/JSON/аргументы дают сообщения об ошибке.
+   <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py">Banking tools</a></li>
+<li><strong>Пользовательское действие.</strong> <code>give_discoverable_user_tool</code> выдаёт
+   функцию пользователю; затем пользовательская сторона использует
+   <code>call_discoverable_user_tool</code>. Это не agent-вызов той же операции.
+   <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py">Banking tools</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md">additional instructions</a></li>
+</ol>
+<p><code>list_discoverable_agent_tools()</code> — <strong>не поиск по полному каталогу</strong> и даже
+не перечень всех unlocked. Он читает журнал уже вызванных функций в БД.
+Некоторые дополнительные read-only вызовы туда не логируются: реализация
+учитывает mutating-функции и отдельный read allowlist оценщика. Unlock
+сохраняет состояние в памяти, запись в БД происходит при call согласно
+этому правилу. Не использовать внутренний allowlist как признак модели.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py">Banking tools</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/environment.py">Environment</a></p>
+<p>Policy требует искать имена в KB, не угадывать их, не открывать инструменты
+«про запас» и получить описание параметров до вызова. Код dispatcher
+проверяет unlocked-state, но не доказывает, что имя действительно найдено
+разрешённым способом. Значит, доступность по API и policy-correctness —
+разные свойства. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md">Additional instructions</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py">Banking tools</a></p>
+<p><strong>Уточнение к архитектурному shorthand:</strong> в текущем commit агент вызывает
+<code>call_discoverable_agent_tool(agent_tool_name, arguments)</code>, а не
+<code>call_discoverable_tool(name, kwargs)</code>. Для содержательного T-node полезны
+наблюдаемые варианты <code>unlock:&lt;имя&gt;</code> / <code>call:&lt;имя&gt;</code>: иначе все специализированные
+операции схлопнутся в один ID dispatcher, а выбор настоящего tool останется
+скрыт в генерации его аргументов. Такое расширение ID — <strong>наша факторизация</strong>,
+не новая схема upstream; снаружи нужно восстановить точный native вызов.</p>
+<h2 id="4-доступная-информация-и-реальный-объём-контекста">4. Доступная информация и реальный объём контекста</h2>
+<p>Для обычного агента допустимы policy выбранного retrieval-варианта,
+выданные схемы, префикс разговора и собственных вызовов, полученные ответы
+tools, фактически найденные KB-документы и возвращённые при unlock описания.
+Текст policy содержит общие ограничения и идентификацию клиента;
+специфические процедуры лежат в KB, а не обязательно в коротком заголовке.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/agent/llm_agent.py">LLMAgent</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/policy_header.md">policy header</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md">additional instructions</a></p>
+<p>В селектор нельзя передавать скрытое состояние БД, будущие реплики,
+инструкции user simulator, <code>evaluation_criteria</code>, gold actions и
+<code>required_documents</code>. Наличие отдельного <code>LLMGTAgent</code>, которому специально
+показывают resolution steps, не делает такой вход допустимым обычному
+агенту. <code>golden_retrieval</code> тоже отдельный привилегированный режим: он
+подставляет <code>task.required_documents</code>, в отличие от standard prompt.
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/agent/llm_agent.py">LLMAgent / GT agent</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval.py">prompt builders</a></p>
+<p>Ниже <strong>статический собственный подсчёт текста источников</strong>, не токены и
+не измерение памяти. Policy собрана заменой component placeholders, как
+в <code>load_prompt_template</code>; для alltools подставлена строка default OpenAI
+backend. Chars — длина строки, words — разбиение по пробельным символам.
+Для docstrings убраны пробелы по краям каждой строки, описания соединены
+двумя переводами строки. Включены Args/Returns; Python-реализация исключена.</p>
+<table>
+<thead>
+<tr>
+<th>Текст</th>
+<th style="text-align: right;">Chars</th>
+<th style="text-align: right;">Words</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Общий <code>policy_header</code></td>
+<td style="text-align: right;">1779</td>
+<td style="text-align: right;">298</td>
+</tr>
+<tr>
+<td><code>additional_instructions</code></td>
+<td style="text-align: right;">3816</td>
+<td style="text-align: right;">608</td>
+</tr>
+<tr>
+<td>Собранная policy <code>bm25</code></td>
+<td style="text-align: right;">5734</td>
+<td style="text-align: right;">924</td>
+</tr>
+<tr>
+<td>Собранная policy default <code>alltools</code></td>
+<td style="text-align: right;">7541</td>
+<td style="text-align: right;">1222</td>
+</tr>
+<tr>
+<td>Docstrings 14 обычных banking tools</td>
+<td style="text-align: right;">3832</td>
+<td style="text-align: right;">605</td>
+</tr>
+<tr>
+<td>Docstring <code>KB_search</code></td>
+<td style="text-align: right;">163</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr>
+<td>Docstrings всех 44 discoverable agent tools</td>
+<td style="text-align: right;">19967</td>
+<td style="text-align: right;">2661</td>
+</tr>
+</tbody>
+</table>
+<p>Источники подсчёта: <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/policy_header.md">header</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md">additional</a>,
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/classic_rag_bm25_no_grep.md">BM25 template</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/all_tools.md">AllTools template</a>,
+<a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/tools.py">tools</a>, <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/domains/banking_knowledge/retrieval_mixins.py">mixins</a>. Полный исходник tools прочитан по raw HTTP
+(189255 chars); ограниченный ответ <code>web_fetch</code> в 100000 chars не использован
+для полного инвентарного подсчёта. Код upstream не импортировался.</p>
+<p>Это <strong>не готовый размер модельного запроса</strong>: здесь нет сериализованных
+JSON Schema, имён/типов параметров сверх docstring, system wrapper,
+истории, tool results и выбранных KB-документов. Описания 44 функций
+приведены только как инвентарный объём — их нельзя загрузить агенту заранее.
+Даже короткий набор policy + первоначальные описания не доказывает
+помещение в маленькое окно: токенизацию надо измерять конкретным tokenizer
+на фактическом сериализованном входе. Автоматическая обрезка значимых
+условий policy не является корректной компрессией.</p>
+<h2 id="5-reference-actions-не-дают-единственную-метку-next-step">5. Reference actions не дают единственную метку next step</h2>
+<p>Upstream прямо определяет <code>evaluation_criteria.actions</code> как <strong>одну reference
+trajectory</strong>. Для DB-оценки она проигрывается в gold environment, чтобы
+получить целевое конечное состояние. Иная последовательность может
+привести к эквивалентному состоянию и пройти проверку. Итоговый reward
+зависит от <code>reward_basis</code>; совпадение actions требуется, когда включён
+<code>ACTION</code>, а не автоматически у всех задач. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/docs/evaluation.md">Evaluation documentation</a></p>
+<p>Даже <code>ActionEvaluator</code> проверяет для каждой эталонной записи наличие
+совпадающего вызова <strong>где-либо среди предсказанных tool calls</strong>. Этот код
+не задаёт единственный следующий шаг или обязательный порядок: цикл
+<code>gold_action → predicted_tool_calls</code> использует <code>compare_with_tool_call</code>.
+Поэтому нельзя превратить этот список в universally correct next-action
+labels простым сдвигом на один шаг. <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/src/tau2/evaluator/evaluator_action.py">Action evaluator</a></p>
+<p>Для узловой диагностики различать:</p>
+<ul>
+<li>совпадение с конкретной демонстрацией;</li>
+<li>принадлежность допустимому множеству следующих действий при данном
+  наблюдаемом префиксе — требует отдельной проверенной разметки;</li>
+<li>сквозной успех по native evaluator.</li>
+</ul>
+<p>Отсутствие вызова в reference не доказывает ошибку; высокий native reward
+также не является исчерпывающим аудитом соблюдения всех текстовых правил.
+Нельзя автоматически объявлять альтернативные поиски, уточнения или
+порядки read-only проверок отрицательными примерами.</p>
+<h2 id="6-узкая-выполнимая-постановка-вместо-validity-gate">6. Узкая выполнимая постановка вместо validity gate</h2>
+<p><strong>Предложение, уже согласованное по структуре с T/E2, не принятое решение:</strong>
+выбирать <strong>одно следующее намерение/имя</strong> из наблюдаемого динамического
+набора плюс <code>respond</code> и технический <code>defer</code>; фиксированная генеративная
+модель затем заполняет аргументы либо пишет реплику. Для discoverable
+ветки варианты включают только имена, реально найденные/открытые ранее,
+с provenance до ответа поиска или unlock. Не оценивать validity готового
+LLM-вызова под видом самостоятельного выбора действия.</p>
+<p>На первом пилоте разумен <code>banking_knowledge + bm25</code>, без одновременного
+исследования выбора retriever и без заранее раскрытого каталога. Область
+single-call/multi-call, упаковка состояния и overflow/fallback должны быть
+одинаковыми у сравниваемых селекторов. Это не обещание, что весь banking
+превратится в короткую независимую классификацию.</p>
+<p>Минимальные контроли, продолжающие <a href="../architecture/">E2</a>:</p>
+<ol>
+<li><strong>Native joint LLM:</strong> имя + аргументы/реплика в штатном вызове; исходная
+   точка отсчёта системы, с явно зафиксированным multi-tool режимом.</li>
+<li><strong>Факторизованная LLM:</strong> LLM выбирает имя/намерение → та же фиксированная
+   модель генерирует аргументы/реплику. Отличие от №1 показывает эффект
+   факторизации и дополнительного вызова, не преимущество маленькой модели.</li>
+<li><strong>Дешёвый селектор + тот же generator:</strong> сравнение с №2 на <strong>одинаковом
+   состоянии, кандидатах и бюджете</strong> выделяет замену селектора. Правила
+   или лексический baseline — содержательный дешёвый контроль.</li>
+<li><strong>Полный против ограниченного контекста у LLM:</strong> отдельная абляция
+   упаковки контекста. Полная LLM против урезанной маленькой модели —
+   сравнение целых систем, не чистый эффект архитектуры селектора.</li>
+</ol>
+<p>Ошибки выбора имени, аргументов, retrieval/discovery и ответа учитывать
+раздельно; вывод о полезности делать по полному диалогу, стоимости всех
+вызовов, retries/fallback и задержке, а не только по точности ID. Модели,
+обучение и объём разметки уточняются в следующих разделах как предложения,
+а не проведённые модельные эксперименты.</p>
+<h2 id="7-реально-измеренный-размер-policy-в-токенах">7. Реально измеренный размер policy в токенах</h2>
+<p><strong>Наше собственное статическое измерение 11.10.2026</strong>, не оценка «символы / 4».
+Использован установленный tokenizers 0.22.1, загружены только tokenizer JSON
+и тексты policy по закреплённым версиям. Веса, Transformers-модели и upstream
+не запускались; новых зависимостей не устанавливалось.</p>
+<table>
+<thead>
+<tr>
+<th>Policy без tools и истории</th>
+<th style="text-align: right;">Laya English tokenizer</th>
+<th style="text-align: right;">Laya multilingual tokenizer</th>
+<th style="text-align: right;">KEV / Qwen3.5 tokenizer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retail</td>
+<td style="text-align: right;">1527</td>
+<td style="text-align: right;">1452</td>
+<td style="text-align: right;">1454</td>
+</tr>
+<tr>
+<td>Airline</td>
+<td style="text-align: right;">1745</td>
+<td style="text-align: right;">1698</td>
+<td style="text-align: right;">1690</td>
+</tr>
+<tr>
+<td>Banking, BM25</td>
+<td style="text-align: right;">1267</td>
+<td style="text-align: right;">1241</td>
+<td style="text-align: right;">1186</td>
+</tr>
+</tbody>
+</table>
+<p>Retail/airline — исходный текст policy; banking — literal substitution двух
+component placeholders в <a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/classic_rag_bm25_no_grep.md">BM25 template</a>, без task-specific gold.
+Использованы tokenizer.no_truncation(), no_padding() и encode(text,
+add_special_tokens=False). Не включены JSON Schema tools, история, найденные
+документы, query/options, chat/model wrappers и специальные токены. Поэтому
+это <strong>не полный размер рабочего запроса</strong>, а размер одного необходимого компонента.</p>
+<p><strong>Вывод:</strong> полные правила уже не помещаются в Laya English512 или typed1024.
+Числа не доказывают достаточность любого окна 8k для полного эпизода: история,
+аргументы и retrieved evidence ещё добавятся. Замеры throughput/accuracy не делались.</p>
+<h3 id="источники-и-воспроизведение-измерения">Источники и воспроизведение измерения</h3>
+<ul>
+<li><a href="https://raw.githubusercontent.com/sierra-research/tau2-bench/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/retail/policy.md">Retail policy</a>, SHA256 2c9652afbce57d6e087768d37cda64d31c53d50b3e3225cfdb791bac66466467.</li>
+<li><a href="https://raw.githubusercontent.com/sierra-research/tau2-bench/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/airline/policy.md">Airline policy</a>, SHA256 10dc0525421521208be39cee235bba84a16e2bcba9899eb93d92cd81d2f62fc4.</li>
+<li><a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/classic_rag_bm25_no_grep.md">Banking template</a>, SHA256 84ac1a68e0ca59f4cb870faf124202887e7e4f2e92dbd4d62c78ad2bcbb16d3b.</li>
+<li><a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/policy_header.md">Header</a>, SHA256 d73a0578670becb80b7c1a57cdbe68a2ea506a884cdf41e2e310dd3c13e63a85.</li>
+<li><a href="https://github.com/sierra-research/tau2-bench/blob/4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699/data/tau2/domains/banking_knowledge/prompts/components/additional_instructions.md">Additional instructions</a>, SHA256 03f6af1b56aa2fa6543ee4883ea9979ac5f5e158b20dd32d91d9736de87bab6a.</li>
+<li><a href="https://huggingface.co/convaiinnovations/laya/resolve/7b928d828b7b0e022f929d9bd2e44165aa270148/tokenizer/tokenizer.json">Laya English tokenizer</a>, SHA256 6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30.</li>
+<li><a href="https://huggingface.co/convaiinnovations/laya-multilingual/resolve/1720e3e3357cfe1e281542e223f8273b0890ca34/tokenizer/tokenizer.json">Laya multilingual tokenizer</a>, SHA256 609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f.</li>
+<li><a href="https://huggingface.co/Qwen/Qwen3.5-4B-Base/resolve/1001bb4d826a52d1f399e183466143f4da7b741b/tokenizer.json">Qwen3.5 tokenizer</a>, SHA256 fe000e3ed39ed12b8d2481d527d44f93c65d37e87645d2dcc80d1bf9d50d2927.</li>
+</ul>
+<p>Ниже ядро воспроизведения. Аргументы — полные UTF-8 строки по ссылкам выше;
+SHA256 сверяется до вычисления. Загрузка выполнялась curl с проверкой TLS
+в память; усечённые ответы web_fetch не использовались для токенизаторов.</p>
+<pre><code class="language-python">from tokenizers import Tokenizer
+
+def count_policy(tokenizer_json, policy_text):
+    tokenizer = Tokenizer.from_str(tokenizer_json)
+    tokenizer.no_truncation()
+    tokenizer.no_padding()
+    return len(tokenizer.encode(policy_text, add_special_tokens=False).ids)
+
+def assemble_banking(template, header, additional):
+    text = template.replace(&quot;{{component:policy_header}}&quot;, header)
+    text = text.replace(&quot;{{component:additional_instructions}}&quot;, additional)
+    assert &quot;{{component:&quot; not in text
+    return text
+</code></pre>
+<h2 id="8-ограничения-конкретных-моделей">8. Ограничения конкретных моделей</h2>
+<table>
+<thead>
+<tr>
+<th>Кандидат</th>
+<th>Реальный режим контекста</th>
+<th>Следствие для выбора действия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laya English</td>
+<td>Config max_len512, head_max_len192</td>
+<td>Не baseline полного native состояния; только явно компактный вид</td>
+</tr>
+<tr>
+<td>Laya typed-decisions</td>
+<td>1024 / 256</td>
+<td>Полная policy из измерения не помещается ещё до истории</td>
+</tr>
+<tr>
+<td>Laya multilingual</td>
+<td>Default1024 / 256; explicit max_len8192 поддерживается</td>
+<td>Кандидат для длинного пилота, не доказанная политика τ-bench</td>
+</tr>
+<tr>
+<td>KEV-0.8B</td>
+<td>Cards validated8192; serving state65536, row73728</td>
+<td>Окно полезнее, но автор прямо не рекомендует tool-call routing</td>
+</tr>
+<tr>
+<td>KEV-4B</td>
+<td>Те же validated8192 / serving limits</td>
+<td>Более обоснованный routing-кандидат; длинный serving cap не доказывает качество</td>
+</tr>
+</tbody>
+</table>
+<p>Источники: <a href="https://huggingface.co/convaiinnovations/laya/blob/7b928d828b7b0e022f929d9bd2e44165aa270148/rl_agent_config.json">English config</a>, <a href="https://huggingface.co/convaiinnovations/laya-typed-decisions/blob/e929ae5cf69bc34259cd2f95c9e91145b818b1f0/rl_agent_config.json">typed config</a>,
+<a href="https://huggingface.co/convaiinnovations/laya-multilingual/blob/1720e3e3357cfe1e281542e223f8273b0890ca34/rl_agent_config.json">multilingual config</a>, <a href="https://huggingface.co/jaredpalmer/kev-0.8b/blob/bf75a6a8848ea6960ff2ed108d9ed44c2941174f/README.md">KEV0.8 card</a>, <a href="https://huggingface.co/jaredpalmer/kev-4b/blob/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/README.md">KEV4 card</a>.
+Повышение max_len само по себе не создаёт проверенного навыка работы с длинными
+политиками. Авторский multilingual long-context probe — 20 department-routing
+запросов, 4 варианта и искусственный filler; при 7k filler 8/20 правильных.
+Это не оценка многоходового tool use. <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/research/scripts/bench_long_context.py">Скрипт</a>, <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/research/results/long_context_multilingual.json">результаты</a>.</p>
+<h3 id="options-тоже-расходуют-контекст-и-иногда-обрезаются">Options тоже расходуют контекст, и иногда обрезаются</h3>
+<p>Laya упаковывает head (вопрос/варианты) <strong>перед</strong> state. Реальное место state:</p>
+<p>$$
+B_{state}=\max(0,\; max_len-|head|-1).
+$$</p>
+<p>Поэтому «состоянию всегда остаётся 320/768 токенов» — не точное правило.
+Option text сначала обрезается до 48 токенов. При нехватке head budget
+span варианта вместе с MASK получает cap max(4, floor((head_max_len−16)/K)).
+Инструкция сохраняет минимум 8 токенов, поэтому head_max_len <strong>не жёсткий
+потолок</strong>. При большом K head может превышать его. <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/laya/common.py#L156-L275">Упаковка</a>.
+В str/dict сохраняется начало state, в list — конец; это обрезка, не summary.
+Usage сообщает dropped state и проблемы options. Если markers не помещаются,
+возникает ошибка. Записывать truncation telemetry; не считать штатную обрезку
+доказательством, что модель получила необходимые факты. <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/laya/agent.py#L1132-L1179">Runtime</a>.</p>
+<p>HTTP Laya допускает до100 choice options, KEV — до255; <strong>это API-лимиты, не
+доказанная точность среди стольких вариантов</strong>. У Laya при большом K особенно
+важны смысл обрезанных описаний и различимость labels. KEV production по
+умолчанию отклоняет oversized state; явный truncate сохраняет начало,
+слишком длинная row отклоняется всегда. <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/laya/serve.py#L84-L124">Laya API</a>, <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/model.py#L87-L142">KEV pack</a>.</p>
+<h3 id="что-известно-о-пригодности-к-routing">Что известно о пригодности к routing</h3>
+<ul>
+<li><strong>KEV0.8:</strong> When2Call dev0.167 / test0.133 против four-way chance0.25;
+  model card: «Do not use it for tool-call routing». Поэтому оставить его как
+  дешёвый/отрицательный контроль или объект явно отдельной адаптации, не как
+  основной готовый router. <a href="https://huggingface.co/jaredpalmer/kev-0.8b/blob/bf75a6a8848ea6960ff2ed108d9ed44c2941174f/README.md">Проверенная карточка</a>.</li>
+<li><strong>KEV4B:</strong> When2Call <strong>dev0.660</strong> — реальное узкое основание для пилота,
+  а не аргумент «предупреждения нет». Это не test и не полный τ-bench с args.
+  <a href="https://huggingface.co/jaredpalmer/kev-4b/blob/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/README.md">Карточка</a>.</li>
+<li>Laya support/domain/model routing и headline typed-decisions accuracy не
+  являются τ-action-selection результатом. В проверенных источниках не найден
+  готовый τ-bench результат этих checkpoints; обзор не претендует на полный
+  citation search. <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/BENCHMARKS.md">Laya benchmarks</a>.</li>
+</ul>
+<p>Порядок вариантов влияет на обе семьи. У KEV confidence нормирован относительно
+1/K, у Laya confidence и answer_confidence различаются. Для calibration брать
+документированные вероятности и явно выбранное событие, не один универсальный
+порог для разных K/checkpoints. K также меняет мягкое распределение и фактическую
+упаковку Laya. <a href="https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/kev/api.py">KEV API</a>, <a href="https://github.com/NandhaKishorM/laya/blob/68804629e8ccd9d616d48a40e87de9fabbeae069/BENCHMARKS.md">Laya benchmarks</a>.</p>
+<h2 id="9-контракт-общего-узла-не-личная-тема-rlcd">9. Контракт общего узла; не личная тема RLCD</h2>
+<p><strong>Актуальная граница после уточнений инициатора 11.10.2026:</strong> выбор действий
+и представления контекста проектируется для общей платформы, а не становится
+самостоятельной личной темой инициатора. Его направление — <strong>адаптация модели</strong>;
+RLCD против обучения без RL — возможное уточнение после общей схемы, не уже
+обязательный выбор. <a href="../research/#согласованные-направления-трёх-исследований">Согласованные направления</a>,
+<a href="../rlcd-study-plan/">условный RLCD-план</a>.</p>
+<p>Ниже сохранён предложенный технический контракт T/E2 общего стенда вместо
+verifier. Он пока предусматривает генератор после selector. Разрешение
+инициатора пропускать LLM на подходящих шагах открывает отдельную развилку
+<a href="../#wayfinder-decision-contract">карты</a>, но ещё не утверждает fast path.
+Следующее поручение инициатора — проработать именно <a href="../complete-call-options/">варианты полного вызова</a>:
+контракт ниже сохраняется как контроль name-only → generator, а не итоговая
+схема сокращения LLM-вызовов. Работа с контекстом и сравнение архитектур не становятся обязательной
+личной исследовательской программой. Проверка фактической достаточности
+KEV8192 вынесена в <a href="../resource-assessment/#13-уточнение-что-именно-означает-validated-8192-у-kev-4b">ресурсную оценку</a>.</p>
+<pre><code class="language-text">Наблюдаемая история + доступные правила/результаты + известные actions
+                     ↓
+Одинаковый state builder и честно сформированный каталог кандидатов
+                     ↓
+Selector: правило / LLM / Laya / KEV → ID следующей операции
+                     ↓
+Fixed generator: только args выбранной операции либо текст ответа
+                     ↓
+Штатные checks, tools, среда и evaluator τ-bench
+</code></pre>
+<p>Нет предварительно выбранного большой LLM действия, которое маленькая модель
+только разрешает. При недостаточной уверенности selector передаёт <strong>сам выбор</strong>
+заданной fallback LLM; это техническая обёртка, не новая бизнес-операция.</p>
+<h3 id="что-считать-выбранной-операцией">Что считать выбранной операцией</h3>
+<p>Для обычного tool — его имя; respond покрывает реплику, включая уточнение.
+Разделить ask_user/respond/finish можно отдельным протоколом разметки, но это
+наши виртуальные классы, не три готовых native tool names. Для discoverable
+важен <strong>semantic ID конкретной известной функции</strong>, а не один общий
+call_discoverable_agent_tool: если target name по-прежнему выбирает generator,
+реальное банковское решение осталось у LLM.</p>
+<p>Адаптер переводит выбранный semantic ID в native wrapper и фиксирует target;
+генератору остаются обычные аргументы. Call-ветка допускает только действительно
+unlocked функции; отдельный unlock-кандидат — только реально обнаруженное имя.
+Provenance каталога — наблюдаемые сообщения и результаты discovery, не скрытый
+список из Python-кода. list_discoverable_agent_tools не считать каталогом
+всех возможностей: это журнал уже вызванных функций.</p>
+<h3 id="два-честных-варианта-контекста">Два честных варианта контекста</h3>
+<ol>
+<li><strong>Длинный selector:</strong> KEV4B или Laya multilingual с явно настроенным окном,
+   измеряемым полным упакованным запросом. Начать с 2k/4k и проверить 8k как
+   отдельный режим; наличие поддержки не заменяет token/accuracy/memory test.</li>
+<li><strong>Компактный selector:</strong> фиксированное представление наблюдаемых фактов,
+   последних реплик и доступных правил. Его качество является частью метода.
+   Не заполнять поле «следующее действие» или hidden policy flags силами oracle.</li>
+</ol>
+<p>Если состояние строит LLM-summary, она может сама решить задачу, внести ошибки
+и съесть экономию. Поэтому сначала детерминированное извлечение наблюдаемых ID,
+результатов, пар вопрос–ответ и явных фактов; непокрываемые состояния — fallback.
+Нельзя выбросить подтверждение пользователя и ожидать, что RL восстановит факт.
+Одному и тому же compact state могут соответствовать полные истории с разными
+правильными действиями: это информационная потеря, не обязательно слабое обучение.</p>
+<p>Все selectors в причинном сравнении получают <strong>одинаковый семантический текст
+и кандидатов</strong>, который реально помещается без hidden truncation. Токенизаторы
+различаются, поэтому равный номинальный max_len не доказывает равенства входов.
+Long vs compact, полный vs shortlist, predict_long/windowing — разные условия.
+Для shortlist измерять candidate recall; gold action нельзя подмешивать при
+пропуске. Полное native сравнение сохраняется даже если compact baseline слаб.</p>
+<h3 id="ранее-предложенный-архитектурный-пилот--не-личный-rlcd-план">Ранее предложенный архитектурный пилот — не личный RLCD-план</h3>
+<p>Этот список сохранён для общей платформы/тиммейтов. В личном исследовании
+RLCD не требуется выполнять весь context/model grid до сравнения обучения:
+достаточно зафиксировать работоспособный вход и единый scaffold.</p>
+<ol>
+<li>100–200 <strong>не тестовых</strong> состояний для аудита входа: полные lengths по каждому
+   tokenizer/head, число options, потерянные факты, необходимость discovery.
+   Не начинать с 6000 меток и дообучения до проверки информационной достаточности.</li>
+<li>Native LLM; factorized LLM full; factorized LLM compact; дешёвый compact
+   selector — одинаковый generator, protocol single/multi-call, candidate source.</li>
+<li>Заменить selector на KEV4B и Laya multilingual; English/typed только на
+   реально помещающемся compact input. KEV0.8 — явно отрицательный reference.</li>
+<li>Сравнить 2–3 разумных бюджета и seeded перестановки вариантов; не делать
+   полный декартов grid всех размеров/доменов/окон. Проверить потерю критических
+   фактов отдельно от селектора, сохраняя полные наблюдаемые входы для аудита.</li>
+<li>Только после этого — сравнение CE/Brier/конкретного RLCD на <strong>одной</strong> модели
+   с одинаковым входом. Laya logit-RLCD не объявлять OpenJev rationale-RLCD.</li>
+<li>Лучшие условия — полный τ-knowledge: task success, выбор/args/discovery errors,
+   fallback, стоимость, p50/p95. Аргументы и ответы по-прежнему требуют генерации;
+   относительно native одного вызова ускорение <strong>не гарантировано</strong>.</li>
+</ol>
+<h3 id="разметка-меняется-это-не-переименование-binary-labels">Разметка меняется, это не переименование binary labels</h3>
+<p>Новая запись: (наблюдаемый префикс, view, текущий каталог C, рекомендуемый action
+или множество приемлемых следующих actions, свидетельства, ambiguities).
+Для диагностики оценивать попадание выбранной операции в приемлемое множество
+и отдельно ошибки отсутствующего кандидата. Для categorical CE/Brier нужно
+заранее определить target distribution q над C: множество допустимых действий
+само по себе не задаёт единственную «истинную» softmax-вероятность. Равномерное
+q по множеству — явное правило целевой политики, не установленная вероятность
+успеха. Imitation одной демонстрации тоже не равна optimal action policy.</p>
+<p>Калибровку выбранного ответа проверять относительно определённого события,
+например «выбранная операция приемлема при наблюдаемом префиксе», с независимыми
+labels. Нельзя считать p(action) вероятностью успеха всей траектории. Сохранять
+grouped splits по исходной задаче/семейству и не превращать соседние шаги в
+независимые примеры. Native benchmark не предоставляет готовую полную разметку
+этих множеств; teacher proposals проверяются отдельно.</p>
+<h2 id="10-как-это-меняет-ресурсы-и-критерий-завершения">10. Как это меняет ресурсы и критерий завершения</h2>
+<p>Ориентир 6000 из <a href="../resource-assessment/">ресурсной оценки</a> — только порядок
+возможного объёма adaptation, не подтверждённое достаточное число action labels.
+Теперь измерять покрытие классов/семейств действий и K, а не баланс yes/no.
+Для 8k training нельзя переносить память/время короткой Laya из прежней таблицы:
+более длинные активации требуют нового smoke-test. Mac остаётся основной
+машиной, но ресурсная выполнимость полного длинноконтекстного обучения не установлена.</p>
+<p>Сохраняется минимум ВКР: агент с заменяемым selector, воспроизводимый protocol,
+данные и сравнение. Научно полезны и выводы «работает лишь на узком short-context
+поднаборе», «компрессия определяет потери сильнее модели», «дополнительная
+факторизация не окупается». Новый RL-алгоритм и полная замена генеративной LLM
+не становятся обязательными результатами.</p>
+<h2 id="первичные-источники-закреплённого-commit">Первичные источники закреплённого commit</h2>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "id": "kev-laya-frozen-v1",
+  "created_at": "2026-10-25T09:31:52.951114+00:00",
+  "cohort_source": "artifacts/system-one-pilot/api-v1/exports/trusted-labels-v1.jsonl",
+  "cohort_sha256": "e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0",
+  "rows": 30,
+  "hard_labels": 29,
+  "families": 3,
+  "labels_sources": {
+    "human": 6,
+    "llm_consensus": 20,
+    "agent_adjudication": 4
+  },
+  "question": {
+    "type": "noul",
+    "instructions": "Does the candidate evidence contain a rule, exception or fact applicable to the current user need in the observed conversation?"
+  },
+  "threshold": 0.5,
+  "calibration": "published unchanged",
+  "state": "exact input_text, original English, no summary/truncation/future/gold",
+  "models": {
+    "laya": "multilingual@1720e3e3357cfe1e281542e223f8273b0890ca34",
+    "kev-0.8b": "9a45d25eb2ab761841196625383fa1dff0e56c1e",
+    "kev-4b": "139fdd94f1b6a6ad80cc15e08fcb99cac885a101"
+  },
+  "native_limits": {
+    "laya": 4096,
+    "kev": 8192
+  },
+  "performance_repeats": 3,
+  "warmups": "3 rows by min/median/max encoded length",
+  "order_seed": 25,
+  "batch_size": 1,
+  "tokenization": "timed separately and included in request latency",
+  "timing": "device synchronize, includes native CPU head/readout",
+  "memory": "fresh sequential subprocess; total-process RSS peak and backend allocator/driver bytes separately; unified values not summed",
+  "metrics": [
+    "accuracy",
+    "balanced_accuracy",
+    "F1",
+    "Brier",
+    "NLL",
+    "ROC_AUC",
+    "request_median_p95",
+    "forward_median_p95",
+    "peak_RSS",
+    "backend_peak_memory"
+  ],
+  "baselines": [
+    "always irrelevant",
+    "BM25 query-candidate lexical ranking"
+  ],
+  "quality_scope": "descriptive agreement on existing train cards; not held-out or end-to-end agent improvement",
+  "uncertain": "predict, exclude only from binary quality denominator; retain raw",
+  "failure": "keep individual failures/overflow, report per-arm coverage and common cohort; do not retune thresholds/window/weights",
+  "external_inference_budget_usd": 0,
+  "gpu_rental_rub": 0,
+  "training": false
+}

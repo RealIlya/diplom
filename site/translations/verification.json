@@ -1,0 +1,75 @@
+{
+  "openjev": {
+    "original_numeric_cells": 179,
+    "translated_numeric_cells": 188,
+    "missing_numeric_values": {},
+    "extra_numeric_values": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1
+    }
+  },
+  "sbert2s1": {
+    "original_numeric_cells": 1099,
+    "translated_numeric_cells": 1099,
+    "missing_numeric_values": {},
+    "extra_numeric_values": {}
+  },
+  "checks": {
+    "openjev": {
+      "mathml_expressions": 269,
+      "mathml_error_elements": 0,
+      "unparsed_math_dollars_outside_code": 0,
+      "html_tables": 9,
+      "table_body_rows": [
+        9,
+        8,
+        8,
+        4,
+        5,
+        4,
+        8,
+        7,
+        7
+      ],
+      "embedded_svg_count": 3,
+      "external_stylesheet_count": 0,
+      "word_count_whitespace": 6041,
+      "html_bytes": 408815,
+      "render_log_empty": true
+    },
+    "sbert2s1": {
+      "mathml_expressions": 396,
+      "mathml_error_elements": 0,
+      "unparsed_math_dollars_outside_code": 0,
+      "html_tables": 14,
+      "table_body_rows": [
+        20,
+        19,
+        12,
+        6,
+        13,
+        12,
+        12,
+        30,
+        24,
+        24,
+        11,
+        10,
+        7,
+        7
+      ],
+      "embedded_svg_count": 6,
+      "external_stylesheet_count": 0,
+      "word_count_whitespace": 15772,
+      "html_bytes": 1212130,
+      "render_log_empty": true
+    }
+  }
+}

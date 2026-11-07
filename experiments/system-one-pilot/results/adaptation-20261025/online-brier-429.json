@@ -1,0 +1,15 @@
+{
+  "call_id": "online-adaptation-v1/brier/task_041/005/agent",
+  "http_status": 429,
+  "reserve_usd": 0.0160548,
+  "request_sha256": "99e0eedab78d0675b93b68faaae4720cbd7343f25db4462a23c53b9bfb2d3b1d",
+  "stored_response_sha256": "ae0f95919c59b77c6ef3b8a435fed8f68024f9991b2bfd189fd916b329826134",
+  "retry": false,
+  "error_metadata": {
+    "provider_name": "DeepInfra",
+    "provider_error_code": "engine_overloaded",
+    "limit_source": "upstream_provider_shared_pool"
+  },
+  "strict_body_parse": true,
+  "accounting": "entire upper bound conservatively accounted under existing narrow rule"
+}

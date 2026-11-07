@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-25T08:55:50.640082+00:00",
+  "policy": "deepseek-qwen-agent-v1",
+  "accepted": 30,
+  "human": 6,
+  "llm_consensus": 20,
+  "agent": 4,
+  "critical_unresolved": 0,
+  "required_user_actions": 0,
+  "backup": "/Users/nikitapasinin/Documents/ChatGPT/diplom-backups/system-one-pilot/20261025-trusted-labels-v1",
+  "backup_manifest": {
+    "at": "2026-10-25T08:55:50.622721+00:00",
+    "files_sha256": {
+      "trusted-labels-v1.jsonl": "e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0",
+      "pilot.sqlite3": "8b0dc4dc80c86a4fd126eb17438bc9059ccb1846eadb6f075ad1d07913f5bae7",
+      "authorized-series-20261025.sqlite3": "7a3b5f451b9ad6a6ef1c24d06581772bfdb8c0577a8ad6e6f6356c9012bf95cd",
+      "agent-adjudications-v1.json": "396a7da08fa34b6664756cf4ada006cd87037361aabf0aab5e892c6a268401f6"
+    },
+    "restore_validation": "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/api-v1/restore-validation-trusted-v1.sqlite3",
+    "exported_rows": 30,
+    "human_rows": 6,
+    "trusted_rows": 24,
+    "budgets_unchanged": true
+  },
+  "budgets": {
+    "collection": {
+      "series": "collection",
+      "limit_usd": 1.0,
+      "calls": 141,
+      "actual_usd": 0.051000296,
+      "charged_or_held_usd": 0.059315396,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 2
+    },
+    "annotation": {
+      "series": "annotation",
+      "limit_usd": 0.5,
+      "calls": 121,
+      "actual_usd": 0.095484127,
+      "charged_or_held_usd": 0.095484127,
+      "unresolved": 0,
+      "conservatively_accounted_calls": 0
+    }
+  },
+  "new_api_calls": 0,
+  "original_human_work_preserved": true,
+  "trusted_export_digest": "4388734b2ee2025f2b0e33b3362f7aa0ce3e19a50556739823cecf657ec68046",
+  "python_tests": {
+    "passed": 41,
+    "seconds": 2.348
+  },
+  "javascript_tests": "PASS",
+  "code_review": "Findings closed; stale-tab guarded transactionally",
+  "gitmark": {
+    "documents": 31,
+    "chunks": 406,
+    "lint_strict": "pass"
+  },
+  "mkdocs_strict": "pass0.69s",
+  "diff_check": "pass",
+  "screenshot": "artifacts/system-one-pilot/api-ui-trusted-proof.png",
+  "exact_secret_scan_hits": 0
+}

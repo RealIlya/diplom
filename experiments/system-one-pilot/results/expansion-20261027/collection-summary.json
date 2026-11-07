@@ -1,0 +1,125 @@
+{
+  "episodes": [
+    {
+      "task_id": "task_019",
+      "status": "failed",
+      "termination_reason": null,
+      "messages": 15,
+      "error": {
+        "type": "BudgetError",
+        "detail": "unknown request outcome retained; no automatic retry"
+      },
+      "sha256": "f8d1e6ec5101ae906029f3e83087eae9733aad210f91551b62e2c28f8dd63faa"
+    },
+    {
+      "task_id": "task_033",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "messages": 40,
+      "error": null,
+      "sha256": "da3a9c10cbc02074cf75dc40547b23c2b4fc6e2a9d6f8efdc5088424c4cde28b"
+    },
+    {
+      "task_id": "task_012",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "messages": 20,
+      "error": null,
+      "sha256": "aadda30bec127c904f26a65d4b31fb2882224c318004c49c115848adfa1104a9"
+    },
+    {
+      "task_id": "task_087",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "messages": 77,
+      "error": null,
+      "sha256": "89ae30f582cabe2a956498b0610ef7c4bf1f82193bfbb294036a536f0c25dda1"
+    },
+    {
+      "task_id": "task_016",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "messages": 26,
+      "error": null,
+      "sha256": "fe92196723c85732609b24f747d2a9c54b896b471b949830a306281e9e2e4cd1"
+    },
+    {
+      "task_id": "task_051",
+      "status": "completed",
+      "termination_reason": "user_stop",
+      "messages": 77,
+      "error": null,
+      "sha256": "2f6020b109413970726a59a4243fe7b42fdb737f1c3af523d36d577019b87528"
+    },
+    {
+      "task_id": "task_062",
+      "status": "completed",
+      "termination_reason": "max_steps",
+      "messages": 89,
+      "error": null,
+      "sha256": "8c9f212f54ba172301e19ac225e9dbf86dc59dbf93b91f6e22bf9780bf2b23f4"
+    },
+    {
+      "task_id": "task_097",
+      "status": "failed",
+      "termination_reason": null,
+      "messages": 44,
+      "error": {
+        "type": "BudgetError",
+        "detail": "persistent series budget exhausted before HTTP"
+      },
+      "sha256": "ca9ac8c1117f4c5b0affd9c4e376426327ef359e03b5ef9081daee97c797d1c1"
+    },
+    {
+      "task_id": "task_015",
+      "status": "not_started"
+    }
+  ],
+  "attempted": 8,
+  "completed_runner": 6,
+  "failed": 2,
+  "unstarted": 1,
+  "agent_success_evaluated": false,
+  "collection_charged_or_held_usd": 0.089059207,
+  "full_bound_provider504_usd": 0.0190362,
+  "extract": {
+    "pool_document_snapshots": 699,
+    "pool_rows": 734,
+    "selected": 70,
+    "counts": {
+      "accepted": 463,
+      "CANDIDATE_OVERFLOW": 44,
+      "STATE_OVERFLOW": 192
+    },
+    "denominator": "all document versions in preselected retrieval snapshots, before admission or annotation; not all agent turns",
+    "errors": []
+  },
+  "final_queue": {
+    "rows": 200,
+    "families": {
+      "family-fbde50414600": 31,
+      "family-4b27d1b6add2": 31,
+      "family-1e5193f94dab": 16,
+      "family-ab2bce7aa21d": 31,
+      "family-613b0b87acce": 30,
+      "family-5f106c4a0d02": 31,
+      "family-6e4302e654a1": 30
+    },
+    "snapshots": 18,
+    "queue_sha256": "67cbe16983c5c63bcce1e62b2ea7c988dcdfd999634508e6451d507a0134a5c1",
+    "fresh_task_rows": 200,
+    "test_rows": 0,
+    "scope": "train-only engineering packet; no independent validation claim",
+    "daily_before_annotation": {
+      "date": "2026-10-27",
+      "timezone": "Asia/Novosibirsk",
+      "calls": 227,
+      "limit_usd": 1.0,
+      "charged_or_held_usd": 0.089059207,
+      "remaining_usd": 0.910940793,
+      "held_nusd": 89059207,
+      "limit_nusd": 1000000000
+    }
+  },
+  "note_ru": "Сбор остановлен до HTTP следующего запроса097: весь максимум не помещается в cap. Не утверждается расход всего cap или успешность completed-эпизодов. Первоначальный failed019 и частичный097 сохранены."
+}

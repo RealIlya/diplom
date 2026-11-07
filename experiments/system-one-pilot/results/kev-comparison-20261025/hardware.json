@@ -1,0 +1,9 @@
+{
+  "cpu": "Apple M4 Pro",
+  "unified_memory_bytes": 25769803776,
+  "cpu_cores": 12,
+  "source": "sysctl machdep.cpu.brand_string hw.memsize hw.ncpu, 2026-10-25T10:31 UTC",
+  "reported_timezone": "Asia/Novosibirsk",
+  "gpu_cores": 16,
+  "metal_family": "Metal 4"
+}

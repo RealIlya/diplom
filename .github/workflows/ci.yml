@@ -35,5 +35,6 @@ jobs:
       - run: python .claude/skills/kb-search/gitmark.py index
       - run: python .claude/skills/kb-search/gitmark.py search 'τ-knowledge' -k 3
       - run: python -m unittest discover -s tests -v
+      - run: node tests/test_system_one_review.cjs
       - run: python scripts/check_presentations.py
       - run: python scripts/check_site.py

@@ -1,0 +1,124 @@
+{
+  "arms": {
+    "native": {
+      "run_directory": "artifacts/system-one-pilot/adaptation-v1/online/native-v1",
+      "planned_tasks": 3,
+      "completed_tasks": [
+        "task_035",
+        "task_061"
+      ],
+      "failed_tasks": [
+        "task_041"
+      ],
+      "missing_tasks": [],
+      "successes": 1,
+      "rewards": {
+        "task_035": 1.0,
+        "task_061": 0.0
+      },
+      "api_calls_by_role": {
+        "simulator": 24,
+        "agent": 56
+      },
+      "api_actual_usd": 0.019589196,
+      "api_charged_or_held_usd": 0.019589196,
+      "setup_seconds": 6.249997568374965e-07,
+      "episode_seconds_median": 151.05631833300004,
+      "fallback_events": {},
+      "selector_seconds_total": 0,
+      "selector_calls": 0
+    },
+    "bm25": {
+      "run_directory": "artifacts/system-one-pilot/adaptation-v1/online/bm25-v1",
+      "planned_tasks": 3,
+      "completed_tasks": [
+        "task_035",
+        "task_061",
+        "task_041"
+      ],
+      "failed_tasks": [],
+      "missing_tasks": [],
+      "successes": 1,
+      "rewards": {
+        "task_035": 1.0,
+        "task_061": 0.0,
+        "task_041": 0.0
+      },
+      "api_calls_by_role": {
+        "simulator": 9,
+        "agent": 86
+      },
+      "api_actual_usd": 0.04014311,
+      "api_charged_or_held_usd": 0.04014311,
+      "setup_seconds": 2.499996298865881e-07,
+      "episode_seconds_median": 187.42425845800017,
+      "fallback_events": {},
+      "selector_seconds_total": 10.383195833997434,
+      "selector_calls": 83
+    },
+    "llm": {
+      "run_directory": "artifacts/system-one-pilot/adaptation-v1/online/llm-v1",
+      "planned_tasks": 3,
+      "completed_tasks": [
+        "task_035",
+        "task_061"
+      ],
+      "failed_tasks": [
+        "task_041"
+      ],
+      "missing_tasks": [],
+      "successes": 1,
+      "rewards": {
+        "task_035": 1.0,
+        "task_061": 0.0
+      },
+      "api_calls_by_role": {
+        "simulator": 19,
+        "agent": 54,
+        "selector": 46
+      },
+      "api_actual_usd": 0.051339172,
+      "api_charged_or_held_usd": 0.051339172,
+      "setup_seconds": 1.249999968422344e-06,
+      "episode_seconds_median": 519.921285208,
+      "fallback_events": {
+        "invalid_llm_ids": 3
+      },
+      "selector_seconds_total": 1003.7586153799998,
+      "selector_calls": 46
+    },
+    "frozen": {
+      "run_directory": "artifacts/system-one-pilot/adaptation-v1/online/frozen-v1",
+      "planned_tasks": 3,
+      "completed_tasks": [
+        "task_035"
+      ],
+      "failed_tasks": [
+        "task_061"
+      ],
+      "missing_tasks": [
+        "task_041"
+      ],
+      "successes": 1,
+      "rewards": {
+        "task_035": 1.0
+      },
+      "api_calls_by_role": {
+        "simulator": 7,
+        "agent": 24
+      },
+      "api_actual_usd": 0.010093382,
+      "api_charged_or_held_usd": 0.031396382,
+      "setup_seconds": 2.179115875000207,
+      "episode_seconds_median": 253.884441917,
+      "fallback_events": {},
+      "selector_seconds_total": 223.82216283199978,
+      "selector_calls": 22
+    }
+  },
+  "common_completed_tasks": [
+    "task_035"
+  ],
+  "all_six_arms_present": false,
+  "scope": "small paired dev pilot; failures/missing retained; no statistical superiority or final test claim"
+}

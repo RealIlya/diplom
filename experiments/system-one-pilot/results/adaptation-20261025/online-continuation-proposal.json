@@ -1,0 +1,23 @@
+{
+  "status": "validated locally, NOT executed",
+  "retained_statuses": {
+    "task_035": "completed",
+    "task_061": "failed"
+  },
+  "unstarted_frozen": [
+    "task_041"
+  ],
+  "next_arms": [
+    "ce",
+    "brier"
+  ],
+  "paid_calls": 0,
+  "prior_receipt_sha256": "cd827750132af52d9925b95c08a8263df438db11657211315ef0e39b2b02cc9c",
+  "prior_files_sha256": {
+    "task_035": "41a4841e434e2ba30a392b9939eb4ae6d56db0ddedfb0088c947326acb6b8d63",
+    "task_061": "47b8ab5f3ccc6dc70a36c535fb24ad7f02b3d3c7999ed90626645f7db32ce3c6"
+  },
+  "unknown_call_id": "online-adaptation-v1/frozen/task_061/022/agent",
+  "maximum_unknown_usd": 0.021303,
+  "resume_requires": "request receipt or explicit user exception, no change to original protocol/caps"
+}

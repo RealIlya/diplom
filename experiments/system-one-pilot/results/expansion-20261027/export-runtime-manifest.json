@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-27T06:17:50.489847+00:00",
+  "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "source_sha256": {
+    "scripts/system_one_pilot/fetch.py": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+    "scripts/system_one_pilot/review.html": "8f5d2f4c662f08157ec13b36445b2b9cde5598eb73987f089ac41cd7fd75e391",
+    "scripts/system_one_pilot/adapt_head.py": "0fba220cc5d1877258a2a71bf9a90fbd9b604ac90dc8ed65f7437281c94d6f24",
+    "scripts/system_one_pilot/rubric-v1.txt": "e8d188c9c3fc56d2a74be63a1231c7b6d7aec6efa481658eb9057fc23833593d",
+    "scripts/system_one_pilot/live_data.py": "5c4e72403337a28a17f4ec37be5ca658811672d90a065ac54a9ab261e917385f",
+    "scripts/system_one_pilot/online.py": "4ccdd14c72ec0e270972cb57831720a3a23e0ba5304d498a7c302f5619d1878d",
+    "scripts/system_one_pilot/__init__.py": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+    "scripts/system_one_pilot/review.py": "148aa349241720d9a2d76984be26c6ef9e897698d45860f7eaa66bf0316bad1a",
+    "scripts/system_one_pilot/model.py": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+    "scripts/system_one_pilot/cli.py": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+    "scripts/system_one_pilot/live_api.py": "7aaa5d35c7d954c61e335078cba2a0f782453a896dd6c2735c77a367e5f79e1c",
+    "scripts/system_one_pilot/live.py": "d7067703dca5e12b8e0384937b2044e69100d8cde7368c50ccede383262c0a8e",
+    "scripts/system_one_pilot/expansion.py": "e72d8328ed5a75cc36206c559bb30880a117349fc9b31553b2d54f74a921a726",
+    "scripts/system_one_pilot/provider_timeouts.py": "24ea0183b9ef03d6e57a7b9b9f87e4b77eb5f9cf3d62f6dd5f21e3b0ce621327",
+    "scripts/system_one_pilot/adaptation.py": "3754670a47ec4b72cf0e81f1edba9e8d510b4ac0cbf3be224df3f0d1c8984ca9",
+    "scripts/system_one_pilot/grouped.py": "9a13de689e194b5c3760076a5b9f2f974a4c7dcc438fc27d1e910a21487bd42f",
+    "scripts/system_one_pilot/compare.py": "730e64beb708c6a2cffd19bc06795dc893d6d9e31f0ee9ac5109e4fabeeb0599",
+    "scripts/system_one_pilot/report.py": "37604a98d61684d6e4b3e218085193b5e1897a51396bb8aa15fdbfec4c241c49",
+    "scripts/system_one_pilot/data.py": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380"
+  },
+  "source_bundle": "artifacts/system-one-pilot/code-snapshots/ad9f4d500afe9a51056ccbad20d857d5b6e683f66e78e7a149afeff9640b6716.zip",
+  "source_bundle_sha256": "0b1195f6cfdae5fac73c699bd5e00cf5b3e5d4914ac3f81ae07ba1651616ba6c",
+  "versions": {
+    "torch": "2.9.1",
+    "transformers": "4.57.1",
+    "litellm": "1.82.6",
+    "rank-bm25": "0.2.2",
+    "certifi": "2025.11.12"
+  },
+  "scope": "current offline export source/runtime; collection/annotation execution versions remain in their original receipts"
+}

@@ -1,0 +1,18 @@
+{
+  "critical": 0,
+  "important": 0,
+  "minor": 0,
+  "reviewer": "fresh gpt-6-astra/high",
+  "tests": "6fake tests passed,97targetedpassed",
+  "scope": [
+    "provider_timeouts.py",
+    "continue-packet.py",
+    "approval/protocolbinding",
+    "paidledger/reviewintegration inspected"
+  ],
+  "declined": [
+    "liveAPI and models notrun",
+    "dailybudget mechanism notreaudited"
+  ],
+  "root_resolution": "dailyguard earlierreviewed/tested,liveoutputsrecorded separately,allunknownactual fullheld"
+}

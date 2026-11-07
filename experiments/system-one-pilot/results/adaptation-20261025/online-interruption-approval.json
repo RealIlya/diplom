@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T16:46:19.099722+00:00",
+  "source": "explicit user reply to frozen unknown outcome question",
+  "answer": "Учесть максимум и продолжить",
+  "series": "collection",
+  "call_id": "online-adaptation-v1/frozen/task_061/022/agent",
+  "request_sha256": "90244879bc2b8c03d6957cd5b6a1bec9e5af90f999638380c17d2fcc81e5fd02",
+  "full_upper_bound_usd": 0.021303,
+  "cap_total_usd": 1.0,
+  "retry_failed_episode": false,
+  "remaining_unstarted_episodes": 7,
+  "actual_cost_known": false
+}

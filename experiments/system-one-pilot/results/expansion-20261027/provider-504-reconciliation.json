@@ -1,0 +1,24 @@
+{
+  "reconciled": 1,
+  "original_error_and_financial_row_unchanged": true,
+  "daily": {
+    "date": "2026-10-27",
+    "timezone": "Asia/Novosibirsk",
+    "calls": 9,
+    "limit_usd": 1.0,
+    "charged_or_held_usd": 0.020580968,
+    "remaining_usd": 0.979419032,
+    "held_nusd": 20580968,
+    "limit_nusd": 1000000000
+  },
+  "collection": {
+    "series": "expansion-v1-collection",
+    "limit_usd": 0.2,
+    "calls": 9,
+    "actual_usd": 0.001544768,
+    "charged_or_held_usd": 0.020580968,
+    "unresolved": 0,
+    "conservatively_accounted_calls": 1
+  },
+  "review": "freshreview0findings,6faketests; targeted97pass"
+}

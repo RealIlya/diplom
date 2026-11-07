@@ -1,0 +1,431 @@
+{
+  "status": "paused provider504, not completed data expansion",
+  "protocol_unchanged": true,
+  "old_dataset_export_unchanged": true,
+  "files": {
+    "artifacts/system-one-pilot/expansion-v1/ledger-paused.sqlite3": {
+      "sha256": "d7efb5553801b3e8aed9caf381c80ec16cbe9ba328173b733410bfcfadfe206b",
+      "bytes": 73936896
+    },
+    "artifacts/system-one-pilot/expansion-v1/grouped-benchmark-v2/summary.json": {
+      "sha256": "115385e45eed2620a16a8d9a3e718a5dd1838866d2ee1a03c0e663d1c6fb182f",
+      "bytes": 1181
+    },
+    "artifacts/system-one-pilot/expansion-v1/grouped-benchmark-v2/records.json": {
+      "sha256": "6cfbd7df153b1da95a0eb2857081e5fae7b61f47798c62db988cd20cf2e3043f",
+      "bytes": 29346
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/mkdocs-paused.log": {
+      "sha256": "26143769dda028f3091b8b4a31fb39f9450faec075099c9d1cf0f532a4d41021",
+      "bytes": 1292
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/generation-recovery-20261026T173232.json": {
+      "sha256": "e406e58223cb9e18a8b3ff0d16940170891eebe2d23f92c2e4332d0692ccaffd",
+      "bytes": 62
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/task1-red.log": {
+      "sha256": "07736c5bef281f84132e2f9bfbad8553239a72ebd51d56a592f1876d2f5dd1d6",
+      "bytes": 4509
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/mkdocs.log": {
+      "sha256": "bcbee024b13ab64fd070c5c86f4ff587548ccb5ccc8027a3ac56b3e7f41bec21",
+      "bytes": 989
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/prepaid-targeted-v2.log": {
+      "sha256": "1ce6139f9a6d5311b2aa5ba77d6cc9d869413775323d33efc4b8d80820bb395a",
+      "bytes": 7393
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/review-green.log": {
+      "sha256": "f36e1d7c9fef0d8379f06c5a18f342fc336eddf4df0971de085f44eada61e9ae",
+      "bytes": 104
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/prepaid-final-tests.log": {
+      "sha256": "71dd30f618776bb345c54d2f89e24cd37bc398a3dc056d5511fa4f7c5aa4c3c0",
+      "bytes": 8071
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/task2-red.log": {
+      "sha256": "86a3737e1f27f5211fc2fe9419d59b6cc5a6e1aafde6e73f5943d7492f9a3de0",
+      "bytes": 3065
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/expansion-before-resume-regression.py": {
+      "sha256": "5f633696cc8128c2a94d58dec40c1b5d6f7c043f002416a9f2e342227af9cfad",
+      "bytes": 7539
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/task1-green.log": {
+      "sha256": "f54ed23aa2d30dbb23735f936077e66ddb8cba45bd08a9208a0e7a21676fa817",
+      "bytes": 2103
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/review-ui.log": {
+      "sha256": "2e772bd389bf30500cca4224424fc7cea4e971e3d08d0b9e4e23eeec1c0c1f33",
+      "bytes": 237
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/prepaid-targeted.log": {
+      "sha256": "1d0fb1b4755577e87e40058de582e272b200b0762ba9f90b0b364b601ca7fb4f",
+      "bytes": 7933
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/task3-red.log": {
+      "sha256": "264820149b6abc1cf8b21ef544351ad9771bdd01aea1ea5d002e9784a2ddb5fd",
+      "bytes": 2396
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/task2-batch-green.log": {
+      "sha256": "3507612a5e67de7f909c5daf665e72ae48703638023e5a20bbbf698936a10064",
+      "bytes": 103
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/benchmark-grouped-v1-source.py": {
+      "sha256": "23a853ee9800cc93a8ade8f97ddaf3872fb009e5231a4a872d5f88f6d5c34c08",
+      "bytes": 3580
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/grouped-benchmark-v2.log": {
+      "sha256": "53b0d016f9b13434dc1d2092a969f9807d94b5ada9ef35851d310b5effce7f92",
+      "bytes": 3681
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/baseline.log": {
+      "sha256": "0a66bbf61e0dd3cb7d825941d1b3ec290d26783963c6493c4717fa1d25f4818e",
+      "bytes": 6633
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/full-tests.log": {
+      "sha256": "caa2015b194f90928ed9ce281081e48d6ad299c2b0dd69040a3860ddc65ede29",
+      "bytes": 9256
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/mkdocs-paused-v2.log": {
+      "sha256": "7cb22f241bfba7614f62c108565274582f904beef989ffd32ddbe0f9b19e7f4f",
+      "bytes": 996
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/task2-batch-red.log": {
+      "sha256": "00d5a50d573018eb675f4df3b9803375de3cd1ea4c8c5b8e491a8076b4ae3533",
+      "bytes": 821
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/packet-run-v1.log": {
+      "sha256": "cd1b76aa420079f653fdfa30f7ff60e8835d711691c49cec3d6438a78f9fa8b5",
+      "bytes": 5712
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/task2-green.log": {
+      "sha256": "829efc6a415e7fcf4fd9b88885aaa35b1c4b27311299fd5aa2ee44d6f1cd0ccf",
+      "bytes": 3077
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/review-red.log": {
+      "sha256": "663a470a4829a47eb77dc142b7af34b018f8c479ca202f035b4e7a25d2d02f06",
+      "bytes": 6114
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/generation-recovery-after-504.json": {
+      "sha256": "e406e58223cb9e18a8b3ff0d16940170891eebe2d23f92c2e4332d0692ccaffd",
+      "bytes": 62
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/prepaid-final-tests-v2.log": {
+      "sha256": "17b56f1888402e2df82b81de7cb5fcb24aa9d4a5a005dd31864cf8ac885f3485",
+      "bytes": 8071
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/grouped-benchmark.log": {
+      "sha256": "247b4f326d21bd2bc82696d56cacc0df3a8af2884e8cbb369b9270ba49c66727",
+      "bytes": 553
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/task3-green.log": {
+      "sha256": "1bc0c22d5232be2e8553bd9bdbc8579aefcf311b2c6f79ae9e6ae56bf2603dd5",
+      "bytes": 101
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_adapt_head.py": {
+      "sha256": "cf4cb7c9cf02fdd460cca2844bf30d2b283a3bb5f970463a7446f75e509e4504",
+      "bytes": 3012
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_pilot.py": {
+      "sha256": "4dfb073048d60cb12a0d0f0be775f09f49abaa216e43f45bbd66a7f9a2ed7f87",
+      "bytes": 7041
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_expansion.py": {
+      "sha256": "5d1adb09e17b382bde5e574cb03ff51c4aa5d3afe0d437fee305533a6faf3664",
+      "bytes": 7371
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_grouped.py": {
+      "sha256": "6d5c47f5bb56e75217a4dea7a21f7bb37791f165f3535047d01e65cf7e89959b",
+      "bytes": 3594
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_compare.py": {
+      "sha256": "2c42d0a8ef805246081ae4977a59e20971aef08df274a1d2e11dacbd7a1b796a",
+      "bytes": 8196
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_adaptation.py": {
+      "sha256": "1cab024ca52ed441a11bd577e1d1ed04992c6898f182926c4e4d460b2d0c2f6d",
+      "bytes": 5268
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_live.py": {
+      "sha256": "653fa7121fde9ceb913d3719a5d82d1ae45fd6a6d85d931521c0a926ff0b20b8",
+      "bytes": 33062
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_online.py": {
+      "sha256": "7fcf820dc299e3dce9b710cfcc3022f437894186b9f0d9a06a8e2f18d4e318ee",
+      "bytes": 15394
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_daily_budget.py": {
+      "sha256": "e01dad695ab9653a077af943623ab414b18211ae5a4db529ee1000f2ee14928e",
+      "bytes": 4851
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/tests/test_system_one_native.py": {
+      "sha256": "e0e3d47a69af704c40b50e4d5cdf3c669b75ad63513f577972a271195242f8ad",
+      "bytes": 3188
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/fetch.py": {
+      "sha256": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+      "bytes": 2579
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/adapt_head.py": {
+      "sha256": "0fba220cc5d1877258a2a71bf9a90fbd9b604ac90dc8ed65f7437281c94d6f24",
+      "bytes": 12343
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/live_data.py": {
+      "sha256": "5c4e72403337a28a17f4ec37be5ca658811672d90a065ac54a9ab261e917385f",
+      "bytes": 7771
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/online.py": {
+      "sha256": "4ccdd14c72ec0e270972cb57831720a3a23e0ba5304d498a7c302f5619d1878d",
+      "bytes": 18162
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/__init__.py": {
+      "sha256": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+      "bytes": 55
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/review.py": {
+      "sha256": "148aa349241720d9a2d76984be26c6ef9e897698d45860f7eaa66bf0316bad1a",
+      "bytes": 30735
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/model.py": {
+      "sha256": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+      "bytes": 18128
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/cli.py": {
+      "sha256": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+      "bytes": 8226
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/live_api.py": {
+      "sha256": "7aaa5d35c7d954c61e335078cba2a0f782453a896dd6c2735c77a367e5f79e1c",
+      "bytes": 17687
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/live.py": {
+      "sha256": "d7067703dca5e12b8e0384937b2044e69100d8cde7368c50ccede383262c0a8e",
+      "bytes": 24886
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/expansion.py": {
+      "sha256": "5f633696cc8128c2a94d58dec40c1b5d6f7c043f002416a9f2e342227af9cfad",
+      "bytes": 7539
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/adaptation.py": {
+      "sha256": "3754670a47ec4b72cf0e81f1edba9e8d510b4ac0cbf3be224df3f0d1c8984ca9",
+      "bytes": 9823
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/grouped.py": {
+      "sha256": "9a13de689e194b5c3760076a5b9f2f974a4c7dcc438fc27d1e910a21487bd42f",
+      "bytes": 3674
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/compare.py": {
+      "sha256": "730e64beb708c6a2cffd19bc06795dc893d6d9e31f0ee9ac5109e4fabeeb0599",
+      "bytes": 18864
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/report.py": {
+      "sha256": "37604a98d61684d6e4b3e218085193b5e1897a51396bb8aa15fdbfec4c241c49",
+      "bytes": 6720
+    },
+    "artifacts/system-one-pilot/expansion-v1/engineering/source-implemented/scripts/system_one_pilot/data.py": {
+      "sha256": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380",
+      "bytes": 8760
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/collection-plan.json": {
+      "sha256": "6a391f1202b235f0769716f8cb9a8cfdc5a978807d94e404701d111ef22d99f2",
+      "bytes": 2120
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/extract-snapshots.jsonl": {
+      "sha256": "f4151dbccf6e4b431f566f64275692de494937802266508860c642e13f021553",
+      "bytes": 59936
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/extract-queue.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/snapshots.jsonl": {
+      "sha256": "15bee41b0526589a6cb90a43382fc03f7ef2fc8c962c4fcda84e41bac10460be",
+      "bytes": 2061806
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/pool.jsonl": {
+      "sha256": "79ea3f6b4d162e0970a597be1040e620988fec4abb5c1c88adb23fa75ef0c736",
+      "bytes": 130255
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/queue.jsonl": {
+      "sha256": "2da77b02dba990867bd0c8418bece77067049fd8b985001f6ef9c90576ba2acc",
+      "bytes": 1152028
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/blocked-preview-v1/admission.json": {
+      "sha256": "34b6786a0519a2c9e1049aa3f2170d61b0ea5bccd1505310279fdd1928c877a7",
+      "bytes": 11265
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/trajectories/task_019.json": {
+      "sha256": "f8d1e6ec5101ae906029f3e83087eae9733aad210f91551b62e2c28f8dd63faa",
+      "bytes": 64527
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/preflight/preflight-20261026T172223011836Z.json": {
+      "sha256": "9d169e709057f0b5059e052d0fa5c415291dd925b8641dc9b45adfb9f953e8dd",
+      "bytes": 130581
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/preflight/preflight-20261026T172639664325Z.json": {
+      "sha256": "1b7df290f4b3adbf4557cd5a5ad9a101a89140d615b31a07b23e36ca3530b3d2",
+      "bytes": 130430
+    },
+    "artifacts/system-one-pilot/expansion-packet-v1/preflight/preflight-20261026T172643838306Z.json": {
+      "sha256": "8324df30a4ef9a48681a4bdb7e2ca9623459a94c516a45f86973444020aca724",
+      "bytes": 130430
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/verification-v1.json": {
+      "sha256": "1315740d751525edc384662aa62a472c25d4957253ce7fce26d27938780ecae1",
+      "bytes": 606
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/benchmark-grouped.py": {
+      "sha256": "243281b304f077fb641dd644122e5bc41fab546ab31993089ea197cda5cacb21",
+      "bytes": 3580
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/work-log.md": {
+      "sha256": "c6c0ce8c2eb1bf0bec9ebdf9ee851b49840f37c30eeac270468960af2ef3b2b4",
+      "bytes": 3492
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/paused-provider-504.json": {
+      "sha256": "da3fd870590f1a3d963042eb0f61d6fa55b0dc6ec9414743d955356048be6265",
+      "bytes": 1433
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/approval.json": {
+      "sha256": "174b535621bf8d2f5753bf977e37ca046d39ebe25a4e7d8a3a6a4bdaa5dc5a71",
+      "bytes": 773
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/grouped-benchmark-provenance.json": {
+      "sha256": "8eb4ebc85cda60422412f8a41a07defa9b5ac84733ceee019230ee745c9c834e",
+      "bytes": 977
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/grouped-benchmark.json": {
+      "sha256": "2c983f0c98040fc9a5c0c155a63fac34084b63a2d32e4dc145a30bcb67941c59",
+      "bytes": 1182
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/protocol.json": {
+      "sha256": "6a391f1202b235f0769716f8cb9a8cfdc5a978807d94e404701d111ef22d99f2",
+      "bytes": 2120
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/queue-preview-v1.json": {
+      "sha256": "b6325b29886eb05a9bddf7b186fac48755130d555fe80b73e1dd60f89c8d4b42",
+      "bytes": 560
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/code-manifest.json": {
+      "sha256": "a0ebb686c757130de1c33abb5edfea5e3344493ea2cfa707ee6bc5662d9a5630",
+      "bytes": 2808
+    },
+    "experiments/system-one-pilot/results/expansion-20261027/code-review.json": {
+      "sha256": "46e59d760b5e86180df374047079b7b7dc9a38f230c8c9369125c70d938bd54c",
+      "bytes": 471
+    },
+    "scripts/system_one_pilot/fetch.py": {
+      "sha256": "2985fa15d37bb5f4f8c85f966faf489cb4d834752afcd9cc5a801a3dfe879a43",
+      "bytes": 2579
+    },
+    "scripts/system_one_pilot/adapt_head.py": {
+      "sha256": "0fba220cc5d1877258a2a71bf9a90fbd9b604ac90dc8ed65f7437281c94d6f24",
+      "bytes": 12343
+    },
+    "scripts/system_one_pilot/live_data.py": {
+      "sha256": "5c4e72403337a28a17f4ec37be5ca658811672d90a065ac54a9ab261e917385f",
+      "bytes": 7771
+    },
+    "scripts/system_one_pilot/online.py": {
+      "sha256": "4ccdd14c72ec0e270972cb57831720a3a23e0ba5304d498a7c302f5619d1878d",
+      "bytes": 18162
+    },
+    "scripts/system_one_pilot/__init__.py": {
+      "sha256": "35fb3163eae6923c3b52c330179a35286de41f95d6cdcdc43be7d8a3eb47b6ba",
+      "bytes": 55
+    },
+    "scripts/system_one_pilot/review.py": {
+      "sha256": "148aa349241720d9a2d76984be26c6ef9e897698d45860f7eaa66bf0316bad1a",
+      "bytes": 30735
+    },
+    "scripts/system_one_pilot/model.py": {
+      "sha256": "e3f1a08d0c3b95e7166ce923ae90c220aba837f57ea44c6c8fe0298d15b405a3",
+      "bytes": 18128
+    },
+    "scripts/system_one_pilot/cli.py": {
+      "sha256": "f76bcd3d746da953f5ea89cd8c71b7cdb4a75725df8e6ae65b4626cfe7074673",
+      "bytes": 8226
+    },
+    "scripts/system_one_pilot/live_api.py": {
+      "sha256": "7aaa5d35c7d954c61e335078cba2a0f782453a896dd6c2735c77a367e5f79e1c",
+      "bytes": 17687
+    },
+    "scripts/system_one_pilot/live.py": {
+      "sha256": "d7067703dca5e12b8e0384937b2044e69100d8cde7368c50ccede383262c0a8e",
+      "bytes": 24886
+    },
+    "scripts/system_one_pilot/expansion.py": {
+      "sha256": "5f633696cc8128c2a94d58dec40c1b5d6f7c043f002416a9f2e342227af9cfad",
+      "bytes": 7539
+    },
+    "scripts/system_one_pilot/adaptation.py": {
+      "sha256": "3754670a47ec4b72cf0e81f1edba9e8d510b4ac0cbf3be224df3f0d1c8984ca9",
+      "bytes": 9823
+    },
+    "scripts/system_one_pilot/grouped.py": {
+      "sha256": "9a13de689e194b5c3760076a5b9f2f974a4c7dcc438fc27d1e910a21487bd42f",
+      "bytes": 3674
+    },
+    "scripts/system_one_pilot/compare.py": {
+      "sha256": "730e64beb708c6a2cffd19bc06795dc893d6d9e31f0ee9ac5109e4fabeeb0599",
+      "bytes": 18864
+    },
+    "scripts/system_one_pilot/report.py": {
+      "sha256": "37604a98d61684d6e4b3e218085193b5e1897a51396bb8aa15fdbfec4c241c49",
+      "bytes": 6720
+    },
+    "scripts/system_one_pilot/data.py": {
+      "sha256": "a4985c644c9468d3750ac7435027e76a7ab619c67b707bfbecbaccdd2a797380",
+      "bytes": 8760
+    },
+    "tests/test_system_one_adapt_head.py": {
+      "sha256": "cf4cb7c9cf02fdd460cca2844bf30d2b283a3bb5f970463a7446f75e509e4504",
+      "bytes": 3012
+    },
+    "tests/test_system_one_pilot.py": {
+      "sha256": "4dfb073048d60cb12a0d0f0be775f09f49abaa216e43f45bbd66a7f9a2ed7f87",
+      "bytes": 7041
+    },
+    "tests/test_system_one_expansion.py": {
+      "sha256": "5d1adb09e17b382bde5e574cb03ff51c4aa5d3afe0d437fee305533a6faf3664",
+      "bytes": 7371
+    },
+    "tests/test_system_one_grouped.py": {
+      "sha256": "6d5c47f5bb56e75217a4dea7a21f7bb37791f165f3535047d01e65cf7e89959b",
+      "bytes": 3594
+    },
+    "tests/test_system_one_compare.py": {
+      "sha256": "2c42d0a8ef805246081ae4977a59e20971aef08df274a1d2e11dacbd7a1b796a",
+      "bytes": 8196
+    },
+    "tests/test_system_one_adaptation.py": {
+      "sha256": "1cab024ca52ed441a11bd577e1d1ed04992c6898f182926c4e4d460b2d0c2f6d",
+      "bytes": 5268
+    },
+    "tests/test_system_one_live.py": {
+      "sha256": "653fa7121fde9ceb913d3719a5d82d1ae45fd6a6d85d931521c0a926ff0b20b8",
+      "bytes": 33062
+    },
+    "tests/test_system_one_online.py": {
+      "sha256": "7fcf820dc299e3dce9b710cfcc3022f437894186b9f0d9a06a8e2f18d4e318ee",
+      "bytes": 15394
+    },
+    "tests/test_system_one_daily_budget.py": {
+      "sha256": "e01dad695ab9653a077af943623ab414b18211ae5a4db529ee1000f2ee14928e",
+      "bytes": 4851
+    },
+    "tests/test_system_one_native.py": {
+      "sha256": "e0e3d47a69af704c40b50e4d5cdf3c669b75ad63513f577972a271195242f8ad",
+      "bytes": 3188
+    },
+    "docs/gitmark/system-one-next-stage.md": {
+      "sha256": "03e944ed44f24cb348f4f3b2be58c1f1df573cebd454e2fca461d1a54b31edff",
+      "bytes": 22909
+    },
+    "docs/superpowers/plans/2026-10-27-system-one-expansion.md": {
+      "sha256": "470d3d10bccb21cef66345d46b1f6ffc0b6335f5c20f74297c80f101184375c2",
+      "bytes": 8737
+    }
+  }
+}

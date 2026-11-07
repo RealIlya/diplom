@@ -1,0 +1,679 @@
+{
+  "protocol_sha256": "ad169f47963910d5d7bc9339a7b8a3d473eac2dafca0edeace7aedc10f7d6898",
+  "cohort_sha256": "e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0",
+  "arms": {
+    "laya": {
+      "coverage": 1.0,
+      "predicted": 30,
+      "predictions": {
+        "ba46b0d9e7244518b8ca17b2": 0.9223350882530212,
+        "6a1e739b5686255d0733e225": 0.8311218619346619,
+        "d7aedd25efd51ae9824cc6cf": 0.9832157492637634,
+        "cdd196a02bb9e650224096ec": 0.8778200149536133,
+        "cc0d178cb008040ad6c45530": 0.38196292519569397,
+        "1c5ca18f7d3950cfbe0d06f9": 0.9698160290718079,
+        "8f34558113f205dca661c335": 0.9809509515762329,
+        "bb7af50eb13f9714fafa584f": 0.9795621633529663,
+        "8e7f0c55bd3e0c354734b367": 0.9956503510475159,
+        "824e44c64d2816de6cab45ec": 0.9639559984207153,
+        "cfa9fdc780533c64c570de37": 0.8570603132247925,
+        "c8692353a90134e6752716ef": 0.9699158072471619,
+        "4118735694674d5e9f9b4b8a": 0.9865400195121765,
+        "116e2f61dad5ebf09360e370": 0.7641415596008301,
+        "dbb3adde03d9d2b572693de5": 0.9635463953018188,
+        "421bda8696430110c1fa65ae": 0.9605293273925781,
+        "5323f1ca828f42ce38d2e743": 0.47273707389831543,
+        "696758e1d5ba4a93710adc3e": 0.9564377069473267,
+        "17b64cd1e920be8c6d39cb3e": 0.5117062926292419,
+        "6a8ead89839ba273e7983347": 0.8215463757514954,
+        "9e06268347afe4e21163844b": 0.854204535484314,
+        "3f864f7c7c9f44bcc4479c64": 0.9521283507347107,
+        "ac78dc653b8f027a842267bd": 0.7974298000335693,
+        "1d15ad55cad2555503b3032a": 0.9930194020271301,
+        "f8614990bb2e0f3c4ba53bb1": 0.941899299621582,
+        "21656bfb11c05ff62bda3303": 0.9896740913391113,
+        "3195ac7a9834c36f859c6d1e": 0.9898344278335571,
+        "c25c87badaf493c13925d88e": 0.986311137676239,
+        "3631c5fb4f6e13fa2ceac8fd": 0.6251171231269836,
+        "013d9f65b1db2e02674bacb7": 0.9414896965026855
+      },
+      "quality": {
+        "n": 29,
+        "brier": 0.46422354274809263,
+        "nll": 1.6934281215146834,
+        "accuracy": 0.4482758620689655,
+        "f1": 0.5789473684210527,
+        "balanced_accuracy": 0.5555555555555556,
+        "roc_auc": 0.6161616161616161,
+        "tp": 11,
+        "tn": 2,
+        "fp": 16,
+        "fn": 0
+      },
+      "receipt": {
+        "arm": "laya",
+        "status": "completed",
+        "started_at": "2026-10-25T10:48:18Z",
+        "cohort_sha256": "e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0",
+        "protocol_sha256": "ad169f47963910d5d7bc9339a7b8a3d473eac2dafca0edeace7aedc10f7d6898",
+        "runner_sha256": "2c639ca88c95bf9d437629a1fa0cd24788a673cfd892bb11570a8a3f0147c569",
+        "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+        "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "command": [
+          "/Users/nikitapasinin/Documents/ChatGPT/diplom/scripts/system_one_pilot/compare.py",
+          "run",
+          "--arm",
+          "laya",
+          "--out",
+          "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/kev-comparison-v1/runs/laya-v3"
+        ],
+        "memory_limitations": "MPS backend peak unavailable in public API; report max post-request samples separately. Process peak RSS includes load; unified allocator and RSS overlap.",
+        "swap_before": "vm.swapusage: total = 12288.00M  used = 11498.25M  free = 789.75M  (encrypted)",
+        "external_inference_calls": 0,
+        "training": false,
+        "versions": {
+          "torch": "2.9.1",
+          "transformers": "4.57.1",
+          "numpy": "2.3.4",
+          "psutil": "7.2.2"
+        },
+        "load_seconds": 4.888757749926299,
+        "backend": "mps",
+        "dtype": "torch.float32",
+        "temperature": 1.0,
+        "memory_after_load": {
+          "rss_bytes": 1166999552,
+          "peak_rss_bytes": 2824830976,
+          "mps_current_bytes": 1287642368,
+          "mps_driver_bytes": 1340571648
+        },
+        "weights_receipt_sha256": null,
+        "memory_after_warmup": {
+          "rss_bytes": 1083375616,
+          "peak_rss_bytes": 2824830976,
+          "mps_current_bytes": 1287642368,
+          "mps_driver_bytes": 4258709504
+        },
+        "memory_final": {
+          "rss_bytes": 451297280,
+          "peak_rss_bytes": 2824830976,
+          "mps_current_bytes": 1287642368,
+          "mps_driver_bytes": 11335172096
+        },
+        "finished_at": "2026-10-25T10:48:56Z",
+        "swap_after": "vm.swapusage: total = 14336.00M  used = 13174.69M  free = 1161.31M  (encrypted)"
+      },
+      "run": "artifacts/system-one-pilot/kev-comparison-v1/runs/laya-v3",
+      "successful_requests": 90,
+      "errors": [],
+      "latency": {
+        "tokenize_seconds": {
+          "median": 0.0014938335516490042,
+          "p95": 0.003226243768585845
+        },
+        "forward_seconds": {
+          "median": 0.19391941651701927,
+          "p95": 0.9407715517503674
+        },
+        "request_seconds": {
+          "median": 0.19732749951072037,
+          "p95": 0.9429680417058988
+        }
+      },
+      "probability_range": {
+        "21656bfb11c05ff62bda3303": 0.0,
+        "9e06268347afe4e21163844b": 0.0,
+        "cdd196a02bb9e650224096ec": 0.0,
+        "421bda8696430110c1fa65ae": 0.0,
+        "cc0d178cb008040ad6c45530": 0.0,
+        "bb7af50eb13f9714fafa584f": 0.0,
+        "f8614990bb2e0f3c4ba53bb1": 0.0,
+        "6a1e739b5686255d0733e225": 0.0,
+        "6a8ead89839ba273e7983347": 0.0,
+        "1d15ad55cad2555503b3032a": 0.0,
+        "cfa9fdc780533c64c570de37": 0.0,
+        "d7aedd25efd51ae9824cc6cf": 0.0,
+        "013d9f65b1db2e02674bacb7": 0.0,
+        "5323f1ca828f42ce38d2e743": 0.0,
+        "c8692353a90134e6752716ef": 0.0,
+        "3f864f7c7c9f44bcc4479c64": 0.0,
+        "116e2f61dad5ebf09360e370": 0.0,
+        "dbb3adde03d9d2b572693de5": 0.0,
+        "4118735694674d5e9f9b4b8a": 0.0,
+        "8e7f0c55bd3e0c354734b367": 0.0,
+        "ac78dc653b8f027a842267bd": 0.0,
+        "824e44c64d2816de6cab45ec": 0.0,
+        "17b64cd1e920be8c6d39cb3e": 0.0,
+        "696758e1d5ba4a93710adc3e": 0.0,
+        "3631c5fb4f6e13fa2ceac8fd": 0.0,
+        "ba46b0d9e7244518b8ca17b2": 0.0,
+        "c25c87badaf493c13925d88e": 0.0,
+        "3195ac7a9834c36f859c6d1e": 0.0,
+        "8f34558113f205dca661c335": 0.0,
+        "1c5ca18f7d3950cfbe0d06f9": 0.0
+      },
+      "common_quality": {
+        "n": 29,
+        "brier": 0.46422354274809263,
+        "nll": 1.6934281215146834,
+        "accuracy": 0.4482758620689655,
+        "f1": 0.5789473684210527,
+        "balanced_accuracy": 0.5555555555555556,
+        "roc_auc": 0.6161616161616161,
+        "tp": 11,
+        "tn": 2,
+        "fp": 16,
+        "fn": 0
+      },
+      "common_latency": {
+        "tokenize_seconds": {
+          "median": 0.0014938335516490042,
+          "p95": 0.003226243768585845
+        },
+        "forward_seconds": {
+          "median": 0.19391941651701927,
+          "p95": 0.9407715517503674
+        },
+        "request_seconds": {
+          "median": 0.19732749951072037,
+          "p95": 0.9429680417058988
+        }
+      },
+      "memory_max_post_request": {
+        "rss_bytes": 636305408,
+        "peak_rss_bytes": 2824830976,
+        "mps_current_bytes": 1287642368,
+        "mps_driver_bytes": 11672813568
+      }
+    },
+    "kev-0.8b": {
+      "coverage": 1.0,
+      "predicted": 30,
+      "predictions": {
+        "ba46b0d9e7244518b8ca17b2": 0.4853672683238983,
+        "6a1e739b5686255d0733e225": 0.6412264704704285,
+        "d7aedd25efd51ae9824cc6cf": 0.5537359118461609,
+        "cdd196a02bb9e650224096ec": 0.6736122369766235,
+        "cc0d178cb008040ad6c45530": 0.7654162645339966,
+        "1c5ca18f7d3950cfbe0d06f9": 0.5522447228431702,
+        "8f34558113f205dca661c335": 0.738977313041687,
+        "bb7af50eb13f9714fafa584f": 0.6602889895439148,
+        "8e7f0c55bd3e0c354734b367": 0.6964054703712463,
+        "824e44c64d2816de6cab45ec": 0.39110511541366577,
+        "cfa9fdc780533c64c570de37": 0.8879072666168213,
+        "c8692353a90134e6752716ef": 0.6867644786834717,
+        "4118735694674d5e9f9b4b8a": 0.5164962410926819,
+        "116e2f61dad5ebf09360e370": 0.4857941269874573,
+        "dbb3adde03d9d2b572693de5": 0.3541685938835144,
+        "421bda8696430110c1fa65ae": 0.4130181670188904,
+        "5323f1ca828f42ce38d2e743": 0.5433054566383362,
+        "696758e1d5ba4a93710adc3e": 0.6642583608627319,
+        "17b64cd1e920be8c6d39cb3e": 0.5534804463386536,
+        "6a8ead89839ba273e7983347": 0.4950888752937317,
+        "9e06268347afe4e21163844b": 0.6602440476417542,
+        "3f864f7c7c9f44bcc4479c64": 0.6760862469673157,
+        "ac78dc653b8f027a842267bd": 0.3242906928062439,
+        "1d15ad55cad2555503b3032a": 0.5192912817001343,
+        "f8614990bb2e0f3c4ba53bb1": 0.6728639006614685,
+        "21656bfb11c05ff62bda3303": 0.7214013934135437,
+        "3195ac7a9834c36f859c6d1e": 0.5400405526161194,
+        "c25c87badaf493c13925d88e": 0.7385342717170715,
+        "3631c5fb4f6e13fa2ceac8fd": 0.7689412236213684,
+        "013d9f65b1db2e02674bacb7": 0.48415905237197876
+      },
+      "quality": {
+        "n": 29,
+        "brier": 0.2450578785760716,
+        "nll": 0.6850847390022229,
+        "accuracy": 0.5862068965517241,
+        "f1": 0.625,
+        "balanced_accuracy": 0.648989898989899,
+        "roc_auc": 0.7525252525252525,
+        "tp": 10,
+        "tn": 7,
+        "fp": 11,
+        "fn": 1
+      },
+      "receipt": {
+        "arm": "kev-0.8b",
+        "status": "completed",
+        "started_at": "2026-10-25T10:48:57Z",
+        "cohort_sha256": "e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0",
+        "protocol_sha256": "ad169f47963910d5d7bc9339a7b8a3d473eac2dafca0edeace7aedc10f7d6898",
+        "runner_sha256": "2c639ca88c95bf9d437629a1fa0cd24788a673cfd892bb11570a8a3f0147c569",
+        "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+        "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "command": [
+          "/Users/nikitapasinin/Documents/ChatGPT/diplom/scripts/system_one_pilot/compare.py",
+          "run",
+          "--arm",
+          "kev-0.8b",
+          "--out",
+          "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/kev-comparison-v1/runs/kev-0.8b-v1"
+        ],
+        "memory_limitations": "MPS backend peak unavailable in public API; report max post-request samples separately. Process peak RSS includes load; unified allocator and RSS overlap.",
+        "swap_before": "vm.swapusage: total = 14336.00M  used = 13174.69M  free = 1161.31M  (encrypted)",
+        "external_inference_calls": 0,
+        "training": false,
+        "versions": {
+          "torch": "2.8.0",
+          "transformers": "5.17.0",
+          "numpy": "2.5.3",
+          "psutil": "7.2.2",
+          "mlx": "0.32.4",
+          "mlx-lm": "0.31.3",
+          "peft": "0.21.2"
+        },
+        "load_seconds": 4.477698375005275,
+        "backend": "mlx",
+        "dtype": "bfloat16 + CPU head float32",
+        "temperature": 2.3510958125672174,
+        "memory_after_load": {
+          "rss_bytes": 2155167744,
+          "peak_rss_bytes": 3327492096,
+          "mlx_active_bytes": 1504791240,
+          "mlx_cache_bytes": 163840,
+          "mlx_peak_bytes": 2572572364
+        },
+        "weights_receipt_sha256": [
+          "aef08557648841d9aafe07f827659ffd75c38c95ca8951dee03aa82869a21700",
+          "d781a0ae2dab01da1410d9346bb1eecafaee129709ac366ff7cf773dd7ffa440"
+        ],
+        "memory_after_warmup": {
+          "rss_bytes": 2172338176,
+          "peak_rss_bytes": 3327492096,
+          "mlx_active_bytes": 1504791242,
+          "mlx_cache_bytes": 1073879663,
+          "mlx_peak_bytes": 2546944838
+        },
+        "memory_final": {
+          "rss_bytes": 2173026304,
+          "peak_rss_bytes": 3327492096,
+          "mlx_active_bytes": 1504791242,
+          "mlx_cache_bytes": 1074334630,
+          "mlx_peak_bytes": 2549766964
+        },
+        "finished_at": "2026-10-25T10:49:31Z",
+        "swap_after": "vm.swapusage: total = 14336.00M  used = 13118.69M  free = 1217.31M  (encrypted)"
+      },
+      "run": "artifacts/system-one-pilot/kev-comparison-v1/runs/kev-0.8b-v1",
+      "successful_requests": 90,
+      "errors": [],
+      "latency": {
+        "tokenize_seconds": {
+          "median": 0.0010905619710683823,
+          "p95": 0.0020833081565797325
+        },
+        "forward_seconds": {
+          "median": 0.23208270798204467,
+          "p95": 0.5738409624784253
+        },
+        "request_seconds": {
+          "median": 0.23322104098042473,
+          "p95": 0.5759434517181944
+        }
+      },
+      "probability_range": {
+        "21656bfb11c05ff62bda3303": 0.0,
+        "9e06268347afe4e21163844b": 0.0,
+        "cdd196a02bb9e650224096ec": 0.0,
+        "421bda8696430110c1fa65ae": 0.0,
+        "cc0d178cb008040ad6c45530": 0.0,
+        "bb7af50eb13f9714fafa584f": 0.0,
+        "f8614990bb2e0f3c4ba53bb1": 0.0,
+        "6a1e739b5686255d0733e225": 0.0,
+        "6a8ead89839ba273e7983347": 0.0,
+        "1d15ad55cad2555503b3032a": 0.0,
+        "cfa9fdc780533c64c570de37": 0.0,
+        "d7aedd25efd51ae9824cc6cf": 0.0,
+        "013d9f65b1db2e02674bacb7": 0.0,
+        "5323f1ca828f42ce38d2e743": 0.0,
+        "c8692353a90134e6752716ef": 0.0,
+        "3f864f7c7c9f44bcc4479c64": 0.0,
+        "116e2f61dad5ebf09360e370": 0.0,
+        "dbb3adde03d9d2b572693de5": 0.0,
+        "4118735694674d5e9f9b4b8a": 0.0,
+        "8e7f0c55bd3e0c354734b367": 0.0,
+        "ac78dc653b8f027a842267bd": 0.0,
+        "824e44c64d2816de6cab45ec": 0.0,
+        "17b64cd1e920be8c6d39cb3e": 0.0,
+        "696758e1d5ba4a93710adc3e": 0.0,
+        "3631c5fb4f6e13fa2ceac8fd": 0.0,
+        "ba46b0d9e7244518b8ca17b2": 0.0,
+        "c25c87badaf493c13925d88e": 0.0,
+        "3195ac7a9834c36f859c6d1e": 0.0,
+        "8f34558113f205dca661c335": 0.0,
+        "1c5ca18f7d3950cfbe0d06f9": 0.0
+      },
+      "common_quality": {
+        "n": 29,
+        "brier": 0.2450578785760716,
+        "nll": 0.6850847390022229,
+        "accuracy": 0.5862068965517241,
+        "f1": 0.625,
+        "balanced_accuracy": 0.648989898989899,
+        "roc_auc": 0.7525252525252525,
+        "tp": 10,
+        "tn": 7,
+        "fp": 11,
+        "fn": 1
+      },
+      "common_latency": {
+        "tokenize_seconds": {
+          "median": 0.0010905619710683823,
+          "p95": 0.0020833081565797325
+        },
+        "forward_seconds": {
+          "median": 0.23208270798204467,
+          "p95": 0.5738409624784253
+        },
+        "request_seconds": {
+          "median": 0.23322104098042473,
+          "p95": 0.5759434517181944
+        }
+      },
+      "memory_max_post_request": {
+        "rss_bytes": 2173059072,
+        "peak_rss_bytes": 3327492096,
+        "mlx_active_bytes": 1504791242,
+        "mlx_cache_bytes": 1077122416,
+        "mlx_peak_bytes": 2549766964
+      }
+    },
+    "kev-4b": {
+      "coverage": 1.0,
+      "predicted": 30,
+      "predictions": {
+        "ba46b0d9e7244518b8ca17b2": 0.16312092542648315,
+        "6a1e739b5686255d0733e225": 0.7264043688774109,
+        "d7aedd25efd51ae9824cc6cf": 0.481508731842041,
+        "cdd196a02bb9e650224096ec": 0.6201144456863403,
+        "cc0d178cb008040ad6c45530": 0.4373345971107483,
+        "1c5ca18f7d3950cfbe0d06f9": 0.5298710465431213,
+        "8f34558113f205dca661c335": 0.7136244177818298,
+        "bb7af50eb13f9714fafa584f": 0.3504308760166168,
+        "8e7f0c55bd3e0c354734b367": 0.7030099630355835,
+        "824e44c64d2816de6cab45ec": 0.022194139659404755,
+        "cfa9fdc780533c64c570de37": 0.4690055549144745,
+        "c8692353a90134e6752716ef": 0.8234832286834717,
+        "4118735694674d5e9f9b4b8a": 0.027492519468069077,
+        "116e2f61dad5ebf09360e370": 0.30256468057632446,
+        "dbb3adde03d9d2b572693de5": 0.12366645038127899,
+        "421bda8696430110c1fa65ae": 0.07719449698925018,
+        "5323f1ca828f42ce38d2e743": 0.27204927802085876,
+        "696758e1d5ba4a93710adc3e": 0.7260798215866089,
+        "17b64cd1e920be8c6d39cb3e": 0.24265673756599426,
+        "6a8ead89839ba273e7983347": 0.12700045108795166,
+        "9e06268347afe4e21163844b": 0.13011062145233154,
+        "3f864f7c7c9f44bcc4479c64": 0.3475375175476074,
+        "ac78dc653b8f027a842267bd": 0.09487879276275635,
+        "1d15ad55cad2555503b3032a": 0.11741495877504349,
+        "f8614990bb2e0f3c4ba53bb1": 0.124836765229702,
+        "21656bfb11c05ff62bda3303": 0.3828246295452118,
+        "3195ac7a9834c36f859c6d1e": 0.07706023007631302,
+        "c25c87badaf493c13925d88e": 0.6009494662284851,
+        "3631c5fb4f6e13fa2ceac8fd": 0.27860119938850403,
+        "013d9f65b1db2e02674bacb7": 0.2422977238893509
+      },
+      "quality": {
+        "n": 29,
+        "brier": 0.11053808594076302,
+        "nll": 0.36410579820905115,
+        "accuracy": 0.8275862068965517,
+        "f1": 0.7368421052631579,
+        "balanced_accuracy": 0.7904040404040404,
+        "roc_auc": 0.9595959595959596,
+        "tp": 7,
+        "tn": 17,
+        "fp": 1,
+        "fn": 4
+      },
+      "receipt": {
+        "arm": "kev-4b",
+        "status": "completed",
+        "started_at": "2026-10-25T10:49:31Z",
+        "cohort_sha256": "e23dde49988d770ad4602a3dcc7730ed13c4bc5c4c791b77a676b32f13e579d0",
+        "protocol_sha256": "ad169f47963910d5d7bc9339a7b8a3d473eac2dafca0edeace7aedc10f7d6898",
+        "runner_sha256": "2c639ca88c95bf9d437629a1fa0cd24788a673cfd892bb11570a8a3f0147c569",
+        "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+        "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+        "machine": "arm64",
+        "command": [
+          "/Users/nikitapasinin/Documents/ChatGPT/diplom/scripts/system_one_pilot/compare.py",
+          "run",
+          "--arm",
+          "kev-4b",
+          "--out",
+          "/Users/nikitapasinin/Documents/ChatGPT/diplom/artifacts/system-one-pilot/kev-comparison-v1/runs/kev-4b-v1"
+        ],
+        "memory_limitations": "MPS backend peak unavailable in public API; report max post-request samples separately. Process peak RSS includes load; unified allocator and RSS overlap.",
+        "swap_before": "vm.swapusage: total = 14336.00M  used = 13118.69M  free = 1217.31M  (encrypted)",
+        "external_inference_calls": 0,
+        "training": false,
+        "versions": {
+          "torch": "2.8.0",
+          "transformers": "5.17.0",
+          "numpy": "2.5.3",
+          "psutil": "7.2.2",
+          "mlx": "0.32.4",
+          "mlx-lm": "0.31.3",
+          "peft": "0.21.2"
+        },
+        "load_seconds": 25.696193125098944,
+        "backend": "mlx",
+        "dtype": "bfloat16 + CPU head float32",
+        "temperature": 2.406050072164233,
+        "memory_after_load": {
+          "rss_bytes": 1486536704,
+          "peak_rss_bytes": 3818127360,
+          "mlx_active_bytes": 8411510280,
+          "mlx_cache_bytes": 655360,
+          "mlx_peak_bytes": 15867964940
+        },
+        "weights_receipt_sha256": [
+          "daf6460ae3731fdcf201501569f4b18169a878b7ea7c9ca41f70663743c619d7",
+          "61c8be766791f8ddd1edb4d15832de81aad55458822d87608074deb47ba6f910"
+        ],
+        "memory_after_warmup": {
+          "rss_bytes": 1590296576,
+          "peak_rss_bytes": 3818127360,
+          "mlx_active_bytes": 8411510282,
+          "mlx_cache_bytes": 1073857624,
+          "mlx_peak_bytes": 9580688950
+        },
+        "memory_final": {
+          "rss_bytes": 1501134848,
+          "peak_rss_bytes": 3818127360,
+          "mlx_active_bytes": 8411510282,
+          "mlx_cache_bytes": 1074406633,
+          "mlx_peak_bytes": 9580688950
+        },
+        "finished_at": "2026-10-25T10:52:48Z",
+        "swap_after": "vm.swapusage: total = 16384.00M  used = 14947.62M  free = 1436.38M  (encrypted)"
+      },
+      "run": "artifacts/system-one-pilot/kev-comparison-v1/runs/kev-4b-v1",
+      "successful_requests": 90,
+      "errors": [],
+      "latency": {
+        "tokenize_seconds": {
+          "median": 0.0013004374923184514,
+          "p95": 0.003102120495168492
+        },
+        "forward_seconds": {
+          "median": 1.4220791039988399,
+          "p95": 3.511168908170657
+        },
+        "request_seconds": {
+          "median": 1.423536353977397,
+          "p95": 3.5137811208143828
+        }
+      },
+      "probability_range": {
+        "21656bfb11c05ff62bda3303": 0.0,
+        "9e06268347afe4e21163844b": 0.0,
+        "cdd196a02bb9e650224096ec": 0.0,
+        "421bda8696430110c1fa65ae": 0.0,
+        "cc0d178cb008040ad6c45530": 0.0,
+        "bb7af50eb13f9714fafa584f": 0.0,
+        "f8614990bb2e0f3c4ba53bb1": 0.0,
+        "6a1e739b5686255d0733e225": 0.0,
+        "6a8ead89839ba273e7983347": 0.0,
+        "1d15ad55cad2555503b3032a": 0.0,
+        "cfa9fdc780533c64c570de37": 0.0,
+        "d7aedd25efd51ae9824cc6cf": 0.0,
+        "013d9f65b1db2e02674bacb7": 0.0,
+        "5323f1ca828f42ce38d2e743": 0.0,
+        "c8692353a90134e6752716ef": 0.0,
+        "3f864f7c7c9f44bcc4479c64": 0.0,
+        "116e2f61dad5ebf09360e370": 0.0,
+        "dbb3adde03d9d2b572693de5": 0.0,
+        "4118735694674d5e9f9b4b8a": 0.0,
+        "8e7f0c55bd3e0c354734b367": 0.0,
+        "ac78dc653b8f027a842267bd": 0.0,
+        "824e44c64d2816de6cab45ec": 0.0,
+        "17b64cd1e920be8c6d39cb3e": 0.0,
+        "696758e1d5ba4a93710adc3e": 0.0,
+        "3631c5fb4f6e13fa2ceac8fd": 0.0,
+        "ba46b0d9e7244518b8ca17b2": 0.0,
+        "c25c87badaf493c13925d88e": 0.0,
+        "3195ac7a9834c36f859c6d1e": 0.0,
+        "8f34558113f205dca661c335": 0.0,
+        "1c5ca18f7d3950cfbe0d06f9": 0.0
+      },
+      "common_quality": {
+        "n": 29,
+        "brier": 0.11053808594076302,
+        "nll": 0.36410579820905115,
+        "accuracy": 0.8275862068965517,
+        "f1": 0.7368421052631579,
+        "balanced_accuracy": 0.7904040404040404,
+        "roc_auc": 0.9595959595959596,
+        "tp": 7,
+        "tn": 17,
+        "fp": 1,
+        "fn": 4
+      },
+      "common_latency": {
+        "tokenize_seconds": {
+          "median": 0.0013004374923184514,
+          "p95": 0.003102120495168492
+        },
+        "forward_seconds": {
+          "median": 1.4220791039988399,
+          "p95": 3.511168908170657
+        },
+        "request_seconds": {
+          "median": 1.423536353977397,
+          "p95": 3.5137811208143828
+        }
+      },
+      "memory_max_post_request": {
+        "rss_bytes": 1591558144,
+        "peak_rss_bytes": 3818127360,
+        "mlx_active_bytes": 8411510282,
+        "mlx_cache_bytes": 1080247751,
+        "mlx_peak_bytes": 9580688950
+      }
+    }
+  },
+  "common_ids": [
+    "013d9f65b1db2e02674bacb7",
+    "116e2f61dad5ebf09360e370",
+    "17b64cd1e920be8c6d39cb3e",
+    "1c5ca18f7d3950cfbe0d06f9",
+    "1d15ad55cad2555503b3032a",
+    "21656bfb11c05ff62bda3303",
+    "3195ac7a9834c36f859c6d1e",
+    "3631c5fb4f6e13fa2ceac8fd",
+    "3f864f7c7c9f44bcc4479c64",
+    "4118735694674d5e9f9b4b8a",
+    "421bda8696430110c1fa65ae",
+    "5323f1ca828f42ce38d2e743",
+    "696758e1d5ba4a93710adc3e",
+    "6a1e739b5686255d0733e225",
+    "6a8ead89839ba273e7983347",
+    "824e44c64d2816de6cab45ec",
+    "8e7f0c55bd3e0c354734b367",
+    "8f34558113f205dca661c335",
+    "9e06268347afe4e21163844b",
+    "ac78dc653b8f027a842267bd",
+    "ba46b0d9e7244518b8ca17b2",
+    "bb7af50eb13f9714fafa584f",
+    "c25c87badaf493c13925d88e",
+    "c8692353a90134e6752716ef",
+    "cc0d178cb008040ad6c45530",
+    "cdd196a02bb9e650224096ec",
+    "cfa9fdc780533c64c570de37",
+    "d7aedd25efd51ae9824cc6cf",
+    "dbb3adde03d9d2b572693de5",
+    "f8614990bb2e0f3c4ba53bb1"
+  ],
+  "common_hard_n": 29,
+  "always_irrelevant": {
+    "n": 29,
+    "brier": 0.3793103448275862,
+    "nll": 6.113760419329018,
+    "accuracy": 0.6206896551724138,
+    "f1": 0.0,
+    "balanced_accuracy": 0.5,
+    "roc_auc": 0.5,
+    "tp": 0,
+    "tn": 18,
+    "fp": 0,
+    "fn": 11
+  },
+  "always_irrelevant_common": {
+    "n": 29,
+    "brier": 0.3793103448275862,
+    "nll": 6.113760419329018,
+    "accuracy": 0.6206896551724138,
+    "f1": 0.0,
+    "balanced_accuracy": 0.5,
+    "roc_auc": 0.5,
+    "tp": 0,
+    "tn": 18,
+    "fp": 0,
+    "fn": 11
+  },
+  "bm25": {
+    "scores": {
+      "21656bfb11c05ff62bda3303": 8.987400724964552,
+      "1d15ad55cad2555503b3032a": 6.629485759446981,
+      "4118735694674d5e9f9b4b8a": 15.886038009103281,
+      "3195ac7a9834c36f859c6d1e": 6.936293121861288,
+      "9e06268347afe4e21163844b": 16.4919073471235,
+      "cfa9fdc780533c64c570de37": 11.898374118812898,
+      "8e7f0c55bd3e0c354734b367": 12.21951979591851,
+      "8f34558113f205dca661c335": 13.363327635159438,
+      "cdd196a02bb9e650224096ec": 13.191574498346924,
+      "6a8ead89839ba273e7983347": 7.063469405517867,
+      "c8692353a90134e6752716ef": 9.21970661737513,
+      "ac78dc653b8f027a842267bd": 8.066689737586989,
+      "c25c87badaf493c13925d88e": 10.922024558596833,
+      "421bda8696430110c1fa65ae": 30.083293187072268,
+      "013d9f65b1db2e02674bacb7": 20.598885405465175,
+      "824e44c64d2816de6cab45ec": 21.41337544836917,
+      "cc0d178cb008040ad6c45530": 76.24897940424746,
+      "5323f1ca828f42ce38d2e743": 23.46178385078005,
+      "17b64cd1e920be8c6d39cb3e": 24.181980797886297,
+      "bb7af50eb13f9714fafa584f": 40.24988649804157,
+      "d7aedd25efd51ae9824cc6cf": 35.93967719310841,
+      "dbb3adde03d9d2b572693de5": 22.529095755392138,
+      "696758e1d5ba4a93710adc3e": 37.18238935724601,
+      "1c5ca18f7d3950cfbe0d06f9": 32.345740118600354,
+      "f8614990bb2e0f3c4ba53bb1": 5.947021697001391,
+      "3f864f7c7c9f44bcc4479c64": 7.655367725518737,
+      "3631c5fb4f6e13fa2ceac8fd": 9.99841805485914,
+      "6a1e739b5686255d0733e225": 53.206560454419574,
+      "116e2f61dad5ebf09360e370": 25.875136825030594,
+      "ba46b0d9e7244518b8ca17b2": 23.027492262119225
+    },
+    "pool": "within snapshot, all candidates including uncertain; pair-weighted within-pool AUC, ties=0.5",
+    "pools": 8,
+    "within_pool_pairs": 20,
+    "within_pool_auc": 0.6,
+    "cross_pool_descriptive_auc": 0.5959595959595959
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "targeted": {
+    "passed": 91,
+    "total": 91
+  },
+  "full": {
+    "passed": 121,
+    "total": 122,
+    "failed": "test_presentations.PresentationTests.test_all_stored_presentations_are_complete_packages",
+    "preexisting": true
+  },
+  "review_ui": "passed",
+  "gitmark_strict": "passed32docs",
+  "mkdocs_strict": "passed",
+  "fresh_review": "3importantallfixed RED→GREEN, no minors",
+  "api_status": "paused provider504, noannotation",
+  "new_trusted_labels": 0,
+  "new_paid_calls": 9,
+  "local_benchmark": "completed3snapshots/4modes/2repeats; strongserializationdrift",
+  "gpu_rental_rub": 0
+}
